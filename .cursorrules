@@ -1,0 +1,130 @@
+# Cursor AI Agent Rules for MaCo API Documentation
+
+## File Priority and Context
+
+**Core Files for AI Agents**:
+- `.cursorrules` - This file (agent routing)
+- `BUSINESS_PROCESS_MAP.md` - Business goal discovery (Entry Point 1)
+- `AI_AGENT_SETUP.md` - Technical implementation (Entry Point 2)
+- `llm.txt` - Documentation index (find which docs you need)
+- `docs-offline/[filename].md` - Load selectively as needed (not all 232 files)
+- `maco-edi-testfiles/` - EDI test files showing real-world message examples (inbound/outbound, .edi and .json formats)
+
+**Meta-Documentation (Don't Feed to Agent)**:
+- `LLM_TXT_PURPOSE.md` - Explains llm.txt (meta-doc)
+- `OFFLINE_DOCS_STRATEGY.md` - Strategy doc (planning, now complete)
+- `CONSISTENCY_CHECK.md` - Internal consistency review
+
+When working with this workspace, prioritize files based on task type:
+
+### For Business Discovery Tasks
+**ALWAYS START WITH**: `BUSINESS_PROCESS_MAP.md`
+- User asks about business goals (e.g., "register customer", "cancel contract")
+- User wants to understand what processes are needed
+- User needs to design backend services
+- User asks "what do I need to do for X business scenario"
+
+**Then reference**:
+- `llm.txt` for documentation index (find which docs you need)
+- `maco-api-documentation/docs-offline/` for offline process workflow documentation (232 files, including Prozessübersicht)
+- `maco-api-documentation/docs-offline/enhanced-index.json` for programmatic BDEW ID → filename lookup (optional)
+- `maco-edi-testfiles/inbound/` for example inbound messages (responses from market) - JSON format shows BO4E structure
+- `maco-edi-testfiles/outbound/` for example outbound messages (requests to market) - JSON format shows BO4E structure
+- `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/[ID].yaml` for business rules
+- `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_[ID].yml` for API schemas
+- `maco-api-documentation/_build/bo4e-openapi.min.json` for BO4E data types
+- `maco-api-documentation/_build/macoapp-trigger.min.json` for trigger event schemas
+- `maco-api-documentation/_build/maloident-macoapp.min.json` for MaloIdent request schemas
+- `maco-api-documentation/_build/maloident-lieferant.min.json` for MaloIdent webhook schemas
+
+### For Technical Implementation Tasks
+**START WITH**: `AI_AGENT_SETUP.md`
+- User asks about API structure, schemas, or technical details
+- User wants to build payloads for known process IDs
+- User needs to understand data structures
+- User asks about specific BDEW process IDs or technical implementation
+- User has a specific MaKo message/BDEW ID and wants to understand/implement it
+
+**Then reference**:
+- `llm.txt` for documentation index (find which docs you need)
+- `maco-api-documentation/docs-offline/` for process workflow documentation (232 files, including Prozessübersicht showing step-by-step API call sequences)
+- `maco-api-documentation/docs-offline/enhanced-index.json` for programmatic BDEW ID → filename lookup (optional)
+- `maco-edi-testfiles/inbound/[process-id]_eingehend_Testfall*.json` for example inbound messages (responses from market) - shows BO4E structure
+- `maco-edi-testfiles/outbound/[process-id]_ausgehend_Testfall*.json` for example outbound messages (requests to market) - shows BO4E structure
+- `maco-api-documentation/_build/bo4e-openapi.min.json` for BO4E data structures and types
+- `maco-api-documentation/_build/macoapp-schreiben.min.json` for write operations (storing process data)
+- `maco-api-documentation/_build/macoapp-lesen.min.json` for read operations (reading BO4E objects)
+- `maco-api-documentation/_build/macoapp-trigger.min.json` for triggering events (outbound to Conuti)
+- `maco-api-documentation/_build/events-openapi.min.json` for event triggers (alternative/legacy)
+- `maco-api-documentation/_build/maloident-macoapp.min.json` for sending MaloIdent requests (outbound)
+- `maco-api-documentation/_build/maloident-lieferant.min.json` for receiving MaloIdent responses (inbound webhooks)
+- `maco-api-documentation/_build/maloident-netzbetreiber.min.json` for NB MaloIdent operations (reference only)
+
+## Workspace Context
+
+- **Role**: User is a Lieferant (LF) - electricity supplier
+- **Goal**: Enable backend to use MaCo API to communicate MaKo messages into the market and receive results from market
+- **Two Entry Points**:
+  1. **Business Goal** → Find processes → Implement (use BUSINESS_PROCESS_MAP.md)
+  2. **Specific MaKo Message/BDEW ID** → Understand → Implement (use AI_AGENT_SETUP.md)
+- **Approach**: Both business-concept-driven discovery and technical message-driven implementation are supported
+
+## Key Resources
+
+1. **BUSINESS_PROCESS_MAP.md** - Business goals → Market processes mapping (offline)
+2. **llm.txt** - Documentation index (237 entries) - Use to find which documentation files you need
+3. **docs-offline/** - 232 offline documentation files (Prozessübersicht, process descriptions, EBD diagrams)
+4. **maco-edi-testfiles/** - EDI test files (2549 files) - Real-world message examples in both EDIFACT (.edi) and BO4E JSON (.json) formats
+5. **AI_AGENT_SETUP.md** - Technical setup and schema reference (offline)
+6. **bo4e-openapi.min.json** - Complete BO4E data structures (offline, formatted, readable)
+7. **yaml_output/** - 136 business rule files for mandatory fields (offline)
+8. **PIs/** - Process-specific API schemas (offline)
+
+**Note**: 
+- `llm.txt` provides the index/context (process names, BDEW IDs, descriptions) - use this to find which docs you need
+- `docs-offline/*.md` provides the actual markdown content (232 files) - all documentation is now available offline
+- **Workflow**: Use `llm.txt` to find documentation → Extract filename from URL → Read from `docs-offline/`
+- **Two Entry Points Supported**:
+  - **Business Goal**: Start with BUSINESS_PROCESS_MAP.md → find processes → implement
+  - **Specific Message**: Start with BDEW ID/message → use AI_AGENT_SETUP.md → implement
+
+## Available API Schemas (_build/*.min.json)
+
+| Schema File | Purpose | Direction | When to Use |
+|------------|---------|-----------|-------------|
+| `bo4e-openapi.min.json` | BO4E data structures | Reference | Understanding data types, object definitions |
+| `macoapp-schreiben.min.json` | Write operations | Outbound | Storing process data in Conuti |
+| `macoapp-lesen.min.json` | Read operations | Inbound | Reading BO4E objects from Conuti |
+| `macoapp-trigger.min.json` | Trigger events | Outbound | Triggering market processes (START_LIEFERBEGINN, etc.) |
+| `events-openapi.min.json` | Event triggers | Outbound | Alternative event trigger API |
+| `maloident-macoapp.min.json` | MaloIdent request | Outbound | Sending location identification requests |
+| `maloident-lieferant.min.json` | MaloIdent response | Inbound | Receiving location identification responses (webhook) |
+| `maloident-netzbetreiber.min.json` | NB MaloIdent ops | Reference | Network operator operations (for reference) |
+
+## Workflow Guidelines
+
+### Entry Point 1: Business Goal
+1. **Discovery**: Use BUSINESS_PROCESS_MAP.md → llm.txt → docs-offline/ → yaml files
+2. **Implementation**: Build backend services based on discovered processes
+
+### Entry Point 2: Specific Message/BDEW ID
+1. **Understanding**: Use AI_AGENT_SETUP.md → llm.txt → docs-offline/ → schemas
+2. **Implementation**: Build payloads and implement handlers
+
+### Always Cross-Reference
+- Business rules (`yaml_output/`) → Process schemas (`PIs/`) → BO4E types (`_build/bo4e-openapi.min.json`)
+- Workflow documentation (`docs-offline/`) → API schemas → Implementation
+
+## Important Notes
+
+- All `.min.json` files are formatted (not minified) for readability
+- Process IDs are BDEW Prüfidentifikatoren (5-digit numbers)
+- User role is typically "Lieferant" (LF) - focus on LF processes
+- Processes are asynchronous - responses come from NB (network operator) and MSB (meter operator)
+- **API Direction**:
+  - **Outbound**: Your backend calls Conuti API (trigger, send data)
+  - **Inbound**: Conuti calls your backend webhooks (receive responses, receive data)
+- **MaloIdent Flow**: 
+  - Send request → `maloident-macoapp` (outbound)
+  - Receive response → `maloident-lieferant` (inbound webhook)
+
