@@ -10,7 +10,7 @@ from pathlib import Path
 def extract_bdew_mappings():
     """Extract BDEW ID mappings from llm.txt"""
     llm_file = Path('llm.txt')
-    docs_dir = Path('maco-api-documentation/docs-offline')
+    docs_dir = Path('docs-offline')
     
     # Read llm.txt
     with open(llm_file, 'r', encoding='utf-8') as f:
@@ -99,7 +99,7 @@ def main():
     index = extract_bdew_mappings()
     
     # Save enhanced index
-    output_file = Path('maco-api-documentation/docs-offline/enhanced-index.json')
+    output_file = Path('docs-offline/enhanced-index.json')
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(index, f, indent=2, ensure_ascii=False)
     

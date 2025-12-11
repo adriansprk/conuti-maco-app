@@ -1,0 +1,2348 @@
+{
+  "by_bdew_id": {
+    "55077": [
+      {
+        "context": "Prüfi > UTILMD-Strom",
+        "filename": "55077-1805145m0.md",
+        "url": "https://doc.macoapp.de/55077-1805145m0.md"
+      }
+    ],
+    "55078": [
+      {
+        "context": "Prüfi > UTILMD-Strom",
+        "filename": "55078-1305072m0.md",
+        "url": "https://doc.macoapp.de/55078-1305072m0.md"
+      }
+    ],
+    "55080": [
+      {
+        "context": "Prüfi > UTILMD-Strom",
+        "filename": "55080-1805144m0.md",
+        "url": "https://doc.macoapp.de/55080-1805144m0.md"
+      }
+    ]
+  },
+  "by_process_name": {
+    "[MACO APP - Dokumentation]": [
+      {
+        "filename": "übersicht-849494m0.md",
+        "url": "https://doc.macoapp.de/%C3%BCbersicht-849494m0.md"
+      }
+    ],
+    "[MACO APP - Changelog]": [
+      {
+        "filename": "changelog.md",
+        "url": "https://doc.macoapp.de/changelog.md"
+      }
+    ],
+    "[Fehlercodes]": [
+      {
+        "filename": "fehlercodes-853880m0.md",
+        "url": "https://doc.macoapp.de/fehlercodes-853880m0.md"
+      }
+    ],
+    "[Geschäftsobjekte]": [
+      {
+        "filename": "geschäftsobjekte-849934m0.md",
+        "url": "https://doc.macoapp.de/gesch%C3%A4ftsobjekte-849934m0.md"
+      }
+    ],
+    "[Trigger (MACO APP)]": [
+      {
+        "filename": "trigger-maco-app-3036543f0.md",
+        "url": "https://doc.macoapp.de/trigger-maco-app-3036543f0.md"
+      }
+    ],
+    "Trigger (MACO APP) [Einzelansicht LF]": [
+      {
+        "filename": "trigger-lf.md",
+        "url": "https://doc.macoapp.de/trigger-lf.md"
+      }
+    ],
+    "Trigger (MACO APP) [Einzelansicht NB]": [
+      {
+        "filename": "trigger-nb.md",
+        "url": "https://doc.macoapp.de/trigger-nb.md"
+      }
+    ],
+    "[BO4E Lesen (Backend)]": [
+      {
+        "filename": "lesen.md",
+        "url": "https://doc.macoapp.de/lesen.md"
+      }
+    ],
+    "[Prozessdaten lesen (Backend)]": [
+      {
+        "filename": "prozessdaten-lesen-backend-3187758f0.md",
+        "url": "https://doc.macoapp.de/prozessdaten-lesen-backend-3187758f0.md"
+      }
+    ],
+    "[Prozessdaten LF (Backend)]": [
+      {
+        "filename": "prozessdaten-lf-backend-3036640f0.md",
+        "url": "https://doc.macoapp.de/prozessdaten-lf-backend-3036640f0.md"
+      }
+    ],
+    "[Prozessdaten NB (Backend)]": [
+      {
+        "filename": "prozessdaten-nb-backend-3187931f0.md",
+        "url": "https://doc.macoapp.de/prozessdaten-nb-backend-3187931f0.md"
+      }
+    ],
+    "[Prozessdaten MSB (Backend)]": [
+      {
+        "filename": "prozessdaten-msb-backend-3188572f0.md",
+        "url": "https://doc.macoapp.de/prozessdaten-msb-backend-3188572f0.md"
+      }
+    ],
+    "MaLo-Ident [Übersicht]": [
+      {
+        "filename": "übersicht-895124m0.md",
+        "url": "https://doc.macoapp.de/%C3%BCbersicht-895124m0.md"
+      }
+    ],
+    "[Übersicht]": [
+      {
+        "filename": "übersicht-1819302m0.md",
+        "url": "https://doc.macoapp.de/%C3%BCbersicht-1819302m0.md"
+      },
+      {
+        "filename": "übersicht-1301648m0.md",
+        "url": "https://doc.macoapp.de/%C3%BCbersicht-1301648m0.md"
+      }
+    ],
+    "[Abkürzungsverzeichnis]": [
+      {
+        "filename": "abkürzungsverzeichnis-1623168m0.md",
+        "url": "https://doc.macoapp.de/abk%C3%BCrzungsverzeichnis-1623168m0.md"
+      }
+    ],
+    "[Lieferant]": [
+      {
+        "filename": "lief.md",
+        "url": "https://doc.macoapp.de/lief.md"
+      }
+    ],
+    "Lieferant [Malo-Ident (Rolle LF)]": [
+      {
+        "filename": "malo-ident-rolle-lf-3119288f0.md",
+        "url": "https://doc.macoapp.de/malo-ident-rolle-lf-3119288f0.md"
+      }
+    ],
+    "Lieferant > Malo-Ident (Rolle LF) [Prozessübersicht]": [
+      {
+        "filename": "prozessübersicht-860918m0.md",
+        "url": "https://doc.macoapp.de/prozess%C3%BCbersicht-860918m0.md"
+      }
+    ],
+    "Lieferant [Kündigung LFA]": [
+      {
+        "filename": "kündigung-lfa-3118804f0.md",
+        "url": "https://doc.macoapp.de/k%C3%BCndigung-lfa-3118804f0.md"
+      }
+    ],
+    "Lieferant > Kündigung LFA [Prozessübersicht]": [
+      {
+        "filename": "prozessübersicht-860885m0.md",
+        "url": "https://doc.macoapp.de/prozess%C3%BCbersicht-860885m0.md"
+      }
+    ],
+    "Lieferant > Kündigung LFA > EBD [EBD E_0614]": [
+      {
+        "filename": "lf_0614.md",
+        "url": "https://doc.macoapp.de/lf_0614.md"
+      }
+    ],
+    "Lieferant [Kündigung LFN]": [
+      {
+        "filename": "kündigung-lfn-3118848f0.md",
+        "url": "https://doc.macoapp.de/k%C3%BCndigung-lfn-3118848f0.md"
+      }
+    ],
+    "Lieferant > Kündigung LFN [Prozessübersicht]": [
+      {
+        "filename": "prozessübersicht-860891m0.md",
+        "url": "https://doc.macoapp.de/prozess%C3%BCbersicht-860891m0.md"
+      }
+    ],
+    "Lieferant [Stornierung]": [
+      {
+        "filename": "stornierung-5000861f0.md",
+        "url": "https://doc.macoapp.de/stornierung-5000861f0.md"
+      }
+    ],
+    "Lieferant > Stornierung [Prozessübersicht]": [
+      {
+        "filename": "prozessübersicht-1621227m0.md",
+        "url": "https://doc.macoapp.de/prozess%C3%BCbersicht-1621227m0.md"
+      }
+    ],
+    "Lieferant [Lieferbeginn (Rolle LFN)]": [
+      {
+        "filename": "lieferbeginn.md",
+        "url": "https://doc.macoapp.de/lieferbeginn.md"
+      }
+    ],
+    "Lieferant > Lieferbeginn (Rolle LFN) [Prozessübersicht]": [
+      {
+        "filename": "prozessübersicht-853953m0.md",
+        "url": "https://doc.macoapp.de/prozess%C3%BCbersicht-853953m0.md"
+      }
+    ],
+    "Lieferant [Abmeldeanfrage NB -> LF (Rolle LFA)]": [
+      {
+        "filename": "abmeldeanfrage-nb-lf-rolle-lfa-3118774f0.md",
+        "url": "https://doc.macoapp.de/abmeldeanfrage-nb-lf-rolle-lfa-3118774f0.md"
+      }
+    ],
+    "Lieferant > Abmeldeanfrage NB -> LF (Rolle LFA) [Abmeldeanfrage NB -> LF (Rolle LFA)]": [
+      {
+        "filename": "abmeldeanfrage-nb-lf-rolle-lfa-860871m0.md",
+        "url": "https://doc.macoapp.de/abmeldeanfrage-nb-lf-rolle-lfa-860871m0.md"
+      }
+    ],
+    "Lieferant > Abmeldeanfrage NB -> LF (Rolle LFA) > EBD [EBD E_0624]": [
+      {
+        "filename": "ebd-e-0624-860873m0.md",
+        "url": "https://doc.macoapp.de/ebd-e-0624-860873m0.md"
+      }
+    ],
+    "Lieferant [Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle LFZ)]": [
+      {
+        "filename": "aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-3130103f0.md",
+        "url": "https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-3130103f0.md"
+      }
+    ],
+    "Lieferant > Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle LFZ) [Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle LFZ)]": [
+      {
+        "filename": "aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-861876m0.md",
+        "url": "https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-861876m0.md"
+      }
+    ],
+    "Lieferant [Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle LFA)]": [
+      {
+        "filename": "beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-3130117f0.md",
+        "url": "https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-3130117f0.md"
+      }
+    ],
+    "Lieferant > Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle LFA) [Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle LFA)]": [
+      {
+        "filename": "beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-861878m0.md",
+        "url": "https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-861878m0.md"
+      }
+    ],
+    "Lieferant [Abrechnungsdaten Netznutzungsabrechnung (Rolle LF)]": [
+      {
+        "filename": "abrechnungsdaten-netznutzungsabrechnung-rolle-lf-3130129f0.md",
+        "url": "https://doc.macoapp.de/abrechnungsdaten-netznutzungsabrechnung-rolle-lf-3130129f0.md"
+      }
+    ],
+    "Lieferant > Abrechnungsdaten Netznutzungsabrechnung (Rolle LF) [Abrechnungsdaten Netznutzungsabrechnung (Rolle LF)]": [
+      {
+        "filename": "abrechnungsdaten-netznutzungsabrechnung-rolle-lf-861883m0.md",
+        "url": "https://doc.macoapp.de/abrechnungsdaten-netznutzungsabrechnung-rolle-lf-861883m0.md"
+      }
+    ],
+    "Lieferant > Abrechnungsdaten Netznutzungsabrechnung (Rolle LF) > EBD [EBD E_0610]": [
+      {
+        "filename": "ebd-e-0610-861884m0.md",
+        "url": "https://doc.macoapp.de/ebd-e-0610-861884m0.md"
+      }
+    ],
+    "Lieferant [Abrechnungsdaten Bilanzkreisabrechnung (Rolle LF)]": [
+      {
+        "filename": "abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md",
+        "url": "https://doc.macoapp.de/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md"
+      }
+    ],
+    "Lieferant > Abrechnungsdaten Bilanzkreisabrechnung (Rolle LF) [Abrechnungsdaten Bilanzkreisabrechnung (Rolle LF)]": [
+      {
+        "filename": "abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-861885m0.md",
+        "url": "https://doc.macoapp.de/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-861885m0.md"
+      }
+    ],
+    "Lieferant > Abrechnungsdaten Bilanzkreisabrechnung (Rolle LF) > EBD [EBD E_0611]": [
+      {
+        "filename": "ebd-e-0611-861890m0.md",
+        "url": "https://doc.macoapp.de/ebd-e-0611-861890m0.md"
+      }
+    ],
+    "Lieferant [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle LF)]": [
+      {
+        "filename": "stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+        "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md"
+      }
+    ],
+    "Lieferant > Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle LF) [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle LF)]": [
+      {
+        "filename": "stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md",
+        "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md"
+      }
+    ],
+    "Lieferant > Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle LF) > EBD [EBD_0408]": [
+      {
+        "filename": "ebd-0408-1664123m0.md",
+        "url": "https://doc.macoapp.de/ebd-0408-1664123m0.md"
+      }
+    ],
+    "Lieferant [Stammdatenänderung vom MSB (verantwortlich) (Rolle LF)]": [
+      {
+        "filename": "stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+        "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md"
+      }
+    ],
+    "Lieferant > Stammdatenänderung vom MSB (verantwortlich) (Rolle LF) [Stammdatenänderung vom MSB (verantwortlich) (Rolle LF)]": [
+      {
+        "filename": "stammdatenänderung-vom-msb-verantwortlich-rolle-lf-861900m0.md",
+        "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-lf-861900m0.md"
+      }
+    ],
+    "Lieferant > Stammdatenänderung vom MSB (verantwortlich) (Rolle LF) > EBD [EBD_0412]": [
+      {
+        "filename": "ebd-0412-1664125m0.md",
+        "url": "https://doc.macoapp.de/ebd-0412-1664125m0.md"
+      }
+    ],
+    "Lieferant [Berechnungsformel (Rolle LF)]": [
+      {
+        "filename": "berechnungsformel-rolle-lf-3130236f0.md",
+        "url": "https://doc.macoapp.de/berechnungsformel-rolle-lf-3130236f0.md"
+      }
+    ],
+    "Lieferant > Berechnungsformel (Rolle LF) [Berechnungsformel (Rolle LF)]": [
+      {
+        "filename": "berechnungsformel-rolle-lf-861896m0.md",
+        "url": "https://doc.macoapp.de/berechnungsformel-rolle-lf-861896m0.md"
+      }
+    ],
+    "Lieferant [Lieferende LF -> NB (Rolle LF)]": [
+      {
+        "filename": "lieferende-lf-nb-rolle-lf-3119196f0.md",
+        "url": "https://doc.macoapp.de/lieferende-lf-nb-rolle-lf-3119196f0.md"
+      }
+    ],
+    "Lieferant > Lieferende LF -> NB (Rolle LF) [Lieferende LF -> NB (Rolle LF)]": [
+      {
+        "filename": "lieferende-lf-nb-rolle-lf-860905m0.md",
+        "url": "https://doc.macoapp.de/lieferende-lf-nb-rolle-lf-860905m0.md"
+      }
+    ],
+    "Lieferant [Lieferende NB -> LF (Rolle LF)]": [
+      {
+        "filename": "lieferende-nb-lf-rolle-lf-3129676f0.md",
+        "url": "https://doc.macoapp.de/lieferende-nb-lf-rolle-lf-3129676f0.md"
+      }
+    ],
+    "Lieferant > Lieferende NB -> LF (Rolle LF) [Lieferende NB -> LF (Rolle LF)]": [
+      {
+        "filename": "lieferende-nb-lf-rolle-lf-861871m0.md",
+        "url": "https://doc.macoapp.de/lieferende-nb-lf-rolle-lf-861871m0.md"
+      }
+    ],
+    "Lieferant > Lieferende NB -> LF (Rolle LF) > EBD [EBD E_0609]": [
+      {
+        "filename": "ebd-e-0609-861872m0.md",
+        "url": "https://doc.macoapp.de/ebd-e-0609-861872m0.md"
+      }
+    ],
+    "Lieferant [Beginn der Ersatz-/Grundversorgung (Rolle LF)]": [
+      {
+        "filename": "beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md",
+        "url": "https://doc.macoapp.de/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md"
+      }
+    ],
+    "Lieferant > Beginn der Ersatz-/Grundversorgung (Rolle LF) [Beginn der Ersatz-/Grundversorgung (Rolle LF)]": [
+      {
+        "filename": "beginn-der-ersatz-grundversorgung-rolle-lf-861880m0.md",
+        "url": "https://doc.macoapp.de/beginn-der-ersatz-grundversorgung-rolle-lf-861880m0.md"
+      }
+    ],
+    "Lieferant > Beginn der Ersatz-/Grundversorgung (Rolle LF) > EBD [EBD E_0615]": [
+      {
+        "filename": "ebd-e-0615-861882m0.md",
+        "url": "https://doc.macoapp.de/ebd-e-0615-861882m0.md"
+      }
+    ],
+    "Lieferant > Bestellung einer Konfiguration vom LF an MSB ( LF ) [Bestellung einer Konfiguration vom LF an MSB ( LF )]": [
+      {
+        "filename": "bestellung-einer-konfiguration-vom-lf-an-msb-lf-1677424m0.md",
+        "url": "https://doc.macoapp.de/bestellung-einer-konfiguration-vom-lf-an-msb-lf-1677424m0.md"
+      }
+    ],
+    "Lieferant > Überprüfung einer EEG-Marktlokation mit DV-Pflicht auf 100% LF-Zuordnung ( Rolle LF ) [Überprüfung einer EEG-Marktlokation mit DV-Pflicht auf 100% LF-Zuordnung ( Rolle LF )]": [
+      {
+        "filename": "überprüfung-einer-eeg-marktlokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-lf-1677940m0.md",
+        "url": "https://doc.macoapp.de/%C3%BCberpr%C3%BCfung-einer-eeg-marktlokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-lf-1677940m0.md"
+      }
+    ],
+    "Lieferant > Überprüfung einer EEG-Marktlokation mit DV-Pflicht auf 100% LF-Zuordnung ( Rolle LF ) [E_0603, E_0604, E_0605, E_0606]": [
+      {
+        "filename": "e-0603-e-0604-e-0605-e-0606-1677942m0.md",
+        "url": "https://doc.macoapp.de/e-0603-e-0604-e-0605-e-0606-1677942m0.md"
+      }
+    ],
+    "Lieferant > Aufbereitung und Übermittlung von Werten vom MSB der Marktlokation (Rolle LF) [Aufbereitung und Übermittlung von Werten vom MSB der Marktlokation (Rolle LF)]": [
+      {
+        "filename": "aufbereitung-und-übermittlung-von-werten-vom-msb-der-marktlokation-rolle-lf-1820159m0.md",
+        "url": "https://doc.macoapp.de/aufbereitung-und-%C3%BCbermittlung-von-werten-vom-msb-der-marktlokation-rolle-lf-1820159m0.md"
+      }
+    ],
+    "Lieferant > Übermittlung der bisher gemessenen Arbeits- und Leistungswerte (Rolle LF) [Übermittlung der bisher gemessenen Arbeits- und Leistungswerte (Rolle LF)]": [
+      {
+        "filename": "übermittlung-der-bisher-gemessenen-arbeits-und-leistungswerte-rolle-lf-1820160m0.md",
+        "url": "https://doc.macoapp.de/%C3%BCbermittlung-der-bisher-gemessenen-arbeits-und-leistungswerte-rolle-lf-1820160m0.md"
+      }
+    ],
+    "Lieferant > Übermittlung von Werten nach Typ 2 vom MSB an NB oder LF (Rolle LF) [Übermittlung von Werten nach Typ 2 vom MSB an NB oder LF (Rolle LF)]": [
+      {
+        "filename": "übermittlung-von-werten-nach-typ-2-vom-msb-an-nb-oder-lf-rolle-lf-1820441m0.md",
+        "url": "https://doc.macoapp.de/%C3%BCbermittlung-von-werten-nach-typ-2-vom-msb-an-nb-oder-lf-rolle-lf-1820441m0.md"
+      }
+    ],
+    "Lieferant [Stornierung Werte vom MSB der Marktlokation (Rolle LF)]": [
+      {
+        "filename": "stornierung-werte-vom-msb-der-marktlokation-rolle-lf-5825047f0.md",
+        "url": "https://doc.macoapp.de/stornierung-werte-vom-msb-der-marktlokation-rolle-lf-5825047f0.md"
+      }
+    ],
+    "Lieferant > Stornierung Werte vom MSB der Marktlokation (Rolle LF) [Stornierung Werte vom MSB der Marktlokation (Rolle LF)]": [
+      {
+        "filename": "stornierung-werte-vom-msb-der-marktlokation-rolle-lf-1820445m0.md",
+        "url": "https://doc.macoapp.de/stornierung-werte-vom-msb-der-marktlokation-rolle-lf-1820445m0.md"
+      }
+    ],
+    "[Netzbetreiber]": [
+      {
+        "filename": "netzbetreiber-3108591f0.md",
+        "url": "https://doc.macoapp.de/netzbetreiber-3108591f0.md"
+      }
+    ],
+    "Netzbetreiber [Malo-Ident (Rolle NB)]": [
+      {
+        "filename": "malo-ident-rolle-nb-3119292f0.md",
+        "url": "https://doc.macoapp.de/malo-ident-rolle-nb-3119292f0.md"
+      }
+    ],
+    "Netzbetreiber > Malo-Ident (Rolle NB) [Prozessübersicht]": [
+      {
+        "filename": "prozessübersicht-860919m0.md",
+        "url": "https://doc.macoapp.de/prozess%C3%BCbersicht-860919m0.md"
+      }
+    ],
+    "Netzbetreiber > Malo-Ident (Rolle NB) [EBD]": [
+      {
+        "filename": "ebd-3119296f0.md",
+        "url": "https://doc.macoapp.de/ebd-3119296f0.md"
+      }
+    ],
+    "Netzbetreiber > Malo-Ident (Rolle NB) > EBD [E_0594_Anfrage vom LF prüfen]": [
+      {
+        "filename": "ebd-e-0594-894801m0.md",
+        "url": "https://doc.macoapp.de/ebd-e-0594-894801m0.md"
+      }
+    ],
+    "Netzbetreiber [Lieferbeginn (Rolle NB)]": [
+      {
+        "filename": "lieferbeginn-rolle-nb-3108594f0.md",
+        "url": "https://doc.macoapp.de/lieferbeginn-rolle-nb-3108594f0.md"
+      }
+    ],
+    "Netzbetreiber > Lieferbeginn (Rolle NB) [Lieferbeginn (Rolle NB)]": [
+      {
+        "filename": "lieferbeginn-rolle-nb-860854m0.md",
+        "url": "https://doc.macoapp.de/lieferbeginn-rolle-nb-860854m0.md"
+      }
+    ],
+    "Netzbetreiber > Lieferbeginn (Rolle NB) > EBD [E_0622]": [
+      {
+        "filename": "e-0622-860859m0.md",
+        "url": "https://doc.macoapp.de/e-0622-860859m0.md"
+      }
+    ],
+    "Netzbetreiber > Lieferbeginn (Rolle NB) > EBD [E_0621]": [
+      {
+        "filename": "e-0621-860861m0.md",
+        "url": "https://doc.macoapp.de/e-0621-860861m0.md"
+      }
+    ],
+    "Netzbetreiber > Lieferbeginn (Rolle NB) > EBD [E_0623]": [
+      {
+        "filename": "e-0623-860863m0.md",
+        "url": "https://doc.macoapp.de/e-0623-860863m0.md"
+      }
+    ],
+    "Netzbetreiber [Abmeldeanfrage NB -> LFA (Rolle NB)]": [
+      {
+        "filename": "abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md",
+        "url": "https://doc.macoapp.de/abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md"
+      }
+    ],
+    "Netzbetreiber > Abmeldeanfrage NB -> LFA (Rolle NB) [Abmeldeanfrage NB -> LFA (Rolle NB)]": [
+      {
+        "filename": "abmeldeanfrage-nb-lfa-rolle-nb-860877m0.md",
+        "url": "https://doc.macoapp.de/abmeldeanfrage-nb-lfa-rolle-nb-860877m0.md"
+      }
+    ],
+    "Netzbetreiber [Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle NB)]": [
+      {
+        "filename": "aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md",
+        "url": "https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md"
+      }
+    ],
+    "Netzbetreiber > Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle NB) [Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle NB)]": [
+      {
+        "filename": "aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-861913m0.md",
+        "url": "https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-861913m0.md"
+      }
+    ],
+    "Netzbetreiber [Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle NB)]": [
+      {
+        "filename": "beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md",
+        "url": "https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md"
+      }
+    ],
+    "Netzbetreiber > Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle NB) [Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle NB)]": [
+      {
+        "filename": "beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-861915m0.md",
+        "url": "https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-861915m0.md"
+      }
+    ],
+    "Netzbetreiber [Abrechnungsdaten Netznutzungsabrechnung (Rolle NB)]": [
+      {
+        "filename": "abrechnungsdaten-netznutzungsabrechnung-rolle-nb-3130409f0.md",
+        "url": "https://doc.macoapp.de/abrechnungsdaten-netznutzungsabrechnung-rolle-nb-3130409f0.md"
+      }
+    ],
+    "Netzbetreiber > Abrechnungsdaten Netznutzungsabrechnung (Rolle NB) [Abrechnungsdaten Netznutzungsabrechnung (Rolle NB)]": [
+      {
+        "filename": "abrechnungsdaten-netznutzungsabrechnung-rolle-nb-861920m0.md",
+        "url": "https://doc.macoapp.de/abrechnungsdaten-netznutzungsabrechnung-rolle-nb-861920m0.md"
+      }
+    ],
+    "Netzbetreiber [Abrechnungsdaten Bilanzkreisabrechnung (Rolle NB)]": [
+      {
+        "filename": "abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md",
+        "url": "https://doc.macoapp.de/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md"
+      }
+    ],
+    "Netzbetreiber > Abrechnungsdaten Bilanzkreisabrechnung (Rolle NB) [Abrechnungsdaten Bilanzkreisabrechnung (Rolle NB)]": [
+      {
+        "filename": "abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-861922m0.md",
+        "url": "https://doc.macoapp.de/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-861922m0.md"
+      }
+    ],
+    "Netzbetreiber [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle NB)]": [
+      {
+        "filename": "stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+        "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md"
+      }
+    ],
+    "Netzbetreiber > Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle NB) [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle NB)]": [
+      {
+        "filename": "stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md",
+        "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md"
+      }
+    ],
+    "Netzbetreiber [Stammdatenänderung vom MSB (verantwortlich) (Rolle NB)]": [
+      {
+        "filename": "stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+        "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md"
+      }
+    ],
+    "Netzbetreiber > Stammdatenänderung vom MSB (verantwortlich) (Rolle NB) [Stammdatenänderung vom MSB (verantwortlich) (Rolle NB)]": [
+      {
+        "filename": "stammdatenänderung-vom-msb-verantwortlich-rolle-nb-861944m0.md",
+        "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-nb-861944m0.md"
+      }
+    ],
+    "Netzbetreiber > Stammdatenänderung vom MSB (verantwortlich) (Rolle NB) > EBD [EBD E_0415]": [
+      {
+        "filename": "ebd-e-0415-861945m0.md",
+        "url": "https://doc.macoapp.de/ebd-e-0415-861945m0.md"
+      }
+    ],
+    "Netzbetreiber [Einrichtung der Konfiguration aufgrund einer Zuordnung eines LF zu einer Marktlokation oder Tranche (Rolle NB)]": [
+      {
+        "filename": "einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md",
+        "url": "https://doc.macoapp.de/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md"
+      }
+    ],
+    "Netzbetreiber > Einrichtung der Konfiguration aufgrund einer Zuordnung eines LF zu einer Marktlokation oder Tranche (Rolle NB) [Einrichtung der Konfiguration aufgrund einer Zuordnung eines LF zu einer Marktlokation oder Tranche (Rolle NB)]": [
+      {
+        "filename": "einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-861937m0.md",
+        "url": "https://doc.macoapp.de/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-861937m0.md"
+      }
+    ],
+    "Netzbetreiber [Berechnungsformel (Rolle NB)]": [
+      {
+        "filename": "berechnungsformel-rolle-nb-3130464f0.md",
+        "url": "https://doc.macoapp.de/berechnungsformel-rolle-nb-3130464f0.md"
+      }
+    ],
+    "Netzbetreiber > Berechnungsformel (Rolle NB) [Berechnungsformel (Rolle NB)]": [
+      {
+        "filename": "berechnungsformel-rolle-nb-861955m0.md",
+        "url": "https://doc.macoapp.de/berechnungsformel-rolle-nb-861955m0.md"
+      }
+    ],
+    "Netzbetreiber [Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle NB)]": [
+      {
+        "filename": "wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-nb-3130602f0.md",
+        "url": "https://doc.macoapp.de/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-nb-3130602f0.md"
+      }
+    ],
+    "Netzbetreiber > Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle NB) [Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle NB)]": [
+      {
+        "filename": "wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-nb-861947m0.md",
+        "url": "https://doc.macoapp.de/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-nb-861947m0.md"
+      }
+    ],
+    "Netzbetreiber [Lieferende LF -> NB (Rolle NB)]": [
+      {
+        "filename": "lieferende-lf-nb-rolle-nb-3119240f0.md",
+        "url": "https://doc.macoapp.de/lieferende-lf-nb-rolle-nb-3119240f0.md"
+      }
+    ],
+    "Netzbetreiber > Lieferende LF -> NB (Rolle NB) [Lieferende LF -> NB (Rolle NB)]": [
+      {
+        "filename": "lieferende-lf-nb-rolle-nb-860912m0.md",
+        "url": "https://doc.macoapp.de/lieferende-lf-nb-rolle-nb-860912m0.md"
+      }
+    ],
+    "Netzbetreiber > Lieferende LF -> NB (Rolle NB) > EBD [E_0607]": [
+      {
+        "filename": "e-0607-860914m0.md",
+        "url": "https://doc.macoapp.de/e-0607-860914m0.md"
+      }
+    ],
+    "Netzbetreiber [Lieferende NB → LF (Rolle NB)]": [
+      {
+        "filename": "lieferende-nb-lf-rolle-nb-3130313f0.md",
+        "url": "https://doc.macoapp.de/lieferende-nb-lf-rolle-nb-3130313f0.md"
+      }
+    ],
+    "Netzbetreiber > Lieferende NB → LF (Rolle NB) [Lieferende NB → LF (Rolle NB)]": [
+      {
+        "filename": "lieferende-nb-lf-rolle-nb-861909m0.md",
+        "url": "https://doc.macoapp.de/lieferende-nb-lf-rolle-nb-861909m0.md"
+      }
+    ],
+    "Netzbetreiber [Beginn der Ersatz-/Grundversorgung (Rolle NB)]": [
+      {
+        "filename": "beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md",
+        "url": "https://doc.macoapp.de/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md"
+      }
+    ],
+    "Netzbetreiber > Beginn der Ersatz-/Grundversorgung (Rolle NB) [Beginn der Ersatz-/Grundversorgung (Rolle NB)]": [
+      {
+        "filename": "beginn-der-ersatz-grundversorgung-rolle-nb-861924m0.md",
+        "url": "https://doc.macoapp.de/beginn-der-ersatz-grundversorgung-rolle-nb-861924m0.md"
+      }
+    ],
+    "Netzbetreiber [Stornierung]": [
+      {
+        "filename": "stornierung-5001068f0.md",
+        "url": "https://doc.macoapp.de/stornierung-5001068f0.md"
+      }
+    ],
+    "Netzbetreiber > Stornierung [Prozessübersicht]": [
+      {
+        "filename": "prozessübersicht-1621259m0.md",
+        "url": "https://doc.macoapp.de/prozess%C3%BCbersicht-1621259m0.md"
+      }
+    ],
+    "Netzbetreiber > Überprüfung einer EEG-Marktlokation mit DV-Pflicht auf 100% LF-Zuordnung ( Rolle NB VNB ) [Überprüfung einer EEG-Marktlokation mit DV-Pflicht auf 100% LF-Zuordnung ( Rolle NB VNB )]": [
+      {
+        "filename": "überprüfung-einer-eeg-marktlokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-nb-vnb-1678015m0.md",
+        "url": "https://doc.macoapp.de/%C3%BCberpr%C3%BCfung-einer-eeg-marktlokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-nb-vnb-1678015m0.md"
+      }
+    ],
+    "[Messstellenbetreiber]": [
+      {
+        "filename": "messstellenbetreiber-3108784f0.md",
+        "url": "https://doc.macoapp.de/messstellenbetreiber-3108784f0.md"
+      }
+    ],
+    "Messstellenbetreiber [Einrichtung der Konfigurationen aufgrund einer Zuordnung eines LF (MSB)]": [
+      {
+        "filename": "einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+        "url": "https://doc.macoapp.de/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md"
+      }
+    ],
+    "Messstellenbetreiber > Einrichtung der Konfigurationen aufgrund einer Zuordnung eines LF (MSB) [Einrichtung der Konfigurationen aufgrund einer Zuordnung eines LF (MSB)]": [
+      {
+        "filename": "einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-881450m0.md",
+        "url": "https://doc.macoapp.de/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-881450m0.md"
+      }
+    ],
+    "Messstellenbetreiber [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle MSB)]": [
+      {
+        "filename": "stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+        "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md"
+      }
+    ],
+    "Messstellenbetreiber > Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle MSB) [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle MSB)]": [
+      {
+        "filename": "stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-861950m0.md",
+        "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-msb-861950m0.md"
+      }
+    ],
+    "Messstellenbetreiber > Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle MSB) > EBD [EBD E_0409]": [
+      {
+        "filename": "ebd-e-0409-861952m0.md",
+        "url": "https://doc.macoapp.de/ebd-e-0409-861952m0.md"
+      }
+    ],
+    "Messstellenbetreiber [Stammdatenänderung vom MSB (verantwortlich) (Rolle MSB)]": [
+      {
+        "filename": "stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+        "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md"
+      }
+    ],
+    "Messstellenbetreiber > Stammdatenänderung vom MSB (verantwortlich) (Rolle MSB) [Stammdatenänderung vom MSB (verantwortlich) (Rolle MSB)]": [
+      {
+        "filename": "stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+        "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-msb-861960m0.md"
+      }
+    ],
+    "Messstellenbetreiber > Stammdatenänderung vom MSB (verantwortlich) (Rolle MSB) > EBD [EBD E_0634]": [
+      {
+        "filename": "ebd-e-0634-881448m0.md",
+        "url": "https://doc.macoapp.de/ebd-e-0634-881448m0.md"
+      }
+    ],
+    "Messstellenbetreiber > Stammdatenänderung vom MSB (verantwortlich) (Rolle MSB) > EBD [EBD E_0635]": [
+      {
+        "filename": "ebd-e-0635-881449m0.md",
+        "url": "https://doc.macoapp.de/ebd-e-0635-881449m0.md"
+      }
+    ],
+    "Messstellenbetreiber [Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle MSB)]": [
+      {
+        "filename": "wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-msb-3130714f0.md",
+        "url": "https://doc.macoapp.de/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-msb-3130714f0.md"
+      }
+    ],
+    "Messstellenbetreiber > Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle MSB) [Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle MSB)]": [
+      {
+        "filename": "wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-msb-861961m0.md",
+        "url": "https://doc.macoapp.de/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-msb-861961m0.md"
+      }
+    ],
+    "Messstellenbetreiber [Stornierung]": [
+      {
+        "filename": "stornierung-5001051f0.md",
+        "url": "https://doc.macoapp.de/stornierung-5001051f0.md"
+      }
+    ],
+    "Messstellenbetreiber > Stornierung [Prozessübersicht]": [
+      {
+        "filename": "prozessübersicht-1621257m0.md",
+        "url": "https://doc.macoapp.de/prozess%C3%BCbersicht-1621257m0.md"
+      }
+    ],
+    "[Steuerprozesse nach Kundenanforderung]": [
+      {
+        "filename": "steuerprozesse-nach-kundenanforderung-3139945f0.md",
+        "url": "https://doc.macoapp.de/steuerprozesse-nach-kundenanforderung-3139945f0.md"
+      }
+    ],
+    "Steuerprozesse nach Kundenanforderung [ECS_Lieferbeginn (Rolle LF)]": [
+      {
+        "filename": "ecs-lieferbeginn-rolle-lf-863431m0.md",
+        "url": "https://doc.macoapp.de/ecs-lieferbeginn-rolle-lf-863431m0.md"
+      }
+    ],
+    "MaLo-Ident [MaloIdent APP]": [
+      {
+        "filename": "maloident-app-895196m0.md",
+        "url": "https://doc.macoapp.de/maloident-app-895196m0.md"
+      }
+    ],
+    "MaLo-Ident [Malo-Ident (Rolle LF)]": [
+      {
+        "filename": "malo-ident-rolle-lf-3312793f0.md",
+        "url": "https://doc.macoapp.de/malo-ident-rolle-lf-3312793f0.md"
+      }
+    ],
+    "MaLo-Ident > Malo-Ident (Rolle LF) [Prozessübersicht]": [
+      {
+        "filename": "prozessübersicht-892746m0.md",
+        "url": "https://doc.macoapp.de/prozess%C3%BCbersicht-892746m0.md"
+      }
+    ],
+    "MaLo-Ident [Malo-Ident (Rolle NB)]": [
+      {
+        "filename": "malo-ident-rolle-nb-3312796f0.md",
+        "url": "https://doc.macoapp.de/malo-ident-rolle-nb-3312796f0.md"
+      }
+    ],
+    "MaLo-Ident > Malo-Ident (Rolle NB) [Prozessübersicht]": [
+      {
+        "filename": "prozessübersicht-892748m0.md",
+        "url": "https://doc.macoapp.de/prozess%C3%BCbersicht-892748m0.md"
+      }
+    ],
+    "MaLo-Ident > Malo-Ident (Rolle NB) [Konzeption Umsetzung Ermittlung SAP]": [
+      {
+        "filename": "konzeption-umsetzung-ermittlung-sap-896590m0.md",
+        "url": "https://doc.macoapp.de/konzeption-umsetzung-ermittlung-sap-896590m0.md"
+      }
+    ],
+    "MaLo-Ident > Malo-Ident (Rolle NB) [EBD]": [
+      {
+        "filename": "ebd-3312797f0.md",
+        "url": "https://doc.macoapp.de/ebd-3312797f0.md"
+      }
+    ],
+    "MaLo-Ident > Malo-Ident (Rolle NB) > EBD [EBD E_0594]": [
+      {
+        "filename": "ebd-e-0594-894815m0.md",
+        "url": "https://doc.macoapp.de/ebd-e-0594-894815m0.md"
+      }
+    ],
+    "[Änderungsprotokoll BO4E Objekte]": [
+      {
+        "filename": "änderungsprotokoll-bo4e-objekte-1259115m0.md",
+        "url": "https://doc.macoapp.de/%C3%A4nderungsprotokoll-bo4e-objekte-1259115m0.md"
+      }
+    ],
+    "[Objekte]": [
+      {
+        "filename": "objekte-4440877f0.md",
+        "url": "https://doc.macoapp.de/objekte-4440877f0.md"
+      }
+    ],
+    "Objekte [AdHocSteuerkanal]": [
+      {
+        "filename": "adhocsteuerkanal-1300407m0.md",
+        "url": "https://doc.macoapp.de/adhocsteuerkanal-1300407m0.md"
+      }
+    ],
+    "Objekte [Anfrage]": [
+      {
+        "filename": "anfrage-1300409m0.md",
+        "url": "https://doc.macoapp.de/anfrage-1300409m0.md"
+      }
+    ],
+    "Objekte [Angebot]": [
+      {
+        "filename": "angebot-1300410m0.md",
+        "url": "https://doc.macoapp.de/angebot-1300410m0.md"
+      }
+    ],
+    "Objekte [Ansprechpartner]": [
+      {
+        "filename": "ansprechpartner-1300411m0.md",
+        "url": "https://doc.macoapp.de/ansprechpartner-1300411m0.md"
+      }
+    ],
+    "Objekte [Auftrag]": [
+      {
+        "filename": "auftrag-1300412m0.md",
+        "url": "https://doc.macoapp.de/auftrag-1300412m0.md"
+      }
+    ],
+    "Objekte [Avis]": [
+      {
+        "filename": "avis-1300413m0.md",
+        "url": "https://doc.macoapp.de/avis-1300413m0.md"
+      }
+    ],
+    "Objekte [Berechnungsformel]": [
+      {
+        "filename": "berechnungsformel-1300414m0.md",
+        "url": "https://doc.macoapp.de/berechnungsformel-1300414m0.md"
+      }
+    ],
+    "Objekte [Bilanzierung]": [
+      {
+        "filename": "bilanzierung-1300415m0.md",
+        "url": "https://doc.macoapp.de/bilanzierung-1300415m0.md"
+      }
+    ],
+    "Objekte [Bilanzkreis]": [
+      {
+        "filename": "bilanzkreis-1300416m0.md",
+        "url": "https://doc.macoapp.de/bilanzkreis-1300416m0.md"
+      }
+    ],
+    "Objekte [Energiemenge]": [
+      {
+        "filename": "energiemenge-1300418m0.md",
+        "url": "https://doc.macoapp.de/energiemenge-1300418m0.md"
+      }
+    ],
+    "Objekte [Geschaeftspartner]": [
+      {
+        "filename": "geschaeftspartner-1300419m0.md",
+        "url": "https://doc.macoapp.de/geschaeftspartner-1300419m0.md"
+      }
+    ],
+    "Objekte [Handelsunstimmigkeit]": [
+      {
+        "filename": "handelsunstimmigkeit-1300420m0.md",
+        "url": "https://doc.macoapp.de/handelsunstimmigkeit-1300420m0.md"
+      }
+    ],
+    "Objekte [Kommunikationsdaten]": [
+      {
+        "filename": "kommunikationsdaten-1300421m0.md",
+        "url": "https://doc.macoapp.de/kommunikationsdaten-1300421m0.md"
+      }
+    ],
+    "Objekte [Leistungskurvendefinition]": [
+      {
+        "filename": "leistungskurvendefinition-1300423m0.md",
+        "url": "https://doc.macoapp.de/leistungskurvendefinition-1300423m0.md"
+      }
+    ],
+    "Objekte [Lokationsbuendel]": [
+      {
+        "filename": "lokationsbuendel-1300424m0.md",
+        "url": "https://doc.macoapp.de/lokationsbuendel-1300424m0.md"
+      }
+    ],
+    "Objekte [Marktlokation]": [
+      {
+        "filename": "marktlokation-1300425m0.md",
+        "url": "https://doc.macoapp.de/marktlokation-1300425m0.md"
+      }
+    ],
+    "Objekte [Marktteilnehmer]": [
+      {
+        "filename": "marktteilnehmer-1300426m0.md",
+        "url": "https://doc.macoapp.de/marktteilnehmer-1300426m0.md"
+      }
+    ],
+    "Objekte [Messlokation]": [
+      {
+        "filename": "messlokation-1300428m0.md",
+        "url": "https://doc.macoapp.de/messlokation-1300428m0.md"
+      }
+    ],
+    "Objekte [Netzlokation]": [
+      {
+        "filename": "netzlokation-1300429m0.md",
+        "url": "https://doc.macoapp.de/netzlokation-1300429m0.md"
+      }
+    ],
+    "Objekte [Preisblatt]": [
+      {
+        "filename": "preisblatt-1300431m0.md",
+        "url": "https://doc.macoapp.de/preisblatt-1300431m0.md"
+      }
+    ],
+    "Objekte [Rechnung]": [
+      {
+        "filename": "rechnung-1300432m0.md",
+        "url": "https://doc.macoapp.de/rechnung-1300432m0.md"
+      }
+    ],
+    "Objekte [Reklamation]": [
+      {
+        "filename": "reklamation-1300433m0.md",
+        "url": "https://doc.macoapp.de/reklamation-1300433m0.md"
+      }
+    ],
+    "Objekte [Schaltzeitdefinition]": [
+      {
+        "filename": "schaltzeitdefinition-1300434m0.md",
+        "url": "https://doc.macoapp.de/schaltzeitdefinition-1300434m0.md"
+      }
+    ],
+    "Objekte [Sperrauftrag]": [
+      {
+        "filename": "sperrauftrag-1300435m0.md",
+        "url": "https://doc.macoapp.de/sperrauftrag-1300435m0.md"
+      }
+    ],
+    "Objekte [Statusbericht]": [
+      {
+        "filename": "statusbericht-1300436m0.md",
+        "url": "https://doc.macoapp.de/statusbericht-1300436m0.md"
+      }
+    ],
+    "Objekte [Statusmitteilung]": [
+      {
+        "filename": "statusmitteilung-1300437m0.md",
+        "url": "https://doc.macoapp.de/statusmitteilung-1300437m0.md"
+      }
+    ],
+    "Objekte [SteuerbareRessource]": [
+      {
+        "filename": "steuerbareressource-1300439m0.md",
+        "url": "https://doc.macoapp.de/steuerbareressource-1300439m0.md"
+      }
+    ],
+    "Objekte [Tarifinfo]": [
+      {
+        "filename": "tarifinfo-1300440m0.md",
+        "url": "https://doc.macoapp.de/tarifinfo-1300440m0.md"
+      }
+    ],
+    "Objekte [TechnischeRessource]": [
+      {
+        "filename": "technischeressource-1300441m0.md",
+        "url": "https://doc.macoapp.de/technischeressource-1300441m0.md"
+      }
+    ],
+    "Objekte [Tranche]": [
+      {
+        "filename": "tranche-1300442m0.md",
+        "url": "https://doc.macoapp.de/tranche-1300442m0.md"
+      }
+    ],
+    "Objekte [Vertrag]": [
+      {
+        "filename": "vertrag-1300443m0.md",
+        "url": "https://doc.macoapp.de/vertrag-1300443m0.md"
+      }
+    ],
+    "Objekte [Verwendungszeitraum]": [
+      {
+        "filename": "verwendungszeitraum-1300444m0.md",
+        "url": "https://doc.macoapp.de/verwendungszeitraum-1300444m0.md"
+      }
+    ],
+    "Objekte [WerteNachTyp2]": [
+      {
+        "filename": "wertenachtyp2-1300445m0.md",
+        "url": "https://doc.macoapp.de/wertenachtyp2-1300445m0.md"
+      }
+    ],
+    "Objekte [Zaehler]": [
+      {
+        "filename": "zaehler-1300446m0.md",
+        "url": "https://doc.macoapp.de/zaehler-1300446m0.md"
+      }
+    ],
+    "Objekte [Zaehlzeitdefinition]": [
+      {
+        "filename": "zaehlzeitdefinition-1300449m0.md",
+        "url": "https://doc.macoapp.de/zaehlzeitdefinition-1300449m0.md"
+      }
+    ],
+    "Prüfi > UTILMD-Strom [55077]": [
+      {
+        "filename": "55077-1805145m0.md",
+        "url": "https://doc.macoapp.de/55077-1805145m0.md"
+      }
+    ],
+    "Prüfi > UTILMD-Strom [55078]": [
+      {
+        "filename": "55078-1305072m0.md",
+        "url": "https://doc.macoapp.de/55078-1305072m0.md"
+      }
+    ],
+    "Prüfi > UTILMD-Strom [55080]": [
+      {
+        "filename": "55080-1805144m0.md",
+        "url": "https://doc.macoapp.de/55080-1805144m0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht LF [ECS Steuerprozess Lieferbeginn]": [
+      {
+        "filename": "ecs-steuerprozess-lieferbeginn-14958780e0.md",
+        "url": "https://doc.macoapp.de/ecs-steuerprozess-lieferbeginn-14958780e0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht LF [Identifikation einer Marktlokation]": [
+      {
+        "filename": "identifikation-einer-marktlokation-14987188e0.md",
+        "url": "https://doc.macoapp.de/identifikation-einer-marktlokation-14987188e0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht LF [Kündigungsprozess zwischen Lieferanten]": [
+      {
+        "filename": "kündigungsprozess-zwischen-lieferanten-14987263e0.md",
+        "url": "https://doc.macoapp.de/k%C3%BCndigungsprozess-zwischen-lieferanten-14987263e0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht LF [Lieferbeginn]": [
+      {
+        "filename": "lieferbeginn-14992210e0.md",
+        "url": "https://doc.macoapp.de/lieferbeginn-14992210e0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht LF [Lieferende von Lieferant an Netzbetreiber]": [
+      {
+        "filename": "lieferende-von-lieferant-an-netzbetreiber-14992421e0.md",
+        "url": "https://doc.macoapp.de/lieferende-von-lieferant-an-netzbetreiber-14992421e0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht LF [Stammdatenänderung vom Lieferanten (verantwortlich)]": [
+      {
+        "filename": "stammdatenänderung-vom-lieferanten-verantwortlich-15239974e0.md",
+        "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-lieferanten-verantwortlich-15239974e0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht LF [Anfrage nach Stornierung ]": [
+      {
+        "filename": "anfrage-nach-stornierung-21893877e0.md",
+        "url": "https://doc.macoapp.de/anfrage-nach-stornierung-21893877e0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht NB [Anfrage zur Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche]": [
+      {
+        "filename": "anfrage-zur-beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-14992646e0.md",
+        "url": "https://doc.macoapp.de/anfrage-zur-beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-14992646e0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht NB [Aufhebung der Zuordnung des LFZ zur Marklokation bzw. Tranche versenden]": [
+      {
+        "filename": "aufhebung-der-zuordnung-des-lfz-zur-marklokation-bzw-tranche-versenden-14333135e0.md",
+        "url": "https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marklokation-bzw-tranche-versenden-14333135e0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht NB [Beendigung der Zuordnung des LFA zur Marklokation bzw. Tranche]": [
+      {
+        "filename": "beendigung-der-zuordnung-des-lfa-zur-marklokation-bzw-tranche-14994219e0.md",
+        "url": "https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marklokation-bzw-tranche-14994219e0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht NB [Abrechnungsdaten Netznutzungsabrechnung versenden]": [
+      {
+        "filename": "abrechnungsdaten-netznutzungsabrechnung-versenden-14333071e0.md",
+        "url": "https://doc.macoapp.de/abrechnungsdaten-netznutzungsabrechnung-versenden-14333071e0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht NB [Abrechnungsdaten Bilanzkreisabrechnung versenden]": [
+      {
+        "filename": "abrechnungsdaten-bilanzkreisabrechnung-versenden-14994259e0.md",
+        "url": "https://doc.macoapp.de/abrechnungsdaten-bilanzkreisabrechnung-versenden-14994259e0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht NB [Stammdatenänderung vom Netzbetreiber (verantwortlich)]": [
+      {
+        "filename": "stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md",
+        "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-14994280e0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht NB [Einrichtung der Konfigurationen aufgrund einer Zuordnung eines LF zu einer MaLo oder Tranche]": [
+      {
+        "filename": "einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-zu-einer-malo-oder-tranche-14994418e0.md",
+        "url": "https://doc.macoapp.de/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-zu-einer-malo-oder-tranche-14994418e0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht NB [Übermittlung der Berechnungsformel]": [
+      {
+        "filename": "übermittlung-der-berechnungsformel-15090201e0.md",
+        "url": "https://doc.macoapp.de/%C3%BCbermittlung-der-berechnungsformel-15090201e0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht NB [Wiederherstellung Anschlussnutzung nach LB]": [
+      {
+        "filename": "wiederherstellung-anschlussnutzung-nach-lb-15090248e0.md",
+        "url": "https://doc.macoapp.de/wiederherstellung-anschlussnutzung-nach-lb-15090248e0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht NB [Lieferende von Netzbetreiber an Lieferant]": [
+      {
+        "filename": "lieferende-von-netzbetreiber-an-lieferant-15090292e0.md",
+        "url": "https://doc.macoapp.de/lieferende-von-netzbetreiber-an-lieferant-15090292e0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht NB [Ersatz-/Grundversorgung]": [
+      {
+        "filename": "ersatz-grundversorgung-14984068e0.md",
+        "url": "https://doc.macoapp.de/ersatz-grundversorgung-14984068e0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht NB [Anfrage nach Stornierung]": [
+      {
+        "filename": "anfrage-nach-stornierung-21894158e0.md",
+        "url": "https://doc.macoapp.de/anfrage-nach-stornierung-21894158e0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht NB [Überprüfung einner EEG-Marklokation mit DV-Pflicht auf 100% LF-Zuordnung (Rolle NB)]": [
+      {
+        "filename": "überprüfung-einner-eeg-marklokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-nb-25151089e0.md",
+        "url": "https://doc.macoapp.de/%C3%BCberpr%C3%BCfung-einner-eeg-marklokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-nb-25151089e0.md"
+      }
+    ],
+    "Trigger (MACO APP) > Einzelansicht MSB [Stammdatenänderung vom Messstellenbetreiber (verantwortlich)]": [
+      {
+        "filename": "stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md",
+        "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md"
+      }
+    ],
+    "Trigger (MACO APP) [Anfrage nach Stornierung]": [
+      {
+        "filename": "anfrage-nach-stornierung-21894185e0.md",
+        "url": "https://doc.macoapp.de/anfrage-nach-stornierung-21894185e0.md"
+      }
+    ],
+    "Trigger (MACO APP) [Trigger Events]": [
+      {
+        "filename": "trigger-events-14016919e0.md",
+        "url": "https://doc.macoapp.de/trigger-events-14016919e0.md"
+      }
+    ],
+    "Trigger (MACO APP) [Authentifizierung]": [
+      {
+        "filename": "authentifizierung-15828008e0.md",
+        "url": "https://doc.macoapp.de/authentifizierung-15828008e0.md"
+      }
+    ],
+    "BO4E Lesen (Backend) [Avis lesen]": [
+      {
+        "filename": "avis-lesen-14017011e0.md",
+        "url": "https://doc.macoapp.de/avis-lesen-14017011e0.md"
+      }
+    ],
+    "BO4E Lesen (Backend) [Berechnungsformel lesen]": [
+      {
+        "filename": "berechnungsformel-lesen-14017012e0.md",
+        "url": "https://doc.macoapp.de/berechnungsformel-lesen-14017012e0.md"
+      }
+    ],
+    "BO4E Lesen (Backend) [Bilanzierung lesen]": [
+      {
+        "filename": "bilanzierung-lesen-14017013e0.md",
+        "url": "https://doc.macoapp.de/bilanzierung-lesen-14017013e0.md"
+      }
+    ],
+    "BO4E Lesen (Backend) [Energieliefervertrag lesen]": [
+      {
+        "filename": "energieliefervertrag-lesen-14017014e0.md",
+        "url": "https://doc.macoapp.de/energieliefervertrag-lesen-14017014e0.md"
+      }
+    ],
+    "BO4E Lesen (Backend) [Energiemengen aus Abrechnungskontext  lesen]": [
+      {
+        "filename": "energiemengen-aus-abrechnungskontext-lesen-14017015e0.md",
+        "url": "https://doc.macoapp.de/energiemengen-aus-abrechnungskontext-lesen-14017015e0.md"
+      }
+    ],
+    "BO4E Lesen (Backend) [Lastgangs einer Lokation lesen]": [
+      {
+        "filename": "lastgangs-einer-lokation-lesen-14017016e0.md",
+        "url": "https://doc.macoapp.de/lastgangs-einer-lokation-lesen-14017016e0.md"
+      }
+    ],
+    "BO4E Lesen (Backend) [Zählerstand einer Lokation lesen]": [
+      {
+        "filename": "zählerstand-einer-lokation-lesen-14017017e0.md",
+        "url": "https://doc.macoapp.de/z%C3%A4hlerstand-einer-lokation-lesen-14017017e0.md"
+      }
+    ],
+    "BO4E Lesen (Backend) [Kommunikationsdaten des Serviceanbieters lesen]": [
+      {
+        "filename": "kommunikationsdaten-des-serviceanbieters-lesen-14017018e0.md",
+        "url": "https://doc.macoapp.de/kommunikationsdaten-des-serviceanbieters-lesen-14017018e0.md"
+      }
+    ],
+    "BO4E Lesen (Backend) [Lokationsbündel lesen]": [
+      {
+        "filename": "lokationsbündel-lesen-14017019e0.md",
+        "url": "https://doc.macoapp.de/lokationsb%C3%BCndel-lesen-14017019e0.md"
+      }
+    ],
+    "BO4E Lesen (Backend) [Marktlokation lesen]": [
+      {
+        "filename": "marktlokation-lesen-14017020e0.md",
+        "url": "https://doc.macoapp.de/marktlokation-lesen-14017020e0.md"
+      }
+    ],
+    "BO4E Lesen (Backend) [Messlokation lesen]": [
+      {
+        "filename": "messlokation-lesen-14017024e0.md",
+        "url": "https://doc.macoapp.de/messlokation-lesen-14017024e0.md"
+      }
+    ],
+    "BO4E Lesen (Backend) [Messstellenbetriebsvertrag lesen]": [
+      {
+        "filename": "messstellenbetriebsvertrag-lesen-14017025e0.md",
+        "url": "https://doc.macoapp.de/messstellenbetriebsvertrag-lesen-14017025e0.md"
+      }
+    ],
+    "BO4E Lesen (Backend) [Netzlokation lesen]": [
+      {
+        "filename": "netzlokation-lesen-14017026e0.md",
+        "url": "https://doc.macoapp.de/netzlokation-lesen-14017026e0.md"
+      }
+    ],
+    "BO4E Lesen (Backend) [Netznutzungsvertrag lesen]": [
+      {
+        "filename": "netznutzungsvertrag-lesen-14017027e0.md",
+        "url": "https://doc.macoapp.de/netznutzungsvertrag-lesen-14017027e0.md"
+      }
+    ],
+    "BO4E Lesen (Backend) [Preisblatt lesen]": [
+      {
+        "filename": "preisblatt-lesen-24422191e0.md",
+        "url": "https://doc.macoapp.de/preisblatt-lesen-24422191e0.md"
+      }
+    ],
+    "BO4E Lesen (Backend) [Steuerbare Ressource lesen]": [
+      {
+        "filename": "steuerbare-ressource-lesen-14017028e0.md",
+        "url": "https://doc.macoapp.de/steuerbare-ressource-lesen-14017028e0.md"
+      }
+    ],
+    "BO4E Lesen (Backend) [Technische Ressource lesen]": [
+      {
+        "filename": "technische-ressource-lesen-14017029e0.md",
+        "url": "https://doc.macoapp.de/technische-ressource-lesen-14017029e0.md"
+      }
+    ],
+    "BO4E Lesen (Backend) [Tranche lesen]": [
+      {
+        "filename": "tranche-lesen-14017030e0.md",
+        "url": "https://doc.macoapp.de/tranche-lesen-14017030e0.md"
+      }
+    ],
+    "BO4E Lesen (Backend) [Zähler lesen]": [
+      {
+        "filename": "zähler-lesen-14017031e0.md",
+        "url": "https://doc.macoapp.de/z%C3%A4hler-lesen-14017031e0.md"
+      }
+    ],
+    "Prozessdaten lesen (Backend) [Zuordnungsemächtigung lesen]": [
+      {
+        "filename": "zuordnungsemächtigung-lesen-14665842e0.md",
+        "url": "https://doc.macoapp.de/zuordnungsem%C3%A4chtigung-lesen-14665842e0.md"
+      }
+    ],
+    "Prozessdaten LF (Backend) [Prozessdaten aktualiseren]": [
+      {
+        "filename": "prozessdaten-aktualiseren-14017182e0.md",
+        "url": "https://doc.macoapp.de/prozessdaten-aktualiseren-14017182e0.md"
+      }
+    ],
+    "Prozessdaten LF (Backend) [Prozessdaten erstellen]": [
+      {
+        "filename": "prozessdaten-erstellen-14017183e0.md",
+        "url": "https://doc.macoapp.de/prozessdaten-erstellen-14017183e0.md"
+      }
+    ],
+    "Prozessdaten NB (Backend) [Prozessdaten aktualiseren]": [
+      {
+        "filename": "prozessdaten-aktualiseren-14666382e0.md",
+        "url": "https://doc.macoapp.de/prozessdaten-aktualiseren-14666382e0.md"
+      }
+    ],
+    "Prozessdaten NB (Backend) [Prozessdaten erstellen]": [
+      {
+        "filename": "prozessdaten-erstellen-14666311e0.md",
+        "url": "https://doc.macoapp.de/prozessdaten-erstellen-14666311e0.md"
+      }
+    ],
+    "Prozessdaten MSB (Backend) [Prozessdaten aktualiseren]": [
+      {
+        "filename": "prozessdaten-aktualiseren-14669402e0.md",
+        "url": "https://doc.macoapp.de/prozessdaten-aktualiseren-14669402e0.md"
+      }
+    ],
+    "Prozessdaten MSB (Backend) [Prozessdaten erstellen]": [
+      {
+        "filename": "prozessdaten-erstellen-14669391e0.md",
+        "url": "https://doc.macoapp.de/prozessdaten-erstellen-14669391e0.md"
+      }
+    ],
+    "MaloIdent LF (Backend) [Prozessdaten aktualisieren]": [
+      {
+        "filename": "prozessdaten-aktualisieren-15106071e0.md",
+        "url": "https://doc.macoapp.de/prozessdaten-aktualisieren-15106071e0.md"
+      }
+    ],
+    "MaloIdent LF (Backend) [Identifikation einer Marktlokation]": [
+      {
+        "filename": "identifikation-einer-marktlokation-16024919e0.md",
+        "url": "https://doc.macoapp.de/identifikation-einer-marktlokation-16024919e0.md"
+      }
+    ],
+    "MaloIdent NB (Backend) [Identifizierung der MaLo]": [
+      {
+        "filename": "identifizierung-der-malo-14666443e0.md",
+        "url": "https://doc.macoapp.de/identifizierung-der-malo-14666443e0.md"
+      }
+    ],
+    "MaloIdent NB (Backend) [Stammdaten der identifiz. MaLo]": [
+      {
+        "filename": "stammdaten-der-identifiz-malo-14666444e0.md",
+        "url": "https://doc.macoapp.de/stammdaten-der-identifiz-malo-14666444e0.md"
+      }
+    ],
+    "Obsolet [Verwendungszeitraum einer Marktlokation ermitteln]": [
+      {
+        "filename": "verwendungszeitraum-einer-marktlokation-ermitteln-14017021e0.md",
+        "url": "https://doc.macoapp.de/verwendungszeitraum-einer-marktlokation-ermitteln-14017021e0.md"
+      }
+    ],
+    "Obsolet [Absenderdaten lesen]": [
+      {
+        "filename": "absenderdaten-lesen-14017022e0.md",
+        "url": "https://doc.macoapp.de/absenderdaten-lesen-14017022e0.md"
+      }
+    ],
+    "Obsolet [Empfängerdaten lesen]": [
+      {
+        "filename": "empfängerdaten-lesen-14017023e0.md",
+        "url": "https://doc.macoapp.de/empf%C3%A4ngerdaten-lesen-14017023e0.md"
+      }
+    ],
+    "MaLo-Ident [MaloIdent Anfrage auslösen]": [
+      {
+        "filename": "maloident-anfrage-auslösen-15144286e0.md",
+        "url": "https://doc.macoapp.de/maloident-anfrage-ausl%C3%B6sen-15144286e0.md"
+      }
+    ],
+    "MaLo-Ident [Identifizierung der MaLo]": [
+      {
+        "filename": "identifizierung-der-malo-15144292e0.md",
+        "url": "https://doc.macoapp.de/identifizierung-der-malo-15144292e0.md"
+      }
+    ],
+    "MaLo-Ident [Stammdaten der identifiz. MaLo]": [
+      {
+        "filename": "stammdaten-der-identifiz-malo-15144303e0.md",
+        "url": "https://doc.macoapp.de/stammdaten-der-identifiz-malo-15144303e0.md"
+      }
+    ],
+    "MaLo-Ident [Prozessdaten aktualisieren]": [
+      {
+        "filename": "prozessdaten-aktualisieren-15144289e0.md",
+        "url": "https://doc.macoapp.de/prozessdaten-aktualisieren-15144289e0.md"
+      }
+    ],
+    "MCS Eingang (MACO APP) [Empfang einer Marktnachricht]": [
+      {
+        "filename": "empfang-einer-marktnachricht-16367537e0.md",
+        "url": "https://doc.macoapp.de/empfang-einer-marktnachricht-16367537e0.md"
+      }
+    ]
+  },
+  "by_filename": {
+    "übersicht-849494m0.md": {
+      "context": "[MACO APP - Dokumentation]",
+      "url": "https://doc.macoapp.de/%C3%BCbersicht-849494m0.md"
+    },
+    "changelog.md": {
+      "context": "[MACO APP - Changelog]",
+      "url": "https://doc.macoapp.de/changelog.md"
+    },
+    "fehlercodes-853880m0.md": {
+      "context": "[Fehlercodes]",
+      "url": "https://doc.macoapp.de/fehlercodes-853880m0.md"
+    },
+    "geschäftsobjekte-849934m0.md": {
+      "context": "[Geschäftsobjekte]",
+      "url": "https://doc.macoapp.de/gesch%C3%A4ftsobjekte-849934m0.md"
+    },
+    "trigger-maco-app-3036543f0.md": {
+      "context": "[Trigger (MACO APP)]",
+      "url": "https://doc.macoapp.de/trigger-maco-app-3036543f0.md"
+    },
+    "trigger-lf.md": {
+      "context": "Trigger (MACO APP) [Einzelansicht LF]",
+      "url": "https://doc.macoapp.de/trigger-lf.md"
+    },
+    "trigger-nb.md": {
+      "context": "Trigger (MACO APP) [Einzelansicht NB]",
+      "url": "https://doc.macoapp.de/trigger-nb.md"
+    },
+    "lesen.md": {
+      "context": "[BO4E Lesen (Backend)]",
+      "url": "https://doc.macoapp.de/lesen.md"
+    },
+    "prozessdaten-lesen-backend-3187758f0.md": {
+      "context": "[Prozessdaten lesen (Backend)]",
+      "url": "https://doc.macoapp.de/prozessdaten-lesen-backend-3187758f0.md"
+    },
+    "prozessdaten-lf-backend-3036640f0.md": {
+      "context": "[Prozessdaten LF (Backend)]",
+      "url": "https://doc.macoapp.de/prozessdaten-lf-backend-3036640f0.md"
+    },
+    "prozessdaten-nb-backend-3187931f0.md": {
+      "context": "[Prozessdaten NB (Backend)]",
+      "url": "https://doc.macoapp.de/prozessdaten-nb-backend-3187931f0.md"
+    },
+    "prozessdaten-msb-backend-3188572f0.md": {
+      "context": "[Prozessdaten MSB (Backend)]",
+      "url": "https://doc.macoapp.de/prozessdaten-msb-backend-3188572f0.md"
+    },
+    "übersicht-895124m0.md": {
+      "context": "MaLo-Ident [Übersicht]",
+      "url": "https://doc.macoapp.de/%C3%BCbersicht-895124m0.md"
+    },
+    "übersicht-1819302m0.md": {
+      "context": "[Übersicht]",
+      "url": "https://doc.macoapp.de/%C3%BCbersicht-1819302m0.md"
+    },
+    "abkürzungsverzeichnis-1623168m0.md": {
+      "context": "[Abkürzungsverzeichnis]",
+      "url": "https://doc.macoapp.de/abk%C3%BCrzungsverzeichnis-1623168m0.md"
+    },
+    "lief.md": {
+      "context": "[Lieferant]",
+      "url": "https://doc.macoapp.de/lief.md"
+    },
+    "malo-ident-rolle-lf-3119288f0.md": {
+      "context": "Lieferant [Malo-Ident (Rolle LF)]",
+      "url": "https://doc.macoapp.de/malo-ident-rolle-lf-3119288f0.md"
+    },
+    "prozessübersicht-860918m0.md": {
+      "context": "Lieferant > Malo-Ident (Rolle LF) [Prozessübersicht]",
+      "url": "https://doc.macoapp.de/prozess%C3%BCbersicht-860918m0.md"
+    },
+    "kündigung-lfa-3118804f0.md": {
+      "context": "Lieferant [Kündigung LFA]",
+      "url": "https://doc.macoapp.de/k%C3%BCndigung-lfa-3118804f0.md"
+    },
+    "prozessübersicht-860885m0.md": {
+      "context": "Lieferant > Kündigung LFA [Prozessübersicht]",
+      "url": "https://doc.macoapp.de/prozess%C3%BCbersicht-860885m0.md"
+    },
+    "lf_0614.md": {
+      "context": "Lieferant > Kündigung LFA > EBD [EBD E_0614]",
+      "url": "https://doc.macoapp.de/lf_0614.md"
+    },
+    "kündigung-lfn-3118848f0.md": {
+      "context": "Lieferant [Kündigung LFN]",
+      "url": "https://doc.macoapp.de/k%C3%BCndigung-lfn-3118848f0.md"
+    },
+    "prozessübersicht-860891m0.md": {
+      "context": "Lieferant > Kündigung LFN [Prozessübersicht]",
+      "url": "https://doc.macoapp.de/prozess%C3%BCbersicht-860891m0.md"
+    },
+    "stornierung-5000861f0.md": {
+      "context": "Lieferant [Stornierung]",
+      "url": "https://doc.macoapp.de/stornierung-5000861f0.md"
+    },
+    "prozessübersicht-1621227m0.md": {
+      "context": "Lieferant > Stornierung [Prozessübersicht]",
+      "url": "https://doc.macoapp.de/prozess%C3%BCbersicht-1621227m0.md"
+    },
+    "lieferbeginn.md": {
+      "context": "Lieferant [Lieferbeginn (Rolle LFN)]",
+      "url": "https://doc.macoapp.de/lieferbeginn.md"
+    },
+    "prozessübersicht-853953m0.md": {
+      "context": "Lieferant > Lieferbeginn (Rolle LFN) [Prozessübersicht]",
+      "url": "https://doc.macoapp.de/prozess%C3%BCbersicht-853953m0.md"
+    },
+    "abmeldeanfrage-nb-lf-rolle-lfa-3118774f0.md": {
+      "context": "Lieferant [Abmeldeanfrage NB -> LF (Rolle LFA)]",
+      "url": "https://doc.macoapp.de/abmeldeanfrage-nb-lf-rolle-lfa-3118774f0.md"
+    },
+    "abmeldeanfrage-nb-lf-rolle-lfa-860871m0.md": {
+      "context": "Lieferant > Abmeldeanfrage NB -> LF (Rolle LFA) [Abmeldeanfrage NB -> LF (Rolle LFA)]",
+      "url": "https://doc.macoapp.de/abmeldeanfrage-nb-lf-rolle-lfa-860871m0.md"
+    },
+    "ebd-e-0624-860873m0.md": {
+      "context": "Lieferant > Abmeldeanfrage NB -> LF (Rolle LFA) > EBD [EBD E_0624]",
+      "url": "https://doc.macoapp.de/ebd-e-0624-860873m0.md"
+    },
+    "aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-3130103f0.md": {
+      "context": "Lieferant [Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle LFZ)]",
+      "url": "https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-3130103f0.md"
+    },
+    "aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-861876m0.md": {
+      "context": "Lieferant > Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle LFZ) [Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle LFZ)]",
+      "url": "https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-861876m0.md"
+    },
+    "beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-3130117f0.md": {
+      "context": "Lieferant [Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle LFA)]",
+      "url": "https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-3130117f0.md"
+    },
+    "beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-861878m0.md": {
+      "context": "Lieferant > Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle LFA) [Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle LFA)]",
+      "url": "https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-861878m0.md"
+    },
+    "abrechnungsdaten-netznutzungsabrechnung-rolle-lf-3130129f0.md": {
+      "context": "Lieferant [Abrechnungsdaten Netznutzungsabrechnung (Rolle LF)]",
+      "url": "https://doc.macoapp.de/abrechnungsdaten-netznutzungsabrechnung-rolle-lf-3130129f0.md"
+    },
+    "abrechnungsdaten-netznutzungsabrechnung-rolle-lf-861883m0.md": {
+      "context": "Lieferant > Abrechnungsdaten Netznutzungsabrechnung (Rolle LF) [Abrechnungsdaten Netznutzungsabrechnung (Rolle LF)]",
+      "url": "https://doc.macoapp.de/abrechnungsdaten-netznutzungsabrechnung-rolle-lf-861883m0.md"
+    },
+    "ebd-e-0610-861884m0.md": {
+      "context": "Lieferant > Abrechnungsdaten Netznutzungsabrechnung (Rolle LF) > EBD [EBD E_0610]",
+      "url": "https://doc.macoapp.de/ebd-e-0610-861884m0.md"
+    },
+    "abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md": {
+      "context": "Lieferant [Abrechnungsdaten Bilanzkreisabrechnung (Rolle LF)]",
+      "url": "https://doc.macoapp.de/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md"
+    },
+    "abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-861885m0.md": {
+      "context": "Lieferant > Abrechnungsdaten Bilanzkreisabrechnung (Rolle LF) [Abrechnungsdaten Bilanzkreisabrechnung (Rolle LF)]",
+      "url": "https://doc.macoapp.de/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-861885m0.md"
+    },
+    "ebd-e-0611-861890m0.md": {
+      "context": "Lieferant > Abrechnungsdaten Bilanzkreisabrechnung (Rolle LF) > EBD [EBD E_0611]",
+      "url": "https://doc.macoapp.de/ebd-e-0611-861890m0.md"
+    },
+    "stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md": {
+      "context": "Lieferant [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle LF)]",
+      "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md"
+    },
+    "stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md": {
+      "context": "Lieferant > Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle LF) [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle LF)]",
+      "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md"
+    },
+    "ebd-0408-1664123m0.md": {
+      "context": "Lieferant > Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle LF) > EBD [EBD_0408]",
+      "url": "https://doc.macoapp.de/ebd-0408-1664123m0.md"
+    },
+    "stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md": {
+      "context": "Lieferant [Stammdatenänderung vom MSB (verantwortlich) (Rolle LF)]",
+      "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md"
+    },
+    "stammdatenänderung-vom-msb-verantwortlich-rolle-lf-861900m0.md": {
+      "context": "Lieferant > Stammdatenänderung vom MSB (verantwortlich) (Rolle LF) [Stammdatenänderung vom MSB (verantwortlich) (Rolle LF)]",
+      "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-lf-861900m0.md"
+    },
+    "ebd-0412-1664125m0.md": {
+      "context": "Lieferant > Stammdatenänderung vom MSB (verantwortlich) (Rolle LF) > EBD [EBD_0412]",
+      "url": "https://doc.macoapp.de/ebd-0412-1664125m0.md"
+    },
+    "berechnungsformel-rolle-lf-3130236f0.md": {
+      "context": "Lieferant [Berechnungsformel (Rolle LF)]",
+      "url": "https://doc.macoapp.de/berechnungsformel-rolle-lf-3130236f0.md"
+    },
+    "berechnungsformel-rolle-lf-861896m0.md": {
+      "context": "Lieferant > Berechnungsformel (Rolle LF) [Berechnungsformel (Rolle LF)]",
+      "url": "https://doc.macoapp.de/berechnungsformel-rolle-lf-861896m0.md"
+    },
+    "lieferende-lf-nb-rolle-lf-3119196f0.md": {
+      "context": "Lieferant [Lieferende LF -> NB (Rolle LF)]",
+      "url": "https://doc.macoapp.de/lieferende-lf-nb-rolle-lf-3119196f0.md"
+    },
+    "lieferende-lf-nb-rolle-lf-860905m0.md": {
+      "context": "Lieferant > Lieferende LF -> NB (Rolle LF) [Lieferende LF -> NB (Rolle LF)]",
+      "url": "https://doc.macoapp.de/lieferende-lf-nb-rolle-lf-860905m0.md"
+    },
+    "lieferende-nb-lf-rolle-lf-3129676f0.md": {
+      "context": "Lieferant [Lieferende NB -> LF (Rolle LF)]",
+      "url": "https://doc.macoapp.de/lieferende-nb-lf-rolle-lf-3129676f0.md"
+    },
+    "lieferende-nb-lf-rolle-lf-861871m0.md": {
+      "context": "Lieferant > Lieferende NB -> LF (Rolle LF) [Lieferende NB -> LF (Rolle LF)]",
+      "url": "https://doc.macoapp.de/lieferende-nb-lf-rolle-lf-861871m0.md"
+    },
+    "ebd-e-0609-861872m0.md": {
+      "context": "Lieferant > Lieferende NB -> LF (Rolle LF) > EBD [EBD E_0609]",
+      "url": "https://doc.macoapp.de/ebd-e-0609-861872m0.md"
+    },
+    "beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md": {
+      "context": "Lieferant [Beginn der Ersatz-/Grundversorgung (Rolle LF)]",
+      "url": "https://doc.macoapp.de/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md"
+    },
+    "beginn-der-ersatz-grundversorgung-rolle-lf-861880m0.md": {
+      "context": "Lieferant > Beginn der Ersatz-/Grundversorgung (Rolle LF) [Beginn der Ersatz-/Grundversorgung (Rolle LF)]",
+      "url": "https://doc.macoapp.de/beginn-der-ersatz-grundversorgung-rolle-lf-861880m0.md"
+    },
+    "ebd-e-0615-861882m0.md": {
+      "context": "Lieferant > Beginn der Ersatz-/Grundversorgung (Rolle LF) > EBD [EBD E_0615]",
+      "url": "https://doc.macoapp.de/ebd-e-0615-861882m0.md"
+    },
+    "bestellung-einer-konfiguration-vom-lf-an-msb-lf-1677424m0.md": {
+      "context": "Lieferant > Bestellung einer Konfiguration vom LF an MSB ( LF ) [Bestellung einer Konfiguration vom LF an MSB ( LF )]",
+      "url": "https://doc.macoapp.de/bestellung-einer-konfiguration-vom-lf-an-msb-lf-1677424m0.md"
+    },
+    "überprüfung-einer-eeg-marktlokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-lf-1677940m0.md": {
+      "context": "Lieferant > Überprüfung einer EEG-Marktlokation mit DV-Pflicht auf 100% LF-Zuordnung ( Rolle LF ) [Überprüfung einer EEG-Marktlokation mit DV-Pflicht auf 100% LF-Zuordnung ( Rolle LF )]",
+      "url": "https://doc.macoapp.de/%C3%BCberpr%C3%BCfung-einer-eeg-marktlokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-lf-1677940m0.md"
+    },
+    "e-0603-e-0604-e-0605-e-0606-1677942m0.md": {
+      "context": "Lieferant > Überprüfung einer EEG-Marktlokation mit DV-Pflicht auf 100% LF-Zuordnung ( Rolle LF ) [E_0603, E_0604, E_0605, E_0606]",
+      "url": "https://doc.macoapp.de/e-0603-e-0604-e-0605-e-0606-1677942m0.md"
+    },
+    "aufbereitung-und-übermittlung-von-werten-vom-msb-der-marktlokation-rolle-lf-1820159m0.md": {
+      "context": "Lieferant > Aufbereitung und Übermittlung von Werten vom MSB der Marktlokation (Rolle LF) [Aufbereitung und Übermittlung von Werten vom MSB der Marktlokation (Rolle LF)]",
+      "url": "https://doc.macoapp.de/aufbereitung-und-%C3%BCbermittlung-von-werten-vom-msb-der-marktlokation-rolle-lf-1820159m0.md"
+    },
+    "übermittlung-der-bisher-gemessenen-arbeits-und-leistungswerte-rolle-lf-1820160m0.md": {
+      "context": "Lieferant > Übermittlung der bisher gemessenen Arbeits- und Leistungswerte (Rolle LF) [Übermittlung der bisher gemessenen Arbeits- und Leistungswerte (Rolle LF)]",
+      "url": "https://doc.macoapp.de/%C3%BCbermittlung-der-bisher-gemessenen-arbeits-und-leistungswerte-rolle-lf-1820160m0.md"
+    },
+    "übermittlung-von-werten-nach-typ-2-vom-msb-an-nb-oder-lf-rolle-lf-1820441m0.md": {
+      "context": "Lieferant > Übermittlung von Werten nach Typ 2 vom MSB an NB oder LF (Rolle LF) [Übermittlung von Werten nach Typ 2 vom MSB an NB oder LF (Rolle LF)]",
+      "url": "https://doc.macoapp.de/%C3%BCbermittlung-von-werten-nach-typ-2-vom-msb-an-nb-oder-lf-rolle-lf-1820441m0.md"
+    },
+    "stornierung-werte-vom-msb-der-marktlokation-rolle-lf-5825047f0.md": {
+      "context": "Lieferant [Stornierung Werte vom MSB der Marktlokation (Rolle LF)]",
+      "url": "https://doc.macoapp.de/stornierung-werte-vom-msb-der-marktlokation-rolle-lf-5825047f0.md"
+    },
+    "stornierung-werte-vom-msb-der-marktlokation-rolle-lf-1820445m0.md": {
+      "context": "Lieferant > Stornierung Werte vom MSB der Marktlokation (Rolle LF) [Stornierung Werte vom MSB der Marktlokation (Rolle LF)]",
+      "url": "https://doc.macoapp.de/stornierung-werte-vom-msb-der-marktlokation-rolle-lf-1820445m0.md"
+    },
+    "netzbetreiber-3108591f0.md": {
+      "context": "[Netzbetreiber]",
+      "url": "https://doc.macoapp.de/netzbetreiber-3108591f0.md"
+    },
+    "malo-ident-rolle-nb-3119292f0.md": {
+      "context": "Netzbetreiber [Malo-Ident (Rolle NB)]",
+      "url": "https://doc.macoapp.de/malo-ident-rolle-nb-3119292f0.md"
+    },
+    "prozessübersicht-860919m0.md": {
+      "context": "Netzbetreiber > Malo-Ident (Rolle NB) [Prozessübersicht]",
+      "url": "https://doc.macoapp.de/prozess%C3%BCbersicht-860919m0.md"
+    },
+    "ebd-3119296f0.md": {
+      "context": "Netzbetreiber > Malo-Ident (Rolle NB) [EBD]",
+      "url": "https://doc.macoapp.de/ebd-3119296f0.md"
+    },
+    "ebd-e-0594-894801m0.md": {
+      "context": "Netzbetreiber > Malo-Ident (Rolle NB) > EBD [E_0594_Anfrage vom LF prüfen]",
+      "url": "https://doc.macoapp.de/ebd-e-0594-894801m0.md"
+    },
+    "lieferbeginn-rolle-nb-3108594f0.md": {
+      "context": "Netzbetreiber [Lieferbeginn (Rolle NB)]",
+      "url": "https://doc.macoapp.de/lieferbeginn-rolle-nb-3108594f0.md"
+    },
+    "lieferbeginn-rolle-nb-860854m0.md": {
+      "context": "Netzbetreiber > Lieferbeginn (Rolle NB) [Lieferbeginn (Rolle NB)]",
+      "url": "https://doc.macoapp.de/lieferbeginn-rolle-nb-860854m0.md"
+    },
+    "e-0622-860859m0.md": {
+      "context": "Netzbetreiber > Lieferbeginn (Rolle NB) > EBD [E_0622]",
+      "url": "https://doc.macoapp.de/e-0622-860859m0.md"
+    },
+    "e-0621-860861m0.md": {
+      "context": "Netzbetreiber > Lieferbeginn (Rolle NB) > EBD [E_0621]",
+      "url": "https://doc.macoapp.de/e-0621-860861m0.md"
+    },
+    "e-0623-860863m0.md": {
+      "context": "Netzbetreiber > Lieferbeginn (Rolle NB) > EBD [E_0623]",
+      "url": "https://doc.macoapp.de/e-0623-860863m0.md"
+    },
+    "abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md": {
+      "context": "Netzbetreiber [Abmeldeanfrage NB -> LFA (Rolle NB)]",
+      "url": "https://doc.macoapp.de/abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md"
+    },
+    "abmeldeanfrage-nb-lfa-rolle-nb-860877m0.md": {
+      "context": "Netzbetreiber > Abmeldeanfrage NB -> LFA (Rolle NB) [Abmeldeanfrage NB -> LFA (Rolle NB)]",
+      "url": "https://doc.macoapp.de/abmeldeanfrage-nb-lfa-rolle-nb-860877m0.md"
+    },
+    "aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md": {
+      "context": "Netzbetreiber [Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle NB)]",
+      "url": "https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md"
+    },
+    "aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-861913m0.md": {
+      "context": "Netzbetreiber > Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle NB) [Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle NB)]",
+      "url": "https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-861913m0.md"
+    },
+    "beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md": {
+      "context": "Netzbetreiber [Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle NB)]",
+      "url": "https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md"
+    },
+    "beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-861915m0.md": {
+      "context": "Netzbetreiber > Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle NB) [Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle NB)]",
+      "url": "https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-861915m0.md"
+    },
+    "abrechnungsdaten-netznutzungsabrechnung-rolle-nb-3130409f0.md": {
+      "context": "Netzbetreiber [Abrechnungsdaten Netznutzungsabrechnung (Rolle NB)]",
+      "url": "https://doc.macoapp.de/abrechnungsdaten-netznutzungsabrechnung-rolle-nb-3130409f0.md"
+    },
+    "abrechnungsdaten-netznutzungsabrechnung-rolle-nb-861920m0.md": {
+      "context": "Netzbetreiber > Abrechnungsdaten Netznutzungsabrechnung (Rolle NB) [Abrechnungsdaten Netznutzungsabrechnung (Rolle NB)]",
+      "url": "https://doc.macoapp.de/abrechnungsdaten-netznutzungsabrechnung-rolle-nb-861920m0.md"
+    },
+    "abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md": {
+      "context": "Netzbetreiber [Abrechnungsdaten Bilanzkreisabrechnung (Rolle NB)]",
+      "url": "https://doc.macoapp.de/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md"
+    },
+    "abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-861922m0.md": {
+      "context": "Netzbetreiber > Abrechnungsdaten Bilanzkreisabrechnung (Rolle NB) [Abrechnungsdaten Bilanzkreisabrechnung (Rolle NB)]",
+      "url": "https://doc.macoapp.de/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-861922m0.md"
+    },
+    "stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md": {
+      "context": "Netzbetreiber [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle NB)]",
+      "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md"
+    },
+    "stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md": {
+      "context": "Netzbetreiber > Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle NB) [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle NB)]",
+      "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md"
+    },
+    "stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md": {
+      "context": "Netzbetreiber [Stammdatenänderung vom MSB (verantwortlich) (Rolle NB)]",
+      "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md"
+    },
+    "stammdatenänderung-vom-msb-verantwortlich-rolle-nb-861944m0.md": {
+      "context": "Netzbetreiber > Stammdatenänderung vom MSB (verantwortlich) (Rolle NB) [Stammdatenänderung vom MSB (verantwortlich) (Rolle NB)]",
+      "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-nb-861944m0.md"
+    },
+    "ebd-e-0415-861945m0.md": {
+      "context": "Netzbetreiber > Stammdatenänderung vom MSB (verantwortlich) (Rolle NB) > EBD [EBD E_0415]",
+      "url": "https://doc.macoapp.de/ebd-e-0415-861945m0.md"
+    },
+    "einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md": {
+      "context": "Netzbetreiber [Einrichtung der Konfiguration aufgrund einer Zuordnung eines LF zu einer Marktlokation oder Tranche (Rolle NB)]",
+      "url": "https://doc.macoapp.de/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md"
+    },
+    "einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-861937m0.md": {
+      "context": "Netzbetreiber > Einrichtung der Konfiguration aufgrund einer Zuordnung eines LF zu einer Marktlokation oder Tranche (Rolle NB) [Einrichtung der Konfiguration aufgrund einer Zuordnung eines LF zu einer Marktlokation oder Tranche (Rolle NB)]",
+      "url": "https://doc.macoapp.de/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-861937m0.md"
+    },
+    "berechnungsformel-rolle-nb-3130464f0.md": {
+      "context": "Netzbetreiber [Berechnungsformel (Rolle NB)]",
+      "url": "https://doc.macoapp.de/berechnungsformel-rolle-nb-3130464f0.md"
+    },
+    "berechnungsformel-rolle-nb-861955m0.md": {
+      "context": "Netzbetreiber > Berechnungsformel (Rolle NB) [Berechnungsformel (Rolle NB)]",
+      "url": "https://doc.macoapp.de/berechnungsformel-rolle-nb-861955m0.md"
+    },
+    "wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-nb-3130602f0.md": {
+      "context": "Netzbetreiber [Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle NB)]",
+      "url": "https://doc.macoapp.de/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-nb-3130602f0.md"
+    },
+    "wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-nb-861947m0.md": {
+      "context": "Netzbetreiber > Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle NB) [Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle NB)]",
+      "url": "https://doc.macoapp.de/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-nb-861947m0.md"
+    },
+    "lieferende-lf-nb-rolle-nb-3119240f0.md": {
+      "context": "Netzbetreiber [Lieferende LF -> NB (Rolle NB)]",
+      "url": "https://doc.macoapp.de/lieferende-lf-nb-rolle-nb-3119240f0.md"
+    },
+    "lieferende-lf-nb-rolle-nb-860912m0.md": {
+      "context": "Netzbetreiber > Lieferende LF -> NB (Rolle NB) [Lieferende LF -> NB (Rolle NB)]",
+      "url": "https://doc.macoapp.de/lieferende-lf-nb-rolle-nb-860912m0.md"
+    },
+    "e-0607-860914m0.md": {
+      "context": "Netzbetreiber > Lieferende LF -> NB (Rolle NB) > EBD [E_0607]",
+      "url": "https://doc.macoapp.de/e-0607-860914m0.md"
+    },
+    "lieferende-nb-lf-rolle-nb-3130313f0.md": {
+      "context": "Netzbetreiber [Lieferende NB → LF (Rolle NB)]",
+      "url": "https://doc.macoapp.de/lieferende-nb-lf-rolle-nb-3130313f0.md"
+    },
+    "lieferende-nb-lf-rolle-nb-861909m0.md": {
+      "context": "Netzbetreiber > Lieferende NB → LF (Rolle NB) [Lieferende NB → LF (Rolle NB)]",
+      "url": "https://doc.macoapp.de/lieferende-nb-lf-rolle-nb-861909m0.md"
+    },
+    "beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md": {
+      "context": "Netzbetreiber [Beginn der Ersatz-/Grundversorgung (Rolle NB)]",
+      "url": "https://doc.macoapp.de/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md"
+    },
+    "beginn-der-ersatz-grundversorgung-rolle-nb-861924m0.md": {
+      "context": "Netzbetreiber > Beginn der Ersatz-/Grundversorgung (Rolle NB) [Beginn der Ersatz-/Grundversorgung (Rolle NB)]",
+      "url": "https://doc.macoapp.de/beginn-der-ersatz-grundversorgung-rolle-nb-861924m0.md"
+    },
+    "stornierung-5001068f0.md": {
+      "context": "Netzbetreiber [Stornierung]",
+      "url": "https://doc.macoapp.de/stornierung-5001068f0.md"
+    },
+    "prozessübersicht-1621259m0.md": {
+      "context": "Netzbetreiber > Stornierung [Prozessübersicht]",
+      "url": "https://doc.macoapp.de/prozess%C3%BCbersicht-1621259m0.md"
+    },
+    "überprüfung-einer-eeg-marktlokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-nb-vnb-1678015m0.md": {
+      "context": "Netzbetreiber > Überprüfung einer EEG-Marktlokation mit DV-Pflicht auf 100% LF-Zuordnung ( Rolle NB VNB ) [Überprüfung einer EEG-Marktlokation mit DV-Pflicht auf 100% LF-Zuordnung ( Rolle NB VNB )]",
+      "url": "https://doc.macoapp.de/%C3%BCberpr%C3%BCfung-einer-eeg-marktlokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-nb-vnb-1678015m0.md"
+    },
+    "messstellenbetreiber-3108784f0.md": {
+      "context": "[Messstellenbetreiber]",
+      "url": "https://doc.macoapp.de/messstellenbetreiber-3108784f0.md"
+    },
+    "einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md": {
+      "context": "Messstellenbetreiber [Einrichtung der Konfigurationen aufgrund einer Zuordnung eines LF (MSB)]",
+      "url": "https://doc.macoapp.de/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md"
+    },
+    "einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-881450m0.md": {
+      "context": "Messstellenbetreiber > Einrichtung der Konfigurationen aufgrund einer Zuordnung eines LF (MSB) [Einrichtung der Konfigurationen aufgrund einer Zuordnung eines LF (MSB)]",
+      "url": "https://doc.macoapp.de/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-881450m0.md"
+    },
+    "stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md": {
+      "context": "Messstellenbetreiber [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle MSB)]",
+      "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md"
+    },
+    "stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-861950m0.md": {
+      "context": "Messstellenbetreiber > Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle MSB) [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle MSB)]",
+      "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-msb-861950m0.md"
+    },
+    "ebd-e-0409-861952m0.md": {
+      "context": "Messstellenbetreiber > Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle MSB) > EBD [EBD E_0409]",
+      "url": "https://doc.macoapp.de/ebd-e-0409-861952m0.md"
+    },
+    "stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md": {
+      "context": "Messstellenbetreiber [Stammdatenänderung vom MSB (verantwortlich) (Rolle MSB)]",
+      "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md"
+    },
+    "stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md": {
+      "context": "Messstellenbetreiber > Stammdatenänderung vom MSB (verantwortlich) (Rolle MSB) [Stammdatenänderung vom MSB (verantwortlich) (Rolle MSB)]",
+      "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-msb-861960m0.md"
+    },
+    "ebd-e-0634-881448m0.md": {
+      "context": "Messstellenbetreiber > Stammdatenänderung vom MSB (verantwortlich) (Rolle MSB) > EBD [EBD E_0634]",
+      "url": "https://doc.macoapp.de/ebd-e-0634-881448m0.md"
+    },
+    "ebd-e-0635-881449m0.md": {
+      "context": "Messstellenbetreiber > Stammdatenänderung vom MSB (verantwortlich) (Rolle MSB) > EBD [EBD E_0635]",
+      "url": "https://doc.macoapp.de/ebd-e-0635-881449m0.md"
+    },
+    "wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-msb-3130714f0.md": {
+      "context": "Messstellenbetreiber [Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle MSB)]",
+      "url": "https://doc.macoapp.de/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-msb-3130714f0.md"
+    },
+    "wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-msb-861961m0.md": {
+      "context": "Messstellenbetreiber > Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle MSB) [Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle MSB)]",
+      "url": "https://doc.macoapp.de/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-msb-861961m0.md"
+    },
+    "stornierung-5001051f0.md": {
+      "context": "Messstellenbetreiber [Stornierung]",
+      "url": "https://doc.macoapp.de/stornierung-5001051f0.md"
+    },
+    "prozessübersicht-1621257m0.md": {
+      "context": "Messstellenbetreiber > Stornierung [Prozessübersicht]",
+      "url": "https://doc.macoapp.de/prozess%C3%BCbersicht-1621257m0.md"
+    },
+    "steuerprozesse-nach-kundenanforderung-3139945f0.md": {
+      "context": "[Steuerprozesse nach Kundenanforderung]",
+      "url": "https://doc.macoapp.de/steuerprozesse-nach-kundenanforderung-3139945f0.md"
+    },
+    "ecs-lieferbeginn-rolle-lf-863431m0.md": {
+      "context": "Steuerprozesse nach Kundenanforderung [ECS_Lieferbeginn (Rolle LF)]",
+      "url": "https://doc.macoapp.de/ecs-lieferbeginn-rolle-lf-863431m0.md"
+    },
+    "maloident-app-895196m0.md": {
+      "context": "MaLo-Ident [MaloIdent APP]",
+      "url": "https://doc.macoapp.de/maloident-app-895196m0.md"
+    },
+    "malo-ident-rolle-lf-3312793f0.md": {
+      "context": "MaLo-Ident [Malo-Ident (Rolle LF)]",
+      "url": "https://doc.macoapp.de/malo-ident-rolle-lf-3312793f0.md"
+    },
+    "prozessübersicht-892746m0.md": {
+      "context": "MaLo-Ident > Malo-Ident (Rolle LF) [Prozessübersicht]",
+      "url": "https://doc.macoapp.de/prozess%C3%BCbersicht-892746m0.md"
+    },
+    "malo-ident-rolle-nb-3312796f0.md": {
+      "context": "MaLo-Ident [Malo-Ident (Rolle NB)]",
+      "url": "https://doc.macoapp.de/malo-ident-rolle-nb-3312796f0.md"
+    },
+    "prozessübersicht-892748m0.md": {
+      "context": "MaLo-Ident > Malo-Ident (Rolle NB) [Prozessübersicht]",
+      "url": "https://doc.macoapp.de/prozess%C3%BCbersicht-892748m0.md"
+    },
+    "konzeption-umsetzung-ermittlung-sap-896590m0.md": {
+      "context": "MaLo-Ident > Malo-Ident (Rolle NB) [Konzeption Umsetzung Ermittlung SAP]",
+      "url": "https://doc.macoapp.de/konzeption-umsetzung-ermittlung-sap-896590m0.md"
+    },
+    "ebd-3312797f0.md": {
+      "context": "MaLo-Ident > Malo-Ident (Rolle NB) [EBD]",
+      "url": "https://doc.macoapp.de/ebd-3312797f0.md"
+    },
+    "ebd-e-0594-894815m0.md": {
+      "context": "MaLo-Ident > Malo-Ident (Rolle NB) > EBD [EBD E_0594]",
+      "url": "https://doc.macoapp.de/ebd-e-0594-894815m0.md"
+    },
+    "übersicht-1301648m0.md": {
+      "context": "[Übersicht]",
+      "url": "https://doc.macoapp.de/%C3%BCbersicht-1301648m0.md"
+    },
+    "änderungsprotokoll-bo4e-objekte-1259115m0.md": {
+      "context": "[Änderungsprotokoll BO4E Objekte]",
+      "url": "https://doc.macoapp.de/%C3%A4nderungsprotokoll-bo4e-objekte-1259115m0.md"
+    },
+    "objekte-4440877f0.md": {
+      "context": "[Objekte]",
+      "url": "https://doc.macoapp.de/objekte-4440877f0.md"
+    },
+    "adhocsteuerkanal-1300407m0.md": {
+      "context": "Objekte [AdHocSteuerkanal]",
+      "url": "https://doc.macoapp.de/adhocsteuerkanal-1300407m0.md"
+    },
+    "anfrage-1300409m0.md": {
+      "context": "Objekte [Anfrage]",
+      "url": "https://doc.macoapp.de/anfrage-1300409m0.md"
+    },
+    "angebot-1300410m0.md": {
+      "context": "Objekte [Angebot]",
+      "url": "https://doc.macoapp.de/angebot-1300410m0.md"
+    },
+    "ansprechpartner-1300411m0.md": {
+      "context": "Objekte [Ansprechpartner]",
+      "url": "https://doc.macoapp.de/ansprechpartner-1300411m0.md"
+    },
+    "auftrag-1300412m0.md": {
+      "context": "Objekte [Auftrag]",
+      "url": "https://doc.macoapp.de/auftrag-1300412m0.md"
+    },
+    "avis-1300413m0.md": {
+      "context": "Objekte [Avis]",
+      "url": "https://doc.macoapp.de/avis-1300413m0.md"
+    },
+    "berechnungsformel-1300414m0.md": {
+      "context": "Objekte [Berechnungsformel]",
+      "url": "https://doc.macoapp.de/berechnungsformel-1300414m0.md"
+    },
+    "bilanzierung-1300415m0.md": {
+      "context": "Objekte [Bilanzierung]",
+      "url": "https://doc.macoapp.de/bilanzierung-1300415m0.md"
+    },
+    "bilanzkreis-1300416m0.md": {
+      "context": "Objekte [Bilanzkreis]",
+      "url": "https://doc.macoapp.de/bilanzkreis-1300416m0.md"
+    },
+    "energiemenge-1300418m0.md": {
+      "context": "Objekte [Energiemenge]",
+      "url": "https://doc.macoapp.de/energiemenge-1300418m0.md"
+    },
+    "geschaeftspartner-1300419m0.md": {
+      "context": "Objekte [Geschaeftspartner]",
+      "url": "https://doc.macoapp.de/geschaeftspartner-1300419m0.md"
+    },
+    "handelsunstimmigkeit-1300420m0.md": {
+      "context": "Objekte [Handelsunstimmigkeit]",
+      "url": "https://doc.macoapp.de/handelsunstimmigkeit-1300420m0.md"
+    },
+    "kommunikationsdaten-1300421m0.md": {
+      "context": "Objekte [Kommunikationsdaten]",
+      "url": "https://doc.macoapp.de/kommunikationsdaten-1300421m0.md"
+    },
+    "leistungskurvendefinition-1300423m0.md": {
+      "context": "Objekte [Leistungskurvendefinition]",
+      "url": "https://doc.macoapp.de/leistungskurvendefinition-1300423m0.md"
+    },
+    "lokationsbuendel-1300424m0.md": {
+      "context": "Objekte [Lokationsbuendel]",
+      "url": "https://doc.macoapp.de/lokationsbuendel-1300424m0.md"
+    },
+    "marktlokation-1300425m0.md": {
+      "context": "Objekte [Marktlokation]",
+      "url": "https://doc.macoapp.de/marktlokation-1300425m0.md"
+    },
+    "marktteilnehmer-1300426m0.md": {
+      "context": "Objekte [Marktteilnehmer]",
+      "url": "https://doc.macoapp.de/marktteilnehmer-1300426m0.md"
+    },
+    "messlokation-1300428m0.md": {
+      "context": "Objekte [Messlokation]",
+      "url": "https://doc.macoapp.de/messlokation-1300428m0.md"
+    },
+    "netzlokation-1300429m0.md": {
+      "context": "Objekte [Netzlokation]",
+      "url": "https://doc.macoapp.de/netzlokation-1300429m0.md"
+    },
+    "preisblatt-1300431m0.md": {
+      "context": "Objekte [Preisblatt]",
+      "url": "https://doc.macoapp.de/preisblatt-1300431m0.md"
+    },
+    "rechnung-1300432m0.md": {
+      "context": "Objekte [Rechnung]",
+      "url": "https://doc.macoapp.de/rechnung-1300432m0.md"
+    },
+    "reklamation-1300433m0.md": {
+      "context": "Objekte [Reklamation]",
+      "url": "https://doc.macoapp.de/reklamation-1300433m0.md"
+    },
+    "schaltzeitdefinition-1300434m0.md": {
+      "context": "Objekte [Schaltzeitdefinition]",
+      "url": "https://doc.macoapp.de/schaltzeitdefinition-1300434m0.md"
+    },
+    "sperrauftrag-1300435m0.md": {
+      "context": "Objekte [Sperrauftrag]",
+      "url": "https://doc.macoapp.de/sperrauftrag-1300435m0.md"
+    },
+    "statusbericht-1300436m0.md": {
+      "context": "Objekte [Statusbericht]",
+      "url": "https://doc.macoapp.de/statusbericht-1300436m0.md"
+    },
+    "statusmitteilung-1300437m0.md": {
+      "context": "Objekte [Statusmitteilung]",
+      "url": "https://doc.macoapp.de/statusmitteilung-1300437m0.md"
+    },
+    "steuerbareressource-1300439m0.md": {
+      "context": "Objekte [SteuerbareRessource]",
+      "url": "https://doc.macoapp.de/steuerbareressource-1300439m0.md"
+    },
+    "tarifinfo-1300440m0.md": {
+      "context": "Objekte [Tarifinfo]",
+      "url": "https://doc.macoapp.de/tarifinfo-1300440m0.md"
+    },
+    "technischeressource-1300441m0.md": {
+      "context": "Objekte [TechnischeRessource]",
+      "url": "https://doc.macoapp.de/technischeressource-1300441m0.md"
+    },
+    "tranche-1300442m0.md": {
+      "context": "Objekte [Tranche]",
+      "url": "https://doc.macoapp.de/tranche-1300442m0.md"
+    },
+    "vertrag-1300443m0.md": {
+      "context": "Objekte [Vertrag]",
+      "url": "https://doc.macoapp.de/vertrag-1300443m0.md"
+    },
+    "verwendungszeitraum-1300444m0.md": {
+      "context": "Objekte [Verwendungszeitraum]",
+      "url": "https://doc.macoapp.de/verwendungszeitraum-1300444m0.md"
+    },
+    "wertenachtyp2-1300445m0.md": {
+      "context": "Objekte [WerteNachTyp2]",
+      "url": "https://doc.macoapp.de/wertenachtyp2-1300445m0.md"
+    },
+    "zaehler-1300446m0.md": {
+      "context": "Objekte [Zaehler]",
+      "url": "https://doc.macoapp.de/zaehler-1300446m0.md"
+    },
+    "zaehlzeitdefinition-1300449m0.md": {
+      "context": "Objekte [Zaehlzeitdefinition]",
+      "url": "https://doc.macoapp.de/zaehlzeitdefinition-1300449m0.md"
+    },
+    "55077-1805145m0.md": {
+      "context": "Prüfi > UTILMD-Strom [55077]",
+      "url": "https://doc.macoapp.de/55077-1805145m0.md"
+    },
+    "55078-1305072m0.md": {
+      "context": "Prüfi > UTILMD-Strom [55078]",
+      "url": "https://doc.macoapp.de/55078-1305072m0.md"
+    },
+    "55080-1805144m0.md": {
+      "context": "Prüfi > UTILMD-Strom [55080]",
+      "url": "https://doc.macoapp.de/55080-1805144m0.md"
+    },
+    "ecs-steuerprozess-lieferbeginn-14958780e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht LF [ECS Steuerprozess Lieferbeginn]",
+      "url": "https://doc.macoapp.de/ecs-steuerprozess-lieferbeginn-14958780e0.md"
+    },
+    "identifikation-einer-marktlokation-14987188e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht LF [Identifikation einer Marktlokation]",
+      "url": "https://doc.macoapp.de/identifikation-einer-marktlokation-14987188e0.md"
+    },
+    "kündigungsprozess-zwischen-lieferanten-14987263e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht LF [Kündigungsprozess zwischen Lieferanten]",
+      "url": "https://doc.macoapp.de/k%C3%BCndigungsprozess-zwischen-lieferanten-14987263e0.md"
+    },
+    "lieferbeginn-14992210e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht LF [Lieferbeginn]",
+      "url": "https://doc.macoapp.de/lieferbeginn-14992210e0.md"
+    },
+    "lieferende-von-lieferant-an-netzbetreiber-14992421e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht LF [Lieferende von Lieferant an Netzbetreiber]",
+      "url": "https://doc.macoapp.de/lieferende-von-lieferant-an-netzbetreiber-14992421e0.md"
+    },
+    "stammdatenänderung-vom-lieferanten-verantwortlich-15239974e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht LF [Stammdatenänderung vom Lieferanten (verantwortlich)]",
+      "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-lieferanten-verantwortlich-15239974e0.md"
+    },
+    "anfrage-nach-stornierung-21893877e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht LF [Anfrage nach Stornierung ]",
+      "url": "https://doc.macoapp.de/anfrage-nach-stornierung-21893877e0.md"
+    },
+    "anfrage-zur-beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-14992646e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht NB [Anfrage zur Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche]",
+      "url": "https://doc.macoapp.de/anfrage-zur-beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-14992646e0.md"
+    },
+    "aufhebung-der-zuordnung-des-lfz-zur-marklokation-bzw-tranche-versenden-14333135e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht NB [Aufhebung der Zuordnung des LFZ zur Marklokation bzw. Tranche versenden]",
+      "url": "https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marklokation-bzw-tranche-versenden-14333135e0.md"
+    },
+    "beendigung-der-zuordnung-des-lfa-zur-marklokation-bzw-tranche-14994219e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht NB [Beendigung der Zuordnung des LFA zur Marklokation bzw. Tranche]",
+      "url": "https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marklokation-bzw-tranche-14994219e0.md"
+    },
+    "abrechnungsdaten-netznutzungsabrechnung-versenden-14333071e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht NB [Abrechnungsdaten Netznutzungsabrechnung versenden]",
+      "url": "https://doc.macoapp.de/abrechnungsdaten-netznutzungsabrechnung-versenden-14333071e0.md"
+    },
+    "abrechnungsdaten-bilanzkreisabrechnung-versenden-14994259e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht NB [Abrechnungsdaten Bilanzkreisabrechnung versenden]",
+      "url": "https://doc.macoapp.de/abrechnungsdaten-bilanzkreisabrechnung-versenden-14994259e0.md"
+    },
+    "stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht NB [Stammdatenänderung vom Netzbetreiber (verantwortlich)]",
+      "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-14994280e0.md"
+    },
+    "einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-zu-einer-malo-oder-tranche-14994418e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht NB [Einrichtung der Konfigurationen aufgrund einer Zuordnung eines LF zu einer MaLo oder Tranche]",
+      "url": "https://doc.macoapp.de/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-zu-einer-malo-oder-tranche-14994418e0.md"
+    },
+    "übermittlung-der-berechnungsformel-15090201e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht NB [Übermittlung der Berechnungsformel]",
+      "url": "https://doc.macoapp.de/%C3%BCbermittlung-der-berechnungsformel-15090201e0.md"
+    },
+    "wiederherstellung-anschlussnutzung-nach-lb-15090248e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht NB [Wiederherstellung Anschlussnutzung nach LB]",
+      "url": "https://doc.macoapp.de/wiederherstellung-anschlussnutzung-nach-lb-15090248e0.md"
+    },
+    "lieferende-von-netzbetreiber-an-lieferant-15090292e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht NB [Lieferende von Netzbetreiber an Lieferant]",
+      "url": "https://doc.macoapp.de/lieferende-von-netzbetreiber-an-lieferant-15090292e0.md"
+    },
+    "ersatz-grundversorgung-14984068e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht NB [Ersatz-/Grundversorgung]",
+      "url": "https://doc.macoapp.de/ersatz-grundversorgung-14984068e0.md"
+    },
+    "anfrage-nach-stornierung-21894158e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht NB [Anfrage nach Stornierung]",
+      "url": "https://doc.macoapp.de/anfrage-nach-stornierung-21894158e0.md"
+    },
+    "überprüfung-einner-eeg-marklokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-nb-25151089e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht NB [Überprüfung einner EEG-Marklokation mit DV-Pflicht auf 100% LF-Zuordnung (Rolle NB)]",
+      "url": "https://doc.macoapp.de/%C3%BCberpr%C3%BCfung-einner-eeg-marklokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-nb-25151089e0.md"
+    },
+    "stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md": {
+      "context": "Trigger (MACO APP) > Einzelansicht MSB [Stammdatenänderung vom Messstellenbetreiber (verantwortlich)]",
+      "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md"
+    },
+    "anfrage-nach-stornierung-21894185e0.md": {
+      "context": "Trigger (MACO APP) [Anfrage nach Stornierung]",
+      "url": "https://doc.macoapp.de/anfrage-nach-stornierung-21894185e0.md"
+    },
+    "trigger-events-14016919e0.md": {
+      "context": "Trigger (MACO APP) [Trigger Events]",
+      "url": "https://doc.macoapp.de/trigger-events-14016919e0.md"
+    },
+    "authentifizierung-15828008e0.md": {
+      "context": "Trigger (MACO APP) [Authentifizierung]",
+      "url": "https://doc.macoapp.de/authentifizierung-15828008e0.md"
+    },
+    "avis-lesen-14017011e0.md": {
+      "context": "BO4E Lesen (Backend) [Avis lesen]",
+      "url": "https://doc.macoapp.de/avis-lesen-14017011e0.md"
+    },
+    "berechnungsformel-lesen-14017012e0.md": {
+      "context": "BO4E Lesen (Backend) [Berechnungsformel lesen]",
+      "url": "https://doc.macoapp.de/berechnungsformel-lesen-14017012e0.md"
+    },
+    "bilanzierung-lesen-14017013e0.md": {
+      "context": "BO4E Lesen (Backend) [Bilanzierung lesen]",
+      "url": "https://doc.macoapp.de/bilanzierung-lesen-14017013e0.md"
+    },
+    "energieliefervertrag-lesen-14017014e0.md": {
+      "context": "BO4E Lesen (Backend) [Energieliefervertrag lesen]",
+      "url": "https://doc.macoapp.de/energieliefervertrag-lesen-14017014e0.md"
+    },
+    "energiemengen-aus-abrechnungskontext-lesen-14017015e0.md": {
+      "context": "BO4E Lesen (Backend) [Energiemengen aus Abrechnungskontext  lesen]",
+      "url": "https://doc.macoapp.de/energiemengen-aus-abrechnungskontext-lesen-14017015e0.md"
+    },
+    "lastgangs-einer-lokation-lesen-14017016e0.md": {
+      "context": "BO4E Lesen (Backend) [Lastgangs einer Lokation lesen]",
+      "url": "https://doc.macoapp.de/lastgangs-einer-lokation-lesen-14017016e0.md"
+    },
+    "zählerstand-einer-lokation-lesen-14017017e0.md": {
+      "context": "BO4E Lesen (Backend) [Zählerstand einer Lokation lesen]",
+      "url": "https://doc.macoapp.de/z%C3%A4hlerstand-einer-lokation-lesen-14017017e0.md"
+    },
+    "kommunikationsdaten-des-serviceanbieters-lesen-14017018e0.md": {
+      "context": "BO4E Lesen (Backend) [Kommunikationsdaten des Serviceanbieters lesen]",
+      "url": "https://doc.macoapp.de/kommunikationsdaten-des-serviceanbieters-lesen-14017018e0.md"
+    },
+    "lokationsbündel-lesen-14017019e0.md": {
+      "context": "BO4E Lesen (Backend) [Lokationsbündel lesen]",
+      "url": "https://doc.macoapp.de/lokationsb%C3%BCndel-lesen-14017019e0.md"
+    },
+    "marktlokation-lesen-14017020e0.md": {
+      "context": "BO4E Lesen (Backend) [Marktlokation lesen]",
+      "url": "https://doc.macoapp.de/marktlokation-lesen-14017020e0.md"
+    },
+    "messlokation-lesen-14017024e0.md": {
+      "context": "BO4E Lesen (Backend) [Messlokation lesen]",
+      "url": "https://doc.macoapp.de/messlokation-lesen-14017024e0.md"
+    },
+    "messstellenbetriebsvertrag-lesen-14017025e0.md": {
+      "context": "BO4E Lesen (Backend) [Messstellenbetriebsvertrag lesen]",
+      "url": "https://doc.macoapp.de/messstellenbetriebsvertrag-lesen-14017025e0.md"
+    },
+    "netzlokation-lesen-14017026e0.md": {
+      "context": "BO4E Lesen (Backend) [Netzlokation lesen]",
+      "url": "https://doc.macoapp.de/netzlokation-lesen-14017026e0.md"
+    },
+    "netznutzungsvertrag-lesen-14017027e0.md": {
+      "context": "BO4E Lesen (Backend) [Netznutzungsvertrag lesen]",
+      "url": "https://doc.macoapp.de/netznutzungsvertrag-lesen-14017027e0.md"
+    },
+    "preisblatt-lesen-24422191e0.md": {
+      "context": "BO4E Lesen (Backend) [Preisblatt lesen]",
+      "url": "https://doc.macoapp.de/preisblatt-lesen-24422191e0.md"
+    },
+    "steuerbare-ressource-lesen-14017028e0.md": {
+      "context": "BO4E Lesen (Backend) [Steuerbare Ressource lesen]",
+      "url": "https://doc.macoapp.de/steuerbare-ressource-lesen-14017028e0.md"
+    },
+    "technische-ressource-lesen-14017029e0.md": {
+      "context": "BO4E Lesen (Backend) [Technische Ressource lesen]",
+      "url": "https://doc.macoapp.de/technische-ressource-lesen-14017029e0.md"
+    },
+    "tranche-lesen-14017030e0.md": {
+      "context": "BO4E Lesen (Backend) [Tranche lesen]",
+      "url": "https://doc.macoapp.de/tranche-lesen-14017030e0.md"
+    },
+    "zähler-lesen-14017031e0.md": {
+      "context": "BO4E Lesen (Backend) [Zähler lesen]",
+      "url": "https://doc.macoapp.de/z%C3%A4hler-lesen-14017031e0.md"
+    },
+    "zuordnungsemächtigung-lesen-14665842e0.md": {
+      "context": "Prozessdaten lesen (Backend) [Zuordnungsemächtigung lesen]",
+      "url": "https://doc.macoapp.de/zuordnungsem%C3%A4chtigung-lesen-14665842e0.md"
+    },
+    "prozessdaten-aktualiseren-14017182e0.md": {
+      "context": "Prozessdaten LF (Backend) [Prozessdaten aktualiseren]",
+      "url": "https://doc.macoapp.de/prozessdaten-aktualiseren-14017182e0.md"
+    },
+    "prozessdaten-erstellen-14017183e0.md": {
+      "context": "Prozessdaten LF (Backend) [Prozessdaten erstellen]",
+      "url": "https://doc.macoapp.de/prozessdaten-erstellen-14017183e0.md"
+    },
+    "prozessdaten-aktualiseren-14666382e0.md": {
+      "context": "Prozessdaten NB (Backend) [Prozessdaten aktualiseren]",
+      "url": "https://doc.macoapp.de/prozessdaten-aktualiseren-14666382e0.md"
+    },
+    "prozessdaten-erstellen-14666311e0.md": {
+      "context": "Prozessdaten NB (Backend) [Prozessdaten erstellen]",
+      "url": "https://doc.macoapp.de/prozessdaten-erstellen-14666311e0.md"
+    },
+    "prozessdaten-aktualiseren-14669402e0.md": {
+      "context": "Prozessdaten MSB (Backend) [Prozessdaten aktualiseren]",
+      "url": "https://doc.macoapp.de/prozessdaten-aktualiseren-14669402e0.md"
+    },
+    "prozessdaten-erstellen-14669391e0.md": {
+      "context": "Prozessdaten MSB (Backend) [Prozessdaten erstellen]",
+      "url": "https://doc.macoapp.de/prozessdaten-erstellen-14669391e0.md"
+    },
+    "prozessdaten-aktualisieren-15106071e0.md": {
+      "context": "MaloIdent LF (Backend) [Prozessdaten aktualisieren]",
+      "url": "https://doc.macoapp.de/prozessdaten-aktualisieren-15106071e0.md"
+    },
+    "identifikation-einer-marktlokation-16024919e0.md": {
+      "context": "MaloIdent LF (Backend) [Identifikation einer Marktlokation]",
+      "url": "https://doc.macoapp.de/identifikation-einer-marktlokation-16024919e0.md"
+    },
+    "identifizierung-der-malo-14666443e0.md": {
+      "context": "MaloIdent NB (Backend) [Identifizierung der MaLo]",
+      "url": "https://doc.macoapp.de/identifizierung-der-malo-14666443e0.md"
+    },
+    "stammdaten-der-identifiz-malo-14666444e0.md": {
+      "context": "MaloIdent NB (Backend) [Stammdaten der identifiz. MaLo]",
+      "url": "https://doc.macoapp.de/stammdaten-der-identifiz-malo-14666444e0.md"
+    },
+    "verwendungszeitraum-einer-marktlokation-ermitteln-14017021e0.md": {
+      "context": "Obsolet [Verwendungszeitraum einer Marktlokation ermitteln]",
+      "url": "https://doc.macoapp.de/verwendungszeitraum-einer-marktlokation-ermitteln-14017021e0.md"
+    },
+    "absenderdaten-lesen-14017022e0.md": {
+      "context": "Obsolet [Absenderdaten lesen]",
+      "url": "https://doc.macoapp.de/absenderdaten-lesen-14017022e0.md"
+    },
+    "empfängerdaten-lesen-14017023e0.md": {
+      "context": "Obsolet [Empfängerdaten lesen]",
+      "url": "https://doc.macoapp.de/empf%C3%A4ngerdaten-lesen-14017023e0.md"
+    },
+    "maloident-anfrage-auslösen-15144286e0.md": {
+      "context": "MaLo-Ident [MaloIdent Anfrage auslösen]",
+      "url": "https://doc.macoapp.de/maloident-anfrage-ausl%C3%B6sen-15144286e0.md"
+    },
+    "identifizierung-der-malo-15144292e0.md": {
+      "context": "MaLo-Ident [Identifizierung der MaLo]",
+      "url": "https://doc.macoapp.de/identifizierung-der-malo-15144292e0.md"
+    },
+    "stammdaten-der-identifiz-malo-15144303e0.md": {
+      "context": "MaLo-Ident [Stammdaten der identifiz. MaLo]",
+      "url": "https://doc.macoapp.de/stammdaten-der-identifiz-malo-15144303e0.md"
+    },
+    "prozessdaten-aktualisieren-15144289e0.md": {
+      "context": "MaLo-Ident [Prozessdaten aktualisieren]",
+      "url": "https://doc.macoapp.de/prozessdaten-aktualisieren-15144289e0.md"
+    },
+    "empfang-einer-marktnachricht-16367537e0.md": {
+      "context": "MCS Eingang (MACO APP) [Empfang einer Marktnachricht]",
+      "url": "https://doc.macoapp.de/empfang-einer-marktnachricht-16367537e0.md"
+    }
+  },
+  "prozessuebersicht": {}
+}

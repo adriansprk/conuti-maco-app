@@ -4,7 +4,7 @@
 
 set -e
 
-OUTPUT_DIR="maco-api-documentation/docs-offline"
+OUTPUT_DIR="docs-offline"
 INDEX_FILE="$OUTPUT_DIR/index.json"
 
 echo "📥 Downloading MaCo API Documentation..."

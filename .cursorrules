@@ -4,6 +4,7 @@
 
 **Core Files for AI Agents**:
 - `.cursorrules` - This file (agent routing)
+- `PROCESS_GRAPH.json` - **Process dependencies & sequences** (machine-readable, fast lookup)
 - `BUSINESS_PROCESS_MAP.md` - Business goal discovery (Entry Point 1)
 - `AI_AGENT_SETUP.md` - Technical implementation (Entry Point 2)
 - `llm.txt` - Documentation index (find which docs you need)
@@ -24,10 +25,16 @@ When working with this workspace, prioritize files based on task type:
 - User needs to design backend services
 - User asks "what do I need to do for X business scenario"
 
+**Then use `PROCESS_GRAPH.json` for**:
+- Process sequences and dependencies (what triggers what)
+- Business scenarios with step-by-step sequences
+- Fast lookup by trigger event, pruefi, or role
+- Understanding prerequisites and outcomes
+
 **Then reference**:
 - `llm.txt` for documentation index (find which docs you need)
-- `maco-api-documentation/docs-offline/` for offline process workflow documentation (232 files, including Prozessübersicht)
-- `maco-api-documentation/docs-offline/enhanced-index.json` for programmatic BDEW ID → filename lookup (optional)
+- `docs-offline/` for offline process workflow documentation (232 files, including Prozessübersicht)
+- `docs-offline/enhanced-index.json` for programmatic BDEW ID → filename lookup (optional)
 - `maco-edi-testfiles/inbound/` for example inbound messages (responses from market) - JSON format shows BO4E structure
 - `maco-edi-testfiles/outbound/` for example outbound messages (requests to market) - JSON format shows BO4E structure
 - `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/[ID].yaml` for business rules
@@ -45,10 +52,16 @@ When working with this workspace, prioritize files based on task type:
 - User asks about specific BDEW process IDs or technical implementation
 - User has a specific MaKo message/BDEW ID and wants to understand/implement it
 
+**Use `PROCESS_GRAPH.json` for**:
+- Looking up process by pruefi: `indexes.by_pruefi["55001"]` → LIEFERBEGINN
+- Looking up process by trigger: `indexes.by_trigger["START_LIEFERBEGINN"]` → LIEFERBEGINN
+- Finding what a process triggers: `processes.LIEFERBEGINN.triggers_processes`
+- Finding process prerequisites: `processes.LIEFERBEGINN.prerequisites`
+
 **Then reference**:
 - `llm.txt` for documentation index (find which docs you need)
-- `maco-api-documentation/docs-offline/` for process workflow documentation (232 files, including Prozessübersicht showing step-by-step API call sequences)
-- `maco-api-documentation/docs-offline/enhanced-index.json` for programmatic BDEW ID → filename lookup (optional)
+- `docs-offline/` for process workflow documentation (232 files, including Prozessübersicht showing step-by-step API call sequences)
+- `docs-offline/enhanced-index.json` for programmatic BDEW ID → filename lookup (optional)
 - `maco-edi-testfiles/inbound/[process-id]_eingehend_Testfall*.json` for example inbound messages (responses from market) - shows BO4E structure
 - `maco-edi-testfiles/outbound/[process-id]_ausgehend_Testfall*.json` for example outbound messages (requests to market) - shows BO4E structure
 - `maco-api-documentation/_build/bo4e-openapi.min.json` for BO4E data structures and types
@@ -71,14 +84,15 @@ When working with this workspace, prioritize files based on task type:
 
 ## Key Resources
 
-1. **BUSINESS_PROCESS_MAP.md** - Business goals → Market processes mapping (offline)
-2. **llm.txt** - Documentation index (237 entries) - Use to find which documentation files you need
-3. **docs-offline/** - 232 offline documentation files (Prozessübersicht, process descriptions, EBD diagrams)
-4. **maco-edi-testfiles/** - EDI test files (2549 files) - Real-world message examples in both EDIFACT (.edi) and BO4E JSON (.json) formats
-5. **AI_AGENT_SETUP.md** - Technical setup and schema reference (offline)
-6. **bo4e-openapi.min.json** - Complete BO4E data structures (offline, formatted, readable)
-7. **yaml_output/** - 136 business rule files for mandatory fields (offline)
-8. **PIs/** - Process-specific API schemas (offline)
+1. **PROCESS_GRAPH.json** - Machine-readable process dependencies, sequences, and business scenarios (fast lookup)
+2. **BUSINESS_PROCESS_MAP.md** - Business goals → Market processes mapping (offline)
+3. **llm.txt** - Documentation index (237 entries) - Use to find which documentation files you need
+4. **docs-offline/** - 232 offline documentation files (Prozessübersicht, process descriptions, EBD diagrams)
+5. **maco-edi-testfiles/** - EDI test files (2549 files) - Real-world message examples in both EDIFACT (.edi) and BO4E JSON (.json) formats
+6. **AI_AGENT_SETUP.md** - Technical setup and schema reference (offline)
+7. **bo4e-openapi.min.json** - Complete BO4E data structures (offline, formatted, readable)
+8. **yaml_output/** - 136 business rule files for mandatory fields (offline)
+9. **PIs/** - Process-specific API schemas (offline)
 
 **Note**: 
 - `llm.txt` provides the index/context (process names, BDEW IDs, descriptions) - use this to find which docs you need
@@ -104,14 +118,18 @@ When working with this workspace, prioritize files based on task type:
 ## Workflow Guidelines
 
 ### Entry Point 1: Business Goal
-1. **Discovery**: Use BUSINESS_PROCESS_MAP.md → llm.txt → docs-offline/ → yaml files
-2. **Implementation**: Build backend services based on discovered processes
+1. **Discovery**: Use BUSINESS_PROCESS_MAP.md → PROCESS_GRAPH.json (business_scenarios) → llm.txt → docs-offline/
+2. **Dependencies**: Check PROCESS_GRAPH.json for prerequisites and triggered processes
+3. **Implementation**: Build backend services based on discovered processes
 
 ### Entry Point 2: Specific Message/BDEW ID
-1. **Understanding**: Use AI_AGENT_SETUP.md → llm.txt → docs-offline/ → schemas
-2. **Implementation**: Build payloads and implement handlers
+1. **Lookup**: Use PROCESS_GRAPH.json indexes (by_pruefi, by_trigger) for fast process identification
+2. **Understanding**: Use AI_AGENT_SETUP.md → llm.txt → docs-offline/ → schemas
+3. **Dependencies**: Check PROCESS_GRAPH.json for what the process triggers and its prerequisites
+4. **Implementation**: Build payloads and implement handlers
 
 ### Always Cross-Reference
+- **Dependencies**: PROCESS_GRAPH.json (prerequisites, triggers_processes)
 - Business rules (`yaml_output/`) → Process schemas (`PIs/`) → BO4E types (`_build/bo4e-openapi.min.json`)
 - Workflow documentation (`docs-offline/`) → API schemas → Implementation
 
