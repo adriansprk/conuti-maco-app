@@ -2,8 +2,10 @@
 
 This guide helps you discover which market processes and APIs you need based on **business goals** rather than technical process IDs.
 
-**Entry Point**: Use this guide when you start with a **business goal** (e.g., "register customer", "cancel contract").  
+**Entry Point**: Use this guide when you start with a **business goal** (e.g., "register customer", "cancel contract").
 **Alternative Entry Point**: If you have a specific MaKo message/BDEW ID, start with [`AI_AGENT_SETUP.md`](./AI_AGENT_SETUP.md) instead.
+
+**Machine-Readable Version**: See [`PROCESS_GRAPH.json`](./PROCESS_GRAPH.json) for structured process dependencies, sequences, and business scenarios optimized for programmatic access.
 
 ## 🎯 Common Business Scenarios
 
@@ -116,6 +118,25 @@ Customer Signs Up
 - "Handle billing"
 - etc.
 
+### Step 1b: Check PROCESS_GRAPH.json for Pre-built Scenarios
+```javascript
+// Available business scenarios in PROCESS_GRAPH.json:
+PROCESS_GRAPH.business_scenarios.NEW_CUSTOMER_SIGNUP
+PROCESS_GRAPH.business_scenarios.SUPPLIER_SWITCH_AS_NEW
+PROCESS_GRAPH.business_scenarios.SUPPLIER_SWITCH_AS_OLD
+PROCESS_GRAPH.business_scenarios.CUSTOMER_CANCELLATION
+PROCESS_GRAPH.business_scenarios.HANDLE_FORCED_TERMINATION
+PROCESS_GRAPH.business_scenarios.HANDLE_EG_ASSIGNMENT
+PROCESS_GRAPH.business_scenarios.MASTER_DATA_UPDATE
+PROCESS_GRAPH.business_scenarios.CANCEL_PREVIOUS_MESSAGE
+```
+
+Each scenario includes:
+- Step-by-step process sequence
+- Prerequisites and dependencies
+- Expected responses
+- Backend requirements
+
 ### Step 2: Find Related Processes in `llm.txt`
 Search for business terms:
 - **"Lieferbeginn"** = Supply start / New customer registration
@@ -208,6 +229,7 @@ Help me discover:
 5. What backend services do I need to build?
 
 Use the following resources:
+- PROCESS_GRAPH.json: Check business_scenarios for pre-built workflows, check dependencies
 - BUSINESS_PROCESS_MAP.md: Find business scenarios matching your goal
 - llm.txt: Find processes related to [business goal] (index to find docs)
 - docs-offline/: Read workflow documentation (Prozessübersicht) and process descriptions
@@ -223,11 +245,13 @@ Use the following resources:
 
 ## 💡 Tips
 
-1. **Start with `llm.txt`** - It's organized by business processes, not technical IDs
-2. **Follow the workflow** - Processes often have dependencies (e.g., MaloIdent before Lieferbeginn)
-3. **Check your role** - You're likely "Lieferant" (LF), so focus on LF processes
-4. **Understand responses** - You'll receive responses from NB and MSB, prepare handlers
-5. **Use processinfo.json** - Contains detailed process descriptions (technical but comprehensive)
+1. **Start with `PROCESS_GRAPH.json`** - Contains pre-built business scenarios with step-by-step sequences
+2. **Check dependencies** - Use `processes.[ID].prerequisites` and `triggers_processes` in PROCESS_GRAPH.json
+3. **Use `llm.txt`** - It's organized by business processes for finding documentation
+4. **Follow the workflow** - Processes often have dependencies (e.g., MaloIdent before Lieferbeginn)
+5. **Check your role** - You're likely "Lieferant" (LF), so focus on LF processes (see `indexes.by_role.LF`)
+6. **Understand responses** - You'll receive responses from NB and MSB, prepare handlers
+7. **Use processinfo.json** - Contains detailed process descriptions (technical but comprehensive)
 
 ---
 

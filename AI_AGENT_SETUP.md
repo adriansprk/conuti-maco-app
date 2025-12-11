@@ -9,6 +9,7 @@ This guide explains how to set up and use the MaCo API documentation schemas wit
 
 ```
 maco_agent_workspace/
+├── PROCESS_GRAPH.json               # ⭐ DEPENDENCIES: Process sequences, prerequisites, triggers
 ├── BUSINESS_PROCESS_MAP.md          # ⭐ START HERE: Business concept → Process mapping
 ├── llm.txt                          # ⭐ Documentation index (maps BDEW IDs to docs)
 ├── maco-api-documentation/          # Main API documentation
@@ -90,18 +91,19 @@ You are an expert AI assistant for the German Energy Market (MaKo), specifically
 for the Conuti MaCo API.
 
 Your Resources:
-1. BUSINESS_PROCESS_MAP.md - Business concept to process mapping (START HERE for business goal discovery)
-2. llm.txt - Documentation index (use to find which docs you need)
-3. docs-offline/ - 232 offline documentation files (Prozessübersicht, process descriptions, EBD diagrams)
-4. maco-edi-testfiles/ - EDI test files showing real-world message examples (inbound/outbound, .edi and .json formats)
-5. _build/bo4e-openapi.min.json - Complete BO4E data structures
-6. _build/macoapp-schreiben.min.json - Write operations schema (outbound)
-7. _build/macoapp-lesen.min.json - Read operations schema (inbound)
-8. _build/macoapp-trigger.min.json - Trigger events schema (outbound)
-9. _build/maloident-macoapp.min.json - MaloIdent requests (outbound)
-10. _build/maloident-lieferant.min.json - MaloIdent responses (inbound webhook)
-11. pythons/createPiFromTemplater/templater/yaml_output/[ID].yaml - Business rules
-12. macoapp-schreiben/components/requestBodies/PIs/PI_[ID].yml - Process schemas
+1. PROCESS_GRAPH.json - Process dependencies, sequences, prerequisites (machine-readable, fast lookup)
+2. BUSINESS_PROCESS_MAP.md - Business concept to process mapping (START HERE for business goal discovery)
+3. llm.txt - Documentation index (use to find which docs you need)
+4. docs-offline/ - 232 offline documentation files (Prozessübersicht, process descriptions, EBD diagrams)
+5. maco-edi-testfiles/ - EDI test files showing real-world message examples (inbound/outbound, .edi and .json formats)
+6. _build/bo4e-openapi.min.json - Complete BO4E data structures
+7. _build/macoapp-schreiben.min.json - Write operations schema (outbound)
+8. _build/macoapp-lesen.min.json - Read operations schema (inbound)
+9. _build/macoapp-trigger.min.json - Trigger events schema (outbound)
+10. _build/maloident-macoapp.min.json - MaloIdent requests (outbound)
+11. _build/maloident-lieferant.min.json - MaloIdent responses (inbound webhook)
+12. pythons/createPiFromTemplater/templater/yaml_output/[ID].yaml - Business rules
+13. macoapp-schreiben/components/requestBodies/PIs/PI_[ID].yml - Process schemas
 
 Your Goals:
 - Help discover which processes are needed for business goals
@@ -136,12 +138,32 @@ The `llm.txt` file in the workspace root provides a **documentation map** that:
 ### Workflow for Building Payloads
 
 1. **Identify the BDEW Process ID** (e.g., 55078)
-2. **Check Documentation**: `llm.txt` → Find `[55078]` to get process context and documentation URL
-3. **Check Example Messages**: `maco-edi-testfiles/inbound/` or `outbound/` → Find `55078_*.json` for real-world examples
-4. **Check Business Rules**: `yaml_output/55078.yaml` for mandatory fields and validation rules
-5. **Check Process Schema**: `PIs/PI_55078.yml` for OpenAPI request structure
-6. **Cross-reference BO4E Schema**: `bo4e-openapi.min.json` for data types and object definitions
-7. **Build Payload**: Combine mandatory fields with correct types, using test files as examples
+2. **Check Dependencies**: `PROCESS_GRAPH.json` → `indexes.by_pruefi["55078"]` to find process, check `prerequisites` and `triggers_processes`
+3. **Check Documentation**: `llm.txt` → Find `[55078]` to get process context and documentation URL
+4. **Check Example Messages**: `maco-edi-testfiles/inbound/` or `outbound/` → Find `55078_*.json` for real-world examples
+5. **Check Business Rules**: `yaml_output/55078.yaml` for mandatory fields and validation rules
+6. **Check Process Schema**: `PIs/PI_55078.yml` for OpenAPI request structure
+7. **Cross-reference BO4E Schema**: `bo4e-openapi.min.json` for data types and object definitions
+8. **Build Payload**: Combine mandatory fields with correct types, using test files as examples
+
+### Using PROCESS_GRAPH.json for Fast Lookup
+
+```javascript
+// Find process by pruefi
+PROCESS_GRAPH.indexes.by_pruefi["55001"]  // → {process: "LIEFERBEGINN", type: "request"}
+
+// Find process by trigger event
+PROCESS_GRAPH.indexes.by_trigger["START_LIEFERBEGINN"]  // → "LIEFERBEGINN"
+
+// Get process prerequisites
+PROCESS_GRAPH.processes.LIEFERBEGINN.prerequisites  // → [{process: "MALOIDENT", condition: "..."}]
+
+// Get what a process triggers
+PROCESS_GRAPH.processes.LIEFERBEGINN.triggers_processes  // → [{process: "EINRICHTUNG_KONFIG", ...}]
+
+// Get business scenario sequence
+PROCESS_GRAPH.business_scenarios.NEW_CUSTOMER_SIGNUP.sequence  // → Step-by-step process flow
+```
 
 ### Example: Process 55078
 
@@ -182,22 +204,25 @@ _build/bo4e-openapi.min.json (search for "MESSLOKATION", etc.)
 
 ### For Business Discovery (Entry Point 1: Business Goal)
 1. **Start with `BUSINESS_PROCESS_MAP.md`** - Maps business goals to processes
-2. **Use `llm.txt`** to find which documentation files you need
-3. **Read workflow docs** from `docs-offline/` (Prozessübersicht files)
-4. **Check business rule YAMLs** (`yaml_output/[ID].yaml`) for mandatory fields
-5. **Review process schemas** (`PIs/PI_[ID].yml`) for API structure
-6. **Cross-reference BO4E schema** (`bo4e-openapi.min.json`) for data types
-7. **Map to backend requirements** - What data to collect, what services to build
+2. **Use `PROCESS_GRAPH.json`** - Check `business_scenarios` for step-by-step sequences
+3. **Check dependencies** - Use `processes.[ID].prerequisites` and `triggers_processes`
+4. **Use `llm.txt`** to find which documentation files you need
+5. **Read workflow docs** from `docs-offline/` (Prozessübersicht files)
+6. **Check business rule YAMLs** (`yaml_output/[ID].yaml`) for mandatory fields
+7. **Review process schemas** (`PIs/PI_[ID].yml`) for API structure
+8. **Cross-reference BO4E schema** (`bo4e-openapi.min.json`) for data types
+9. **Map to backend requirements** - What data to collect, what services to build
 
 ### For Technical Implementation (Entry Point 2: Specific Message/BDEW ID)
-1. **Start with `AI_AGENT_SETUP.md`** - Technical reference for specific messages
-2. **Use `llm.txt`** to find documentation for the specific BDEW ID
-3. **Read process documentation** from `docs-offline/` (process descriptions, workflows)
-4. **Use `bo4e-openapi.min.json`** for understanding data structures
-5. **Use business rule YAMLs** (`yaml_output/[ID].yaml`) to identify mandatory fields
-6. **Cross-reference** with process-specific schemas (`PIs/PI_[ID].yml`)
-7. **Validate** against BO4E types before constructing payloads
-8. **Build payload** and implement backend service
+1. **Start with `PROCESS_GRAPH.json`** - Use `indexes.by_pruefi` or `indexes.by_trigger` for fast lookup
+2. **Check dependencies** - Use `processes.[ID].prerequisites` and `triggers_processes`
+3. **Use `llm.txt`** to find documentation for the specific BDEW ID
+4. **Read process documentation** from `docs-offline/` (process descriptions, workflows)
+5. **Use `bo4e-openapi.min.json`** for understanding data structures
+6. **Use business rule YAMLs** (`yaml_output/[ID].yaml`) to identify mandatory fields
+7. **Cross-reference** with process-specific schemas (`PIs/PI_[ID].yml`)
+8. **Validate** against BO4E types before constructing payloads
+9. **Build payload** and implement backend service
 
 ## 📝 Notes
 
