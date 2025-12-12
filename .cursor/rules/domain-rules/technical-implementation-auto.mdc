@@ -6,6 +6,7 @@ globs:
   - "**/*.json"
   - "**/AI_AGENT_SETUP.md"
   - "**/PROCESS_GRAPH.json"
+  - "docs/entry-points/**/*"
   - "backend/**/*"
   - "src/**/*"
   - "api/**/*"
@@ -34,12 +35,14 @@ Apply when user asks about:
 
 **CRITICAL**: Read actual schema files - never guess API structures or field names.
 
+**File Location**: `docs/entry-points/AI_AGENT_SETUP.md`
+
 <example>
 **User**: "I need to implement process 55077"
 
 **Agent Action**:
-1. **READ** AI_AGENT_SETUP.md for technical setup
-2. **READ** PROCESS_GRAPH.json: `indexes.by_pruefi["55077"]` (verify actual data)
+1. **READ** `docs/entry-points/AI_AGENT_SETUP.md` for technical setup
+2. **READ** `docs/entry-points/PROCESS_GRAPH.json`: `indexes.by_pruefi["55077"]` (verify actual data)
 3. **READ** PI_55077.yml (verify actual schema structure)
 4. **READ** yaml_output/55077.yaml (verify actual business rules)
 5. **READ** bo4e-openapi.min.json (verify actual BO4E types)
@@ -50,7 +53,7 @@ Apply when user asks about:
 
 ### Step 2: Lookup Process in PROCESS_GRAPH.json
 
-Use indexes for fast lookup:
+Use `docs/entry-points/PROCESS_GRAPH.json` indexes for fast lookup:
 - By pruefi: `indexes.by_pruefi["55077"]` → LIEFERBEGINN
 - By trigger: `indexes.by_trigger["START_LIEFERBEGINN"]` → LIEFERBEGINN
 - Process details: `processes.LIEFERBEGINN.triggers_processes`, `processes.LIEFERBEGINN.prerequisites`
@@ -84,7 +87,7 @@ Include:
 ### Step 4: Understand Technical Requirements
 
 Reference in this order:
-1. `llm.txt` - Find documentation for this process
+1. `docs/llm.txt` - Find documentation for this process
 2. `docs-offline/` - Read process workflow documentation (Prozessübersicht shows step-by-step API call sequences)
 3. `docs-offline/enhanced-index.json` - Programmatic BDEW ID → filename lookup (optional)
 
@@ -153,7 +156,7 @@ Business rules (yaml_output/)
 ## Process Dependencies
 
 Before implementing:
-1. Check `PROCESS_GRAPH.json` for prerequisites
+1. Check `docs/entry-points/PROCESS_GRAPH.json` for prerequisites
 2. Verify prerequisites are completed or can be triggered
 3. Understand what processes this triggers next
 4. Plan webhook handlers for all expected responses

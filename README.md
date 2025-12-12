@@ -21,12 +21,14 @@ This workspace includes an **Agentic Context** that enables AI assistants (like 
 - ✅ **Future-Ready**: Structured for database integration and Conuti API testing
 
 **What's Included**:
-- Process dependency graph (`PROCESS_GRAPH.json`)
-- Business process mapping (`BUSINESS_PROCESS_MAP.md`)
-- Technical setup guide (`AI_AGENT_SETUP.md`)
-- Documentation index (`llm.txt`)
+- Entry point documentation (`docs/entry-points/`):
+  - Process dependency graph (`PROCESS_GRAPH.json`)
+  - Business process mapping (`BUSINESS_PROCESS_MAP.md`)
+  - Technical setup guide (`AI_AGENT_SETUP.md`)
+- Documentation index (`docs/llm.txt`)
 - 232 offline documentation files (`docs-offline/`)
 - 2,549 EDI test files (`maco-edi-testfiles/`)
+- Sync system (`scripts/sync/`) for tracking external repo changes
 
 **For Teams**: 
 - Rules are version-controlled and shared automatically via Git
@@ -124,16 +126,21 @@ Build payload and implement
 
 ```
 maco_agent_workspace/
-├── BUSINESS_PROCESS_MAP.md    ⭐ Business goal discovery
-├── AI_AGENT_SETUP.md          ⭐ Technical implementation
-├── llm.txt                    ⭐ Documentation index
-├── maco-api-documentation/
-│   ├── docs-offline/          ⭐ 232 offline documentation files
+├── docs/
+│   ├── entry-points/          ⭐ Entry point documentation
+│   │   ├── BUSINESS_PROCESS_MAP.md    # Business goal discovery
+│   │   ├── AI_AGENT_SETUP.md          # Technical implementation
+│   │   └── PROCESS_GRAPH.json         # Process dependency graph
+│   └── llm.txt                ⭐ Documentation index
+├── .cursor/rules/             ⭐ AI agent rules (BMAD-METHOD structure)
+├── scripts/sync/              ⭐ Sync system for external repos
+├── maco-api-documentation/    # External repo (tracked)
 │   ├── _build/                ⭐ Formatted JSON schemas
 │   ├── yaml_output/           ⭐ Business rules (136 files)
 │   └── macoapp-schreiben/components/requestBodies/PIs/
 │       └── PI_[ID].yml        ⭐ Process schemas
-├── maco-edi-testfiles/        ⭐ 2,549 EDI test files (real-world examples)
+├── docs-offline/              ⭐ 232 offline documentation files
+└── maco-edi-testfiles/        ⭐ 2,549 EDI test files (real-world examples)
 ```
 
 ## 🎯 Common Tasks

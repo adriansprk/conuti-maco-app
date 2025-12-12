@@ -1,0 +1,130 @@
+{
+  "$schema": "../schemas/version-tracker-schema.json",
+  "version": "1.0.0",
+  "last_updated": "2024-12-12",
+  "external_repos": {
+    "maco-api-documentation": {
+      "source": "git submodule or external repo",
+      "path": "maco-api-documentation",
+      "last_synced": null,
+      "last_commit_hash": null,
+      "tracked_files": {
+        "build_script": {
+          "path": "scripts/build-openapi-json.sh",
+          "purpose": "Build script that formats minified JSON files (uses jq to make them readable/structured)",
+          "affects": ["_build/*.min.json", "schema_formatting"],
+          "critical": true,
+          "note": "If this script changes, _build/*.min.json files may need to be regenerated"
+        },
+        "nodemon_config": {
+          "path": "nodemon.json",
+          "purpose": "Auto-rebuild configuration (watches for changes)",
+          "affects": ["build_process"],
+          "critical": false
+        },
+        "schemas": {
+          "path": "_build/*.min.json",
+          "purpose": "API schemas (bo4e-openapi, macoapp-*, maloident-*) - formatted/readable JSON",
+          "affects": ["PROCESS_GRAPH.json", "field_definitions"],
+          "generated": true,
+          "generated_by": "scripts/build-openapi-json.sh"
+        },
+        "business_rules": {
+          "path": "pythons/createPiFromTemplater/templater/yaml_output/*.yaml",
+          "purpose": "Business rules for mandatory fields",
+          "affects": ["PROCESS_GRAPH.json", "validation_rules"]
+        },
+        "process_schemas": {
+          "path": "macoapp-schreiben/components/requestBodies/PIs/PI_*.yml",
+          "purpose": "Process-specific API schemas",
+          "affects": ["PROCESS_GRAPH.json", "api_definitions"]
+        },
+        "llm_txt": {
+          "path": "llm.txt",
+          "purpose": "Documentation index (237 entries) - maps BDEW IDs to documentation URLs",
+          "affects": ["docs-offline", "documentation_index", "PROCESS_GRAPH.json"],
+          "source": "Manually downloaded from doc.macoapp.de (online documentation)",
+          "note": "NOT part of maco-api-documentation repo. Manually maintained in workspace. Used by download-docs.sh to download offline markdown files.",
+          "workspace_specific": true
+        }
+      },
+      "sync_actions": {
+        "on_build_script_change": [
+          "⚠️ CRITICAL: Build script changed - may affect schema formatting",
+          "Check if jq formatting step changed",
+          "Re-run build script: cd maco-api-documentation && ./scripts/build-openapi-json.sh",
+          "Verify _build/*.min.json files are still formatted correctly",
+          "Update PROCESS_GRAPH.json if schema structure changed"
+        ],
+        "on_schema_change": [
+          "Update PROCESS_GRAPH.json api.schema references",
+          "Regenerate field definitions if BO4E types changed",
+          "Update validation rules if schema structure changed"
+        ],
+        "on_business_rules_change": [
+          "Update PROCESS_GRAPH.json field requirements",
+          "Update validation rules",
+          "Regenerate field requirement tables"
+        ],
+        "on_process_schema_change": [
+          "Update PROCESS_GRAPH.json process.api definitions",
+          "Update example message references",
+          "Regenerate API documentation"
+        ],
+        "on_nodemon_config_change": [
+          "Update build/watch configuration",
+          "Test auto-rebuild still works"
+        ],
+        "on_llm_txt_change": [
+          "⚠️ Documentation index changed (manually updated from doc.macoapp.de)",
+          "Re-run download-docs.sh to download new/updated markdown files",
+          "Regenerate PROCESS_GRAPH.json from updated docs-offline/ markdown files",
+          "Extract Mermaid diagrams from new/updated markdown files"
+        ]
+      }
+    },
+    "docs-offline": {
+      "source": "Downloaded from doc.macoapp.de",
+      "path": "docs-offline",
+      "last_synced": null,
+      "last_download_date": null,
+      "tracked_files": {
+        "prozessuebersicht": {
+          "path": "prozessübersicht-*.md",
+          "purpose": "Process workflow documentation",
+          "affects": ["PROCESS_GRAPH.json", "workflow_sequences"]
+        },
+        "process_docs": {
+          "path": "*-[process-name]-*.md",
+          "purpose": "Process descriptions and EBD diagrams",
+          "affects": ["PROCESS_GRAPH.json", "process_descriptions"]
+        }
+      },
+      "sync_actions": {
+        "on_doc_change": [
+          "Update PROCESS_GRAPH.json documentation references",
+          "Regenerate process sequences if workflow changed",
+          "Update llm.txt index if new processes added"
+        ]
+      }
+    }
+  },
+  "generated_files": {
+    "PROCESS_GRAPH.json": {
+      "source_files": [
+        "docs-offline/prozessübersicht-*.md",
+        "docs-offline/*.md (Mermaid diagrams extracted)",
+        "maco-api-documentation/_build/*.min.json",
+        "maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/*.yaml"
+      ],
+      "generation_process": [
+        "1. Download markdown files using llm.txt → scripts/download-docs.sh",
+        "2. Extract factual references (BDEW IDs, triggers, process names) from markdown files",
+        "3. Create minimal index pointing to source files (no interpretation)",
+        "4. Generate PROCESS_GRAPH.json with indexes only (agents read source docs for details)"
+      ],
+      "last_generated": null,
+          "generation_script": "scripts/sync/update-process-graph-minimal.py"
+    }
+  }
+}

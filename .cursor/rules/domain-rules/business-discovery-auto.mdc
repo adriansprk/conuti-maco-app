@@ -3,6 +3,7 @@ description: Business goal discovery workflow - maps business goals to MaKo proc
 globs:
   - "**/BUSINESS_PROCESS_MAP.md"
   - "**/PROCESS_GRAPH.json"
+  - "docs/entry-points/**/*"
   - "backend/**/*"
   - "src/**/*"
   - "services/**/*"
@@ -30,12 +31,14 @@ Apply when user asks about:
 
 **CRITICAL**: Read the actual file - never guess or assume process mappings.
 
+**File Location**: `docs/entry-points/BUSINESS_PROCESS_MAP.md`
+
 <example>
 **User**: "I want to register a new customer"
 
 **Agent Action**:
-1. **READ** BUSINESS_PROCESS_MAP.md (verify actual content)
-2. **READ** PROCESS_GRAPH.json (verify process details)
+1. **READ** `docs/entry-points/BUSINESS_PROCESS_MAP.md` (verify actual content)
+2. **READ** `docs/entry-points/PROCESS_GRAPH.json` (verify process details)
 3. Find scenario: "New Customer Signs Up" (cite source)
 4. Identify required processes: MaloIdent → Lieferbeginn (from verified sources)
 5. **Verify** dependencies in PROCESS_GRAPH.json
@@ -45,7 +48,7 @@ Apply when user asks about:
 
 ### Step 2: Use PROCESS_GRAPH.json
 
-Query `PROCESS_GRAPH.json` for:
+Query `docs/entry-points/PROCESS_GRAPH.json` for:
 - Process sequences and dependencies (what triggers what)
 - Business scenarios with step-by-step sequences
 - Fast lookup by trigger event, pruefi, or role
@@ -79,7 +82,7 @@ Include:
 ### Step 4: Reference Documentation
 
 Use this sequence:
-1. `llm.txt` - Find which documentation files you need
+1. `docs/llm.txt` - Find which documentation files you need
 2. `docs-offline/` - Read workflow documentation (232 files, including Prozessübersicht)
 3. `docs-offline/enhanced-index.json` - Programmatic BDEW ID → filename lookup (optional)
 
@@ -117,7 +120,7 @@ Cross-reference:
 ## Always Check Dependencies
 
 Before implementing any process:
-1. Check `PROCESS_GRAPH.json` for prerequisites
+1. Check `docs/entry-points/PROCESS_GRAPH.json` for prerequisites
 2. Verify all prerequisites are met or can be triggered
 3. Understand what processes this triggers next
 4. Plan webhook handlers for all expected responses

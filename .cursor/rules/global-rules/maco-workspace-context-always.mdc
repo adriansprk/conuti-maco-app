@@ -18,10 +18,10 @@ version: 1.0.0
 ## Core File Structure
 
 **Always Available Files**:
-- `PROCESS_GRAPH.json` - Process dependencies & sequences (machine-readable, fast lookup)
-- `BUSINESS_PROCESS_MAP.md` - Business goal discovery (Entry Point 1)
-- `AI_AGENT_SETUP.md` - Technical implementation (Entry Point 2)
-- `llm.txt` - Documentation index (237 entries) - Find which docs you need
+- `docs/entry-points/PROCESS_GRAPH.json` - Process dependencies & sequences (machine-readable, fast lookup)
+- `docs/entry-points/BUSINESS_PROCESS_MAP.md` - Business goal discovery (Entry Point 1)
+- `docs/entry-points/AI_AGENT_SETUP.md` - Technical implementation (Entry Point 2)
+- `docs/llm.txt` - Documentation index (237 entries) - Find which docs you need
 - `docs-offline/` - 232 offline documentation files (Prozessübersicht, process descriptions, EBD diagrams)
 - `maco-edi-testfiles/` - 2,549 EDI test files (real-world message examples in EDIFACT and BO4E JSON)
 
@@ -44,10 +44,20 @@ version: 1.0.0
 
 ## Process Lookup (PROCESS_GRAPH.json)
 
-Use `PROCESS_GRAPH.json` for fast lookups:
-- By pruefi: `indexes.by_pruefi["55077"]` → LIEFERBEGINN
-- By trigger: `indexes.by_trigger["START_LIEFERBEGINN"]` → LIEFERBEGINN
-- Process details: `processes.LIEFERBEGINN.triggers_processes`, `processes.LIEFERBEGINN.prerequisites`
+**IMPORTANT**: `PROCESS_GRAPH.json` is a **minimal index** that points to source files. It does NOT contain interpreted/processed data.
+
+**Philosophy**: "Point, don't interpret" - Use the index to discover files, then read source documentation for details.
+
+**Use for discovery**:
+- By pruefi: `indexes.by_bdew_id["55077"]` → list of files mentioning this Prüfi
+- By trigger: `indexes.by_trigger["START_LIEFERBEGINN"]` → list of files with this trigger
+- By process name: `indexes.by_process_name["lieferbeginn"]` → list of files for this process
+
+**Then read source files**:
+- Read the actual markdown files for full context
+- Parse Mermaid diagrams directly from source
+- Extract roles, prerequisites, relationships from source docs
+- Cross-reference with API schemas and business rules
 
 ## Workflow Pattern
 
@@ -55,10 +65,11 @@ Use `PROCESS_GRAPH.json` for fast lookups:
 
 1. **Identify entry point** (business goal vs. specific message)
 2. **READ documentation FIRST** - Never guess or assume
-3. **Use appropriate guide** (BUSINESS_PROCESS_MAP.md or AI_AGENT_SETUP.md)
-4. **Lookup in PROCESS_GRAPH.json** for dependencies and sequences
-5. **Reference documentation** via llm.txt → docs-offline/
-6. **Check examples** in maco-edi-testfiles/
-7. **Verify against schemas** (PI_[ID].yml) and business rules (yaml_output/[ID].yaml)
-8. **Cite sources** in your response
-9. **Build implementation** using verified schemas and business rules
+3. **Use appropriate guide** (`docs/entry-points/BUSINESS_PROCESS_MAP.md` or `docs/entry-points/AI_AGENT_SETUP.md`)
+4. **Use PROCESS_GRAPH.json for discovery** - Find relevant files via indexes, then READ those source files
+5. **Read source documentation** - Parse Mermaid diagrams, extract roles/prerequisites/relationships from actual docs
+6. **Reference documentation** via `docs/llm.txt` → docs-offline/
+7. **Check examples** in maco-edi-testfiles/
+8. **Verify against schemas** (PI_[ID].yml) and business rules (yaml_output/[ID].yaml)
+9. **Cite sources** in your response (always cite the source file, not the index)
+10. **Build implementation** using verified schemas and business rules from source docs

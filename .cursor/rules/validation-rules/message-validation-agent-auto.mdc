@@ -31,7 +31,7 @@ This agent validates MaKo messages before sending to Conuti, checking:
 ### Step 1: Load Process Context
 
 1. Identify process ID (BDEW Prüfidentifikator)
-2. Load from PROCESS_GRAPH.json: `indexes.by_pruefi["[ID]"]`
+2. Load from `docs/entry-points/PROCESS_GRAPH.json`: `indexes.by_pruefi["[ID]"]`
 3. Load schema: `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_[ID].yml`
 4. Load business rules: `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/[ID].yaml`
 5. Load BO4E types: `maco-api-documentation/_build/bo4e-openapi.min.json`

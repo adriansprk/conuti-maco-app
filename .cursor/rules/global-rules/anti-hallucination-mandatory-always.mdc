@@ -3,7 +3,7 @@ description: CRITICAL - Never hallucinate - always read documentation files befo
 alwaysApply: true
 tags: [critical, anti-hallucination, documentation, verification, mandatory]
 priority: 1
-version: 1.0.0
+version: 2.0.0
 ---
 
 # Anti-Hallucination Rule - CRITICAL
@@ -18,50 +18,77 @@ version: 1.0.0
 
 ## Mandatory Verification Process
 
-### Step 1: Read Documentation FIRST
+### Step 1: Discovery (via Minimal Index)
 
-**Before answering ANY question about MaKo processes:**
+**Use `docs/entry-points/PROCESS_GRAPH.json` ONLY for discovery:**
 
-1. **Identify the process** (BDEW ID, process name, or business goal)
-2. **Read PROCESS_GRAPH.json** - Lookup process details, prerequisites, triggers
-3. **Read relevant documentation** from `docs-offline/` or `llm.txt` → `docs-offline/`
-4. **Read schemas** - `PI_[ID].yml` for API structure
-5. **Read business rules** - `yaml_output/[ID].yaml` for mandatory fields
-6. **Read BO4E types** - `bo4e-openapi.min.json` for data structures
-7. **Read examples** - `maco-edi-testfiles/` for real-world message examples
+- `indexes.by_bdew_id["55016"]` → find relevant files mentioning this Prüfi
+- `indexes.by_trigger["START_KUENDIGUNG"]` → find files with this trigger
+- `indexes.by_process_name["kuendigung"]` → find process files
 
-### Step 2: Cite Sources
+**⚠️ CRITICAL: The index does NOT contain process details. It only points to source files. You MUST read the source files.**
 
-**ALWAYS cite the source file** when providing information:
+### Step 2: Extract from Source Documentation
+
+**Read the actual files discovered in Step 1:**
+
+- `docs-offline/{filename}.md` → Full process documentation, Mermaid diagrams
+- Parse sequence diagrams for: message order, participant roles, conditional flows (opt/alt), cross-references (ref)
+- Extract roles, prerequisites, relationships directly from source docs
+- Read German prose explanations for context and nuance
+
+### Step 3: VERIFY Against Authoritative Sources
+
+**Cross-reference information across authoritative sources:**
+
+| What to Verify | Authoritative Source | How to Check |
+|----------------|---------------------|--------------|
+| Business goal → Process mapping | `docs/entry-points/BUSINESS_PROCESS_MAP.md` | Confirm process name matches business scenario |
+| BDEW ID → Process name | Source docs + `BUSINESS_PROCESS_MAP.md` | Verify process identification |
+| Required fields | `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/{bdew_id}.yaml` | Check mandatory field list |
+| Message structure | `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_{bdew_id}.yml` | Validate request structure |
+| Data types | `maco-api-documentation/_build/bo4e-openapi.min.json` | Confirm BO4E schema compliance |
+| Example messages | `maco-edi-testfiles/outbound/{process_id}_ausgehend_Testfall*.json` | Validate real-world message format |
+| Trigger events | `maco-api-documentation/_build/macoapp-trigger.min.json` | Verify trigger event structure |
+| MaloIdent requests | `maco-api-documentation/_build/maloident-macoapp.min.json` | Verify request structure |
+| MaloIdent responses | `maco-api-documentation/_build/maloident-lieferant.min.json` | Verify webhook structure |
+
+### Step 4: Report Discrepancies
+
+**If source docs and authoritative sources conflict:**
+
+- **State the conflict explicitly**: "I found conflicting information..."
+- **Cite both sources**: "Source doc says X, but schema says Y"
+- **Do not assume which is correct**: Let the user decide or investigate further
+
+### Step 5: Cite Sources
+
+**ALWAYS cite the source file** when providing information. Cite the actual source documentation, not the index.
 
 <valid-example>
 **Good Response**:
-"According to PROCESS_GRAPH.json, process 55077 (LIEFERBEGINN) requires MALOIDENT as a prerequisite. The schema in PI_55077.yml shows that marktlokationsId is a required field. The business rules in yaml_output/55077.yaml specify additional constraints. See example message in maco-edi-testfiles/outbound/55077_ausgehend_Testfall1.json."
+"I found process 55077 (LIEFERBEGINN) by searching `indexes.by_bdew_id["55077"]` in PROCESS_GRAPH.json, which pointed me to `docs-offline/lieferbeginn.md` and `docs-offline/prozessübersicht-853953m0.md`. 
+
+After reading the source documentation, I found that:
+- The Mermaid diagram in `lieferbeginn.md` shows MALOIDENT as a conditional prerequisite (when marktlokationsId is unknown)
+- The schema in `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_55077.yml` shows that marktlokationsId is a required field
+- The business rules in `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/55077.yaml` specify additional constraints
+- See example message in `maco-edi-testfiles/outbound/55077_ausgehend_Testfall1.json` for a complete message structure."
 </valid-example>
 
 <invalid-example>
 **Bad Response** (HALLUCINATION):
-"Process 55077 requires customer ID and start date. The API endpoint is /api/start-delivery."
-**Problem**: No source files cited, information may be incorrect
+"According to PROCESS_GRAPH.json, process 55077 requires MALOIDENT as a prerequisite and customer ID as a required field."
+**Problem**: PROCESS_GRAPH.json (minimal index) doesn't contain this information. Must read source docs.
 </invalid-example>
 
-### Step 3: Verify Against Multiple Sources
+**If sources conflict, state the conflict explicitly and cite all sources.**
 
-**Cross-reference information** across multiple sources:
-- PROCESS_GRAPH.json (process structure)
-- Schema files (PI_[ID].yml)
-- Business rules (yaml_output/[ID].yaml)
-- BO4E types (bo4e-openapi.min.json)
-- Example messages (maco-edi-testfiles/)
-- Documentation (docs-offline/)
-
-If sources conflict, **state the conflict** and cite all sources.
-
-### Step 4: Admit Uncertainty
+### Step 6: Admit Uncertainty
 
 **If documentation is missing or unclear:**
 - **State clearly**: "I cannot find this information in the documentation"
-- **List what you checked**: "I checked PROCESS_GRAPH.json, PI_[ID].yml, and docs-offline/"
+- **List what you checked**: "I checked PROCESS_GRAPH.json (index), found files via `indexes.by_bdew_id["55077"]`, read `docs-offline/lieferbeginn.md`, checked `PI_55077.yml`, and `yaml_output/55077.yaml`"
 - **Suggest where to look**: "You may need to check [specific file] or contact support"
 
 **NEVER make up information to fill gaps.**
@@ -81,13 +108,16 @@ If sources conflict, **state the conflict** and cite all sources.
 ## Required Actions
 
 **ALWAYS:**
-- ✅ Read PROCESS_GRAPH.json before discussing processes
-- ✅ Read schema files (PI_[ID].yml) before describing API structures
-- ✅ Read business rules (yaml_output/[ID].yaml) before listing required fields
-- ✅ Read BO4E types (bo4e-openapi.min.json) before describing data structures
-- ✅ Reference example messages (maco-edi-testfiles/) when showing examples
-- ✅ Cite source files in your response
-- ✅ Verify information across multiple sources
+- ✅ Use PROCESS_GRAPH.json indexes for discovery (find files), then read source files
+- ✅ Read source documentation files (`docs-offline/{filename}.md`) for process details
+- ✅ Parse Mermaid diagrams directly from source files
+- ✅ Extract roles, prerequisites, relationships from source docs (not from index)
+- ✅ Read schema files (`PI_{ID}.yml`) before describing API structures
+- ✅ Read business rules (`yaml_output/{ID}.yaml`) before listing required fields
+- ✅ Read BO4E types (`bo4e-openapi.min.json`) before describing data structures
+- ✅ Reference example messages (`maco-edi-testfiles/`) when showing examples
+- ✅ Cite source files (not the index) in your response
+- ✅ Verify information across multiple authoritative sources
 - ✅ Admit when information is not found in documentation
 
 ## Verification Checklist
@@ -95,13 +125,16 @@ If sources conflict, **state the conflict** and cite all sources.
 Before providing any answer about MaKo processes, verify:
 
 - [ ] Process ID identified correctly
-- [ ] PROCESS_GRAPH.json read and referenced
-- [ ] Relevant documentation file read (from docs-offline/)
-- [ ] Schema file read (PI_[ID].yml)
-- [ ] Business rules file read (yaml_output/[ID].yaml)
-- [ ] BO4E types checked (bo4e-openapi.min.json)
-- [ ] Example messages referenced (maco-edi-testfiles/)
-- [ ] All information cited with source files
+- [ ] Used PROCESS_GRAPH.json indexes for discovery (`by_bdew_id`, `by_trigger`, `by_process_name`)
+- [ ] Read actual source documentation files from `docs-offline/` (not just the index)
+- [ ] Parsed Mermaid diagrams from source files for process flow
+- [ ] Extracted roles, prerequisites, relationships from source docs
+- [ ] Schema file read (`PI_{ID}.yml`)
+- [ ] Business rules file read (`yaml_output/{ID}.yaml`)
+- [ ] BO4E types checked (`bo4e-openapi.min.json`)
+- [ ] Example messages referenced (`maco-edi-testfiles/`)
+- [ ] Cross-referenced with authoritative sources (BUSINESS_PROCESS_MAP.md, schemas, rules)
+- [ ] All information cited with source files (not the index)
 - [ ] No information provided without source verification
 
 ## Response Format
@@ -111,16 +144,21 @@ Before providing any answer about MaKo processes, verify:
 ```markdown
 ## Answer
 
-[Your answer based on documentation]
+[Your answer based on source documentation]
+
+## Discovery Process
+
+- Used PROCESS_GRAPH.json index: `indexes.by_bdew_id["55077"]` → found files
+- Discovered source files: `docs-offline/lieferbeginn.md`, `docs-offline/prozessübersicht-853953m0.md`
 
 ## Sources Verified
 
-- PROCESS_GRAPH.json: [specific section/process]
-- Schema: PI_[ID].yml
-- Business Rules: yaml_output/[ID].yaml
-- BO4E Types: bo4e-openapi.min.json
-- Examples: maco-edi-testfiles/[path]
-- Documentation: docs-offline/[filename].md
+- Source Documentation: `docs-offline/{filename}.md` (read actual file, parsed Mermaid diagram)
+- Schema: `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_{ID}.yml`
+- Business Rules: `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/{ID}.yaml`
+- BO4E Types: `maco-api-documentation/_build/bo4e-openapi.min.json`
+- Examples: `maco-edi-testfiles/outbound/{process_id}_ausgehend_Testfall*.json`
+- Business Process Map: `docs/entry-points/BUSINESS_PROCESS_MAP.md` (for business scenarios)
 ```
 
 ## Examples
@@ -131,35 +169,43 @@ Before providing any answer about MaKo processes, verify:
 **Agent Response**:
 "I'll check the documentation for process 55077.
 
-[Reads PROCESS_GRAPH.json - finds LIEFERBEGINN]
-[Reads PI_55077.yml - finds schema structure]
-[Reads yaml_output/55077.yaml - finds mandatory fields]
-[Reads bo4e-openapi.min.json - verifies data types]
-[References maco-edi-testfiles/outbound/55077_ausgehend_Testfall1.json]
+[Uses PROCESS_GRAPH.json index: `indexes.by_bdew_id["55077"]` → finds files]
+[Reads `docs-offline/lieferbeginn.md` - finds process documentation and Mermaid diagram]
+[Reads `docs-offline/prozessübersicht-853953m0.md` - finds Prozessübersicht with API details]
+[Reads `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_55077.yml` - finds schema structure]
+[Reads `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/55077.yaml` - finds mandatory fields]
+[Reads `maco-api-documentation/_build/bo4e-openapi.min.json` - verifies data types]
+[References `maco-edi-testfiles/outbound/55077_ausgehend_Testfall1.json` - validates message format]
 
-According to the schema in PI_55077.yml and business rules in yaml_output/55077.yaml, the required fields for process 55077 (LIEFERBEGINN) are:
+According to the schema in `PI_55077.yml` and business rules in `yaml_output/55077.yaml`, the required fields for process 55077 (LIEFERBEGINN) are:
 - marktlokationsId (string, required)
 - lieferbeginn (date, required)
 
-See example in maco-edi-testfiles/outbound/55077_ausgehend_Testfall1.json for a complete message structure."
+The source documentation in `docs-offline/lieferbeginn.md` shows this is triggered by START_LIEFERBEGINN and may require MALOIDENT as a prerequisite if marktlokationsId is unknown.
+
+See example in `maco-edi-testfiles/outbound/55077_ausgehend_Testfall1.json` for a complete message structure."
 </valid-example>
 
 <invalid-example>
 **User**: "What fields are required for process 55077?"
 
 **Bad Agent Response** (HALLUCINATION):
-"The required fields are customer ID, start date, and contract number."
+"According to PROCESS_GRAPH.json, the required fields are customer ID, start date, and contract number."
 
-**Problem**: No documentation read, no sources cited, information may be incorrect
+**Problem**: 
+- PROCESS_GRAPH.json (minimal index) doesn't contain field information
+- No source documentation files read
+- No schemas or business rules checked
+- Information may be incorrect
 </invalid-example>
 
 ## Integration with Other Rules
 
 This rule works with:
-- **visualization-rules/process-visualization-mandatory-always.mdc**: Visualizations must be based on documentation, not assumptions
-- **domain-rules/business-discovery-auto.mdc**: Business discovery must reference BUSINESS_PROCESS_MAP.md and PROCESS_GRAPH.json
-- **domain-rules/technical-implementation-auto.mdc**: Technical implementation must reference schemas and business rules
-- **validation-rules/**: Validation must check against actual schemas and rules
+- **visualization-rules/process-visualization-mandatory-always.mdc**: Visualizations must be based on source documentation (Mermaid diagrams from source files), not assumptions
+- **domain-rules/business-discovery-auto.mdc**: Business discovery must use PROCESS_GRAPH.json for discovery, then read BUSINESS_PROCESS_MAP.md and source docs
+- **domain-rules/technical-implementation-auto.mdc**: Technical implementation must use indexes for discovery, then read schemas and business rules from source files
+- **validation-rules/**: Validation must check against actual schemas and rules from authoritative sources
 
 ## Enforcement
 

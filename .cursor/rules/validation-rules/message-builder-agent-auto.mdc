@@ -29,7 +29,7 @@ This agent pre-creates MaKo messages from database entries:
 ### Step 1: Identify Process and Data Requirements
 
 1. User specifies process ID or business goal
-2. Load process from PROCESS_GRAPH.json
+2. Load process from `docs/entry-points/PROCESS_GRAPH.json`
 3. Identify required fields from:
    - Schema: `PI_[ID].yml`
    - Business rules: `yaml_output/[ID].yaml`
