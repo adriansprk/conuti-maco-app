@@ -3,7 +3,7 @@ description: CRITICAL - Never hallucinate - always read documentation files befo
 alwaysApply: true
 tags: [critical, anti-hallucination, documentation, verification, mandatory]
 priority: 1
-version: 2.0.0
+version: 2.1.0
 ---
 
 # Anti-Hallucination Rule - CRITICAL
@@ -37,6 +37,66 @@ version: 2.0.0
 - Extract roles, prerequisites, relationships directly from source docs
 - Read German prose explanations for context and nuance
 
+### Step 2b: Parse Mermaid Diagrams - CRITICAL Reference Handling
+
+**⚠️ CRITICAL: When parsing Mermaid sequence diagrams, pay special attention to references and context:**
+
+#### "ref" Markers - MANDATORY Reading
+
+**When you see "ref" in a Mermaid diagram:**
+- ⚠️ **This means "reference to a separate process documented elsewhere"**
+- ✅ **You MUST read the referenced documentation before describing the process**
+- ❌ **The "ref" notation does NOT mean the process only runs internally**
+- ✅ **Example**: `NB ->> NB : ref Stammdatenänderung` → Read `docs-offline/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-*.md`
+- ✅ **Use PROCESS_GRAPH.json** to find referenced process documentation via `indexes.by_bdew_id["55615"]` or search by process name
+- ⚠️ **If a referenced file is mentioned in a ref block but is not available in the context**: Explicitly state: "The process refers to [Process Name], but I do not have access to that file to confirm details."
+
+#### Context Phrases - Role Interpretation
+
+**⚠️ CRITICAL: When a process block says "gegenüber [Role] durchführen":**
+- ✅ **"gegenüber LFN durchführen"** → LF (Lieferant) is involved, receives messages
+- ✅ **"gegenüber NB durchführen"** → NB is involved
+- ✅ **"immer, gegenüber LFN"** → Always involves LF
+- ⚠️ **Even if the diagram shows "NB ->> NB", if it says "gegenüber LF", the LF receives messages**
+- ✅ **You MUST verify the actual message direction in the referenced documentation**
+
+#### ⚠️ RED FLAG: "ref" + "gegenüber" Combination
+
+**When you see BOTH:**
+- "ref" (reference to separate process)
+- "gegenüber [Role]" (towards/for a specific role)
+
+**This is a CRITICAL signal:**
+- ✅ The process DOES involve that role
+- ⚠️ The diagram arrow (e.g., "NB ->> NB") may be misleading
+- ✅ You MUST read the referenced documentation
+- ✅ The actual message flow will be different from the arrow direction
+
+**Example**:
+```mermaid
+NB ->> NB : ref Stammdatenänderung vom NB (verantwortlich) ausgehend (*9)
+```
+With context: "immer, gegenüber LFN durchführen"
+→ **LF receives these messages!** Read `stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-*.md`
+
+#### Mermaid Diagram Interpretation Checklist
+
+When reading Mermaid sequence diagrams, ALWAYS:
+
+- [ ] **Check for "ref" markers**: If present, read referenced documentation
+- [ ] **Interpret context phrases**: 
+  - "gegenüber LFN durchführen" → LF is involved
+  - "gegenüber NB durchführen" → NB is involved
+  - "immer, gegenüber LFN" → Always involves LF
+- [ ] **Verify message directions**: Don't assume from diagram arrows alone
+  - "NB ->> NB" with "ref" → Check referenced docs for actual recipients
+  - "NB ->> NB" with "gegenüber LF" → LF receives messages
+- [ ] **Check Prüfidentifikatoren**: Look up each Prüfi to verify direction
+  - Use `indexes.by_bdew_id["55615"]` to find documentation
+  - Read schema files (`PI_{ID}.yml`) to verify inbound vs outbound
+- [ ] **Read referenced processes**: For every "ref", find and read the full documentation
+- [ ] **Handle missing references**: If a referenced file is not available, explicitly state that the referenced process cannot be confirmed
+
 ### Step 3: VERIFY Against Authoritative Sources
 
 **Cross-reference information across authoritative sources:**
@@ -53,13 +113,34 @@ version: 2.0.0
 | MaloIdent requests | `maco-api-documentation/_build/maloident-macoapp.min.json` | Verify request structure |
 | MaloIdent responses | `maco-api-documentation/_build/maloident-lieferant.min.json` | Verify webhook structure |
 
+### Step 3b: Verify Follow-up Processes
+
+**⚠️ CRITICAL: When a process mentions follow-up processes (e.g., "STAMMDATENAENDERUNG", "ABRECHNUNGSDATEN"):**
+
+- [ ] **Find the follow-up process documentation**:
+  - Use PROCESS_GRAPH.json to find process files via `indexes.by_bdew_id["55615"]` or search by process name
+  - Search for process name in `docs-offline/` directory
+- [ ] **Verify message direction**:
+  - Check if messages go to LF, NB, MSB, or all
+  - Read the sequence diagram in the follow-up process documentation
+  - Don't assume from the main process diagram
+- [ ] **Check Prüfidentifikatoren**:
+  - Each Prüfi has a documented direction (inbound/outbound)
+  - Verify against schema files (`PI_{ID}.yml`)
+  - Check description in schema: "NB an LF" = inbound for LF, "LF an NB" = outbound for LF
+- [ ] **Don't assume from main diagram**:
+  - Main process diagrams use "ref" for brevity
+  - Always read the referenced process documentation
+  - The diagram arrow direction may be misleading
+
 ### Step 4: Report Discrepancies
 
 **If source docs and authoritative sources conflict:**
 
 - **State the conflict explicitly**: "I found conflicting information..."
 - **Cite both sources**: "Source doc says X, but schema says Y"
-- **Do not assume which is correct**: Let the user decide or investigate further
+- **Tie-breaker rule**: For technical field requirements (required/optional), treat the YAML schema (`yaml_output/{ID}.yaml` or `PI_{ID}.yml`) as the source of truth over markdown prose if they conflict
+- **For non-technical conflicts**: Do not assume which is correct - let the user decide or investigate further
 
 ### Step 5: Cite Sources
 
@@ -104,6 +185,11 @@ After reading the source documentation, I found that:
 - ❌ Create example messages without referencing maco-edi-testfiles/
 - ❌ Provide information without citing source files
 - ❌ Fill gaps with assumed information
+- ❌ **Ignore "ref" markers**: Always read referenced documentation
+- ❌ **Ignore context phrases**: "gegenüber LF" means LF is involved
+- ❌ **Assume message direction from diagram arrows**: Check referenced docs and Prüfidentifikatoren
+- ❌ **Skip follow-up process verification**: Read their documentation, don't assume from main diagram
+- ❌ **Ignore missing referenced files**: If a "ref" points to unavailable documentation, state this explicitly rather than guessing
 
 ## Required Actions
 
@@ -111,13 +197,19 @@ After reading the source documentation, I found that:
 - ✅ Use PROCESS_GRAPH.json indexes for discovery (find files), then read source files
 - ✅ Read source documentation files (`docs-offline/{filename}.md`) for process details
 - ✅ Parse Mermaid diagrams directly from source files
+- ✅ **When you see "ref" in a diagram**: Read the referenced process documentation
+- ✅ **When you see "gegenüber [Role]"**: Verify that role receives messages, even if diagram shows different arrow
 - ✅ Extract roles, prerequisites, relationships from source docs (not from index)
 - ✅ Read schema files (`PI_{ID}.yml`) before describing API structures
 - ✅ Read business rules (`yaml_output/{ID}.yaml`) before listing required fields
 - ✅ Read BO4E types (`bo4e-openapi.min.json`) before describing data structures
 - ✅ Reference example messages (`maco-edi-testfiles/`) when showing examples
+- ✅ **For follow-up processes**: Read their separate documentation, don't assume from main diagram
+- ✅ **Verify Prüfidentifikatoren directions**: Check schema descriptions for "an LF" (inbound) vs "von LF" (outbound)
+- ✅ **Handle missing references**: If a "ref" points to unavailable documentation, explicitly state this limitation
 - ✅ Cite source files (not the index) in your response
 - ✅ Verify information across multiple authoritative sources
+- ✅ **For technical conflicts**: Prefer YAML schemas over markdown prose for field requirements
 - ✅ Admit when information is not found in documentation
 
 ## Verification Checklist
@@ -128,8 +220,13 @@ Before providing any answer about MaKo processes, verify:
 - [ ] Used PROCESS_GRAPH.json indexes for discovery (`by_bdew_id`, `by_trigger`, `by_process_name`)
 - [ ] Read actual source documentation files from `docs-offline/` (not just the index)
 - [ ] Parsed Mermaid diagrams from source files for process flow
+- [ ] **Checked for "ref" markers**: If present, read referenced process documentation
+- [ ] **Interpreted context phrases**: "gegenüber LF" means LF is involved
+- [ ] **Verified message directions**: Don't assume from diagram arrows, check referenced docs
+- [ ] **Checked Prüfidentifikatoren**: Verified direction (inbound/outbound) for each Prüfi
+- [ ] **For follow-up processes**: Read their separate documentation, verified message recipients
 - [ ] Extracted roles, prerequisites, relationships from source docs
-- [ ] Schema file read (`PI_{ID}.yml`)
+- [ ] Schema file read (`PI_{ID}.yml`) - verified message direction from description
 - [ ] Business rules file read (`yaml_output/{ID}.yaml`)
 - [ ] BO4E types checked (`bo4e-openapi.min.json`)
 - [ ] Example messages referenced (`maco-edi-testfiles/`)
