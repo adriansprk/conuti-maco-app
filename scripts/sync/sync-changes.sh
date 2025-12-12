@@ -24,7 +24,7 @@ if [ -d "$WORKSPACE_ROOT/maco-api-documentation" ]; then
         CURRENT_HASH=$(git rev-parse HEAD)
         
         # Update version tracker
-        jq ".external_repos.maco-api-documentation.last_synced = \"$TIMESTAMP\" | .external_repos.maco-api-documentation.last_commit_hash = \"$CURRENT_HASH\"" \
+        jq ".\"external_repos\".\"maco-api-documentation\".last_synced = \"$TIMESTAMP\" | .\"external_repos\".\"maco-api-documentation\".last_commit_hash = \"$CURRENT_HASH\"" \
            "$VERSION_TRACKER" > "$VERSION_TRACKER.tmp" && mv "$VERSION_TRACKER.tmp" "$VERSION_TRACKER"
         
         echo "  ✅ Updated version tracker"
@@ -84,11 +84,51 @@ if [ -d "$WORKSPACE_ROOT/docs-offline" ]; then
     
     FILE_COUNT=$(find "$WORKSPACE_ROOT/docs-offline" -name "*.md" | wc -l | tr -d ' ')
     
-    jq ".external_repos.docs-offline.last_synced = \"$TIMESTAMP\" | .external_repos.docs-offline.file_count = $FILE_COUNT" \
+    jq ".\"external_repos\".\"docs-offline\".last_synced = \"$TIMESTAMP\" | .\"external_repos\".\"docs-offline\".file_count = $FILE_COUNT" \
        "$VERSION_TRACKER" > "$VERSION_TRACKER.tmp" && mv "$VERSION_TRACKER.tmp" "$VERSION_TRACKER"
     
     echo "  ✅ Updated version tracker"
     echo "  📝 File count: $FILE_COUNT"
+fi
+
+echo ""
+
+# Update maco-edi-testfiles tracking
+if [ -d "$WORKSPACE_ROOT/maco-edi-testfiles" ]; then
+    echo "📦 Processing maco-edi-testfiles..."
+    
+    cd "$WORKSPACE_ROOT/maco-edi-testfiles"
+    
+    if [ -d ".git" ]; then
+        CURRENT_HASH=$(git rev-parse HEAD)
+        
+        # Update version tracker
+        jq ".external_repos.\"maco-edi-testfiles\".last_synced = \"$TIMESTAMP\" | .external_repos.\"maco-edi-testfiles\".last_commit_hash = \"$CURRENT_HASH\"" \
+           "$VERSION_TRACKER" > "$VERSION_TRACKER.tmp" && mv "$VERSION_TRACKER.tmp" "$VERSION_TRACKER"
+        
+        echo "  ✅ Updated version tracker"
+        echo "  📝 Commit: $CURRENT_HASH"
+        
+        # Count test files
+        EDI_COUNT=$(find . -name "*.edi" | wc -l | tr -d ' ')
+        JSON_COUNT=$(find . -name "*.json" | wc -l | tr -d ' ')
+        echo "  📋 Test files: $EDI_COUNT EDI, $JSON_COUNT JSON"
+        
+        # Check for version directories
+        VERSION_DIRS=$(find . -type d -name "v[0-9]*" | grep -E "(inbound|outbound)" | sed 's|^\./||' | sort -u)
+        if [ -n "$VERSION_DIRS" ]; then
+            echo "  📋 Version directories found:"
+            echo "$VERSION_DIRS" | head -5 | sed 's/^/    /'
+            VERSION_COUNT=$(echo "$VERSION_DIRS" | wc -l | tr -d ' ')
+            if [ "$VERSION_COUNT" -gt 5 ]; then
+                echo "    ... and $((VERSION_COUNT - 5)) more"
+            fi
+        fi
+    else
+        echo "  ⚠️  Not a git repository - cannot track changes"
+    fi
+else
+    echo "  ⚠️  maco-edi-testfiles not found"
 fi
 
 echo ""

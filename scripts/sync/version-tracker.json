@@ -6,43 +6,61 @@
     "maco-api-documentation": {
       "source": "git submodule or external repo",
       "path": "maco-api-documentation",
-      "last_synced": null,
-      "last_commit_hash": null,
+      "last_synced": "2025-12-12T15:24:09Z",
+      "last_commit_hash": "e6725f643d9a3d57e1e06ec60d03e9fd09e10dbd",
       "tracked_files": {
         "build_script": {
           "path": "scripts/build-openapi-json.sh",
           "purpose": "Build script that formats minified JSON files (uses jq to make them readable/structured)",
-          "affects": ["_build/*.min.json", "schema_formatting"],
+          "affects": [
+            "_build/*.min.json",
+            "schema_formatting"
+          ],
           "critical": true,
           "note": "If this script changes, _build/*.min.json files may need to be regenerated"
         },
         "nodemon_config": {
           "path": "nodemon.json",
           "purpose": "Auto-rebuild configuration (watches for changes)",
-          "affects": ["build_process"],
+          "affects": [
+            "build_process"
+          ],
           "critical": false
         },
         "schemas": {
           "path": "_build/*.min.json",
           "purpose": "API schemas (bo4e-openapi, macoapp-*, maloident-*) - formatted/readable JSON",
-          "affects": ["PROCESS_GRAPH.json", "field_definitions"],
+          "affects": [
+            "PROCESS_GRAPH.json",
+            "field_definitions"
+          ],
           "generated": true,
           "generated_by": "scripts/build-openapi-json.sh"
         },
         "business_rules": {
           "path": "pythons/createPiFromTemplater/templater/yaml_output/*.yaml",
           "purpose": "Business rules for mandatory fields",
-          "affects": ["PROCESS_GRAPH.json", "validation_rules"]
+          "affects": [
+            "PROCESS_GRAPH.json",
+            "validation_rules"
+          ]
         },
         "process_schemas": {
           "path": "macoapp-schreiben/components/requestBodies/PIs/PI_*.yml",
           "purpose": "Process-specific API schemas",
-          "affects": ["PROCESS_GRAPH.json", "api_definitions"]
+          "affects": [
+            "PROCESS_GRAPH.json",
+            "api_definitions"
+          ]
         },
         "llm_txt": {
           "path": "llm.txt",
           "purpose": "Documentation index (237 entries) - maps BDEW IDs to documentation URLs",
-          "affects": ["docs-offline", "documentation_index", "PROCESS_GRAPH.json"],
+          "affects": [
+            "docs-offline",
+            "documentation_index",
+            "PROCESS_GRAPH.json"
+          ],
           "source": "Manually downloaded from doc.macoapp.de (online documentation)",
           "note": "NOT part of maco-api-documentation repo. Manually maintained in workspace. Used by download-docs.sh to download offline markdown files.",
           "workspace_specific": true
@@ -86,18 +104,24 @@
     "docs-offline": {
       "source": "Downloaded from doc.macoapp.de",
       "path": "docs-offline",
-      "last_synced": null,
+      "last_synced": "2025-12-12T15:24:09Z",
       "last_download_date": null,
       "tracked_files": {
         "prozessuebersicht": {
           "path": "prozessübersicht-*.md",
           "purpose": "Process workflow documentation",
-          "affects": ["PROCESS_GRAPH.json", "workflow_sequences"]
+          "affects": [
+            "PROCESS_GRAPH.json",
+            "workflow_sequences"
+          ]
         },
         "process_docs": {
           "path": "*-[process-name]-*.md",
           "purpose": "Process descriptions and EBD diagrams",
-          "affects": ["PROCESS_GRAPH.json", "process_descriptions"]
+          "affects": [
+            "PROCESS_GRAPH.json",
+            "process_descriptions"
+          ]
         }
       },
       "sync_actions": {
@@ -105,6 +129,58 @@
           "Update PROCESS_GRAPH.json documentation references",
           "Regenerate process sequences if workflow changed",
           "Update llm.txt index if new processes added"
+        ]
+      },
+      "file_count": 234
+    },
+    "maco-edi-testfiles": {
+      "source": "git submodule or external repo",
+      "path": "maco-edi-testfiles",
+      "last_synced": "2025-12-12T15:24:09Z",
+      "last_commit_hash": "622f8db252d69a3db42476f21a76a717f633f61a",
+      "tracked_files": {
+        "edi_test_files": {
+          "path": "**/*.edi",
+          "purpose": "EDIFACT test message files",
+          "affects": [
+            "example_messages",
+            "message_validation",
+            "test_cases"
+          ]
+        },
+        "json_test_files": {
+          "path": "**/*.json",
+          "purpose": "BO4E JSON test message files",
+          "affects": [
+            "example_messages",
+            "message_validation",
+            "test_cases",
+            "PROCESS_GRAPH.json"
+          ]
+        },
+        "inbound_messages": {
+          "path": "inbound/**/*.{edi,json}",
+          "purpose": "Inbound test messages (webhooks, responses from NB/MSB)",
+          "affects": [
+            "webhook_examples",
+            "response_validation"
+          ]
+        },
+        "outbound_messages": {
+          "path": "outbound/**/*.{edi,json}",
+          "purpose": "Outbound test messages (triggers, requests to Conuti)",
+          "affects": [
+            "trigger_examples",
+            "request_validation"
+          ]
+        }
+      },
+      "sync_actions": {
+        "on_testfile_change": [
+          "New test files may indicate new process IDs or message types",
+          "Update example message references in PROCESS_GRAPH.json if new processes added",
+          "Verify test files match current schema versions",
+          "Check for new version directories (e.g., v202510, v202604)"
         ]
       }
     }
@@ -115,7 +191,8 @@
         "docs-offline/prozessübersicht-*.md",
         "docs-offline/*.md (Mermaid diagrams extracted)",
         "maco-api-documentation/_build/*.min.json",
-        "maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/*.yaml"
+        "maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/*.yaml",
+        "maco-edi-testfiles/**/*.{edi,json} (example messages)"
       ],
       "generation_process": [
         "1. Download markdown files using llm.txt → scripts/download-docs.sh",
@@ -124,7 +201,7 @@
         "4. Generate PROCESS_GRAPH.json with indexes only (agents read source docs for details)"
       ],
       "last_generated": null,
-          "generation_script": "scripts/sync/update-process-graph-minimal.py"
+      "generation_script": "scripts/sync/update-process-graph-minimal.py"
     }
   }
 }

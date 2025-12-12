@@ -76,8 +76,8 @@ flowchart TD
 <example>
 | Message Type | Direction | Required Fields | Optional Fields | Example |
 |------------|-----------|----------------|----------------|---------|
-| START_LIEFERBEGINN | Outbound | marktlokationsId, lieferbeginn | zusatzdaten | maco-edi-testfiles/outbound/55077_ausgehend_Testfall1.json |
-| PI_55002 | Inbound | marktlokationsId, zustimmung | hinweise | maco-edi-testfiles/inbound/55002_eingehend_Testfall1.json |
+| START_LIEFERBEGINN | Outbound | marktlokationsId, lieferbeginn | zusatzdaten | maco-edi-testfiles/outbound/v202510/utilmd/55077/1.json (⚠️ v202510, JSON format) |
+| PI_55002 | Inbound | marktlokationsId, zustimmung | hinweise | maco-edi-testfiles/inbound/v202510/utilmd/55002/1.edi (⚠️ v202510, EDI format) |
 </example>
 
 ### 4. Field Requirements Visualization
@@ -119,7 +119,7 @@ flowchart TD
 
 4. **BO4E Types**: `maco-api-documentation/_build/bo4e-openapi.min.json`
 
-5. **Examples**: `maco-edi-testfiles/inbound/` and `/outbound/`
+5. **Examples**: `maco-edi-testfiles/inbound/v202510/` (EDI format) and `/outbound/v202510/` (JSON format) (⚠️ ALWAYS use v202510, NOT v202404. v202510: Outbound=JSON, Inbound=EDI)
 
 ## Response Format
 
@@ -157,6 +157,6 @@ When discussing processes, **ALWAYS structure response as**:
 **Do**: Always start with a sequence diagram
 **Do**: Show process dependencies in a flowchart
 **Do**: Include a table of message types and fields
-**Do**: Reference example messages from maco-edi-testfiles/
+**Do**: Reference example messages from maco-edi-testfiles/inbound/v202510/ (EDI format) or maco-edi-testfiles/outbound/v202510/ (JSON format) (⚠️ ALWAYS use v202510. v202510: Outbound=JSON, Inbound=EDI)
 **Do**: Use PROCESS_GRAPH.json data for accurate visualizations
 </valid-example>

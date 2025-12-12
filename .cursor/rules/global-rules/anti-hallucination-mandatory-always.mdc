@@ -108,7 +108,7 @@ When reading Mermaid sequence diagrams, ALWAYS:
 | Required fields | `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/{bdew_id}.yaml` | Check mandatory field list |
 | Message structure | `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_{bdew_id}.yml` | Validate request structure |
 | Data types | `maco-api-documentation/_build/bo4e-openapi.min.json` | Confirm BO4E schema compliance |
-| Example messages | `maco-edi-testfiles/outbound/{process_id}_ausgehend_Testfall*.json` | Validate real-world message format |
+| Example messages | `maco-edi-testfiles/outbound/v202510/{message_type}/{process_id}/*.json` (outbound) or `maco-edi-testfiles/inbound/v202510/{message_type}/{process_id}/*.edi` (inbound) | Validate real-world message format (⚠️ ALWAYS use v202510, NOT v202404. Outbound=JSON, Inbound=EDI) |
 | Trigger events | `maco-api-documentation/_build/macoapp-trigger.min.json` | Verify trigger event structure |
 | MaloIdent requests | `maco-api-documentation/_build/maloident-macoapp.min.json` | Verify request structure |
 | MaloIdent responses | `maco-api-documentation/_build/maloident-lieferant.min.json` | Verify webhook structure |
@@ -154,7 +154,7 @@ After reading the source documentation, I found that:
 - The Mermaid diagram in `lieferbeginn.md` shows MALOIDENT as a conditional prerequisite (when marktlokationsId is unknown)
 - The schema in `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_55077.yml` shows that marktlokationsId is a required field
 - The business rules in `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/55077.yaml` specify additional constraints
-- See example message in `maco-edi-testfiles/outbound/55077_ausgehend_Testfall1.json` for a complete message structure."
+- See example message in `maco-edi-testfiles/outbound/v202510/55077_ausgehend_Testfall1.json` for a complete message structure (⚠️ ALWAYS use v202510 version)."
 </valid-example>
 
 <invalid-example>
@@ -182,7 +182,7 @@ After reading the source documentation, I found that:
 - ❌ Guess process dependencies or prerequisites
 - ❌ Assume schema structures without reading PI_[ID].yml
 - ❌ Invent business rules without reading yaml_output/[ID].yaml
-- ❌ Create example messages without referencing maco-edi-testfiles/
+- ❌ Create example messages without referencing maco-edi-testfiles/ (or use wrong version like v202404)
 - ❌ Provide information without citing source files
 - ❌ Fill gaps with assumed information
 - ❌ **Ignore "ref" markers**: Always read referenced documentation
@@ -203,7 +203,7 @@ After reading the source documentation, I found that:
 - ✅ Read schema files (`PI_{ID}.yml`) before describing API structures
 - ✅ Read business rules (`yaml_output/{ID}.yaml`) before listing required fields
 - ✅ Read BO4E types (`bo4e-openapi.min.json`) before describing data structures
-- ✅ Reference example messages (`maco-edi-testfiles/`) when showing examples
+- ✅ Reference example messages (`maco-edi-testfiles/inbound/v202510/` for EDI inbound or `maco-edi-testfiles/outbound/v202510/` for JSON outbound) when showing examples (⚠️ ALWAYS use v202510, NEVER v202404. v202510: Outbound=JSON, Inbound=EDI)
 - ✅ **For follow-up processes**: Read their separate documentation, don't assume from main diagram
 - ✅ **Verify Prüfidentifikatoren directions**: Check schema descriptions for "an LF" (inbound) vs "von LF" (outbound)
 - ✅ **Handle missing references**: If a "ref" points to unavailable documentation, explicitly state this limitation
@@ -229,7 +229,7 @@ Before providing any answer about MaKo processes, verify:
 - [ ] Schema file read (`PI_{ID}.yml`) - verified message direction from description
 - [ ] Business rules file read (`yaml_output/{ID}.yaml`)
 - [ ] BO4E types checked (`bo4e-openapi.min.json`)
-- [ ] Example messages referenced (`maco-edi-testfiles/`)
+- [ ] Example messages referenced (`maco-edi-testfiles/inbound/v202510/` for EDI inbound or `maco-edi-testfiles/outbound/v202510/` for JSON outbound) - ⚠️ ALWAYS v202510, NOT v202404 (v202510: Outbound=JSON, Inbound=EDI)
 - [ ] Cross-referenced with authoritative sources (BUSINESS_PROCESS_MAP.md, schemas, rules)
 - [ ] All information cited with source files (not the index)
 - [ ] No information provided without source verification
@@ -254,7 +254,7 @@ Before providing any answer about MaKo processes, verify:
 - Schema: `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_{ID}.yml`
 - Business Rules: `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/{ID}.yaml`
 - BO4E Types: `maco-api-documentation/_build/bo4e-openapi.min.json`
-- Examples: `maco-edi-testfiles/outbound/{process_id}_ausgehend_Testfall*.json`
+- Examples: `maco-edi-testfiles/outbound/v202510/{message_type}/{process_id}/*.json` (outbound JSON) or `maco-edi-testfiles/inbound/v202510/{message_type}/{process_id}/*.edi` (inbound EDI) (⚠️ ALWAYS use v202510, NOT v202404. v202510: Outbound=JSON, Inbound=EDI)
 - Business Process Map: `docs/entry-points/BUSINESS_PROCESS_MAP.md` (for business scenarios)
 ```
 
@@ -272,7 +272,7 @@ Before providing any answer about MaKo processes, verify:
 [Reads `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_55077.yml` - finds schema structure]
 [Reads `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/55077.yaml` - finds mandatory fields]
 [Reads `maco-api-documentation/_build/bo4e-openapi.min.json` - verifies data types]
-[References `maco-edi-testfiles/outbound/55077_ausgehend_Testfall1.json` - validates message format]
+[References `maco-edi-testfiles/outbound/v202510/utilmd/55077/1.json` - validates message format (⚠️ ALWAYS use v202510, outbound=JSON format)]
 
 According to the schema in `PI_55077.yml` and business rules in `yaml_output/55077.yaml`, the required fields for process 55077 (LIEFERBEGINN) are:
 - marktlokationsId (string, required)
@@ -280,7 +280,7 @@ According to the schema in `PI_55077.yml` and business rules in `yaml_output/550
 
 The source documentation in `docs-offline/lieferbeginn.md` shows this is triggered by START_LIEFERBEGINN and may require MALOIDENT as a prerequisite if marktlokationsId is unknown.
 
-See example in `maco-edi-testfiles/outbound/55077_ausgehend_Testfall1.json` for a complete message structure."
+See example in `maco-edi-testfiles/outbound/v202510/utilmd/55077/1.json` for a complete message structure (⚠️ ALWAYS use v202510 version, outbound=JSON format)."
 </valid-example>
 
 <invalid-example>

@@ -23,7 +23,14 @@ version: 1.0.0
 - `docs/entry-points/AI_AGENT_SETUP.md` - Technical implementation (Entry Point 2)
 - `docs/llm.txt` - Documentation index (237 entries) - Find which docs you need
 - `docs-offline/` - 232 offline documentation files (Prozessübersicht, process descriptions, EBD diagrams)
-- `maco-edi-testfiles/` - 2,549 EDI test files (real-world message examples in EDIFACT and BO4E JSON)
+- `maco-edi-testfiles/` - 2,549+ EDI test files (real-world message examples)
+  - **⚠️ CRITICAL**: Always use `v202510` version directory, NOT `v202404` or other versions
+  - **v202510 Structure** (reflects actual workflow):
+    - **Inbound examples**: `maco-edi-testfiles/inbound/v202510/` - EDIFACT format (`.edi` files only)
+      - Messages FROM NB/MSB (webhooks, responses) - received as EDIFACT
+    - **Outbound examples**: `maco-edi-testfiles/outbound/v202510/` - BO4E JSON format (`.json` files only)
+      - Messages TO Conuti API (triggers, requests) - sent as BO4E JSON
+  - **⚠️ NEVER use v202404** - it's outdated and has different structure (both formats for both directions)
 
 **API Schema Files** (`maco-api-documentation/_build/`):
 - `bo4e-openapi.min.json` - BO4E data structures and types
@@ -69,7 +76,14 @@ version: 1.0.0
 4. **Use PROCESS_GRAPH.json for discovery** - Find relevant files via indexes, then READ those source files
 5. **Read source documentation** - Parse Mermaid diagrams, extract roles/prerequisites/relationships from actual docs
 6. **Reference documentation** via `docs/llm.txt` → docs-offline/
-7. **Check examples** in maco-edi-testfiles/
+7. **Check examples** in maco-edi-testfiles/ (ALWAYS use v202510 version directory)
+   - **Inbound**: `maco-edi-testfiles/inbound/v202510/` - EDIFACT format (`.edi` files)
+     - Example: `maco-edi-testfiles/inbound/v202510/utilmd/55002/1.edi`
+     - These show what you RECEIVE from NB/MSB (webhooks, responses)
+   - **Outbound**: `maco-edi-testfiles/outbound/v202510/` - BO4E JSON format (`.json` files)
+     - Example: `maco-edi-testfiles/outbound/v202510/utilmd/55077/1.json`
+     - These show what you SEND to Conuti API (triggers, requests)
+   - ⚠️ **NEVER use v202404** - it's outdated and has different structure
 8. **Verify against schemas** (PI_[ID].yml) and business rules (yaml_output/[ID].yaml)
 9. **Cite sources** in your response (always cite the source file, not the index)
 10. **Build implementation** using verified schemas and business rules from source docs

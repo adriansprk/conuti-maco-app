@@ -88,9 +88,9 @@ Use this sequence:
 
 ### Step 5: Check Examples
 
-Reference real-world examples:
-- `maco-edi-testfiles/inbound/` - Example inbound messages (responses from market) - JSON format shows BO4E structure
-- `maco-edi-testfiles/outbound/` - Example outbound messages (requests to market) - JSON format shows BO4E structure
+Reference real-world examples (⚠️ ALWAYS use v202510, NOT v202404):
+- `maco-edi-testfiles/inbound/v202510/` - Example inbound messages (responses from market) - EDIFACT format (`.edi` files) - what you RECEIVE from NB/MSB
+- `maco-edi-testfiles/outbound/v202510/` - Example outbound messages (requests to market) - BO4E JSON format (`.json` files) - what you SEND to Conuti API
 
 ### Step 6: Build Implementation
 
