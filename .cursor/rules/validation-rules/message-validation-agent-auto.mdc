@@ -1,0 +1,146 @@
+---
+description: Message validation agent - validates MaKo messages against schemas, business rules, and Conuti requirements
+globs:
+  - "**/*.json"
+  - "**/*.yaml"
+  - "**/*.yml"
+  - "backend/**/*"
+  - "src/**/*"
+  - "api/**/*"
+  - "validation/**/*"
+  - "test/**/*"
+alwaysApply: false
+tags: [validation, message, conuti, schema, business-rules]
+priority: 3
+version: 1.0.0
+---
+
+# Message Validation Agent
+
+## Purpose
+
+This agent validates MaKo messages before sending to Conuti, checking:
+- Schema compliance (PI_[ID].yml)
+- Business rules (yaml_output/[ID].yaml)
+- Required vs optional fields
+- BO4E type correctness
+- Missing backend functionality
+
+## Validation Workflow
+
+### Step 1: Load Process Context
+
+1. Identify process ID (BDEW Prüfidentifikator)
+2. Load from PROCESS_GRAPH.json: `indexes.by_pruefi["[ID]"]`
+3. Load schema: `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_[ID].yml`
+4. Load business rules: `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/[ID].yaml`
+5. Load BO4E types: `maco-api-documentation/_build/bo4e-openapi.min.json`
+
+### Step 2: Validate Against Schema
+
+Check message structure matches PI_[ID].yml:
+- Required fields present
+- Field types correct (string, date, object, etc.)
+- Nested structures valid
+- Enum values valid (if applicable)
+
+### Step 3: Validate Against Business Rules
+
+Check yaml_output/[ID].yaml for:
+- Mandatory fields (marked as required)
+- Field constraints (min/max length, patterns, etc.)
+- Conditional requirements (if field X, then field Y required)
+- Business logic constraints
+
+### Step 4: Check Backend Functionality
+
+Identify missing backend capabilities:
+- Required database fields not present
+- Missing API endpoints
+- Incomplete webhook handlers
+- Missing data transformation logic
+
+### Step 5: Generate Validation Report
+
+**ALWAYS create visualization** showing:
+- Validation results (pass/fail per check)
+- Missing fields highlighted
+- Missing backend functionality listed
+- Recommendations for fixes
+
+<example>
+**Validation Report Format**:
+
+```markdown
+## Validation Report: Process 55077 (Lieferbeginn)
+
+### Schema Validation
+- ✅ marktlokationsId: Present, type correct
+- ✅ lieferbeginn: Present, date format valid
+- ⚠️ zusatzdaten: Optional, but recommended
+
+### Business Rules Validation
+- ✅ All mandatory fields present
+- ⚠️ Missing: hinweise field (optional but recommended for traceability)
+
+### Backend Functionality Check
+- ❌ Missing: Database field `marktlokationsId` in customer table
+- ❌ Missing: API endpoint `/api/maloident/request`
+- ⚠️ Partial: Webhook handler exists but missing error handling
+
+### Recommendations
+1. Add `marktlokationsId` to customer database schema
+2. Implement `/api/maloident/request` endpoint
+3. Add error handling to webhook handler
+```
+</example>
+
+## Validation Checklist
+
+When validating a message, check:
+
+- [ ] Process ID identified correctly
+- [ ] Schema loaded and validated
+- [ ] Business rules checked
+- [ ] Required fields present
+- [ ] Field types correct
+- [ ] BO4E types validated
+- [ ] Backend database fields available
+- [ ] API endpoints implemented
+- [ ] Webhook handlers ready
+- [ ] Error handling in place
+- [ ] Example messages referenced
+
+## Integration with Database
+
+**Future Enhancement**: When database integration is available:
+1. Query database for existing customer/contract data
+2. Pre-populate message fields from database
+3. Validate database completeness
+4. Identify missing database fields
+5. Generate database migration recommendations
+
+## Integration with Conuti Testing
+
+**Future Enhancement**: When Conuti testing is available:
+1. Send test message to Conuti sandbox
+2. Capture response and errors
+3. Compare against expected responses
+4. Identify schema mismatches
+5. Provide feedback on missing fields
+
+<valid-example>
+**Validation Process**:
+1. User provides: "Validate message for process 55077"
+2. Agent loads: Schema, business rules, BO4E types
+3. Agent checks: Message structure, required fields, backend capabilities
+4. Agent creates: Visualization showing validation results
+5. Agent reports: Missing fields, missing functionality, recommendations
+</valid-example>
+
+<invalid-example>
+**Don't**: Validate without checking business rules
+**Don't**: Skip schema validation
+**Don't**: Forget to check backend functionality
+**Don't**: Omit visualization of validation results
+</invalid-example>

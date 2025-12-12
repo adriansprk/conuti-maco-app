@@ -1,0 +1,170 @@
+---
+description: CRITICAL - Never hallucinate - always read documentation files before answering. Verify all information against source files.
+alwaysApply: true
+tags: [critical, anti-hallucination, documentation, verification, mandatory]
+priority: 1
+version: 1.0.0
+---
+
+# Anti-Hallucination Rule - CRITICAL
+
+## ⚠️ CRITICAL REQUIREMENT
+
+**NEVER provide information without first reading the relevant documentation files.**
+
+**NEVER make up, guess, or assume process details, field names, API endpoints, or data structures.**
+
+**ALWAYS verify information against source files before providing answers.**
+
+## Mandatory Verification Process
+
+### Step 1: Read Documentation FIRST
+
+**Before answering ANY question about MaKo processes:**
+
+1. **Identify the process** (BDEW ID, process name, or business goal)
+2. **Read PROCESS_GRAPH.json** - Lookup process details, prerequisites, triggers
+3. **Read relevant documentation** from `docs-offline/` or `llm.txt` → `docs-offline/`
+4. **Read schemas** - `PI_[ID].yml` for API structure
+5. **Read business rules** - `yaml_output/[ID].yaml` for mandatory fields
+6. **Read BO4E types** - `bo4e-openapi.min.json` for data structures
+7. **Read examples** - `maco-edi-testfiles/` for real-world message examples
+
+### Step 2: Cite Sources
+
+**ALWAYS cite the source file** when providing information:
+
+<valid-example>
+**Good Response**:
+"According to PROCESS_GRAPH.json, process 55077 (LIEFERBEGINN) requires MALOIDENT as a prerequisite. The schema in PI_55077.yml shows that marktlokationsId is a required field. The business rules in yaml_output/55077.yaml specify additional constraints. See example message in maco-edi-testfiles/outbound/55077_ausgehend_Testfall1.json."
+</valid-example>
+
+<invalid-example>
+**Bad Response** (HALLUCINATION):
+"Process 55077 requires customer ID and start date. The API endpoint is /api/start-delivery."
+**Problem**: No source files cited, information may be incorrect
+</invalid-example>
+
+### Step 3: Verify Against Multiple Sources
+
+**Cross-reference information** across multiple sources:
+- PROCESS_GRAPH.json (process structure)
+- Schema files (PI_[ID].yml)
+- Business rules (yaml_output/[ID].yaml)
+- BO4E types (bo4e-openapi.min.json)
+- Example messages (maco-edi-testfiles/)
+- Documentation (docs-offline/)
+
+If sources conflict, **state the conflict** and cite all sources.
+
+### Step 4: Admit Uncertainty
+
+**If documentation is missing or unclear:**
+- **State clearly**: "I cannot find this information in the documentation"
+- **List what you checked**: "I checked PROCESS_GRAPH.json, PI_[ID].yml, and docs-offline/"
+- **Suggest where to look**: "You may need to check [specific file] or contact support"
+
+**NEVER make up information to fill gaps.**
+
+## Prohibited Behaviors
+
+**NEVER:**
+- ❌ Answer without reading documentation files first
+- ❌ Make up field names, API endpoints, or data structures
+- ❌ Guess process dependencies or prerequisites
+- ❌ Assume schema structures without reading PI_[ID].yml
+- ❌ Invent business rules without reading yaml_output/[ID].yaml
+- ❌ Create example messages without referencing maco-edi-testfiles/
+- ❌ Provide information without citing source files
+- ❌ Fill gaps with assumed information
+
+## Required Actions
+
+**ALWAYS:**
+- ✅ Read PROCESS_GRAPH.json before discussing processes
+- ✅ Read schema files (PI_[ID].yml) before describing API structures
+- ✅ Read business rules (yaml_output/[ID].yaml) before listing required fields
+- ✅ Read BO4E types (bo4e-openapi.min.json) before describing data structures
+- ✅ Reference example messages (maco-edi-testfiles/) when showing examples
+- ✅ Cite source files in your response
+- ✅ Verify information across multiple sources
+- ✅ Admit when information is not found in documentation
+
+## Verification Checklist
+
+Before providing any answer about MaKo processes, verify:
+
+- [ ] Process ID identified correctly
+- [ ] PROCESS_GRAPH.json read and referenced
+- [ ] Relevant documentation file read (from docs-offline/)
+- [ ] Schema file read (PI_[ID].yml)
+- [ ] Business rules file read (yaml_output/[ID].yaml)
+- [ ] BO4E types checked (bo4e-openapi.min.json)
+- [ ] Example messages referenced (maco-edi-testfiles/)
+- [ ] All information cited with source files
+- [ ] No information provided without source verification
+
+## Response Format
+
+**Structure your response as:**
+
+```markdown
+## Answer
+
+[Your answer based on documentation]
+
+## Sources Verified
+
+- PROCESS_GRAPH.json: [specific section/process]
+- Schema: PI_[ID].yml
+- Business Rules: yaml_output/[ID].yaml
+- BO4E Types: bo4e-openapi.min.json
+- Examples: maco-edi-testfiles/[path]
+- Documentation: docs-offline/[filename].md
+```
+
+## Examples
+
+<valid-example>
+**User**: "What fields are required for process 55077?"
+
+**Agent Response**:
+"I'll check the documentation for process 55077.
+
+[Reads PROCESS_GRAPH.json - finds LIEFERBEGINN]
+[Reads PI_55077.yml - finds schema structure]
+[Reads yaml_output/55077.yaml - finds mandatory fields]
+[Reads bo4e-openapi.min.json - verifies data types]
+[References maco-edi-testfiles/outbound/55077_ausgehend_Testfall1.json]
+
+According to the schema in PI_55077.yml and business rules in yaml_output/55077.yaml, the required fields for process 55077 (LIEFERBEGINN) are:
+- marktlokationsId (string, required)
+- lieferbeginn (date, required)
+
+See example in maco-edi-testfiles/outbound/55077_ausgehend_Testfall1.json for a complete message structure."
+</valid-example>
+
+<invalid-example>
+**User**: "What fields are required for process 55077?"
+
+**Bad Agent Response** (HALLUCINATION):
+"The required fields are customer ID, start date, and contract number."
+
+**Problem**: No documentation read, no sources cited, information may be incorrect
+</invalid-example>
+
+## Integration with Other Rules
+
+This rule works with:
+- **visualization-rules/process-visualization-mandatory-always.mdc**: Visualizations must be based on documentation, not assumptions
+- **domain-rules/business-discovery-auto.mdc**: Business discovery must reference BUSINESS_PROCESS_MAP.md and PROCESS_GRAPH.json
+- **domain-rules/technical-implementation-auto.mdc**: Technical implementation must reference schemas and business rules
+- **validation-rules/**: Validation must check against actual schemas and rules
+
+## Enforcement
+
+**This is a CRITICAL rule with highest priority.**
+
+Violations of this rule (providing information without reading documentation) are **unacceptable**.
+
+If you cannot find information in the documentation, **say so explicitly** rather than guessing.

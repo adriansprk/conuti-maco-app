@@ -1,0 +1,160 @@
+---
+description: Technical implementation guide for specific MaKo messages and BDEW process IDs
+globs:
+  - "**/*.yaml"
+  - "**/*.yml"
+  - "**/*.json"
+  - "**/AI_AGENT_SETUP.md"
+  - "**/PROCESS_GRAPH.json"
+  - "backend/**/*"
+  - "src/**/*"
+  - "api/**/*"
+alwaysApply: false
+tags: [technical, implementation, api, schemas, bdew-id]
+priority: 2
+version: 1.0.0
+---
+
+# Technical Implementation - Entry Point 2
+
+## When to Use This Rule
+
+Apply when user asks about:
+- API structure, schemas, or technical details
+- Building payloads for known process IDs
+- Understanding data structures
+- Specific BDEW process IDs or technical implementation
+- Specific MaKo message/BDEW ID implementation
+
+## Workflow: Specific Message → Implementation
+
+### Step 1: Start with AI_AGENT_SETUP.md
+
+**ALWAYS START HERE** for technical implementation tasks.
+
+**CRITICAL**: Read actual schema files - never guess API structures or field names.
+
+<example>
+**User**: "I need to implement process 55077"
+
+**Agent Action**:
+1. **READ** AI_AGENT_SETUP.md for technical setup
+2. **READ** PROCESS_GRAPH.json: `indexes.by_pruefi["55077"]` (verify actual data)
+3. **READ** PI_55077.yml (verify actual schema structure)
+4. **READ** yaml_output/55077.yaml (verify actual business rules)
+5. **READ** bo4e-openapi.min.json (verify actual BO4E types)
+6. **READ** example: maco-edi-testfiles/outbound/55077_ausgehend_Testfall*.json
+7. **Cite all sources** in response
+8. **Create visualization** showing message flow and fields (based on verified schemas)
+</example>
+
+### Step 2: Lookup Process in PROCESS_GRAPH.json
+
+Use indexes for fast lookup:
+- By pruefi: `indexes.by_pruefi["55077"]` → LIEFERBEGINN
+- By trigger: `indexes.by_trigger["START_LIEFERBEGINN"]` → LIEFERBEGINN
+- Process details: `processes.LIEFERBEGINN.triggers_processes`, `processes.LIEFERBEGINN.prerequisites`
+
+<example>
+**Lookup Pattern**:
+```javascript
+// Find process by BDEW ID
+const process = PROCESS_GRAPH.indexes.by_pruefi["55077"];
+// Returns: { id: "LIEFERBEGINN", trigger: "START_LIEFERBEGINN", ... }
+
+// Check what it triggers
+const nextProcesses = PROCESS_GRAPH.processes.LIEFERBEGINN.triggers_processes;
+// Returns: ["STAMMDATENAENDERUNG"]
+
+// Check prerequisites
+const prereqs = PROCESS_GRAPH.processes.LIEFERBEGINN.prerequisites;
+// Returns: ["MALOIDENT"]
+</example>
+
+### Step 3: Create Process Visualization
+
+**MANDATORY**: Always create visualizations (see visualization-rules/process-visualization-mandatory-always.mdc)
+
+Include:
+- Sequence diagram showing API call flow
+- Message structure diagram
+- Required vs optional fields table
+- Example message references
+
+### Step 4: Understand Technical Requirements
+
+Reference in this order:
+1. `llm.txt` - Find documentation for this process
+2. `docs-offline/` - Read process workflow documentation (Prozessübersicht shows step-by-step API call sequences)
+3. `docs-offline/enhanced-index.json` - Programmatic BDEW ID → filename lookup (optional)
+
+### Step 5: Check Business Rules & Schemas
+
+**Business Rules** (mandatory fields):
+- `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/[ID].yaml`
+
+**API Schemas**:
+- Process schemas: `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_[ID].yml`
+- BO4E types: `maco-api-documentation/_build/bo4e-openapi.min.json`
+
+**API Operations**:
+- Write: `maco-api-documentation/_build/macoapp-schreiben.min.json`
+- Read: `maco-api-documentation/_build/macoapp-lesen.min.json`
+- Trigger: `maco-api-documentation/_build/macoapp-trigger.min.json`
+- MaloIdent request: `maco-api-documentation/_build/maloident-macoapp.min.json`
+- MaloIdent response: `maco-api-documentation/_build/maloident-lieferant.min.json`
+
+### Step 6: Check Example Messages
+
+Reference real-world examples:
+- Inbound: `maco-edi-testfiles/inbound/[process-id]_eingehend_Testfall*.json`
+- Outbound: `maco-edi-testfiles/outbound/[process-id]_ausgehend_Testfall*.json`
+
+<valid-example>
+**Implementing Process 55077 (Lieferbeginn)**:
+
+1. **Lookup**: `PROCESS_GRAPH.indexes.by_pruefi["55077"]` → LIEFERBEGINN
+2. **Check prerequisites**: Requires MALOIDENT to be completed first
+3. **Create visualization**: Sequence diagram + field requirements table
+4. **Read schema**: `PI_55077.yml` for request structure
+5. **Check business rules**: `yaml_output/55077.yaml` for mandatory fields
+6. **Reference BO4E**: `bo4e-openapi.min.json` for data types
+7. **Check examples**: `maco-edi-testfiles/outbound/55077_ausgehend_Testfall*.json`
+8. **Build payload**: Use schema + business rules + examples
+9. **Trigger**: Use `macoapp-trigger.min.json` to send START_LIEFERBEGINN
+10. **Handle response**: Implement webhook using `maloident-lieferant.min.json` structure
+</valid-example>
+
+<invalid-example>
+**Don't**: Build payload without checking business rules (yaml_output/)
+**Don't**: Skip schema validation against PI_[ID].yml
+**Don't**: Ignore prerequisites - trigger will fail if prerequisites not met
+**Don't**: Forget to implement webhook handlers for inbound responses
+**Don't**: Skip visualization creation
+</invalid-example>
+
+## Cross-Reference Pattern
+
+Always follow this pattern:
+```
+Business rules (yaml_output/) 
+  → Process schemas (PIs/) 
+  → BO4E types (_build/bo4e-openapi.min.json)
+  → Examples (maco-edi-testfiles/)
+  → Visualization (Mermaid diagrams)
+  → Implementation
+```
+
+## API Direction Reminder
+
+- **Outbound**: Your backend → Conuti API (trigger, send data)
+- **Inbound**: Conuti API → Your backend webhooks (receive responses, receive data)
+
+## Process Dependencies
+
+Before implementing:
+1. Check `PROCESS_GRAPH.json` for prerequisites
+2. Verify prerequisites are completed or can be triggered
+3. Understand what processes this triggers next
+4. Plan webhook handlers for all expected responses
+5. **Create visualization** of the complete technical flow

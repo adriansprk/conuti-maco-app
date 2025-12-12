@@ -1,0 +1,162 @@
+---
+description: MANDATORY - Always create visualizations when discussing processes - sequences, message types, fields, examples
+alwaysApply: true
+tags: [visualization, mermaid, processes, mandatory]
+priority: 1
+version: 1.0.0
+---
+
+# Process Visualization - MANDATORY Rule
+
+## Critical Requirement
+
+**ALWAYS create visualizations** when discussing, explaining, or implementing MaKo processes. Visualizations are REQUIRED, not optional.
+
+## When to Create Visualizations
+
+Create visualizations when user asks about:
+- Process sequences or workflows
+- Process dependencies or prerequisites
+- Message flows (inbound/outbound)
+- Required vs optional fields
+- Process implementation steps
+- Business scenarios involving processes
+- Any process-related question
+
+## Visualization Requirements
+
+### 1. Process Sequence Diagram (Mermaid)
+
+**ALWAYS include** a sequence diagram showing:
+- Process steps in order
+- Actors (Backend, Conuti, NB, MSB)
+- Message types and directions
+- Prerequisites and outcomes
+
+<example>
+```mermaid
+sequenceDiagram
+    participant Backend
+    participant Conuti
+    participant NB as Network Operator
+    
+    Backend->>Conuti: START_LIEFERBEGINN (55077)
+    Conuti->>NB: EDIFACT Message
+    NB-->>Conuti: Response (55002/55003)
+    Conuti->>Backend: Webhook (PI_55002 or PI_55003)
+```
+</example>
+
+### 2. Process Flow Diagram (Mermaid)
+
+**ALWAYS include** a flowchart showing:
+- Process dependencies
+- Prerequisites
+- What processes trigger next
+- Decision points (success/rejection paths)
+
+<example>
+```mermaid
+flowchart TD
+    A[MALOIDENT] -->|Success| B[LIEFERBEGINN 55077]
+    A -->|Rejection| E[E_0594 Error]
+    B -->|Success| C[STAMMDATENAENDERUNG]
+    B -->|Rejection| D[55003 Negative Response]
+```
+</example>
+
+### 3. Message Structure Table
+
+**ALWAYS include** a table showing:
+- Message types (trigger, inbound, outbound)
+- Required fields (from yaml_output/)
+- Optional fields
+- Example message references
+
+<example>
+| Message Type | Direction | Required Fields | Optional Fields | Example |
+|------------|-----------|----------------|----------------|---------|
+| START_LIEFERBEGINN | Outbound | marktlokationsId, lieferbeginn | zusatzdaten | maco-edi-testfiles/outbound/55077_ausgehend_Testfall1.json |
+| PI_55002 | Inbound | marktlokationsId, zustimmung | hinweise | maco-edi-testfiles/inbound/55002_eingehend_Testfall1.json |
+</example>
+
+### 4. Field Requirements Visualization
+
+**ALWAYS show** required vs optional fields:
+- Use PROCESS_GRAPH.json for process structure
+- Reference yaml_output/[ID].yaml for mandatory fields
+- Show BO4E type definitions from bo4e-openapi.min.json
+
+<example>
+**Process 55077 (Lieferbeginn) Fields**:
+- ✅ **Required**: `marktlokationsId` (string), `lieferbeginn` (date)
+- ⚠️ **Optional**: `zusatzdaten` (object), `hinweise` (string)
+- 📋 **Schema**: PI_55077.yml
+- 📝 **Business Rules**: yaml_output/55077.yaml
+</example>
+
+## Visualization Format
+
+**Preferred**: Mermaid diagrams (sequence, flowchart, class diagrams)
+**Alternative**: Structured markdown tables and lists
+**Always Include**: 
+- Process ID (BDEW Prüfidentifikator)
+- Process name
+- Message types and directions
+- Required/optional fields
+- Example message references
+
+## Data Sources for Visualizations
+
+1. **Process Structure**: `PROCESS_GRAPH.json`
+   - `processes.[PROCESS_ID].prerequisites`
+   - `processes.[PROCESS_ID].triggers_processes`
+   - `processes.[PROCESS_ID].api.outbound` / `.inbound`
+
+2. **Field Requirements**: `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/[ID].yaml`
+
+3. **Message Schemas**: `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_[ID].yml`
+
+4. **BO4E Types**: `maco-api-documentation/_build/bo4e-openapi.min.json`
+
+5. **Examples**: `maco-edi-testfiles/inbound/` and `/outbound/`
+
+## Response Format
+
+When discussing processes, **ALWAYS structure response as**:
+
+```markdown
+## Process Overview
+[Brief description]
+
+## Process Sequence
+```mermaid
+[Sequence diagram]
+```
+
+## Process Flow
+```mermaid
+[Flowchart diagram]
+```
+
+## Message Types & Fields
+[Table with required/optional fields]
+
+## Example Messages
+[References to test files]
+```
+
+<invalid-example>
+**Don't**: Explain a process without visualizations
+**Don't**: Skip sequence diagrams for multi-step processes
+**Don't**: Forget to show required vs optional fields
+**Don't**: Omit example message references
+</invalid-example>
+
+<valid-example>
+**Do**: Always start with a sequence diagram
+**Do**: Show process dependencies in a flowchart
+**Do**: Include a table of message types and fields
+**Do**: Reference example messages from maco-edi-testfiles/
+**Do**: Use PROCESS_GRAPH.json data for accurate visualizations
+</valid-example>

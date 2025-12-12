@@ -1,0 +1,141 @@
+flowchart TD
+    %% ============================================
+    %% INITIAL TRIGGER
+    %% ============================================
+    Start([POST /inbound 55077<br/>Lieferbeginn Request]) --> Update1[POST /updateProcessData<br/>55077 vorgangsnummer]
+    Update1 --> Send[55077 sent to DSO/NB]
+    
+    %% ============================================
+    %% MAIN RESPONSE ROUTER
+    %% ============================================
+    Send --> Router{Response Type}
+    
+    %% ============================================
+    %% ROUTE 1: SUCCESS PATH (55078)
+    %% ============================================
+    Router -->|55078| R1_Start[ROUTE 1: SUCCESS]
+    R1_Start --> R1_Receive[55078 received<br/>SUCCESS]
+    R1_Receive --> R1_Import[Import & Validate]
+    R1_Import --> R1_Update[POST /updateProcessData<br/>55078]
+    R1_Update --> FollowUpsSuccess[Follow-up Processes]
+    
+    %% ============================================
+    %% ROUTE 2: REJECTION PATH (55080)
+    %% ============================================
+    Router -->|55080| R2_Start[ROUTE 2: REJECTION]
+    R2_Start --> R2_Receive[55080 received<br/>REJECTION<br/>Wrong MaLo/Business Error]
+    R2_Receive --> R2_Update[POST /updateProcessData<br/>55080]
+    R2_Update --> R2_Extract[Extract freitext<br/>rejection reason]
+    R2_Extract --> R2_End([Process End<br/>Handle Rejection])
+    
+    %% ============================================
+    %% ROUTE 3: INFO PATH (55036 - Existing Assignment)
+    %% ============================================
+    Router -->|55036| R3_Start[ROUTE 3: INFO<br/>Existing Assignment]
+    R3_Start --> R3_Receive[55036 received<br/>Info: LFA already assigned]
+    R3_Receive --> R3_Update[POST /updateProcessData<br/>55036]
+    R3_Update --> R3_Wait[Wait for LFA termination]
+    
+    %% ROUTE 3 DETAIL: LFA Termination Flow
+    R3_Wait --> R3_NB55010[NB sends 55010<br/>to LFA<br/>Abmeldeanfrage]
+    R3_NB55010 --> R3_LFAResponse{LFA Response}
+    
+    R3_LFAResponse -->|55011 Accept| R3_LFA55011[55011: LFA accepts<br/>termination]
+    R3_LFA55011 --> R3_NB55037[NB sends 55037<br/>to LFA<br/>Beendigung Zuordnung]
+    R3_NB55037 --> R3_FinalSuccess[55078 received<br/>SUCCESS]
+    R3_FinalSuccess --> R3_FinalUpdate[POST /updateProcessData<br/>55078]
+    R3_FinalUpdate --> FollowUpsAfter55036[Follow-up Processes]
+    
+    R3_LFAResponse -->|55012 Reject| R3_LFA55012[55012: LFA rejects<br/>termination]
+    R3_LFA55012 --> R3_FinalReject[55080 received<br/>REJECTION]
+    R3_FinalReject --> R3_FinalRejectUpdate[POST /updateProcessData<br/>55080]
+    R3_FinalRejectUpdate --> R2_End
+    
+    %% ============================================
+    %% ROUTE 4: TECHNICAL ERROR PATH (APERAK)
+    %% ============================================
+    Router -->|APERAK| R4_Start[ROUTE 4: TECHNICAL ERROR]
+    R4_Start --> R4_Receive[APERAK to 55077<br/>Technical/Format Error]
+    R4_Receive --> R4_Update[POST /updateProcessData<br/>APERAK Rejected 99999]
+    R4_Update --> R4_CancelDecision{Cancel<br/>Process?}
+    R4_CancelDecision -->|Yes| CancelFlow[Cancel Flow]
+    R4_CancelDecision -->|No| R4_End([Process End<br/>Fix & Retry])
+    
+    %% ============================================
+    %% ROUTE 5: NO RESPONSE PATH
+    %% ============================================
+    Router -->|No Response| R5_Start[ROUTE 5: NO RESPONSE]
+    R5_Start --> R5_NoFeedback[No feedback received]
+    R5_NoFeedback --> R5_Timeout{Deadline<br/>passed?}
+    R5_Timeout -->|No| R5_Retry[Retry: Resend 55077]
+    R5_Retry --> Send
+    R5_Timeout -->|Yes| R5_Deadline[POST /updateProcessData<br/>deadline passed 90000]
+    R5_Deadline --> R5_CancelDecision{Cancel<br/>Process?}
+    R5_CancelDecision -->|Yes| CancelFlow
+    R5_CancelDecision -->|No| R5_End([Process End<br/>Timeout])
+    
+    %% ============================================
+    %% CANCELLATION FLOW (shared across routes)
+    %% ============================================
+    CancelFlow --> CancelReq[POST /inbound cancel<br/>old process 55022]
+    CancelReq --> Send55022[Send out 55022<br/>Stornierung]
+    Send55022 --> StornoResponse{Stornierung<br/>Response}
+    
+    StornoResponse -->|55023 Accepted| Storno55023[55023 received<br/>Stornierung accepted]
+    Storno55023 --> Storno55023Update[POST /updateProcessData<br/>55023]
+    Storno55023Update --> R5_Retry
+    
+    StornoResponse -->|55024 Rejected| Storno55024[55024 received<br/>Stornierung rejected]
+    Storno55024 --> Storno55024Update[POST /updateProcessData<br/>55024]
+    Storno55024Update --> R2_End
+    
+    %% ============================================
+    %% FOLLOW-UP PROCESSES (after success)
+    %% ============================================
+    FollowUpsSuccess --> ImmediateGroup[IMMEDIATE Follow-ups]
+    FollowUpsAfter55036 --> ImmediateGroup
+    
+    ImmediateGroup --> FU_SDAE[STAMMDATENAENDERUNG_NB<br/>Prüfi: 55615, 55620, 55175,<br/>55225, 55616, 55617,<br/>55618, 55619, 55691]
+    ImmediateGroup --> FU_ABK[ABRECHNUNGSDATEN_BK<br/>Prüfi: 55126<br/>Always sent]
+    ImmediateGroup --> FU_ANN{Consuming<br/>MaLo?}
+    FU_ANN -->|Yes| FU_ANNMsg[ABRECHNUNGSDATEN_NN<br/>Prüfi: 55218]
+    FU_ANN -->|No| FU_SkipANN[Skip ABRECHNUNGSDATEN_NN]
+    
+    ImmediateGroup --> FU_Zuordnungsbeginn[AT ZUORDNUNGSBEGINN<br/>Follow-ups]
+    
+    FU_Zuordnungsbeginn --> FU_BF[BERECHNUNGSFORMEL<br/>Prüfi: 25001]
+    FU_Zuordnungsbeginn --> FU_EK[EINRICHTUNG_KONFIG<br/>Prüfi: 17134]
+    FU_Zuordnungsbeginn --> FU_EG{E/G<br/>required?}
+    FU_EG -->|Yes| FU_EGMsg[ERSATZ_GRUNDVERSORGUNG<br/>Prüfi: 55013]
+    FU_EG -->|No| FU_SkipEG[Skip ERSATZ_GRUNDVERSORGUNG]
+    FU_Zuordnungsbeginn --> FU_Blocked{Blocked<br/>MaLo?}
+    FU_Blocked -->|Yes| FU_WA[WIEDERHERSTELLUNG_ANSCHLUSS<br/>Prüfi: 21040, 21039]
+    FU_Blocked -->|No| FU_SkipWA[Skip WIEDERHERSTELLUNG_ANSCHLUSS]
+    
+    %% ============================================
+    %% INFORMATIONAL: Future Supplier Flow
+    %% ============================================
+    Send -.->|If LFZ exists| LFZ55038[55038: Aufhebung<br/>Zuordnung LFZ<br/>You don't receive this]
+    
+    %% ============================================
+    %% STYLING
+    %% ============================================
+    classDef success fill:#90EE90,stroke:#006400,stroke-width:3px
+    classDef rejection fill:#FFB6C1,stroke:#8B0000,stroke-width:3px
+    classDef info fill:#FFE4B5,stroke:#FF8C00,stroke-width:3px
+    classDef technical fill:#DDA0DD,stroke:#4B0082,stroke-width:3px
+    classDef process fill:#B0E0E6,stroke:#4682B4,stroke-width:2px
+    classDef decision fill:#F0E68C,stroke:#B8860B,stroke-width:3px
+    classDef route fill:#E6E6FA,stroke:#9370DB,stroke-width:3px
+    classDef endpoint fill:#FFE4E1,stroke:#CD5C5C,stroke-width:3px
+    classDef cancel fill:#FFA07A,stroke:#FF4500,stroke-width:2px
+    
+    class R1_Receive,R3_FinalSuccess,R1_Update,R3_FinalUpdate success
+    class R2_Receive,R3_FinalReject,R2_Update,R3_FinalRejectUpdate,R2_Extract,R2_End rejection
+    class R3_Receive,R3_Update,R3_Wait,R3_NB55010,R3_Start info
+    class R4_Receive,R4_Update,R4_Start,R4_End technical
+    class FU_SDAE,FU_ABK,FU_ANNMsg,FU_BF,FU_EK,FU_EGMsg,FU_WA process
+    class Router,R5_Timeout,R5_CancelDecision,StornoResponse,R3_LFAResponse,FU_ANN,FU_EG,FU_Blocked decision
+    class R1_Start,R2_Start,R3_Start,R4_Start,R5_Start route
+    class Start,R2_End,R4_End,R5_End endpoint
+    class CancelFlow,CancelReq,Send55022,Storno55023,Storno55024 cancel

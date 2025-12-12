@@ -1,0 +1,157 @@
+---
+description: Message builder agent - pre-creates MaKo messages from database entries, validates, and prepares for Conuti testing
+globs:
+  - "**/*.json"
+  - "**/*.yaml"
+  - "backend/**/*"
+  - "src/**/*"
+  - "api/**/*"
+  - "builder/**/*"
+alwaysApply: false
+tags: [builder, message, database, conuti, pre-create]
+priority: 3
+version: 1.0.0
+---
+
+# Message Builder Agent
+
+## Purpose
+
+This agent pre-creates MaKo messages from database entries:
+- Queries database for customer/contract data
+- Builds message payloads using schemas and business rules
+- Validates messages before sending
+- Prepares messages for Conuti testing
+- Identifies missing data or functionality
+
+## Message Building Workflow
+
+### Step 1: Identify Process and Data Requirements
+
+1. User specifies process ID or business goal
+2. Load process from PROCESS_GRAPH.json
+3. Identify required fields from:
+   - Schema: `PI_[ID].yml`
+   - Business rules: `yaml_output/[ID].yaml`
+   - BO4E types: `bo4e-openapi.min.json`
+
+### Step 2: Query Database
+
+**Future Enhancement**: When database integration is available:
+1. Identify required database tables/fields
+2. Query database for customer/contract data
+3. Map database fields to message fields
+4. Identify missing database fields
+
+### Step 3: Build Message Payload
+
+1. Start with schema structure from `PI_[ID].yml`
+2. Populate required fields from database
+3. Apply business rules from `yaml_output/[ID].yaml`
+4. Validate BO4E types
+5. Add optional fields if available
+
+### Step 4: Validate Message
+
+Use validation-rules/message-validation-agent-auto.mdc:
+- Schema compliance
+- Business rules compliance
+- Required fields present
+- Backend functionality check
+
+### Step 5: Create Visualization
+
+**MANDATORY**: Always create visualization showing:
+- Message structure
+- Field mapping (database → message)
+- Required vs optional fields
+- Validation status
+
+### Step 6: Prepare for Conuti Testing
+
+1. Format message according to API spec
+2. Include test metadata (test case ID, scenario)
+3. Prepare for sandbox environment
+4. Generate test instructions
+
+<example>
+**Message Building Process**:
+
+```markdown
+## Building Message: Process 55077 (Lieferbeginn)
+
+### Step 1: Load Requirements
+- Process: LIEFERBEGINN (55077)
+- Schema: PI_55077.yml
+- Business Rules: yaml_output/55077.yaml
+
+### Step 2: Database Query
+- Customer ID: 12345
+- MarktlokationsId: Found in database
+- Lieferbeginn: 2025-01-01
+
+### Step 3: Build Payload
+```json
+{
+  "marktlokationsId": "54321012345",
+  "lieferbeginn": "2025-01-01",
+  "zusatzdaten": {
+    "kundennummer": "12345"
+  }
+}
+```
+
+### Step 4: Validation
+- ✅ Schema compliant
+- ✅ Business rules met
+- ✅ Required fields present
+
+### Step 5: Ready for Conuti Testing
+- Message formatted
+- Test case: TC_55077_001
+- Environment: Sandbox
+```
+</example>
+
+## Field Mapping Strategy
+
+Map database fields to message fields:
+1. **Direct mapping**: Database field → Message field (same name/type)
+2. **Transformation**: Database field → Message field (different format)
+3. **Computation**: Multiple database fields → Single message field
+4. **Default values**: Use defaults when database field missing
+
+## Missing Data Handling
+
+When database fields are missing:
+1. Identify missing required fields
+2. Check if field can be computed/derived
+3. Check if field has default value
+4. Report missing fields that must be provided
+5. Suggest database schema updates
+
+## Integration Points
+
+**Current**: Manual message building with validation
+**Future**: 
+- Database integration for automatic field population
+- Conuti API integration for test message sending
+- Feedback loop for missing fields/functionality
+
+<valid-example>
+**Message Building**:
+1. User: "Build message for process 55077 for customer 12345"
+2. Agent queries database (future) or uses provided data
+3. Agent loads schema and business rules
+4. Agent builds message payload
+5. Agent validates message
+6. Agent creates visualization
+7. Agent prepares for Conuti testing
+</valid-example>
+
+<invalid-example>
+**Don't**: Build message without schema validation
+**Don't**: Skip business rules checking
+**Don't**: Forget to validate before sending
+**Don't**: Omit visualization of message structure
+</invalid-example>

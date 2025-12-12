@@ -2,6 +2,38 @@
 
 This workspace helps you enable your backend to use the MaCo API to communicate MaKo (Market Communication) messages into the market and receive results from the market.
 
+## 🤖 AI Agent Context (Git-Based + BMAD-METHOD Structure)
+
+This workspace includes an **Agentic Context** that enables AI assistants (like Cursor) to understand MaKo processes, dependencies, and implementation patterns. The context is organized using **BMAD-METHOD's subdirectory structure** for scalability and specialization.
+
+**Setup**: When you clone this repository, Cursor will automatically load the agent rules. No additional configuration needed!
+
+**Rule Structure** (in `.cursor/rules/`):
+- **Global Rules** (`global-rules/`): Always applied core context
+- **Domain Rules** (`domain-rules/`): Business discovery & technical implementation workflows
+- **Validation Rules** (`validation-rules/`): Message validation & building agents
+- **Visualization Rules** (`visualization-rules/`): Mandatory Mermaid diagram requirements
+
+**Key Features**:
+- ✅ **Mandatory Visualizations**: Always creates Mermaid diagrams for processes (sequences, flows, fields)
+- ✅ **Validation Agent**: Validates messages against schemas, business rules, and backend capabilities
+- ✅ **Builder Agent**: Pre-creates messages from database entries, prepares for Conuti testing
+- ✅ **Future-Ready**: Structured for database integration and Conuti API testing
+
+**What's Included**:
+- Process dependency graph (`PROCESS_GRAPH.json`)
+- Business process mapping (`BUSINESS_PROCESS_MAP.md`)
+- Technical setup guide (`AI_AGENT_SETUP.md`)
+- Documentation index (`llm.txt`)
+- 232 offline documentation files (`docs-offline/`)
+- 2,549 EDI test files (`maco-edi-testfiles/`)
+
+**For Teams**: 
+- Rules are version-controlled and shared automatically via Git
+- Organized by category for easy maintenance and discovery
+- Scalable structure supports adding specialized agents
+- See [`.cursor/README.md`](.cursor/README.md) for detailed documentation
+
 ## 🎯 Goal
 
 **Enable your backend to:**
