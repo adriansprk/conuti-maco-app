@@ -1,0 +1,132 @@
+﻿Scope Pilot;Prozess;Prüfidentifikator;Richtung;;Schnittstelle;parameter2;Kommentare
+ja;Lieferbeginn;;;;;;
+ja;Anmeldung;55077;;ausgehend;Event - Daten werden vollumfänglich aus Backend erwartet;;
+ja;Bestätigung;55078;eingehend;;Verknüpfung anhand Vorgangsnummer kein Daten lesen notwendig;;abgespeckte Stammdaten in 55078
+ja;Ablehnung;55080;eingehend;;Verknüpfung anhand Vorgangsnummer kein Daten lesen notwendig;;
+;;;;;;;
+;SDÄ;;;;;;
+nein;"Abrechnungsdaten
+Netznutzungsabrechnung";55218;eingehend;;LESEN_MARKTLOKATION_BASIS;MALO;nicht für DV nötig
+nein;Antwort auf Abrechnungdaten;55220;;ausgehend;Antwort wird in Mako App erzeugt - Kein Daten lesen notwendig;;nicht für DV nötig
+nein;Bearbeitungsstandsmeldung;21047;eingehend;;Verknüpfung anhand Vorgangsnummer kein Daten lesen notwendig;;
+;;;;;;;
+ja;"Abrechnungsdaten
+Bilanzkreisabrechnung";55672;eingehend;;LESEN_MARKTLOKATION_BASIS;MALO;
+ja;Antwort auf Bilanzkreisabrechnung;55673;;ausgehend;Antwort wird in Mako App erzeugt - Kein Daten lesen notwendig;;
+nein;Bearbeitungsstandsmeldung;21047;eingehend;;Verknüpfung anhand Vorgangsnummer kein Daten lesen notwendig;;
+;;;;;;;
+;"Bestellung einer Änderung von
+Abrechnungsdaten von LF an NB";;;;;;
+nein;"Anfrage Abr.-Daten BK-
+Abr. erz. Malo";55673;;ausgehend;Event - Daten werden vollumfänglich aus Backend erwartet;;
+nein;Bearbeitungsstandsmeldung;21047;eingehend;;Verknüpfung anhand Vorgangsnummer kein Daten lesen notwendig;;
+;;;;;;;
+;"Stammdatenänderung vom NB
+(verantwortlich) ausgehend";;;;"1. POST /createProcess --> 200 + processId
+2. Lesen_Marktlokation --> 
+3. POST /updateProcessData --> processID";;
+ja;Änderung Daten der NeLo;55615;eingehend;;LESEN_NETZLOKATION_BASIS;NELO;
+ja;Änderung Daten der MeLo;55620;eingehend;;LESEN_MESSLOKATION_BASIS;MELO;
+ja;Änderung der Lokationsbündelstruktur;55175;eingehend;;LESEN_MARKTLOKATION_BASIS;MALO;
+nein;Änderung Blindabr.-Daten der NeLo;55225;eingehend;;LESEN_NETZLOKATION_BASIS;NELO;
+ja;Änderung Daten der MaLo;55616;eingehend;;LESEN_MARKTLOKATION_BASIS;MALO;
+ja;Änderung Daten der TR;55617;eingehend;;LESEN_TECHNISCHE_RESSOURCE_BASIS;TECHNISCHE_RESSOURCE;
+ja;Änderung Daten der SR;55618;eingehend;;LESEN_STEUERBARE_RESSOURCE_BASIS;STEUERBARE_RESSOURCE;
+ja;Änderung Daten der Tranche;55619;eingehend;;LESEN_TRANCHE_BASIS;TRANCHE;
+ja;Änderung Paket-ID der MaLo;55691;eingehend;;LESEN_MARKTLOKATION_BASIS;MALO;
+;;;;;;;
+ja;Rückmeldung/Anfrage Daten zur NeLo;55621;;ausgehend;Antwort wird in Mako App erzeugt - Kein Daten lesen notwendig;;
+ja;"Rückmeldung/Anfrage
+Lokationsbündelstruktur";55180;;ausgehend;Antwort wird in Mako App erzeugt - Kein Daten lesen notwendig;;
+ja;"Rückmeldung/Anfrage Blindabr.-Daten
+der NeLo";55227;;ausgehend;Antwort wird in Mako App erzeugt - Kein Daten lesen notwendig;;
+ja;Rückmeldung/Anfrage Daten der MaLo;55622;;ausgehend;Antwort wird in Mako App erzeugt - Kein Daten lesen notwendig;;
+ja;Rückmeldung/Anfrage Daten der TR;55623;;ausgehend;Antwort wird in Mako App erzeugt - Kein Daten lesen notwendig;;
+ja;Rückmeldung/Anfrage Daten der SR;55624;;ausgehend;Antwort wird in Mako App erzeugt - Kein Daten lesen notwendig;;
+ja;"Rückmeldung/Anfrage Daten der
+Tranche";55625;;ausgehend;Antwort wird in Mako App erzeugt - Kein Daten lesen notwendig;;
+ja;Rückmeldung/Anfrage Daten der MeLo;55626;;ausgehend;Antwort wird in Mako App erzeugt - Kein Daten lesen notwendig;;
+ja;"Rückmeldung/Anfrage Paket-ID der
+MaLo";55692;;ausgehend;Antwort wird in Mako App erzeugt - Kein Daten lesen notwendig;;
+nein;Bearbeitungsstandsmeldung;21047;eingehend;;Verknüpfung anhand Vorgangsnummer kein Daten lesen notwendig;;
+;;;;;;;
+;"Stammdatenänderung vom LF
+(verantwortlich) ausgehend";;;;;;
+nein;Änderung Daten der MaLo an NB;55109;;ausgehend;Event - Daten werden vollumfänglich aus Backend erwartet;;
+nein;Änderung Blindabr.-Daten der NeLo;55230;;ausgehend;Event - Daten werden vollumfänglich aus Backend erwartet;;
+;;;;;;;
+nein;Rückmeldung/Anfrage Daten der MaLo;55137;eingehend;;Verknüpfung anhand Vorgangsnummer kein Daten lesen notwendig;;
+nein;"Rückmeldung/Anfrage Blindabr.-Daten
+der NeLo";55232;eingehend;;Verknüpfung anhand Vorgangsnummer kein Daten lesen notwendig;;
+nein;Bearbeitungsstandsmeldung;21047;;ausgehend;Antwort wird in Mako App erzeugt - Kein Daten lesen notwendig;;
+;;;;;;;
+nein;Änderung Daten der MaLo an MSB;55110;;ausgehend;Event - Daten werden vollumfänglich aus Backend erwartet;;
+nein;Rückmeldung/Anfrage Daten der MaLo;55136;eingehend;;Verknüpfung anhand Vorgangsnummer kein Daten lesen notwendig;;
+nein;Bearbeitungsstandsmeldung;21047;;ausgehend;Antwort wird in Mako App erzeugt - Kein Daten lesen notwendig;;
+;;;;;;;
+;"Stammdatenänderung vom
+MSB (verantwortlich) ausgehend";;;;;;
+ja;Änderung Daten der NeLo;55649;eingehend;;LESEN_NETZLOKATION_BASIS;NELO;
+nein;Daten auf individuelle Bestellung;55553;eingehend;;Verknüpfung anhand Vorgangsnummer kein Daten lesen notwendig;;
+ja;Änderung Daten der MaLo;55650;eingehend;;LESEN_MARKTLOKATION_BASIS;MALO;
+ja;Änderung Daten der SR;55651;eingehend;;LESEN_STEUERBARE_RESSOURCE_BASIS;STEUERBARE_RESSOURCE;
+ja;Änderung Daten der Tranche;55652;eingehend;;LESEN_TRANCHE_BASIS;TRANCHE;
+ja;Änderung Daten der MeLo;55653;eingehend;;LESEN_MESSLOKATION_BASIS;MELO;
+;;;;;;;
+ja;Rückmeldung/Anfrage Daten der NeLo;55654;;ausgehend;Antwort wird in Mako App erzeugt - Kein Daten lesen notwendig;;
+nein;"Rückmeldung/Anfrage Daten der
+individuellen Bestellung";55555;;ausgehend;Antwort wird in Mako App erzeugt - Kein Daten lesen notwendig;;
+ja;Rückmeldung/Anfrage Daten der MaLo;55655;;ausgehend;Antwort wird in Mako App erzeugt - Kein Daten lesen notwendig;;
+ja;Rückmeldung/Anfrage Daten der SR;55656;;ausgehend;Antwort wird in Mako App erzeugt - Kein Daten lesen notwendig;;
+ja;"Rückmeldung/Anfrage Daten der
+Tranche";55657;;ausgehend;Antwort wird in Mako App erzeugt - Kein Daten lesen notwendig;;
+ja;Rückmeldung/Anfrage Daten der MeLo;55658;;ausgehend;Antwort wird in Mako App erzeugt - Kein Daten lesen notwendig;;
+nein;Bearbeitungsstandsmeldung;21047;eingehend;;Verknüpfung anhand Vorgangsnummer kein Daten lesen notwendig;;
+;;;;;;;
+nein;"Bestellung zur
+Stammdatenänderung an NB
+(verantwortlich)";;;;;;
+nein;Rückmeldung/Anfrage Daten zur NeLo;55621;;ausgehend;Event - Daten werden vollumfänglich aus Backend erwartet;;
+nein;"Rückmeldung/Anfrage
+Lokationsbündelstruktur";55180;;ausgehend;Event - Daten werden vollumfänglich aus Backend erwartet;;
+nein;"Rückmeldung/Anfrage Blindabr.-Daten
+der NeLo";55227;;ausgehend;Event - Daten werden vollumfänglich aus Backend erwartet;;
+nein;Rückmeldung/Anfrage Daten der MaLo;55622;;ausgehend;Event - Daten werden vollumfänglich aus Backend erwartet;;
+nein;Rückmeldung/Anfrage Daten der TR;55623;;ausgehend;Event - Daten werden vollumfänglich aus Backend erwartet;;
+nein;Rückmeldung/Anfrage Daten der SR;55624;;ausgehend;Event - Daten werden vollumfänglich aus Backend erwartet;;
+nein;"Rückmeldung/Anfrage Daten der
+Tranche";55625;;ausgehend;Event - Daten werden vollumfänglich aus Backend erwartet;;
+nein;Rückmeldung/Anfrage Daten der MeLo;55626;;ausgehend;Event - Daten werden vollumfänglich aus Backend erwartet;;
+nein;"Rückmeldung/Anfrage Paket-ID der
+MaLo";55692;;ausgehend;Event - Daten werden vollumfänglich aus Backend erwartet;;
+nein;Bearbeitungsstandsmeldung;21047;eingehend;;Verknüpfung anhand Vorgangsnummer kein Daten lesen notwendig;;
+;;;;;;;
+nein;"Bestellung zur
+Stammdatenänderung an LF
+(verantwortlich)";;;;;;
+nein;Rückmeldung/Anfrage Daten der MaLo;55137;eingehend;;LESEN_MARKTLOKATION_BASIS;MALO;
+nein;"Rückmeldung/Anfrage Blindabr.-Daten
+der NeLo";55232;eingehend;;LESEN_NETZLOKATION_BASIS;NELO;
+nein;Rückmeldung/Anfrage Daten der MaLo;55136;eingehend;;LESEN_MARKTLOKATION_BASIS;MALO;
+nein;Bearbeitungsstandsmeldung;21047;;ausgehend;Antwort wird in Mako App erzeugt - Kein Daten lesen notwendig;;
+;;;;;;;
+nein;"Bestellung zur
+Stammdatenänderung an MSB
+(verantwortlich)";;;;;;
+nein;Rückmeldung/Anfrage Daten der NeLo;55654;;ausgehend;Event - Daten werden vollumfänglich aus Backend erwartet;;
+nein;"Rückmeldung/Anfrage Daten der
+individuellen Bestellung";55555;;ausgehend;Event - Daten werden vollumfänglich aus Backend erwartet;;
+nein;Rückmeldung/Anfrage Daten der MaLo;55655;;ausgehend;Event - Daten werden vollumfänglich aus Backend erwartet;;
+nein;Rückmeldung/Anfrage Daten der SR;55656;;ausgehend;Event - Daten werden vollumfänglich aus Backend erwartet;;
+nein;"Rückmeldung/Anfrage Daten der
+Tranche";55657;;ausgehend;Event - Daten werden vollumfänglich aus Backend erwartet;;
+nein;Rückmeldung/Anfrage Daten der MeLo;55658;;ausgehend;Event - Daten werden vollumfänglich aus Backend erwartet;;
+nein;Bearbeitungsstandsmeldung;21047;eingehend;;Verknüpfung anhand Vorgangsnummer kein Daten lesen notwendig;;
+;;;;;;;
+ja;MSCONS;Zählerstand und Lastgang im Fokus;;;;;
+ja;"Aufbereitung und Übermittlung
+von Werten vom MSB der
+Marktlokation";;;;;;
+ja;Zählerstand (Strom);13017;eingehend;;LESEN_ZAEHLER_BASIS oder LESEN_MESSLOKATION_BASIS;MELO / KONFIGURATIONS_ID;Zu relevanten Ereignissen (Einbau, Ausbaus, Kundenwechsel, etc)
+ja;Energiemenge (Strom);13019;eingehend;;LESEN_MARKTLOKATION_BASIS oder LESEN_MESSLOKATION_BASIS ODER LESEN_ZAEHLER_BASIS;MALO / MELO / KONFIGURATIONS_ID;Zu relevanten Ereignissen (Einbau, Ausbaus, Kundenwechsel, etc)
+ja;Lastgang Marktlokation, Tranche ;13025;eingehend;;LESEN_MARKTLOKATION_BASIS;MALO;Regelmäßig mit SmartMeter

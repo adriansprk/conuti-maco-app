@@ -242,6 +242,200 @@ flowchart TD
    - ERSATZ_GRUNDVERSORGUNG: Only if E/G required
    - WIEDERHERSTELLUNG_ANSCHLUSS: Only if MaLo is blocked
 
+## Mermaid Process
+sequenceDiagram
+
+    autonumber
+
+    
+
+    title Feed-in MaLo Registration: BO4E Data Flow (Erzeugende Marktlokation)
+
+
+
+    box "Internal System" #f8fafc
+
+        participant B as Backend (LF)
+
+        participant C as Conuti (Gateway)
+
+    end
+
+    
+
+    box "Market Communication (External)" #fffcf0
+
+        participant NB as Network Operator
+
+        participant MSB as Meter Operator
+
+    end
+
+
+
+    Note over B, NB: Phase 1: Lieferbeginn - Generating MaLo (55077)
+
+    
+
+    B->>+C: 🚀 START_LIEFERBEGINN
+
+    Note right of B: 📦 MARKTLOKATION<br/>    └─ energierichtung: EINSP<br/>    └─ erforderlichesProduktpaket:<br/>        • Bilanzkreis (9991000002082)<br/>        • Veräußerungsform (9991000002404)<br/>    └─ umsetzungsgradvorgabe<br/><br/>transaktionsgrundergaenzung: ZW3
+
+    
+
+    C->>+NB: 📡 EDIFACT 55077 (erz. MaLo)
+
+    
+
+    opt Existing Supplier Found (LFA exists)
+
+        NB-->>C: 📡 EDIFACT 55036
+
+        C-->>B: 🔔 Webhook 55036
+
+        Note right of C: 📦 MARKTLOKATION<br/>    └─ Info: Existing assignment
+
+    end
+
+    
+
+    alt Success Case (55078)
+
+        NB-->>C: 📡 EDIFACT 55078
+
+        C-->>B: 🔔 Webhook 55078
+
+        Note right of C: 📦 MARKTLOKATION (Confirmed)<br/>📦 MESSLOKATION<br/>📦 NETZNUTZUNGSVERTRAG<br/>📦 TRANCHE (if applicable)<br/><br/>antwortstatus: A51<br/>antwortstatusCodeliste: E_0623
+
+    else Rejection (55080 - erz. MaLo)
+
+        NB-->>-C: 📡 EDIFACT 55080
+
+        C-->>-B: 🔔 Webhook 55080
+
+        Note right of C: ⚠️ Only transaktionsdaten:<br/>    • antwortstatus: A45/A01-A14<br/>    • antwortstatusCodeliste: E_0622<br/>    • freitext (rejection details)<br/><br/>❌ No stammdaten / BO4E objects
+
+    end
+
+
+
+    Note over B, MSB: Phase 2: Master Data Sync from NB (Stammdatenänderung)
+
+    
+
+    rect rgb(240, 245, 255)
+
+        Note right of NB: Network Operator (NB) Updates
+
+        
+
+        NB-->>+C: 📡 55616 (MaLo Change)
+
+        C-->>B: 🔔 Webhook 55616
+
+        Note right of C: 📦 MARKTLOKATION<br/>📦 BILANZIERUNG<br/>📦 NETZNUTZUNGSVERTRAG<br/>📦 VERWENDUNGSZEITRAUM
+
+        
+
+        NB-->>C: 📡 55615 (NeLo Change)
+
+        C-->>B: 🔔 Webhook 55615
+
+        Note right of C: 📦 NETZLOKATION<br/>📦 VERWENDUNGSZEITRAUM
+
+        
+
+        NB-->>C: 📡 55620 (MeLo Change)
+
+        C-->>-B: 🔔 Webhook 55620
+
+        Note right of C: 📦 MESSLOKATION<br/>📦 MESSSTELLENBETRIEBSVERTRAG<br/>📦 VERWENDUNGSZEITRAUM
+
+    end
+
+
+
+    Note over B, MSB: Phase 3: Master Data Sync from MSB
+
+    
+
+    rect rgb(255, 252, 240)
+
+        Note right of MSB: Meter Operator (MSB) Updates
+
+        
+
+        MSB-->>+C: 📡 55650 (MaLo Change)
+
+        C-->>B: 🔔 Webhook 55650
+
+        Note right of C: 📦 MARKTLOKATION<br/>📦 MESSSTELLENBETRIEBSVERTRAG<br/>📦 VERWENDUNGSZEITRAUM
+
+        
+
+        MSB-->>C: 📡 55653 (MeLo Change)
+
+        C-->>-B: 🔔 Webhook 55653
+
+        Note right of C: 📦 MESSLOKATION<br/>📦 ZAEHLER<br/>📦 MESSSTELLENBETRIEBSVERTRAG<br/>📦 VERWENDUNGSZEITRAUM
+
+    end
+
+
+
+    Note over B, MSB: Phase 4: Billing Data (Abrechnungsdaten)
+
+
+
+    NB-->>+C: 📡 55672 (Bilanzkreisabrechnung)
+
+    C-->>-B: 🔔 Webhook 55672
+
+    Note right of C: 📦 BILANZIERUNG<br/>📦 MARKTLOKATION<br/>📦 TRANCHE<br/>📦 VERWENDUNGSZEITRAUM
+
+
+
+    Note over B, MSB: Phase 5: Meter Readings & Energy Data (MSCONS)
+
+    
+
+    rect rgb(235, 255, 235)
+
+        Note right of MSB: Transactional Energy Data
+
+        
+
+        MSB-->>+C: 📡 13017 (Zählerstand)
+
+        C-->>B: 🔔 Webhook 13017
+
+        Note right of C: 📦 ZAEHLER<br/>📦 ENERGIEMENGE
+
+        
+
+        MSB-->>C: 📡 13019 (Energiemenge)
+
+        C-->>B: 🔔 Webhook 13019
+
+        Note right of C: 📦 ENERGIEMENGE
+
+        
+
+        MSB-->>C: 📡 13025 (Lastgang)
+
+        C-->>-B: 🔔 Webhook 13025
+
+        Note right of C: 📦 ENERGIEMENGE<br/>    └─ Lastprofil
+
+    end
+
 ---
 
 *Based on PROCESS_GRAPH.json, LIEFERBEGINN_PROCESS_MAP.md, and official MaCo API documentation*
+
+
+
+
+
+
+
