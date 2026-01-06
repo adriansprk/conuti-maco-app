@@ -28,8 +28,8 @@ graph TB
     end
     
     subgraph "Business Rules"
-        YAML[yaml_output/[ID].yaml<br/>136 Business Rules<br/>Mandatory Fields]
-        PI[PIs/PI_[ID].yml<br/>Process Schemas<br/>API Structure]
+        YAML["yaml_output/(ID).yaml<br/>136 Business Rules<br/>Mandatory Fields"]
+        PI["PIs/PI_(ID).yml<br/>Process Schemas<br/>API Structure"]
     end
     
     subgraph "Examples"
@@ -110,9 +110,9 @@ flowchart LR
     A[Business Goal:<br/>Register Customer] --> B[BUSINESS_PROCESS_MAP.md]
     B --> C[Find: MaloIdent + Lieferbeginn]
     C --> D[llm.txt: Find docs]
-    D --> E[docs-offline/<br/>prozessübersicht-*.md]
-    E --> F[yaml_output/55077.yaml<br/>Required Fields]
-    F --> G[PIs/PI_55077.yml<br/>API Structure]
+    D --> E["docs-offline/<br/>prozessübersicht-*.md"]
+    E --> F["yaml_output/55077.yaml<br/>Required Fields"]
+    F --> G["PIs/PI_55077.yml<br/>API Structure"]
     G --> H[bo4e-openapi.min.json<br/>Data Types]
     H --> I[maco-edi-testfiles/<br/>Example Messages]
     I --> J[Implement Backend]
@@ -121,63 +121,29 @@ flowchart LR
     style J fill:#d4edda
 ```
 
-## 🎓 First-Time User Journey
+## 🎓 Quick Start Guide
 
-### Step 1: Understand Your Role
-- **You are**: Lieferant (LF) - Electricity Supplier
-- **Your goal**: Send messages to market, receive responses
-- **Direction**: 
-  - **Outbound**: Your backend → Conuti API (JSON)
-  - **Inbound**: Conuti → Your backend webhooks (EDIFACT)
+### Your Role & Context
+- **Role**: Lieferant (LF) - Electricity Supplier
+- **Outbound**: Your backend → Conuti API (JSON format)
+- **Inbound**: Conuti → Your backend webhooks (EDIFACT format)
 
-### Step 2: Choose Your Path
+### Choose Your Entry Point
 
-**Path A: I have a business goal** (e.g., "register customer", "cancel contract")
-```mermaid
-graph LR
-    A[Business Goal] --> B[Read BUSINESS_PROCESS_MAP.md]
-    B --> C[Find Scenario]
-    C --> D[Follow Workflow]
-    D --> E[Check docs-offline/]
-    E --> F[Implement]
-```
+**Business Goal?** (e.g., "register customer", "cancel contract")
+→ Start with [`BUSINESS_PROCESS_MAP.md`](docs/entry-points/BUSINESS_PROCESS_MAP.md)
 
-**Path B: I have a specific process ID** (e.g., "55077", "START_LIEFERBEGINN")
-```mermaid
-graph LR
-    A[Process ID] --> B[Read AI_AGENT_SETUP.md]
-    B --> C[Use PROCESS_GRAPH.json]
-    C --> D[Check yaml_output/]
-    D --> E[Check PIs/]
-    E --> F[Check Examples]
-    F --> G[Implement]
-```
+**Specific Process ID?** (e.g., "55077", "START_LIEFERBEGINN")
+→ Start with [`AI_AGENT_SETUP.md`](docs/entry-points/AI_AGENT_SETUP.md)
 
-### Step 3: Use the AI Agent (Recommended)
+### Using the AI Agent (Recommended)
 
-The AI agent automatically:
-- ✅ Reads documentation before answering
-- ✅ Creates Mermaid visualizations
-- ✅ Validates against schemas
-- ✅ Cites source files
-- ✅ Prevents hallucinations
-
-**Try asking**:
+Open Cursor chat and ask:
 - "I want to register a new customer, what processes do I need?"
 - "Show me the sequence diagram for process 55077"
 - "What fields are required for START_LIEFERBEGINN?"
 
-### Step 4: Follow the Documentation Chain
-
-Every process follows this chain:
-1. **Entry Point** → Find your starting point
-2. **llm.txt** → Discover relevant documentation files
-3. **docs-offline/** → Read process workflows and diagrams
-4. **yaml_output/** → Check mandatory fields
-5. **PIs/** → Understand API structure
-6. **bo4e-openapi.min.json** → Verify data types
-7. **maco-edi-testfiles/** → See real examples
-8. **Implement** → Build your backend
+The AI agent automatically reads documentation, creates visualizations, validates against schemas, and cites sources.
 
 ## 📊 Workspace Statistics
 
@@ -203,11 +169,7 @@ This workspace includes an **Agentic Context** that enables AI assistants (like 
 - **Validation Rules** (`validation-rules/`): Message validation & building agents
 - **Visualization Rules** (`visualization-rules/`): Mandatory Mermaid diagram requirements
 
-**Key Features**:
-- ✅ **Mandatory Visualizations**: Always creates Mermaid diagrams for processes (sequences, flows, fields)
-- ✅ **Validation Agent**: Validates messages against schemas, business rules, and backend capabilities
-- ✅ **Builder Agent**: Pre-creates messages from database entries, prepares for Conuti testing
-- ✅ **Future-Ready**: Structured for database integration and Conuti API testing
+**Key Features**: Mandatory visualizations, validation against schemas, message building from database entries, future-ready for Conuti API testing
 
 **What's Included**:
 - Entry point documentation (`docs/entry-points/`):
@@ -275,11 +237,6 @@ This workspace includes an **Agentic Context** that enables AI assistants (like 
 4. Ask: *"What fields are required for START_LIEFERBEGINN?"*
    - The AI agent will check schemas and business rules for you
 
-**Benefits**: The AI agent automatically:
-- ✅ Reads documentation files before answering
-- ✅ Creates visualizations (Mermaid diagrams)
-- ✅ Validates against schemas and business rules
-- ✅ Cites source files
 
 #### Example 2: Manual Discovery
 
@@ -297,13 +254,8 @@ This workspace includes an **Agentic Context** that enables AI assistants (like 
 4. Check business rules: `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/55077.yaml`
 5. Review example: `maco-edi-testfiles/outbound/v202510/utilmd/55077/1.json` (⚠️ Always use v202510)
 
-### Understanding the Workspace
+### Key Concepts
 
-**Key Concepts**:
-- **Role**: You are a **Lieferant (LF)** - electricity supplier
-- **Direction**: 
-  - **Outbound**: Your backend → Conuti API (triggers, requests) - BO4E JSON format
-  - **Inbound**: Conuti → Your backend (webhooks, responses) - EDIFACT format
 - **Process IDs**: BDEW Prüfidentifikatoren (5-digit numbers like "55077")
 - **Message Formats**:
   - **Outbound**: `maco-edi-testfiles/outbound/v202510/` (JSON format)
@@ -335,23 +287,9 @@ ls maco-edi-testfiles/outbound/v202510/utilmd/55077/
 
 ### Next Steps
 
-1. **Choose your entry point**:
-   - Business goal? → Start with [`BUSINESS_PROCESS_MAP.md`](docs/entry-points/BUSINESS_PROCESS_MAP.md)
-   - Specific message? → Start with [`AI_AGENT_SETUP.md`](docs/entry-points/AI_AGENT_SETUP.md)
-
-2. **Explore the documentation**:
-   - Use `docs/llm.txt` to find relevant documentation files
-   - Read process documentation in `docs-offline/`
-   - Check example messages in `maco-edi-testfiles/`
-
-3. **Implement your backend**:
-   - Follow the workflows in the entry point guides
-   - Use schemas and business rules to build payloads
-   - Reference example messages for structure
-
-4. **Keep documentation updated** (optional):
-   - See [`scripts/sync/README.md`](scripts/sync/README.md) for syncing external repos
-   - Run `./scripts/sync/check-changes.sh` to check for updates
+1. **Explore the documentation**: Use `docs/llm.txt` to find relevant files, read `docs-offline/`, check `maco-edi-testfiles/`
+2. **Implement your backend**: Follow workflows in entry point guides, use schemas and business rules
+3. **Keep documentation updated** (optional): See [`scripts/sync/README.md`](scripts/sync/README.md) for syncing external repos
 
 ### Troubleshooting
 
@@ -371,19 +309,6 @@ ls maco-edi-testfiles/outbound/v202510/utilmd/55077/
 - Check `maco-edi-testfiles/outbound/v202510/` for outbound examples (JSON)
 - Check `maco-edi-testfiles/inbound/v202510/` for inbound examples (EDI)
 
-## 🚀 Two Entry Points
-
-> **💡 Tip**: See [Getting Started](#-getting-started) above for detailed setup instructions and examples.
-
-### Entry Point 1: Business Goal → Implementation
-**When**: You have a business goal (e.g., "register new customer", "cancel contract")  
-**Start Here**: [`BUSINESS_PROCESS_MAP.md`](docs/entry-points/BUSINESS_PROCESS_MAP.md)  
-**See**: [Getting Started - Quick Start Examples](#quick-start-examples) for step-by-step guide
-
-### Entry Point 2: Specific MaKo Message → Implementation
-**When**: You have a specific BDEW process ID or MaKo message (e.g., "55078", "START_LIEFERBEGINN")  
-**Start Here**: [`AI_AGENT_SETUP.md`](docs/entry-points/AI_AGENT_SETUP.md)  
-**See**: [Getting Started - Quick Start Examples](#quick-start-examples) for step-by-step guide
 
 ## 📁 Key Files & Their Relationships
 
@@ -407,94 +332,12 @@ ls maco-edi-testfiles/outbound/v202510/utilmd/55077/
 | **AI Agent** |
 | `.cursor/rules/` | AI agent rules (BMAD-METHOD) | → All components | **Auto-validation & visualization** |
 
-### File Relationship Diagram
-
-```mermaid
-graph TD
-    subgraph "Entry Points"
-        EP1[BUSINESS_PROCESS_MAP.md]
-        EP2[AI_AGENT_SETUP.md]
-        EP3[PROCESS_GRAPH.json]
-    end
-    
-    subgraph "Discovery"
-        LLM[llm.txt]
-        DOCS[docs-offline/]
-    end
-    
-    subgraph "Rules & Schemas"
-        YAML[yaml_output/[ID].yaml]
-        PI[PIs/PI_[ID].yml]
-        BO4E[bo4e-openapi.min.json]
-    end
-    
-    subgraph "Examples"
-        EXAMPLES[maco-edi-testfiles/]
-    end
-    
-    EP1 --> LLM
-    EP2 --> EP3
-    EP3 --> LLM
-    LLM --> DOCS
-    DOCS --> YAML
-    DOCS --> PI
-    YAML --> BO4E
-    PI --> BO4E
-    YAML --> EXAMPLES
-    PI --> EXAMPLES
-    EXAMPLES --> BO4E
-    
-    style EP1 fill:#e1f5ff
-    style EP2 fill:#e1f5ff
-    style EP3 fill:#e1f5ff
-    style BO4E fill:#fff4e1
-```
 
 ## 🔄 Typical Workflow
 
-> **💡 Tip**: See [Getting Started - Quick Start Examples](#quick-start-examples) for detailed step-by-step instructions.
+**From Business Goal**: `BUSINESS_PROCESS_MAP.md` → `llm.txt` → `docs-offline/` → `yaml_output/` + `PIs/` → `maco-edi-testfiles/` → `bo4e-openapi.min.json` → Implement
 
-### Workflow Visualization
-
-**From Business Goal**:
-```mermaid
-graph LR
-    A[Business Goal] --> B[BUSINESS_PROCESS_MAP.md]
-    B --> C[Find Process Names]
-    C --> D[llm.txt<br/>Find Documentation]
-    D --> E[docs-offline/<br/>Read Workflows]
-    E --> F[yaml_output/[ID].yaml<br/>Check Required Fields]
-    F --> G[PIs/PI_[ID].yml<br/>Check API Structure]
-    G --> H[maco-edi-testfiles/<br/>See Examples]
-    H --> I[bo4e-openapi.min.json<br/>Verify Types]
-    I --> J[Implement Backend]
-    
-    style A fill:#e1f5ff
-    style J fill:#d4edda
-```
-
-**From Specific Message/Process ID**:
-```mermaid
-graph LR
-    A[Process ID<br/>e.g. 55077] --> B[AI_AGENT_SETUP.md]
-    B --> C[PROCESS_GRAPH.json<br/>Check Dependencies]
-    C --> D[llm.txt<br/>Find Documentation]
-    D --> E[docs-offline/<br/>Read Process Docs]
-    E --> F[yaml_output/[ID].yaml<br/>Required Fields]
-    F --> G[PIs/PI_[ID].yml<br/>API Schema]
-    G --> H[maco-edi-testfiles/<br/>Examples]
-    H --> I[bo4e-openapi.min.json<br/>Data Types]
-    I --> J[Implement]
-    
-    style A fill:#e1f5ff
-    style J fill:#d4edda
-```
-
-### Workflow Steps (Text Format)
-
-**From Business Goal** → `BUSINESS_PROCESS_MAP.md` → `llm.txt` → `docs-offline/` → `yaml_output/` + `PIs/` → `maco-edi-testfiles/` → `bo4e-openapi.min.json` → Implement
-
-**From Specific Message** → `AI_AGENT_SETUP.md` → `llm.txt` → `docs-offline/` → `yaml_output/[ID].yaml` → `PIs/PI_[ID].yml` → `maco-edi-testfiles/` → `bo4e-openapi.min.json` → Implement
+**From Process ID**: `AI_AGENT_SETUP.md` → `PROCESS_GRAPH.json` → `llm.txt` → `docs-offline/` → `yaml_output/[ID].yaml` → `PIs/PI_[ID].yml` → `maco-edi-testfiles/` → `bo4e-openapi.min.json` → Implement
 
 ## 📚 Structure
 
@@ -560,15 +403,6 @@ sequenceDiagram
     You->>You: Implement backend endpoint
 ```
 
-**Step-by-step file usage**:
-1. **Start**: Read `BUSINESS_PROCESS_MAP.md` → Find "New Customer Signs Up"
-2. **Discover**: Use `llm.txt` → Find "Lieferbeginn" → Points to `prozessübersicht-853953m0.md`
-3. **Understand**: Read `docs-offline/prozessübersicht-853953m0.md` → See workflow diagram
-4. **Fields**: Read `yaml_output/55077.yaml` → See mandatory fields
-5. **Structure**: Read `PIs/PI_55077.yml` → See API request format
-6. **Types**: Check `bo4e-openapi.min.json` → Verify data types
-7. **Example**: Read `maco-edi-testfiles/outbound/v202510/utilmd/55077/1.json` → See real message
-8. **Implement**: Build your backend using all the above
 
 ## 📖 Documentation
 
