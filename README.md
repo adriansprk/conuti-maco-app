@@ -2,161 +2,6 @@
 
 This workspace helps you enable your backend to use the MaCo API to communicate MaKo (Market Communication) messages into the market and receive results from the market.
 
-## 🗺️ Architecture Overview
-
-This workspace is a comprehensive knowledge base for MaKo (Market Communication) processes. Here's how everything connects:
-
-```mermaid
-graph TB
-    subgraph "Entry Points"
-        EP1[BUSINESS_PROCESS_MAP.md<br/>Business Goals → Processes]
-        EP2[AI_AGENT_SETUP.md<br/>Technical Implementation]
-        EP3[PROCESS_GRAPH.json<br/>Process Dependencies]
-    end
-    
-    subgraph "Discovery Layer"
-        LLM[llm.txt<br/>Documentation Index<br/>237 entries]
-        DOCS[docs-offline/<br/>232 Process Docs<br/>Workflows & Diagrams]
-    end
-    
-    subgraph "Schema Layer"
-        BO4E[_build/bo4e-openapi.min.json<br/>BO4E Data Structures]
-        TRIGGER[_build/macoapp-trigger.min.json<br/>Trigger Events]
-        WRITE[_build/macoapp-schreiben.min.json<br/>Write Operations]
-        READ[_build/macoapp-lesen.min.json<br/>Read Operations]
-        MALO[_build/maloident-*.min.json<br/>MaloIdent APIs]
-    end
-    
-    subgraph "Business Rules"
-        YAML["yaml_output/(ID).yaml<br/>136 Business Rules<br/>Mandatory Fields"]
-        PI["PIs/PI_(ID).yml<br/>Process Schemas<br/>API Structure"]
-    end
-    
-    subgraph "Examples"
-        EXAMPLES[maco-edi-testfiles/<br/>2,549 Test Files<br/>v202510: JSON/EDI]
-    end
-    
-    subgraph "AI Agent"
-        RULES[.cursor/rules/<br/>BMAD-METHOD Structure<br/>Auto-loaded in Cursor]
-    end
-    
-    EP1 --> LLM
-    EP2 --> LLM
-    EP3 --> LLM
-    LLM --> DOCS
-    DOCS --> YAML
-    DOCS --> PI
-    YAML --> BO4E
-    PI --> BO4E
-    YAML --> EXAMPLES
-    PI --> EXAMPLES
-    EXAMPLES --> BO4E
-    RULES -.-> EP1
-    RULES -.-> EP2
-    RULES -.-> EP3
-    RULES -.-> DOCS
-    RULES -.-> YAML
-    RULES -.-> PI
-    
-    style EP1 fill:#e1f5ff
-    style EP2 fill:#e1f5ff
-    style EP3 fill:#e1f5ff
-    style RULES fill:#fff4e1
-```
-
-## 🔗 How Everything Connects
-
-### The Information Flow
-
-When you need to implement a MaKo process, information flows through these layers:
-
-```mermaid
-sequenceDiagram
-    participant You
-    participant EntryPoint as Entry Point<br/>(Business/Technical)
-    participant Index as llm.txt<br/>(Documentation Index)
-    participant Docs as docs-offline/<br/>(Process Documentation)
-    participant Rules as yaml_output/<br/>(Business Rules)
-    participant Schemas as PIs/ + _build/<br/>(API Schemas)
-    participant Examples as maco-edi-testfiles/<br/>(Real Examples)
-    participant AI as AI Agent<br/>(Cursor Rules)
-    
-    You->>EntryPoint: "I want to [business goal]"<br/>OR<br/>"Process 55077"
-    EntryPoint->>Index: Find relevant docs
-    Index->>Docs: Point to specific files
-    Docs->>Rules: Show required fields
-    Rules->>Schemas: Validate structure
-    Schemas->>Examples: Reference format
-    Examples->>You: Show real-world messages
-    AI->>You: Auto-generate visualizations<br/>& validate against all sources
-```
-
-### Component Relationships
-
-| Component | Purpose | Connects To | Why It Matters |
-|-----------|---------|-------------|----------------|
-| **Entry Points** | Starting point for discovery | → `llm.txt` → `docs-offline/` | Guides you to the right documentation |
-| **llm.txt** | Documentation index (237 entries) | → `docs-offline/` files | Maps BDEW IDs to specific documentation |
-| **docs-offline/** | Process workflows & diagrams | → `yaml_output/` + `PIs/` | Explains business logic and sequence |
-| **yaml_output/** | Business rules (136 files) | → `PIs/` + `bo4e-openapi.min.json` | Defines mandatory fields & validation |
-| **PIs/** | Process API schemas | → `bo4e-openapi.min.json` | Shows exact API request structure |
-| **maco-edi-testfiles/** | Real-world examples (2,549 files) | → All schemas | Validates your understanding |
-| **AI Agent Rules** | Auto-validation & visualization | → All components | Ensures accuracy & creates diagrams |
-
-### Data Flow Example: Implementing "New Customer Registration"
-
-```mermaid
-flowchart LR
-    A[Business Goal:<br/>Register Customer] --> B[BUSINESS_PROCESS_MAP.md]
-    B --> C[Find: MaloIdent + Lieferbeginn]
-    C --> D[llm.txt: Find docs]
-    D --> E["docs-offline/<br/>prozessübersicht-*.md"]
-    E --> F["yaml_output/55077.yaml<br/>Required Fields"]
-    F --> G["PIs/PI_55077.yml<br/>API Structure"]
-    G --> H[bo4e-openapi.min.json<br/>Data Types]
-    H --> I[maco-edi-testfiles/<br/>Example Messages]
-    I --> J[Implement Backend]
-    
-    style A fill:#e1f5ff
-    style J fill:#d4edda
-```
-
-## 🎓 Quick Start Guide
-
-### Your Role & Context
-- **Role**: Lieferant (LF) - Electricity Supplier
-- **Outbound**: Your backend → Conuti API (JSON format)
-- **Inbound**: Conuti → Your backend webhooks (EDIFACT format)
-
-### Choose Your Entry Point
-
-**Business Goal?** (e.g., "register customer", "cancel contract")
-→ Start with [`BUSINESS_PROCESS_MAP.md`](docs/entry-points/BUSINESS_PROCESS_MAP.md)
-
-**Specific Process ID?** (e.g., "55077", "START_LIEFERBEGINN")
-→ Start with [`AI_AGENT_SETUP.md`](docs/entry-points/AI_AGENT_SETUP.md)
-
-### Using the AI Agent (Recommended)
-
-Open Cursor chat and ask:
-- "I want to register a new customer, what processes do I need?"
-- "Show me the sequence diagram for process 55077"
-- "What fields are required for START_LIEFERBEGINN?"
-
-The AI agent automatically reads documentation, creates visualizations, validates against schemas, and cites sources.
-
-## 📊 Workspace Statistics
-
-| Category | Count | Purpose |
-|----------|-------|---------|
-| **Entry Points** | 3 files | Starting points for discovery |
-| **Documentation Files** | 232 files | Process workflows & descriptions |
-| **Business Rules** | 136 files | Mandatory fields & validation |
-| **Process Schemas** | 136+ files | API request/response structures |
-| **Test Examples** | 2,549 files | Real-world message examples |
-| **AI Agent Rules** | 6 rule files | Auto-validation & visualization |
-| **Documentation Index** | 237 entries | Maps IDs to documentation |
-
 ## 🤖 AI Agent Context (Git-Based + BMAD-METHOD Structure)
 
 This workspace includes an **Agentic Context** that enables AI assistants (like Cursor) to understand MaKo processes, dependencies, and implementation patterns. The context is organized using **BMAD-METHOD's subdirectory structure** for scalability and specialization.
@@ -169,7 +14,11 @@ This workspace includes an **Agentic Context** that enables AI assistants (like 
 - **Validation Rules** (`validation-rules/`): Message validation & building agents
 - **Visualization Rules** (`visualization-rules/`): Mandatory Mermaid diagram requirements
 
-**Key Features**: Mandatory visualizations, validation against schemas, message building from database entries, future-ready for Conuti API testing
+**Key Features**:
+- ✅ **Mandatory Visualizations**: Always creates Mermaid diagrams for processes (sequences, flows, fields)
+- ✅ **Validation Agent**: Validates messages against schemas, business rules, and backend capabilities
+- ✅ **Builder Agent**: Pre-creates messages from database entries, prepares for Conuti testing
+- ✅ **Future-Ready**: Structured for database integration and Conuti API testing
 
 **What's Included**:
 - Entry point documentation (`docs/entry-points/`):
@@ -211,17 +60,61 @@ This workspace includes an **Agentic Context** that enables AI assistants (like 
    cd maco_agent_workspace
    ```
 
-2. **Open in Cursor**:
+2. **Make scripts executable**:
+   
+   After cloning, ensure all scripts have execute permissions:
+   ```bash
+   # Make all shell scripts executable
+   chmod +x scripts/*.sh
+   chmod +x scripts/sync/*.sh
+   
+   # Verify scripts are executable
+   ls -l scripts/*.sh scripts/sync/*.sh
+   ```
+
+3. **Initialize linked repositories**:
+   
+   This workspace includes several linked repositories that need to be set up:
+   - `maco-api-documentation/` - API schemas and business rules
+   - `maco-edi-testfiles/` - EDI test files and examples
+   - `bo4e-schema/` - BO4E schema definitions
+   - `cdoc-schema/` - CDOC schema definitions
+   
+   **If these directories are empty or missing**, you'll need to clone them separately:
+   ```bash
+   # Check if directories exist and have content
+   ls -la maco-api-documentation/ maco-edi-testfiles/ bo4e-schema/ cdoc-schema/
+   
+   # If directories are empty, clone the repositories:
+   # (Replace with actual repository URLs)
+   git clone <maco-api-documentation-url> maco-api-documentation
+   git clone <maco-edi-testfiles-url> maco-edi-testfiles
+   git clone <bo4e-schema-url> bo4e-schema
+   git clone <cdoc-schema-url> cdoc-schema
+   ```
+   
+   **Note**: If these are git submodules, initialize them with:
+   ```bash
+   git submodule update --init --recursive
+   ```
+
+4. **Open in Cursor**:
    - Open the workspace folder in Cursor IDE
    - Cursor will automatically load the AI agent rules (no configuration needed!)
    - If rules don't load, restart Cursor
 
-3. **Verify setup** (optional):
+5. **Verify setup** (optional):
    ```bash
    # Check that key files exist
    ls docs/entry-points/BUSINESS_PROCESS_MAP.md
    ls docs/entry-points/AI_AGENT_SETUP.md
    ls docs/entry-points/PROCESS_GRAPH.json
+   
+   # Verify linked repositories are initialized
+   ls maco-api-documentation/_build/*.min.json
+   ls maco-edi-testfiles/outbound/v202510/
+   ls bo4e-schema/
+   ls cdoc-schema/
    ```
 
 ### Quick Start Examples
@@ -237,6 +130,11 @@ This workspace includes an **Agentic Context** that enables AI assistants (like 
 4. Ask: *"What fields are required for START_LIEFERBEGINN?"*
    - The AI agent will check schemas and business rules for you
 
+**Benefits**: The AI agent automatically:
+- ✅ Reads documentation files before answering
+- ✅ Creates visualizations (Mermaid diagrams)
+- ✅ Validates against schemas and business rules
+- ✅ Cites source files
 
 #### Example 2: Manual Discovery
 
@@ -254,8 +152,13 @@ This workspace includes an **Agentic Context** that enables AI assistants (like 
 4. Check business rules: `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/55077.yaml`
 5. Review example: `maco-edi-testfiles/outbound/v202510/utilmd/55077/1.json` (⚠️ Always use v202510)
 
-### Key Concepts
+### Understanding the Workspace
 
+**Key Concepts**:
+- **Role**: You are a **Lieferant (LF)** - electricity supplier
+- **Direction**: 
+  - **Outbound**: Your backend → Conuti API (triggers, requests) - BO4E JSON format
+  - **Inbound**: Conuti → Your backend (webhooks, responses) - EDIFACT format
 - **Process IDs**: BDEW Prüfidentifikatoren (5-digit numbers like "55077")
 - **Message Formats**:
   - **Outbound**: `maco-edi-testfiles/outbound/v202510/` (JSON format)
@@ -287,9 +190,23 @@ ls maco-edi-testfiles/outbound/v202510/utilmd/55077/
 
 ### Next Steps
 
-1. **Explore the documentation**: Use `docs/llm.txt` to find relevant files, read `docs-offline/`, check `maco-edi-testfiles/`
-2. **Implement your backend**: Follow workflows in entry point guides, use schemas and business rules
-3. **Keep documentation updated** (optional): See [`scripts/sync/README.md`](scripts/sync/README.md) for syncing external repos
+1. **Choose your entry point**:
+   - Business goal? → Start with [`BUSINESS_PROCESS_MAP.md`](docs/entry-points/BUSINESS_PROCESS_MAP.md)
+   - Specific message? → Start with [`AI_AGENT_SETUP.md`](docs/entry-points/AI_AGENT_SETUP.md)
+
+2. **Explore the documentation**:
+   - Use `docs/llm.txt` to find relevant documentation files
+   - Read process documentation in `docs-offline/`
+   - Check example messages in `maco-edi-testfiles/`
+
+3. **Implement your backend**:
+   - Follow the workflows in the entry point guides
+   - Use schemas and business rules to build payloads
+   - Reference example messages for structure
+
+4. **Keep documentation updated** (optional):
+   - See [`scripts/sync/README.md`](scripts/sync/README.md) for syncing external repos
+   - Run `./scripts/sync/check-changes.sh` to check for updates
 
 ### Troubleshooting
 
@@ -302,42 +219,59 @@ ls maco-edi-testfiles/outbound/v202510/utilmd/55077/
 **Documentation Not Found**:
 - Ensure you cloned the full repository (including submodules if any)
 - Check that `docs-offline/` and `maco-api-documentation/` directories exist
+- **If linked repositories are empty**: See [Initial Setup - Initialize linked repositories](#initial-setup) above
 - Run `./scripts/download-docs.sh` if documentation is missing
+
+**Scripts Not Executable**:
+- After cloning, scripts may not have execute permissions
+- Run: `chmod +x scripts/*.sh scripts/sync/*.sh`
+- See [Initial Setup - Make scripts executable](#initial-setup) above
+
+**Linked Repositories Empty or Missing**:
+- The workspace includes linked repositories (`maco-api-documentation`, `maco-edi-testfiles`, `bo4e-schema`, `cdoc-schema`)
+- If these directories are empty after cloning, initialize them:
+  - Try `git submodule update --init --recursive` if they're submodules
+  - Or clone them separately (see [Initial Setup](#initial-setup) above)
 
 **Example Files Not Found**:
 - ⚠️ Always use `v202510` directory (see [Understanding the Workspace](#understanding-the-workspace) above)
 - Check `maco-edi-testfiles/outbound/v202510/` for outbound examples (JSON)
 - Check `maco-edi-testfiles/inbound/v202510/` for inbound examples (EDI)
 
+## 🚀 Two Entry Points
 
-## 📁 Key Files & Their Relationships
+> **💡 Tip**: See [Getting Started](#-getting-started) above for detailed setup instructions and examples.
 
-| File | Purpose | Connects To | When to Use |
-|------|---------|-------------|-------------|
-| **Entry Points** |
-| `BUSINESS_PROCESS_MAP.md` | Business concept → Process mapping | → `llm.txt` → `docs-offline/` | **Business goal discovery, backend design** |
-| `AI_AGENT_SETUP.md` | Technical setup guide | → `PROCESS_GRAPH.json` → `llm.txt` | **Technical implementation, specific messages** |
-| `PROCESS_GRAPH.json` | Process dependencies & sequences | → `docs-offline/` (via `llm.txt`) | **Fast lookup of prerequisites & triggers** |
-| **Discovery Layer** |
-| `llm.txt` | Documentation index (237 entries) | → `docs-offline/` files | **Find which documentation you need** |
-| `docs-offline/` | 232 offline documentation files | → `yaml_output/` + `PIs/` | **Read workflow docs and process descriptions** |
-| **Schema & Rules** |
-| `_build/bo4e-openapi.min.json` | Complete BO4E schemas | ← Referenced by `yaml_output/` + `PIs/` | **Data structure reference** |
-| `yaml_output/[ID].yaml` | Business rules (136 files) | → `PIs/PI_[ID].yml` + `bo4e-openapi.min.json` | **Mandatory fields, validation** |
-| `PIs/PI_[ID].yml` | Process API schemas | → `bo4e-openapi.min.json` | **API request/response structure** |
-| `_build/macoapp-trigger.min.json` | Trigger events schema | → `bo4e-openapi.min.json` | **Outbound trigger events** |
-| `_build/maloident-*.min.json` | MaloIdent API schemas | → `bo4e-openapi.min.json` | **MaloIdent requests/responses** |
-| **Examples** |
-| `maco-edi-testfiles/` | 2,549 test files | ← Validates `yaml_output/` + `PIs/` | **Real-world message examples (inbound/outbound)** |
-| **AI Agent** |
-| `.cursor/rules/` | AI agent rules (BMAD-METHOD) | → All components | **Auto-validation & visualization** |
+### Entry Point 1: Business Goal → Implementation
+**When**: You have a business goal (e.g., "register new customer", "cancel contract")  
+**Start Here**: [`BUSINESS_PROCESS_MAP.md`](docs/entry-points/BUSINESS_PROCESS_MAP.md)  
+**See**: [Getting Started - Quick Start Examples](#quick-start-examples) for step-by-step guide
 
+### Entry Point 2: Specific MaKo Message → Implementation
+**When**: You have a specific BDEW process ID or MaKo message (e.g., "55078", "START_LIEFERBEGINN")  
+**Start Here**: [`AI_AGENT_SETUP.md`](docs/entry-points/AI_AGENT_SETUP.md)  
+**See**: [Getting Started - Quick Start Examples](#quick-start-examples) for step-by-step guide
+
+## 📁 Key Files
+
+| File | Purpose | When to Use |
+|------|---------|-------------|
+| `BUSINESS_PROCESS_MAP.md` | Business concept → Process mapping | **Business goal discovery, backend design** |
+| `AI_AGENT_SETUP.md` | Technical setup guide | **Technical implementation, specific messages** |
+| `llm.txt` | Documentation index (237 entries) | **Find which documentation you need** |
+| `docs-offline/` | 232 offline documentation files | **Read workflow docs and process descriptions** |
+| `maco-edi-testfiles/` | 2,549 EDI test files | **Real-world message examples (inbound/outbound)** |
+| `_build/bo4e-openapi.min.json` | Complete BO4E schemas | **Data structure reference** |
+| `yaml_output/[ID].yaml` | Business rules (136 files) | **Mandatory fields, validation** |
+| `PIs/PI_[ID].yml` | Process API schemas | **API request/response structure** |
 
 ## 🔄 Typical Workflow
 
-**From Business Goal**: `BUSINESS_PROCESS_MAP.md` → `llm.txt` → `docs-offline/` → `yaml_output/` + `PIs/` → `maco-edi-testfiles/` → `bo4e-openapi.min.json` → Implement
+> **💡 Tip**: See [Getting Started - Quick Start Examples](#quick-start-examples) for detailed step-by-step instructions.
 
-**From Process ID**: `AI_AGENT_SETUP.md` → `PROCESS_GRAPH.json` → `llm.txt` → `docs-offline/` → `yaml_output/[ID].yaml` → `PIs/PI_[ID].yml` → `maco-edi-testfiles/` → `bo4e-openapi.min.json` → Implement
+**From Business Goal** → `BUSINESS_PROCESS_MAP.md` → `llm.txt` → `docs-offline/` → `yaml_output/` + `PIs/` → `maco-edi-testfiles/` → `bo4e-openapi.min.json` → Implement
+
+**From Specific Message** → `AI_AGENT_SETUP.md` → `llm.txt` → `docs-offline/` → `yaml_output/[ID].yaml` → `PIs/PI_[ID].yml` → `maco-edi-testfiles/` → `bo4e-openapi.min.json` → Implement
 
 ## 📚 Structure
 
@@ -360,49 +294,14 @@ maco_agent_workspace/
 └── maco-edi-testfiles/        ⭐ 2,549 EDI test files (real-world examples)
 ```
 
-## 🎯 Common Tasks & Solutions
+## 🎯 Common Tasks
 
-| Task | Solution Path | Files Involved |
-|------|---------------|---------------|
-| "I want to register a new customer" | Business Goal → Process Discovery | `BUSINESS_PROCESS_MAP.md` → `llm.txt` → `docs-offline/` → `yaml_output/55077.yaml` → `PIs/PI_55077.yml` → Examples |
-| "What data do I need for process 55078?" | Process ID → Field Discovery | `AI_AGENT_SETUP.md` → `PROCESS_GRAPH.json` → `yaml_output/55078.yaml` → `PIs/PI_55078.yml` → `bo4e-openapi.min.json` |
-| "How do I implement Kündigung workflow?" | Business Goal → Workflow Discovery | `BUSINESS_PROCESS_MAP.md` → Find Kündigung → `llm.txt` → `docs-offline/prozessübersicht-860885m0.md` → `yaml_output/55016.yaml` |
-| "I received a specific MaKo message, what do I do?" | Message Type → Handler Implementation | `AI_AGENT_SETUP.md` → Find message type → `PIs/PI_[ID].yml` → `bo4e-openapi.min.json` → Examples → Implement handler |
-
-### Concrete Example: "Register New Customer"
-
-Here's exactly how the components work together for a real scenario:
-
-```mermaid
-sequenceDiagram
-    participant You
-    participant BP as BUSINESS_PROCESS_MAP.md
-    participant LLM as llm.txt
-    participant DOCS as docs-offline/
-    participant YAML as yaml_output/55077.yaml
-    participant PI as PIs/PI_55077.yml
-    participant BO4E as bo4e-openapi.min.json
-    participant EXAMPLES as maco-edi-testfiles/
-    participant AI as AI Agent
-    
-    You->>BP: "Register new customer"
-    BP->>You: Scenario: MaloIdent → Lieferbeginn
-    You->>LLM: Search "Lieferbeginn"
-    LLM->>You: Points to prozessübersicht-853953m0.md
-    You->>DOCS: Read prozessübersicht-853953m0.md
-    DOCS->>You: Shows workflow: START_LIEFERBEGINN (55077)
-    You->>YAML: Check yaml_output/55077.yaml
-    YAML->>You: Required: marktlokationsId, lieferbeginn
-    You->>PI: Check PIs/PI_55077.yml
-    PI->>You: API structure: POST /trigger/START_LIEFERBEGINN
-    You->>BO4E: Verify Marktlokation type
-    BO4E->>You: Confirms: string, required
-    You->>EXAMPLES: Check maco-edi-testfiles/outbound/v202510/utilmd/55077/1.json
-    EXAMPLES->>You: Shows real message format
-    AI->>You: Auto-generates sequence diagram<br/>& validates all fields
-    You->>You: Implement backend endpoint
-```
-
+| Task | Solution |
+|------|----------|
+| "I want to register a new customer" | `BUSINESS_PROCESS_MAP.md` → Scenario 1: New Customer Signs Up |
+| "What data do I need for process 55078?" | `AI_AGENT_SETUP.md` → `yaml_output/55078.yaml` → `bo4e-openapi.min.json` |
+| "How do I implement Kündigung workflow?" | `BUSINESS_PROCESS_MAP.md` → Find Kündigung → `llm.txt` → `docs-offline/prozessübersicht-860885m0.md` |
+| "I received a specific MaKo message, what do I do?" | `AI_AGENT_SETUP.md` → Find message type → Check schemas → Implement handler |
 
 ## 📖 Documentation
 
