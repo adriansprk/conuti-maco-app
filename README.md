@@ -205,8 +205,10 @@ ls maco-edi-testfiles/outbound/v202510/utilmd/55077/
    - Reference example messages for structure
 
 4. **Keep documentation updated** (optional):
-   - See [`scripts/sync/README.md`](scripts/sync/README.md) for syncing external repos
-   - Run `./scripts/sync/check-changes.sh` to check for updates
+   - External repos (`maco-api-documentation`, `maco-edi-testfiles`) can be updated
+   - Run `./scripts/sync/check-changes.sh` to see what changed
+   - Run `./scripts/sync/sync-changes.sh` to update tracking
+   - See [`scripts/sync/README.md`](scripts/sync/README.md) for details
 
 ### Troubleshooting
 
