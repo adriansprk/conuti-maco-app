@@ -23,6 +23,9 @@ if [ -d "$WORKSPACE_ROOT/maco-api-documentation" ]; then
     if [ -d ".git" ]; then
         CURRENT_HASH=$(git rev-parse HEAD)
         
+        # Get last tracked hash from version tracker
+        LAST_HASH=$(jq -r '."external_repos"."maco-api-documentation".last_commit_hash' "$VERSION_TRACKER" 2>/dev/null || echo "")
+        
         # Update version tracker
         jq ".\"external_repos\".\"maco-api-documentation\".last_synced = \"$TIMESTAMP\" | .\"external_repos\".\"maco-api-documentation\".last_commit_hash = \"$CURRENT_HASH\"" \
            "$VERSION_TRACKER" > "$VERSION_TRACKER.tmp" && mv "$VERSION_TRACKER.tmp" "$VERSION_TRACKER"
@@ -30,22 +33,24 @@ if [ -d "$WORKSPACE_ROOT/maco-api-documentation" ]; then
         echo "  ✅ Updated version tracker"
         echo "  📝 Commit: $CURRENT_HASH"
         
-        # Check for build script changes
-        if git diff --name-only "$LAST_HASH" HEAD 2>/dev/null | grep -q "scripts/build-openapi-json.sh"; then
-            echo ""
-            echo "  🚨 CRITICAL: Build script changed!"
-            echo "  ⚠️  Schema formatting may have changed"
-            echo "  💡 You should re-run the build script:"
-            echo "     cd maco-api-documentation && ./scripts/build-openapi-json.sh"
-            echo ""
-            read -p "  Re-run build script now? (y/n) " -n 1 -r
-            echo
-            if [[ $REPLY =~ ^[Yy]$ ]]; then
-                echo "  🔨 Running build script..."
-                ./scripts/build-openapi-json.sh
-                echo "  ✅ Build complete"
-            else
-                echo "  ⚠️  Skipped - remember to rebuild schemas manually"
+        # Check for build script changes (only if we have a previous hash to compare)
+        if [ -n "$LAST_HASH" ] && [ "$LAST_HASH" != "null" ] && [ "$LAST_HASH" != "$CURRENT_HASH" ]; then
+            if git diff --name-only "$LAST_HASH" HEAD 2>/dev/null | grep -q "scripts/build-openapi-json.sh"; then
+                echo ""
+                echo "  🚨 CRITICAL: Build script changed!"
+                echo "  ⚠️  Schema formatting may have changed"
+                echo "  💡 You should re-run the build script:"
+                echo "     cd maco-api-documentation && ./scripts/build-openapi-json.sh"
+                echo ""
+                read -p "  Re-run build script now? (y/n) " -n 1 -r
+                echo
+                if [[ $REPLY =~ ^[Yy]$ ]]; then
+                    echo "  🔨 Running build script..."
+                    ./scripts/build-openapi-json.sh
+                    echo "  ✅ Build complete"
+                else
+                    echo "  ⚠️  Skipped - remember to rebuild schemas manually"
+                fi
             fi
         fi
         

@@ -157,8 +157,8 @@ def build_minimal_index() -> Dict:
         
         "source_files": {
             "total": len(by_filename),
-            "with_bdew_ids": len([f for f in by_filename.values() if any(f["filename"] in str(by_bdew_id.get(p, [])) for p in extract_bdew_ids_from_content(""))]),
-            "with_triggers": len([f for f in by_filename.values() if any(f["filename"] in str(by_trigger.get(t, [])) for t in extract_triggers_from_content(""))]),
+            "with_bdew_ids": len(set(file_info["filename"] for file_list in by_bdew_id.values() for file_info in file_list)),
+            "with_triggers": len(set(file_info["filename"] for file_list in by_trigger.values() for file_info in file_list)),
             "with_mermaid": len([f for f in by_filename.values() if f["has_mermaid"]]),
             "prozessuebersicht": len([f for f in by_filename.values() if f["is_prozessuebersicht"]]),
         },
