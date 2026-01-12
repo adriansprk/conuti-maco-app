@@ -57,7 +57,7 @@ This workspace includes an **Agentic Context** that enables AI assistants (like 
 1. **Clone the repository**:
    ```bash
    git clone <repository-url>
-   cd maco_agent_workspace
+   cd maco_agent_app
    ```
 
 2. **Make scripts executable**:
