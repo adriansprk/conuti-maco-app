@@ -60,11 +60,10 @@ This workspace includes an **Agentic Context** that enables AI assistants (like 
    cd maco_agent_app
    ```
 
-2. **Make scripts executable**:
+2. **Make scripts executable** (if needed):
    
-   After cloning, ensure all scripts have execute permissions:
+   Scripts should already be executable when cloned. If you encounter permission errors, run:
    ```bash
-   # Make all shell scripts executable
    chmod +x scripts/*.sh scripts/sync/*.sh
    ```
 
