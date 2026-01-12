@@ -349,12 +349,19 @@ components:
                       (Breitengrad), UTM Ostwert, UTM Nordwert, Gauß-Krüger
                       Hochwert, Gauß-Krüger Rechtswert  | Mapping auf
                       identificationParameterAddress.geographicCoordinates                    
+                  erforderlichesProduktpaket:
+                    $ref: '#/components/schemas/Produktpaket'
                 x-apidog-orders:
                   - marktlokationsId
                   - energierichtung
                   - lokationsadresse
                   - katasterinformation
                   - geokoordinaten
+                  - erforderlichesProduktpaket
+                required:
+                  - energierichtung
+                  - erforderlichesProduktpaket
+                x-apidog-refs: {}
                 x-apidog-ignore-properties: []
             TRANCHE:
               type: array
@@ -754,6 +761,129 @@ components:
         - value: DVGW
           name: DE, DVGW Service & Consult GmbH
           description: '332'
+      x-apidog-folder: ''
+    Produktpaket:
+      title: Produktpaket
+      type: object
+      properties:
+        produktpaketId:
+          type: integer
+          description: >-
+            Produkt-Code, Produkt-Codes sind in der Codeliste der
+            Konfigurationen beschrieben
+
+            PIA 5
+
+            PI 55001 55077 55600 55601 55014 55608 
+
+            Priorisierung erforderliches Produktpaket
+
+            SEQ ZH0
+
+            PI 55001 55077 55600 55601 55014 55608 
+        produkt:
+          type: array
+          items:
+            $ref: '#/components/schemas/Produkt'
+          description: |-
+            Produkt
+            PIA Z11
+            PI 55001 55077 55600 55601 55014 55608 
+        umsetzungsgradvorgabe:
+          $ref: '#/components/schemas/Umsetzungsgradvorgabe'
+          description: >-
+            Umsetzungsgradvorgabe des Produktpakets wird unterteilt in Z01
+            Produktpaket ist vollumfänglich umzusetzen oder Z02 Produktpaket
+            kann in Teilen umgesetzt werden zum Zuordnungsbeginn
+
+            CCI Z65
+
+            PI 55001 55077 55600 55601 55014 55608
+        priorisierung:
+          $ref: '#/components/schemas/Priorisierung'
+          description: |-
+            Priorisierung erforderliches Produktpaket
+            CAV Z75 
+      x-apidog-orders:
+        - produktpaketId
+        - produkt
+        - umsetzungsgradvorgabe
+        - priorisierung
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    Priorisierung:
+      type: string
+      title: Priorisierung
+      description: Priorisierung
+      enum:
+        - PRIORITAET1
+        - PRIORITAET2
+        - PRIORITAET3
+        - PRIORITAET4
+        - PRIORITAET5
+      x-apidog-enum:
+        - value: PRIORITAET1
+          name: 1. Priorität
+          description: Z75
+        - value: PRIORITAET2
+          name: 2. Priorität
+          description: Z76
+        - value: PRIORITAET3
+          name: 3. Priorität
+          description: Z77
+        - value: PRIORITAET4
+          name: 4. Priorität
+          description: Z78
+        - value: PRIORITAET5
+          name: 5. Priorität
+          description: Z79
+      x-apidog-folder: ''
+    Umsetzungsgradvorgabe:
+      type: string
+      title: Umsetzungsgradvorgabe
+      description: Umsetzungsgradvorgabe
+      enum:
+        - ZUORDNUNG_NUR_WENN_PRODUKTPAKET_UMSETZBAR
+        - ZUORDNUNG_AUCH_WENN_PRODUKTPAKET_NICHT_UMSETZBAR
+      x-apidog-enum:
+        - value: ZUORDNUNG_NUR_WENN_PRODUKTPAKET_UMSETZBAR
+          name: Produktpaket ist vollumfänglich umzusetzen
+          description: Z01
+        - value: ZUORDNUNG_AUCH_WENN_PRODUKTPAKET_NICHT_UMSETZBAR
+          name: Produktpaket kann in Teilen umgesetzt werden
+          description: Z02
+      x-apidog-folder: ''
+    Produkt:
+      title: Produkt
+      type: object
+      properties:
+        produktCode:
+          type: string
+          description: |-
+            Produkt-Code
+            Erforderliches Produkt Abrechnungsdaten ORDERS
+            PIA 5
+            PI 17133
+        codeProdukteigenschaft:
+          type: string
+          description: |-
+            Code der Produkteigenschaft
+            CAV ZH9
+            PI 55001 55077 55600 55601 55014 55608 
+        wertedetails:
+          type: string
+          description: >-
+            Wertedetails zum Produkt, Wertedetails zum Produkt sind in der
+            Codeliste der Konfigurationen beschrieben
+
+            CAV ZV4
+
+            PI 55001 55077 55600 55601 55014 55608 
+      x-apidog-orders:
+        - produktCode
+        - codeProdukteigenschaft
+        - wertedetails
+      x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Geokoordinaten:
       title: Geokoordinaten

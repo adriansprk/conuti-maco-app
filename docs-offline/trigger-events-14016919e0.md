@@ -37444,7 +37444,7 @@ components:
                     title: >-
                       Classification of the market location as standard market
                       location, dormant market location, or customer facility
-                  erforderlichesProduktpaket:
+                  erforderlichesProduktpaket: &ref_7
                     $ref: '#/components/schemas/Produktpaket'
                 x-apidog-orders:
                   - marktlokationsId
@@ -39508,12 +39508,18 @@ components:
                   lokationsadresse: *ref_4
                   katasterinformation: *ref_5
                   geokoordinaten: *ref_6
+                  erforderlichesProduktpaket: *ref_7
                 x-apidog-orders:
                   - marktlokationsId
                   - energierichtung
                   - lokationsadresse
                   - katasterinformation
                   - geokoordinaten
+                  - erforderlichesProduktpaket
+                required:
+                  - energierichtung
+                  - erforderlichesProduktpaket
+                x-apidog-refs: {}
                 x-apidog-ignore-properties: []
             TRANCHE:
               type: array

@@ -8,7 +8,7 @@
   <Step title="Prozessauslöser - eingehende EDI">
     <Tabs>
       <Tab title="Übersicht">         
-          <Card title="21040">
+          <Card title="21040 Info Entsperrauftrag">
               Info Entsperrauftrag
           </Card>
       </Tab> 

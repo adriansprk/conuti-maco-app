@@ -2,17 +2,42 @@
 
 
 ![LW24h mit Abhängigkeiten - Stornierung Werte vom MSB der Marktlokation (Rolle LF).png](https://api.apidog.com/api/v1/projects/816353/resources/367341/image-preview)
-
-
-<DataSchema id="8348177" />
-
 <Steps>
-  <Step title="13006 EDI">
+  <Step title="Prozessauslöser - eingehende EDI" defaultOpen={false}>
     <Tabs>
-  <Tab title="13006 Edi">
-    <Accordion title="13006 Edi" defaultOpen>
+      <Tab title="Übersicht">
  
-  ```UNA:+.? '
+        <Card title="13006 Messwert Storno">
+              Messwert Storno
+          </Card>
+
+      </Tab>        
+      
+      <Tab title="📄13006 Messwert Storno">
+          <Accordion title="PI_13006" defaultOpen={false}>
+               
+          </Accordion>
+      </Tab>
+    </Tabs>
+
+  </Step>
+  <Step title="Schnittstellen schreibend">
+    <Tabs>
+      <Tab title="Übersicht">
+          <Card title="Erstellen der Prozessdaten"
+                href="https://doc.macoapp.de/prozessdaten-erstellen-14017183e0.md">
+              Übergabe der initialen Prozessdaten an das Backend
+          </Card>    
+      </Tab>
+       <Tab title="📄13006 Messwert Storno">
+          <Accordion title="PI_13006" defaultOpen={false}>
+                 <DataSchema id="5562216" />
+          </Accordion>
+       </Tab>
+        
+        <Tab title="📄13006 Edi">
+          <Accordion title="PI_13006" defaultOpen={false}>
+                 ```UNA:+.? '
 UNB+UNOC:3+9904446000007:500+9900321000005:500+251010:1301+978509++VL'
 UNH+542637+MSCONS:D:04B:UN:2.4c'
 BGM+7+542637BGM+1'
@@ -33,16 +58,12 @@ LOC+172'
 UNT+17+542637'
 UNZ+1+978509'
   ```
-</Accordion>
-  </Tab>
-</Tabs>
-  </Step>
-  <Step title="13006 JSON">
-    <Tabs>
-  <Tab title="13006 JSON">
-    <Accordion title="13006 JSON" defaultOpen>
- 
-  ```{
+          </Accordion>
+       </Tab>
+        
+        <Tab title="📄13006 JSON">
+          <Accordion title="13006 JSON" defaultOpen={false}>
+               ```{
   "businessKey": "<businessKey>",
   "processDate": null,
   "dataSource": "OUTBOUND",
@@ -101,9 +122,13 @@ UNZ+1+978509'
     "zusatzdaten": {}
   }
 }
-  ```
-</Accordion>
-  </Tab>
-</Tabs>
+  ```  
+  </Accordion>
+       </Tab>
+      
+    </Tabs>
   </Step>
+  
 </Steps>
+
+

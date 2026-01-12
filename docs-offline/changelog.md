@@ -10,6 +10,11 @@ und dieses Projekt folgt der [Semantischen Versionierung](https://semver.org/lan
 ## [Unveröffentlicht]
 - ...
 
+## [1.3.4] - 11. November 2025
+
+### Hinzugefügt
+- Lesen der Netzlokation 
+
 ## [1.3.3] - 02. Juni 2025
 
 ### Geändert

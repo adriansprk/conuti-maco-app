@@ -206,9 +206,7 @@ ls maco-edi-testfiles/outbound/v202510/utilmd/55077/
 
 4. **Keep documentation updated** (optional):
    - External repos (`maco-api-documentation`, `maco-edi-testfiles`) can be updated
-   - Run `./scripts/sync/check-changes.sh` to see what changed
-   - Run `./scripts/sync/sync-changes.sh` to update tracking
-   - See [`scripts/sync/README.md`](scripts/sync/README.md) for details
+   - See [`scripts/sync/README.md`](scripts/sync/README.md) for sync workflow and examples
 
 ### Troubleshooting
 
@@ -267,14 +265,6 @@ ls maco-edi-testfiles/outbound/v202510/utilmd/55077/
 | `yaml_output/[ID].yaml` | Business rules (136 files) | **Mandatory fields, validation** |
 | `PIs/PI_[ID].yml` | Process API schemas | **API request/response structure** |
 
-## 🔄 Typical Workflow
-
-> **💡 Tip**: See [Getting Started - Quick Start Examples](#quick-start-examples) for detailed step-by-step instructions.
-
-**From Business Goal** → `BUSINESS_PROCESS_MAP.md` → `llm.txt` → `docs-offline/` → `yaml_output/` + `PIs/` → `maco-edi-testfiles/` → `bo4e-openapi.min.json` → Implement
-
-**From Specific Message** → `AI_AGENT_SETUP.md` → `llm.txt` → `docs-offline/` → `yaml_output/[ID].yaml` → `PIs/PI_[ID].yml` → `maco-edi-testfiles/` → `bo4e-openapi.min.json` → Implement
-
 ## 📚 Structure
 
 ```
@@ -286,7 +276,7 @@ maco_agent_workspace/
 │   │   └── PROCESS_GRAPH.json         # Process dependency graph
 │   └── llm.txt                ⭐ Documentation index
 ├── .cursor/rules/             ⭐ AI agent rules (BMAD-METHOD structure)
-├── scripts/sync/              ⭐ Sync system for external repos
+├── scripts/sync/              ⭐ Sync system for external repos (see [README](scripts/sync/README.md))
 ├── maco-api-documentation/    # External repo (tracked)
 │   ├── _build/                ⭐ Formatted JSON schemas
 │   ├── yaml_output/           ⭐ Business rules (136 files)
@@ -304,26 +294,3 @@ maco_agent_workspace/
 | "What data do I need for process 55078?" | `AI_AGENT_SETUP.md` → `yaml_output/55078.yaml` → `bo4e-openapi.min.json` |
 | "How do I implement Kündigung workflow?" | `BUSINESS_PROCESS_MAP.md` → Find Kündigung → `llm.txt` → `docs-offline/prozessübersicht-860885m0.md` |
 | "I received a specific MaKo message, what do I do?" | `AI_AGENT_SETUP.md` → Find message type → Check schemas → Implement handler |
-
-## 📖 Documentation
-
-- **Offline**: All 232 documentation pages are available in `docs-offline/`
-- **Index**: Use `llm.txt` to find which documentation file you need
-- **Workflows**: Prozessübersicht files show step-by-step API call sequences
-- **Schemas**: All API schemas are in `_build/` directory (formatted JSON)
-
-## 🔧 Backend Requirements
-
-Your backend needs to support:
-
-**Outbound (Your Backend → Conuti MaCo API)**:
-- Trigger events (START_LIEFERBEGINN, START_KUENDIGUNG, etc.)
-- Send MaloIdent requests
-- Store process data
-
-**Inbound (Conuti MaCo API → Your Backend)**:
-- Webhook endpoints for MaloIdent responses
-- Webhook endpoints for process data updates
-- Read operations (if needed)
-
-See `BUSINESS_PROCESS_MAP.md` and `AI_AGENT_SETUP.md` for detailed requirements.

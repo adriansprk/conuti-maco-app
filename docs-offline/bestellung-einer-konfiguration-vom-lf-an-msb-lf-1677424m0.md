@@ -3,7 +3,7 @@
 Bestellung einer Konfiguration vom LF an MSB ( LF )
 
 
-![LW24h mit Abhängigkeiten - Bestellung einer Konfiguration vom LF an MSB ( LF ).png](https://api.apidog.com/api/v1/projects/816353/resources/363944/image-preview)
+![LW24h mit Abhängigkeiten - Bestellung einer Konfiguration vom LF an MSB ( LF )(1).png](https://api.apidog.com/api/v1/projects/816353/resources/368834/image-preview)
 
 <Steps>
   <Step title="Prozessauslöser - Event">
