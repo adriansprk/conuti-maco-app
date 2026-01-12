@@ -42,6 +42,11 @@ fi
 echo "  ✅ npx found"
 
 echo ""
+echo "🔧 Applying workspace-specific build script patch..."
+echo "   (Ensures JSON files are formatted for indexing, not minified)"
+"$WORKSPACE_ROOT/scripts/apply-build-script-patch.sh"
+
+echo ""
 echo "🚀 Running build script..."
 echo ""
 

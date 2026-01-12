@@ -16,8 +16,8 @@ if [ -d "$WORKSPACE_ROOT/maco-api-documentation" ]; then
     
     cd "$WORKSPACE_ROOT/maco-api-documentation"
     
-    # Check if it's a git repo
-    if [ -d ".git" ]; then
+    # Check if it's a git repo (regular repo or submodule)
+    if [ -d ".git" ] || [ -f ".git" ]; then
         CURRENT_HASH=$(git rev-parse HEAD)
         LAST_HASH=$(jq -r '."external_repos"."maco-api-documentation".last_commit_hash' "$VERSION_TRACKER" 2>/dev/null || echo "null")
         
@@ -91,8 +91,8 @@ if [ -d "$WORKSPACE_ROOT/maco-edi-testfiles" ]; then
     
     cd "$WORKSPACE_ROOT/maco-edi-testfiles"
     
-    # Check if it's a git repo
-    if [ -d ".git" ]; then
+    # Check if it's a git repo (regular repo or submodule)
+    if [ -d ".git" ] || [ -f ".git" ]; then
         CURRENT_HASH=$(git rev-parse HEAD)
         LAST_HASH=$(jq -r '."external_repos"."maco-edi-testfiles".last_commit_hash' "$VERSION_TRACKER" 2>/dev/null || echo "null")
         

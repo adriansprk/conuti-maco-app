@@ -65,38 +65,58 @@ This workspace includes an **Agentic Context** that enables AI assistants (like 
    After cloning, ensure all scripts have execute permissions:
    ```bash
    # Make all shell scripts executable
-   chmod +x scripts/*.sh
-   chmod +x scripts/sync/*.sh
-   
-   # Verify scripts are executable
-   ls -l scripts/*.sh scripts/sync/*.sh
+   chmod +x scripts/*.sh scripts/sync/*.sh
    ```
 
-3. **Initialize linked repositories**:
+3. **Initialize Git submodules and apply patches**:
    
-   This workspace includes several linked repositories that need to be set up:
+   This workspace includes several external repositories as Git submodules:
    - `maco-api-documentation/` - API schemas and business rules
    - `maco-edi-testfiles/` - EDI test files and examples
    - `bo4e-schema/` - BO4E schema definitions
    - `cdoc-schema/` - CDOC schema definitions
+   - `ebd-diagrams/` - Entscheidungsbaumdiagramme (decision tree diagrams)
    
-   **If these directories are empty or missing**, you'll need to clone them separately:
+   **Quick setup (recommended)**:
    ```bash
-   # Check if directories exist and have content
-   ls -la maco-api-documentation/ maco-edi-testfiles/ bo4e-schema/ cdoc-schema/
-   
-   # If directories are empty, clone the repositories:
-   # (Replace with actual repository URLs)
-   git clone <maco-api-documentation-url> maco-api-documentation
-   git clone <maco-edi-testfiles-url> maco-edi-testfiles
-   git clone <bo4e-schema-url> bo4e-schema
-   git clone <cdoc-schema-url> cdoc-schema
+   ./scripts/setup-workspace.sh
    ```
+   This automatically:
+   - ✅ Initialize all submodules from their original sources
+   - ✅ Apply workspace-specific patches (format JSON for indexing)
+   - ✅ Download all documentation files from doc.macoapp.de
+   - ✅ Build JSON schemas (formatted, not minified)
+   - ✅ Generate PROCESS_GRAPH.json index
    
-   **Note**: If these are git submodules, initialize them with:
+   **No manual steps required** - everything runs automatically!
+   
+   **Manual setup**:
    ```bash
+   # Initialize submodules (imported as-is from original repos)
    git submodule update --init --recursive
+   
+   # Patches are automatically applied when building schemas:
+   ./scripts/sync/rebuild-schemas.sh
+   
+   # After schemas are built, generate indexes:
+   python3 scripts/sync/update-process-graph-minimal.py
    ```
+   
+   **Important**: Submodules are imported as-is, then patched automatically when building schemas. This ensures:
+   - ✅ Original repos remain unchanged
+   - ✅ Patches are version-controlled in this workspace
+   - ✅ JSON files are formatted (not minified) for indexing
+   
+   **To update workspace later** (when original repos have new changes):
+   ```bash
+   ./scripts/update-workspace.sh
+   ```
+   This automatically:
+   - ✅ Checks for new versions in all submodules
+   - ✅ Updates submodules to latest versions
+   - ✅ Rebuilds schemas, re-downloads docs, regenerates index
+   
+   **Periodic updates**: Run this script regularly to stay up-to-date with external repos.
 
 4. **Open in Cursor**:
    - Open the workspace folder in Cursor IDE

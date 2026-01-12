@@ -1,0 +1,20 @@
+[submodule "bo4e-schema"]
+	path = bo4e-schema
+	url = https://github.com/conuti-gmbh/bo4e-schema
+	branch = master
+[submodule "cdoc-schema"]
+	path = cdoc-schema
+	url = https://github.com/conuti-gmbh/cdoc-schema
+	branch = main
+[submodule "maco-api-documentation"]
+	path = maco-api-documentation
+	url = https://github.com/conuti-gmbh/maco-api-documentation
+	branch = main
+[submodule "maco-edi-testfiles"]
+	path = maco-edi-testfiles
+	url = https://github.com/conuti-gmbh/maco-edi-testfiles
+	branch = main
+[submodule "ebd-diagrams"]
+	path = ebd-diagrams
+	url = https://github.com/Hochfrequenz/machine-readable_entscheidungsbaumdiagramme.git
+	branch = main

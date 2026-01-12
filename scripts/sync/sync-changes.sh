@@ -20,7 +20,8 @@ if [ -d "$WORKSPACE_ROOT/maco-api-documentation" ]; then
     
     cd "$WORKSPACE_ROOT/maco-api-documentation"
     
-    if [ -d ".git" ]; then
+    # Check if it's a git repo (regular repo or submodule)
+    if [ -d ".git" ] || [ -f ".git" ]; then
         CURRENT_HASH=$(git rev-parse HEAD)
         
         # Get last tracked hash from version tracker
@@ -104,7 +105,8 @@ if [ -d "$WORKSPACE_ROOT/maco-edi-testfiles" ]; then
     
     cd "$WORKSPACE_ROOT/maco-edi-testfiles"
     
-    if [ -d ".git" ]; then
+    # Check if it's a git repo (regular repo or submodule)
+    if [ -d ".git" ] || [ -f ".git" ]; then
         CURRENT_HASH=$(git rev-parse HEAD)
         
         # Update version tracker

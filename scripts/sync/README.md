@@ -66,6 +66,10 @@ python3 scripts/sync/update-process-graph-minimal.py
 
 - **`llm.txt`** is manually downloaded from `doc.macoapp.de` (not from repos)
 - **Build script changes** are critical - always rebuild schemas if `maco-api-documentation/scripts/build-openapi-json.sh` changes
+- **Submodule patching**: Submodules are imported as-is, then automatically patched during build/index generation
+  - Patches are version-controlled in this workspace (not in submodules)
+  - `rebuild-schemas.sh` automatically applies patches before building
+  - This ensures JSON files are formatted (not minified) for indexing
 - **Philosophy**: Scripts create indexes pointing to files; agents read source docs for details
 
 See `LLM_TXT_NOTE.md` and `MINIMAL_INDEX_PHILOSOPHY.md` for details.
