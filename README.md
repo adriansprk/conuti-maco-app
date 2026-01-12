@@ -68,55 +68,17 @@ This workspace includes an **Agentic Context** that enables AI assistants (like 
    chmod +x scripts/*.sh scripts/sync/*.sh
    ```
 
-3. **Initialize Git submodules and apply patches**:
-   
-   This workspace includes several external repositories as Git submodules:
-   - `maco-api-documentation/` - API schemas and business rules
-   - `maco-edi-testfiles/` - EDI test files and examples
-   - `bo4e-schema/` - BO4E schema definitions
-   - `cdoc-schema/` - CDOC schema definitions
-   - `ebd-diagrams/` - Entscheidungsbaumdiagramme (decision tree diagrams)
-   
-   **Quick setup (recommended)**:
+3. **Setup workspace**:
    ```bash
    ./scripts/setup-workspace.sh
    ```
-   This automatically:
-   - ✅ Initialize all submodules from their original sources
-   - ✅ Apply workspace-specific patches (format JSON for indexing)
-   - ✅ Download all documentation files from doc.macoapp.de
-   - ✅ Build JSON schemas (formatted, not minified)
-   - ✅ Generate PROCESS_GRAPH.json index
    
-   **No manual steps required** - everything runs automatically!
+   This automatically initializes submodules, applies patches, downloads documentation, builds formatted JSON schemas, and generates the process index.
    
-   **Manual setup**:
-   ```bash
-   # Initialize submodules (imported as-is from original repos)
-   git submodule update --init --recursive
-   
-   # Patches are automatically applied when building schemas:
-   ./scripts/sync/rebuild-schemas.sh
-   
-   # After schemas are built, generate indexes:
-   python3 scripts/sync/update-process-graph-minimal.py
-   ```
-   
-   **Important**: Submodules are imported as-is, then patched automatically when building schemas. This ensures:
-   - ✅ Original repos remain unchanged
-   - ✅ Patches are version-controlled in this workspace
-   - ✅ JSON files are formatted (not minified) for indexing
-   
-   **To update workspace later** (when original repos have new changes):
+   **To update later** (when external repos have new changes):
    ```bash
    ./scripts/update-workspace.sh
    ```
-   This automatically:
-   - ✅ Checks for new versions in all submodules
-   - ✅ Updates submodules to latest versions
-   - ✅ Rebuilds schemas, re-downloads docs, regenerates index
-   
-   **Periodic updates**: Run this script regularly to stay up-to-date with external repos.
 
 4. **Open in Cursor**:
    - Open the workspace folder in Cursor IDE
@@ -248,10 +210,8 @@ ls maco-edi-testfiles/outbound/v202510/utilmd/55077/
 - See [Initial Setup - Make scripts executable](#initial-setup) above
 
 **Linked Repositories Empty or Missing**:
-- The workspace includes linked repositories (`maco-api-documentation`, `maco-edi-testfiles`, `bo4e-schema`, `cdoc-schema`)
-- If these directories are empty after cloning, initialize them:
-  - Try `git submodule update --init --recursive` if they're submodules
-  - Or clone them separately (see [Initial Setup](#initial-setup) above)
+- If submodule directories are empty after cloning, run `./scripts/setup-workspace.sh`
+- This will initialize all submodules automatically
 
 **Example Files Not Found**:
 - ⚠️ Always use `v202510` directory (see [Understanding the Workspace](#understanding-the-workspace) above)
