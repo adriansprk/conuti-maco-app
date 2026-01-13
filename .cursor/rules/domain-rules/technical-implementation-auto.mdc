@@ -13,7 +13,7 @@ globs:
 alwaysApply: false
 tags: [technical, implementation, api, schemas, bdew-id]
 priority: 2
-version: 1.0.0
+version: 1.2.1
 ---
 
 # Technical Implementation - Entry Point 2
@@ -24,8 +24,7 @@ Apply when user asks about:
 - API structure, schemas, or technical details
 - Building payloads for known process IDs
 - Understanding data structures
-- Specific BDEW process IDs or technical implementation
-- Specific MaKo message/BDEW ID implementation
+- Specific BDEW process IDs or implementation
 
 ## Workflow: Specific Message → Implementation
 
@@ -42,59 +41,57 @@ Apply when user asks about:
 
 **Agent Action**:
 1. **READ** `docs/entry-points/AI_AGENT_SETUP.md` for technical setup
-2. **READ** `docs/entry-points/PROCESS_GRAPH.json`: `indexes.by_pruefi["55077"]` (verify actual data)
+2. **READ** `docs/entry-points/PROCESS_GRAPH.json`: `indexes.by_bdew_id["55077"]` (verify actual data)
+   - ⚠️ If that key is missing, inspect `indexes.*` in the actual `PROCESS_GRAPH.json` and use the key that exists.
 3. **READ** PI_55077.yml (verify actual schema structure)
 4. **READ** yaml_output/55077.yaml (verify actual business rules)
 5. **READ** bo4e-openapi.min.json (verify actual BO4E types)
 6. **READ** example: maco-edi-testfiles/outbound/v202510/utilmd/55077/1.json (⚠️ ALWAYS use v202510, NOT v202404. v202510: Outbound=JSON format)
 7. **Cite all sources** in response
-8. **Create visualization** showing message flow and fields (based on verified schemas)
+8. If the question is workflow/process-level: include visualizations (sequence + dependencies). For narrow lookups: answer directly with citations.
 </example>
 
 ### Step 2: Lookup Process in PROCESS_GRAPH.json
+⚠️ **Option A note**: This repo uses `PROCESS_GRAPH.json` as a minimal index. Derive dependencies/prerequisites by reading the referenced `docs-offline/*.md` sources (Mermaid + prose; follow `ref`).
 
 Use `docs/entry-points/PROCESS_GRAPH.json` indexes for fast lookup:
-- By pruefi: `indexes.by_pruefi["55077"]` → LIEFERBEGINN
-- By trigger: `indexes.by_trigger["START_LIEFERBEGINN"]` → LIEFERBEGINN
-- Process details: `processes.LIEFERBEGINN.triggers_processes`, `processes.LIEFERBEGINN.prerequisites`
+- By BDEW ID: `indexes.by_bdew_id["55077"]`
+- By trigger: `indexes.by_trigger["START_LIEFERBEGINN"]`
+- By process name: `indexes.by_process_name["lieferbeginn"]`
 
-<example>
-**Lookup Pattern**:
-```javascript
-// Find process by BDEW ID
-const process = PROCESS_GRAPH.indexes.by_pruefi["55077"];
-// Returns: { id: "LIEFERBEGINN", trigger: "START_LIEFERBEGINN", ... }
+⚠️ Index key names can differ across versions. If a key shown in examples doesn't exist, inspect `indexes.*` in the actual file.
 
-// Check what it triggers
-const nextProcesses = PROCESS_GRAPH.processes.LIEFERBEGINN.triggers_processes;
-// Returns: ["STAMMDATENAENDERUNG"]
+### Step 3: Create Process Visualization (when needed)
 
-// Check prerequisites
-const prereqs = PROCESS_GRAPH.processes.LIEFERBEGINN.prerequisites;
-// Returns: ["MALOIDENT"]
-</example>
-
-### Step 3: Create Process Visualization
-
-**MANDATORY**: Always create visualizations (see visualization-rules/process-visualization-mandatory-always.mdc)
-
-Include:
-- Sequence diagram showing API call flow
-- Message structure diagram
+If the user asks about process flow / dependencies / end-to-end behavior, include:
+- Sequence diagram (Mermaid)
+- Dependency flowchart (Mermaid)
 - Required vs optional fields table
-- Example message references
+- Example message references (v202510)
 
-### Step 4: Understand Technical Requirements
+For narrow factual questions (single field / endpoint / file path), skip diagrams unless requested.
+
+### Step 4: Understand Technical Requirements (doc order)
 
 Reference in this order:
-1. `docs/llm.txt` - Find documentation for this process
-2. `docs-offline/` - Read process workflow documentation (Prozessübersicht shows step-by-step API call sequences)
-3. `docs-offline/enhanced-index.json` - Programmatic BDEW ID → filename lookup (optional)
+1. `docs/llm.txt` (find relevant docs)
+2. `docs-offline/` (process docs + Prozessübersicht)
+3. `docs-offline/enhanced-index.json` (optional)
 
-### Step 5: Check Business Rules & Schemas
+### Step 5: Check Business Rules, Validation Logic & Schemas
 
 **Business Rules** (mandatory fields):
 - `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/[ID].yaml`
+
+**Business Validation Logic** (rejection codes, validation steps):
+- Find EBD code in process docs (`docs-offline/{process}.md` contains `Entscheidungsbaum E_{code}`)
+- ⚠️ ALWAYS use newest EBD folder: `ebd-diagrams/FV{YYMM}/`
+- EBD JSON: `ebd-diagrams/FV{YYMM}/E_{code}.json`
+- Optional: `.dot` / `.svg`
+
+**Technical Implementation Details** (system architecture, transformations, APERAK workflow):
+- Canonical: `docs-offline/prozessdiagramme-png/INDEX.md` → view `{process-name}.png`
+- Fallback (legacy): `docs-offline/Prozessdiagramme PNG/`
 
 **API Schemas**:
 - Process schemas: `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_[ID].yml`
@@ -107,46 +104,22 @@ Reference in this order:
 - MaloIdent request: `maco-api-documentation/_build/maloident-macoapp.min.json`
 - MaloIdent response: `maco-api-documentation/_build/maloident-lieferant.min.json`
 
-### Step 6: Check Example Messages
+### Step 6: Check Example Messages (⚠️ v202510 only)
 
-Reference real-world examples (⚠️ ALWAYS use v202510, NOT v202404):
-- **Inbound**: `maco-edi-testfiles/inbound/v202510/{message_type}/{process-id}/*.edi` - EDIFACT format (what you RECEIVE from NB/MSB)
-  - Example: `maco-edi-testfiles/inbound/v202510/utilmd/55002/1.edi`
-- **Outbound**: `maco-edi-testfiles/outbound/v202510/{message_type}/{process-id}/*.json` - BO4E JSON format (what you SEND to Conuti API)
-  - Example: `maco-edi-testfiles/outbound/v202510/utilmd/55077/1.json`
-
-<valid-example>
-**Implementing Process 55077 (Lieferbeginn)**:
-
-1. **Lookup**: `PROCESS_GRAPH.indexes.by_pruefi["55077"]` → LIEFERBEGINN
-2. **Check prerequisites**: Requires MALOIDENT to be completed first
-3. **Create visualization**: Sequence diagram + field requirements table
-4. **Read schema**: `PI_55077.yml` for request structure
-5. **Check business rules**: `yaml_output/55077.yaml` for mandatory fields
-6. **Reference BO4E**: `bo4e-openapi.min.json` for data types
-7. **Check examples**: `maco-edi-testfiles/outbound/v202510/utilmd/55077/1.json` (⚠️ ALWAYS use v202510, outbound=JSON format)
-8. **Build payload**: Use schema + business rules + examples
-9. **Trigger**: Use `macoapp-trigger.min.json` to send START_LIEFERBEGINN
-10. **Handle response**: Implement webhook using `maloident-lieferant.min.json` structure
-</valid-example>
-
-<invalid-example>
-**Don't**: Build payload without checking business rules (yaml_output/)
-**Don't**: Skip schema validation against PI_[ID].yml
-**Don't**: Ignore prerequisites - trigger will fail if prerequisites not met
-**Don't**: Forget to implement webhook handlers for inbound responses
-**Don't**: Skip visualization creation
-</invalid-example>
+- **Inbound**: `maco-edi-testfiles/inbound/v202510/{message_type}/{process-id}/*.edi` (received, EDIFACT)
+- **Outbound**: `maco-edi-testfiles/outbound/v202510/{message_type}/{process-id}/*.json` (sent, BO4E JSON)
 
 ## Cross-Reference Pattern
 
 Always follow this pattern:
 ```
-Business rules (yaml_output/) 
-  → Process schemas (PIs/) 
+Business rules (yaml_output/)
+  → Process schemas (PIs/)
   → BO4E types (_build/bo4e-openapi.min.json)
-  → Examples (maco-edi-testfiles/inbound/v202510/ for EDI inbound or maco-edi-testfiles/outbound/v202510/ for JSON outbound) (⚠️ ALWAYS use v202510. v202510: Outbound=JSON, Inbound=EDI)
-  → Visualization (Mermaid diagrams)
+  → Business validation (find EBD code → latest FV dir → E_{code}.json)
+  → Technical implementation (PNG INDEX.md → view PNG if exists)
+  → Examples (v202510 only: inbound EDI / outbound JSON)
+  → Visualization (only when it helps)
   → Implementation
 ```
 
@@ -155,11 +128,3 @@ Business rules (yaml_output/)
 - **Outbound**: Your backend → Conuti API (trigger, send data)
 - **Inbound**: Conuti API → Your backend webhooks (receive responses, receive data)
 
-## Process Dependencies
-
-Before implementing:
-1. Check `docs/entry-points/PROCESS_GRAPH.json` for prerequisites
-2. Verify prerequisites are completed or can be triggered
-3. Understand what processes this triggers next
-4. Plan webhook handlers for all expected responses
-5. **Create visualization** of the complete technical flow

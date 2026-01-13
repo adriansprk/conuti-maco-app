@@ -7,6 +7,7 @@ This directory contains the AI agent configuration for the MaCo API workspace, o
 ```
 .cursor/rules/
 ├── global-rules/                    # Always applied rules
+│   ├── anti-hallucination-mandatory-always.mdc
 │   └── maco-workspace-context-always.mdc
 ├── domain-rules/                     # Domain-specific workflows
 │   ├── business-discovery-auto.mdc

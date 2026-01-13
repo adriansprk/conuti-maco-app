@@ -1,5 +1,5 @@
 ---
-description: Business goal discovery workflow - maps business goals to MaKo processes and implementation steps
+description: Business goal discovery workflow - maps business goals to MaKo processes and implementation steps (repo-first, source-grounded)
 globs:
   - "**/BUSINESS_PROCESS_MAP.md"
   - "**/PROCESS_GRAPH.json"
@@ -10,7 +10,7 @@ globs:
 alwaysApply: false
 tags: [business, discovery, workflow, entry-point-1]
 priority: 2
-version: 1.0.0
+version: 1.1.0
 ---
 
 # Business Goal Discovery - Entry Point 1
@@ -18,110 +18,61 @@ version: 1.0.0
 ## When to Use This Rule
 
 Apply when user asks about:
-- Business goals (e.g., "register customer", "cancel contract", "change supplier")
-- Understanding what processes are needed for a business scenario
+- Business goals (e.g., “new customer signup”, “cancel contract”, “supplier change”)
+- Which MaKo processes are needed for a scenario
 - Designing backend services for a business workflow
-- "What do I need to do for X business scenario?"
 
 ## Workflow: Business Goal → Implementation
 
-### Step 1: Start with BUSINESS_PROCESS_MAP.md
+### Step 1: Start with BUSINESS_PROCESS_MAP.md (no guessing)
 
-**ALWAYS START HERE** for business discovery tasks.
+1. **READ** `docs/entry-points/BUSINESS_PROCESS_MAP.md`
+2. Identify the scenario and the referenced process names / BDEW IDs (cite source)
 
-**CRITICAL**: Read the actual file - never guess or assume process mappings.
+### Step 2: Use PROCESS_GRAPH.json for discovery (index-only)
 
-**File Location**: `docs/entry-points/BUSINESS_PROCESS_MAP.md`
+Use `docs/entry-points/PROCESS_GRAPH.json` to discover **which source docs to read**, via:
+- `indexes.by_process_name["..."]`
+- `indexes.by_trigger["..."]`
+- `indexes.by_bdew_id["55077"]`
 
-<example>
-**User**: "I want to register a new customer"
+⚠️ **Option A note**: In this repo `PROCESS_GRAPH.json` is `version: 2.0.0-minimal`. Do **not** claim prerequisites/dependencies from `PROCESS_GRAPH.processes.*`. Derive them by reading the referenced `docs-offline/*.md` sources (Mermaid + prose; follow `ref`).
 
-**Agent Action**:
-1. **READ** `docs/entry-points/BUSINESS_PROCESS_MAP.md` (verify actual content)
-2. **READ** `docs/entry-points/PROCESS_GRAPH.json` (verify process details)
-3. Find scenario: "New Customer Signs Up" (cite source)
-4. Identify required processes: MaloIdent → Lieferbeginn (from verified sources)
-5. **Verify** dependencies in PROCESS_GRAPH.json
-6. **Cite sources** in response
-7. **Create visualization** showing the process sequence (based on verified data)
-</example>
+⚠️ If an example key isn’t present, inspect `indexes.*` in the actual file and use what exists.
 
-### Step 2: Use PROCESS_GRAPH.json
+### Step 3: Output Mode (fast-path vs workflow)
 
-Query `docs/entry-points/PROCESS_GRAPH.json` for:
-- Process sequences and dependencies (what triggers what)
-- Business scenarios with step-by-step sequences
-- Fast lookup by trigger event, pruefi, or role
-- Understanding prerequisites and outcomes
+**Fast Path (narrow business lookup)**: If user only wants “which processes are involved”, return:
+- List of processes (names + BDEW IDs if available)
+- Preconditions (high level)
+- Key docs to read next (citations)
 
-<example>
-**Lookup Pattern**:
-```json
-{
-  "processes": {
-    "LIEFERBEGINN": {
-      "prerequisites": ["MALOIDENT"],
-      "triggers_processes": ["STAMMDATENAENDERUNG"],
-      "business_scenarios": ["new_customer_signup"]
-    }
-  }
-}
-```
-</example>
+**Workflow request**: If user asks for “how does this flow work end-to-end”, include:
+- Sequence diagram (Mermaid)
+- Dependency flowchart (Mermaid)
+- Example message references (v202510)
 
-### Step 3: Create Process Visualization
+(Follow the visualization rule’s fast-path guidance.)
 
-**MANDATORY**: Always create visualizations (see visualization-rules/process-visualization-mandatory-always.mdc)
+### Step 4: Cross-reference the right doc type (maximize repo value)
 
-Include:
-- Sequence diagram showing process flow
-- Flowchart showing dependencies
-- Table of message types and fields
-- Example message references
+- **WHY / business context**: `docs-offline/{process}.md` and related Prozessübersichten
+- **WHAT fields are required**: `maco-api-documentation/.../PI_[ID].yml` + `yaml_output/[ID].yaml`
+- **WHAT will be validated / rejection codes**: EBD (if process docs reference `Entscheidungsbaum E_{code}`)
+  - ⚠️ Always use newest `ebd-diagrams/FV{YYMM}/`
+  - Read `E_{code}.json` for validation steps + rejection codes
+- **HOW it’s implemented technically**: PNG (if available)
+  - Canonical: `docs-offline/prozessdiagramme-png/INDEX.md` → view `{process}.png`
+  - Fallback (legacy): `docs-offline/Prozessdiagramme PNG/`
 
-### Step 4: Reference Documentation
+### Step 5: Check examples (⚠️ v202510 only)
 
-Use this sequence:
-1. `docs/llm.txt` - Find which documentation files you need
-2. `docs-offline/` - Read workflow documentation (232 files, including Prozessübersicht)
-3. `docs-offline/enhanced-index.json` - Programmatic BDEW ID → filename lookup (optional)
+- Inbound EDI (received): `maco-edi-testfiles/inbound/v202510/`
+- Outbound JSON (sent): `maco-edi-testfiles/outbound/v202510/`
 
-### Step 5: Check Examples
+## Non-negotiables
 
-Reference real-world examples (⚠️ ALWAYS use v202510, NOT v202404):
-- `maco-edi-testfiles/inbound/v202510/` - Example inbound messages (responses from market) - EDIFACT format (`.edi` files) - what you RECEIVE from NB/MSB
-- `maco-edi-testfiles/outbound/v202510/` - Example outbound messages (requests to market) - BO4E JSON format (`.json` files) - what you SEND to Conuti API
+- Never claim process details without reading the referenced docs
+- Never use v202404 examples
+- If PNG/EBD doesn’t exist for a process, state that explicitly
 
-### Step 6: Build Implementation
-
-Cross-reference:
-- Business rules: `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/[ID].yaml`
-- API schemas: `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_[ID].yml`
-- BO4E types: `maco-api-documentation/_build/bo4e-openapi.min.json`
-
-## Common Business Scenarios
-
-<valid-example>
-**Scenario**: New Customer Registration
-1. Customer doesn't know MaLo-ID → Use MaloIdent process
-2. After MaloIdent success → Trigger Lieferbeginn (55077)
-3. Check PROCESS_GRAPH.json for prerequisites and next steps
-4. **Create visualization** showing full sequence
-5. Implement webhook handlers for inbound responses
-</valid-example>
-
-<invalid-example>
-**Don't**: Start implementing without checking BUSINESS_PROCESS_MAP.md
-**Don't**: Skip dependency checking in PROCESS_GRAPH.json
-**Don't**: Ignore prerequisites - processes have strict order requirements
-**Don't**: Skip visualization creation
-</invalid-example>
-
-## Always Check Dependencies
-
-Before implementing any process:
-1. Check `docs/entry-points/PROCESS_GRAPH.json` for prerequisites
-2. Verify all prerequisites are met or can be triggered
-3. Understand what processes this triggers next
-4. Plan webhook handlers for all expected responses
-5. **Create visualization** of the complete flow

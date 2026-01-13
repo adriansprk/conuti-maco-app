@@ -5,7 +5,7 @@ This guide helps you discover which market processes and APIs you need based on 
 **Entry Point**: Use this guide when you start with a **business goal** (e.g., "register customer", "cancel contract").
 **Alternative Entry Point**: If you have a specific MaKo message/BDEW ID, start with [`AI_AGENT_SETUP.md`](./AI_AGENT_SETUP.md) instead.
 
-**Machine-Readable Version**: See [`PROCESS_GRAPH.json`](./PROCESS_GRAPH.json) for structured process dependencies, sequences, and business scenarios optimized for programmatic access.
+**Machine-Readable Index**: See [`PROCESS_GRAPH.json`](./PROCESS_GRAPH.json) for fast lookup indexes (minimal, discovery-only in this repo). Use this file to find the right offline docs quickly.
 
 ## 🎯 Common Business Scenarios
 
@@ -19,8 +19,8 @@ This guide helps you discover which market processes and APIs you need based on 
    - **Purpose**: Identify the market location (MaLo) if customer doesn't know their MaLo-ID
    - **Your Role**: Lieferant (LF)
    - **Documentation**: `llm.txt` → "Lieferant [Malo-Ident (Rolle LF)]"
-   - **API**: `maloident-macoapp/maloident-macoapp.yaml` → Send request
-   - **Webhook**: `maloident-lieferant/maloident-lieferant.yaml` → Receive response
+   - **API schema (outbound)**: `maco-api-documentation/_build/maloident-macoapp.min.json`
+   - **Webhook schema (inbound)**: `maco-api-documentation/_build/maloident-lieferant.min.json`
    - **Expected Response**: MaLo-ID and location data (via webhook)
    - **Note**: You must implement webhook endpoints to receive the response asynchronously
 
@@ -29,7 +29,7 @@ This guide helps you discover which market processes and APIs you need based on 
    - **Purpose**: Register the customer's supply contract with the network operator
    - **Your Role**: Lieferant (LF)
    - **Documentation**: `llm.txt` → "Lieferant [Lieferbeginn (Rolle LFN)]"
-   - **API**: `events/events-openapi.yaml` → START_LIEFERBEGINN
+   - **Trigger schema**: `maco-api-documentation/_build/macoapp-trigger.min.json` (preferred)
    - **Required Data**: 
      - Customer information (Geschaeftspartner)
      - Market location (Marktlokation)
@@ -119,23 +119,12 @@ Customer Signs Up
 - etc.
 
 ### Step 1b: Check PROCESS_GRAPH.json for Pre-built Scenarios
-```javascript
-// Available business scenarios in PROCESS_GRAPH.json:
-PROCESS_GRAPH.business_scenarios.NEW_CUSTOMER_SIGNUP
-PROCESS_GRAPH.business_scenarios.SUPPLIER_SWITCH_AS_NEW
-PROCESS_GRAPH.business_scenarios.SUPPLIER_SWITCH_AS_OLD
-PROCESS_GRAPH.business_scenarios.CUSTOMER_CANCELLATION
-PROCESS_GRAPH.business_scenarios.HANDLE_FORCED_TERMINATION
-PROCESS_GRAPH.business_scenarios.HANDLE_EG_ASSIGNMENT
-PROCESS_GRAPH.business_scenarios.MASTER_DATA_UPDATE
-PROCESS_GRAPH.business_scenarios.CANCEL_PREVIOUS_MESSAGE
-```
+`PROCESS_GRAPH.json` is primarily a **discovery index** in this repo. Use it to quickly find:
+- Which files mention a BDEW ID: `indexes.by_bdew_id["55077"]`
+- Which docs relate to a process name: `indexes.by_process_name["lieferbeginn"]`
+- Which process maps to a trigger: `indexes.by_trigger["START_LIEFERBEGINN"]`
 
-Each scenario includes:
-- Step-by-step process sequence
-- Prerequisites and dependencies
-- Expected responses
-- Backend requirements
+⚠️ Note: `PROCESS_GRAPH.business_scenarios` is currently empty here, so use the scenarios in this document + the linked offline docs for narrative workflows.
 
 ### Step 2: Find Related Processes in `llm.txt`
 Search for business terms:
@@ -166,6 +155,20 @@ Search for business terms:
    - Understand data types
    - See object relationships
    - Find enum values
+
+### Step 4b: Understand Validation Logic (WHAT can be rejected)
+
+If the process docs reference an Entscheidungsbaum:
+- Find `Entscheidungsbaum E_{code}` in `docs-offline/{process}.md`
+- Use newest EBD version under `ebd-diagrams/` → `FV{YYMM}/`
+- Read `ebd-diagrams/FV{YYMM}/E_{code}.json` to see validation steps + rejection codes
+
+### Step 4c: Understand Technical Flow (HOW it’s implemented)
+
+If a PNG diagram exists for the process:
+- Use `docs-offline/prozessdiagramme-png/INDEX.md` to find the right PNG
+- View the PNG to see system swimlanes, format transformations (BO4E↔EDI), and APERAK flow
+  - Fallback (legacy path): `docs-offline/Prozessdiagramme PNG/`
 
 ### Step 5: Map to Backend Services
 - **What data do you need to collect?**
@@ -229,7 +232,7 @@ Help me discover:
 5. What backend services do I need to build?
 
 Use the following resources:
-- PROCESS_GRAPH.json: Check business_scenarios for pre-built workflows, check dependencies
+- PROCESS_GRAPH.json: Use `indexes.*` to find the right `docs-offline/...` sources quickly (discovery-only in this repo)
 - BUSINESS_PROCESS_MAP.md: Find business scenarios matching your goal
 - llm.txt: Find processes related to [business goal] (index to find docs)
 - docs-offline/: Read workflow documentation (Prozessübersicht) and process descriptions
@@ -245,13 +248,13 @@ Use the following resources:
 
 ## 💡 Tips
 
-1. **Start with `PROCESS_GRAPH.json`** - Contains pre-built business scenarios with step-by-step sequences
-2. **Check dependencies** - Use `processes.[ID].prerequisites` and `triggers_processes` in PROCESS_GRAPH.json
+1. **Start with `BUSINESS_PROCESS_MAP.md`** - Use the curated scenarios for narrative workflows
+2. **Use `PROCESS_GRAPH.json` (`indexes.*`)** - Jump to the right `docs-offline/...` sources fast (then read them)
 3. **Use `llm.txt`** - It's organized by business processes for finding documentation
 4. **Follow the workflow** - Processes often have dependencies (e.g., MaloIdent before Lieferbeginn)
-5. **Check your role** - You're likely "Lieferant" (LF), so focus on LF processes (see `indexes.by_role.LF`)
+5. **Check your role** - You're "Lieferant" (LF). Prefer LF-facing docs and verify direction via schemas/examples.
 6. **Understand responses** - You'll receive responses from NB and MSB, prepare handlers
-7. **Use processinfo.json** - Contains detailed process descriptions (technical but comprehensive)
+7. **Use processinfo.json (optional)** - Technical reference at `maco-api-documentation/pythons/processinfo.json`
 
 ---
 

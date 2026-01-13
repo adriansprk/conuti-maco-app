@@ -3,7 +3,7 @@ description: Core MaCo API workspace context and file structure - always applied
 alwaysApply: true
 tags: [context, workspace, maco-api, global]
 priority: 1
-version: 1.0.0
+version: 1.2.1
 ---
 
 # MaCo API Workspace - Global Context
@@ -23,6 +23,22 @@ version: 1.0.0
 - `docs/entry-points/AI_AGENT_SETUP.md` - Technical implementation (Entry Point 2)
 - `docs/llm.txt` - Documentation index (237 entries) - Find which docs you need
 - `docs-offline/` - 232 offline documentation files (Prozessübersicht, process descriptions, EBD diagrams)
+  - `docs-offline/prozessdiagramme-png/` - 54 PNG process diagrams showing technical implementation workflow (**canonical path**)
+    - **Fallback (legacy path)**: `docs-offline/Prozessdiagramme PNG/` (may exist on case-sensitive filesystems as a separate folder)
+    - **INDEX.md** - Text-based index of all PNG files with process names, roles, and documentation references (use this for discovery)
+    - **Use for**: System architecture (swimlanes: Backend LF, MPS, MCS, Kommunikation), format transformations (BO4E↔EDI), APERAK workflow (Zustimmung? decision points), message sequence, conditional data updates
+    - **Shows**: HOW to implement technically (not WHAT to validate)
+    - ⚠️ **Note**: PNG files require visual analysis - use INDEX.md for text-based lookup, view PNG for diagram details
+- `ebd-diagrams/` - EBD (Entscheidungsbaumdiagramm) files in JSON, DOT, SVG, and PlantUML formats
+  - ⚠️ **ALWAYS use the latest `FV{YYMM}/` directory** (e.g., FV2604 for April 2026). Check directory listing for newest version.
+  - **Versioning**: `FV{YYMM}` = Formatversion valid from year-month (e.g., FV2510 = October 2025, FV2604 = April 2026)
+  - **E_{code}.json** - Machine-readable validation logic (preferred for programmatic access)
+  - **E_{code}.dot** - Graphviz DOT format for visualization
+  - **E_{code}.svg** - Pre-rendered SVG diagrams
+  - **E_{code}.puml** - PlantUML format (when graph is plottable)
+  - **Use for**: Business validation logic, rejection codes, validation step-by-step guides, decision tree structure
+  - **Shows**: WHAT to validate (not HOW to implement technically)
+  - **How to find EBD code for a process**: Check markdown docs (`docs-offline/{process}.md`) for "Entscheidungsbaum E_{code}" references
 - `maco-edi-testfiles/` - 2,549+ EDI test files (real-world message examples)
   - **⚠️ CRITICAL**: Always use `v202510` version directory, NOT `v202404` or other versions
   - **v202510 Structure** (reflects actual workflow):
@@ -59,6 +75,7 @@ version: 1.0.0
 - By pruefi: `indexes.by_bdew_id["55077"]` → list of files mentioning this Prüfi
 - By trigger: `indexes.by_trigger["START_LIEFERBEGINN"]` → list of files with this trigger
 - By process name: `indexes.by_process_name["lieferbeginn"]` → list of files for this process
+  - ⚠️ If an example key isn't present in your `PROCESS_GRAPH.json`, inspect `indexes.*` in the actual file and use the key that exists.
 
 **Then read source files**:
 - Read the actual markdown files for full context
@@ -75,8 +92,16 @@ version: 1.0.0
 3. **Use appropriate guide** (`docs/entry-points/BUSINESS_PROCESS_MAP.md` or `docs/entry-points/AI_AGENT_SETUP.md`)
 4. **Use PROCESS_GRAPH.json for discovery** - Find relevant files via indexes, then READ those source files
 5. **Read source documentation** - Parse Mermaid diagrams, extract roles/prerequisites/relationships from actual docs
-6. **Reference documentation** via `docs/llm.txt` → docs-offline/
-7. **Check examples** in maco-edi-testfiles/ (ALWAYS use v202510 version directory)
+6. **For technical implementation**: 
+   - First check `docs-offline/prozessdiagramme-png/INDEX.md` to find relevant PNG files
+   - View PNG files for system architecture, format transformations, APERAK workflow
+   - Example: `Lieferbeginn Lieferseite.png` shows LF-side implementation flow
+7. **For business validation**: Read EBD JSON/DOT files for validation logic, rejection codes
+   - ⚠️ **ALWAYS use latest EBD version** (check `ebd-diagrams/` for newest `FV{YYMM}/` directory)
+   - Find EBD code in process markdown docs (look for "Entscheidungsbaum E_{code}")
+   - Example: `ebd-diagrams/FV2604/E_0623.json` for LIEFERBEGINN validation
+8. **Reference documentation** via `docs/llm.txt` → docs-offline/
+9. **Check examples** in maco-edi-testfiles/ (ALWAYS use v202510 version directory)
    - **Inbound**: `maco-edi-testfiles/inbound/v202510/` - EDIFACT format (`.edi` files)
      - Example: `maco-edi-testfiles/inbound/v202510/utilmd/55002/1.edi`
      - These show what you RECEIVE from NB/MSB (webhooks, responses)
@@ -84,6 +109,6 @@ version: 1.0.0
      - Example: `maco-edi-testfiles/outbound/v202510/utilmd/55077/1.json`
      - These show what you SEND to Conuti API (triggers, requests)
    - ⚠️ **NEVER use v202404** - it's outdated and has different structure
-8. **Verify against schemas** (PI_[ID].yml) and business rules (yaml_output/[ID].yaml)
-9. **Cite sources** in your response (always cite the source file, not the index)
-10. **Build implementation** using verified schemas and business rules from source docs
+10. **Verify against schemas** (PI_[ID].yml) and business rules (yaml_output/[ID].yaml)
+11. **Cite sources** in your response (always cite the source file, not the index)
+12. **Build implementation** using verified schemas and business rules from source docs

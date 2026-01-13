@@ -1,5 +1,5 @@
 ---
-description: Message builder agent - pre-creates MaKo messages from database entries, validates, and prepares for Conuti testing
+description: Message builder agent - pre-creates MaKo messages from available data, validates, and prepares for Conuti testing
 globs:
   - "**/*.json"
   - "**/*.yaml"
@@ -8,150 +8,77 @@ globs:
   - "api/**/*"
   - "builder/**/*"
 alwaysApply: false
-tags: [builder, message, database, conuti, pre-create]
+tags: [builder, message, conuti, pre-create, schema, business-rules, ebd]
 priority: 3
-version: 1.0.0
+version: 1.1.0
 ---
 
 # Message Builder Agent
 
 ## Purpose
 
-This agent pre-creates MaKo messages from database entries:
-- Queries database for customer/contract data
-- Builds message payloads using schemas and business rules
-- Validates messages before sending
-- Prepares messages for Conuti testing
-- Identifies missing data or functionality
+Pre-create MaKo messages from available inputs (today: user-provided data; future: DB), by:
+- Discovering process requirements (PROCESS_GRAPH → docs → schema/rules/examples)
+- Building payloads to match `PI_[ID].yml`
+- Applying mandatory fields/constraints from `yaml_output/[ID].yaml`
+- Using **v202510 outbound JSON examples** as the realism check
+- Surfacing likely rejection risks via **EBD** when applicable
 
 ## Message Building Workflow
 
-### Step 1: Identify Process and Data Requirements
+### Step 1: Identify Process + Sources of Truth
 
-1. User specifies process ID or business goal
-2. Load process from `docs/entry-points/PROCESS_GRAPH.json`
-3. Identify required fields from:
-   - Schema: `PI_[ID].yml`
-   - Business rules: `yaml_output/[ID].yaml`
-   - BO4E types: `bo4e-openapi.min.json`
+1. User provides BDEW ID or business goal
+2. Discover via `docs/entry-points/PROCESS_GRAPH.json` (index-only):
+   - Prefer `indexes.by_bdew_id["[ID]"]`
+   - ⚠️ If key differs, inspect `indexes.*` in the actual file and use what exists
+3. Load schema: `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_[ID].yml`
+4. Load business rules: `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/[ID].yaml`
+5. Load BO4E types: `maco-api-documentation/_build/bo4e-openapi.min.json` (as needed)
+6. Load outbound examples (⚠️ ALWAYS v202510): `maco-edi-testfiles/outbound/v202510/{message_type}/[ID]/*.json`
 
-### Step 2: Query Database
+### Step 2: Optional — Pre-flight Validation Risks (EBD)
 
-**Future Enhancement**: When database integration is available:
-1. Identify required database tables/fields
-2. Query database for customer/contract data
-3. Map database fields to message fields
-4. Identify missing database fields
+If process docs mention an Entscheidungsbaum:
+- Find EBD code in `docs-offline/{process}.md` (`Entscheidungsbaum E_{code}`)
+- Use newest `ebd-diagrams/FV{YYMM}/`
+- Read `ebd-diagrams/FV{YYMM}/E_{code}.json`
 
-### Step 3: Build Message Payload
-
-1. Start with schema structure from `PI_[ID].yml`
-2. Populate required fields from database
-3. Apply business rules from `yaml_output/[ID].yaml`
-4. Validate BO4E types
-5. Add optional fields if available
-
-### Step 4: Validate Message
-
-Use validation-rules/message-validation-agent-auto.mdc:
-- Schema compliance
-- Business rules compliance
-- Required fields present
-- Backend functionality check
-
-### Step 5: Create Visualization
-
-**MANDATORY**: Always create visualization showing:
-- Message structure
-- Field mapping (database → message)
-- Required vs optional fields
-- Validation status
-
-### Step 6: Prepare for Conuti Testing
-
-1. Format message according to API spec
-2. Include test metadata (test case ID, scenario)
-3. Prepare for sandbox environment
-4. Generate test instructions
-
-<example>
-**Message Building Process**:
-
-```markdown
-## Building Message: Process 55077 (Lieferbeginn)
-
-### Step 1: Load Requirements
-- Process: LIEFERBEGINN (55077)
-- Schema: PI_55077.yml
-- Business Rules: yaml_output/55077.yaml
-
-### Step 2: Database Query
-- Customer ID: 12345
-- MarktlokationsId: Found in database
-- Lieferbeginn: 2025-01-01
+Use EBD to warn about likely rejection reasons. Do **not** use EBD to invent required fields if PI/yaml_output disagree.
 
 ### Step 3: Build Payload
-```json
-{
-  "marktlokationsId": "54321012345",
-  "lieferbeginn": "2025-01-01",
-  "zusatzdaten": {
-    "kundennummer": "12345"
-  }
-}
-```
 
-### Step 4: Validation
-- ✅ Schema compliant
-- ✅ Business rules met
-- ✅ Required fields present
+1. Start from schema shape (`PI_[ID].yml`)
+2. Populate required fields from inputs (or DB in future)
+3. Enforce requiredness/constraints from `yaml_output/[ID].yaml`
+4. Cross-check against a v202510 outbound example for the same process ID
+5. Keep unknown/optional fields out unless you can justify them via schema/example
 
-### Step 5: Ready for Conuti Testing
-- Message formatted
-- Test case: TC_55077_001
-- Environment: Sandbox
-```
-</example>
+### Step 4: Validate (delegate)
 
-## Field Mapping Strategy
+Run the validation workflow defined in `message-validation-agent-auto` (schema + yaml_output + EBD + examples).
 
-Map database fields to message fields:
-1. **Direct mapping**: Database field → Message field (same name/type)
-2. **Transformation**: Database field → Message field (different format)
-3. **Computation**: Multiple database fields → Single message field
-4. **Default values**: Use defaults when database field missing
+### Step 5: Output (fast-path vs workflow)
 
-## Missing Data Handling
+**Fast Path**: If user only wants “build me the payload”, return:
+- JSON payload
+- A short list of remaining unknown/missing required inputs (with citations to schema/rules)
+- A reference to the closest v202510 example file used
 
-When database fields are missing:
-1. Identify missing required fields
-2. Check if field can be computed/derived
-3. Check if field has default value
-4. Report missing fields that must be provided
-5. Suggest database schema updates
+**Workflow request**: If user asks for the end-to-end process explanation, add Mermaid diagrams and mapping tables.
 
-## Integration Points
+## Non-negotiables
 
-**Current**: Manual message building with validation
-**Future**: 
-- Database integration for automatic field population
-- Conuti API integration for test message sending
-- Feedback loop for missing fields/functionality
+- ⚠️ **Never invent** endpoints, DB fields, or payload fields. Everything must come from schema/rules/examples or user-provided data.
+- ⚠️ **Always v202510** for testfiles (outbound JSON / inbound EDI).
+- If an EBD/PNG file does not exist for a process, state that explicitly.
 
 <valid-example>
-**Message Building**:
-1. User: "Build message for process 55077 for customer 12345"
-2. Agent queries database (future) or uses provided data
-3. Agent loads schema and business rules
-4. Agent builds message payload
-5. Agent validates message
-6. Agent creates visualization
-7. Agent prepares for Conuti testing
+User: "Build message for process 55077 using these inputs …"
+Agent:
+1) Reads `PI_55077.yml` + `yaml_output/55077.yaml`
+2) Uses a v202510 outbound example for 55077 as reference
+3) Builds payload that matches schema + rules
+4) Lists missing required inputs (if any) with citations
 </valid-example>
 
-<invalid-example>
-**Don't**: Build message without schema validation
-**Don't**: Skip business rules checking
-**Don't**: Forget to validate before sending
-**Don't**: Omit visualization of message structure
-</invalid-example>

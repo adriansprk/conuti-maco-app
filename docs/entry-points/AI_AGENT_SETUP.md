@@ -9,9 +9,17 @@ This guide explains how to set up and use the MaCo API documentation schemas wit
 
 ```
 maco_agent_workspace/
-├── PROCESS_GRAPH.json               # ⭐ DEPENDENCIES: Process sequences, prerequisites, triggers
-├── BUSINESS_PROCESS_MAP.md          # ⭐ START HERE: Business concept → Process mapping
-├── llm.txt                          # ⭐ Documentation index (maps BDEW IDs to docs)
+├── docs/
+│   └── entry-points/
+│       ├── PROCESS_GRAPH.json               # ⭐ INDEX: lookup indexes to source docs (minimal, discovery-only in this repo)
+│       ├── BUSINESS_PROCESS_MAP.md          # ⭐ Entry Point 1: Business concept → process mapping
+│       └── AI_AGENT_SETUP.md                # ⭐ Entry Point 2: This file
+├── docs/llm.txt                       # ⭐ Documentation index (maps BDEW IDs to offline docs)
+├── docs-offline/                      # Offline process docs (Mermaid diagrams, Prozessübersicht, EBD markdown)
+│   ├── prozessdiagramme-png/          # 54 PNG diagrams (technical HOW)
+│   │   └── INDEX.md                   # Text index for PNG discovery
+│   └── ...                            # Process markdown docs
+├── ebd-diagrams/                      # EBD decision trees (JSON/DOT/SVG/PUML) (validation WHAT)
 ├── maco-api-documentation/          # Main API documentation
 │   ├── _build/                      # Generated consolidated schemas (READ THESE)
 │   │   ├── bo4e-openapi.min.json   # ⭐ PRIMARY: Complete BO4E schema (formatted)
@@ -91,7 +99,7 @@ You are an expert AI assistant for the German Energy Market (MaKo), specifically
 for the Conuti MaCo API.
 
 Your Resources:
-1. PROCESS_GRAPH.json - Process dependencies, sequences, prerequisites (machine-readable, fast lookup)
+1. PROCESS_GRAPH.json - **Minimal discovery index** (machine-readable pointers to source docs via `indexes.*`)
 2. BUSINESS_PROCESS_MAP.md - Business concept to process mapping (START HERE for business goal discovery)
 3. llm.txt - Documentation index (use to find which docs you need)
 4. docs-offline/ - 232 offline documentation files (Prozessübersicht, process descriptions, EBD diagrams)
@@ -138,9 +146,11 @@ The `llm.txt` file in the workspace root provides a **documentation map** that:
 ### Workflow for Building Payloads
 
 1. **Identify the BDEW Process ID** (e.g., 55078)
-2. **Check Dependencies**: `PROCESS_GRAPH.json` → `indexes.by_pruefi["55078"]` to find process, check `prerequisites` and `triggers_processes`
+2. **Discover the right source docs**: `docs/entry-points/PROCESS_GRAPH.json` → `indexes.by_bdew_id["55078"]` (inspect `indexes.*` if key differs) → read the referenced `docs-offline/...` files and derive dependencies from Mermaid + prose (follow any `ref` links)
 3. **Check Documentation**: `llm.txt` → Find `[55078]` to get process context and documentation URL
-4. **Check Example Messages**: `maco-edi-testfiles/inbound/` or `outbound/` → Find `55078_*.json` for real-world examples
+4. **Check Example Messages** (⚠️ ALWAYS use `v202510`):
+   - **Outbound**: `maco-edi-testfiles/outbound/v202510/` (BO4E JSON, what you SEND)
+   - **Inbound**: `maco-edi-testfiles/inbound/v202510/` (EDIFACT EDI, what you RECEIVE)
 5. **Check Business Rules**: `yaml_output/55078.yaml` for mandatory fields and validation rules
 6. **Check Process Schema**: `PIs/PI_55078.yml` for OpenAPI request structure
 7. **Cross-reference BO4E Schema**: `bo4e-openapi.min.json` for data types and object definitions
@@ -149,21 +159,26 @@ The `llm.txt` file in the workspace root provides a **documentation map** that:
 ### Using PROCESS_GRAPH.json for Fast Lookup
 
 ```javascript
-// Find process by pruefi
-PROCESS_GRAPH.indexes.by_pruefi["55001"]  // → {process: "LIEFERBEGINN", type: "request"}
+// NOTE (this repo, PROCESS_GRAPH v2.0.0-minimal):
+// - Use `indexes.*` for discovery.
+// - `processes`, `business_scenarios`, `ebd_reference` exist but are currently empty.
+// - Derive prerequisites / dependencies by reading the referenced docs in `docs-offline/` (Mermaid + prose),
+//   including any `ref` references.
 
-// Find process by trigger event
-PROCESS_GRAPH.indexes.by_trigger["START_LIEFERBEGINN"]  // → "LIEFERBEGINN"
+// Find files mentioning a BDEW Prüfi / Prozess-ID
+PROCESS_GRAPH.indexes.by_bdew_id["55077"]  // → ["docs-offline/...", ...]
 
-// Get process prerequisites
-PROCESS_GRAPH.processes.LIEFERBEGINN.prerequisites  // → [{process: "MALOIDENT", condition: "..."}]
+// Find files by trigger event
+PROCESS_GRAPH.indexes.by_trigger["START_LIEFERBEGINN"]  // → ["docs-offline/...", ...]
 
-// Get what a process triggers
-PROCESS_GRAPH.processes.LIEFERBEGINN.triggers_processes  // → [{process: "EINRICHTUNG_KONFIG", ...}]
+// Find process docs by name (normalized)
+PROCESS_GRAPH.indexes.by_process_name["lieferbeginn"]  // → ["docs-offline/lieferbeginn.md", ...]
 
-// Get business scenario sequence
-PROCESS_GRAPH.business_scenarios.NEW_CUSTOMER_SIGNUP.sequence  // → Step-by-step process flow
+// Find docs by filename (when you already know it)
+PROCESS_GRAPH.indexes.by_filename["prozessübersicht-860885m0.md"]  // → "docs-offline/prozessübersicht-860885m0.md"
 ```
+
+⚠️ Note: `PROCESS_GRAPH.business_scenarios` is currently empty in this repo. Use `BUSINESS_PROCESS_MAP.md` (and the linked offline docs) for scenario narratives.
 
 ### Example: Process 55078
 
@@ -204,8 +219,8 @@ _build/bo4e-openapi.min.json (search for "MESSLOKATION", etc.)
 
 ### For Business Discovery (Entry Point 1: Business Goal)
 1. **Start with `BUSINESS_PROCESS_MAP.md`** - Maps business goals to processes
-2. **Use `PROCESS_GRAPH.json`** - Check `business_scenarios` for step-by-step sequences
-3. **Check dependencies** - Use `processes.[ID].prerequisites` and `triggers_processes`
+2. **Use `PROCESS_GRAPH.json` (`indexes.*`)** - Find the right `docs-offline/...` sources fast
+3. **Derive dependencies/prerequisites** - Read Mermaid + prose in those `docs-offline` sources (follow any `ref` links)
 4. **Use `llm.txt`** to find which documentation files you need
 5. **Read workflow docs** from `docs-offline/` (Prozessübersicht files)
 6. **Check business rule YAMLs** (`yaml_output/[ID].yaml`) for mandatory fields
@@ -214,8 +229,8 @@ _build/bo4e-openapi.min.json (search for "MESSLOKATION", etc.)
 9. **Map to backend requirements** - What data to collect, what services to build
 
 ### For Technical Implementation (Entry Point 2: Specific Message/BDEW ID)
-1. **Start with `PROCESS_GRAPH.json`** - Use `indexes.by_pruefi` or `indexes.by_trigger` for fast lookup
-2. **Check dependencies** - Use `processes.[ID].prerequisites` and `triggers_processes`
+1. **Start with `PROCESS_GRAPH.json` (`indexes.*`)** - Use `indexes.by_bdew_id` / `indexes.by_trigger` / `indexes.by_process_name` for discovery
+2. **Derive dependencies/prerequisites** - Read the referenced `docs-offline/...` sources (Mermaid + prose)
 3. **Use `llm.txt`** to find documentation for the specific BDEW ID
 4. **Read process documentation** from `docs-offline/` (process descriptions, workflows)
 5. **Use `bo4e-openapi.min.json`** for understanding data structures

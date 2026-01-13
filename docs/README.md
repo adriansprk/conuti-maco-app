@@ -7,9 +7,10 @@ This directory contains all documentation and entry point files for the MaCo API
 ```
 docs/
 ├── entry-points/          # Main entry point files
-│   ├── BUSINESS_PROCESS_MAP.md    # Entry Point 1: Business discovery
 │   ├── AI_AGENT_SETUP.md          # Entry Point 2: Technical implementation
-│   └── PROCESS_GRAPH.json         # Machine-readable process graph
+│   ├── BUSINESS_PROCESS_MAP.md    # Entry Point 1: Business discovery
+│   ├── PROCESS_GRAPH.json         # Machine-readable process graph
+│   └── README.md                  # Entry points documentation
 └── llm.txt                # Documentation index (237 entries)
 ```
 
@@ -32,10 +33,12 @@ Use when you have a specific BDEW process ID or MaKo message (e.g., "55077", "ST
 **File**: `entry-points/PROCESS_GRAPH.json`
 
 Machine-readable JSON file for fast lookups:
-- Process by BDEW ID: `indexes.by_pruefi["55077"]`
+- Process by BDEW ID: `indexes.by_bdew_id["55077"]`
 - Process by trigger: `indexes.by_trigger["START_LIEFERBEGINN"]`
-- Process dependencies: `processes.LIEFERBEGINN.prerequisites`
-- Business scenarios: `business_scenarios.NEW_CUSTOMER_SIGNUP`
+- Process docs by name: `indexes.by_process_name["lieferbeginn"]`
+
+⚠️ Note: In this repo `PROCESS_GRAPH.json` is generated as a **minimal discovery index** (`version: 2.0.0-minimal`).
+The sections `processes`, `business_scenarios`, `ebd_reference` exist but are currently **empty**. Derive dependencies by reading the referenced `docs-offline/*.md` sources (Mermaid + prose).
 
 ## Documentation Index
 

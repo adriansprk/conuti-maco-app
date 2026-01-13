@@ -3,14 +3,14 @@ description: MANDATORY - Always create visualizations when discussing processes 
 alwaysApply: true
 tags: [visualization, mermaid, processes, mandatory]
 priority: 1
-version: 1.0.0
+version: 1.2.1
 ---
 
 # Process Visualization - MANDATORY Rule
 
 ## Critical Requirement
 
-**ALWAYS create visualizations** when discussing, explaining, or implementing MaKo processes. Visualizations are REQUIRED, not optional.
+**ALWAYS create visualizations** when discussing, explaining, or implementing **MaKo processes / workflows**. Visualizations are REQUIRED for process-level answers.
 
 ## When to Create Visualizations
 
@@ -22,6 +22,14 @@ Create visualizations when user asks about:
 - Process implementation steps
 - Business scenarios involving processes
 - Any process-related question
+
+### Fast Path (Skip Diagrams for Narrow Lookups)
+
+If the user asks a **narrow factual question** (single field, single endpoint, single file location, single code lookup) and no workflow explanation is needed, answer directly with:
+- The minimal cited fact(s)
+- File references and/or schema references
+
+Add visualizations only if they materially reduce confusion or the user requests them.
 
 ## Visualization Requirements
 
@@ -106,12 +114,15 @@ flowchart TD
 - Required/optional fields
 - Example message references
 
-## Data Sources for Visualizations
+## Data Sources for Visualizations (Option A: Minimal Index)
 
-1. **Process Structure**: `PROCESS_GRAPH.json`
-   - `processes.[PROCESS_ID].prerequisites`
-   - `processes.[PROCESS_ID].triggers_processes`
-   - `processes.[PROCESS_ID].api.outbound` / `.inbound`
+1. **Process Structure**
+   - **Discovery**: `docs/entry-points/PROCESS_GRAPH.json` (`indexes.*`) → find the relevant `docs-offline/...` files fast
+   - **Source of truth (today)**: Mermaid diagrams + prose inside those `docs-offline/*.md` files (including any `ref` references)
+   - **Optional (future)**: if `PROCESS_GRAPH.json` is regenerated with populated `processes.*`, you may also use:
+     - `processes.[PROCESS_ID].prerequisites`
+     - `processes.[PROCESS_ID].triggers_processes`
+     - `processes.[PROCESS_ID].api.outbound` / `.inbound`
 
 2. **Field Requirements**: `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/[ID].yaml`
 
@@ -120,6 +131,19 @@ flowchart TD
 4. **BO4E Types**: `maco-api-documentation/_build/bo4e-openapi.min.json`
 
 5. **Examples**: `maco-edi-testfiles/inbound/v202510/` (EDI format) and `/outbound/v202510/` (JSON format) (⚠️ ALWAYS use v202510, NOT v202404. v202510: Outbound=JSON, Inbound=EDI)
+
+6. **System Architecture & Technical Flow**: `docs-offline/prozessdiagramme-png/` (canonical)
+   - Fallback (legacy path): `docs-offline/Prozessdiagramme PNG/`
+   - **INDEX.md** - Text-based index of all 54 PNG files (use for discovery - search by process name or role)
+   - Reference PNG files for: system architecture (swimlanes: Backend LF, MPS, MCS, Kommunikation), format transformations (BO4E↔EDI), APERAK workflow (Zustimmung? decision points), message sequence, conditional data updates
+   - ⚠️ **Note**: PNG files require visual analysis - use INDEX.md first to find relevant files
+   - **Example**: `Lieferbeginn Lieferseite.png` (LF role), `Lieferbeginn Netzbetreiber.png` (NB role)
+
+7. **Business Validation Logic**: `ebd-diagrams/FV{YYMM}/E_{code}.json` or `.dot`
+   - ⚠️ **ALWAYS use latest EBD version** - check `ebd-diagrams/` for newest `FV{YYMM}/` directory
+   - Reference EBD JSON/DOT for: validation steps, rejection codes, decision tree logic
+   - **How to find EBD code**: Check process markdown docs for "Entscheidungsbaum E_{code}" references
+   - **Example**: LIEFERBEGINN uses E_0622 (pre-validation), E_0623 (main validation)
 
 ## Response Format
 
@@ -159,4 +183,40 @@ When discussing processes, **ALWAYS structure response as**:
 **Do**: Include a table of message types and fields
 **Do**: Reference example messages from maco-edi-testfiles/inbound/v202510/ (EDI format) or maco-edi-testfiles/outbound/v202510/ (JSON format) (⚠️ ALWAYS use v202510. v202510: Outbound=JSON, Inbound=EDI)
 **Do**: Use PROCESS_GRAPH.json data for accurate visualizations
+**Do**: First check PNG INDEX.md, then reference/view PNG files for technical implementation details (system architecture, format transformations, APERAK workflow)
+**Do**: Find EBD code in process docs, then reference EBD JSON/DOT files from latest FV directory for business validation logic (validation steps, rejection codes)
+**Do**: State explicitly when no PNG or EBD file exists for a process
 </valid-example>
+
+## When to Reference Existing Visualizations
+
+**PNG Files** (`docs-offline/prozessdiagramme-png/`):
+- ✅ **First check INDEX.md** for discovery - search by process name or role to find relevant PNG files
+- ✅ **Reference PNG file path** when discussing:
+  - System architecture (swimlanes: Backend LF, MPS, MCS, Kommunikation)
+  - Format transformations (BO4E↔EDI)
+  - APERAK technical workflow (Zustimmung? decision points)
+  - Complete message sequence (end-to-end flow)
+  - Conditional data updates (only on positive APERAK)
+- ✅ **Create new Mermaid visualizations** based on PNG content when:
+  - User needs simplified/abstracted view
+  - User needs specific subset of PNG information
+  - User needs interactive/editable diagram
+- ✅ **Describe PNG content** when user needs to understand system architecture
+- ⚠️ **Note**: PNG files require visual analysis - text extraction may be imprecise for complex diagrams
+- ❌ **Don't claim to show PNG content** without having actually viewed/analyzed it
+- ❌ **If no PNG exists**: State explicitly "No PNG file found for this process" - only 54 processes have PNG diagrams
+
+**EBD JSON/DOT Files** (`ebd-diagrams/FV{YYMM}/`):
+- ⚠️ **ALWAYS use latest EBD version** - check for newest `FV{YYMM}/` directory (e.g., FV2604)
+- ✅ **Find EBD code first**: Check process markdown docs for "Entscheidungsbaum E_{code}" references
+- ✅ **Reference EBD JSON/DOT files** when discussing:
+  - Business validation logic
+  - Rejection codes (complete list)
+  - Validation step-by-step guides
+  - Decision tree structure
+- ✅ **Create new Mermaid visualizations** based on EBD content when:
+  - User needs simplified validation flow
+  - User needs specific validation path
+  - User needs interactive decision tree
+- ❌ **If no EBD exists**: State explicitly "No EBD file found for this process" - not all processes have EBD validation trees

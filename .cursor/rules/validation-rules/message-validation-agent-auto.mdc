@@ -1,5 +1,5 @@
 ---
-description: Message validation agent - validates MaKo messages against schemas, business rules, and Conuti requirements
+description: Message validation agent - validates MaKo messages against schemas, business rules, and EBD validation logic (Conuti)
 globs:
   - "**/*.json"
   - "**/*.yaml"
@@ -10,137 +10,104 @@ globs:
   - "validation/**/*"
   - "test/**/*"
 alwaysApply: false
-tags: [validation, message, conuti, schema, business-rules]
+tags: [validation, message, conuti, schema, business-rules, ebd]
 priority: 3
-version: 1.0.0
+version: 1.1.0
 ---
 
 # Message Validation Agent
 
 ## Purpose
 
-This agent validates MaKo messages before sending to Conuti, checking:
-- Schema compliance (PI_[ID].yml)
-- Business rules (yaml_output/[ID].yaml)
-- Required vs optional fields
-- BO4E type correctness
-- Missing backend functionality
+Validate MaKo messages before sending to Conuti by checking:
+- **Payload validity**: schema (`PI_[ID].yml`) + business rules (`yaml_output/[ID].yaml`)
+- **Business validation logic**: EBD (`ebd-diagrams/FV{YYMM}/E_{code}.json`) for validation steps + rejection codes
+- **BO4E types**: `bo4e-openapi.min.json`
+- **Implementation gaps**: missing handlers/logic (derived from code, not guessed)
 
 ## Validation Workflow
 
-### Step 1: Load Process Context
+### Step 1: Load Process Context (never guess)
 
 1. Identify process ID (BDEW Prüfidentifikator)
-2. Load from `docs/entry-points/PROCESS_GRAPH.json`: `indexes.by_pruefi["[ID]"]`
-3. Load schema: `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_[ID].yml`
-4. Load business rules: `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/[ID].yaml`
+2. Use `docs/entry-points/PROCESS_GRAPH.json` for discovery (index-only):
+   - Prefer: `indexes.by_bdew_id["[ID]"]`
+   - ⚠️ If that key doesn’t exist, inspect `indexes.*` in the actual file and use what’s present.
+3. Load payload schema (structure): `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_[ID].yml`
+4. Load business rules (requiredness/constraints): `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/[ID].yaml`
 5. Load BO4E types: `maco-api-documentation/_build/bo4e-openapi.min.json`
+6. Load examples (⚠️ ALWAYS use v202510; never v202404):
+   - Outbound JSON (what you send): `maco-edi-testfiles/outbound/v202510/{message_type}/[ID]/*.json`
+   - Inbound EDI (what you receive): `maco-edi-testfiles/inbound/v202510/{message_type}/[ID]/*.edi`
+7. Load EBD (if process docs reference an Entscheidungsbaum):
+   - Find code via process docs: `docs-offline/{process}.md` contains `Entscheidungsbaum E_{code}`
+   - ⚠️ ALWAYS use newest EBD version folder under `ebd-diagrams/` → `FV{YYMM}/`
+   - Read: `ebd-diagrams/FV{YYMM}/E_{code}.json` (preferred); optionally `.dot`/`.svg`
 
-### Step 2: Validate Against Schema
+### Step 2: Validate Payload Against Schema (PI_[ID].yml)
 
-Check message structure matches PI_[ID].yml:
 - Required fields present
-- Field types correct (string, date, object, etc.)
+- Types match
 - Nested structures valid
 - Enum values valid (if applicable)
 
-### Step 3: Validate Against Business Rules
+### Step 3: Validate Payload Against Business Rules (yaml_output/[ID].yaml)
 
-Check yaml_output/[ID].yaml for:
-- Mandatory fields (marked as required)
-- Field constraints (min/max length, patterns, etc.)
-- Conditional requirements (if field X, then field Y required)
-- Business logic constraints
+- Mandatory fields
+- Constraints (length/pattern/range)
+- Conditional rules
 
-### Step 4: Check Backend Functionality
+### Step 4: Validate Against EBD (E_{code}.json) — if available
 
-Identify missing backend capabilities:
-- Required database fields not present
-- Missing API endpoints
-- Incomplete webhook handlers
-- Missing data transformation logic
+Use EBD to understand:
+- **Which validations happen** (steps/decision points)
+- **Which rejection codes exist** (complete list from EBD)
 
-### Step 5: Generate Validation Report
+**Truth precedence**:
+- Payload requiredness/structure: **PI + yaml_output wins**
+- Validation logic/rejection reasons: **EBD wins**
+- If EBD appears to imply a field is required but PI/yaml_output don’t: **report discrepancy**, don’t silently change requiredness.
 
-**ALWAYS create visualization** showing:
-- Validation results (pass/fail per check)
-- Missing fields highlighted
-- Missing backend functionality listed
-- Recommendations for fixes
+### Step 5: Check Implementation Gaps (derive from code)
 
-<example>
-**Validation Report Format**:
+Only report missing functionality if you can cite where it should exist:
+- Missing webhook handlers (cite file/path/symbol)
+- Missing transformation logic (cite file/path/symbol)
+- Missing data availability in code paths (cite actual queries/mappers)
 
-```markdown
-## Validation Report: Process 55077 (Lieferbeginn)
+### Step 6: Produce Output (fast-path vs workflow)
 
-### Schema Validation
-- ✅ marktlokationsId: Present, type correct
-- ✅ lieferbeginn: Present, date format valid
-- ⚠️ zusatzdaten: Optional, but recommended
+**Fast Path (narrow validation request)**: return a compact report (no diagrams required):
+- Schema: pass/fail + missing/invalid fields
+- Business rules: pass/fail + violations
+- EBD: likely rejection codes (only if EBD was read)
 
-### Business Rules Validation
-- ✅ All mandatory fields present
-- ⚠️ Missing: hinweise field (optional but recommended for traceability)
-
-### Backend Functionality Check
-- ❌ Missing: Database field `marktlokationsId` in customer table
-- ❌ Missing: API endpoint `/api/maloident/request`
-- ⚠️ Partial: Webhook handler exists but missing error handling
-
-### Recommendations
-1. Add `marktlokationsId` to customer database schema
-2. Implement `/api/maloident/request` endpoint
-3. Add error handling to webhook handler
-```
-</example>
+**Workflow/process request**: include a Mermaid visualization plus the report.
 
 ## Validation Checklist
 
-When validating a message, check:
-
 - [ ] Process ID identified correctly
-- [ ] Schema loaded and validated
-- [ ] Business rules checked
-- [ ] Required fields present
-- [ ] Field types correct
-- [ ] BO4E types validated
-- [ ] Backend database fields available
-- [ ] API endpoints implemented
-- [ ] Webhook handlers ready
-- [ ] Error handling in place
-- [ ] Example messages referenced
-
-## Integration with Database
-
-**Future Enhancement**: When database integration is available:
-1. Query database for existing customer/contract data
-2. Pre-populate message fields from database
-3. Validate database completeness
-4. Identify missing database fields
-5. Generate database migration recommendations
-
-## Integration with Conuti Testing
-
-**Future Enhancement**: When Conuti testing is available:
-1. Send test message to Conuti sandbox
-2. Capture response and errors
-3. Compare against expected responses
-4. Identify schema mismatches
-5. Provide feedback on missing fields
+- [ ] PROCESS_GRAPH.json used for discovery (index-only)
+- [ ] PI_[ID].yml validated
+- [ ] yaml_output/[ID].yaml validated
+- [ ] BO4E types checked (as needed)
+- [ ] Examples referenced (⚠️ v202510 only; outbound JSON / inbound EDI)
+- [ ] EBD referenced (latest FV folder) when process docs indicate an Entscheidungsbaum exists
+- [ ] No endpoints/DB fields “invented” — all implementation gaps are cited from code
 
 <valid-example>
-**Validation Process**:
-1. User provides: "Validate message for process 55077"
-2. Agent loads: Schema, business rules, BO4E types
-3. Agent checks: Message structure, required fields, backend capabilities
-4. Agent creates: Visualization showing validation results
-5. Agent reports: Missing fields, missing functionality, recommendations
+User: "Validate this payload for process 55077"
+
+Agent:
+1) Reads `PI_55077.yml` + `yaml_output/55077.yaml`
+2) References outbound example in `maco-edi-testfiles/outbound/v202510/.../55077/...`
+3) If process docs reference E_0622/E_0623, reads `ebd-diagrams/FV{YYMM}/E_0622.json` and/or `E_0623.json`
+4) Returns a compact validation report (no diagram unless requested)
 </valid-example>
 
 <invalid-example>
-**Don't**: Validate without checking business rules
-**Don't**: Skip schema validation
-**Don't**: Forget to check backend functionality
-**Don't**: Omit visualization of validation results
+- Claiming rejection codes without reading EBD JSON
+- Claiming a REST endpoint exists/missing without reading backend code
+- Using v202404 examples
 </invalid-example>
+

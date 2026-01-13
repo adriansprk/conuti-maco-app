@@ -3,7 +3,7 @@ description: CRITICAL - Never hallucinate - always read documentation files befo
 alwaysApply: true
 tags: [critical, anti-hallucination, documentation, verification, mandatory]
 priority: 1
-version: 2.1.0
+version: 2.3.1
 ---
 
 # Anti-Hallucination Rule - CRITICAL
@@ -36,6 +36,26 @@ version: 2.1.0
 - Parse sequence diagrams for: message order, participant roles, conditional flows (opt/alt), cross-references (ref)
 - Extract roles, prerequisites, relationships directly from source docs
 - Read German prose explanations for context and nuance
+
+**For Technical Implementation Details**:
+- `docs-offline/prozessdiagramme-png/INDEX.md` → Text-based index of all 54 PNG process diagrams (use for discovery)
+- `docs-offline/prozessdiagramme-png/{process-name}.png` → System architecture diagrams (view as image)
+  - Fallback (legacy path): `docs-offline/Prozessdiagramme PNG/` (may exist as a separate folder on case-sensitive filesystems)
+  - Use PNG files for: system architecture (swimlanes: Backend LF, MPS, MCS, Kommunikation), format transformations (BO4E↔EDI), APERAK technical workflow (Zustimmung? decision points), message sequence, conditional data updates
+  - PNG files show HOW to implement technically (not WHAT to validate)
+  - ⚠️ **Note**: PNG files require visual analysis - use INDEX.md first to find relevant files, then view PNG for diagram details
+  - **Example**: For LIEFERBEGINN, check `Lieferbeginn Lieferseite.png` (LF role) or `Lieferbeginn Netzbetreiber.png` (NB role)
+
+**For Business Validation Logic**:
+- ⚠️ **ALWAYS use the latest EBD version** - check `ebd-diagrams/` for newest `FV{YYMM}/` directory (e.g., FV2604 = April 2026)
+- `ebd-diagrams/FV{YYMM}/E_{code}.json` → Business validation logic, rejection codes, validation steps (preferred for programmatic access)
+- `ebd-diagrams/FV{YYMM}/E_{code}.dot` → Graphviz DOT format for EBD decision trees (for visualization)
+- `ebd-diagrams/FV{YYMM}/E_{code}.svg` → Pre-rendered SVG diagrams
+- `docs-offline/e-{code}-*.md` → Human-readable EBD documentation
+  - Use EBD files for: business validation rules, rejection codes, validation step-by-step guides, decision tree logic
+  - EBD files show WHAT to validate (not HOW to implement technically)
+  - **How to find EBD code**: Check process markdown docs (`docs-offline/{process}.md`) for "Entscheidungsbaum E_{code}" references
+  - **Example**: LIEFERBEGINN uses E_0622 (pre-validation) and E_0623 (main validation)
 
 ### Step 2b: Parse Mermaid Diagrams - CRITICAL Reference Handling
 
@@ -112,6 +132,12 @@ When reading Mermaid sequence diagrams, ALWAYS:
 | Trigger events | `maco-api-documentation/_build/macoapp-trigger.min.json` | Verify trigger event structure |
 | MaloIdent requests | `maco-api-documentation/_build/maloident-macoapp.min.json` | Verify request structure |
 | MaloIdent responses | `maco-api-documentation/_build/maloident-lieferant.min.json` | Verify webhook structure |
+| System Architecture | `docs-offline/prozessdiagramme-png/INDEX.md` → `{process-name}.png` | First check INDEX.md, then view PNG for swimlanes (Backend LF, MPS, MCS, Kommunikation) |
+| Format Transformations | `docs-offline/prozessdiagramme-png/{process-name}.png` | View PNG for BO4E↔EDI transformation points |
+| APERAK Technical Workflow | `docs-offline/prozessdiagramme-png/{process-name}.png` | View PNG for Zustimmung? decision points and conditional flows |
+| Business Validation Logic | `ebd-diagrams/FV{YYMM}/E_{code}.json` or `.dot` | Check validation steps, rejection codes (⚠️ ALWAYS use latest FV directory) |
+| Rejection Codes | `ebd-diagrams/FV{YYMM}/E_{code}.json` | Extract all rejection codes from EBD JSON |
+| EBD Code Discovery | `docs-offline/{process}.md` | Search for "Entscheidungsbaum E_{code}" to find which EBD applies |
 
 ### Step 3b: Verify Follow-up Processes
 
@@ -140,6 +166,7 @@ When reading Mermaid sequence diagrams, ALWAYS:
 - **State the conflict explicitly**: "I found conflicting information..."
 - **Cite both sources**: "Source doc says X, but schema says Y"
 - **Tie-breaker rule**: For technical field requirements (required/optional), treat the YAML schema (`yaml_output/{ID}.yaml` or `PI_{ID}.yml`) as the source of truth over markdown prose if they conflict
+- **EBD precedence**: EBD trees describe validation logic and rejection reasons. If an EBD tree appears to conflict with schema/yaml_output about whether a field is required in the payload, schema/yaml_output wins for payload validity (report the discrepancy).
 - **For non-technical conflicts**: Do not assume which is correct - let the user decide or investigate further
 
 ### Step 5: Cite Sources
@@ -204,6 +231,11 @@ After reading the source documentation, I found that:
 - ✅ Read business rules (`yaml_output/{ID}.yaml`) before listing required fields
 - ✅ Read BO4E types (`bo4e-openapi.min.json`) before describing data structures
 - ✅ Reference example messages (`maco-edi-testfiles/inbound/v202510/` for EDI inbound or `maco-edi-testfiles/outbound/v202510/` for JSON outbound) when showing examples (⚠️ ALWAYS use v202510, NEVER v202404. v202510: Outbound=JSON, Inbound=EDI)
+- ✅ **For technical implementation**: First check `docs-offline/prozessdiagramme-png/INDEX.md` for discovery, then view relevant PNG files for system architecture, format transformations, APERAK workflow
+- ✅ **For business validation**: Find EBD code in process markdown docs, then read EBD files from latest `ebd-diagrams/FV{YYMM}/` directory for validation logic, rejection codes
+- ✅ **Distinguish documentation types**: Use PNG for HOW (technical implementation), EBD for WHAT (business validation), Markdown for WHY (business context)
+- ✅ **PNG/EBD claim discipline**: Only describe PNG diagram content if you actually viewed the PNG file; only list validation steps/rejection codes if you actually read the referenced EBD JSON/DOT.
+- ✅ **Handle missing PNG/EBD**: If no PNG or EBD file exists for a process, state this explicitly - not all processes have visual diagrams or EBD validation trees
 - ✅ **For follow-up processes**: Read their separate documentation, don't assume from main diagram
 - ✅ **Verify Prüfidentifikatoren directions**: Check schema descriptions for "an LF" (inbound) vs "von LF" (outbound)
 - ✅ **Handle missing references**: If a "ref" points to unavailable documentation, explicitly state this limitation
@@ -230,6 +262,10 @@ Before providing any answer about MaKo processes, verify:
 - [ ] Business rules file read (`yaml_output/{ID}.yaml`)
 - [ ] BO4E types checked (`bo4e-openapi.min.json`)
 - [ ] Example messages referenced (`maco-edi-testfiles/inbound/v202510/` for EDI inbound or `maco-edi-testfiles/outbound/v202510/` for JSON outbound) - ⚠️ ALWAYS v202510, NOT v202404 (v202510: Outbound=JSON, Inbound=EDI)
+- [ ] **For technical implementation**: First check PNG INDEX.md, then view relevant PNG files for system architecture, format transformations, APERAK workflow
+- [ ] **For business validation**: Find EBD code in process docs, then check EBD JSON/DOT files in latest FV directory for validation logic, rejection codes
+- [ ] **Distinguish documentation types**: Use PNG for HOW (technical), EBD for WHAT (validation), Markdown for WHY (business context)
+- [ ] **If PNG/EBD not found**: State explicitly "No PNG/EBD file found for this process" - not all processes have these files
 - [ ] Cross-referenced with authoritative sources (BUSINESS_PROCESS_MAP.md, schemas, rules)
 - [ ] All information cited with source files (not the index)
 - [ ] No information provided without source verification
@@ -251,6 +287,8 @@ Before providing any answer about MaKo processes, verify:
 ## Sources Verified
 
 - Source Documentation: `docs-offline/{filename}.md` (read actual file, parsed Mermaid diagram)
+- Technical Implementation: `docs-offline/prozessdiagramme-png/INDEX.md` (discovery) → `{process-name}.png` (viewed for system architecture, format transformations, APERAK workflow)
+- Business Validation: `ebd-diagrams/FV{YYMM}/E_{code}.json` (validation logic, rejection codes) - found via "Entscheidungsbaum" reference in process docs
 - Schema: `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_{ID}.yml`
 - Business Rules: `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/{ID}.yaml`
 - BO4E Types: `maco-api-documentation/_build/bo4e-openapi.min.json`

@@ -13,9 +13,11 @@ This directory contains the main entry point files for the MaCo API workspace.
   - Use when you have a specific BDEW process ID or message
   
 - **`PROCESS_GRAPH.json`** - Machine-readable process dependency graph
-  - Fast lookup by BDEW ID, trigger event, or role
-  - Process sequences, prerequisites, and dependencies
-  - Business scenarios with step-by-step workflows
+  - **Current state (v2.0.0-minimal)**: a *minimal discovery index* (source-grounded pointers)
+  - ✅ Fast lookup by BDEW ID, trigger event, or process name (via `indexes.*`)
+  - ✅ Points to offline source docs (`docs-offline/...`) that must be read for actual process details
+  - ⚠️ The sections `processes`, `business_scenarios`, `ebd_reference` exist but are currently **empty** in this repo
+  - If you need prerequisites/dependencies today, extract them from Mermaid diagrams in `docs-offline/*.md` (and follow any `ref` links)
 
 ## Usage
 
@@ -23,7 +25,7 @@ This directory contains the main entry point files for the MaCo API workspace.
 
 1. Start with `BUSINESS_PROCESS_MAP.md`
 2. Find your business scenario
-3. Use `PROCESS_GRAPH.json` to check dependencies
+3. Use `PROCESS_GRAPH.json` (`indexes.*`) to find the relevant `docs-offline/...` sources
 4. Follow the workflow
 
 ### For Technical Implementation
