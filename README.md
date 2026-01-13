@@ -1,275 +1,404 @@
 # MaCo API Documentation Workspace
 
-This workspace helps you enable your backend to use the MaCo API to communicate MaKo (Market Communication) messages into the market and receive results from the market.
+> **Your complete toolkit for German electricity market communication via the Conuti MaCo API**
 
-## 🤖 AI Agent Context (Git-Based + BMAD-METHOD Structure)
+[![Cursor Compatible](https://img.shields.io/badge/Cursor-0.45+-blue?logo=cursor&logoColor=white)](#-ai-powered-development)
+[![Documentation](https://img.shields.io/badge/Docs-232%20files-green)](#-documentation)
+[![Test Files](https://img.shields.io/badge/Test%20Files-2549+-orange)](#-file-reference)
 
-This workspace includes an **Agentic Context** that enables AI assistants (like Cursor) to understand MaKo processes, dependencies, and implementation patterns. The context is organized using **BMAD-METHOD's subdirectory structure** for scalability and specialization.
+---
 
-**Setup**: When you clone this repository, Cursor will automatically load the agent rules. No additional configuration needed!
+## What is this?
 
-**Rule Structure** (in `.cursor/rules/`):
-- **Global Rules** (`global-rules/`): Always applied core context
-- **Domain Rules** (`domain-rules/`): Business discovery & technical implementation workflows
-- **Validation Rules** (`validation-rules/`): Message validation & building agents
-- **Visualization Rules** (`visualization-rules/`): Mandatory Mermaid diagram requirements
+This workspace enables **Lieferanten (electricity suppliers)** to integrate with Germany's electricity market through the **Conuti MaCo API**. It provides:
 
-**Key Features**:
-- ✅ **Mandatory Visualizations**: Always creates Mermaid diagrams for processes (sequences, flows, fields)
-- ✅ **Validation Agent**: Validates messages against schemas, business rules, and backend capabilities
-- ✅ **Builder Agent**: Pre-creates messages from database entries, prepares for Conuti testing
-- ✅ **Future-Ready**: Structured for database integration and Conuti API testing
+- 📚 **Complete documentation** for all MaKo (Marktkommunikation) processes
+- 🤖 **AI-powered assistance** with pre-configured Cursor IDE rules
+- 📋 **Real message examples** for testing and validation
+- 🔧 **Schemas and business rules** for building compliant messages
 
-**What's Included**:
-- Entry point documentation (`docs/entry-points/`):
-  - Process dependency graph (`PROCESS_GRAPH.json`)
-  - Business process mapping (`BUSINESS_PROCESS_MAP.md`)
-  - Technical setup guide (`AI_AGENT_SETUP.md`)
-- Documentation index (`docs/llm.txt`)
-- 232 offline documentation files (`docs-offline/`)
-- 2,549 EDI test files (`maco-edi-testfiles/`)
-- Sync system (`scripts/sync/`) for tracking external repo changes
+```
+Your Backend  ──▶  Conuti MaCo API  ──▶  Network Operators (NB) / Meter Operators (MSB)
+     ◀── webhooks ◀──────────────────────────────── responses ◀──
+```
 
-**For Teams**: 
-- Rules are version-controlled and shared automatically via Git
-- Organized by category for easy maintenance and discovery
-- Scalable structure supports adding specialized agents
-- See [`.cursor/README.md`](.cursor/README.md) for detailed documentation
+---
 
-## 🎯 Goal
+## Table of Contents
 
-**Enable your backend to:**
-- Send MaKo messages to the market via Conuti MaCo API (outbound)
-- Receive results/responses from the market via webhooks (inbound)
-- Handle both business-driven scenarios and specific message types
+- [Quick Start](#-quick-start)
+- [Who Should Use This](#-who-should-use-this)
+- [AI-Powered Development](#-ai-powered-development)
+- [Two Entry Points](#-two-entry-points)
+- [Architecture](#-architecture)
+- [Documentation](#-documentation)
+- [File Reference](#-file-reference)
+- [Common Tasks](#-common-tasks)
+- [Troubleshooting](#-troubleshooting)
+- [Contributing](#-contributing)
+- [License](#-license)
 
-## 🚀 Getting Started
+---
+
+## 🚀 Quick Start
+
+### One-Liner Setup
+
+```bash
+git clone <repository-url> && cd maco_agent_workspace && ./scripts/setup-workspace.sh
+```
+
+### Step-by-Step
+
+```bash
+# 1. Clone the repository
+git clone <repository-url>
+cd maco_agent_workspace
+
+# 2. Run setup (initializes submodules, downloads docs, builds schemas)
+./scripts/setup-workspace.sh
+
+# 3. Open in Cursor IDE - AI rules load automatically!
+cursor .
+```
+
+### Verify Installation
+
+```bash
+# Check key files exist
+ls docs/entry-points/BUSINESS_PROCESS_MAP.md    # Business discovery guide
+ls maco-api-documentation/_build/*.min.json      # API schemas
+ls maco-edi-testfiles/outbound/v202510/          # Example messages
+```
+
+**That's it!** Open Cursor and ask: *"What processes do I need to register a new customer?"*
+
+---
+
+## 👥 Who Should Use This
+
+| You are... | Start with... |
+|------------|---------------|
+| **Backend developer** implementing MaKo integration | [AI_AGENT_SETUP.md](docs/entry-points/AI_AGENT_SETUP.md) |
+| **Product owner** understanding market processes | [BUSINESS_PROCESS_MAP.md](docs/entry-points/BUSINESS_PROCESS_MAP.md) |
+| **Technical architect** designing API integrations | [Architecture section](#-architecture) |
+| **QA engineer** validating message formats | [maco-edi-testfiles/](maco-edi-testfiles/) |
 
 ### Prerequisites
 
-- **Cursor IDE** (version 0.45+) - For AI agent support
-- **Git** - To clone and sync the repository
-- **Python 3** - For sync scripts (optional, only if updating documentation)
-- **jq** and **npx** - For schema rebuilding (optional, only if updating schemas)
+- **Cursor IDE** 0.45+ (for AI agent support)
+- **Git** (to clone and sync)
+- **Python 3** (optional, for sync scripts)
 
-### Initial Setup
+---
 
-1. **Clone the repository**:
-   ```bash
-   git clone <repository-url>
-   cd maco_agent_app
-   ```
+## 🤖 AI-Powered Development
 
-2. **Make scripts executable** (if needed):
-   
-   Scripts should already be executable when cloned. If you encounter permission errors, run:
-   ```bash
-   chmod +x scripts/*.sh scripts/sync/*.sh
-   ```
+This workspace includes **pre-configured AI rules** that make Cursor your MaKo expert.
 
-3. **Setup workspace**:
-   ```bash
-   ./scripts/setup-workspace.sh
-   ```
-   
-   This automatically initializes submodules, applies patches, downloads documentation, builds formatted JSON schemas, and generates the process index.
-   
-   **To update later** (when external repos have new changes):
-   ```bash
-   ./scripts/update-workspace.sh
-   ```
+### What the AI Agent Does
 
-4. **Open in Cursor**:
-   - Open the workspace folder in Cursor IDE
-   - Cursor will automatically load the AI agent rules (no configuration needed!)
-   - If rules don't load, restart Cursor
+| Feature | Description |
+|---------|-------------|
+| 📊 **Auto-visualizations** | Creates Mermaid sequence diagrams and flowcharts |
+| ✅ **Schema validation** | Checks messages against official schemas |
+| 📖 **Source verification** | Always reads docs before answering—no hallucination |
+| 🔗 **Cross-referencing** | Links business rules, schemas, and examples |
 
-5. **Verify setup** (optional):
-   ```bash
-   # Check that key files exist
-   ls docs/entry-points/BUSINESS_PROCESS_MAP.md
-   ls docs/entry-points/AI_AGENT_SETUP.md
-   ls docs/entry-points/PROCESS_GRAPH.json
-   
-   # Verify linked repositories are initialized
-   ls maco-api-documentation/_build/*.min.json
-   ls maco-edi-testfiles/outbound/v202510/
-   ls bo4e-schema/
-   ls cdoc-schema/
-   ```
+### Try It Now
 
-### Quick Start Examples
+Open Cursor chat (`Cmd+L` / `Ctrl+L`) and ask:
 
-#### Example 1: Using AI Agent (Recommended)
-
-**With Cursor AI Agent**:
-1. Open Cursor chat (Cmd/Ctrl+L) or use Cmd/Ctrl+K
-2. Ask: *"I want to register a new customer, what processes do I need?"*
-   - The AI agent will reference `BUSINESS_PROCESS_MAP.md` and show you the workflow
-3. Ask: *"Show me the sequence diagram for process 55077"*
-   - The AI agent will create Mermaid visualizations automatically
-4. Ask: *"What fields are required for START_LIEFERBEGINN?"*
-   - The AI agent will check schemas and business rules for you
-
-**Benefits**: The AI agent automatically:
-- ✅ Reads documentation files before answering
-- ✅ Creates visualizations (Mermaid diagrams)
-- ✅ Validates against schemas and business rules
-- ✅ Cites source files
-
-#### Example 2: Manual Discovery
-
-**For Business Goals**:
-1. Read [`docs/entry-points/BUSINESS_PROCESS_MAP.md`](docs/entry-points/BUSINESS_PROCESS_MAP.md)
-2. Find your business scenario (e.g., "New Customer Signs Up")
-3. Follow the workflow steps
-4. Use `docs/llm.txt` to find specific documentation files
-5. Check example messages in `maco-edi-testfiles/`
-
-**For Specific Messages**:
-1. Read [`docs/entry-points/AI_AGENT_SETUP.md`](docs/entry-points/AI_AGENT_SETUP.md)
-2. Find your BDEW process ID (e.g., "55077")
-3. Check schema: `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_55077.yml`
-4. Check business rules: `maco-api-documentation/pythons/createPiFromTemplater/templater/yaml_output/55077.yaml`
-5. Review example: `maco-edi-testfiles/outbound/v202510/utilmd/55077/1.json` (⚠️ Always use v202510)
-
-### Understanding the Workspace
-
-**Key Concepts**:
-- **Role**: You are a **Lieferant (LF)** - electricity supplier
-- **Direction**: 
-  - **Outbound**: Your backend → Conuti API (triggers, requests) - BO4E JSON format
-  - **Inbound**: Conuti → Your backend (webhooks, responses) - EDIFACT format
-- **Process IDs**: BDEW Prüfidentifikatoren (5-digit numbers like "55077")
-- **Message Formats**:
-  - **Outbound**: `maco-edi-testfiles/outbound/v202510/` (JSON format)
-  - **Inbound**: `maco-edi-testfiles/inbound/v202510/` (EDI format)
-  - ⚠️ **Always use v202510** version directory, never v202404 (outdated)
-
-### Verification Steps
-
-**Test AI Agent Setup**:
-1. Open Cursor chat
-2. Ask: *"What is the workspace role?"*
-   - Should mention: Lieferant (LF), MaCo API, MaKo messages
-3. Ask: *"Show me process 55077"*
-   - Should create sequence diagram and flowchart
-4. Ask: *"What fields are required for START_LIEFERBEGINN?"*
-   - Should reference schemas and business rules
-
-**Test Documentation Access**:
-```bash
-# Check entry points exist
-ls docs/entry-points/*.md
-
-# Check schemas exist
-ls maco-api-documentation/_build/*.min.json
-
-# Check example files exist
-ls maco-edi-testfiles/outbound/v202510/utilmd/55077/
+```
+"I want to register a new customer, what processes do I need?"
 ```
 
-### Next Steps
+The AI will:
+1. Reference `BUSINESS_PROCESS_MAP.md` for the workflow
+2. Create sequence diagrams showing the message flow
+3. List required fields from schemas
+4. Point to example messages in `maco-edi-testfiles/`
 
-1. **Choose your entry point**:
-   - Business goal? → Start with [`BUSINESS_PROCESS_MAP.md`](docs/entry-points/BUSINESS_PROCESS_MAP.md)
-   - Specific message? → Start with [`AI_AGENT_SETUP.md`](docs/entry-points/AI_AGENT_SETUP.md)
+### Rule Categories
 
-2. **Explore the documentation**:
-   - Use `docs/llm.txt` to find relevant documentation files
-   - Read process documentation in `docs-offline/`
-   - Check example messages in `maco-edi-testfiles/`
+```
+.cursor/rules/
+├── global-rules/        # Always-applied core context
+├── domain-rules/        # Business discovery & technical workflows
+├── validation-rules/    # Message validation & building
+└── visualization-rules/ # Mermaid diagram requirements
+```
 
-3. **Implement your backend**:
-   - Follow the workflows in the entry point guides
-   - Use schemas and business rules to build payloads
-   - Reference example messages for structure
+> 📖 See [`.cursor/README.md`](.cursor/README.md) for detailed rule documentation.
 
-4. **Keep documentation updated** (optional):
-   - External repos (`maco-api-documentation`, `maco-edi-testfiles`) can be updated
-   - See [`scripts/sync/README.md`](scripts/sync/README.md) for sync workflow and examples
+---
 
-### Troubleshooting
+## 🎯 Two Entry Points
 
-**AI Agent Rules Not Loading**:
-- Ensure Cursor version is 0.45+
-- Restart Cursor after cloning
-- Check `.cursor/rules/` directory exists
-- See [`.cursor/SETUP.md`](.cursor/SETUP.md) for detailed troubleshooting
-
-**Documentation Not Found**:
-- Ensure you cloned the full repository (including submodules if any)
-- Check that `docs-offline/` and `maco-api-documentation/` directories exist
-- **If linked repositories are empty**: See [Initial Setup - Initialize linked repositories](#initial-setup) above
-- Run `./scripts/download-docs.sh` if documentation is missing
-
-**Scripts Not Executable**:
-- After cloning, scripts may not have execute permissions
-- Run: `chmod +x scripts/*.sh scripts/sync/*.sh`
-- See [Initial Setup - Make scripts executable](#initial-setup) above
-
-**Linked Repositories Empty or Missing**:
-- If submodule directories are empty after cloning, run `./scripts/setup-workspace.sh`
-- This will initialize all submodules automatically
-
-**Example Files Not Found**:
-- ⚠️ Always use `v202510` directory (see [Understanding the Workspace](#understanding-the-workspace) above)
-- Check `maco-edi-testfiles/outbound/v202510/` for outbound examples (JSON)
-- Check `maco-edi-testfiles/inbound/v202510/` for inbound examples (EDI)
-
-## 🚀 Two Entry Points
-
-> **💡 Tip**: See [Getting Started](#-getting-started) above for detailed setup instructions and examples.
+Choose your path based on what you have:
 
 ### Entry Point 1: Business Goal → Implementation
-**When**: You have a business goal (e.g., "register new customer", "cancel contract")  
-**Start Here**: [`BUSINESS_PROCESS_MAP.md`](docs/entry-points/BUSINESS_PROCESS_MAP.md)  
-**See**: [Getting Started - Quick Start Examples](#quick-start-examples) for step-by-step guide
 
-### Entry Point 2: Specific MaKo Message → Implementation
-**When**: You have a specific BDEW process ID or MaKo message (e.g., "55078", "START_LIEFERBEGINN")  
-**Start Here**: [`AI_AGENT_SETUP.md`](docs/entry-points/AI_AGENT_SETUP.md)  
-**See**: [Getting Started - Quick Start Examples](#quick-start-examples) for step-by-step guide
+**When**: You have a business goal like *"register customer"* or *"cancel contract"*
 
-## 📁 Key Files
+```
+📄 docs/entry-points/BUSINESS_PROCESS_MAP.md
+```
 
-| File | Purpose | When to Use |
-|------|---------|-------------|
-| `BUSINESS_PROCESS_MAP.md` | Business concept → Process mapping | **Business goal discovery, backend design** |
-| `AI_AGENT_SETUP.md` | Technical setup guide | **Technical implementation, specific messages** |
-| `llm.txt` | Documentation index (237 entries) | **Find which documentation you need** |
-| `docs-offline/` | 232 offline documentation files | **Read workflow docs and process descriptions** |
-| `maco-edi-testfiles/` | 2,549 EDI test files | **Real-world message examples (inbound/outbound)** |
-| `_build/bo4e-openapi.min.json` | Complete BO4E schemas | **Data structure reference** |
-| `yaml_output/[ID].yaml` | Business rules (136 files) | **Mandatory fields, validation** |
-| `PIs/PI_[ID].yml` | Process API schemas | **API request/response structure** |
+**Example Scenarios**:
+- New customer signs up for electricity
+- Customer moves to a new address
+- Customer terminates contract
+- Supplier switch
 
-## 📚 Structure
+### Entry Point 2: Specific Message → Implementation
+
+**When**: You have a BDEW process ID like `55077` or a trigger like `START_LIEFERBEGINN`
+
+```
+📄 docs/entry-points/AI_AGENT_SETUP.md
+```
+
+**Implementation Steps**:
+1. Find your process in `PROCESS_GRAPH.json`
+2. Check schema: `PI_{ID}.yml`
+3. Check rules: `yaml_output/{ID}.yaml`
+4. Reference example: `maco-edi-testfiles/outbound/v202510/`
+
+---
+
+## 🏗 Architecture
+
+### Message Flow
+
+```mermaid
+sequenceDiagram
+    participant LF as Your Backend<br/>(Lieferant)
+    participant API as Conuti<br/>MaCo API
+    participant NB as Network<br/>Operator
+    participant MSB as Meter<br/>Operator
+
+    Note over LF,MSB: Outbound Flow (Your Backend → Market)
+    LF->>API: Trigger (BO4E JSON)
+    API->>NB: EDIFACT Message
+    API->>MSB: EDIFACT Message
+
+    Note over LF,MSB: Inbound Flow (Market → Your Backend)
+    NB-->>API: Response
+    MSB-->>API: Response
+    API-->>LF: Webhook (BO4E JSON)
+```
+
+### Key Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **Role** | You are a **Lieferant (LF)** — electricity supplier |
+| **Outbound** | Your backend → Conuti API (BO4E JSON format) |
+| **Inbound** | Conuti → Your webhooks (BO4E JSON, converted from EDIFACT) |
+| **Process IDs** | 5-digit BDEW Prüfidentifikatoren (e.g., `55077`) |
+| **Async** | All processes are asynchronous; responses come via webhooks |
+
+### Message Formats
+
+| Direction | Format | Example Path |
+|-----------|--------|--------------|
+| **Outbound** | BO4E JSON | `maco-edi-testfiles/outbound/v202510/*.json` |
+| **Inbound** | EDIFACT | `maco-edi-testfiles/inbound/v202510/*.edi` |
+
+> ⚠️ **Always use `v202510`** — the `v202404` directory is outdated.
+
+---
+
+## 📚 Documentation
+
+### Documentation Types
+
+| Type | Purpose | Location |
+|------|---------|----------|
+| **Markdown** | Business context (WHY) | `docs-offline/*.md` |
+| **PNG diagrams** | Technical flow (HOW) | `docs-offline/prozessdiagramme-png/` |
+| **EBD files** | Validation logic (WHAT to validate) | `ebd-diagrams/FV{YYMM}/` |
+| **YAML schemas** | Required fields | `maco-api-documentation/...yaml_output/` |
+| **Test files** | Real message examples | `maco-edi-testfiles/v202510/` |
+
+### Finding Documentation
+
+1. **Start with the index**: `docs/llm.txt` (237 entries)
+2. **Use process lookup**: `docs/entry-points/PROCESS_GRAPH.json`
+3. **Read source docs**: `docs-offline/{process-name}.md`
+
+---
+
+## 📁 File Reference
+
+### Quick Reference
+
+| File | Purpose |
+|------|---------|
+| [`BUSINESS_PROCESS_MAP.md`](docs/entry-points/BUSINESS_PROCESS_MAP.md) | Business goal → Process mapping |
+| [`AI_AGENT_SETUP.md`](docs/entry-points/AI_AGENT_SETUP.md) | Technical implementation guide |
+| [`PROCESS_GRAPH.json`](docs/entry-points/PROCESS_GRAPH.json) | Process dependency graph |
+| [`llm.txt`](docs/llm.txt) | Documentation index (237 entries) |
+
+### Directory Structure
 
 ```
 maco_agent_workspace/
-├── docs/
-│   ├── entry-points/          ⭐ Entry point documentation
-│   │   ├── BUSINESS_PROCESS_MAP.md    # Business goal discovery
-│   │   ├── AI_AGENT_SETUP.md          # Technical implementation
-│   │   └── PROCESS_GRAPH.json         # Process dependency graph
-│   └── llm.txt                ⭐ Documentation index
-├── .cursor/rules/             ⭐ AI agent rules (BMAD-METHOD structure)
-├── scripts/sync/              ⭐ Sync system for external repos (see [README](scripts/sync/README.md))
-├── maco-api-documentation/    # External repo (tracked)
-│   ├── _build/                ⭐ Formatted JSON schemas
-│   ├── yaml_output/           ⭐ Business rules (136 files)
-│   └── macoapp-schreiben/components/requestBodies/PIs/
-│       └── PI_[ID].yml        ⭐ Process schemas
-├── docs-offline/              ⭐ 232 offline documentation files
-└── maco-edi-testfiles/        ⭐ 2,549 EDI test files (real-world examples)
+│
+├── 📄 README.md                    # You are here
+│
+├── 📁 docs/
+│   ├── entry-points/               # ⭐ Start here
+│   │   ├── BUSINESS_PROCESS_MAP.md #    Business discovery
+│   │   ├── AI_AGENT_SETUP.md       #    Technical implementation
+│   │   └── PROCESS_GRAPH.json      #    Process dependencies
+│   └── llm.txt                     # Documentation index
+│
+├── 📁 .cursor/rules/               # AI agent rules
+│
+├── 📁 docs-offline/                # 232 offline documentation files
+│   └── prozessdiagramme-png/       # 54 process diagrams
+│
+├── 📁 maco-api-documentation/      # API schemas & rules
+│   ├── _build/*.min.json           #    Compiled schemas
+│   └── yaml_output/                #    Business rules (136 files)
+│
+├── 📁 maco-edi-testfiles/          # 2,549+ test files
+│   ├── outbound/v202510/           #    JSON examples (send)
+│   └── inbound/v202510/            #    EDI examples (receive)
+│
+├── 📁 ebd-diagrams/                # EBD validation trees
+│   └── FV{YYMM}/                   #    By format version
+│
+└── 📁 scripts/                     # Setup & sync scripts
+    ├── setup-workspace.sh          #    Initial setup
+    └── update-workspace.sh         #    Update documentation
 ```
+
+---
 
 ## 🎯 Common Tasks
 
 | Task | Solution |
 |------|----------|
-| "I want to register a new customer" | `BUSINESS_PROCESS_MAP.md` → Scenario 1: New Customer Signs Up |
-| "What data do I need for process 55078?" | `AI_AGENT_SETUP.md` → `yaml_output/55078.yaml` → `bo4e-openapi.min.json` |
-| "How do I implement Kündigung workflow?" | `BUSINESS_PROCESS_MAP.md` → Find Kündigung → `llm.txt` → `docs-offline/prozessübersicht-860885m0.md` |
-| "I received a specific MaKo message, what do I do?" | `AI_AGENT_SETUP.md` → Find message type → Check schemas → Implement handler |
+| Register a new customer | `BUSINESS_PROCESS_MAP.md` → Scenario 1 |
+| Find required fields for process 55078 | `yaml_output/55078.yaml` + `PI_55078.yml` |
+| Implement Kündigung workflow | `BUSINESS_PROCESS_MAP.md` → Kündigung scenario |
+| Validate a message before sending | Check against `PI_{ID}.yml` schema |
+| Handle an incoming webhook | Find process in `AI_AGENT_SETUP.md` → implement handler |
+| Update to latest documentation | Run `./scripts/update-workspace.sh` |
+
+---
+
+## ❓ Troubleshooting
+
+<details>
+<summary><strong>AI Agent Rules Not Loading</strong></summary>
+
+1. Ensure Cursor version is **0.45+**
+2. Restart Cursor after cloning
+3. Verify `.cursor/rules/` directory exists
+4. See [`.cursor/SETUP.md`](.cursor/SETUP.md) for details
+
+</details>
+
+<details>
+<summary><strong>Documentation Not Found</strong></summary>
+
+1. Run `./scripts/setup-workspace.sh` to initialize everything
+2. Check that `docs-offline/` exists
+3. Run `./scripts/download-docs.sh` if docs are missing
+
+</details>
+
+<details>
+<summary><strong>Submodules Empty After Clone</strong></summary>
+
+```bash
+# Initialize all submodules
+./scripts/setup-workspace.sh
+
+# Or manually:
+git submodule update --init --recursive
+```
+
+</details>
+
+<details>
+<summary><strong>Scripts Not Executable</strong></summary>
+
+```bash
+chmod +x scripts/*.sh scripts/sync/*.sh
+```
+
+</details>
+
+<details>
+<summary><strong>Example Files Not Found</strong></summary>
+
+Always use `v202510` directory (not `v202404`):
+- Outbound: `maco-edi-testfiles/outbound/v202510/` (JSON)
+- Inbound: `maco-edi-testfiles/inbound/v202510/` (EDI)
+
+</details>
+
+---
+
+## 🔄 Keeping Up to Date
+
+```bash
+# Update all documentation and schemas
+./scripts/update-workspace.sh
+```
+
+This syncs changes from external repositories (`maco-api-documentation`, `maco-edi-testfiles`) and rebuilds schemas.
+
+> 📖 See [`scripts/sync/README.md`](scripts/sync/README.md) for detailed sync workflow.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. **Report issues**: Found a bug or missing documentation? Open an issue
+2. **Improve documentation**: PRs for clearer explanations are appreciated
+3. **Add examples**: More test files help everyone
+4. **Enhance AI rules**: Improvements to `.cursor/rules/` benefit all users
+
+### Development Setup
+
+```bash
+# Clone with full history
+git clone <repository-url>
+cd maco_agent_workspace
+./scripts/setup-workspace.sh
+
+# Make changes and test with Cursor
+cursor .
+```
+
+---
+
+## 📜 License
+
+This workspace aggregates documentation and schemas from official German energy market sources. See individual file headers for specific licensing information.
+
+---
+
+## 💬 Support
+
+- **Documentation issues**: Check `docs/llm.txt` for the right file
+- **Schema questions**: Reference `maco-api-documentation/_build/`
+- **AI agent issues**: See [`.cursor/README.md`](.cursor/README.md)
+
+---
+
+<div align="center">
+
+**Built for German electricity market integration with ❤️**
+
+[Get Started](#-quick-start) · [Documentation](#-documentation) · [Common Tasks](#-common-tasks)
+
+</div>
