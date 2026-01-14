@@ -1,0 +1,238 @@
+---
+description: MANDATORY - Systematically verify ALL Prüfidentifikatoren (request, success, rejection) for any MaKo process. Never assume response formats without checking trigger schemas and NB documentation.
+alwaysApply: true
+tags: [critical, pruefidentifikator, validation, process-mapping, mandatory]
+priority: 2
+version: 1.0.0
+relatedRules:
+  - anti-hallucination-mandatory-always.mdc
+  - process-visualization-mandatory-always.mdc
+  - technical-implementation-auto.mdc
+---
+
+# Prüfidentifikator Verification - MANDATORY Rule
+
+## ⚠️ CRITICAL REQUIREMENT
+
+**NEVER assume response Prüfidentifikatoren without systematic verification.**
+
+When documenting or implementing a MaKo process, you MUST verify ALL related Prüfidentifikatoren (request, success, rejection) through multiple sources.
+
+**This rule extends `anti-hallucination-mandatory-always.mdc` with specific steps for Prüfidentifikator verification.**
+
+---
+
+## Mandatory Verification Checklist
+
+When asked about a process with Prüfidentifikator XXXXX, you MUST complete ALL four steps:
+
+### ✅ Step 1: Identify ALL Request Formats
+
+**Purpose:** Many processes accept multiple request formats (e.g., detailed vs simplified)
+
+**Actions:**
+- [ ] Read the trigger schema definition (e.g., `START_LIEFERBEGINN`)
+- [ ] Look for `oneOf` or `allOf` indicating multiple formats
+- [ ] List ALL request Prüfis (e.g., 55001 AND 55077, not just one)
+
+**How to check:**
+```bash
+# Find trigger definition files
+grep -r "START_<PROCESS_NAME>" docs-offline/
+# Read the trigger schema
+read docs-offline/<process>-<id>.md
+# Check for schema with oneOf
+read maco-api-documentation/.../trigger-events...
+```
+
+**Example:** `START_LIEFERBEGINN` accepts:
+- PI_55001 (detailed with ENERGIELIEFERVERTRAG)
+- PI_55077 (simplified without customer data)
+- PI_55600, PI_55601 (alternative formats)
+
+### ✅ Step 2: Find ALL Response Prüfidentifikatoren
+
+**Purpose:** Each request format has its own success/rejection responses
+
+**Actions:**
+- [ ] For EACH request format from Step 1, find corresponding responses
+- [ ] Check yaml_output/ directory for response schemas
+- [ ] Verify numbering pattern (XX001→XX002/XX003, XX077→XX078/XX080)
+
+**Numbering patterns to check:**
+```
+Request XX001 → Success XX002 (even) + Rejection XX003 (odd)
+Request XX077 → Success XX078 (even) + Rejection XX080 (next odd after 078)
+Request XX600 → Success XX602 (even) + Rejection XX603 (odd)
+```
+
+**How to check:**
+```bash
+# Search for all related Prüfis in a range
+grep -r "5507[0-9]" docs-offline/
+grep -r "5508[0-9]" docs-offline/
+
+# Verify each schema exists
+ls yaml_output/55001.yaml  # Request format 1
+ls yaml_output/55002.yaml  # Success for 55001
+ls yaml_output/55003.yaml  # Rejection for 55001
+ls yaml_output/55077.yaml  # Request format 2
+ls yaml_output/55078.yaml  # Success for 55077
+ls yaml_output/55080.yaml  # Rejection for 55077
+```
+
+**Read each yaml to confirm:**
+- `description` field shows the message direction and purpose
+- Required fields match the expected format
+
+### ✅ Step 3: Verify in NB Documentation
+
+**Purpose:** The Network Operator (NB) perspective shows what they actually send back
+
+**Actions:**
+- [ ] Find NB-side process documentation (files with `rolle-nb` in name)
+- [ ] Look for text like "Übergabe der erzeugten Rückmeldung an das Backend"
+- [ ] This explicitly lists which Prüfis the NB generates
+
+**How to check:**
+```bash
+# Find NB perspective docs
+find docs-offline/ -name "*rolle-nb*<process>*"
+# Example: find docs-offline/ -name "*rolle-nb*lieferbeginn*"
+
+# Search for response generation
+grep -r "Erstellen Prozessdaten für Prüfi" docs-offline/
+grep -r "Übergabe der erzeugten Rückmeldung" docs-offline/
+```
+
+**Example from LIEFERBEGINN:**
+```
+File: lieferbeginn-rolle-nb-860854m0.md, line 154:
+"Übergabe der erzeugten Rückmeldung an das Backend - 55003, 55080"
+                                                      ^^^^^^  ^^^^^^
+                                                    rejection rejection
+                                                   (for 55001)(for 55077)
+```
+
+This confirms BOTH rejection formats exist!
+
+### ✅ Step 4: Verify in Process Diagrams
+
+**Purpose:** Visual confirmation in technical implementation diagrams
+
+**Actions:**
+- [ ] Find relevant PNG diagram in `docs-offline/prozessdiagramme-png/`
+- [ ] View the diagram to check MCS layer (format transformation layer)
+- [ ] Verify BOTH success AND rejection Prüfis are shown
+
+**How to check:**
+```bash
+# Use INDEX.md for discovery
+grep -i "<process-name>" docs-offline/prozessdiagramme-png/INDEX.md
+# Example: grep -i "lieferbeginn" docs-offline/prozessdiagramme-png/INDEX.md
+
+# View the PNG file(s)
+read docs-offline/prozessdiagramme-png/Lieferbeginn\ Lieferseite.png
+```
+
+**What to look for:**
+- **MCS layer** (middle swimlane) shows format transformations
+- Success path should show: "55002, 55078" or similar
+- Rejection path should show: "55003, 55080" or similar
+
+**If diagram shows multiple Prüfis together → They're ALTERNATIVES, not sequential!**
+
+---
+
+## Common Patterns
+
+### Pattern 1: Dual Request Formats (Most Common)
+
+| Pattern | Request 1 | Success 1 | Reject 1 | Request 2 | Success 2 | Reject 2 |
+|---------|-----------|-----------|----------|-----------|-----------|----------|
+| **LIEFERBEGINN** | 55001 | 55002 | 55003 | 55077 | 55078 | 55080 |
+| **LIEFERENDE** | 55005 | 55006 | 55007 | 55079 | 55081 | 55082 |
+| **Pattern** | XX001 | XX002 | XX003 | XX077 | XX078 | XX080 |
+
+### Pattern 2: Alternative Formats (600-series)
+
+| Pattern | Request 1 | Success 1 | Reject 1 | Request 2 | Success 2 | Reject 2 |
+|---------|-----------|-----------|----------|-----------|-----------|----------|
+| **Pattern** | XX600 | XX602 | XX603 | XX601 | XX604 | XX605 |
+
+### Pattern 3: Response Pairing Rule
+
+**CRITICAL:** The response Prüfi ALWAYS matches the request format:
+
+```
+✅ CORRECT:
+   Send 55001 → Receive 55002 (success) OR 55003 (rejection)
+   Send 55077 → Receive 55078 (success) OR 55080 (rejection)
+
+❌ WRONG:
+   Send 55077 → Receive 55002  ← NEVER happens!
+```
+
+**Why?** Each format has different payload structures. The response format must match the request format so the receiver can correlate them.
+
+---
+
+## Integration with Anti-Hallucination Rule
+
+This rule **extends** the verification steps in `anti-hallucination-mandatory-always.mdc`:
+
+### From Anti-Hallucination Rule (Step 3):
+
+```markdown
+- [ ] Schema file read (PI_{ID}.yml)
+- [ ] Business rules file read (yaml_output/{ID}.yaml)
+```
+
+### THIS Rule Adds:
+
+```markdown
+- [ ] ALL request format schemas read (PI_55001.yml AND PI_55077.yml)
+- [ ] ALL response schemas verified (55002, 55003, 55078, 55080)
+- [ ] Trigger schema checked for oneOf/allOf
+- [ ] NB documentation cross-referenced
+- [ ] Process diagram verified (MCS layer)
+```
+
+---
+
+## Quick Reference: File Locations
+
+```
+Request schemas:
+  yaml_output/{ID}.yaml                    # Business rules
+  PI_{ID}.yml                              # API request structure
+
+Response schemas:
+  yaml_output/{ID}.yaml                    # Response structure
+
+Trigger schemas:
+  docs-offline/{process}-*.md              # Contains oneOf definitions
+  
+NB perspective:
+  docs-offline/*rolle-nb*{process}*.md     # What NB generates
+
+Diagrams:
+  docs-offline/prozessdiagramme-png/       # Visual confirmation
+```
+
+---
+
+## Priority and Integration
+
+**Priority:** 2 (applies after anti-hallucination but before general rules)
+
+**Works with:**
+- `anti-hallucination-mandatory-always.mdc` (priority 1) - Provides base verification steps
+- `process-visualization-mandatory-always.mdc` - Ensures diagrams show all response paths
+- `technical-implementation-auto.mdc` - Ensures implementation covers all formats
+
+**Enforcement Level:** MANDATORY - Violations lead to incorrect implementation guides
+
+---
+
+*This is a CRITICAL rule. Violations lead to broken webhook handlers and incorrect API integrations.*
