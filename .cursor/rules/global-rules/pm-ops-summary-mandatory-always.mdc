@@ -1,0 +1,100 @@
+---
+description: MANDATORY - Adds a PM-facing summary + Ops runbook layer for any MaCo process discussion (supplier LF implementation)
+alwaysApply: true
+tags: [pm, ops, runbook, error-resolution, mandatory]
+priority: 2
+version: 1.0.0
+relatedRules:
+  - global-rules/anti-hallucination-mandatory-always.mdc
+  - visualization-rules/process-visualization-mandatory-always.mdc
+  - validation-rules/pruefidentifikator-verification-mandatory-always.mdc
+---
+
+# PM + Ops Summary Layer (MANDATORY)
+
+## Purpose
+
+This assistant is used by a Product Manager implementing MaCo services for a supplier (LF).
+Process explanations must translate verified documentation into:
+- PM decisions (what to build, what “done” means)
+- Ops actions (how failures are handled in production)
+
+This layer is REQUIRED on top of all source-verification and visualization rules.
+
+## When This Applies
+
+Apply whenever the user asks about:
+- a MaCo process or end-to-end workflow
+- supplier-side responsibilities (LF)
+- implementation planning
+- error handling or operational readiness
+
+If the question is narrow (single field, single file, quick clarification), keep this section concise but still present.
+
+## Non-negotiables
+
+- Do not invent implementation details.
+- All claims must be grounded in verified repo sources.
+- If information cannot be verified, explicitly mark it as **UNKNOWN** and list what was checked.
+
+## Required Output Additions
+
+Append the following sections after the main explanation and any required diagrams/tables.
+
+---
+
+## PM Summary
+
+### Business Outcome (Definition of Done)
+- What success means from a business perspective
+- What must be true in the LF system to consider the process complete
+- Whether follow-up processes must be received before “done”
+
+### Supplier Responsibilities (LF)
+- **Active responsibilities** (outbound messages, retries, triggers)
+- **Passive responsibilities** (receiving callbacks, persisting data, monitoring)
+
+### Customer Impact
+- What the customer experiences (or does not experience)
+- Expected timing (immediate vs asynchronous)
+- Communication implications in case of delay or rejection
+
+### System Capabilities Required (Build Checklist)
+- Outbound triggers/APIs required
+- Inbound webhook handlers required (by Prüfi)
+- Persistence requirements (BO4E objects, states)
+- Idempotency requirements (correlation keys, duplicate handling)
+- Observability requirements (logs, metrics, alerts)
+
+---
+
+## Ops Runbook Summary
+
+### Operational Risk Points
+- Where failures can occur (validation, timing, partner dependency, transport)
+- Which actor originates the error (LF, Conuti, NB, MSB)
+
+### Retry Strategy
+- What can be retried automatically
+- What requires manual intervention
+- What must never be retried
+
+### Escalation Policy
+- When to escalate to engineering
+- When to escalate to external partners (Conuti / NB / MSB)
+- Minimum data required for escalation tickets
+
+### Runbook Artifacts (Required)
+- Schemas (PI + yaml_output)
+- Example messages used (v202510 only)
+- EBD files referenced (latest FV)
+- Technical diagrams used (PNG)
+
+---
+
+## Fast Path Guidance
+
+If the user explicitly asks for a high-level overview:
+- Provide a minimal explanation
+- Include a short PM Summary (1–2 bullets per section)
+- Skip detailed runbook tables unless requested
