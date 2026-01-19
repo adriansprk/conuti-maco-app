@@ -1,0 +1,78 @@
+---
+description: Error resolution taxonomy - converts EBD rejection logic into retryability, ops actions, and escalation guidance (source-grounded)
+globs:
+  - "**/ebd-diagrams/**/*"
+  - "**/docs-offline/**/*"
+  - "**/maco-api-documentation/**/*"
+  - "**/maco-edi-testfiles/**/*"
+alwaysApply: false
+tags: [ops, runbook, error-resolution, ebd, rejection-codes]
+priority: 3
+version: 1.0.0
+---
+
+# Error Resolution Taxonomy (Ops-Ready)
+
+## Purpose
+
+When a process includes negative responses, rejections, or error paths, the assistant must translate them into:
+- retryable vs non-retryable outcomes
+- concrete ops actions
+- escalation guidance
+- customer impact awareness
+
+## Hard Rules
+
+- If rejection codes are mentioned, the relevant EBD JSON (latest FV) must be cited.
+- If no EBD exists, explicitly state this and limit claims to what is observable in schemas/examples.
+- Never guess causes, retryability, or ownership.
+
+## Required Output (When Errors Are In Scope)
+
+Add an **Error Resolution Table**:
+
+| Rejection / Status | Where Observed | Likely Cause (Grounded) | Retryable | Ops Action | Escalation | Customer Impact |
+|-------------------|---------------|--------------------------|-----------|------------|------------|-----------------|
+
+## Column Rules
+
+### Rejection / Status
+- Prefer explicit EBD codes (E_{code}.json)
+- If unavailable, use response status fields with citations
+
+### Where Observed
+- Cite inbound/outbound example files (v202510)
+- Cite response schema/yaml_output
+
+### Likely Cause
+- Only if explicitly derivable from EBD decision logic
+- Otherwise mark **UNKNOWN**
+
+### Retryable
+- YES only if EBD/docs indicate temporary or time-based conditions
+- NO for structural/business conflicts
+- UNKNOWN if not explicitly stated
+
+### Ops Action
+- Concrete and actionable (resubmit, wait, contact partner, contact customer)
+- Must align with verified supplier (LF) responsibilities
+
+### Escalation
+- Engineering: internal system/handler issues
+- External: Conuti / NB / MSB dependencies
+- UNKNOWN if unclear
+
+### Customer Impact
+- Delay, failure, manual review, or unknown
+- Do not infer timing unless documented
+
+## Default Classification Buckets (When Unclear)
+
+- DATA_MISSING
+- TIMING_WINDOW
+- BUSINESS_CONFLICT
+- PARTNER_DEPENDENCY
+- INTERNAL_BUG
+- UNKNOWN
+
+Never force a rejection into a bucket without evidence.
