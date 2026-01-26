@@ -1787,10 +1787,22 @@ components:
             55075 55076 
 
             QUOTES PI 15001
+        serialnummer:
+          type: string
+        herstellungsdatum:
+          type: string
+        baujahr:
+          type: string
+        eichungBis:
+          type: string
       x-apidog-orders:
         - geraetetyp
         - geraetemerkmal
         - faktor
+        - serialnummer
+        - herstellungsdatum
+        - baujahr
+        - eichungBis
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Geraetemerkmal:

@@ -6,8 +6,8 @@
 - [Kündigung LFA](https://doc.macoapp.de/k%C3%BCndigung-lfa-3118804f0.md): 
 - [Kündigung LFN](https://doc.macoapp.de/k%C3%BCndigung-lfn-3118848f0.md): 
 - [Stornierung](https://doc.macoapp.de/stornierung-5000861f0.md): 
-- [Lieferbeginn (Rolle LFN)](https://doc.macoapp.de/lieferbeginn.md): 
-- [Abmeldeanfrage NB -> LF (Rolle LFA)](https://doc.macoapp.de/abmeldeanfrage-nb-lf-rolle-lfa-3118774f0.md): 
+- [Lieferbeginn STROM (Rolle LFN)](https://doc.macoapp.de/lieferbeginn.md): 
+- [Abmeldeanfrage STROM NB -> LF (Rolle LFA)](https://doc.macoapp.de/abmeldeanfrage-strom-nb-lf-rolle-lfa-3118774f0.md): 
 - [Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle LFZ)](https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-3130103f0.md): 
 - [Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle LFA)](https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-3130117f0.md): 
 - [Abrechnungsdaten Netznutzungsabrechnung (Rolle LF)](https://doc.macoapp.de/abrechnungsdaten-netznutzungsabrechnung-rolle-lf-3130129f0.md): 

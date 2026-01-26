@@ -175,7 +175,6 @@ components:
           description: Zählerkonstante auf dem Zähler.
         eichungBis:
           type: string
-          format: date-time
           description: |-
             Eichgültigkeit - Bis zu diesem Datum ist der Zähler geeicht.
             DTM Z04
@@ -254,7 +253,6 @@ components:
         geraetemerkmal: *ref_0
         herstellungsdatum:
           type: string
-          format: date-time
           description: |-
             Produktions-/Herstellungsdatum
             DTM 94
@@ -1415,10 +1413,22 @@ components:
             55075 55076 
 
             QUOTES PI 15001
+        serialnummer:
+          type: string
+        herstellungsdatum:
+          type: string
+        baujahr:
+          type: string
+        eichungBis:
+          type: string
       x-apidog-orders:
         - geraetetyp
         - geraetemerkmal
         - faktor
+        - serialnummer
+        - herstellungsdatum
+        - baujahr
+        - eichungBis
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Geraetetyp:

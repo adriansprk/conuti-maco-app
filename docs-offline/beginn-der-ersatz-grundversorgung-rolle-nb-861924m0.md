@@ -1,4 +1,4 @@
-# Beginn der Ersatz-/Grundversorgung (Rolle NB)
+# Beginn der Ersatz-/Grundversorgung (Rolle NB) Strom
 
 # Prozessübersicht
   

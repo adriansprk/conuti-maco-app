@@ -208,6 +208,7 @@ components:
             - $ref: '#/components/schemas/PI_55077'
             - $ref: '#/components/schemas/PI_55600'
             - $ref: '#/components/schemas/PI_55601'
+            - $ref: '#/components/schemas/44001_Anmeldung'
         - type: object
           properties:
             zusatzdaten:
@@ -243,6 +244,2444 @@ components:
           required:
             - zusatzdaten
           x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    44001_Anmeldung:
+      type: object
+      properties:
+        stammdaten:
+          type: object
+          properties:
+            MESSLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  ablesekartenempfaenger:
+                    type: object
+                    properties:
+                      partneradresse:
+                        type: object
+                        properties:
+                          postfach:
+                            type: string
+                            description: |-
+                              Postfach | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                          ort:
+                            type: object
+                            title: Sort
+                            description: |-
+
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                            x-apidog-orders: []
+                            properties: {}
+                            x-apidog-ignore-properties: []
+                          hausnummer:
+                            type: string
+                            description: |-
+                              Hausnummer und Ergänzung | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                          landescode:
+                            type: string
+                            title: Landescode
+                            description: |-
+                              Der ISO-Landescode als Enumeration | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                            enum:
+                              - AC
+                              - AD
+                              - AE
+                              - AF
+                              - AG
+                              - AI
+                              - AL
+                              - AM
+                              - AN
+                              - AO
+                              - AQ
+                              - AR
+                              - AS
+                              - AT
+                              - AU
+                              - AW
+                              - AX
+                              - AZ
+                              - BA
+                              - BB
+                              - BD
+                              - BE
+                              - BF
+                              - BG
+                              - BH
+                              - BI
+                              - BJ
+                              - BL
+                              - BM
+                              - BN
+                              - BO
+                              - BQ
+                              - BR
+                              - BS
+                              - BT
+                              - BU
+                              - BV
+                              - BW
+                              - BY
+                              - BZ
+                              - CA
+                              - CC
+                              - CD
+                              - CF
+                              - CG
+                              - CH
+                              - CI
+                              - CK
+                              - CL
+                              - CM
+                              - CN
+                              - CO
+                              - CP
+                              - CR
+                              - CS
+                              - CU
+                              - CV
+                              - CW
+                              - CX
+                              - CY
+                              - CZ
+                              - DE
+                              - DG
+                              - DJ
+                              - DK
+                              - DM
+                              - DO
+                              - DZ
+                              - EA
+                              - EC
+                              - EE
+                              - EG
+                              - EH
+                              - ER
+                              - ES
+                              - ET
+                              - EU
+                              - FI
+                              - FJ
+                              - FK
+                              - FM
+                              - FO
+                              - FR
+                              - FX
+                              - GA
+                              - GB
+                              - GD
+                              - GE
+                              - GF
+                              - GG
+                              - GH
+                              - GI
+                              - GL
+                              - GM
+                              - GN
+                              - GP
+                              - GQ
+                              - GR
+                              - GS
+                              - GT
+                              - GU
+                              - GW
+                              - GY
+                              - HK
+                              - HM
+                              - HN
+                              - HR
+                              - HT
+                              - HU
+                              - IC
+                              - ID
+                              - IE
+                              - IL
+                              - IM
+                              - IN
+                              - IO
+                              - IQ
+                              - IR
+                              - IS
+                              - IT
+                              - JE
+                              - JM
+                              - JO
+                              - JP
+                              - KE
+                              - KG
+                              - KH
+                              - KI
+                              - KM
+                              - KN
+                              - KP
+                              - KR
+                              - KW
+                              - KY
+                              - KZ
+                              - LA
+                              - LB
+                              - LC
+                              - LI
+                              - LK
+                              - LR
+                              - LS
+                              - LT
+                              - LU
+                              - LV
+                              - LY
+                              - MA
+                              - MC
+                              - MD
+                              - ME
+                              - MF
+                              - MG
+                              - MH
+                              - MK
+                              - ML
+                              - MM
+                              - MN
+                              - MO
+                              - MP
+                              - MQ
+                              - MR
+                              - MS
+                              - MT
+                              - MU
+                              - MV
+                              - MW
+                              - MX
+                              - MY
+                              - MZ
+                              - NA
+                              - NC
+                              - NE
+                              - NF
+                              - NG
+                              - NI
+                              - NL
+                              - 'NO'
+                              - NP
+                              - NR
+                              - NT
+                              - NU
+                              - NZ
+                              - OM
+                              - PA
+                              - PE
+                              - PF
+                              - PG
+                              - PH
+                              - PK
+                              - PL
+                              - PM
+                              - PN
+                              - PR
+                              - PS
+                              - PT
+                              - PW
+                              - PY
+                              - QA
+                              - RE
+                              - RO
+                              - RS
+                              - RU
+                              - RW
+                              - SA
+                              - SB
+                              - SC
+                              - SD
+                              - SE
+                              - SF
+                              - SG
+                              - SH
+                              - SI
+                              - SJ
+                              - SK
+                              - SL
+                              - SM
+                              - SN
+                              - SO
+                              - SR
+                              - SS
+                              - ST
+                              - SU
+                              - SV
+                              - SX
+                              - SY
+                              - SZ
+                              - TA
+                              - TC
+                              - TD
+                              - TF
+                              - TG
+                              - TJ
+                              - TK
+                              - TL
+                              - TM
+                              - TN
+                              - TO
+                              - TP
+                              - TR
+                              - TT
+                              - TV
+                              - TW
+                              - TZ
+                              - UA
+                              - UG
+                              - UK
+                              - UM
+                              - US
+                              - UY
+                              - UZ
+                              - VA
+                              - VC
+                              - VE
+                              - VG
+                              - VI
+                              - VN
+                              - VU
+                              - WF
+                              - WS
+                              - XK
+                              - YE
+                              - YT
+                              - YU
+                              - ZA
+                              - ZM
+                              - ZR
+                              - ZW
+                            x-apidog-folder: Bo4e/ENUM
+                          strasse:
+                            type: string
+                            description: |-
+                              Strasse | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                          ortsteil:
+                            type: string
+                            description: |-
+                              Ortsteil | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                          postleitzahl:
+                            type: string
+                            description: |-
+                              Postleitzahl | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                        x-apidog-orders:
+                          - postfach
+                          - ort
+                          - hausnummer
+                          - landescode
+                          - strasse
+                          - ortsteil
+                          - postleitzahl
+                        x-apidog-ignore-properties: []
+                      gewerbekennzeichnung:
+                        type: boolean
+                        description: >-
+                          Kennzeichnung ob es sich um einen Gewerbe/Unternehmen
+                          (gewerbeKennzeichnung = true)
+
+                          oder eine Privatperson handelt. (gewerbeKennzeichnung
+                          = false)
+
+                          Z01 Struktur von Personennamen
+
+                          Z02 Struktur der Firmenbezeichnung | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                      name4:
+                        type: string
+                        description: |-
+                          Name 4 | 
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                      name2:
+                        type: string
+                        description: >-
+                          Zweiter Teil des Namens. Hier kann der eine
+                          Erweiterung zum Firmennamen oder bei Privatpersonen
+                          beispielsweise der Vorname dargestellt werden.
+                          Beispiele: Bereich Süd oder Nina | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                      name1:
+                        type: string
+                        description: >-
+                          Erster Teil des Namens. Hier kann der Firmenname oder
+                          bei Privatpersonen beispielsweise der Nachname
+                          dargestellt werden. Beispiele: Yellow Strom GmbH oder
+                          Hagen | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                      name3:
+                        type: string
+                        description: >-
+                          Dritter Teil des Namens. Hier können weitere
+                          Ergänzungen zum Firmennamen oder bei Privatpersonen
+                          Zusätze zum  Namen dargestellt werden. Beispiele: und
+                          Afrika oder Sängerin | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                      anrede:
+                        type: string
+                        description: |-
+                          Die Anrede für den GePa, Z.B. Herr.
+                          Z04 Korrespondenzanschrift des Kunden des Lieferanten
+                          PI 55001 55600 55601 55013 55014 55043 55168 55169 | 
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                    x-apidog-orders:
+                      - partneradresse
+                      - gewerbekennzeichnung
+                      - name4
+                      - name2
+                      - name1
+                      - name3
+                      - anrede
+                    x-apidog-ignore-properties: []
+                  messlokationsId:
+                    type: string
+                    description: >-
+                      Angabe der ID der Messlokation,  für die die Stammdaten
+                      gelten. Die ID dient der eindeutigen Identifikation einer
+                      Messlokation und wird spätestens bei der Bestätigung vom
+                      NB mitgeliefert.
+
+                      LOC Z17
+
+                      PI 55002 55078 55600 55602 55601 55603 55013 55607 55611
+                      55620 55626 55632 55638 55175 55180 55173 55177 55690
+                      55643 55648 55653 55658 55663 55669 55035 55095 55060
+                      55039 55040 55041 55042 55043 55044 55168 55169 55170
+                      55051 55052 55053 55074 55075 55076
+
+                      RFF Z19
+
+                      PI 55002 55078 55602 55603 55013 55607 55690 55035 55095
+                      55060 55194 55043 55168 55169 
+
+                      RFF Z46
+
+                      PI 55643 55648 55663 55669 
+
+                      RFF Z19 ORDERS 
+
+                      PI 17121 17134
+
+                      IFTSTA 
+
+                      LOC 172
+
+                      PI 21000 21001 21002 21003 21004 21005 21007 21009 21010
+                      21011 21012 21013 21015 21018 21024 21025 21026 21027
+                      21036 21028 21029 21030 21031 21033 
+
+                      QUOTES
+
+                      LOC 172 
+
+                      PI 15001 15003 15004
+
+                      LOC 172 INVOIC
+
+                      PI 31003 31009 31004  | 
+
+                      <TipInfo>SG4.IDE+24.SG5.LOC+172,
+                      SG4.IDE+24.SG12.NAD+Z05.RFF+Z19</TipInfo>
+                x-apidog-orders:
+                  - ablesekartenempfaenger
+                  - messlokationsId
+                x-apidog-ignore-properties: []
+            MARKTLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  lokationsadresse:
+                    type: object
+                    properties:
+                      zusatzInformation:
+                        type: object
+                        properties:
+                          landescode:
+                            type: string
+                            title: Landescode
+                            description: |-
+                              Der ISO-Landescode als Enumeration | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                            enum:
+                              - AC
+                              - AD
+                              - AE
+                              - AF
+                              - AG
+                              - AI
+                              - AL
+                              - AM
+                              - AN
+                              - AO
+                              - AQ
+                              - AR
+                              - AS
+                              - AT
+                              - AU
+                              - AW
+                              - AX
+                              - AZ
+                              - BA
+                              - BB
+                              - BD
+                              - BE
+                              - BF
+                              - BG
+                              - BH
+                              - BI
+                              - BJ
+                              - BL
+                              - BM
+                              - BN
+                              - BO
+                              - BQ
+                              - BR
+                              - BS
+                              - BT
+                              - BU
+                              - BV
+                              - BW
+                              - BY
+                              - BZ
+                              - CA
+                              - CC
+                              - CD
+                              - CF
+                              - CG
+                              - CH
+                              - CI
+                              - CK
+                              - CL
+                              - CM
+                              - CN
+                              - CO
+                              - CP
+                              - CR
+                              - CS
+                              - CU
+                              - CV
+                              - CW
+                              - CX
+                              - CY
+                              - CZ
+                              - DE
+                              - DG
+                              - DJ
+                              - DK
+                              - DM
+                              - DO
+                              - DZ
+                              - EA
+                              - EC
+                              - EE
+                              - EG
+                              - EH
+                              - ER
+                              - ES
+                              - ET
+                              - EU
+                              - FI
+                              - FJ
+                              - FK
+                              - FM
+                              - FO
+                              - FR
+                              - FX
+                              - GA
+                              - GB
+                              - GD
+                              - GE
+                              - GF
+                              - GG
+                              - GH
+                              - GI
+                              - GL
+                              - GM
+                              - GN
+                              - GP
+                              - GQ
+                              - GR
+                              - GS
+                              - GT
+                              - GU
+                              - GW
+                              - GY
+                              - HK
+                              - HM
+                              - HN
+                              - HR
+                              - HT
+                              - HU
+                              - IC
+                              - ID
+                              - IE
+                              - IL
+                              - IM
+                              - IN
+                              - IO
+                              - IQ
+                              - IR
+                              - IS
+                              - IT
+                              - JE
+                              - JM
+                              - JO
+                              - JP
+                              - KE
+                              - KG
+                              - KH
+                              - KI
+                              - KM
+                              - KN
+                              - KP
+                              - KR
+                              - KW
+                              - KY
+                              - KZ
+                              - LA
+                              - LB
+                              - LC
+                              - LI
+                              - LK
+                              - LR
+                              - LS
+                              - LT
+                              - LU
+                              - LV
+                              - LY
+                              - MA
+                              - MC
+                              - MD
+                              - ME
+                              - MF
+                              - MG
+                              - MH
+                              - MK
+                              - ML
+                              - MM
+                              - MN
+                              - MO
+                              - MP
+                              - MQ
+                              - MR
+                              - MS
+                              - MT
+                              - MU
+                              - MV
+                              - MW
+                              - MX
+                              - MY
+                              - MZ
+                              - NA
+                              - NC
+                              - NE
+                              - NF
+                              - NG
+                              - NI
+                              - NL
+                              - 'NO'
+                              - NP
+                              - NR
+                              - NT
+                              - NU
+                              - NZ
+                              - OM
+                              - PA
+                              - PE
+                              - PF
+                              - PG
+                              - PH
+                              - PK
+                              - PL
+                              - PM
+                              - PN
+                              - PR
+                              - PS
+                              - PT
+                              - PW
+                              - PY
+                              - QA
+                              - RE
+                              - RO
+                              - RS
+                              - RU
+                              - RW
+                              - SA
+                              - SB
+                              - SC
+                              - SD
+                              - SE
+                              - SF
+                              - SG
+                              - SH
+                              - SI
+                              - SJ
+                              - SK
+                              - SL
+                              - SM
+                              - SN
+                              - SO
+                              - SR
+                              - SS
+                              - ST
+                              - SU
+                              - SV
+                              - SX
+                              - SY
+                              - SZ
+                              - TA
+                              - TC
+                              - TD
+                              - TF
+                              - TG
+                              - TJ
+                              - TK
+                              - TL
+                              - TM
+                              - TN
+                              - TO
+                              - TP
+                              - TR
+                              - TT
+                              - TV
+                              - TW
+                              - TZ
+                              - UA
+                              - UG
+                              - UK
+                              - UM
+                              - US
+                              - UY
+                              - UZ
+                              - VA
+                              - VC
+                              - VE
+                              - VG
+                              - VI
+                              - VN
+                              - VU
+                              - WF
+                              - WS
+                              - XK
+                              - YE
+                              - YT
+                              - YU
+                              - ZA
+                              - ZM
+                              - ZR
+                              - ZW
+                            x-apidog-folder: Bo4e/ENUM
+                          postleitzahl:
+                            type: string
+                            description: |-
+                              Postleitzahl | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          strasse:
+                            type: string
+                            description: |-
+                              Strasse | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          zusatz5:
+                            type: string
+                            description: |-
+                              Adresszusatz 5 | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          zusatz4:
+                            type: string
+                            description: |-
+                              Adresszusatz 4 | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          ortsteil:
+                            type: string
+                            description: |-
+                              Ortsteil | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          postfach:
+                            type: string
+                            description: |-
+                              Postfach | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          hausnummer:
+                            type: string
+                            description: |-
+                              Hausnummer und Ergänzung | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          zusatz2:
+                            type: string
+                            description: |-
+                              Adresszusatz 2 | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          zusatz3:
+                            type: string
+                            description: |-
+                              Adresszusatz 3 | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          ort:
+                            type: object
+                            title: Sort
+                            description: |-
+
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                            x-apidog-orders: []
+                            properties: {}
+                            x-apidog-ignore-properties: []
+                          zusatz1:
+                            type: string
+                            description: |-
+                              Adresszusatz 1 | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                        x-apidog-orders:
+                          - landescode
+                          - postleitzahl
+                          - strasse
+                          - zusatz5
+                          - zusatz4
+                          - ortsteil
+                          - postfach
+                          - hausnummer
+                          - zusatz2
+                          - zusatz3
+                          - ort
+                          - zusatz1
+                        x-apidog-ignore-properties: []
+                    x-apidog-orders:
+                      - zusatzInformation
+                    x-apidog-ignore-properties: []
+                  marktlokationsId:
+                    type: string
+                    description: >-
+                      Die ID der Marktlokation der der zu sperrende Zähler
+                      zugeordnet ist. | 
+
+                      <TipInfo>SG4.IDE+24.SG5.LOC+172</TipInfo>
+                  zaehlwerke:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        konzessionsabgabe:
+                          type: object
+                          properties:
+                            kosten:
+                              type: number
+                              description: >-
+                                Konzessionsabgabe in Euro/kWh | 
+
+                                <TipInfo>SG4.IDE+24.SG8.SEQ+Z07.SG10.CCI+++Z08.CAV</TipInfo>
+                              format: float
+                            satz:
+                              type: string
+                              title: AbgabeArt
+                              description: >-
+                                Gruppen der KAV
+
+                                CAV KAS | 
+
+                                <TipInfo>SG4.IDE+24.SG8.SEQ+Z07.SG10.CCI+++Z08.CAV</TipInfo>
+                              enum:
+                                - KAS
+                                - SA
+                                - SAS
+                                - TA
+                                - TAS
+                                - TK
+                                - TKS
+                                - TS
+                                - TSS
+                              x-apidog-enum:
+                                - value: KAS
+                                  name: >-
+                                    für alle konzessionsvertraglichen
+                                    Sonderregelungen, die nicht in die
+                                    Systematik der KAV eingegliedert sind
+                                  description: KAS
+                                - value: SA
+                                  name: >-
+                                    Sondervertragskunden < 1 kV nach § 2 (7) und
+                                    > 1 kV, Preis nach § 2 (3) (für Strom 0,11
+                                    ct/ kWh und für Gas 0,03 ct/kWh)
+                                  description: SA
+                                - value: SAS
+                                  name: >-
+                                    Kennzeichnung, dass ein abweichender Preis
+                                    für Sondervertragskunden vorliegt
+                                  description: SAS
+                                - value: TA
+                                  name: >-
+                                    Tarifkunden, für Strom § 2. (2) 1b HT bzw.
+                                    ET (hohe KA) und für Gas § 2 (2) 2b
+                                  description: TA
+                                - value: TAS
+                                  name: >-
+                                    Kennzeichnung, dass ein abweichender Preis
+                                    für Tarifkunden vorliegt
+                                  description: TAS
+                                - value: TK
+                                  name: >-
+                                    für Gas nach KAV § 2 (2) 2a bei
+                                    ausschließlicher Nutzung zum Kochen und
+                                    Warmwassererzeugung
+                                  description: TK
+                                - value: TKS
+                                  name: >-
+                                    Kennzeichnung, wenn nach KAV § 2 (2) 2a ein
+                                    anderer Preis zu verwenden ist
+                                  description: TKS
+                                - value: TS
+                                  name: ''
+                                  description: ''
+                                - value: TSS
+                                  name: ''
+                                  description: ''
+                              x-apidog-folder: Bo4e/ENUM
+                            kategorie:
+                              type: string
+                              title: Anfragekategorie
+                              description: >-
+                                Anfragekategorie | 
+
+                                <TipInfo>SG4.IDE+24.SG8.SEQ+Z07.SG10.CCI+++Z08.CAV</TipInfo>
+                              enum:
+                                - PROZESSDATENBERICHT
+                                - GERAETEUEBERNAHME
+                                - WEITERVERPFLICHTUNG_BETRIEB_MELO
+                                - AENDERUNG_MELO
+                                - STAMMDATEN_MALO_ODER_MELO
+                                - BILANZIERTE_MENGE_MEHR_MINDER_MENGEN
+                                - ALLOKATIONSLISTE_MEHR_MINDER_MENGEN
+                                - ENERGIEMENGE_UND_LEISTUNGSMAXIMUM
+                                - ABRECHNUNG_MESSSTELLENBETRIEB_MSB_AN_LF
+                                - >-
+                                  AENDERUNG_PROGNOSEGRUNDLAGE_GERAETEKONFIGURATION
+                                - AENDERUNG_GERAETEKONFIGURATION
+                                - REKLAMATION_VON_WERTEN
+                                - LASTGANG_MALO_TRANCHE
+                                - SPERRUNG
+                                - ENTSPERRUNG
+                                - REKLAMATION_ZAEHLZEITDEFINITION
+                                - ZEITREIHEN_IM_RAHMEN_BILANZKREISABRECHNUNG
+                                - GERAETEWECHSELABSICHT
+                                - AENDERUNG_KONZESSIONSABGABE
+                                - AENDERUNG_ZAEHLZEITDEFINITION
+                                - UEBERMITTLUNG_WERTE_AN_ESA
+                                - AENDERUNG
+                                - BILANZKREISZUORDNUNGSLISTE
+                                - CLEARINGLISTE
+                                - NORMIERTES_PROFIL_PROFILSCHAR
+                                - REDISPATCH_EINZELZEITREIHE_AUSFALLARBEIT
+                                - REKLAMATION_PROFIL_PROFILSCHAR
+                                - STAMMDATEN_MALO
+                                - STAMMDATEN_MELO
+                                - STAMMDATEN_TRANCHE
+                                - BEENDIGUNG_EINER_KONFIGURATION
+                                - BESTELLUNG_EINER_KONFIGURATION
+                                - BESTELLUNG_EINES_ANGEBOTS_EINER_KONFIGURATION
+                                - REKLAMATION_EINER_KONFIGURATION
+                                - >-
+                                  BESTELLUNG_AENDERUNG_NETZENTGELTE_NETZORIENTIERTER_STEUERUNGSMOEGLICHKEIT
+                                - AENDERUNG_DER_TECHNIK_DER_LOKATION
+                                - AENDERUNG_INDIVIDUELLER_KONFIGURATION
+                                - BESTELLUNG_AENDERUNG_ABRECHNUNGSDATEN
+                                - >-
+                                  EINRICHTUNG_KONFIGURATION_AUFGRUND_ZUORDNUNG_LF
+                                - REKLAMATION_DEFINITION
+                              x-apidog-folder: Bo4e/ENUM
+                          x-apidog-orders:
+                            - kosten
+                            - satz
+                            - kategorie
+                          x-apidog-ignore-properties: []
+                      x-apidog-orders:
+                        - konzessionsabgabe
+                      x-apidog-ignore-properties: []
+                x-apidog-orders:
+                  - lokationsadresse
+                  - marktlokationsId
+                  - zaehlwerke
+                x-apidog-ignore-properties: []
+            ENERGIELIEFERVERTRAG:
+              type: array
+              items:
+                type: object
+                properties:
+                  vertragspartner2:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        hausnummer:
+                          type: string
+                          description: |-
+                            Hausnummer und Ergänzung | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        postfach:
+                          type: string
+                          description: |-
+                            Postfach | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        name3:
+                          type: string
+                          description: >-
+                            Dritter Teil des Namens. Hier können weitere
+                            Ergänzungen zum Firmennamen oder bei Privatpersonen
+                            Zusätze zum  Namen dargestellt werden. Beispiele:
+                            und Afrika oder Sängerin | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        landescode:
+                          type: string
+                          title: Landescode
+                          description: |-
+                            Der ISO-Landescode als Enumeration | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                          enum:
+                            - AC
+                            - AD
+                            - AE
+                            - AF
+                            - AG
+                            - AI
+                            - AL
+                            - AM
+                            - AN
+                            - AO
+                            - AQ
+                            - AR
+                            - AS
+                            - AT
+                            - AU
+                            - AW
+                            - AX
+                            - AZ
+                            - BA
+                            - BB
+                            - BD
+                            - BE
+                            - BF
+                            - BG
+                            - BH
+                            - BI
+                            - BJ
+                            - BL
+                            - BM
+                            - BN
+                            - BO
+                            - BQ
+                            - BR
+                            - BS
+                            - BT
+                            - BU
+                            - BV
+                            - BW
+                            - BY
+                            - BZ
+                            - CA
+                            - CC
+                            - CD
+                            - CF
+                            - CG
+                            - CH
+                            - CI
+                            - CK
+                            - CL
+                            - CM
+                            - CN
+                            - CO
+                            - CP
+                            - CR
+                            - CS
+                            - CU
+                            - CV
+                            - CW
+                            - CX
+                            - CY
+                            - CZ
+                            - DE
+                            - DG
+                            - DJ
+                            - DK
+                            - DM
+                            - DO
+                            - DZ
+                            - EA
+                            - EC
+                            - EE
+                            - EG
+                            - EH
+                            - ER
+                            - ES
+                            - ET
+                            - EU
+                            - FI
+                            - FJ
+                            - FK
+                            - FM
+                            - FO
+                            - FR
+                            - FX
+                            - GA
+                            - GB
+                            - GD
+                            - GE
+                            - GF
+                            - GG
+                            - GH
+                            - GI
+                            - GL
+                            - GM
+                            - GN
+                            - GP
+                            - GQ
+                            - GR
+                            - GS
+                            - GT
+                            - GU
+                            - GW
+                            - GY
+                            - HK
+                            - HM
+                            - HN
+                            - HR
+                            - HT
+                            - HU
+                            - IC
+                            - ID
+                            - IE
+                            - IL
+                            - IM
+                            - IN
+                            - IO
+                            - IQ
+                            - IR
+                            - IS
+                            - IT
+                            - JE
+                            - JM
+                            - JO
+                            - JP
+                            - KE
+                            - KG
+                            - KH
+                            - KI
+                            - KM
+                            - KN
+                            - KP
+                            - KR
+                            - KW
+                            - KY
+                            - KZ
+                            - LA
+                            - LB
+                            - LC
+                            - LI
+                            - LK
+                            - LR
+                            - LS
+                            - LT
+                            - LU
+                            - LV
+                            - LY
+                            - MA
+                            - MC
+                            - MD
+                            - ME
+                            - MF
+                            - MG
+                            - MH
+                            - MK
+                            - ML
+                            - MM
+                            - MN
+                            - MO
+                            - MP
+                            - MQ
+                            - MR
+                            - MS
+                            - MT
+                            - MU
+                            - MV
+                            - MW
+                            - MX
+                            - MY
+                            - MZ
+                            - NA
+                            - NC
+                            - NE
+                            - NF
+                            - NG
+                            - NI
+                            - NL
+                            - 'NO'
+                            - NP
+                            - NR
+                            - NT
+                            - NU
+                            - NZ
+                            - OM
+                            - PA
+                            - PE
+                            - PF
+                            - PG
+                            - PH
+                            - PK
+                            - PL
+                            - PM
+                            - PN
+                            - PR
+                            - PS
+                            - PT
+                            - PW
+                            - PY
+                            - QA
+                            - RE
+                            - RO
+                            - RS
+                            - RU
+                            - RW
+                            - SA
+                            - SB
+                            - SC
+                            - SD
+                            - SE
+                            - SF
+                            - SG
+                            - SH
+                            - SI
+                            - SJ
+                            - SK
+                            - SL
+                            - SM
+                            - SN
+                            - SO
+                            - SR
+                            - SS
+                            - ST
+                            - SU
+                            - SV
+                            - SX
+                            - SY
+                            - SZ
+                            - TA
+                            - TC
+                            - TD
+                            - TF
+                            - TG
+                            - TJ
+                            - TK
+                            - TL
+                            - TM
+                            - TN
+                            - TO
+                            - TP
+                            - TR
+                            - TT
+                            - TV
+                            - TW
+                            - TZ
+                            - UA
+                            - UG
+                            - UK
+                            - UM
+                            - US
+                            - UY
+                            - UZ
+                            - VA
+                            - VC
+                            - VE
+                            - VG
+                            - VI
+                            - VN
+                            - VU
+                            - WF
+                            - WS
+                            - XK
+                            - YE
+                            - YT
+                            - YU
+                            - ZA
+                            - ZM
+                            - ZR
+                            - ZW
+                          x-apidog-folder: Bo4e/ENUM
+                        postleitzahl:
+                          type: string
+                          description: |-
+                            Postleitzahl | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        name4:
+                          type: string
+                          description: |-
+                            Name 4 | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        exRefWert:
+                          type: string
+                          description: >-
+                            Kundennummer beim Altieferanten - Angabe von
+                            Referenzen für Rückmeldungen und Anfragen
+
+                            PI 55109 55137 
+
+                            ORDERS PI 17101 | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09.RFF+AVC,
+                            SG4.IDE+24.SG12.NAD+Z09.RFF+Z01</TipInfo>
+                        exRefName:
+                          type: string
+                          description: >-
+                            Bezeichnung der externen Referenz, Kundennummer beim
+                            Lieferanten, bezieht sich auf das vorangegangene NAD
+                            Segment
+
+                            RFF AVC
+
+                            PI 55109 55137 
+
+                            RFF AVC Kundennummer beim Lieferanten ORDERS
+
+                            PI 17101 | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09.RFF+AVC,
+                            SG4.IDE+24.SG12.NAD+Z09.RFF+Z01</TipInfo>
+                          enum:
+                            - Kundennummer beim Lieferanten
+                            - Kundennummer beim Altlieferanten
+                        anrede:
+                          type: string
+                          description: >-
+                            Die Anrede für den GePa, Z.B. Herr.
+
+                            Z04 Korrespondenzanschrift des Kunden des
+                            Lieferanten
+
+                            PI 55001 55600 55601 55013 55014 55043 55168 55169
+                            | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        ortsteil:
+                          type: string
+                          description: |-
+                            Ortsteil | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        strasse:
+                          type: string
+                          description: |-
+                            Strasse | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        name2:
+                          type: string
+                          description: >-
+                            Zweiter Teil des Namens. Hier kann der eine
+                            Erweiterung zum Firmennamen oder bei Privatpersonen
+                            beispielsweise der Vorname dargestellt werden.
+                            Beispiele: Bereich Süd oder Nina | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        ort:
+                          type: object
+                          title: Sort
+                          description: |-
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                          x-apidog-orders: []
+                          properties: {}
+                          x-apidog-ignore-properties: []
+                        name1:
+                          type: string
+                          description: >-
+                            Erster Teil des Namens. Hier kann der Firmenname
+                            oder bei Privatpersonen beispielsweise der Nachname
+                            dargestellt werden. Beispiele: Yellow Strom GmbH
+                            oder Hagen | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        gewerbekennzeichnung:
+                          type: boolean
+                          description: >-
+                            Kennzeichnung ob es sich um einen
+                            Gewerbe/Unternehmen (gewerbeKennzeichnung = true)
+
+                            oder eine Privatperson handelt.
+                            (gewerbeKennzeichnung = false)
+
+                            Z01 Struktur von Personennamen
+
+                            Z02 Struktur der Firmenbezeichnung | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                      x-apidog-orders:
+                        - hausnummer
+                        - postfach
+                        - name3
+                        - landescode
+                        - postleitzahl
+                        - name4
+                        - exRefWert
+                        - exRefName
+                        - anrede
+                        - ortsteil
+                        - strasse
+                        - name2
+                        - ort
+                        - name1
+                        - gewerbekennzeichnung
+                      x-apidog-ignore-properties: []
+                  korrespondenzpartner:
+                    type: object
+                    properties:
+                      partneradresse:
+                        type: object
+                        properties:
+                          postleitzahl:
+                            type: string
+                            description: |-
+                              Postleitzahl | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                          ort:
+                            type: object
+                            title: Sort
+                            description: |-
+
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                            x-apidog-orders: []
+                            properties: {}
+                            x-apidog-ignore-properties: []
+                          hausnummer:
+                            type: string
+                            description: |-
+                              Hausnummer und Ergänzung | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                          landescode:
+                            type: string
+                            title: Landescode
+                            description: |-
+                              Der ISO-Landescode als Enumeration | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                            enum:
+                              - AC
+                              - AD
+                              - AE
+                              - AF
+                              - AG
+                              - AI
+                              - AL
+                              - AM
+                              - AN
+                              - AO
+                              - AQ
+                              - AR
+                              - AS
+                              - AT
+                              - AU
+                              - AW
+                              - AX
+                              - AZ
+                              - BA
+                              - BB
+                              - BD
+                              - BE
+                              - BF
+                              - BG
+                              - BH
+                              - BI
+                              - BJ
+                              - BL
+                              - BM
+                              - BN
+                              - BO
+                              - BQ
+                              - BR
+                              - BS
+                              - BT
+                              - BU
+                              - BV
+                              - BW
+                              - BY
+                              - BZ
+                              - CA
+                              - CC
+                              - CD
+                              - CF
+                              - CG
+                              - CH
+                              - CI
+                              - CK
+                              - CL
+                              - CM
+                              - CN
+                              - CO
+                              - CP
+                              - CR
+                              - CS
+                              - CU
+                              - CV
+                              - CW
+                              - CX
+                              - CY
+                              - CZ
+                              - DE
+                              - DG
+                              - DJ
+                              - DK
+                              - DM
+                              - DO
+                              - DZ
+                              - EA
+                              - EC
+                              - EE
+                              - EG
+                              - EH
+                              - ER
+                              - ES
+                              - ET
+                              - EU
+                              - FI
+                              - FJ
+                              - FK
+                              - FM
+                              - FO
+                              - FR
+                              - FX
+                              - GA
+                              - GB
+                              - GD
+                              - GE
+                              - GF
+                              - GG
+                              - GH
+                              - GI
+                              - GL
+                              - GM
+                              - GN
+                              - GP
+                              - GQ
+                              - GR
+                              - GS
+                              - GT
+                              - GU
+                              - GW
+                              - GY
+                              - HK
+                              - HM
+                              - HN
+                              - HR
+                              - HT
+                              - HU
+                              - IC
+                              - ID
+                              - IE
+                              - IL
+                              - IM
+                              - IN
+                              - IO
+                              - IQ
+                              - IR
+                              - IS
+                              - IT
+                              - JE
+                              - JM
+                              - JO
+                              - JP
+                              - KE
+                              - KG
+                              - KH
+                              - KI
+                              - KM
+                              - KN
+                              - KP
+                              - KR
+                              - KW
+                              - KY
+                              - KZ
+                              - LA
+                              - LB
+                              - LC
+                              - LI
+                              - LK
+                              - LR
+                              - LS
+                              - LT
+                              - LU
+                              - LV
+                              - LY
+                              - MA
+                              - MC
+                              - MD
+                              - ME
+                              - MF
+                              - MG
+                              - MH
+                              - MK
+                              - ML
+                              - MM
+                              - MN
+                              - MO
+                              - MP
+                              - MQ
+                              - MR
+                              - MS
+                              - MT
+                              - MU
+                              - MV
+                              - MW
+                              - MX
+                              - MY
+                              - MZ
+                              - NA
+                              - NC
+                              - NE
+                              - NF
+                              - NG
+                              - NI
+                              - NL
+                              - 'NO'
+                              - NP
+                              - NR
+                              - NT
+                              - NU
+                              - NZ
+                              - OM
+                              - PA
+                              - PE
+                              - PF
+                              - PG
+                              - PH
+                              - PK
+                              - PL
+                              - PM
+                              - PN
+                              - PR
+                              - PS
+                              - PT
+                              - PW
+                              - PY
+                              - QA
+                              - RE
+                              - RO
+                              - RS
+                              - RU
+                              - RW
+                              - SA
+                              - SB
+                              - SC
+                              - SD
+                              - SE
+                              - SF
+                              - SG
+                              - SH
+                              - SI
+                              - SJ
+                              - SK
+                              - SL
+                              - SM
+                              - SN
+                              - SO
+                              - SR
+                              - SS
+                              - ST
+                              - SU
+                              - SV
+                              - SX
+                              - SY
+                              - SZ
+                              - TA
+                              - TC
+                              - TD
+                              - TF
+                              - TG
+                              - TJ
+                              - TK
+                              - TL
+                              - TM
+                              - TN
+                              - TO
+                              - TP
+                              - TR
+                              - TT
+                              - TV
+                              - TW
+                              - TZ
+                              - UA
+                              - UG
+                              - UK
+                              - UM
+                              - US
+                              - UY
+                              - UZ
+                              - VA
+                              - VC
+                              - VE
+                              - VG
+                              - VI
+                              - VN
+                              - VU
+                              - WF
+                              - WS
+                              - XK
+                              - YE
+                              - YT
+                              - YU
+                              - ZA
+                              - ZM
+                              - ZR
+                              - ZW
+                            x-apidog-folder: Bo4e/ENUM
+                          ortsteil:
+                            type: string
+                            description: |-
+                              Ortsteil | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                          postfach:
+                            type: string
+                            description: |-
+                              Postfach | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                          strasse:
+                            type: string
+                            description: |-
+                              Strasse | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                        x-apidog-orders:
+                          - postleitzahl
+                          - ort
+                          - hausnummer
+                          - landescode
+                          - ortsteil
+                          - postfach
+                          - strasse
+                        x-apidog-ignore-properties: []
+                      gewerbekennzeichnung:
+                        type: boolean
+                        description: >-
+                          Kennzeichnung ob es sich um einen Gewerbe/Unternehmen
+                          (gewerbeKennzeichnung = true)
+
+                          oder eine Privatperson handelt. (gewerbeKennzeichnung
+                          = false)
+
+                          Z01 Struktur von Personennamen
+
+                          Z02 Struktur der Firmenbezeichnung | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                      name2:
+                        type: string
+                        description: >-
+                          Zweiter Teil des Namens. Hier kann der eine
+                          Erweiterung zum Firmennamen oder bei Privatpersonen
+                          beispielsweise der Vorname dargestellt werden.
+                          Beispiele: Bereich Süd oder Nina | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                      anrede:
+                        type: string
+                        description: |-
+                          Die Anrede für den GePa, Z.B. Herr.
+                          Z04 Korrespondenzanschrift des Kunden des Lieferanten
+                          PI 55001 55600 55601 55013 55014 55043 55168 55169 | 
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                      name1:
+                        type: string
+                        description: >-
+                          Erster Teil des Namens. Hier kann der Firmenname oder
+                          bei Privatpersonen beispielsweise der Nachname
+                          dargestellt werden. Beispiele: Yellow Strom GmbH oder
+                          Hagen | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                      name4:
+                        type: string
+                        description: |-
+                          Name 4 | 
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                      name3:
+                        type: string
+                        description: >-
+                          Dritter Teil des Namens. Hier können weitere
+                          Ergänzungen zum Firmennamen oder bei Privatpersonen
+                          Zusätze zum  Namen dargestellt werden. Beispiele: und
+                          Afrika oder Sängerin | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                    x-apidog-orders:
+                      - partneradresse
+                      - gewerbekennzeichnung
+                      - name2
+                      - anrede
+                      - name1
+                      - name4
+                      - name3
+                    x-apidog-ignore-properties: []
+                  vertragskonditionen:
+                    type: object
+                    properties:
+                      abrechnungsintervall:
+                        type: integer
+                        description: |-
+                          Abrechnungsintervall des LF in Monaten
+                          DTM Z20
+                          PI 44109 44137 44138 44001 44002 44014  | 
+                          <TipInfo>SG4.IDE+24.SG6.RFF+Z18.DTM+Z20</TipInfo>
+                    x-apidog-orders:
+                      - abrechnungsintervall
+                    x-apidog-ignore-properties: []
+                x-apidog-orders:
+                  - vertragspartner2
+                  - korrespondenzpartner
+                  - vertragskonditionen
+                x-apidog-ignore-properties: []
+            BILANZIERUNG:
+              type: array
+              items:
+                type: object
+                properties:
+                  bilanzkreis:
+                    type: object
+                    title: Bilanzkreis
+                    description: |-
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI+Z19</TipInfo>
+                    x-apidog-orders: []
+                    properties: {}
+                    x-apidog-ignore-properties: []
+                  fallgruppenzuordnung:
+                    type: string
+                    title: Fallgruppenzuordnung
+                    description: |-
+                      Fallgruppenzuordnung | 
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI+++Z17</TipInfo>
+                    enum:
+                      - GABI_RLMmT
+                      - GABI_RLMoT
+                      - GABI_RLMNEV
+                    x-apidog-enum:
+                      - value: GABI_RLMmT
+                        name: RLM-Kunde in Tagesregime - Exit
+                        description: GABi-RLMmT
+                      - value: GABI_RLMoT
+                        name: GABi-RLMoT
+                        description: RLM-Kunde im Stundenregime - Exit
+                      - value: GABI_RLMNEV
+                        name: >-
+                          Nominierungsersatzverfahren - Exit (Hinweis: Dieser
+                          Code darf nur für Liefermonate vor dem 01.10.2016
+                          genutzt werden)
+                        description: GABi-RLMNEV
+                    x-apidog-folder: Bo4e/ENUM
+                  lastprofile:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        verfahren:
+                          type: string
+                          title: Profilverfahren
+                          description: >-
+                            Profilverfahren | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z35.SG10.CCI+Z12</TipInfo>
+                          enum:
+                            - SYNTHETISCH
+                            - ANALYTISCH
+                          x-apidog-folder: Bo4e/ENUM
+                        bezeichnung:
+                          type: string
+                          description: >-
+                            Externe Bezeichnung | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z35.SG10.CCI+Z12.CAV</TipInfo>
+                        herausgeber:
+                          type: string
+                          title: Herausgeber
+                          description: >-
+                            Herausgeber | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z35.SG10.CCI+Z12.CAV</TipInfo>
+                          enum:
+                            - NB
+                            - BDEW
+                            - TUM
+                          x-apidog-enum:
+                            - value: NB
+                              name: Vergeben vom Händler (hier Netzbetreiber)
+                              description: '89'
+                            - value: BDEW
+                              name: >-
+                                DE, BDEW (Bundesverband der Energie- und
+                                Wasserwirtschaft e.V.)
+                              description: '293'
+                            - value: TUM
+                              name: ''
+                              description: ''
+                          x-apidog-folder: Bo4e/ENUM
+                      x-apidog-orders:
+                        - verfahren
+                        - bezeichnung
+                        - herausgeber
+                      x-apidog-ignore-properties: []
+                  jahresverbrauchsprognose:
+                    type: object
+                    properties:
+                      einheit:
+                        type: string
+                        title: Mengeneinheit
+                        description: >-
+                          Einheit: Messgrößen, die per Messung oder Vorgabe
+                          ermittelt werden können | 
+
+                          <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG9.QTY+31</TipInfo>
+                        enum:
+                          - W
+                          - WH
+                          - KW
+                          - KWH
+                          - KVARH
+                          - MW
+                          - MWH
+                          - STUECK
+                          - KUBIKMETER
+                          - STUNDE
+                          - TAG
+                          - MONAT
+                          - JAHR
+                          - PROZENT
+                          - ANZAHL
+                          - VAR
+                          - KVAR
+                          - VARH
+                          - KWHK
+                          - Z16
+                          - KWT
+                        x-apidog-enum:
+                          - value: W
+                            name: ''
+                            description: ''
+                          - value: WH
+                            name: ''
+                            description: ''
+                          - value: KW
+                            name: ''
+                            description: ''
+                          - value: KWH
+                            name: Kilowattstunde
+                            description: KWH
+                          - value: KVARH
+                            name: ''
+                            description: ''
+                          - value: MW
+                            name: ''
+                            description: ''
+                          - value: MWH
+                            name: ''
+                            description: ''
+                          - value: STUECK
+                            name: Stück
+                            description: H87
+                          - value: KUBIKMETER
+                            name: ''
+                            description: ''
+                          - value: STUNDE
+                            name: ''
+                            description: ''
+                          - value: TAG
+                            name: Tag
+                            description: ZD8
+                          - value: MONAT
+                            name: ''
+                            description: ''
+                          - value: JAHR
+                            name: ''
+                            description: ''
+                          - value: PROZENT
+                            name: Prozent
+                            description: P1
+                          - value: ANZAHL
+                            name: ''
+                            description: ''
+                          - value: VAR
+                            name: ''
+                            description: ''
+                          - value: KVAR
+                            name: ''
+                            description: ''
+                          - value: VARH
+                            name: ''
+                            description: ''
+                          - value: KWHK
+                            name: ''
+                            description: ''
+                          - value: Z16
+                            name: kWh/K (Kilowatt-Stunde/Kelvin)
+                            description: Z16
+                          - value: KWT
+                            name: Kilowatt
+                            description: ''
+                        x-apidog-folder: Bo4e/ENUM
+                      wert:
+                        type: object
+                        title: Schwellwert
+                        description: |-
+
+                          <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG9.QTY+31</TipInfo>
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                    x-apidog-orders:
+                      - einheit
+                      - wert
+                    x-apidog-ignore-properties: []
+                  kundenwert:
+                    type: object
+                    properties:
+                      wert:
+                        type: object
+                        title: Schwellwert
+                        description: |-
+
+                          <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG9.QTY+Y02</TipInfo>
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                    x-apidog-orders:
+                      - wert
+                    x-apidog-ignore-properties: []
+                x-apidog-orders:
+                  - bilanzkreis
+                  - fallgruppenzuordnung
+                  - lastprofile
+                  - jahresverbrauchsprognose
+                  - kundenwert
+                x-apidog-ignore-properties: []
+            ZAEHLER:
+              type: array
+              items:
+                type: object
+                properties:
+                  zaehlernummer:
+                    type: string
+                    description: >-
+                      Die Nummer des zu sperrenden Zählers | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z03.SG10.CCI+++E13.CAV+Z30</TipInfo>
+                x-apidog-orders:
+                  - zaehlernummer
+                x-apidog-ignore-properties: []
+            NETZNUTZUNGSVERTRAG:
+              type: array
+              items:
+                type: object
+                properties:
+                  vertragskonditionen:
+                    type: object
+                    properties:
+                      netznutzungsvertrag:
+                        type: string
+                        title: Netznutzungsvertrag
+                        description: >-
+                          Netznutzungsvertrag | 
+
+                          <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI+++Z88.CAV+Z74</TipInfo>
+                        enum:
+                          - KUNDEN_NB
+                          - LIEFERANTEN_NB
+                        x-apidog-enum:
+                          - value: KUNDEN_NB
+                            name: Direkter Vertrag zwischen Kunden und NB
+                            description: Z08
+                          - value: LIEFERANTEN_NB
+                            name: Vertrag zwischen Lieferanten und NB
+                            description: Z09
+                        x-apidog-folder: Bo4e/ENUM
+                      netznutzungszahler:
+                        type: string
+                        title: Netznutzungszahler
+                        description: >-
+                          Netznutzungszahler | 
+
+                          <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI+++Z88.CAV+Z73</TipInfo>
+                        enum:
+                          - KUNDE
+                          - LIEFERANT
+                        x-apidog-enum:
+                          - value: KUNDE
+                            name: Kunde
+                            description: Z10
+                          - value: LIEFERANT
+                            name: Lieferant
+                            description: Z11
+                        x-apidog-folder: Bo4e/ENUM
+                      haushaltskunde:
+                        type: boolean
+                        description: >-
+                          Gruppenzuordnung, kennzeichnet ob es sich um einen
+                          Haushaltskunden handelt oder nicht.
+
+                          Z15 Haushaltskunde gem. EnWG
+
+                          Z18 Kein Haushaltskunde gem. EnWG
+
+                          CCI Z15
+
+                          PI 55001 55600 55013 55014 55109 55137  | 
+
+                          <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI</TipInfo>
+                    x-apidog-orders:
+                      - netznutzungsvertrag
+                      - netznutzungszahler
+                      - haushaltskunde
+                    x-apidog-ignore-properties: []
+                  vertragsende:
+                    type: string
+                    description: >-
+                      Gibt das Ende der Netznutzung oder einer Zuordnung an. 
+
+                      DTM 93
+
+                      PI 55016 55017 55001 55002 55600 55602 55013 55014 55607
+                      55608 55010 55011 55004 55005 55007 55008 55039 55040
+                      55051 55052 55240 55241 55242 55243 55236 55237 | 
+
+                      <TipInfo>SG4.IDE+24.DTM+93</TipInfo>
+                    format: date-time
+                  vertragsbeginn:
+                    type: string
+                    description: >-
+                      Gibt an, wann der Vertrag oder die Zuordnung beginnt.
+
+                      DTM 92
+
+                      PI 55001 55002 55077 55078 55600 55602 55601 55603 55013
+                      55014 55607 55608 55004 55005 55051 55052 55238 55239
+                      55235 55237 | 
+
+                      <TipInfo>SG4.IDE+24.DTM+92</TipInfo>
+                    format: date-time
+                  gemeinderabatt:
+                    type: integer
+                    description: >-
+                      Gemeinderabatt - Angabe zum Preisnachlass der
+                      Netznutzungsentgelte
+
+                      QTY Z16
+
+                      PI 44112 44139 44142 44001 44002 44013 44014 44035 | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z12.SG9.QTY+Z16</TipInfo>
+                x-apidog-orders:
+                  - vertragskonditionen
+                  - vertragsende
+                  - vertragsbeginn
+                  - gemeinderabatt
+                x-apidog-ignore-properties: []
+          x-apidog-orders:
+            - MESSLOKATION
+            - MARKTLOKATION
+            - ENERGIELIEFERVERTRAG
+            - BILANZIERUNG
+            - ZAEHLER
+            - NETZNUTZUNGSVERTRAG
+          x-apidog-ignore-properties: []
+        transaktionsdaten:
+          type: object
+          properties:
+            nachrichtenreferenznummer:
+              type: string
+              description: |-
+                EDIFact Referenz aus dem UNT Segment / UTILMD UNT+21 | 
+                <TipInfo>UNH</TipInfo>
+            kategorie:
+              type: string
+              title: Anfragekategorie
+              description: |-
+                Anfragekategorie | 
+                <TipInfo>BGM+E01</TipInfo>
+              enum:
+                - PROZESSDATENBERICHT
+                - GERAETEUEBERNAHME
+                - WEITERVERPFLICHTUNG_BETRIEB_MELO
+                - AENDERUNG_MELO
+                - STAMMDATEN_MALO_ODER_MELO
+                - BILANZIERTE_MENGE_MEHR_MINDER_MENGEN
+                - ALLOKATIONSLISTE_MEHR_MINDER_MENGEN
+                - ENERGIEMENGE_UND_LEISTUNGSMAXIMUM
+                - ABRECHNUNG_MESSSTELLENBETRIEB_MSB_AN_LF
+                - AENDERUNG_PROGNOSEGRUNDLAGE_GERAETEKONFIGURATION
+                - AENDERUNG_GERAETEKONFIGURATION
+                - REKLAMATION_VON_WERTEN
+                - LASTGANG_MALO_TRANCHE
+                - SPERRUNG
+                - ENTSPERRUNG
+                - REKLAMATION_ZAEHLZEITDEFINITION
+                - ZEITREIHEN_IM_RAHMEN_BILANZKREISABRECHNUNG
+                - GERAETEWECHSELABSICHT
+                - AENDERUNG_KONZESSIONSABGABE
+                - AENDERUNG_ZAEHLZEITDEFINITION
+                - UEBERMITTLUNG_WERTE_AN_ESA
+                - AENDERUNG
+                - BILANZKREISZUORDNUNGSLISTE
+                - CLEARINGLISTE
+                - NORMIERTES_PROFIL_PROFILSCHAR
+                - REDISPATCH_EINZELZEITREIHE_AUSFALLARBEIT
+                - REKLAMATION_PROFIL_PROFILSCHAR
+                - STAMMDATEN_MALO
+                - STAMMDATEN_MELO
+                - STAMMDATEN_TRANCHE
+                - BEENDIGUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINES_ANGEBOTS_EINER_KONFIGURATION
+                - REKLAMATION_EINER_KONFIGURATION
+                - >-
+                  BESTELLUNG_AENDERUNG_NETZENTGELTE_NETZORIENTIERTER_STEUERUNGSMOEGLICHKEIT
+                - AENDERUNG_DER_TECHNIK_DER_LOKATION
+                - AENDERUNG_INDIVIDUELLER_KONFIGURATION
+                - BESTELLUNG_AENDERUNG_ABRECHNUNGSDATEN
+                - EINRICHTUNG_KONFIGURATION_AUFGRUND_ZUORDNUNG_LF
+                - REKLAMATION_DEFINITION
+              x-apidog-folder: Bo4e/ENUM
+            nachrichtendatum:
+              type: string
+              description: |-
+                Erstellungdatum der EDIFact / DTM+137 | 
+                <TipInfo>DTM+137</TipInfo>
+              format: date-time
+            absender:
+              type: object
+              properties:
+                rufnummern:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      nummerntyp:
+                        type: string
+                        title: Rufnummernart
+                        description: >-
+
+                          <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                        enum:
+                          - RUF_ZENTRALE
+                          - FAX_ZENTRALE
+                          - SAMMELRUF
+                          - SAMMELFAX
+                          - ABTEILUNGRUF
+                          - ABTEILUNGFAX
+                          - RUF_DURCHWAHL
+                          - FAX_DURCHWAHL
+                          - MOBIL_NUMMER
+                        x-apidog-enum:
+                          - value: RUF_ZENTRALE
+                            name: weiteres Telefon
+                            description: AJ
+                          - value: FAX_ZENTRALE
+                            name: ''
+                            description: ''
+                          - value: SAMMELRUF
+                            name: ''
+                            description: ''
+                          - value: SAMMELFAX
+                            name: ''
+                            description: ''
+                          - value: ABTEILUNGRUF
+                            name: ''
+                            description: ''
+                          - value: ABTEILUNGFAX
+                            name: ''
+                            description: ''
+                          - value: RUF_DURCHWAHL
+                            name: ''
+                            description: ''
+                          - value: FAX_DURCHWAHL
+                            name: Telefax
+                            description: FX
+                          - value: MOBIL_NUMMER
+                            name: Handy
+                            description: AL
+                        x-apidog-folder: Bo4e/ENUM
+                      rufnummer:
+                        type: object
+                        title: Rufnummer
+                        description: >-
+
+                          <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                    x-apidog-orders:
+                      - nummerntyp
+                      - rufnummer
+                    x-apidog-ignore-properties: []
+                ansprechpartner:
+                  type: object
+                  properties:
+                    nachname:
+                      type: string
+                      description: |-
+                        Nachname (Familienname) des Ansprechpartners | 
+                        <TipInfo>SG2.NAD+MS.SG3.CTA</TipInfo>
+                    eMailAdresse:
+                      type: string
+                      description: >-
+                        E-Mail Adresse | 
+
+                        <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                  x-apidog-orders:
+                    - nachname
+                    - eMailAdresse
+                  x-apidog-ignore-properties: []
+                rollencodenummer:
+                  type: string
+                  description: |-
+                    Gibt die Codenummer der Marktrolle an - MP ID
+                    NAD Z31 Übertragungsnetzbetreiber ORDERS
+                    PI 17134
+                    NAD DEB Messstellenbetreiber ORDERS
+                    PI 17003 17134 17135
+                    NAD DEB Messstellenbetreiber IFTSTA 
+                    PI 21007 21015 21018 | 
+                    <TipInfo>SG2.NAD+MS, SG2.NAD+MR</TipInfo>
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: |-
+                    Rollencodetyp | 
+                    <TipInfo>SG2.NAD+MS, SG2.NAD+MR</TipInfo>
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+                  x-apidog-enum:
+                    - value: BDEW
+                      name: >-
+                        DE, BDEW (Bundesverband der Energie- und
+                        Wasserwirtschaft e.V.)
+                      description: '293'
+                    - value: GS1
+                      name: GS1
+                      description: '9'
+                    - value: GLN
+                      name: ''
+                      description: ''
+                    - value: DVGW
+                      name: DE, DVGW Service & Consult GmbH
+                      description: '332'
+                  x-apidog-folder: Bo4e/ENUM
+              x-apidog-orders:
+                - rufnummern
+                - ansprechpartner
+                - rollencodenummer
+                - rollencodetyp
+              x-apidog-ignore-properties: []
+            transaktionsgrundergaenzung:
+              type: string
+              description: |-
+                Ergänzung zum Transaktionsgrund / UTILMD STS+7++E01+###+E03 | 
+                <TipInfo>SG4.IDE+24.STS+Z17</TipInfo>
+            dokumentennummer:
+              type: string
+              description: |-
+                EDIFact Referenz aus dem BGM Segment / BGM | 
+                <TipInfo>BGM+E01</TipInfo>
+            transaktionsgrund:
+              type: string
+              description: >-
+                Der Transaktionsgrund beschreibt den Geschäftsvorfall zur
+                Kategorie genauer / UTILMD STS+7++###+ZW4+E03 | 
+
+                <TipInfo>SG4.IDE+24.STS+7</TipInfo>
+            vertragsbeginn:
+              type: string
+              description: >-
+                Gibt an, wann der Vertrag oder die Zuordnung beginnt.
+
+                DTM 92
+
+                PI 55001 55002 55077 55078 55600 55602 55601 55603 55013 55014
+                55607 55608 55004 55005 55051 55052 55238 55239 55235 55237 | 
+
+                <TipInfo>SG4.IDE+24.DTM+92</TipInfo>
+              format: date-time
+            vorgangsnummer:
+              type: string
+              description: >-
+                Nummer des Vorgangs / UTILMD UTILTS IDE+24 / INSRPT INVOIC DOC
+                | 
+
+                <TipInfo>SG4.IDE+24</TipInfo>
+            vertragsende:
+              type: string
+              description: >-
+                Gibt das Ende der Netznutzung oder einer Zuordnung an. 
+
+                DTM 93
+
+                PI 55016 55017 55001 55002 55600 55602 55013 55014 55607 55608
+                55010 55011 55004 55005 55007 55008 55039 55040 55051 55052
+                55240 55241 55242 55243 55236 55237 | 
+
+                <TipInfo>SG4.IDE+24.DTM+93</TipInfo>
+              format: date-time
+            pruefidentifikator:
+              type: string
+              description: >-
+                Enthält den Prüfidentifikator aus der EDIFact Kommunikation /
+                RFF+Z13 | 
+
+                <TipInfo>SG4.IDE+24.SG6.RFF+Z13</TipInfo>
+            bilanzkreis:
+              type: array
+              items:
+                type: object
+                properties:
+                  prioritaet:
+                    type: integer
+                    description: |-
+                      prioritaet | 
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI+Z19.CAV</TipInfo>
+                x-apidog-orders:
+                  - prioritaet
+                x-apidog-ignore-properties: []
+            freitext:
+              type: object
+              title: Freitext
+              description: |-
+
+                <TipInfo>SG4.IDE+24.FTX+ACB</TipInfo>
+              x-apidog-orders: []
+              properties: {}
+              x-apidog-ignore-properties: []
+          x-apidog-orders:
+            - nachrichtenreferenznummer
+            - kategorie
+            - nachrichtendatum
+            - absender
+            - transaktionsgrundergaenzung
+            - dokumentennummer
+            - transaktionsgrund
+            - vertragsbeginn
+            - vorgangsnummer
+            - vertragsende
+            - pruefidentifikator
+            - bilanzkreis
+            - freitext
+          x-apidog-ignore-properties: []
+      required:
+        - stammdaten
+        - transaktionsdaten
+      description: 44001 - Anmeldung [LF an NB] UTILMD AHB Gas
+      x-apidog-orders:
+        - stammdaten
+        - transaktionsdaten
+      x-apidog-ignore-properties: []
       x-apidog-folder: ''
     PI_55601:
       type: object

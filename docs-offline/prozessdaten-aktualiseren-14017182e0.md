@@ -109,6 +109,21 @@ components:
             - $ref: '#/components/schemas/PI_55023'
             - $ref: '#/components/schemas/PI_55024'
             - $ref: '#/components/schemas/PI_55022'
+            - $ref: '#/components/schemas/13017_Antwort_Messwerte_Abo'
+            - $ref: '#/components/schemas/PI_55600'
+            - $ref: '#/components/schemas/PI_55601'
+            - $ref: '#/components/schemas/PI_55602'
+            - $ref: '#/components/schemas/PI_55603'
+            - $ref: '#/components/schemas/PI_55604'
+            - $ref: '#/components/schemas/PI_55605'
+            - $ref: >-
+                #/components/schemas/44036_Information_%C3%BCber_existierende_Zuordnung
+            - $ref: '#/components/schemas/44002_Best%C3%A4tigung_der_Anmeldung'
+            - $ref: '#/components/schemas/44003_Ablehnung_der_Anmeldung'
+            - $ref: '#/components/schemas/44001_Anmeldung'
+            - $ref: '#/components/schemas/44010_Abmeldungsanfrage'
+            - $ref: '#/components/schemas/44011_Beantwortung_der_Abmeldungsanfrage'
+            - $ref: '#/components/schemas/44012_Beantwortung_der_Abmeldungsanfrage'
         - $ref: '#/components/schemas/ZUSATZDATEN%20(%20SST%20Aktualisieren)'
       x-apidog-folder: ''
     ZUSATZDATEN ( SST Aktualisieren):
@@ -146,6 +161,12182 @@ components:
         - zusatzdaten
       required:
         - zusatzdaten
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    44012_Beantwortung_der_Abmeldungsanfrage:
+      type: object
+      properties:
+        transaktionsdaten:
+          type: object
+          properties:
+            absender:
+              type: object
+              properties:
+                ansprechpartner:
+                  type: object
+                  properties:
+                    nachname:
+                      type: string
+                      description: |-
+                        Nachname (Familienname) des Ansprechpartners | 
+                        <TipInfo>SG2.NAD+MS.SG3.CTA</TipInfo>
+                    eMailAdresse:
+                      type: string
+                      description: >-
+                        E-Mail Adresse | 
+
+                        <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                  x-apidog-orders:
+                    - nachname
+                    - eMailAdresse
+                  x-apidog-ignore-properties: []
+                rollencodenummer:
+                  type: string
+                  description: |-
+                    Gibt die Codenummer der Marktrolle an - MP ID
+                    NAD Z31 Übertragungsnetzbetreiber ORDERS
+                    PI 17134
+                    NAD DEB Messstellenbetreiber ORDERS
+                    PI 17003 17134 17135
+                    NAD DEB Messstellenbetreiber IFTSTA 
+                    PI 21007 21015 21018 | 
+                    <TipInfo>SG2.NAD+MS, SG2.NAD+MR</TipInfo>
+                rufnummern:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      rufnummer:
+                        type: object
+                        title: Rufnummer
+                        description: >-
+
+                          <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                      nummerntyp:
+                        type: string
+                        title: Rufnummernart
+                        description: >-
+
+                          <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                        enum:
+                          - RUF_ZENTRALE
+                          - FAX_ZENTRALE
+                          - SAMMELRUF
+                          - SAMMELFAX
+                          - ABTEILUNGRUF
+                          - ABTEILUNGFAX
+                          - RUF_DURCHWAHL
+                          - FAX_DURCHWAHL
+                          - MOBIL_NUMMER
+                        x-apidog-enum:
+                          - value: RUF_ZENTRALE
+                            name: weiteres Telefon
+                            description: AJ
+                          - value: FAX_ZENTRALE
+                            name: ''
+                            description: ''
+                          - value: SAMMELRUF
+                            name: ''
+                            description: ''
+                          - value: SAMMELFAX
+                            name: ''
+                            description: ''
+                          - value: ABTEILUNGRUF
+                            name: ''
+                            description: ''
+                          - value: ABTEILUNGFAX
+                            name: ''
+                            description: ''
+                          - value: RUF_DURCHWAHL
+                            name: ''
+                            description: ''
+                          - value: FAX_DURCHWAHL
+                            name: Telefax
+                            description: FX
+                          - value: MOBIL_NUMMER
+                            name: Handy
+                            description: AL
+                        x-apidog-folder: Bo4e/ENUM
+                    x-apidog-orders:
+                      - rufnummer
+                      - nummerntyp
+                    x-apidog-ignore-properties: []
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: |-
+                    Rollencodetyp | 
+                    <TipInfo>SG2.NAD+MS, SG2.NAD+MR</TipInfo>
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+                  x-apidog-enum:
+                    - value: BDEW
+                      name: >-
+                        DE, BDEW (Bundesverband der Energie- und
+                        Wasserwirtschaft e.V.)
+                      description: '293'
+                    - value: GS1
+                      name: GS1
+                      description: '9'
+                    - value: GLN
+                      name: ''
+                      description: ''
+                    - value: DVGW
+                      name: DE, DVGW Service & Consult GmbH
+                      description: '332'
+                  x-apidog-folder: Bo4e/ENUM
+              x-apidog-orders:
+                - ansprechpartner
+                - rollencodenummer
+                - rufnummern
+                - rollencodetyp
+              x-apidog-ignore-properties: []
+            anfragereferenznummer:
+              type: string
+              description: >-
+                Referenz Vorgangsnummer 'aus Anfragenachricht' / ORDERS RFF+TN /
+                IFTSTA RFF+AAV / INSRPT RFF+TN RFF+AAV | 
+
+                <TipInfo>SG4.IDE+24.SG6.RFF+TN</TipInfo>
+            nachrichtendatum:
+              type: string
+              description: |-
+                Erstellungdatum der EDIFact / DTM+137 | 
+                <TipInfo>DTM+137</TipInfo>
+              format: date-time
+            kategorie:
+              type: string
+              title: Anfragekategorie
+              description: |-
+                Anfragekategorie | 
+                <TipInfo>BGM+E02</TipInfo>
+              enum:
+                - PROZESSDATENBERICHT
+                - GERAETEUEBERNAHME
+                - WEITERVERPFLICHTUNG_BETRIEB_MELO
+                - AENDERUNG_MELO
+                - STAMMDATEN_MALO_ODER_MELO
+                - BILANZIERTE_MENGE_MEHR_MINDER_MENGEN
+                - ALLOKATIONSLISTE_MEHR_MINDER_MENGEN
+                - ENERGIEMENGE_UND_LEISTUNGSMAXIMUM
+                - ABRECHNUNG_MESSSTELLENBETRIEB_MSB_AN_LF
+                - AENDERUNG_PROGNOSEGRUNDLAGE_GERAETEKONFIGURATION
+                - AENDERUNG_GERAETEKONFIGURATION
+                - REKLAMATION_VON_WERTEN
+                - LASTGANG_MALO_TRANCHE
+                - SPERRUNG
+                - ENTSPERRUNG
+                - REKLAMATION_ZAEHLZEITDEFINITION
+                - ZEITREIHEN_IM_RAHMEN_BILANZKREISABRECHNUNG
+                - GERAETEWECHSELABSICHT
+                - AENDERUNG_KONZESSIONSABGABE
+                - AENDERUNG_ZAEHLZEITDEFINITION
+                - UEBERMITTLUNG_WERTE_AN_ESA
+                - AENDERUNG
+                - BILANZKREISZUORDNUNGSLISTE
+                - CLEARINGLISTE
+                - NORMIERTES_PROFIL_PROFILSCHAR
+                - REDISPATCH_EINZELZEITREIHE_AUSFALLARBEIT
+                - REKLAMATION_PROFIL_PROFILSCHAR
+                - STAMMDATEN_MALO
+                - STAMMDATEN_MELO
+                - STAMMDATEN_TRANCHE
+                - BEENDIGUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINES_ANGEBOTS_EINER_KONFIGURATION
+                - REKLAMATION_EINER_KONFIGURATION
+                - >-
+                  BESTELLUNG_AENDERUNG_NETZENTGELTE_NETZORIENTIERTER_STEUERUNGSMOEGLICHKEIT
+                - AENDERUNG_DER_TECHNIK_DER_LOKATION
+                - AENDERUNG_INDIVIDUELLER_KONFIGURATION
+                - BESTELLUNG_AENDERUNG_ABRECHNUNGSDATEN
+                - EINRICHTUNG_KONFIGURATION_AUFGRUND_ZUORDNUNG_LF
+                - REKLAMATION_DEFINITION
+              x-apidog-folder: Bo4e/ENUM
+            transaktionsgrund:
+              type: string
+              description: >-
+                Der Transaktionsgrund beschreibt den Geschäftsvorfall zur
+                Kategorie genauer / UTILMD STS+7++###+ZW4+E03 | 
+
+                <TipInfo>SG4.IDE+24.STS+7</TipInfo>
+            vorgangsnummer:
+              type: string
+              description: >-
+                Nummer des Vorgangs / UTILMD UTILTS IDE+24 / INSRPT INVOIC DOC
+                | 
+
+                <TipInfo>SG4.IDE+24</TipInfo>
+            nachrichtenreferenznummer:
+              type: string
+              description: |-
+                EDIFact Referenz aus dem UNT Segment / UTILMD UNT+21 | 
+                <TipInfo>UNH</TipInfo>
+            antwortstatusCodeliste:
+              type: string
+              description: |-
+                Antwortstatus Codeliste / STS+E01 | 
+                <TipInfo>SG4.IDE+24.STS+E01</TipInfo>
+            dokumentennummer:
+              type: string
+              description: |-
+                EDIFact Referenz aus dem BGM Segment / BGM | 
+                <TipInfo>BGM+E02</TipInfo>
+            pruefidentifikator:
+              type: string
+              description: >-
+                Enthält den Prüfidentifikator aus der EDIFact Kommunikation /
+                RFF+Z13 | 
+
+                <TipInfo>SG4.IDE+24.SG6.RFF+Z13</TipInfo>
+            antwortstatus:
+              type: string
+              description: |-
+                Antwortstatus
+                STS E01
+                E15 Zustimmung ohne Korrekturen
+                PI 23004
+                Z29 Ablehnung (kein Vertragsverhältnis mehr vorhanden)
+                ZB8 keine Störung feststellbar
+                PI 23003 | 
+                <TipInfo>SG4.IDE+24.STS+E01</TipInfo>
+          x-apidog-orders:
+            - absender
+            - anfragereferenznummer
+            - nachrichtendatum
+            - kategorie
+            - transaktionsgrund
+            - vorgangsnummer
+            - nachrichtenreferenznummer
+            - antwortstatusCodeliste
+            - dokumentennummer
+            - pruefidentifikator
+            - antwortstatus
+          x-apidog-ignore-properties: []
+        stammdaten:
+          type: object
+          properties:
+            MARKTLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  marktlokationsId:
+                    type: string
+                    description: >-
+                      Die ID der Marktlokation der der zu sperrende Zähler
+                      zugeordnet ist. | 
+
+                      <TipInfo>SG4.IDE+24.SG5.LOC+172</TipInfo>
+                x-apidog-orders:
+                  - marktlokationsId
+                x-apidog-ignore-properties: []
+          x-apidog-orders:
+            - MARKTLOKATION
+          x-apidog-ignore-properties: []
+      required:
+        - transaktionsdaten
+        - stammdaten
+      description: 44012 - Beantwortung der Abmeldungsanfrage [LF an NB] UTILMD AHB Gas
+      x-apidog-orders:
+        - transaktionsdaten
+        - stammdaten
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    44011_Beantwortung_der_Abmeldungsanfrage:
+      type: object
+      properties:
+        transaktionsdaten:
+          type: object
+          properties:
+            absender:
+              type: object
+              properties:
+                ansprechpartner:
+                  type: object
+                  properties:
+                    nachname:
+                      type: string
+                      description: |-
+                        Nachname (Familienname) des Ansprechpartners | 
+                        <TipInfo>SG2.NAD+MS.SG3.CTA</TipInfo>
+                    eMailAdresse:
+                      type: string
+                      description: >-
+                        E-Mail Adresse | 
+
+                        <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                  x-apidog-orders:
+                    - nachname
+                    - eMailAdresse
+                  x-apidog-ignore-properties: []
+                rollencodenummer:
+                  type: string
+                  description: |-
+                    Gibt die Codenummer der Marktrolle an - MP ID
+                    NAD Z31 Übertragungsnetzbetreiber ORDERS
+                    PI 17134
+                    NAD DEB Messstellenbetreiber ORDERS
+                    PI 17003 17134 17135
+                    NAD DEB Messstellenbetreiber IFTSTA 
+                    PI 21007 21015 21018 | 
+                    <TipInfo>SG2.NAD+MS, SG2.NAD+MR</TipInfo>
+                rufnummern:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      rufnummer:
+                        type: object
+                        title: Rufnummer
+                        description: >-
+
+                          <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                      nummerntyp:
+                        type: string
+                        title: Rufnummernart
+                        description: >-
+
+                          <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                        enum:
+                          - RUF_ZENTRALE
+                          - FAX_ZENTRALE
+                          - SAMMELRUF
+                          - SAMMELFAX
+                          - ABTEILUNGRUF
+                          - ABTEILUNGFAX
+                          - RUF_DURCHWAHL
+                          - FAX_DURCHWAHL
+                          - MOBIL_NUMMER
+                        x-apidog-enum:
+                          - value: RUF_ZENTRALE
+                            name: weiteres Telefon
+                            description: AJ
+                          - value: FAX_ZENTRALE
+                            name: ''
+                            description: ''
+                          - value: SAMMELRUF
+                            name: ''
+                            description: ''
+                          - value: SAMMELFAX
+                            name: ''
+                            description: ''
+                          - value: ABTEILUNGRUF
+                            name: ''
+                            description: ''
+                          - value: ABTEILUNGFAX
+                            name: ''
+                            description: ''
+                          - value: RUF_DURCHWAHL
+                            name: ''
+                            description: ''
+                          - value: FAX_DURCHWAHL
+                            name: Telefax
+                            description: FX
+                          - value: MOBIL_NUMMER
+                            name: Handy
+                            description: AL
+                        x-apidog-folder: Bo4e/ENUM
+                    x-apidog-orders:
+                      - rufnummer
+                      - nummerntyp
+                    x-apidog-ignore-properties: []
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: |-
+                    Rollencodetyp | 
+                    <TipInfo>SG2.NAD+MS, SG2.NAD+MR</TipInfo>
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+                  x-apidog-enum:
+                    - value: BDEW
+                      name: >-
+                        DE, BDEW (Bundesverband der Energie- und
+                        Wasserwirtschaft e.V.)
+                      description: '293'
+                    - value: GS1
+                      name: GS1
+                      description: '9'
+                    - value: GLN
+                      name: ''
+                      description: ''
+                    - value: DVGW
+                      name: DE, DVGW Service & Consult GmbH
+                      description: '332'
+                  x-apidog-folder: Bo4e/ENUM
+              x-apidog-orders:
+                - ansprechpartner
+                - rollencodenummer
+                - rufnummern
+                - rollencodetyp
+              x-apidog-ignore-properties: []
+            anfragereferenznummer:
+              type: string
+              description: >-
+                Referenz Vorgangsnummer 'aus Anfragenachricht' / ORDERS RFF+TN /
+                IFTSTA RFF+AAV / INSRPT RFF+TN RFF+AAV | 
+
+                <TipInfo>SG4.IDE+24.SG6.RFF+TN</TipInfo>
+            vertragsende:
+              type: string
+              description: >-
+                Gibt das Ende der Netznutzung oder einer Zuordnung an. 
+
+                DTM 93
+
+                PI 55016 55017 55001 55002 55600 55602 55013 55014 55607 55608
+                55010 55011 55004 55005 55007 55008 55039 55040 55051 55052
+                55240 55241 55242 55243 55236 55237 | 
+
+                <TipInfo>SG4.IDE+24.DTM+93</TipInfo>
+              format: date-time
+            nachrichtenreferenznummer:
+              type: string
+              description: |-
+                EDIFact Referenz aus dem UNT Segment / UTILMD UNT+21 | 
+                <TipInfo>UNH</TipInfo>
+            dokumentennummer:
+              type: string
+              description: |-
+                EDIFact Referenz aus dem BGM Segment / BGM | 
+                <TipInfo>BGM+E02</TipInfo>
+            antwortstatus:
+              type: string
+              description: |-
+                Antwortstatus
+                STS E01
+                E15 Zustimmung ohne Korrekturen
+                PI 23004
+                Z29 Ablehnung (kein Vertragsverhältnis mehr vorhanden)
+                ZB8 keine Störung feststellbar
+                PI 23003 | 
+                <TipInfo>SG4.IDE+24.STS+E01</TipInfo>
+            kategorie:
+              type: string
+              title: Anfragekategorie
+              description: |-
+                Anfragekategorie | 
+                <TipInfo>BGM+E02</TipInfo>
+              enum:
+                - PROZESSDATENBERICHT
+                - GERAETEUEBERNAHME
+                - WEITERVERPFLICHTUNG_BETRIEB_MELO
+                - AENDERUNG_MELO
+                - STAMMDATEN_MALO_ODER_MELO
+                - BILANZIERTE_MENGE_MEHR_MINDER_MENGEN
+                - ALLOKATIONSLISTE_MEHR_MINDER_MENGEN
+                - ENERGIEMENGE_UND_LEISTUNGSMAXIMUM
+                - ABRECHNUNG_MESSSTELLENBETRIEB_MSB_AN_LF
+                - AENDERUNG_PROGNOSEGRUNDLAGE_GERAETEKONFIGURATION
+                - AENDERUNG_GERAETEKONFIGURATION
+                - REKLAMATION_VON_WERTEN
+                - LASTGANG_MALO_TRANCHE
+                - SPERRUNG
+                - ENTSPERRUNG
+                - REKLAMATION_ZAEHLZEITDEFINITION
+                - ZEITREIHEN_IM_RAHMEN_BILANZKREISABRECHNUNG
+                - GERAETEWECHSELABSICHT
+                - AENDERUNG_KONZESSIONSABGABE
+                - AENDERUNG_ZAEHLZEITDEFINITION
+                - UEBERMITTLUNG_WERTE_AN_ESA
+                - AENDERUNG
+                - BILANZKREISZUORDNUNGSLISTE
+                - CLEARINGLISTE
+                - NORMIERTES_PROFIL_PROFILSCHAR
+                - REDISPATCH_EINZELZEITREIHE_AUSFALLARBEIT
+                - REKLAMATION_PROFIL_PROFILSCHAR
+                - STAMMDATEN_MALO
+                - STAMMDATEN_MELO
+                - STAMMDATEN_TRANCHE
+                - BEENDIGUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINES_ANGEBOTS_EINER_KONFIGURATION
+                - REKLAMATION_EINER_KONFIGURATION
+                - >-
+                  BESTELLUNG_AENDERUNG_NETZENTGELTE_NETZORIENTIERTER_STEUERUNGSMOEGLICHKEIT
+                - AENDERUNG_DER_TECHNIK_DER_LOKATION
+                - AENDERUNG_INDIVIDUELLER_KONFIGURATION
+                - BESTELLUNG_AENDERUNG_ABRECHNUNGSDATEN
+                - EINRICHTUNG_KONFIGURATION_AUFGRUND_ZUORDNUNG_LF
+                - REKLAMATION_DEFINITION
+              x-apidog-folder: Bo4e/ENUM
+            transaktionsgrund:
+              type: string
+              description: >-
+                Der Transaktionsgrund beschreibt den Geschäftsvorfall zur
+                Kategorie genauer / UTILMD STS+7++###+ZW4+E03 | 
+
+                <TipInfo>SG4.IDE+24.STS+7</TipInfo>
+            antwortstatusCodeliste:
+              type: string
+              description: |-
+                Antwortstatus Codeliste / STS+E01 | 
+                <TipInfo>SG4.IDE+24.STS+E01</TipInfo>
+            nachrichtendatum:
+              type: string
+              description: |-
+                Erstellungdatum der EDIFact / DTM+137 | 
+                <TipInfo>DTM+137</TipInfo>
+              format: date-time
+            vorgangsnummer:
+              type: string
+              description: >-
+                Nummer des Vorgangs / UTILMD UTILTS IDE+24 / INSRPT INVOIC DOC
+                | 
+
+                <TipInfo>SG4.IDE+24</TipInfo>
+            pruefidentifikator:
+              type: string
+              description: >-
+                Enthält den Prüfidentifikator aus der EDIFact Kommunikation /
+                RFF+Z13 | 
+
+                <TipInfo>SG4.IDE+24.SG6.RFF+Z13</TipInfo>
+          x-apidog-orders:
+            - absender
+            - anfragereferenznummer
+            - vertragsende
+            - nachrichtenreferenznummer
+            - dokumentennummer
+            - antwortstatus
+            - kategorie
+            - transaktionsgrund
+            - antwortstatusCodeliste
+            - nachrichtendatum
+            - vorgangsnummer
+            - pruefidentifikator
+          x-apidog-ignore-properties: []
+        stammdaten:
+          type: object
+          properties:
+            MARKTLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  marktlokationsId:
+                    type: string
+                    description: >-
+                      Die ID der Marktlokation der der zu sperrende Zähler
+                      zugeordnet ist. | 
+
+                      <TipInfo>SG4.IDE+24.SG5.LOC+172</TipInfo>
+                x-apidog-orders:
+                  - marktlokationsId
+                x-apidog-ignore-properties: []
+            NETZNUTZUNGSVERTRAG:
+              type: array
+              items:
+                type: object
+                properties:
+                  vertragsende:
+                    type: string
+                    description: >-
+                      Gibt das Ende der Netznutzung oder einer Zuordnung an. 
+
+                      DTM 93
+
+                      PI 55016 55017 55001 55002 55600 55602 55013 55014 55607
+                      55608 55010 55011 55004 55005 55007 55008 55039 55040
+                      55051 55052 55240 55241 55242 55243 55236 55237 | 
+
+                      <TipInfo>SG4.IDE+24.DTM+93</TipInfo>
+                    format: date-time
+                x-apidog-orders:
+                  - vertragsende
+                x-apidog-ignore-properties: []
+          x-apidog-orders:
+            - MARKTLOKATION
+            - NETZNUTZUNGSVERTRAG
+          x-apidog-ignore-properties: []
+      required:
+        - transaktionsdaten
+        - stammdaten
+      description: 44011 - Beantwortung der Abmeldungsanfrage [LF an NB] UTILMD AHB Gas
+      x-apidog-orders:
+        - transaktionsdaten
+        - stammdaten
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    44010_Abmeldungsanfrage:
+      type: object
+      properties:
+        transaktionsdaten:
+          type: object
+          properties:
+            absender:
+              type: object
+              properties:
+                ansprechpartner:
+                  type: object
+                  properties:
+                    nachname:
+                      type: string
+                      description: |-
+                        Nachname (Familienname) des Ansprechpartners | 
+                        <TipInfo>SG2.NAD+MS.SG3.CTA</TipInfo>
+                    eMailAdresse:
+                      type: string
+                      description: >-
+                        E-Mail Adresse | 
+
+                        <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                  x-apidog-orders:
+                    - nachname
+                    - eMailAdresse
+                  x-apidog-ignore-properties: []
+                rollencodenummer:
+                  type: string
+                  description: |-
+                    Gibt die Codenummer der Marktrolle an - MP ID
+                    NAD Z31 Übertragungsnetzbetreiber ORDERS
+                    PI 17134
+                    NAD DEB Messstellenbetreiber ORDERS
+                    PI 17003 17134 17135
+                    NAD DEB Messstellenbetreiber IFTSTA 
+                    PI 21007 21015 21018 | 
+                    <TipInfo>SG2.NAD+MS, SG2.NAD+MR</TipInfo>
+                rufnummern:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      rufnummer:
+                        type: object
+                        title: Rufnummer
+                        description: >-
+
+                          <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                      nummerntyp:
+                        type: string
+                        title: Rufnummernart
+                        description: >-
+
+                          <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                        enum:
+                          - RUF_ZENTRALE
+                          - FAX_ZENTRALE
+                          - SAMMELRUF
+                          - SAMMELFAX
+                          - ABTEILUNGRUF
+                          - ABTEILUNGFAX
+                          - RUF_DURCHWAHL
+                          - FAX_DURCHWAHL
+                          - MOBIL_NUMMER
+                        x-apidog-enum:
+                          - value: RUF_ZENTRALE
+                            name: weiteres Telefon
+                            description: AJ
+                          - value: FAX_ZENTRALE
+                            name: ''
+                            description: ''
+                          - value: SAMMELRUF
+                            name: ''
+                            description: ''
+                          - value: SAMMELFAX
+                            name: ''
+                            description: ''
+                          - value: ABTEILUNGRUF
+                            name: ''
+                            description: ''
+                          - value: ABTEILUNGFAX
+                            name: ''
+                            description: ''
+                          - value: RUF_DURCHWAHL
+                            name: ''
+                            description: ''
+                          - value: FAX_DURCHWAHL
+                            name: Telefax
+                            description: FX
+                          - value: MOBIL_NUMMER
+                            name: Handy
+                            description: AL
+                        x-apidog-folder: Bo4e/ENUM
+                    x-apidog-orders:
+                      - rufnummer
+                      - nummerntyp
+                    x-apidog-ignore-properties: []
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: |-
+                    Rollencodetyp | 
+                    <TipInfo>SG2.NAD+MS, SG2.NAD+MR</TipInfo>
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+                  x-apidog-enum:
+                    - value: BDEW
+                      name: >-
+                        DE, BDEW (Bundesverband der Energie- und
+                        Wasserwirtschaft e.V.)
+                      description: '293'
+                    - value: GS1
+                      name: GS1
+                      description: '9'
+                    - value: GLN
+                      name: ''
+                      description: ''
+                    - value: DVGW
+                      name: DE, DVGW Service & Consult GmbH
+                      description: '332'
+                  x-apidog-folder: Bo4e/ENUM
+              x-apidog-orders:
+                - ansprechpartner
+                - rollencodenummer
+                - rufnummern
+                - rollencodetyp
+              x-apidog-ignore-properties: []
+            pruefidentifikator:
+              type: string
+              description: >-
+                Enthält den Prüfidentifikator aus der EDIFact Kommunikation /
+                RFF+Z13 | 
+
+                <TipInfo>SG4.IDE+24.SG6.RFF+Z13</TipInfo>
+            vertragsende:
+              type: string
+              description: >-
+                Gibt das Ende der Netznutzung oder einer Zuordnung an. 
+
+                DTM 93
+
+                PI 55016 55017 55001 55002 55600 55602 55013 55014 55607 55608
+                55010 55011 55004 55005 55007 55008 55039 55040 55051 55052
+                55240 55241 55242 55243 55236 55237 | 
+
+                <TipInfo>SG4.IDE+24.DTM+93</TipInfo>
+              format: date-time
+            nachrichtenreferenznummer:
+              type: string
+              description: |-
+                EDIFact Referenz aus dem UNT Segment / UTILMD UNT+21 | 
+                <TipInfo>UNH</TipInfo>
+            dokumentennummer:
+              type: string
+              description: |-
+                EDIFact Referenz aus dem BGM Segment / BGM | 
+                <TipInfo>BGM+E02</TipInfo>
+            kategorie:
+              type: string
+              title: Anfragekategorie
+              description: |-
+                Anfragekategorie | 
+                <TipInfo>BGM+E02</TipInfo>
+              enum:
+                - PROZESSDATENBERICHT
+                - GERAETEUEBERNAHME
+                - WEITERVERPFLICHTUNG_BETRIEB_MELO
+                - AENDERUNG_MELO
+                - STAMMDATEN_MALO_ODER_MELO
+                - BILANZIERTE_MENGE_MEHR_MINDER_MENGEN
+                - ALLOKATIONSLISTE_MEHR_MINDER_MENGEN
+                - ENERGIEMENGE_UND_LEISTUNGSMAXIMUM
+                - ABRECHNUNG_MESSSTELLENBETRIEB_MSB_AN_LF
+                - AENDERUNG_PROGNOSEGRUNDLAGE_GERAETEKONFIGURATION
+                - AENDERUNG_GERAETEKONFIGURATION
+                - REKLAMATION_VON_WERTEN
+                - LASTGANG_MALO_TRANCHE
+                - SPERRUNG
+                - ENTSPERRUNG
+                - REKLAMATION_ZAEHLZEITDEFINITION
+                - ZEITREIHEN_IM_RAHMEN_BILANZKREISABRECHNUNG
+                - GERAETEWECHSELABSICHT
+                - AENDERUNG_KONZESSIONSABGABE
+                - AENDERUNG_ZAEHLZEITDEFINITION
+                - UEBERMITTLUNG_WERTE_AN_ESA
+                - AENDERUNG
+                - BILANZKREISZUORDNUNGSLISTE
+                - CLEARINGLISTE
+                - NORMIERTES_PROFIL_PROFILSCHAR
+                - REDISPATCH_EINZELZEITREIHE_AUSFALLARBEIT
+                - REKLAMATION_PROFIL_PROFILSCHAR
+                - STAMMDATEN_MALO
+                - STAMMDATEN_MELO
+                - STAMMDATEN_TRANCHE
+                - BEENDIGUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINES_ANGEBOTS_EINER_KONFIGURATION
+                - REKLAMATION_EINER_KONFIGURATION
+                - >-
+                  BESTELLUNG_AENDERUNG_NETZENTGELTE_NETZORIENTIERTER_STEUERUNGSMOEGLICHKEIT
+                - AENDERUNG_DER_TECHNIK_DER_LOKATION
+                - AENDERUNG_INDIVIDUELLER_KONFIGURATION
+                - BESTELLUNG_AENDERUNG_ABRECHNUNGSDATEN
+                - EINRICHTUNG_KONFIGURATION_AUFGRUND_ZUORDNUNG_LF
+                - REKLAMATION_DEFINITION
+              x-apidog-folder: Bo4e/ENUM
+            transaktionsgrund:
+              type: string
+              description: >-
+                Der Transaktionsgrund beschreibt den Geschäftsvorfall zur
+                Kategorie genauer / UTILMD STS+7++###+ZW4+E03 | 
+
+                <TipInfo>SG4.IDE+24.STS+7</TipInfo>
+            nachrichtendatum:
+              type: string
+              description: |-
+                Erstellungdatum der EDIFact / DTM+137 | 
+                <TipInfo>DTM+137</TipInfo>
+              format: date-time
+            beteiligterMarktpartner:
+              type: object
+              properties:
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: |-
+                    Rollencodetyp | 
+                    <TipInfo>SG4.IDE+24.SG12.NAD+VY</TipInfo>
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+                  x-apidog-enum:
+                    - value: BDEW
+                      name: >-
+                        DE, BDEW (Bundesverband der Energie- und
+                        Wasserwirtschaft e.V.)
+                      description: '293'
+                    - value: GS1
+                      name: GS1
+                      description: '9'
+                    - value: GLN
+                      name: ''
+                      description: ''
+                    - value: DVGW
+                      name: DE, DVGW Service & Consult GmbH
+                      description: '332'
+                  x-apidog-folder: Bo4e/ENUM
+                rollencodenummer:
+                  type: string
+                  description: |-
+                    Gibt die Codenummer der Marktrolle an - MP ID
+                    NAD Z31 Übertragungsnetzbetreiber ORDERS
+                    PI 17134
+                    NAD DEB Messstellenbetreiber ORDERS
+                    PI 17003 17134 17135
+                    NAD DEB Messstellenbetreiber IFTSTA 
+                    PI 21007 21015 21018 | 
+                    <TipInfo>SG4.IDE+24.SG12.NAD+VY</TipInfo>
+              x-apidog-orders:
+                - rollencodetyp
+                - rollencodenummer
+              x-apidog-ignore-properties: []
+            vorgangsnummer:
+              type: string
+              description: >-
+                Nummer des Vorgangs / UTILMD UTILTS IDE+24 / INSRPT INVOIC DOC
+                | 
+
+                <TipInfo>SG4.IDE+24</TipInfo>
+          x-apidog-orders:
+            - absender
+            - pruefidentifikator
+            - vertragsende
+            - nachrichtenreferenznummer
+            - dokumentennummer
+            - kategorie
+            - transaktionsgrund
+            - nachrichtendatum
+            - beteiligterMarktpartner
+            - vorgangsnummer
+          x-apidog-ignore-properties: []
+        stammdaten:
+          type: object
+          properties:
+            ENERGIELIEFERVERTRAG:
+              type: array
+              items:
+                type: object
+                properties:
+                  vertragspartner2:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        ortsteil:
+                          type: string
+                          description: |-
+                            Ortsteil | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        strasse:
+                          type: string
+                          description: |-
+                            Strasse | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        hausnummer:
+                          type: string
+                          description: |-
+                            Hausnummer und Ergänzung | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        postfach:
+                          type: string
+                          description: |-
+                            Postfach | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        postleitzahl:
+                          type: string
+                          description: |-
+                            Postleitzahl | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        anrede:
+                          type: string
+                          description: >-
+                            Die Anrede für den GePa, Z.B. Herr.
+
+                            Z04 Korrespondenzanschrift des Kunden des
+                            Lieferanten
+
+                            PI 55001 55600 55601 55013 55014 55043 55168 55169
+                            | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        name4:
+                          type: string
+                          description: |-
+                            Name 4 | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        name3:
+                          type: string
+                          description: >-
+                            Dritter Teil des Namens. Hier können weitere
+                            Ergänzungen zum Firmennamen oder bei Privatpersonen
+                            Zusätze zum  Namen dargestellt werden. Beispiele:
+                            und Afrika oder Sängerin | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        name2:
+                          type: string
+                          description: >-
+                            Zweiter Teil des Namens. Hier kann der eine
+                            Erweiterung zum Firmennamen oder bei Privatpersonen
+                            beispielsweise der Vorname dargestellt werden.
+                            Beispiele: Bereich Süd oder Nina | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        ort:
+                          type: object
+                          title: Sort
+                          description: |-
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                          x-apidog-orders: []
+                          properties: {}
+                          x-apidog-ignore-properties: []
+                        landescode:
+                          type: string
+                          title: Landescode
+                          description: |-
+                            Der ISO-Landescode als Enumeration | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                          enum:
+                            - AC
+                            - AD
+                            - AE
+                            - AF
+                            - AG
+                            - AI
+                            - AL
+                            - AM
+                            - AN
+                            - AO
+                            - AQ
+                            - AR
+                            - AS
+                            - AT
+                            - AU
+                            - AW
+                            - AX
+                            - AZ
+                            - BA
+                            - BB
+                            - BD
+                            - BE
+                            - BF
+                            - BG
+                            - BH
+                            - BI
+                            - BJ
+                            - BL
+                            - BM
+                            - BN
+                            - BO
+                            - BQ
+                            - BR
+                            - BS
+                            - BT
+                            - BU
+                            - BV
+                            - BW
+                            - BY
+                            - BZ
+                            - CA
+                            - CC
+                            - CD
+                            - CF
+                            - CG
+                            - CH
+                            - CI
+                            - CK
+                            - CL
+                            - CM
+                            - CN
+                            - CO
+                            - CP
+                            - CR
+                            - CS
+                            - CU
+                            - CV
+                            - CW
+                            - CX
+                            - CY
+                            - CZ
+                            - DE
+                            - DG
+                            - DJ
+                            - DK
+                            - DM
+                            - DO
+                            - DZ
+                            - EA
+                            - EC
+                            - EE
+                            - EG
+                            - EH
+                            - ER
+                            - ES
+                            - ET
+                            - EU
+                            - FI
+                            - FJ
+                            - FK
+                            - FM
+                            - FO
+                            - FR
+                            - FX
+                            - GA
+                            - GB
+                            - GD
+                            - GE
+                            - GF
+                            - GG
+                            - GH
+                            - GI
+                            - GL
+                            - GM
+                            - GN
+                            - GP
+                            - GQ
+                            - GR
+                            - GS
+                            - GT
+                            - GU
+                            - GW
+                            - GY
+                            - HK
+                            - HM
+                            - HN
+                            - HR
+                            - HT
+                            - HU
+                            - IC
+                            - ID
+                            - IE
+                            - IL
+                            - IM
+                            - IN
+                            - IO
+                            - IQ
+                            - IR
+                            - IS
+                            - IT
+                            - JE
+                            - JM
+                            - JO
+                            - JP
+                            - KE
+                            - KG
+                            - KH
+                            - KI
+                            - KM
+                            - KN
+                            - KP
+                            - KR
+                            - KW
+                            - KY
+                            - KZ
+                            - LA
+                            - LB
+                            - LC
+                            - LI
+                            - LK
+                            - LR
+                            - LS
+                            - LT
+                            - LU
+                            - LV
+                            - LY
+                            - MA
+                            - MC
+                            - MD
+                            - ME
+                            - MF
+                            - MG
+                            - MH
+                            - MK
+                            - ML
+                            - MM
+                            - MN
+                            - MO
+                            - MP
+                            - MQ
+                            - MR
+                            - MS
+                            - MT
+                            - MU
+                            - MV
+                            - MW
+                            - MX
+                            - MY
+                            - MZ
+                            - NA
+                            - NC
+                            - NE
+                            - NF
+                            - NG
+                            - NI
+                            - NL
+                            - 'NO'
+                            - NP
+                            - NR
+                            - NT
+                            - NU
+                            - NZ
+                            - OM
+                            - PA
+                            - PE
+                            - PF
+                            - PG
+                            - PH
+                            - PK
+                            - PL
+                            - PM
+                            - PN
+                            - PR
+                            - PS
+                            - PT
+                            - PW
+                            - PY
+                            - QA
+                            - RE
+                            - RO
+                            - RS
+                            - RU
+                            - RW
+                            - SA
+                            - SB
+                            - SC
+                            - SD
+                            - SE
+                            - SF
+                            - SG
+                            - SH
+                            - SI
+                            - SJ
+                            - SK
+                            - SL
+                            - SM
+                            - SN
+                            - SO
+                            - SR
+                            - SS
+                            - ST
+                            - SU
+                            - SV
+                            - SX
+                            - SY
+                            - SZ
+                            - TA
+                            - TC
+                            - TD
+                            - TF
+                            - TG
+                            - TJ
+                            - TK
+                            - TL
+                            - TM
+                            - TN
+                            - TO
+                            - TP
+                            - TR
+                            - TT
+                            - TV
+                            - TW
+                            - TZ
+                            - UA
+                            - UG
+                            - UK
+                            - UM
+                            - US
+                            - UY
+                            - UZ
+                            - VA
+                            - VC
+                            - VE
+                            - VG
+                            - VI
+                            - VN
+                            - VU
+                            - WF
+                            - WS
+                            - XK
+                            - YE
+                            - YT
+                            - YU
+                            - ZA
+                            - ZM
+                            - ZR
+                            - ZW
+                          x-apidog-folder: Bo4e/ENUM
+                        name1:
+                          type: string
+                          description: >-
+                            Erster Teil des Namens. Hier kann der Firmenname
+                            oder bei Privatpersonen beispielsweise der Nachname
+                            dargestellt werden. Beispiele: Yellow Strom GmbH
+                            oder Hagen | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        gewerbekennzeichnung:
+                          type: boolean
+                          description: >-
+                            Kennzeichnung ob es sich um einen
+                            Gewerbe/Unternehmen (gewerbeKennzeichnung = true)
+
+                            oder eine Privatperson handelt.
+                            (gewerbeKennzeichnung = false)
+
+                            Z01 Struktur von Personennamen
+
+                            Z02 Struktur der Firmenbezeichnung | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                      x-apidog-orders:
+                        - ortsteil
+                        - strasse
+                        - hausnummer
+                        - postfach
+                        - postleitzahl
+                        - anrede
+                        - name4
+                        - name3
+                        - name2
+                        - ort
+                        - landescode
+                        - name1
+                        - gewerbekennzeichnung
+                      x-apidog-ignore-properties: []
+                x-apidog-orders:
+                  - vertragspartner2
+                x-apidog-ignore-properties: []
+            MARKTLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  marktlokationsId:
+                    type: string
+                    description: >-
+                      Die ID der Marktlokation der der zu sperrende Zähler
+                      zugeordnet ist. | 
+
+                      <TipInfo>SG4.IDE+24.SG5.LOC+172</TipInfo>
+                x-apidog-orders:
+                  - marktlokationsId
+                x-apidog-ignore-properties: []
+            NETZNUTZUNGSVERTRAG:
+              type: array
+              items:
+                type: object
+                properties:
+                  vertragsende:
+                    type: string
+                    description: >-
+                      Gibt das Ende der Netznutzung oder einer Zuordnung an. 
+
+                      DTM 93
+
+                      PI 55016 55017 55001 55002 55600 55602 55013 55014 55607
+                      55608 55010 55011 55004 55005 55007 55008 55039 55040
+                      55051 55052 55240 55241 55242 55243 55236 55237 | 
+
+                      <TipInfo>SG4.IDE+24.DTM+93</TipInfo>
+                    format: date-time
+                x-apidog-orders:
+                  - vertragsende
+                x-apidog-ignore-properties: []
+          x-apidog-orders:
+            - ENERGIELIEFERVERTRAG
+            - MARKTLOKATION
+            - NETZNUTZUNGSVERTRAG
+          x-apidog-ignore-properties: []
+      required:
+        - transaktionsdaten
+        - stammdaten
+      description: 44010 - Abmeldungsanfrage [NB an LF] UTILMD AHB Gas
+      x-apidog-orders:
+        - transaktionsdaten
+        - stammdaten
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    44001_Anmeldung:
+      type: object
+      properties:
+        stammdaten:
+          type: object
+          properties:
+            MESSLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  ablesekartenempfaenger:
+                    type: object
+                    properties:
+                      partneradresse:
+                        type: object
+                        properties:
+                          postfach:
+                            type: string
+                            description: |-
+                              Postfach | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                          ort:
+                            type: object
+                            title: Sort
+                            description: |-
+
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                            x-apidog-orders: []
+                            properties: {}
+                            x-apidog-ignore-properties: []
+                          hausnummer:
+                            type: string
+                            description: |-
+                              Hausnummer und Ergänzung | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                          landescode:
+                            type: string
+                            title: Landescode
+                            description: |-
+                              Der ISO-Landescode als Enumeration | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                            enum:
+                              - AC
+                              - AD
+                              - AE
+                              - AF
+                              - AG
+                              - AI
+                              - AL
+                              - AM
+                              - AN
+                              - AO
+                              - AQ
+                              - AR
+                              - AS
+                              - AT
+                              - AU
+                              - AW
+                              - AX
+                              - AZ
+                              - BA
+                              - BB
+                              - BD
+                              - BE
+                              - BF
+                              - BG
+                              - BH
+                              - BI
+                              - BJ
+                              - BL
+                              - BM
+                              - BN
+                              - BO
+                              - BQ
+                              - BR
+                              - BS
+                              - BT
+                              - BU
+                              - BV
+                              - BW
+                              - BY
+                              - BZ
+                              - CA
+                              - CC
+                              - CD
+                              - CF
+                              - CG
+                              - CH
+                              - CI
+                              - CK
+                              - CL
+                              - CM
+                              - CN
+                              - CO
+                              - CP
+                              - CR
+                              - CS
+                              - CU
+                              - CV
+                              - CW
+                              - CX
+                              - CY
+                              - CZ
+                              - DE
+                              - DG
+                              - DJ
+                              - DK
+                              - DM
+                              - DO
+                              - DZ
+                              - EA
+                              - EC
+                              - EE
+                              - EG
+                              - EH
+                              - ER
+                              - ES
+                              - ET
+                              - EU
+                              - FI
+                              - FJ
+                              - FK
+                              - FM
+                              - FO
+                              - FR
+                              - FX
+                              - GA
+                              - GB
+                              - GD
+                              - GE
+                              - GF
+                              - GG
+                              - GH
+                              - GI
+                              - GL
+                              - GM
+                              - GN
+                              - GP
+                              - GQ
+                              - GR
+                              - GS
+                              - GT
+                              - GU
+                              - GW
+                              - GY
+                              - HK
+                              - HM
+                              - HN
+                              - HR
+                              - HT
+                              - HU
+                              - IC
+                              - ID
+                              - IE
+                              - IL
+                              - IM
+                              - IN
+                              - IO
+                              - IQ
+                              - IR
+                              - IS
+                              - IT
+                              - JE
+                              - JM
+                              - JO
+                              - JP
+                              - KE
+                              - KG
+                              - KH
+                              - KI
+                              - KM
+                              - KN
+                              - KP
+                              - KR
+                              - KW
+                              - KY
+                              - KZ
+                              - LA
+                              - LB
+                              - LC
+                              - LI
+                              - LK
+                              - LR
+                              - LS
+                              - LT
+                              - LU
+                              - LV
+                              - LY
+                              - MA
+                              - MC
+                              - MD
+                              - ME
+                              - MF
+                              - MG
+                              - MH
+                              - MK
+                              - ML
+                              - MM
+                              - MN
+                              - MO
+                              - MP
+                              - MQ
+                              - MR
+                              - MS
+                              - MT
+                              - MU
+                              - MV
+                              - MW
+                              - MX
+                              - MY
+                              - MZ
+                              - NA
+                              - NC
+                              - NE
+                              - NF
+                              - NG
+                              - NI
+                              - NL
+                              - 'NO'
+                              - NP
+                              - NR
+                              - NT
+                              - NU
+                              - NZ
+                              - OM
+                              - PA
+                              - PE
+                              - PF
+                              - PG
+                              - PH
+                              - PK
+                              - PL
+                              - PM
+                              - PN
+                              - PR
+                              - PS
+                              - PT
+                              - PW
+                              - PY
+                              - QA
+                              - RE
+                              - RO
+                              - RS
+                              - RU
+                              - RW
+                              - SA
+                              - SB
+                              - SC
+                              - SD
+                              - SE
+                              - SF
+                              - SG
+                              - SH
+                              - SI
+                              - SJ
+                              - SK
+                              - SL
+                              - SM
+                              - SN
+                              - SO
+                              - SR
+                              - SS
+                              - ST
+                              - SU
+                              - SV
+                              - SX
+                              - SY
+                              - SZ
+                              - TA
+                              - TC
+                              - TD
+                              - TF
+                              - TG
+                              - TJ
+                              - TK
+                              - TL
+                              - TM
+                              - TN
+                              - TO
+                              - TP
+                              - TR
+                              - TT
+                              - TV
+                              - TW
+                              - TZ
+                              - UA
+                              - UG
+                              - UK
+                              - UM
+                              - US
+                              - UY
+                              - UZ
+                              - VA
+                              - VC
+                              - VE
+                              - VG
+                              - VI
+                              - VN
+                              - VU
+                              - WF
+                              - WS
+                              - XK
+                              - YE
+                              - YT
+                              - YU
+                              - ZA
+                              - ZM
+                              - ZR
+                              - ZW
+                            x-apidog-folder: Bo4e/ENUM
+                          strasse:
+                            type: string
+                            description: |-
+                              Strasse | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                          ortsteil:
+                            type: string
+                            description: |-
+                              Ortsteil | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                          postleitzahl:
+                            type: string
+                            description: |-
+                              Postleitzahl | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                        x-apidog-orders:
+                          - postfach
+                          - ort
+                          - hausnummer
+                          - landescode
+                          - strasse
+                          - ortsteil
+                          - postleitzahl
+                        x-apidog-ignore-properties: []
+                      gewerbekennzeichnung:
+                        type: boolean
+                        description: >-
+                          Kennzeichnung ob es sich um einen Gewerbe/Unternehmen
+                          (gewerbeKennzeichnung = true)
+
+                          oder eine Privatperson handelt. (gewerbeKennzeichnung
+                          = false)
+
+                          Z01 Struktur von Personennamen
+
+                          Z02 Struktur der Firmenbezeichnung | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                      name4:
+                        type: string
+                        description: |-
+                          Name 4 | 
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                      name2:
+                        type: string
+                        description: >-
+                          Zweiter Teil des Namens. Hier kann der eine
+                          Erweiterung zum Firmennamen oder bei Privatpersonen
+                          beispielsweise der Vorname dargestellt werden.
+                          Beispiele: Bereich Süd oder Nina | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                      name1:
+                        type: string
+                        description: >-
+                          Erster Teil des Namens. Hier kann der Firmenname oder
+                          bei Privatpersonen beispielsweise der Nachname
+                          dargestellt werden. Beispiele: Yellow Strom GmbH oder
+                          Hagen | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                      name3:
+                        type: string
+                        description: >-
+                          Dritter Teil des Namens. Hier können weitere
+                          Ergänzungen zum Firmennamen oder bei Privatpersonen
+                          Zusätze zum  Namen dargestellt werden. Beispiele: und
+                          Afrika oder Sängerin | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                      anrede:
+                        type: string
+                        description: |-
+                          Die Anrede für den GePa, Z.B. Herr.
+                          Z04 Korrespondenzanschrift des Kunden des Lieferanten
+                          PI 55001 55600 55601 55013 55014 55043 55168 55169 | 
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                    x-apidog-orders:
+                      - partneradresse
+                      - gewerbekennzeichnung
+                      - name4
+                      - name2
+                      - name1
+                      - name3
+                      - anrede
+                    x-apidog-ignore-properties: []
+                  messlokationsId:
+                    type: string
+                    description: >-
+                      Angabe der ID der Messlokation,  für die die Stammdaten
+                      gelten. Die ID dient der eindeutigen Identifikation einer
+                      Messlokation und wird spätestens bei der Bestätigung vom
+                      NB mitgeliefert.
+
+                      LOC Z17
+
+                      PI 55002 55078 55600 55602 55601 55603 55013 55607 55611
+                      55620 55626 55632 55638 55175 55180 55173 55177 55690
+                      55643 55648 55653 55658 55663 55669 55035 55095 55060
+                      55039 55040 55041 55042 55043 55044 55168 55169 55170
+                      55051 55052 55053 55074 55075 55076
+
+                      RFF Z19
+
+                      PI 55002 55078 55602 55603 55013 55607 55690 55035 55095
+                      55060 55194 55043 55168 55169 
+
+                      RFF Z46
+
+                      PI 55643 55648 55663 55669 
+
+                      RFF Z19 ORDERS 
+
+                      PI 17121 17134
+
+                      IFTSTA 
+
+                      LOC 172
+
+                      PI 21000 21001 21002 21003 21004 21005 21007 21009 21010
+                      21011 21012 21013 21015 21018 21024 21025 21026 21027
+                      21036 21028 21029 21030 21031 21033 
+
+                      QUOTES
+
+                      LOC 172 
+
+                      PI 15001 15003 15004
+
+                      LOC 172 INVOIC
+
+                      PI 31003 31009 31004  | 
+
+                      <TipInfo>SG4.IDE+24.SG5.LOC+172,
+                      SG4.IDE+24.SG12.NAD+Z05.RFF+Z19</TipInfo>
+                x-apidog-orders:
+                  - ablesekartenempfaenger
+                  - messlokationsId
+                x-apidog-ignore-properties: []
+            MARKTLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  lokationsadresse:
+                    type: object
+                    properties:
+                      zusatzInformation:
+                        type: object
+                        properties:
+                          landescode:
+                            type: string
+                            title: Landescode
+                            description: |-
+                              Der ISO-Landescode als Enumeration | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                            enum:
+                              - AC
+                              - AD
+                              - AE
+                              - AF
+                              - AG
+                              - AI
+                              - AL
+                              - AM
+                              - AN
+                              - AO
+                              - AQ
+                              - AR
+                              - AS
+                              - AT
+                              - AU
+                              - AW
+                              - AX
+                              - AZ
+                              - BA
+                              - BB
+                              - BD
+                              - BE
+                              - BF
+                              - BG
+                              - BH
+                              - BI
+                              - BJ
+                              - BL
+                              - BM
+                              - BN
+                              - BO
+                              - BQ
+                              - BR
+                              - BS
+                              - BT
+                              - BU
+                              - BV
+                              - BW
+                              - BY
+                              - BZ
+                              - CA
+                              - CC
+                              - CD
+                              - CF
+                              - CG
+                              - CH
+                              - CI
+                              - CK
+                              - CL
+                              - CM
+                              - CN
+                              - CO
+                              - CP
+                              - CR
+                              - CS
+                              - CU
+                              - CV
+                              - CW
+                              - CX
+                              - CY
+                              - CZ
+                              - DE
+                              - DG
+                              - DJ
+                              - DK
+                              - DM
+                              - DO
+                              - DZ
+                              - EA
+                              - EC
+                              - EE
+                              - EG
+                              - EH
+                              - ER
+                              - ES
+                              - ET
+                              - EU
+                              - FI
+                              - FJ
+                              - FK
+                              - FM
+                              - FO
+                              - FR
+                              - FX
+                              - GA
+                              - GB
+                              - GD
+                              - GE
+                              - GF
+                              - GG
+                              - GH
+                              - GI
+                              - GL
+                              - GM
+                              - GN
+                              - GP
+                              - GQ
+                              - GR
+                              - GS
+                              - GT
+                              - GU
+                              - GW
+                              - GY
+                              - HK
+                              - HM
+                              - HN
+                              - HR
+                              - HT
+                              - HU
+                              - IC
+                              - ID
+                              - IE
+                              - IL
+                              - IM
+                              - IN
+                              - IO
+                              - IQ
+                              - IR
+                              - IS
+                              - IT
+                              - JE
+                              - JM
+                              - JO
+                              - JP
+                              - KE
+                              - KG
+                              - KH
+                              - KI
+                              - KM
+                              - KN
+                              - KP
+                              - KR
+                              - KW
+                              - KY
+                              - KZ
+                              - LA
+                              - LB
+                              - LC
+                              - LI
+                              - LK
+                              - LR
+                              - LS
+                              - LT
+                              - LU
+                              - LV
+                              - LY
+                              - MA
+                              - MC
+                              - MD
+                              - ME
+                              - MF
+                              - MG
+                              - MH
+                              - MK
+                              - ML
+                              - MM
+                              - MN
+                              - MO
+                              - MP
+                              - MQ
+                              - MR
+                              - MS
+                              - MT
+                              - MU
+                              - MV
+                              - MW
+                              - MX
+                              - MY
+                              - MZ
+                              - NA
+                              - NC
+                              - NE
+                              - NF
+                              - NG
+                              - NI
+                              - NL
+                              - 'NO'
+                              - NP
+                              - NR
+                              - NT
+                              - NU
+                              - NZ
+                              - OM
+                              - PA
+                              - PE
+                              - PF
+                              - PG
+                              - PH
+                              - PK
+                              - PL
+                              - PM
+                              - PN
+                              - PR
+                              - PS
+                              - PT
+                              - PW
+                              - PY
+                              - QA
+                              - RE
+                              - RO
+                              - RS
+                              - RU
+                              - RW
+                              - SA
+                              - SB
+                              - SC
+                              - SD
+                              - SE
+                              - SF
+                              - SG
+                              - SH
+                              - SI
+                              - SJ
+                              - SK
+                              - SL
+                              - SM
+                              - SN
+                              - SO
+                              - SR
+                              - SS
+                              - ST
+                              - SU
+                              - SV
+                              - SX
+                              - SY
+                              - SZ
+                              - TA
+                              - TC
+                              - TD
+                              - TF
+                              - TG
+                              - TJ
+                              - TK
+                              - TL
+                              - TM
+                              - TN
+                              - TO
+                              - TP
+                              - TR
+                              - TT
+                              - TV
+                              - TW
+                              - TZ
+                              - UA
+                              - UG
+                              - UK
+                              - UM
+                              - US
+                              - UY
+                              - UZ
+                              - VA
+                              - VC
+                              - VE
+                              - VG
+                              - VI
+                              - VN
+                              - VU
+                              - WF
+                              - WS
+                              - XK
+                              - YE
+                              - YT
+                              - YU
+                              - ZA
+                              - ZM
+                              - ZR
+                              - ZW
+                            x-apidog-folder: Bo4e/ENUM
+                          postleitzahl:
+                            type: string
+                            description: |-
+                              Postleitzahl | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          strasse:
+                            type: string
+                            description: |-
+                              Strasse | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          zusatz5:
+                            type: string
+                            description: |-
+                              Adresszusatz 5 | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          zusatz4:
+                            type: string
+                            description: |-
+                              Adresszusatz 4 | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          ortsteil:
+                            type: string
+                            description: |-
+                              Ortsteil | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          postfach:
+                            type: string
+                            description: |-
+                              Postfach | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          hausnummer:
+                            type: string
+                            description: |-
+                              Hausnummer und Ergänzung | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          zusatz2:
+                            type: string
+                            description: |-
+                              Adresszusatz 2 | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          zusatz3:
+                            type: string
+                            description: |-
+                              Adresszusatz 3 | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          ort:
+                            type: object
+                            title: Sort
+                            description: |-
+
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                            x-apidog-orders: []
+                            properties: {}
+                            x-apidog-ignore-properties: []
+                          zusatz1:
+                            type: string
+                            description: |-
+                              Adresszusatz 1 | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                        x-apidog-orders:
+                          - landescode
+                          - postleitzahl
+                          - strasse
+                          - zusatz5
+                          - zusatz4
+                          - ortsteil
+                          - postfach
+                          - hausnummer
+                          - zusatz2
+                          - zusatz3
+                          - ort
+                          - zusatz1
+                        x-apidog-ignore-properties: []
+                    x-apidog-orders:
+                      - zusatzInformation
+                    x-apidog-ignore-properties: []
+                  marktlokationsId:
+                    type: string
+                    description: >-
+                      Die ID der Marktlokation der der zu sperrende Zähler
+                      zugeordnet ist. | 
+
+                      <TipInfo>SG4.IDE+24.SG5.LOC+172</TipInfo>
+                  zaehlwerke:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        konzessionsabgabe:
+                          type: object
+                          properties:
+                            kosten:
+                              type: number
+                              description: >-
+                                Konzessionsabgabe in Euro/kWh | 
+
+                                <TipInfo>SG4.IDE+24.SG8.SEQ+Z07.SG10.CCI+++Z08.CAV</TipInfo>
+                              format: float
+                            satz:
+                              type: string
+                              title: AbgabeArt
+                              description: >-
+                                Gruppen der KAV
+
+                                CAV KAS | 
+
+                                <TipInfo>SG4.IDE+24.SG8.SEQ+Z07.SG10.CCI+++Z08.CAV</TipInfo>
+                              enum:
+                                - KAS
+                                - SA
+                                - SAS
+                                - TA
+                                - TAS
+                                - TK
+                                - TKS
+                                - TS
+                                - TSS
+                              x-apidog-enum:
+                                - value: KAS
+                                  name: >-
+                                    für alle konzessionsvertraglichen
+                                    Sonderregelungen, die nicht in die
+                                    Systematik der KAV eingegliedert sind
+                                  description: KAS
+                                - value: SA
+                                  name: >-
+                                    Sondervertragskunden < 1 kV nach § 2 (7) und
+                                    > 1 kV, Preis nach § 2 (3) (für Strom 0,11
+                                    ct/ kWh und für Gas 0,03 ct/kWh)
+                                  description: SA
+                                - value: SAS
+                                  name: >-
+                                    Kennzeichnung, dass ein abweichender Preis
+                                    für Sondervertragskunden vorliegt
+                                  description: SAS
+                                - value: TA
+                                  name: >-
+                                    Tarifkunden, für Strom § 2. (2) 1b HT bzw.
+                                    ET (hohe KA) und für Gas § 2 (2) 2b
+                                  description: TA
+                                - value: TAS
+                                  name: >-
+                                    Kennzeichnung, dass ein abweichender Preis
+                                    für Tarifkunden vorliegt
+                                  description: TAS
+                                - value: TK
+                                  name: >-
+                                    für Gas nach KAV § 2 (2) 2a bei
+                                    ausschließlicher Nutzung zum Kochen und
+                                    Warmwassererzeugung
+                                  description: TK
+                                - value: TKS
+                                  name: >-
+                                    Kennzeichnung, wenn nach KAV § 2 (2) 2a ein
+                                    anderer Preis zu verwenden ist
+                                  description: TKS
+                                - value: TS
+                                  name: ''
+                                  description: ''
+                                - value: TSS
+                                  name: ''
+                                  description: ''
+                              x-apidog-folder: Bo4e/ENUM
+                            kategorie:
+                              type: string
+                              title: Anfragekategorie
+                              description: >-
+                                Anfragekategorie | 
+
+                                <TipInfo>SG4.IDE+24.SG8.SEQ+Z07.SG10.CCI+++Z08.CAV</TipInfo>
+                              enum:
+                                - PROZESSDATENBERICHT
+                                - GERAETEUEBERNAHME
+                                - WEITERVERPFLICHTUNG_BETRIEB_MELO
+                                - AENDERUNG_MELO
+                                - STAMMDATEN_MALO_ODER_MELO
+                                - BILANZIERTE_MENGE_MEHR_MINDER_MENGEN
+                                - ALLOKATIONSLISTE_MEHR_MINDER_MENGEN
+                                - ENERGIEMENGE_UND_LEISTUNGSMAXIMUM
+                                - ABRECHNUNG_MESSSTELLENBETRIEB_MSB_AN_LF
+                                - >-
+                                  AENDERUNG_PROGNOSEGRUNDLAGE_GERAETEKONFIGURATION
+                                - AENDERUNG_GERAETEKONFIGURATION
+                                - REKLAMATION_VON_WERTEN
+                                - LASTGANG_MALO_TRANCHE
+                                - SPERRUNG
+                                - ENTSPERRUNG
+                                - REKLAMATION_ZAEHLZEITDEFINITION
+                                - ZEITREIHEN_IM_RAHMEN_BILANZKREISABRECHNUNG
+                                - GERAETEWECHSELABSICHT
+                                - AENDERUNG_KONZESSIONSABGABE
+                                - AENDERUNG_ZAEHLZEITDEFINITION
+                                - UEBERMITTLUNG_WERTE_AN_ESA
+                                - AENDERUNG
+                                - BILANZKREISZUORDNUNGSLISTE
+                                - CLEARINGLISTE
+                                - NORMIERTES_PROFIL_PROFILSCHAR
+                                - REDISPATCH_EINZELZEITREIHE_AUSFALLARBEIT
+                                - REKLAMATION_PROFIL_PROFILSCHAR
+                                - STAMMDATEN_MALO
+                                - STAMMDATEN_MELO
+                                - STAMMDATEN_TRANCHE
+                                - BEENDIGUNG_EINER_KONFIGURATION
+                                - BESTELLUNG_EINER_KONFIGURATION
+                                - BESTELLUNG_EINES_ANGEBOTS_EINER_KONFIGURATION
+                                - REKLAMATION_EINER_KONFIGURATION
+                                - >-
+                                  BESTELLUNG_AENDERUNG_NETZENTGELTE_NETZORIENTIERTER_STEUERUNGSMOEGLICHKEIT
+                                - AENDERUNG_DER_TECHNIK_DER_LOKATION
+                                - AENDERUNG_INDIVIDUELLER_KONFIGURATION
+                                - BESTELLUNG_AENDERUNG_ABRECHNUNGSDATEN
+                                - >-
+                                  EINRICHTUNG_KONFIGURATION_AUFGRUND_ZUORDNUNG_LF
+                                - REKLAMATION_DEFINITION
+                              x-apidog-folder: Bo4e/ENUM
+                          x-apidog-orders:
+                            - kosten
+                            - satz
+                            - kategorie
+                          x-apidog-ignore-properties: []
+                      x-apidog-orders:
+                        - konzessionsabgabe
+                      x-apidog-ignore-properties: []
+                x-apidog-orders:
+                  - lokationsadresse
+                  - marktlokationsId
+                  - zaehlwerke
+                x-apidog-ignore-properties: []
+            ENERGIELIEFERVERTRAG:
+              type: array
+              items:
+                type: object
+                properties:
+                  vertragspartner2:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        hausnummer:
+                          type: string
+                          description: |-
+                            Hausnummer und Ergänzung | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        postfach:
+                          type: string
+                          description: |-
+                            Postfach | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        name3:
+                          type: string
+                          description: >-
+                            Dritter Teil des Namens. Hier können weitere
+                            Ergänzungen zum Firmennamen oder bei Privatpersonen
+                            Zusätze zum  Namen dargestellt werden. Beispiele:
+                            und Afrika oder Sängerin | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        landescode:
+                          type: string
+                          title: Landescode
+                          description: |-
+                            Der ISO-Landescode als Enumeration | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                          enum:
+                            - AC
+                            - AD
+                            - AE
+                            - AF
+                            - AG
+                            - AI
+                            - AL
+                            - AM
+                            - AN
+                            - AO
+                            - AQ
+                            - AR
+                            - AS
+                            - AT
+                            - AU
+                            - AW
+                            - AX
+                            - AZ
+                            - BA
+                            - BB
+                            - BD
+                            - BE
+                            - BF
+                            - BG
+                            - BH
+                            - BI
+                            - BJ
+                            - BL
+                            - BM
+                            - BN
+                            - BO
+                            - BQ
+                            - BR
+                            - BS
+                            - BT
+                            - BU
+                            - BV
+                            - BW
+                            - BY
+                            - BZ
+                            - CA
+                            - CC
+                            - CD
+                            - CF
+                            - CG
+                            - CH
+                            - CI
+                            - CK
+                            - CL
+                            - CM
+                            - CN
+                            - CO
+                            - CP
+                            - CR
+                            - CS
+                            - CU
+                            - CV
+                            - CW
+                            - CX
+                            - CY
+                            - CZ
+                            - DE
+                            - DG
+                            - DJ
+                            - DK
+                            - DM
+                            - DO
+                            - DZ
+                            - EA
+                            - EC
+                            - EE
+                            - EG
+                            - EH
+                            - ER
+                            - ES
+                            - ET
+                            - EU
+                            - FI
+                            - FJ
+                            - FK
+                            - FM
+                            - FO
+                            - FR
+                            - FX
+                            - GA
+                            - GB
+                            - GD
+                            - GE
+                            - GF
+                            - GG
+                            - GH
+                            - GI
+                            - GL
+                            - GM
+                            - GN
+                            - GP
+                            - GQ
+                            - GR
+                            - GS
+                            - GT
+                            - GU
+                            - GW
+                            - GY
+                            - HK
+                            - HM
+                            - HN
+                            - HR
+                            - HT
+                            - HU
+                            - IC
+                            - ID
+                            - IE
+                            - IL
+                            - IM
+                            - IN
+                            - IO
+                            - IQ
+                            - IR
+                            - IS
+                            - IT
+                            - JE
+                            - JM
+                            - JO
+                            - JP
+                            - KE
+                            - KG
+                            - KH
+                            - KI
+                            - KM
+                            - KN
+                            - KP
+                            - KR
+                            - KW
+                            - KY
+                            - KZ
+                            - LA
+                            - LB
+                            - LC
+                            - LI
+                            - LK
+                            - LR
+                            - LS
+                            - LT
+                            - LU
+                            - LV
+                            - LY
+                            - MA
+                            - MC
+                            - MD
+                            - ME
+                            - MF
+                            - MG
+                            - MH
+                            - MK
+                            - ML
+                            - MM
+                            - MN
+                            - MO
+                            - MP
+                            - MQ
+                            - MR
+                            - MS
+                            - MT
+                            - MU
+                            - MV
+                            - MW
+                            - MX
+                            - MY
+                            - MZ
+                            - NA
+                            - NC
+                            - NE
+                            - NF
+                            - NG
+                            - NI
+                            - NL
+                            - 'NO'
+                            - NP
+                            - NR
+                            - NT
+                            - NU
+                            - NZ
+                            - OM
+                            - PA
+                            - PE
+                            - PF
+                            - PG
+                            - PH
+                            - PK
+                            - PL
+                            - PM
+                            - PN
+                            - PR
+                            - PS
+                            - PT
+                            - PW
+                            - PY
+                            - QA
+                            - RE
+                            - RO
+                            - RS
+                            - RU
+                            - RW
+                            - SA
+                            - SB
+                            - SC
+                            - SD
+                            - SE
+                            - SF
+                            - SG
+                            - SH
+                            - SI
+                            - SJ
+                            - SK
+                            - SL
+                            - SM
+                            - SN
+                            - SO
+                            - SR
+                            - SS
+                            - ST
+                            - SU
+                            - SV
+                            - SX
+                            - SY
+                            - SZ
+                            - TA
+                            - TC
+                            - TD
+                            - TF
+                            - TG
+                            - TJ
+                            - TK
+                            - TL
+                            - TM
+                            - TN
+                            - TO
+                            - TP
+                            - TR
+                            - TT
+                            - TV
+                            - TW
+                            - TZ
+                            - UA
+                            - UG
+                            - UK
+                            - UM
+                            - US
+                            - UY
+                            - UZ
+                            - VA
+                            - VC
+                            - VE
+                            - VG
+                            - VI
+                            - VN
+                            - VU
+                            - WF
+                            - WS
+                            - XK
+                            - YE
+                            - YT
+                            - YU
+                            - ZA
+                            - ZM
+                            - ZR
+                            - ZW
+                          x-apidog-folder: Bo4e/ENUM
+                        postleitzahl:
+                          type: string
+                          description: |-
+                            Postleitzahl | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        name4:
+                          type: string
+                          description: |-
+                            Name 4 | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        exRefWert:
+                          type: string
+                          description: >-
+                            Kundennummer beim Altieferanten - Angabe von
+                            Referenzen für Rückmeldungen und Anfragen
+
+                            PI 55109 55137 
+
+                            ORDERS PI 17101 | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09.RFF+AVC,
+                            SG4.IDE+24.SG12.NAD+Z09.RFF+Z01</TipInfo>
+                        exRefName:
+                          type: string
+                          description: >-
+                            Bezeichnung der externen Referenz, Kundennummer beim
+                            Lieferanten, bezieht sich auf das vorangegangene NAD
+                            Segment
+
+                            RFF AVC
+
+                            PI 55109 55137 
+
+                            RFF AVC Kundennummer beim Lieferanten ORDERS
+
+                            PI 17101 | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09.RFF+AVC,
+                            SG4.IDE+24.SG12.NAD+Z09.RFF+Z01</TipInfo>
+                          enum:
+                            - Kundennummer beim Lieferanten
+                            - Kundennummer beim Altlieferanten
+                        anrede:
+                          type: string
+                          description: >-
+                            Die Anrede für den GePa, Z.B. Herr.
+
+                            Z04 Korrespondenzanschrift des Kunden des
+                            Lieferanten
+
+                            PI 55001 55600 55601 55013 55014 55043 55168 55169
+                            | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        ortsteil:
+                          type: string
+                          description: |-
+                            Ortsteil | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        strasse:
+                          type: string
+                          description: |-
+                            Strasse | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        name2:
+                          type: string
+                          description: >-
+                            Zweiter Teil des Namens. Hier kann der eine
+                            Erweiterung zum Firmennamen oder bei Privatpersonen
+                            beispielsweise der Vorname dargestellt werden.
+                            Beispiele: Bereich Süd oder Nina | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        ort:
+                          type: object
+                          title: Sort
+                          description: |-
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                          x-apidog-orders: []
+                          properties: {}
+                          x-apidog-ignore-properties: []
+                        name1:
+                          type: string
+                          description: >-
+                            Erster Teil des Namens. Hier kann der Firmenname
+                            oder bei Privatpersonen beispielsweise der Nachname
+                            dargestellt werden. Beispiele: Yellow Strom GmbH
+                            oder Hagen | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        gewerbekennzeichnung:
+                          type: boolean
+                          description: >-
+                            Kennzeichnung ob es sich um einen
+                            Gewerbe/Unternehmen (gewerbeKennzeichnung = true)
+
+                            oder eine Privatperson handelt.
+                            (gewerbeKennzeichnung = false)
+
+                            Z01 Struktur von Personennamen
+
+                            Z02 Struktur der Firmenbezeichnung | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                      x-apidog-orders:
+                        - hausnummer
+                        - postfach
+                        - name3
+                        - landescode
+                        - postleitzahl
+                        - name4
+                        - exRefWert
+                        - exRefName
+                        - anrede
+                        - ortsteil
+                        - strasse
+                        - name2
+                        - ort
+                        - name1
+                        - gewerbekennzeichnung
+                      x-apidog-ignore-properties: []
+                  korrespondenzpartner:
+                    type: object
+                    properties:
+                      partneradresse:
+                        type: object
+                        properties:
+                          postleitzahl:
+                            type: string
+                            description: |-
+                              Postleitzahl | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                          ort:
+                            type: object
+                            title: Sort
+                            description: |-
+
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                            x-apidog-orders: []
+                            properties: {}
+                            x-apidog-ignore-properties: []
+                          hausnummer:
+                            type: string
+                            description: |-
+                              Hausnummer und Ergänzung | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                          landescode:
+                            type: string
+                            title: Landescode
+                            description: |-
+                              Der ISO-Landescode als Enumeration | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                            enum:
+                              - AC
+                              - AD
+                              - AE
+                              - AF
+                              - AG
+                              - AI
+                              - AL
+                              - AM
+                              - AN
+                              - AO
+                              - AQ
+                              - AR
+                              - AS
+                              - AT
+                              - AU
+                              - AW
+                              - AX
+                              - AZ
+                              - BA
+                              - BB
+                              - BD
+                              - BE
+                              - BF
+                              - BG
+                              - BH
+                              - BI
+                              - BJ
+                              - BL
+                              - BM
+                              - BN
+                              - BO
+                              - BQ
+                              - BR
+                              - BS
+                              - BT
+                              - BU
+                              - BV
+                              - BW
+                              - BY
+                              - BZ
+                              - CA
+                              - CC
+                              - CD
+                              - CF
+                              - CG
+                              - CH
+                              - CI
+                              - CK
+                              - CL
+                              - CM
+                              - CN
+                              - CO
+                              - CP
+                              - CR
+                              - CS
+                              - CU
+                              - CV
+                              - CW
+                              - CX
+                              - CY
+                              - CZ
+                              - DE
+                              - DG
+                              - DJ
+                              - DK
+                              - DM
+                              - DO
+                              - DZ
+                              - EA
+                              - EC
+                              - EE
+                              - EG
+                              - EH
+                              - ER
+                              - ES
+                              - ET
+                              - EU
+                              - FI
+                              - FJ
+                              - FK
+                              - FM
+                              - FO
+                              - FR
+                              - FX
+                              - GA
+                              - GB
+                              - GD
+                              - GE
+                              - GF
+                              - GG
+                              - GH
+                              - GI
+                              - GL
+                              - GM
+                              - GN
+                              - GP
+                              - GQ
+                              - GR
+                              - GS
+                              - GT
+                              - GU
+                              - GW
+                              - GY
+                              - HK
+                              - HM
+                              - HN
+                              - HR
+                              - HT
+                              - HU
+                              - IC
+                              - ID
+                              - IE
+                              - IL
+                              - IM
+                              - IN
+                              - IO
+                              - IQ
+                              - IR
+                              - IS
+                              - IT
+                              - JE
+                              - JM
+                              - JO
+                              - JP
+                              - KE
+                              - KG
+                              - KH
+                              - KI
+                              - KM
+                              - KN
+                              - KP
+                              - KR
+                              - KW
+                              - KY
+                              - KZ
+                              - LA
+                              - LB
+                              - LC
+                              - LI
+                              - LK
+                              - LR
+                              - LS
+                              - LT
+                              - LU
+                              - LV
+                              - LY
+                              - MA
+                              - MC
+                              - MD
+                              - ME
+                              - MF
+                              - MG
+                              - MH
+                              - MK
+                              - ML
+                              - MM
+                              - MN
+                              - MO
+                              - MP
+                              - MQ
+                              - MR
+                              - MS
+                              - MT
+                              - MU
+                              - MV
+                              - MW
+                              - MX
+                              - MY
+                              - MZ
+                              - NA
+                              - NC
+                              - NE
+                              - NF
+                              - NG
+                              - NI
+                              - NL
+                              - 'NO'
+                              - NP
+                              - NR
+                              - NT
+                              - NU
+                              - NZ
+                              - OM
+                              - PA
+                              - PE
+                              - PF
+                              - PG
+                              - PH
+                              - PK
+                              - PL
+                              - PM
+                              - PN
+                              - PR
+                              - PS
+                              - PT
+                              - PW
+                              - PY
+                              - QA
+                              - RE
+                              - RO
+                              - RS
+                              - RU
+                              - RW
+                              - SA
+                              - SB
+                              - SC
+                              - SD
+                              - SE
+                              - SF
+                              - SG
+                              - SH
+                              - SI
+                              - SJ
+                              - SK
+                              - SL
+                              - SM
+                              - SN
+                              - SO
+                              - SR
+                              - SS
+                              - ST
+                              - SU
+                              - SV
+                              - SX
+                              - SY
+                              - SZ
+                              - TA
+                              - TC
+                              - TD
+                              - TF
+                              - TG
+                              - TJ
+                              - TK
+                              - TL
+                              - TM
+                              - TN
+                              - TO
+                              - TP
+                              - TR
+                              - TT
+                              - TV
+                              - TW
+                              - TZ
+                              - UA
+                              - UG
+                              - UK
+                              - UM
+                              - US
+                              - UY
+                              - UZ
+                              - VA
+                              - VC
+                              - VE
+                              - VG
+                              - VI
+                              - VN
+                              - VU
+                              - WF
+                              - WS
+                              - XK
+                              - YE
+                              - YT
+                              - YU
+                              - ZA
+                              - ZM
+                              - ZR
+                              - ZW
+                            x-apidog-folder: Bo4e/ENUM
+                          ortsteil:
+                            type: string
+                            description: |-
+                              Ortsteil | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                          postfach:
+                            type: string
+                            description: |-
+                              Postfach | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                          strasse:
+                            type: string
+                            description: |-
+                              Strasse | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                        x-apidog-orders:
+                          - postleitzahl
+                          - ort
+                          - hausnummer
+                          - landescode
+                          - ortsteil
+                          - postfach
+                          - strasse
+                        x-apidog-ignore-properties: []
+                      gewerbekennzeichnung:
+                        type: boolean
+                        description: >-
+                          Kennzeichnung ob es sich um einen Gewerbe/Unternehmen
+                          (gewerbeKennzeichnung = true)
+
+                          oder eine Privatperson handelt. (gewerbeKennzeichnung
+                          = false)
+
+                          Z01 Struktur von Personennamen
+
+                          Z02 Struktur der Firmenbezeichnung | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                      name2:
+                        type: string
+                        description: >-
+                          Zweiter Teil des Namens. Hier kann der eine
+                          Erweiterung zum Firmennamen oder bei Privatpersonen
+                          beispielsweise der Vorname dargestellt werden.
+                          Beispiele: Bereich Süd oder Nina | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                      anrede:
+                        type: string
+                        description: |-
+                          Die Anrede für den GePa, Z.B. Herr.
+                          Z04 Korrespondenzanschrift des Kunden des Lieferanten
+                          PI 55001 55600 55601 55013 55014 55043 55168 55169 | 
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                      name1:
+                        type: string
+                        description: >-
+                          Erster Teil des Namens. Hier kann der Firmenname oder
+                          bei Privatpersonen beispielsweise der Nachname
+                          dargestellt werden. Beispiele: Yellow Strom GmbH oder
+                          Hagen | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                      name4:
+                        type: string
+                        description: |-
+                          Name 4 | 
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                      name3:
+                        type: string
+                        description: >-
+                          Dritter Teil des Namens. Hier können weitere
+                          Ergänzungen zum Firmennamen oder bei Privatpersonen
+                          Zusätze zum  Namen dargestellt werden. Beispiele: und
+                          Afrika oder Sängerin | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                    x-apidog-orders:
+                      - partneradresse
+                      - gewerbekennzeichnung
+                      - name2
+                      - anrede
+                      - name1
+                      - name4
+                      - name3
+                    x-apidog-ignore-properties: []
+                  vertragskonditionen:
+                    type: object
+                    properties:
+                      abrechnungsintervall:
+                        type: integer
+                        description: |-
+                          Abrechnungsintervall des LF in Monaten
+                          DTM Z20
+                          PI 44109 44137 44138 44001 44002 44014  | 
+                          <TipInfo>SG4.IDE+24.SG6.RFF+Z18.DTM+Z20</TipInfo>
+                    x-apidog-orders:
+                      - abrechnungsintervall
+                    x-apidog-ignore-properties: []
+                x-apidog-orders:
+                  - vertragspartner2
+                  - korrespondenzpartner
+                  - vertragskonditionen
+                x-apidog-ignore-properties: []
+            BILANZIERUNG:
+              type: array
+              items:
+                type: object
+                properties:
+                  bilanzkreis:
+                    type: object
+                    title: Bilanzkreis
+                    description: |-
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI+Z19</TipInfo>
+                    x-apidog-orders: []
+                    properties: {}
+                    x-apidog-ignore-properties: []
+                  fallgruppenzuordnung:
+                    type: string
+                    title: Fallgruppenzuordnung
+                    description: |-
+                      Fallgruppenzuordnung | 
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI+++Z17</TipInfo>
+                    enum:
+                      - GABI_RLMmT
+                      - GABI_RLMoT
+                      - GABI_RLMNEV
+                    x-apidog-enum:
+                      - value: GABI_RLMmT
+                        name: RLM-Kunde in Tagesregime - Exit
+                        description: GABi-RLMmT
+                      - value: GABI_RLMoT
+                        name: GABi-RLMoT
+                        description: RLM-Kunde im Stundenregime - Exit
+                      - value: GABI_RLMNEV
+                        name: >-
+                          Nominierungsersatzverfahren - Exit (Hinweis: Dieser
+                          Code darf nur für Liefermonate vor dem 01.10.2016
+                          genutzt werden)
+                        description: GABi-RLMNEV
+                    x-apidog-folder: Bo4e/ENUM
+                  lastprofile:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        verfahren:
+                          type: string
+                          title: Profilverfahren
+                          description: >-
+                            Profilverfahren | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z35.SG10.CCI+Z12</TipInfo>
+                          enum:
+                            - SYNTHETISCH
+                            - ANALYTISCH
+                          x-apidog-folder: Bo4e/ENUM
+                        bezeichnung:
+                          type: string
+                          description: >-
+                            Externe Bezeichnung | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z35.SG10.CCI+Z12.CAV</TipInfo>
+                        herausgeber:
+                          type: string
+                          title: Herausgeber
+                          description: >-
+                            Herausgeber | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z35.SG10.CCI+Z12.CAV</TipInfo>
+                          enum:
+                            - NB
+                            - BDEW
+                            - TUM
+                          x-apidog-enum:
+                            - value: NB
+                              name: Vergeben vom Händler (hier Netzbetreiber)
+                              description: '89'
+                            - value: BDEW
+                              name: >-
+                                DE, BDEW (Bundesverband der Energie- und
+                                Wasserwirtschaft e.V.)
+                              description: '293'
+                            - value: TUM
+                              name: ''
+                              description: ''
+                          x-apidog-folder: Bo4e/ENUM
+                      x-apidog-orders:
+                        - verfahren
+                        - bezeichnung
+                        - herausgeber
+                      x-apidog-ignore-properties: []
+                  jahresverbrauchsprognose:
+                    type: object
+                    properties:
+                      einheit:
+                        type: string
+                        title: Mengeneinheit
+                        description: >-
+                          Einheit: Messgrößen, die per Messung oder Vorgabe
+                          ermittelt werden können | 
+
+                          <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG9.QTY+31</TipInfo>
+                        enum:
+                          - W
+                          - WH
+                          - KW
+                          - KWH
+                          - KVARH
+                          - MW
+                          - MWH
+                          - STUECK
+                          - KUBIKMETER
+                          - STUNDE
+                          - TAG
+                          - MONAT
+                          - JAHR
+                          - PROZENT
+                          - ANZAHL
+                          - VAR
+                          - KVAR
+                          - VARH
+                          - KWHK
+                          - Z16
+                          - KWT
+                        x-apidog-enum:
+                          - value: W
+                            name: ''
+                            description: ''
+                          - value: WH
+                            name: ''
+                            description: ''
+                          - value: KW
+                            name: ''
+                            description: ''
+                          - value: KWH
+                            name: Kilowattstunde
+                            description: KWH
+                          - value: KVARH
+                            name: ''
+                            description: ''
+                          - value: MW
+                            name: ''
+                            description: ''
+                          - value: MWH
+                            name: ''
+                            description: ''
+                          - value: STUECK
+                            name: Stück
+                            description: H87
+                          - value: KUBIKMETER
+                            name: ''
+                            description: ''
+                          - value: STUNDE
+                            name: ''
+                            description: ''
+                          - value: TAG
+                            name: Tag
+                            description: ZD8
+                          - value: MONAT
+                            name: ''
+                            description: ''
+                          - value: JAHR
+                            name: ''
+                            description: ''
+                          - value: PROZENT
+                            name: Prozent
+                            description: P1
+                          - value: ANZAHL
+                            name: ''
+                            description: ''
+                          - value: VAR
+                            name: ''
+                            description: ''
+                          - value: KVAR
+                            name: ''
+                            description: ''
+                          - value: VARH
+                            name: ''
+                            description: ''
+                          - value: KWHK
+                            name: ''
+                            description: ''
+                          - value: Z16
+                            name: kWh/K (Kilowatt-Stunde/Kelvin)
+                            description: Z16
+                          - value: KWT
+                            name: Kilowatt
+                            description: ''
+                        x-apidog-folder: Bo4e/ENUM
+                      wert:
+                        type: object
+                        title: Schwellwert
+                        description: |-
+
+                          <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG9.QTY+31</TipInfo>
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                    x-apidog-orders:
+                      - einheit
+                      - wert
+                    x-apidog-ignore-properties: []
+                  kundenwert:
+                    type: object
+                    properties:
+                      wert:
+                        type: object
+                        title: Schwellwert
+                        description: |-
+
+                          <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG9.QTY+Y02</TipInfo>
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                    x-apidog-orders:
+                      - wert
+                    x-apidog-ignore-properties: []
+                x-apidog-orders:
+                  - bilanzkreis
+                  - fallgruppenzuordnung
+                  - lastprofile
+                  - jahresverbrauchsprognose
+                  - kundenwert
+                x-apidog-ignore-properties: []
+            ZAEHLER:
+              type: array
+              items:
+                type: object
+                properties:
+                  zaehlernummer:
+                    type: string
+                    description: >-
+                      Die Nummer des zu sperrenden Zählers | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z03.SG10.CCI+++E13.CAV+Z30</TipInfo>
+                x-apidog-orders:
+                  - zaehlernummer
+                x-apidog-ignore-properties: []
+            NETZNUTZUNGSVERTRAG:
+              type: array
+              items:
+                type: object
+                properties:
+                  vertragskonditionen:
+                    type: object
+                    properties:
+                      netznutzungsvertrag:
+                        type: string
+                        title: Netznutzungsvertrag
+                        description: >-
+                          Netznutzungsvertrag | 
+
+                          <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI+++Z88.CAV+Z74</TipInfo>
+                        enum:
+                          - KUNDEN_NB
+                          - LIEFERANTEN_NB
+                        x-apidog-enum:
+                          - value: KUNDEN_NB
+                            name: Direkter Vertrag zwischen Kunden und NB
+                            description: Z08
+                          - value: LIEFERANTEN_NB
+                            name: Vertrag zwischen Lieferanten und NB
+                            description: Z09
+                        x-apidog-folder: Bo4e/ENUM
+                      netznutzungszahler:
+                        type: string
+                        title: Netznutzungszahler
+                        description: >-
+                          Netznutzungszahler | 
+
+                          <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI+++Z88.CAV+Z73</TipInfo>
+                        enum:
+                          - KUNDE
+                          - LIEFERANT
+                        x-apidog-enum:
+                          - value: KUNDE
+                            name: Kunde
+                            description: Z10
+                          - value: LIEFERANT
+                            name: Lieferant
+                            description: Z11
+                        x-apidog-folder: Bo4e/ENUM
+                      haushaltskunde:
+                        type: boolean
+                        description: >-
+                          Gruppenzuordnung, kennzeichnet ob es sich um einen
+                          Haushaltskunden handelt oder nicht.
+
+                          Z15 Haushaltskunde gem. EnWG
+
+                          Z18 Kein Haushaltskunde gem. EnWG
+
+                          CCI Z15
+
+                          PI 55001 55600 55013 55014 55109 55137  | 
+
+                          <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI</TipInfo>
+                    x-apidog-orders:
+                      - netznutzungsvertrag
+                      - netznutzungszahler
+                      - haushaltskunde
+                    x-apidog-ignore-properties: []
+                  vertragsende:
+                    type: string
+                    description: >-
+                      Gibt das Ende der Netznutzung oder einer Zuordnung an. 
+
+                      DTM 93
+
+                      PI 55016 55017 55001 55002 55600 55602 55013 55014 55607
+                      55608 55010 55011 55004 55005 55007 55008 55039 55040
+                      55051 55052 55240 55241 55242 55243 55236 55237 | 
+
+                      <TipInfo>SG4.IDE+24.DTM+93</TipInfo>
+                    format: date-time
+                  vertragsbeginn:
+                    type: string
+                    description: >-
+                      Gibt an, wann der Vertrag oder die Zuordnung beginnt.
+
+                      DTM 92
+
+                      PI 55001 55002 55077 55078 55600 55602 55601 55603 55013
+                      55014 55607 55608 55004 55005 55051 55052 55238 55239
+                      55235 55237 | 
+
+                      <TipInfo>SG4.IDE+24.DTM+92</TipInfo>
+                    format: date-time
+                  gemeinderabatt:
+                    type: integer
+                    description: >-
+                      Gemeinderabatt - Angabe zum Preisnachlass der
+                      Netznutzungsentgelte
+
+                      QTY Z16
+
+                      PI 44112 44139 44142 44001 44002 44013 44014 44035 | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z12.SG9.QTY+Z16</TipInfo>
+                x-apidog-orders:
+                  - vertragskonditionen
+                  - vertragsende
+                  - vertragsbeginn
+                  - gemeinderabatt
+                x-apidog-ignore-properties: []
+          x-apidog-orders:
+            - MESSLOKATION
+            - MARKTLOKATION
+            - ENERGIELIEFERVERTRAG
+            - BILANZIERUNG
+            - ZAEHLER
+            - NETZNUTZUNGSVERTRAG
+          x-apidog-ignore-properties: []
+        transaktionsdaten:
+          type: object
+          properties:
+            nachrichtenreferenznummer:
+              type: string
+              description: |-
+                EDIFact Referenz aus dem UNT Segment / UTILMD UNT+21 | 
+                <TipInfo>UNH</TipInfo>
+            kategorie:
+              type: string
+              title: Anfragekategorie
+              description: |-
+                Anfragekategorie | 
+                <TipInfo>BGM+E01</TipInfo>
+              enum:
+                - PROZESSDATENBERICHT
+                - GERAETEUEBERNAHME
+                - WEITERVERPFLICHTUNG_BETRIEB_MELO
+                - AENDERUNG_MELO
+                - STAMMDATEN_MALO_ODER_MELO
+                - BILANZIERTE_MENGE_MEHR_MINDER_MENGEN
+                - ALLOKATIONSLISTE_MEHR_MINDER_MENGEN
+                - ENERGIEMENGE_UND_LEISTUNGSMAXIMUM
+                - ABRECHNUNG_MESSSTELLENBETRIEB_MSB_AN_LF
+                - AENDERUNG_PROGNOSEGRUNDLAGE_GERAETEKONFIGURATION
+                - AENDERUNG_GERAETEKONFIGURATION
+                - REKLAMATION_VON_WERTEN
+                - LASTGANG_MALO_TRANCHE
+                - SPERRUNG
+                - ENTSPERRUNG
+                - REKLAMATION_ZAEHLZEITDEFINITION
+                - ZEITREIHEN_IM_RAHMEN_BILANZKREISABRECHNUNG
+                - GERAETEWECHSELABSICHT
+                - AENDERUNG_KONZESSIONSABGABE
+                - AENDERUNG_ZAEHLZEITDEFINITION
+                - UEBERMITTLUNG_WERTE_AN_ESA
+                - AENDERUNG
+                - BILANZKREISZUORDNUNGSLISTE
+                - CLEARINGLISTE
+                - NORMIERTES_PROFIL_PROFILSCHAR
+                - REDISPATCH_EINZELZEITREIHE_AUSFALLARBEIT
+                - REKLAMATION_PROFIL_PROFILSCHAR
+                - STAMMDATEN_MALO
+                - STAMMDATEN_MELO
+                - STAMMDATEN_TRANCHE
+                - BEENDIGUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINES_ANGEBOTS_EINER_KONFIGURATION
+                - REKLAMATION_EINER_KONFIGURATION
+                - >-
+                  BESTELLUNG_AENDERUNG_NETZENTGELTE_NETZORIENTIERTER_STEUERUNGSMOEGLICHKEIT
+                - AENDERUNG_DER_TECHNIK_DER_LOKATION
+                - AENDERUNG_INDIVIDUELLER_KONFIGURATION
+                - BESTELLUNG_AENDERUNG_ABRECHNUNGSDATEN
+                - EINRICHTUNG_KONFIGURATION_AUFGRUND_ZUORDNUNG_LF
+                - REKLAMATION_DEFINITION
+              x-apidog-folder: Bo4e/ENUM
+            nachrichtendatum:
+              type: string
+              description: |-
+                Erstellungdatum der EDIFact / DTM+137 | 
+                <TipInfo>DTM+137</TipInfo>
+              format: date-time
+            absender:
+              type: object
+              properties:
+                rufnummern:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      nummerntyp:
+                        type: string
+                        title: Rufnummernart
+                        description: >-
+
+                          <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                        enum:
+                          - RUF_ZENTRALE
+                          - FAX_ZENTRALE
+                          - SAMMELRUF
+                          - SAMMELFAX
+                          - ABTEILUNGRUF
+                          - ABTEILUNGFAX
+                          - RUF_DURCHWAHL
+                          - FAX_DURCHWAHL
+                          - MOBIL_NUMMER
+                        x-apidog-enum:
+                          - value: RUF_ZENTRALE
+                            name: weiteres Telefon
+                            description: AJ
+                          - value: FAX_ZENTRALE
+                            name: ''
+                            description: ''
+                          - value: SAMMELRUF
+                            name: ''
+                            description: ''
+                          - value: SAMMELFAX
+                            name: ''
+                            description: ''
+                          - value: ABTEILUNGRUF
+                            name: ''
+                            description: ''
+                          - value: ABTEILUNGFAX
+                            name: ''
+                            description: ''
+                          - value: RUF_DURCHWAHL
+                            name: ''
+                            description: ''
+                          - value: FAX_DURCHWAHL
+                            name: Telefax
+                            description: FX
+                          - value: MOBIL_NUMMER
+                            name: Handy
+                            description: AL
+                        x-apidog-folder: Bo4e/ENUM
+                      rufnummer:
+                        type: object
+                        title: Rufnummer
+                        description: >-
+
+                          <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                    x-apidog-orders:
+                      - nummerntyp
+                      - rufnummer
+                    x-apidog-ignore-properties: []
+                ansprechpartner:
+                  type: object
+                  properties:
+                    nachname:
+                      type: string
+                      description: |-
+                        Nachname (Familienname) des Ansprechpartners | 
+                        <TipInfo>SG2.NAD+MS.SG3.CTA</TipInfo>
+                    eMailAdresse:
+                      type: string
+                      description: >-
+                        E-Mail Adresse | 
+
+                        <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                  x-apidog-orders:
+                    - nachname
+                    - eMailAdresse
+                  x-apidog-ignore-properties: []
+                rollencodenummer:
+                  type: string
+                  description: |-
+                    Gibt die Codenummer der Marktrolle an - MP ID
+                    NAD Z31 Übertragungsnetzbetreiber ORDERS
+                    PI 17134
+                    NAD DEB Messstellenbetreiber ORDERS
+                    PI 17003 17134 17135
+                    NAD DEB Messstellenbetreiber IFTSTA 
+                    PI 21007 21015 21018 | 
+                    <TipInfo>SG2.NAD+MS, SG2.NAD+MR</TipInfo>
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: |-
+                    Rollencodetyp | 
+                    <TipInfo>SG2.NAD+MS, SG2.NAD+MR</TipInfo>
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+                  x-apidog-enum:
+                    - value: BDEW
+                      name: >-
+                        DE, BDEW (Bundesverband der Energie- und
+                        Wasserwirtschaft e.V.)
+                      description: '293'
+                    - value: GS1
+                      name: GS1
+                      description: '9'
+                    - value: GLN
+                      name: ''
+                      description: ''
+                    - value: DVGW
+                      name: DE, DVGW Service & Consult GmbH
+                      description: '332'
+                  x-apidog-folder: Bo4e/ENUM
+              x-apidog-orders:
+                - rufnummern
+                - ansprechpartner
+                - rollencodenummer
+                - rollencodetyp
+              x-apidog-ignore-properties: []
+            transaktionsgrundergaenzung:
+              type: string
+              description: |-
+                Ergänzung zum Transaktionsgrund / UTILMD STS+7++E01+###+E03 | 
+                <TipInfo>SG4.IDE+24.STS+Z17</TipInfo>
+            dokumentennummer:
+              type: string
+              description: |-
+                EDIFact Referenz aus dem BGM Segment / BGM | 
+                <TipInfo>BGM+E01</TipInfo>
+            transaktionsgrund:
+              type: string
+              description: >-
+                Der Transaktionsgrund beschreibt den Geschäftsvorfall zur
+                Kategorie genauer / UTILMD STS+7++###+ZW4+E03 | 
+
+                <TipInfo>SG4.IDE+24.STS+7</TipInfo>
+            vertragsbeginn:
+              type: string
+              description: >-
+                Gibt an, wann der Vertrag oder die Zuordnung beginnt.
+
+                DTM 92
+
+                PI 55001 55002 55077 55078 55600 55602 55601 55603 55013 55014
+                55607 55608 55004 55005 55051 55052 55238 55239 55235 55237 | 
+
+                <TipInfo>SG4.IDE+24.DTM+92</TipInfo>
+              format: date-time
+            vorgangsnummer:
+              type: string
+              description: >-
+                Nummer des Vorgangs / UTILMD UTILTS IDE+24 / INSRPT INVOIC DOC
+                | 
+
+                <TipInfo>SG4.IDE+24</TipInfo>
+            vertragsende:
+              type: string
+              description: >-
+                Gibt das Ende der Netznutzung oder einer Zuordnung an. 
+
+                DTM 93
+
+                PI 55016 55017 55001 55002 55600 55602 55013 55014 55607 55608
+                55010 55011 55004 55005 55007 55008 55039 55040 55051 55052
+                55240 55241 55242 55243 55236 55237 | 
+
+                <TipInfo>SG4.IDE+24.DTM+93</TipInfo>
+              format: date-time
+            pruefidentifikator:
+              type: string
+              description: >-
+                Enthält den Prüfidentifikator aus der EDIFact Kommunikation /
+                RFF+Z13 | 
+
+                <TipInfo>SG4.IDE+24.SG6.RFF+Z13</TipInfo>
+            bilanzkreis:
+              type: array
+              items:
+                type: object
+                properties:
+                  prioritaet:
+                    type: integer
+                    description: |-
+                      prioritaet | 
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI+Z19.CAV</TipInfo>
+                x-apidog-orders:
+                  - prioritaet
+                x-apidog-ignore-properties: []
+            freitext:
+              type: object
+              title: Freitext
+              description: |-
+
+                <TipInfo>SG4.IDE+24.FTX+ACB</TipInfo>
+              x-apidog-orders: []
+              properties: {}
+              x-apidog-ignore-properties: []
+          x-apidog-orders:
+            - nachrichtenreferenznummer
+            - kategorie
+            - nachrichtendatum
+            - absender
+            - transaktionsgrundergaenzung
+            - dokumentennummer
+            - transaktionsgrund
+            - vertragsbeginn
+            - vorgangsnummer
+            - vertragsende
+            - pruefidentifikator
+            - bilanzkreis
+            - freitext
+          x-apidog-ignore-properties: []
+      required:
+        - stammdaten
+        - transaktionsdaten
+      description: 44001 - Anmeldung [LF an NB] UTILMD AHB Gas
+      x-apidog-orders:
+        - stammdaten
+        - transaktionsdaten
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    44003_Ablehnung_der_Anmeldung:
+      type: object
+      properties:
+        transaktionsdaten:
+          type: object
+          properties:
+            absender:
+              type: object
+              properties:
+                ansprechpartner:
+                  type: object
+                  properties:
+                    nachname:
+                      type: string
+                      description: |-
+                        Nachname (Familienname) des Ansprechpartners | 
+                        <TipInfo>SG2.NAD+MS.SG3.CTA</TipInfo>
+                    eMailAdresse:
+                      type: string
+                      description: >-
+                        E-Mail Adresse | 
+
+                        <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                  x-apidog-orders:
+                    - nachname
+                    - eMailAdresse
+                  x-apidog-ignore-properties: []
+                rollencodenummer:
+                  type: string
+                  description: |-
+                    Gibt die Codenummer der Marktrolle an - MP ID
+                    NAD Z31 Übertragungsnetzbetreiber ORDERS
+                    PI 17134
+                    NAD DEB Messstellenbetreiber ORDERS
+                    PI 17003 17134 17135
+                    NAD DEB Messstellenbetreiber IFTSTA 
+                    PI 21007 21015 21018 | 
+                    <TipInfo>SG2.NAD+MS, SG2.NAD+MR</TipInfo>
+                rufnummern:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      rufnummer:
+                        type: object
+                        title: Rufnummer
+                        description: >-
+
+                          <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                      nummerntyp:
+                        type: string
+                        title: Rufnummernart
+                        description: >-
+
+                          <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                        enum:
+                          - RUF_ZENTRALE
+                          - FAX_ZENTRALE
+                          - SAMMELRUF
+                          - SAMMELFAX
+                          - ABTEILUNGRUF
+                          - ABTEILUNGFAX
+                          - RUF_DURCHWAHL
+                          - FAX_DURCHWAHL
+                          - MOBIL_NUMMER
+                        x-apidog-enum:
+                          - value: RUF_ZENTRALE
+                            name: weiteres Telefon
+                            description: AJ
+                          - value: FAX_ZENTRALE
+                            name: ''
+                            description: ''
+                          - value: SAMMELRUF
+                            name: ''
+                            description: ''
+                          - value: SAMMELFAX
+                            name: ''
+                            description: ''
+                          - value: ABTEILUNGRUF
+                            name: ''
+                            description: ''
+                          - value: ABTEILUNGFAX
+                            name: ''
+                            description: ''
+                          - value: RUF_DURCHWAHL
+                            name: ''
+                            description: ''
+                          - value: FAX_DURCHWAHL
+                            name: Telefax
+                            description: FX
+                          - value: MOBIL_NUMMER
+                            name: Handy
+                            description: AL
+                        x-apidog-folder: Bo4e/ENUM
+                    x-apidog-orders:
+                      - rufnummer
+                      - nummerntyp
+                    x-apidog-ignore-properties: []
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: |-
+                    Rollencodetyp | 
+                    <TipInfo>SG2.NAD+MS, SG2.NAD+MR</TipInfo>
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+                  x-apidog-enum:
+                    - value: BDEW
+                      name: >-
+                        DE, BDEW (Bundesverband der Energie- und
+                        Wasserwirtschaft e.V.)
+                      description: '293'
+                    - value: GS1
+                      name: GS1
+                      description: '9'
+                    - value: GLN
+                      name: ''
+                      description: ''
+                    - value: DVGW
+                      name: DE, DVGW Service & Consult GmbH
+                      description: '332'
+                  x-apidog-folder: Bo4e/ENUM
+              x-apidog-orders:
+                - ansprechpartner
+                - rollencodenummer
+                - rufnummern
+                - rollencodetyp
+              x-apidog-ignore-properties: []
+            lieferbeginndatuminbearbeitung:
+              type: string
+              description: |-
+                Lieferbeginndatum in Bearbeitung / DTM+Z07 | 
+                <TipInfo>SG4.IDE+24.DTM+Z07</TipInfo>
+              format: date-time
+            anfragereferenznummer:
+              type: string
+              description: >-
+                Referenz Vorgangsnummer 'aus Anfragenachricht' / ORDERS RFF+TN /
+                IFTSTA RFF+AAV / INSRPT RFF+TN RFF+AAV | 
+
+                <TipInfo>SG4.IDE+24.SG6.RFF+TN</TipInfo>
+            naechsteBearbeitung:
+              type: string
+              description: |-
+                Datum für nächste Bearbeitung / DTM+Z08 | 
+                <TipInfo>SG4.IDE+24.DTM+Z08</TipInfo>
+              format: date-time
+            transaktionsgrundergaenzung:
+              type: string
+              description: |-
+                Ergänzung zum Transaktionsgrund / UTILMD STS+7++E01+###+E03 | 
+                <TipInfo>SG4.IDE+24.STS+Z17</TipInfo>
+            nachrichtenreferenznummer:
+              type: string
+              description: |-
+                EDIFact Referenz aus dem UNT Segment / UTILMD UNT+21 | 
+                <TipInfo>UNH</TipInfo>
+            antwortstatusdritter:
+              type: string
+              description: |-
+                Antwortstatus / STS+Z35 | 
+                <TipInfo>SG4.IDE+24.STS+Z35</TipInfo>
+            freitext:
+              type: object
+              title: Freitext
+              description: |-
+
+                <TipInfo>SG4.IDE+24.FTX+ACB</TipInfo>
+              x-apidog-orders: []
+              properties: {}
+              x-apidog-ignore-properties: []
+            dokumentennummer:
+              type: string
+              description: |-
+                EDIFact Referenz aus dem BGM Segment / BGM | 
+                <TipInfo>BGM+E01</TipInfo>
+            antwortstatus:
+              type: string
+              description: |-
+                Antwortstatus
+                STS E01
+                E15 Zustimmung ohne Korrekturen
+                PI 23004
+                Z29 Ablehnung (kein Vertragsverhältnis mehr vorhanden)
+                ZB8 keine Störung feststellbar
+                PI 23003 | 
+                <TipInfo>SG4.IDE+24.STS+E01</TipInfo>
+            kategorie:
+              type: string
+              title: Anfragekategorie
+              description: |-
+                Anfragekategorie | 
+                <TipInfo>BGM+E01</TipInfo>
+              enum:
+                - PROZESSDATENBERICHT
+                - GERAETEUEBERNAHME
+                - WEITERVERPFLICHTUNG_BETRIEB_MELO
+                - AENDERUNG_MELO
+                - STAMMDATEN_MALO_ODER_MELO
+                - BILANZIERTE_MENGE_MEHR_MINDER_MENGEN
+                - ALLOKATIONSLISTE_MEHR_MINDER_MENGEN
+                - ENERGIEMENGE_UND_LEISTUNGSMAXIMUM
+                - ABRECHNUNG_MESSSTELLENBETRIEB_MSB_AN_LF
+                - AENDERUNG_PROGNOSEGRUNDLAGE_GERAETEKONFIGURATION
+                - AENDERUNG_GERAETEKONFIGURATION
+                - REKLAMATION_VON_WERTEN
+                - LASTGANG_MALO_TRANCHE
+                - SPERRUNG
+                - ENTSPERRUNG
+                - REKLAMATION_ZAEHLZEITDEFINITION
+                - ZEITREIHEN_IM_RAHMEN_BILANZKREISABRECHNUNG
+                - GERAETEWECHSELABSICHT
+                - AENDERUNG_KONZESSIONSABGABE
+                - AENDERUNG_ZAEHLZEITDEFINITION
+                - UEBERMITTLUNG_WERTE_AN_ESA
+                - AENDERUNG
+                - BILANZKREISZUORDNUNGSLISTE
+                - CLEARINGLISTE
+                - NORMIERTES_PROFIL_PROFILSCHAR
+                - REDISPATCH_EINZELZEITREIHE_AUSFALLARBEIT
+                - REKLAMATION_PROFIL_PROFILSCHAR
+                - STAMMDATEN_MALO
+                - STAMMDATEN_MELO
+                - STAMMDATEN_TRANCHE
+                - BEENDIGUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINES_ANGEBOTS_EINER_KONFIGURATION
+                - REKLAMATION_EINER_KONFIGURATION
+                - >-
+                  BESTELLUNG_AENDERUNG_NETZENTGELTE_NETZORIENTIERTER_STEUERUNGSMOEGLICHKEIT
+                - AENDERUNG_DER_TECHNIK_DER_LOKATION
+                - AENDERUNG_INDIVIDUELLER_KONFIGURATION
+                - BESTELLUNG_AENDERUNG_ABRECHNUNGSDATEN
+                - EINRICHTUNG_KONFIGURATION_AUFGRUND_ZUORDNUNG_LF
+                - REKLAMATION_DEFINITION
+              x-apidog-folder: Bo4e/ENUM
+            transaktionsgrund:
+              type: string
+              description: >-
+                Der Transaktionsgrund beschreibt den Geschäftsvorfall zur
+                Kategorie genauer / UTILMD STS+7++###+ZW4+E03 | 
+
+                <TipInfo>SG4.IDE+24.STS+7</TipInfo>
+            antwortstatusCodeliste:
+              type: string
+              description: |-
+                Antwortstatus Codeliste / STS+E01 | 
+                <TipInfo>SG4.IDE+24.STS+E01</TipInfo>
+            nachrichtendatum:
+              type: string
+              description: |-
+                Erstellungdatum der EDIFact / DTM+137 | 
+                <TipInfo>DTM+137</TipInfo>
+              format: date-time
+            beteiligterMarktpartner:
+              type: object
+              properties:
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: |-
+                    Rollencodetyp | 
+                    <TipInfo>SG4.IDE+24.SG12.NAD+VY</TipInfo>
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+                  x-apidog-enum:
+                    - value: BDEW
+                      name: >-
+                        DE, BDEW (Bundesverband der Energie- und
+                        Wasserwirtschaft e.V.)
+                      description: '293'
+                    - value: GS1
+                      name: GS1
+                      description: '9'
+                    - value: GLN
+                      name: ''
+                      description: ''
+                    - value: DVGW
+                      name: DE, DVGW Service & Consult GmbH
+                      description: '332'
+                  x-apidog-folder: Bo4e/ENUM
+                rollencodenummer:
+                  type: string
+                  description: |-
+                    Gibt die Codenummer der Marktrolle an - MP ID
+                    NAD Z31 Übertragungsnetzbetreiber ORDERS
+                    PI 17134
+                    NAD DEB Messstellenbetreiber ORDERS
+                    PI 17003 17134 17135
+                    NAD DEB Messstellenbetreiber IFTSTA 
+                    PI 21007 21015 21018 | 
+                    <TipInfo>SG4.IDE+24.SG12.NAD+VY</TipInfo>
+              x-apidog-orders:
+                - rollencodetyp
+                - rollencodenummer
+              x-apidog-ignore-properties: []
+            vorgangsnummer:
+              type: string
+              description: >-
+                Nummer des Vorgangs / UTILMD UTILTS IDE+24 / INSRPT INVOIC DOC
+                | 
+
+                <TipInfo>SG4.IDE+24</TipInfo>
+            pruefidentifikator:
+              type: string
+              description: >-
+                Enthält den Prüfidentifikator aus der EDIFact Kommunikation /
+                RFF+Z13 | 
+
+                <TipInfo>SG4.IDE+24.SG6.RFF+Z13</TipInfo>
+            antwortstatusdritterCodeliste:
+              type: string
+              description: |-
+                Antwortstatus Codeliste / STS+Z35 | 
+                <TipInfo>SG4.IDE+24.STS+Z35</TipInfo>
+          x-apidog-orders:
+            - absender
+            - lieferbeginndatuminbearbeitung
+            - anfragereferenznummer
+            - naechsteBearbeitung
+            - transaktionsgrundergaenzung
+            - nachrichtenreferenznummer
+            - antwortstatusdritter
+            - freitext
+            - dokumentennummer
+            - antwortstatus
+            - kategorie
+            - transaktionsgrund
+            - antwortstatusCodeliste
+            - nachrichtendatum
+            - beteiligterMarktpartner
+            - vorgangsnummer
+            - pruefidentifikator
+            - antwortstatusdritterCodeliste
+          x-apidog-ignore-properties: []
+        stammdaten:
+          type: object
+          properties:
+            MARKTLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  marktlokationsId:
+                    type: string
+                    description: >-
+                      Die ID der Marktlokation der der zu sperrende Zähler
+                      zugeordnet ist. | 
+
+                      <TipInfo>SG4.IDE+24.SG5.LOC+172</TipInfo>
+                x-apidog-orders:
+                  - marktlokationsId
+                x-apidog-ignore-properties: []
+          x-apidog-orders:
+            - MARKTLOKATION
+          x-apidog-ignore-properties: []
+      required:
+        - transaktionsdaten
+        - stammdaten
+      description: 44003 - Ablehnung der Anmeldung [NB an LF] UTILMD AHB Gas
+      x-apidog-orders:
+        - transaktionsdaten
+        - stammdaten
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    44002_Bestätigung_der_Anmeldung:
+      type: object
+      properties:
+        stammdaten:
+          type: object
+          properties:
+            ZAEHLER:
+              type: array
+              items:
+                type: object
+                properties:
+                  zaehlwerke:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        nachkommastelle:
+                          type: integer
+                          description: >-
+                            Angabe der Nachkommastelle des Zählwerks
+
+                            CAV Wert
+
+                            PI 55643 55648 55653 55658 55663 55669 55553 55555
+                            55043 55168 55169 55074 55075 55076 | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z20.SG10.CCI+11++Z33.CAV</TipInfo>
+                        bezeichnung:
+                          type: string
+                          description: >-
+                            Externe Bezeichnung | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z20.SG10.CCI+++Z63</TipInfo>
+                        obisKennzahl:
+                          type: string
+                          description: >-
+                            Produktidentifikation bei Austausch von Daten der
+                            Energiemengen werden gewährleistet durch OBIS
+                            Kennzahlen.
+
+                            PIA 5 OBIS-Kennzahl der Netzlokation
+
+                            PI 55639 55644 55649 55654 55659 55664 55060 55043
+                            55168 55169
+
+                            PIA 5 OBIS-Kennzahl der Marktlokation
+
+                            PI 55684 55685 55640 55645 55650 55655 55660 55665
+                            55553 55555 55035 55095 55060 55043 55168 55169
+                            55239 55074 55075 55076 55195 55196 
+
+                            RFF Z10 Referenz auf die OBIS-Kennzahl der
+                            Marktlokation
+
+                            PI 55616 55622 
+
+                            PIA 5 OBIS-Daten der Marktlokation der beteiligten
+                            Marktrolle
+
+                            PI 55196
+
+                            PIA 5 OBIS-Kennzahl der Tranche
+
+                            PI 55686 55687 55642 55647 55652 55657 55662 55667
+                            55095 55074 55075 55076 55195 55196
+
+                            PIA 5 OBIS-Kennzahl der Zähleinrichtung
+                            /Smartmeter-Gateway
+
+                            PI 55643 55648 55653 55658 55663 55669 55553 55555
+                            55035 55095 55060 55043 55168 55169 55074 55075
+                            55076 | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z20.PIA+5</TipInfo>
+                        vorkommastelle:
+                          type: integer
+                          description: >-
+                            Angabe der Vorkommastelle des Zählwerks
+
+                            CAV Wert
+
+                            PI 55643 55648 55653 55658 55663 55669 55553 55555
+                            55043 55168 55169 55074 55075 55076 | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z20.SG10.CCI+11++Z33.CAV</TipInfo>
+                        wertegranularitaet:
+                          type: string
+                          title: Wertegranularitaet
+                          description: >-
+                            Wertegranularitaet | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z20.SG10.CCI+++ZE4.CAV</TipInfo>
+                          enum:
+                            - JAEHRLICH
+                            - HALBJAEHRLICH
+                            - QUARTALSWEISE
+                            - MONATLICH
+                          x-apidog-enum:
+                            - value: JAEHRLICH
+                              name: Jährlich
+                              description: ZD9
+                            - value: HALBJAEHRLICH
+                              name: Halbjährlich
+                              description: ZE8
+                            - value: QUARTALSWEISE
+                              name: Quartalsweise
+                              description: ZE9
+                            - value: MONATLICH
+                              name: Monatlich
+                              description: ZB7
+                          x-apidog-folder: Bo4e/ENUM
+                      x-apidog-orders:
+                        - nachkommastelle
+                        - bezeichnung
+                        - obisKennzahl
+                        - vorkommastelle
+                        - wertegranularitaet
+                      x-apidog-ignore-properties: []
+                  zaehlernummer:
+                    type: string
+                    description: >-
+                      Die Nummer des zu sperrenden Zählers | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z03.SG10.CCI+++E13.CAV+Z30,
+                      SG4.IDE+24.SG8.SEQ+Z09.RFF+MG,
+                      SG4.IDE+24.SG8.SEQ+Z20.RFF+[MG|Z11],
+                      SG4.IDE+24.SG8.SEQ+Z05.RFF+MG</TipInfo>
+                  geraete:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        geraetenummer:
+                          type: string
+                          description: >-
+                            Angabe der Referenz auf die Gerätenummer des Zählers
+                            / Smartmeter-Gateway / Wandler
+
+                            RFF Z14 Smartmeter-Gateway
+
+                            PI 55643 55648 55653 55658 55663 55669 55043 55168
+                            55169 55074 55075 55076 
+
+                            CAV Z30 Gerätenummer
+
+                            55643 55648 55653 55658 55663 55669 55060 55043
+                            55168 55169 55074 55075 55076 
+
+                            RFF Z09 ORDERS 
+
+                            PI 17101 17126 17009  | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z50.SG10.CCI+++E13.CAV+Z30,
+                            SG4.IDE+24.SG8.SEQ+Z09.SG10.CCI+++Z64.CAV+Z30,
+                            SG4.IDE+24.SG8.SEQ+Z05.SG10.CCI+++Z26.CAV+Z30,
+                            SG4.IDE+24.SG8.SEQ+Z13.SG10.CCI+++Z75.CAV+Z30</TipInfo>
+                        geraeteeigenschaften:
+                          type: object
+                          properties:
+                            geraetemerkmal:
+                              type: string
+                              title: Geraetemerkmal
+                              description: >-
+                                Geraetemerkmal | 
+
+                                <TipInfo>SG4.IDE+24.SG8.SEQ+Z09.SG10.CCI+++Z64.CAV,
+                                SG4.IDE+24.SG8.SEQ+Z05.SG10.CCI+++Z26.CAV</TipInfo>
+                              enum:
+                                - EINTARIF
+                                - ZWEITARIF
+                                - MEHRTARIF
+                                - GAS_G2P5
+                                - GAS_G4
+                                - GAS_G6
+                                - GAS_G10
+                                - GAS_G16
+                                - GAS_G25
+                                - GAS_G40
+                                - GAS_G65
+                                - GAS_G100
+                                - GAS_G160
+                                - GAS_G250
+                                - GAS_G350
+                                - GAS_G400
+                                - GAS_G4000
+                                - GAS_G650
+                                - GAS_G6500
+                                - GAS_G1000
+                                - GAS_G10000
+                                - GAS_G12500
+                                - GAS_G1600
+                                - GAS_G16000
+                                - GAS_G2500
+                                - IMPULSGEBER_G4_G100
+                                - IMPULSGEBER_G100
+                                - MODEM_GSM
+                                - MODEM_GPRS
+                                - MODEM_FUNK
+                                - MODEM_GSM_O_LG
+                                - MODEM_GSM_M_LG
+                                - MODEM_FESTNETZ
+                                - MODEM_GPRS_M_LG
+                                - PLC_COM
+                                - ETHERNET_KOM
+                                - DSL_KOM
+                                - LTE_KOM
+                                - RUNDSTEUEREMPFAENGER
+                                - TARIFSCHALTGERAET
+                                - ZUSTANDS_MU
+                                - TEMPERATUR_MU
+                                - KOMPAKT_MU
+                                - SYSTEM_MU
+                                - UNBESTIMMT
+                                - WASSER_MWZW
+                                - WASSER_WZWW
+                                - WASSER_WZ01
+                                - WASSER_WZ02
+                                - WASSER_WZ03
+                                - WASSER_WZ04
+                                - WASSER_WZ05
+                                - WASSER_WZ06
+                                - WASSER_WZ07
+                                - WASSER_WZ08
+                                - WASSER_WZ09
+                                - WASSER_WZ10
+                                - WASSER_VWZ04
+                                - WASSER_VWZ05
+                                - WASSER_VWZ06
+                                - WASSER_VWZ07
+                                - WASSER_VWZ10
+                                - DICHTEMENGENUMWERTER
+                                - TEMPERATURMENGENUMWERTER
+                                - ZUSTANDSMENGENUMWERTER
+                                - BLOCKSTROMWANDLER
+                                - MESSWANDLERSATZ_IMS_MME
+                                - KOMBIMESSWANDLER
+                                - SPANNUNGSWANDLER
+                              x-apidog-enum:
+                                - value: EINTARIF
+                                  name: ''
+                                  description: ''
+                                - value: ZWEITARIF
+                                  name: ''
+                                  description: ''
+                                - value: MEHRTARIF
+                                  name: ''
+                                  description: ''
+                                - value: GAS_G2P5
+                                  name: Gaszähler G2.5
+                                  description: G2.5
+                                - value: GAS_G4
+                                  name: Gaszähler G4
+                                  description: G4
+                                - value: GAS_G6
+                                  name: Gaszähler G6
+                                  description: G6
+                                - value: GAS_G10
+                                  name: Gaszähler G10
+                                  description: G10
+                                - value: GAS_G16
+                                  name: Gaszähler G16
+                                  description: G16
+                                - value: GAS_G25
+                                  name: Gaszähler G25
+                                  description: G25
+                                - value: GAS_G40
+                                  name: Gaszähler G40
+                                  description: G40
+                                - value: GAS_G65
+                                  name: Gaszähler G65
+                                  description: G65
+                                - value: GAS_G100
+                                  name: Gaszähler G100
+                                  description: G100
+                                - value: GAS_G160
+                                  name: Gaszähler G160
+                                  description: G160
+                                - value: GAS_G250
+                                  name: Gaszähler G250
+                                  description: G250
+                                - value: GAS_G350
+                                  name: Gaszähler G350
+                                  description: G350
+                                - value: GAS_G400
+                                  name: Gaszähler G400
+                                  description: G400
+                                - value: GAS_G4000
+                                  name: Gaszähler G4000
+                                  description: G4000
+                                - value: GAS_G650
+                                  name: Gaszähler G650
+                                  description: G650
+                                - value: GAS_G6500
+                                  name: Gaszähler G6500
+                                  description: G6500
+                                - value: GAS_G1000
+                                  name: Gaszähler G1000
+                                  description: G1000
+                                - value: GAS_G10000
+                                  name: Gaszähler G10000
+                                  description: G10000
+                                - value: GAS_G12500
+                                  name: Gaszähler G12500
+                                  description: G12500
+                                - value: GAS_G1600
+                                  name: Gaszähler G1600
+                                  description: G1600
+                                - value: GAS_G16000
+                                  name: Gaszähler G16000
+                                  description: G16000
+                                - value: GAS_G2500
+                                  name: Gaszähler G2500
+                                  description: G2500
+                                - value: IMPULSGEBER_G4_G100
+                                  name: ''
+                                  description: ''
+                                - value: IMPULSGEBER_G100
+                                  name: ''
+                                  description: ''
+                                - value: MODEM_GSM
+                                  name: GSM/GPRS/UMTS-Kom.-Einr.
+                                  description: GSM
+                                - value: MODEM_GPRS
+                                  name: ''
+                                  description: ''
+                                - value: MODEM_FUNK
+                                  name: ''
+                                  description: ''
+                                - value: MODEM_GSM_O_LG
+                                  name: ''
+                                  description: ''
+                                - value: MODEM_GSM_M_LG
+                                  name: ''
+                                  description: ''
+                                - value: MODEM_FESTNETZ
+                                  name: Festnetz-Kom.-Einricht. TAE
+                                  description: PST
+                                - value: MODEM_GPRS_M_LG
+                                  name: ''
+                                  description: ''
+                                - value: PLC_COM
+                                  name: PLC-Kom.-Einrichtung
+                                  description: PLC
+                                - value: ETHERNET_KOM
+                                  name: Ethernet-Kom.-Einricht. LAN/WLAN
+                                  description: ETH
+                                - value: DSL_KOM
+                                  name: DSL-Kom.Einr.
+                                  description: DSL
+                                - value: LTE_KOM
+                                  name: LTE-Kom.-Einr.
+                                  description: LTE
+                                - value: RUNDSTEUEREMPFAENGER
+                                  name: Rundsteuerempfänger
+                                  description: RSU
+                                - value: TARIFSCHALTGERAET
+                                  name: Tarifschaltuhr
+                                  description: TSU
+                                - value: ZUSTANDS_MU
+                                  name: ''
+                                  description: ''
+                                - value: TEMPERATUR_MU
+                                  name: ''
+                                  description: ''
+                                - value: KOMPAKT_MU
+                                  name: ''
+                                  description: ''
+                                - value: SYSTEM_MU
+                                  name: ''
+                                  description: ''
+                                - value: UNBESTIMMT
+                                  name: ''
+                                  description: ''
+                                - value: WASSER_MWZW
+                                  name: ''
+                                  description: ''
+                                - value: WASSER_WZWW
+                                  name: ''
+                                  description: ''
+                                - value: WASSER_WZ01
+                                  name: ''
+                                  description: ''
+                                - value: WASSER_WZ02
+                                  name: ''
+                                  description: ''
+                                - value: WASSER_WZ03
+                                  name: ''
+                                  description: ''
+                                - value: WASSER_WZ04
+                                  name: ''
+                                  description: ''
+                                - value: WASSER_WZ05
+                                  name: ''
+                                  description: ''
+                                - value: WASSER_WZ06
+                                  name: ''
+                                  description: ''
+                                - value: WASSER_WZ07
+                                  name: ''
+                                  description: ''
+                                - value: WASSER_WZ08
+                                  name: ''
+                                  description: ''
+                                - value: WASSER_WZ09
+                                  name: ''
+                                  description: ''
+                                - value: WASSER_WZ10
+                                  name: ''
+                                  description: ''
+                                - value: WASSER_VWZ04
+                                  name: ''
+                                  description: ''
+                                - value: WASSER_VWZ05
+                                  name: ''
+                                  description: ''
+                                - value: WASSER_VWZ06
+                                  name: ''
+                                  description: ''
+                                - value: WASSER_VWZ07
+                                  name: ''
+                                  description: ''
+                                - value: WASSER_VWZ10
+                                  name: ''
+                                  description: ''
+                                - value: DICHTEMENGENUMWERTER
+                                  name: Dichtemengenumwerter
+                                  description: DMU
+                                - value: TEMPERATURMENGENUMWERTER
+                                  name: Temperaturmengenumwerter
+                                  description: TMU
+                                - value: ZUSTANDSMENGENUMWERTER
+                                  name: Zustandsmengenumwerter
+                                  description: ZMU
+                                - value: BLOCKSTROMWANDLER
+                                  name: Blockstromwandler
+                                  description: MBW
+                                - value: MESSWANDLERSATZ_IMS_MME
+                                  name: Messwandlersatz Strom
+                                  description: MIW
+                                - value: KOMBIMESSWANDLER
+                                  name: Kombimesswandlersatz (Strom und Spannung)
+                                  description: MPW
+                                - value: SPANNUNGSWANDLER
+                                  name: Messwandlersatz Spannung
+                                  description: MUW
+                              x-apidog-folder: Bo4e/ENUM
+                          x-apidog-orders:
+                            - geraetemerkmal
+                          x-apidog-ignore-properties: []
+                      x-apidog-orders:
+                        - geraetenummer
+                        - geraeteeigenschaften
+                      x-apidog-ignore-properties: []
+                  messwerterfassung:
+                    type: string
+                    title: Messwerterfassung
+                    description: >-
+                      Die Messwerterfassung des Zählers | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z03.SG10.CCI+++E12.CAV</TipInfo>
+                    enum:
+                      - FERNAUSLESBAR
+                      - MANUELL_AUSGELESENE
+                    x-apidog-enum:
+                      - value: FERNAUSLESBAR
+                        name: fernauslesbare Zähler
+                        description: AMR
+                      - value: MANUELL_AUSGELESENE
+                        name: manuell ausgelesene Zähler
+                        description: MMR
+                    x-apidog-folder: Bo4e/ENUM
+                  zaehlertypspezifikation:
+                    type: string
+                    title: ZaehlertypSpezifikation
+                    description: >-
+                      ZaehlertypSpezifikation | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z03.SG10.CCI+++E13.CAV</TipInfo>
+                    enum:
+                      - EDL40
+                      - EDL21
+                      - SONSTIGER_EHZ
+                      - MME_STANDARD
+                      - MME_MEDA
+                    x-apidog-enum:
+                      - value: EDL40
+                        name: EDL40
+                        description: Z01
+                      - value: EDL21
+                        name: EDL21
+                        description: Z02
+                      - value: SONSTIGER_EHZ
+                        name: sonstiger EHZ
+                        description: Z03
+                      - value: MME_STANDARD
+                        name: Standard
+                        description: Z04
+                      - value: MME_MEDA
+                        name: MeDa-Zähler
+                        description: Z05
+                    x-apidog-folder: Bo4e/ENUM
+                  zaehlertyp:
+                    type: string
+                    title: Zaehlertyp
+                    description: >-
+                      Zaehlertyp | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z03.SG10.CCI+++E13.CAV</TipInfo>
+                    enum:
+                      - DREHSTROMZAEHLER
+                      - BALGENGASZAEHLER
+                      - DREHKOLBENZAEHLER
+                      - SMARTMETER
+                      - LEISTUNGSZAEHLER
+                      - MAXIMUMZAEHLER
+                      - TURBINENRADGASZAEHLER
+                      - ULTRASCHALLGASZAEHLER
+                      - WECHSELSTROMZAEHLER
+                      - WIRBELGASZAEHLER
+                      - MESSDATENREGISTRIERGERAET
+                      - ELEKTRONISCHERHAUSHALTSZAEHLER
+                      - SONDERAUSSTATTUNG
+                      - WASSERZAEHLER
+                      - MODERNEMESSEINRICHTUNG
+                    x-apidog-enum:
+                      - value: DREHSTROMZAEHLER
+                        name: analoger Haushaltszähler (Drehstrom)
+                        description: AHZ
+                      - value: BALGENGASZAEHLER
+                        name: Balgengaszähler
+                        description: BGZ
+                      - value: DREHKOLBENZAEHLER
+                        name: Drehkolbengaszähler
+                        description: DKZ
+                      - value: SMARTMETER
+                        name: ''
+                        description: ''
+                      - value: LEISTUNGSZAEHLER
+                        name: Lastgangzähler
+                        description: LAZ
+                      - value: MAXIMUMZAEHLER
+                        name: Maximumzähler
+                        description: MAZ
+                      - value: TURBINENRADGASZAEHLER
+                        name: Turbinenradgaszähler
+                        description: TRZ
+                      - value: ULTRASCHALLGASZAEHLER
+                        name: Ultraschallgaszähler
+                        description: UGZ
+                      - value: WECHSELSTROMZAEHLER
+                        name: analoger Wechselstromzähler
+                        description: WSZ
+                      - value: WIRBELGASZAEHLER
+                        name: Wirbelgaszähler
+                        description: WGZ
+                      - value: MESSDATENREGISTRIERGERAET
+                        name: ''
+                        description: ''
+                      - value: ELEKTRONISCHERHAUSHALTSZAEHLER
+                        name: elektronischer Haushaltszähler
+                        description: EHZ
+                      - value: SONDERAUSSTATTUNG
+                        name: Individuelle Abstimmung (Sonderausstatung)
+                        description: IVA
+                      - value: WASSERZAEHLER
+                        name: ''
+                        description: ''
+                      - value: MODERNEMESSEINRICHTUNG
+                        name: moderne Messeinrichtung nach MsbG
+                        description: MME
+                    x-apidog-folder: Bo4e/ENUM
+                  messlokationsId:
+                    type: string
+                    description: >-
+                      Angabe der ID der Messlokation,  für die die Stammdaten
+                      gelten. Die ID dient der eindeutigen Identifikation einer
+                      Messlokation und wird spätestens bei der Bestätigung vom
+                      NB mitgeliefert.
+
+                      LOC Z17
+
+                      PI 55002 55078 55600 55602 55601 55603 55013 55607 55611
+                      55620 55626 55632 55638 55175 55180 55173 55177 55690
+                      55643 55648 55653 55658 55663 55669 55035 55095 55060
+                      55039 55040 55041 55042 55043 55044 55168 55169 55170
+                      55051 55052 55053 55074 55075 55076
+
+                      RFF Z19
+
+                      PI 55002 55078 55602 55603 55013 55607 55690 55035 55095
+                      55060 55194 55043 55168 55169 
+
+                      RFF Z46
+
+                      PI 55643 55648 55663 55669 
+
+                      RFF Z19 ORDERS 
+
+                      PI 17121 17134
+
+                      IFTSTA 
+
+                      LOC 172
+
+                      PI 21000 21001 21002 21003 21004 21005 21007 21009 21010
+                      21011 21012 21013 21015 21018 21024 21025 21026 21027
+                      21036 21028 21029 21030 21031 21033 
+
+                      QUOTES
+
+                      LOC 172 
+
+                      PI 15001 15003 15004
+
+                      LOC 172 INVOIC
+
+                      PI 31003 31009 31004  | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z03.RFF+Z19,
+                      SG4.IDE+24.SG8.SEQ+Z50.RFF+Z19,
+                      SG4.IDE+24.SG8.SEQ+Z20.RFF+Z19</TipInfo>
+                x-apidog-orders:
+                  - zaehlwerke
+                  - zaehlernummer
+                  - geraete
+                  - messwerterfassung
+                  - zaehlertypspezifikation
+                  - zaehlertyp
+                  - messlokationsId
+                x-apidog-ignore-properties: []
+            NETZNUTZUNGSVERTRAG:
+              type: array
+              items:
+                type: object
+                properties:
+                  vertragskonditionen:
+                    type: object
+                    properties:
+                      netznutzungsabrechnungsvariante:
+                        type: string
+                        title: Netznutzungsabrechnungsvariante
+                        description: >-
+                          Netznutzungsabrechnungsvariante | 
+
+                          <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI+++Z88.CAV+ZB1</TipInfo>
+                        enum:
+                          - ARBEITSPREIS_GRUNDPREIS
+                          - ARBEITSPREIS_LEISTUNGSPREIS
+                        x-apidog-enum:
+                          - value: ARBEITSPREIS_GRUNDPREIS
+                            name: Arbeitspreis/Grundpreis
+                            description: Z14
+                          - value: ARBEITSPREIS_LEISTUNGSPREIS
+                            name: Arbeitspreis/Leistungspreis
+                            description: Z15
+                        x-apidog-folder: Bo4e/ENUM
+                      startAbrechnungsjahr:
+                        type: string
+                        description: >-
+                          Start des Abrechnungsjahrs bei Marktlokationen mit
+                          Jahresleistungspreis - Rechnungsperiode, Beginndatum
+
+                          DTM 155
+
+                          PI 44112 44139 44142 44002 44013 44014 44035 | 
+
+                          <TipInfo>SG4.IDE+24.SG6.RFF+Z18.DTM+155</TipInfo>
+                        format: date-time
+                      netznutzungsvertrag:
+                        type: string
+                        title: Netznutzungsvertrag
+                        description: >-
+                          Netznutzungsvertrag | 
+
+                          <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI+++Z88.CAV+Z74</TipInfo>
+                        enum:
+                          - KUNDEN_NB
+                          - LIEFERANTEN_NB
+                        x-apidog-enum:
+                          - value: KUNDEN_NB
+                            name: Direkter Vertrag zwischen Kunden und NB
+                            description: Z08
+                          - value: LIEFERANTEN_NB
+                            name: Vertrag zwischen Lieferanten und NB
+                            description: Z09
+                        x-apidog-folder: Bo4e/ENUM
+                      netznutzungszahler:
+                        type: string
+                        title: Netznutzungszahler
+                        description: >-
+                          Netznutzungszahler | 
+
+                          <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI+++Z88.CAV+Z73</TipInfo>
+                        enum:
+                          - KUNDE
+                          - LIEFERANT
+                        x-apidog-enum:
+                          - value: KUNDE
+                            name: Kunde
+                            description: Z10
+                          - value: LIEFERANT
+                            name: Lieferant
+                            description: Z11
+                        x-apidog-folder: Bo4e/ENUM
+                      netznutzungsabrechnungIntervall:
+                        type: integer
+                        description: >-
+                          Netznutzungsabrechnungs- bzw.
+                          Einspeisevergütungsintervall des NB, hier ist die
+                          Anzahl der Monate anzugeben, bis zur nächsten
+                          Netznutzungsabrechnung. 
+
+                          DTM Z22
+
+                          PI 55218 55220 | 
+
+                          <TipInfo>SG4.IDE+24.SG6.RFF+Z18.DTM+Z22</TipInfo>
+                      naechstenetznutzungsabrechnung:
+                        type: string
+                        description: >-
+                          Nächste Netznutzungsabrechnung - Mitteilung an den LF,
+                          in welchem Jahr die nächste Netznutzungabrechnung
+                          stattfindet.
+
+                          DTM Z09
+
+                          PI 55218 55220 | 
+
+                          <TipInfo>SG4.IDE+24.SG6.RFF+Z18.DTM+Z09</TipInfo>
+                      netznutzungsabrechnung:
+                        type: object
+                        properties:
+                          abrechnungsZeitraum:
+                            type: string
+                            description: >-
+                              Termin, zu dem die Netznutzungsabrechnung des NB
+                              erfolgt
+
+                              DTM Z21
+
+                              PI 44112 44139 44142 44002 44013 44014 44035 | 
+
+                              <TipInfo>SG4.IDE+24.SG6.RFF+Z18.DTM+Z21</TipInfo>
+                        x-apidog-orders:
+                          - abrechnungsZeitraum
+                        x-apidog-ignore-properties: []
+                    x-apidog-orders:
+                      - netznutzungsabrechnungsvariante
+                      - startAbrechnungsjahr
+                      - netznutzungsvertrag
+                      - netznutzungszahler
+                      - netznutzungsabrechnungIntervall
+                      - naechstenetznutzungsabrechnung
+                      - netznutzungsabrechnung
+                    x-apidog-ignore-properties: []
+                  vertragsende:
+                    type: string
+                    description: >-
+                      Gibt das Ende der Netznutzung oder einer Zuordnung an. 
+
+                      DTM 93
+
+                      PI 55016 55017 55001 55002 55600 55602 55013 55014 55607
+                      55608 55010 55011 55004 55005 55007 55008 55039 55040
+                      55051 55052 55240 55241 55242 55243 55236 55237 | 
+
+                      <TipInfo>SG4.IDE+24.DTM+93</TipInfo>
+                    format: date-time
+                  vertragsbeginn:
+                    type: string
+                    description: >-
+                      Gibt an, wann der Vertrag oder die Zuordnung beginnt.
+
+                      DTM 92
+
+                      PI 55001 55002 55077 55078 55600 55602 55601 55603 55013
+                      55014 55607 55608 55004 55005 55051 55052 55238 55239
+                      55235 55237 | 
+
+                      <TipInfo>SG4.IDE+24.DTM+92</TipInfo>
+                    format: date-time
+                  gemeinderabatt:
+                    type: integer
+                    description: >-
+                      Gemeinderabatt - Angabe zum Preisnachlass der
+                      Netznutzungsentgelte
+
+                      QTY Z16
+
+                      PI 44112 44139 44142 44001 44002 44013 44014 44035 | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z12.SG9.QTY+Z16</TipInfo>
+                x-apidog-orders:
+                  - vertragskonditionen
+                  - vertragsende
+                  - vertragsbeginn
+                  - gemeinderabatt
+                x-apidog-ignore-properties: []
+            MARKTLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  lokationsadresse:
+                    type: object
+                    properties:
+                      zusatzInformation:
+                        type: object
+                        properties:
+                          landescode:
+                            type: string
+                            title: Landescode
+                            description: |-
+                              Der ISO-Landescode als Enumeration | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                            enum:
+                              - AC
+                              - AD
+                              - AE
+                              - AF
+                              - AG
+                              - AI
+                              - AL
+                              - AM
+                              - AN
+                              - AO
+                              - AQ
+                              - AR
+                              - AS
+                              - AT
+                              - AU
+                              - AW
+                              - AX
+                              - AZ
+                              - BA
+                              - BB
+                              - BD
+                              - BE
+                              - BF
+                              - BG
+                              - BH
+                              - BI
+                              - BJ
+                              - BL
+                              - BM
+                              - BN
+                              - BO
+                              - BQ
+                              - BR
+                              - BS
+                              - BT
+                              - BU
+                              - BV
+                              - BW
+                              - BY
+                              - BZ
+                              - CA
+                              - CC
+                              - CD
+                              - CF
+                              - CG
+                              - CH
+                              - CI
+                              - CK
+                              - CL
+                              - CM
+                              - CN
+                              - CO
+                              - CP
+                              - CR
+                              - CS
+                              - CU
+                              - CV
+                              - CW
+                              - CX
+                              - CY
+                              - CZ
+                              - DE
+                              - DG
+                              - DJ
+                              - DK
+                              - DM
+                              - DO
+                              - DZ
+                              - EA
+                              - EC
+                              - EE
+                              - EG
+                              - EH
+                              - ER
+                              - ES
+                              - ET
+                              - EU
+                              - FI
+                              - FJ
+                              - FK
+                              - FM
+                              - FO
+                              - FR
+                              - FX
+                              - GA
+                              - GB
+                              - GD
+                              - GE
+                              - GF
+                              - GG
+                              - GH
+                              - GI
+                              - GL
+                              - GM
+                              - GN
+                              - GP
+                              - GQ
+                              - GR
+                              - GS
+                              - GT
+                              - GU
+                              - GW
+                              - GY
+                              - HK
+                              - HM
+                              - HN
+                              - HR
+                              - HT
+                              - HU
+                              - IC
+                              - ID
+                              - IE
+                              - IL
+                              - IM
+                              - IN
+                              - IO
+                              - IQ
+                              - IR
+                              - IS
+                              - IT
+                              - JE
+                              - JM
+                              - JO
+                              - JP
+                              - KE
+                              - KG
+                              - KH
+                              - KI
+                              - KM
+                              - KN
+                              - KP
+                              - KR
+                              - KW
+                              - KY
+                              - KZ
+                              - LA
+                              - LB
+                              - LC
+                              - LI
+                              - LK
+                              - LR
+                              - LS
+                              - LT
+                              - LU
+                              - LV
+                              - LY
+                              - MA
+                              - MC
+                              - MD
+                              - ME
+                              - MF
+                              - MG
+                              - MH
+                              - MK
+                              - ML
+                              - MM
+                              - MN
+                              - MO
+                              - MP
+                              - MQ
+                              - MR
+                              - MS
+                              - MT
+                              - MU
+                              - MV
+                              - MW
+                              - MX
+                              - MY
+                              - MZ
+                              - NA
+                              - NC
+                              - NE
+                              - NF
+                              - NG
+                              - NI
+                              - NL
+                              - 'NO'
+                              - NP
+                              - NR
+                              - NT
+                              - NU
+                              - NZ
+                              - OM
+                              - PA
+                              - PE
+                              - PF
+                              - PG
+                              - PH
+                              - PK
+                              - PL
+                              - PM
+                              - PN
+                              - PR
+                              - PS
+                              - PT
+                              - PW
+                              - PY
+                              - QA
+                              - RE
+                              - RO
+                              - RS
+                              - RU
+                              - RW
+                              - SA
+                              - SB
+                              - SC
+                              - SD
+                              - SE
+                              - SF
+                              - SG
+                              - SH
+                              - SI
+                              - SJ
+                              - SK
+                              - SL
+                              - SM
+                              - SN
+                              - SO
+                              - SR
+                              - SS
+                              - ST
+                              - SU
+                              - SV
+                              - SX
+                              - SY
+                              - SZ
+                              - TA
+                              - TC
+                              - TD
+                              - TF
+                              - TG
+                              - TJ
+                              - TK
+                              - TL
+                              - TM
+                              - TN
+                              - TO
+                              - TP
+                              - TR
+                              - TT
+                              - TV
+                              - TW
+                              - TZ
+                              - UA
+                              - UG
+                              - UK
+                              - UM
+                              - US
+                              - UY
+                              - UZ
+                              - VA
+                              - VC
+                              - VE
+                              - VG
+                              - VI
+                              - VN
+                              - VU
+                              - WF
+                              - WS
+                              - XK
+                              - YE
+                              - YT
+                              - YU
+                              - ZA
+                              - ZM
+                              - ZR
+                              - ZW
+                            x-apidog-folder: Bo4e/ENUM
+                          postleitzahl:
+                            type: string
+                            description: |-
+                              Postleitzahl | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          strasse:
+                            type: string
+                            description: |-
+                              Strasse | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          zusatz5:
+                            type: string
+                            description: |-
+                              Adresszusatz 5 | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          zusatz4:
+                            type: string
+                            description: |-
+                              Adresszusatz 4 | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          ortsteil:
+                            type: string
+                            description: |-
+                              Ortsteil | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          postfach:
+                            type: string
+                            description: |-
+                              Postfach | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          hausnummer:
+                            type: string
+                            description: |-
+                              Hausnummer und Ergänzung | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          zusatz2:
+                            type: string
+                            description: |-
+                              Adresszusatz 2 | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          zusatz3:
+                            type: string
+                            description: |-
+                              Adresszusatz 3 | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                          ort:
+                            type: object
+                            title: Sort
+                            description: |-
+
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                            x-apidog-orders: []
+                            properties: {}
+                            x-apidog-ignore-properties: []
+                          zusatz1:
+                            type: string
+                            description: |-
+                              Adresszusatz 1 | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+DP</TipInfo>
+                        x-apidog-orders:
+                          - landescode
+                          - postleitzahl
+                          - strasse
+                          - zusatz5
+                          - zusatz4
+                          - ortsteil
+                          - postfach
+                          - hausnummer
+                          - zusatz2
+                          - zusatz3
+                          - ort
+                          - zusatz1
+                        x-apidog-ignore-properties: []
+                    x-apidog-orders:
+                      - zusatzInformation
+                    x-apidog-ignore-properties: []
+                  marktgebiet:
+                    type: string
+                    description: >-
+                      Angabe des Marktgebiets, in dem die Marktlokation liegt -
+                      EIC-Code
+
+                      CCI Z21
+
+                      PI 44112 44139 44142 44002 44013 44014 44035  | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI+Z21</TipInfo>
+                  netzebene:
+                    type: string
+                    title: Netzebene
+                    description: >-
+                      Netzebene | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI+++Y01.CAV</TipInfo>
+                    enum:
+                      - NSP
+                      - MSP
+                      - HSP
+                      - HSS
+                      - MSP_NSP_UMSP
+                      - HSP_MSP_UMSP
+                      - HSS_HSP_UMSP
+                      - HD
+                      - MD
+                      - ND
+                    x-apidog-enum:
+                      - value: NSP
+                        name: Niederspannung
+                        description: E06
+                      - value: MSP
+                        name: Mittelspannung
+                        description: E05
+                      - value: HSP
+                        name: Hochspannung
+                        description: E04
+                      - value: HSS
+                        name: Höchstspannung
+                        description: E03
+                      - value: MSP_NSP_UMSP
+                        name: MS/NS Umspannung
+                        description: E09
+                      - value: HSP_MSP_UMSP
+                        name: HS/MS Umspannung
+                        description: E08
+                      - value: HSS_HSP_UMSP
+                        name: Hös/HS Umspannung
+                        description: E07
+                      - value: HD
+                        name: Hochdruck
+                        description: Y01
+                      - value: MD
+                        name: Mitteldruck
+                        description: Y02
+                      - value: ND
+                        name: Niederdruck
+                        description: Y03
+                    x-apidog-folder: Bo4e/ENUM
+                  marktlokationsId:
+                    type: string
+                    description: >-
+                      Die ID der Marktlokation der der zu sperrende Zähler
+                      zugeordnet ist. | 
+
+                      <TipInfo>SG4.IDE+24.SG5.LOC+172,
+                      SG4.IDE+24.SG6.RFF+Z18</TipInfo>
+                  zaehlwerke:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        obisKennzahl:
+                          type: string
+                          description: >-
+                            Produktidentifikation bei Austausch von Daten der
+                            Energiemengen werden gewährleistet durch OBIS
+                            Kennzahlen.
+
+                            PIA 5 OBIS-Kennzahl der Netzlokation
+
+                            PI 55639 55644 55649 55654 55659 55664 55060 55043
+                            55168 55169
+
+                            PIA 5 OBIS-Kennzahl der Marktlokation
+
+                            PI 55684 55685 55640 55645 55650 55655 55660 55665
+                            55553 55555 55035 55095 55060 55043 55168 55169
+                            55239 55074 55075 55076 55195 55196 
+
+                            RFF Z10 Referenz auf die OBIS-Kennzahl der
+                            Marktlokation
+
+                            PI 55616 55622 
+
+                            PIA 5 OBIS-Daten der Marktlokation der beteiligten
+                            Marktrolle
+
+                            PI 55196
+
+                            PIA 5 OBIS-Kennzahl der Tranche
+
+                            PI 55686 55687 55642 55647 55652 55657 55662 55667
+                            55095 55074 55075 55076 55195 55196
+
+                            PIA 5 OBIS-Kennzahl der Zähleinrichtung
+                            /Smartmeter-Gateway
+
+                            PI 55643 55648 55653 55658 55663 55669 55553 55555
+                            55035 55095 55060 55043 55168 55169 55074 55075
+                            55076 | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z02.PIA+5,
+                            SG4.IDE+24.SG8.SEQ+Z07.RFF+Z10</TipInfo>
+                        konzessionsabgabe:
+                          type: object
+                          properties:
+                            kosten:
+                              type: number
+                              description: >-
+                                Konzessionsabgabe in Euro/kWh | 
+
+                                <TipInfo>SG4.IDE+24.SG8.SEQ+Z07.SG10.CCI+++Z08.CAV</TipInfo>
+                              format: float
+                            satz:
+                              type: string
+                              title: AbgabeArt
+                              description: >-
+                                Gruppen der KAV
+
+                                CAV KAS | 
+
+                                <TipInfo>SG4.IDE+24.SG8.SEQ+Z07.SG10.CCI+++Z08.CAV</TipInfo>
+                              enum:
+                                - KAS
+                                - SA
+                                - SAS
+                                - TA
+                                - TAS
+                                - TK
+                                - TKS
+                                - TS
+                                - TSS
+                              x-apidog-enum:
+                                - value: KAS
+                                  name: >-
+                                    für alle konzessionsvertraglichen
+                                    Sonderregelungen, die nicht in die
+                                    Systematik der KAV eingegliedert sind
+                                  description: KAS
+                                - value: SA
+                                  name: >-
+                                    Sondervertragskunden < 1 kV nach § 2 (7) und
+                                    > 1 kV, Preis nach § 2 (3) (für Strom 0,11
+                                    ct/ kWh und für Gas 0,03 ct/kWh)
+                                  description: SA
+                                - value: SAS
+                                  name: >-
+                                    Kennzeichnung, dass ein abweichender Preis
+                                    für Sondervertragskunden vorliegt
+                                  description: SAS
+                                - value: TA
+                                  name: >-
+                                    Tarifkunden, für Strom § 2. (2) 1b HT bzw.
+                                    ET (hohe KA) und für Gas § 2 (2) 2b
+                                  description: TA
+                                - value: TAS
+                                  name: >-
+                                    Kennzeichnung, dass ein abweichender Preis
+                                    für Tarifkunden vorliegt
+                                  description: TAS
+                                - value: TK
+                                  name: >-
+                                    für Gas nach KAV § 2 (2) 2a bei
+                                    ausschließlicher Nutzung zum Kochen und
+                                    Warmwassererzeugung
+                                  description: TK
+                                - value: TKS
+                                  name: >-
+                                    Kennzeichnung, wenn nach KAV § 2 (2) 2a ein
+                                    anderer Preis zu verwenden ist
+                                  description: TKS
+                                - value: TS
+                                  name: ''
+                                  description: ''
+                                - value: TSS
+                                  name: ''
+                                  description: ''
+                              x-apidog-folder: Bo4e/ENUM
+                            kategorie:
+                              type: string
+                              title: Anfragekategorie
+                              description: >-
+                                Anfragekategorie | 
+
+                                <TipInfo>SG4.IDE+24.SG8.SEQ+Z07.SG10.CCI+++Z08.CAV</TipInfo>
+                              enum:
+                                - PROZESSDATENBERICHT
+                                - GERAETEUEBERNAHME
+                                - WEITERVERPFLICHTUNG_BETRIEB_MELO
+                                - AENDERUNG_MELO
+                                - STAMMDATEN_MALO_ODER_MELO
+                                - BILANZIERTE_MENGE_MEHR_MINDER_MENGEN
+                                - ALLOKATIONSLISTE_MEHR_MINDER_MENGEN
+                                - ENERGIEMENGE_UND_LEISTUNGSMAXIMUM
+                                - ABRECHNUNG_MESSSTELLENBETRIEB_MSB_AN_LF
+                                - >-
+                                  AENDERUNG_PROGNOSEGRUNDLAGE_GERAETEKONFIGURATION
+                                - AENDERUNG_GERAETEKONFIGURATION
+                                - REKLAMATION_VON_WERTEN
+                                - LASTGANG_MALO_TRANCHE
+                                - SPERRUNG
+                                - ENTSPERRUNG
+                                - REKLAMATION_ZAEHLZEITDEFINITION
+                                - ZEITREIHEN_IM_RAHMEN_BILANZKREISABRECHNUNG
+                                - GERAETEWECHSELABSICHT
+                                - AENDERUNG_KONZESSIONSABGABE
+                                - AENDERUNG_ZAEHLZEITDEFINITION
+                                - UEBERMITTLUNG_WERTE_AN_ESA
+                                - AENDERUNG
+                                - BILANZKREISZUORDNUNGSLISTE
+                                - CLEARINGLISTE
+                                - NORMIERTES_PROFIL_PROFILSCHAR
+                                - REDISPATCH_EINZELZEITREIHE_AUSFALLARBEIT
+                                - REKLAMATION_PROFIL_PROFILSCHAR
+                                - STAMMDATEN_MALO
+                                - STAMMDATEN_MELO
+                                - STAMMDATEN_TRANCHE
+                                - BEENDIGUNG_EINER_KONFIGURATION
+                                - BESTELLUNG_EINER_KONFIGURATION
+                                - BESTELLUNG_EINES_ANGEBOTS_EINER_KONFIGURATION
+                                - REKLAMATION_EINER_KONFIGURATION
+                                - >-
+                                  BESTELLUNG_AENDERUNG_NETZENTGELTE_NETZORIENTIERTER_STEUERUNGSMOEGLICHKEIT
+                                - AENDERUNG_DER_TECHNIK_DER_LOKATION
+                                - AENDERUNG_INDIVIDUELLER_KONFIGURATION
+                                - BESTELLUNG_AENDERUNG_ABRECHNUNGSDATEN
+                                - >-
+                                  EINRICHTUNG_KONFIGURATION_AUFGRUND_ZUORDNUNG_LF
+                                - REKLAMATION_DEFINITION
+                              x-apidog-folder: Bo4e/ENUM
+                          x-apidog-orders:
+                            - kosten
+                            - satz
+                            - kategorie
+                          x-apidog-ignore-properties: []
+                        wertegranularitaet:
+                          type: string
+                          title: Wertegranularitaet
+                          description: >-
+                            Wertegranularitaet | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z02.SG10.CCI+++ZE4.CAV</TipInfo>
+                          enum:
+                            - JAEHRLICH
+                            - HALBJAEHRLICH
+                            - QUARTALSWEISE
+                            - MONATLICH
+                          x-apidog-enum:
+                            - value: JAEHRLICH
+                              name: Jährlich
+                              description: ZD9
+                            - value: HALBJAEHRLICH
+                              name: Halbjährlich
+                              description: ZE8
+                            - value: QUARTALSWEISE
+                              name: Quartalsweise
+                              description: ZE9
+                            - value: MONATLICH
+                              name: Monatlich
+                              description: ZB7
+                          x-apidog-folder: Bo4e/ENUM
+                      x-apidog-orders:
+                        - obisKennzahl
+                        - konzessionsabgabe
+                        - wertegranularitaet
+                      x-apidog-ignore-properties: []
+                x-apidog-orders:
+                  - lokationsadresse
+                  - marktgebiet
+                  - netzebene
+                  - marktlokationsId
+                  - zaehlwerke
+                x-apidog-ignore-properties: []
+            ENERGIELIEFERVERTRAG:
+              type: array
+              items:
+                type: object
+                properties:
+                  vertragspartner2:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        hausnummer:
+                          type: string
+                          description: |-
+                            Hausnummer und Ergänzung | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        postfach:
+                          type: string
+                          description: |-
+                            Postfach | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        name3:
+                          type: string
+                          description: >-
+                            Dritter Teil des Namens. Hier können weitere
+                            Ergänzungen zum Firmennamen oder bei Privatpersonen
+                            Zusätze zum  Namen dargestellt werden. Beispiele:
+                            und Afrika oder Sängerin | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        landescode:
+                          type: string
+                          title: Landescode
+                          description: |-
+                            Der ISO-Landescode als Enumeration | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                          enum:
+                            - AC
+                            - AD
+                            - AE
+                            - AF
+                            - AG
+                            - AI
+                            - AL
+                            - AM
+                            - AN
+                            - AO
+                            - AQ
+                            - AR
+                            - AS
+                            - AT
+                            - AU
+                            - AW
+                            - AX
+                            - AZ
+                            - BA
+                            - BB
+                            - BD
+                            - BE
+                            - BF
+                            - BG
+                            - BH
+                            - BI
+                            - BJ
+                            - BL
+                            - BM
+                            - BN
+                            - BO
+                            - BQ
+                            - BR
+                            - BS
+                            - BT
+                            - BU
+                            - BV
+                            - BW
+                            - BY
+                            - BZ
+                            - CA
+                            - CC
+                            - CD
+                            - CF
+                            - CG
+                            - CH
+                            - CI
+                            - CK
+                            - CL
+                            - CM
+                            - CN
+                            - CO
+                            - CP
+                            - CR
+                            - CS
+                            - CU
+                            - CV
+                            - CW
+                            - CX
+                            - CY
+                            - CZ
+                            - DE
+                            - DG
+                            - DJ
+                            - DK
+                            - DM
+                            - DO
+                            - DZ
+                            - EA
+                            - EC
+                            - EE
+                            - EG
+                            - EH
+                            - ER
+                            - ES
+                            - ET
+                            - EU
+                            - FI
+                            - FJ
+                            - FK
+                            - FM
+                            - FO
+                            - FR
+                            - FX
+                            - GA
+                            - GB
+                            - GD
+                            - GE
+                            - GF
+                            - GG
+                            - GH
+                            - GI
+                            - GL
+                            - GM
+                            - GN
+                            - GP
+                            - GQ
+                            - GR
+                            - GS
+                            - GT
+                            - GU
+                            - GW
+                            - GY
+                            - HK
+                            - HM
+                            - HN
+                            - HR
+                            - HT
+                            - HU
+                            - IC
+                            - ID
+                            - IE
+                            - IL
+                            - IM
+                            - IN
+                            - IO
+                            - IQ
+                            - IR
+                            - IS
+                            - IT
+                            - JE
+                            - JM
+                            - JO
+                            - JP
+                            - KE
+                            - KG
+                            - KH
+                            - KI
+                            - KM
+                            - KN
+                            - KP
+                            - KR
+                            - KW
+                            - KY
+                            - KZ
+                            - LA
+                            - LB
+                            - LC
+                            - LI
+                            - LK
+                            - LR
+                            - LS
+                            - LT
+                            - LU
+                            - LV
+                            - LY
+                            - MA
+                            - MC
+                            - MD
+                            - ME
+                            - MF
+                            - MG
+                            - MH
+                            - MK
+                            - ML
+                            - MM
+                            - MN
+                            - MO
+                            - MP
+                            - MQ
+                            - MR
+                            - MS
+                            - MT
+                            - MU
+                            - MV
+                            - MW
+                            - MX
+                            - MY
+                            - MZ
+                            - NA
+                            - NC
+                            - NE
+                            - NF
+                            - NG
+                            - NI
+                            - NL
+                            - 'NO'
+                            - NP
+                            - NR
+                            - NT
+                            - NU
+                            - NZ
+                            - OM
+                            - PA
+                            - PE
+                            - PF
+                            - PG
+                            - PH
+                            - PK
+                            - PL
+                            - PM
+                            - PN
+                            - PR
+                            - PS
+                            - PT
+                            - PW
+                            - PY
+                            - QA
+                            - RE
+                            - RO
+                            - RS
+                            - RU
+                            - RW
+                            - SA
+                            - SB
+                            - SC
+                            - SD
+                            - SE
+                            - SF
+                            - SG
+                            - SH
+                            - SI
+                            - SJ
+                            - SK
+                            - SL
+                            - SM
+                            - SN
+                            - SO
+                            - SR
+                            - SS
+                            - ST
+                            - SU
+                            - SV
+                            - SX
+                            - SY
+                            - SZ
+                            - TA
+                            - TC
+                            - TD
+                            - TF
+                            - TG
+                            - TJ
+                            - TK
+                            - TL
+                            - TM
+                            - TN
+                            - TO
+                            - TP
+                            - TR
+                            - TT
+                            - TV
+                            - TW
+                            - TZ
+                            - UA
+                            - UG
+                            - UK
+                            - UM
+                            - US
+                            - UY
+                            - UZ
+                            - VA
+                            - VC
+                            - VE
+                            - VG
+                            - VI
+                            - VN
+                            - VU
+                            - WF
+                            - WS
+                            - XK
+                            - YE
+                            - YT
+                            - YU
+                            - ZA
+                            - ZM
+                            - ZR
+                            - ZW
+                          x-apidog-folder: Bo4e/ENUM
+                        postleitzahl:
+                          type: string
+                          description: |-
+                            Postleitzahl | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        name4:
+                          type: string
+                          description: |-
+                            Name 4 | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        exRefWert:
+                          type: string
+                          description: >-
+                            Kundennummer beim Altieferanten - Angabe von
+                            Referenzen für Rückmeldungen und Anfragen
+
+                            PI 55109 55137 
+
+                            ORDERS PI 17101 | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09.RFF+AVC</TipInfo>
+                        exRefName:
+                          type: string
+                          description: >-
+                            Bezeichnung der externen Referenz, Kundennummer beim
+                            Lieferanten, bezieht sich auf das vorangegangene NAD
+                            Segment
+
+                            RFF AVC
+
+                            PI 55109 55137 
+
+                            RFF AVC Kundennummer beim Lieferanten ORDERS
+
+                            PI 17101 | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09.RFF+AVC</TipInfo>
+                          enum:
+                            - Kundennummer beim Lieferanten
+                            - Kundennummer beim Altlieferanten
+                        anrede:
+                          type: string
+                          description: >-
+                            Die Anrede für den GePa, Z.B. Herr.
+
+                            Z04 Korrespondenzanschrift des Kunden des
+                            Lieferanten
+
+                            PI 55001 55600 55601 55013 55014 55043 55168 55169
+                            | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        ortsteil:
+                          type: string
+                          description: |-
+                            Ortsteil | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        strasse:
+                          type: string
+                          description: |-
+                            Strasse | 
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        name2:
+                          type: string
+                          description: >-
+                            Zweiter Teil des Namens. Hier kann der eine
+                            Erweiterung zum Firmennamen oder bei Privatpersonen
+                            beispielsweise der Vorname dargestellt werden.
+                            Beispiele: Bereich Süd oder Nina | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        ort:
+                          type: object
+                          title: Sort
+                          description: |-
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                          x-apidog-orders: []
+                          properties: {}
+                          x-apidog-ignore-properties: []
+                        name1:
+                          type: string
+                          description: >-
+                            Erster Teil des Namens. Hier kann der Firmenname
+                            oder bei Privatpersonen beispielsweise der Nachname
+                            dargestellt werden. Beispiele: Yellow Strom GmbH
+                            oder Hagen | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                        gewerbekennzeichnung:
+                          type: boolean
+                          description: >-
+                            Kennzeichnung ob es sich um einen
+                            Gewerbe/Unternehmen (gewerbeKennzeichnung = true)
+
+                            oder eine Privatperson handelt.
+                            (gewerbeKennzeichnung = false)
+
+                            Z01 Struktur von Personennamen
+
+                            Z02 Struktur der Firmenbezeichnung | 
+
+                            <TipInfo>SG4.IDE+24.SG12.NAD+Z09</TipInfo>
+                      x-apidog-orders:
+                        - hausnummer
+                        - postfach
+                        - name3
+                        - landescode
+                        - postleitzahl
+                        - name4
+                        - exRefWert
+                        - exRefName
+                        - anrede
+                        - ortsteil
+                        - strasse
+                        - name2
+                        - ort
+                        - name1
+                        - gewerbekennzeichnung
+                      x-apidog-ignore-properties: []
+                  korrespondenzpartner:
+                    type: object
+                    properties:
+                      partneradresse:
+                        type: object
+                        properties:
+                          postleitzahl:
+                            type: string
+                            description: |-
+                              Postleitzahl | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                          hausnummer:
+                            type: string
+                            description: |-
+                              Hausnummer und Ergänzung | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                          landescode:
+                            type: string
+                            title: Landescode
+                            description: |-
+                              Der ISO-Landescode als Enumeration | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                            enum:
+                              - AC
+                              - AD
+                              - AE
+                              - AF
+                              - AG
+                              - AI
+                              - AL
+                              - AM
+                              - AN
+                              - AO
+                              - AQ
+                              - AR
+                              - AS
+                              - AT
+                              - AU
+                              - AW
+                              - AX
+                              - AZ
+                              - BA
+                              - BB
+                              - BD
+                              - BE
+                              - BF
+                              - BG
+                              - BH
+                              - BI
+                              - BJ
+                              - BL
+                              - BM
+                              - BN
+                              - BO
+                              - BQ
+                              - BR
+                              - BS
+                              - BT
+                              - BU
+                              - BV
+                              - BW
+                              - BY
+                              - BZ
+                              - CA
+                              - CC
+                              - CD
+                              - CF
+                              - CG
+                              - CH
+                              - CI
+                              - CK
+                              - CL
+                              - CM
+                              - CN
+                              - CO
+                              - CP
+                              - CR
+                              - CS
+                              - CU
+                              - CV
+                              - CW
+                              - CX
+                              - CY
+                              - CZ
+                              - DE
+                              - DG
+                              - DJ
+                              - DK
+                              - DM
+                              - DO
+                              - DZ
+                              - EA
+                              - EC
+                              - EE
+                              - EG
+                              - EH
+                              - ER
+                              - ES
+                              - ET
+                              - EU
+                              - FI
+                              - FJ
+                              - FK
+                              - FM
+                              - FO
+                              - FR
+                              - FX
+                              - GA
+                              - GB
+                              - GD
+                              - GE
+                              - GF
+                              - GG
+                              - GH
+                              - GI
+                              - GL
+                              - GM
+                              - GN
+                              - GP
+                              - GQ
+                              - GR
+                              - GS
+                              - GT
+                              - GU
+                              - GW
+                              - GY
+                              - HK
+                              - HM
+                              - HN
+                              - HR
+                              - HT
+                              - HU
+                              - IC
+                              - ID
+                              - IE
+                              - IL
+                              - IM
+                              - IN
+                              - IO
+                              - IQ
+                              - IR
+                              - IS
+                              - IT
+                              - JE
+                              - JM
+                              - JO
+                              - JP
+                              - KE
+                              - KG
+                              - KH
+                              - KI
+                              - KM
+                              - KN
+                              - KP
+                              - KR
+                              - KW
+                              - KY
+                              - KZ
+                              - LA
+                              - LB
+                              - LC
+                              - LI
+                              - LK
+                              - LR
+                              - LS
+                              - LT
+                              - LU
+                              - LV
+                              - LY
+                              - MA
+                              - MC
+                              - MD
+                              - ME
+                              - MF
+                              - MG
+                              - MH
+                              - MK
+                              - ML
+                              - MM
+                              - MN
+                              - MO
+                              - MP
+                              - MQ
+                              - MR
+                              - MS
+                              - MT
+                              - MU
+                              - MV
+                              - MW
+                              - MX
+                              - MY
+                              - MZ
+                              - NA
+                              - NC
+                              - NE
+                              - NF
+                              - NG
+                              - NI
+                              - NL
+                              - 'NO'
+                              - NP
+                              - NR
+                              - NT
+                              - NU
+                              - NZ
+                              - OM
+                              - PA
+                              - PE
+                              - PF
+                              - PG
+                              - PH
+                              - PK
+                              - PL
+                              - PM
+                              - PN
+                              - PR
+                              - PS
+                              - PT
+                              - PW
+                              - PY
+                              - QA
+                              - RE
+                              - RO
+                              - RS
+                              - RU
+                              - RW
+                              - SA
+                              - SB
+                              - SC
+                              - SD
+                              - SE
+                              - SF
+                              - SG
+                              - SH
+                              - SI
+                              - SJ
+                              - SK
+                              - SL
+                              - SM
+                              - SN
+                              - SO
+                              - SR
+                              - SS
+                              - ST
+                              - SU
+                              - SV
+                              - SX
+                              - SY
+                              - SZ
+                              - TA
+                              - TC
+                              - TD
+                              - TF
+                              - TG
+                              - TJ
+                              - TK
+                              - TL
+                              - TM
+                              - TN
+                              - TO
+                              - TP
+                              - TR
+                              - TT
+                              - TV
+                              - TW
+                              - TZ
+                              - UA
+                              - UG
+                              - UK
+                              - UM
+                              - US
+                              - UY
+                              - UZ
+                              - VA
+                              - VC
+                              - VE
+                              - VG
+                              - VI
+                              - VN
+                              - VU
+                              - WF
+                              - WS
+                              - XK
+                              - YE
+                              - YT
+                              - YU
+                              - ZA
+                              - ZM
+                              - ZR
+                              - ZW
+                            x-apidog-folder: Bo4e/ENUM
+                          ortsteil:
+                            type: string
+                            description: |-
+                              Ortsteil | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                          postfach:
+                            type: string
+                            description: |-
+                              Postfach | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                          strasse:
+                            type: string
+                            description: |-
+                              Strasse | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                          ort:
+                            type: object
+                            title: Sort
+                            description: |-
+
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                            x-apidog-orders: []
+                            properties: {}
+                            x-apidog-ignore-properties: []
+                        x-apidog-orders:
+                          - postleitzahl
+                          - hausnummer
+                          - landescode
+                          - ortsteil
+                          - postfach
+                          - strasse
+                          - ort
+                        x-apidog-ignore-properties: []
+                      gewerbekennzeichnung:
+                        type: boolean
+                        description: >-
+                          Kennzeichnung ob es sich um einen Gewerbe/Unternehmen
+                          (gewerbeKennzeichnung = true)
+
+                          oder eine Privatperson handelt. (gewerbeKennzeichnung
+                          = false)
+
+                          Z01 Struktur von Personennamen
+
+                          Z02 Struktur der Firmenbezeichnung | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                      name2:
+                        type: string
+                        description: >-
+                          Zweiter Teil des Namens. Hier kann der eine
+                          Erweiterung zum Firmennamen oder bei Privatpersonen
+                          beispielsweise der Vorname dargestellt werden.
+                          Beispiele: Bereich Süd oder Nina | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                      anrede:
+                        type: string
+                        description: |-
+                          Die Anrede für den GePa, Z.B. Herr.
+                          Z04 Korrespondenzanschrift des Kunden des Lieferanten
+                          PI 55001 55600 55601 55013 55014 55043 55168 55169 | 
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                      name1:
+                        type: string
+                        description: >-
+                          Erster Teil des Namens. Hier kann der Firmenname oder
+                          bei Privatpersonen beispielsweise der Nachname
+                          dargestellt werden. Beispiele: Yellow Strom GmbH oder
+                          Hagen | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                      name4:
+                        type: string
+                        description: |-
+                          Name 4 | 
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                      name3:
+                        type: string
+                        description: >-
+                          Dritter Teil des Namens. Hier können weitere
+                          Ergänzungen zum Firmennamen oder bei Privatpersonen
+                          Zusätze zum  Namen dargestellt werden. Beispiele: und
+                          Afrika oder Sängerin | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z04</TipInfo>
+                    x-apidog-orders:
+                      - partneradresse
+                      - gewerbekennzeichnung
+                      - name2
+                      - anrede
+                      - name1
+                      - name4
+                      - name3
+                    x-apidog-ignore-properties: []
+                  vertragskonditionen:
+                    type: object
+                    properties:
+                      abrechnungsintervall:
+                        type: integer
+                        description: |-
+                          Abrechnungsintervall des LF in Monaten
+                          DTM Z20
+                          PI 44109 44137 44138 44001 44002 44014  | 
+                          <TipInfo>SG4.IDE+24.SG6.RFF+Z18.DTM+Z20</TipInfo>
+                    x-apidog-orders:
+                      - abrechnungsintervall
+                    x-apidog-ignore-properties: []
+                x-apidog-orders:
+                  - vertragspartner2
+                  - korrespondenzpartner
+                  - vertragskonditionen
+                x-apidog-ignore-properties: []
+            BILANZIERUNG:
+              type: array
+              items:
+                type: object
+                properties:
+                  bilanzkreis:
+                    type: object
+                    title: Bilanzkreis
+                    description: |-
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI+Z19</TipInfo>
+                    x-apidog-orders: []
+                    properties: {}
+                    x-apidog-ignore-properties: []
+                  lastprofile:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        tagesparameter:
+                          type: object
+                          properties:
+                            dienstanbieter:
+                              type: string
+                              description: >-
+                                Dienstanbieter auf Basis der EDI@Energy
+                                Codeliste | 
+
+                                <TipInfo>SG4.IDE+24.SG8.SEQ+Z35.SG10.CCI</TipInfo>
+                            herausgeber:
+                              type: string
+                              title: Herausgeber
+                              description: >-
+                                Herausgeber | 
+
+                                <TipInfo>SG4.IDE+24.SG8.SEQ+Z35.SG10.CCI</TipInfo>
+                              enum:
+                                - NB
+                                - BDEW
+                                - TUM
+                              x-apidog-enum:
+                                - value: NB
+                                  name: Vergeben vom Händler (hier Netzbetreiber)
+                                  description: '89'
+                                - value: BDEW
+                                  name: >-
+                                    DE, BDEW (Bundesverband der Energie- und
+                                    Wasserwirtschaft e.V.)
+                                  description: '293'
+                                - value: TUM
+                                  name: ''
+                                  description: ''
+                              x-apidog-folder: Bo4e/ENUM
+                            klimazone:
+                              type: string
+                              description: >-
+                                Klimazone des Tagesparameters (derzeit ist
+                                Tagesparameter)
+
+                                CCI ZA0
+
+                                PI 55126 55156 55672 55673 55035 55095 55043
+                                55168 55169 55073 | 
+
+                                <TipInfo>SG4.IDE+24.SG8.SEQ+Z35.SG10.CCI</TipInfo>
+                            temperaturmessstelle:
+                              type: string
+                              description: >-
+                                Temperaturmessstelle Messstelle des
+                                Tagesparameters (derzeit ist nur die Temperatur
+                                ein erlaubter Tagesparameter)
+
+                                CCI Z99
+
+                                PI 55126 55156 55672 55673 55035 55095 55043
+                                55168 55169 55073 | 
+
+                                <TipInfo>SG4.IDE+24.SG8.SEQ+Z35.SG10.CCI</TipInfo>
+                          x-apidog-orders:
+                            - dienstanbieter
+                            - herausgeber
+                            - klimazone
+                            - temperaturmessstelle
+                          x-apidog-ignore-properties: []
+                        verfahren:
+                          type: string
+                          title: Profilverfahren
+                          description: >-
+                            Profilverfahren | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z35.SG10.CCI+Z12</TipInfo>
+                          enum:
+                            - SYNTHETISCH
+                            - ANALYTISCH
+                          x-apidog-folder: Bo4e/ENUM
+                        bezeichnung:
+                          type: string
+                          description: >-
+                            Externe Bezeichnung | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z35.SG10.CCI+Z12.CAV</TipInfo>
+                        herausgeber:
+                          type: string
+                          title: Herausgeber
+                          description: >-
+                            Herausgeber | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z35.SG10.CCI+Z12.CAV</TipInfo>
+                          enum:
+                            - NB
+                            - BDEW
+                            - TUM
+                          x-apidog-enum:
+                            - value: NB
+                              name: Vergeben vom Händler (hier Netzbetreiber)
+                              description: '89'
+                            - value: BDEW
+                              name: >-
+                                DE, BDEW (Bundesverband der Energie- und
+                                Wasserwirtschaft e.V.)
+                              description: '293'
+                            - value: TUM
+                              name: ''
+                              description: ''
+                          x-apidog-folder: Bo4e/ENUM
+                      x-apidog-orders:
+                        - tagesparameter
+                        - verfahren
+                        - bezeichnung
+                        - herausgeber
+                      x-apidog-ignore-properties: []
+                  bilanzierungsende:
+                    type: string
+                    description: >-
+                      Beendigung der Zuordnung einer MaLo, Tranche zum
+                      Bilanzkreis.
+
+                      DTM 159
+
+                      55240 55241 55242 55243 55063 55064 55065 55066 55072
+                      55195 55196 55223 55224 55198 55200 55206 55207 55208
+                      55212 55213 55214 | 
+
+                      <TipInfo>SG4.IDE+24.DTM+159</TipInfo>
+                    format: date-time
+                  fallgruppenzuordnung:
+                    type: string
+                    title: Fallgruppenzuordnung
+                    description: |-
+                      Fallgruppenzuordnung | 
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI+++Z17</TipInfo>
+                    enum:
+                      - GABI_RLMmT
+                      - GABI_RLMoT
+                      - GABI_RLMNEV
+                    x-apidog-enum:
+                      - value: GABI_RLMmT
+                        name: RLM-Kunde in Tagesregime - Exit
+                        description: GABi-RLMmT
+                      - value: GABI_RLMoT
+                        name: GABi-RLMoT
+                        description: RLM-Kunde im Stundenregime - Exit
+                      - value: GABI_RLMNEV
+                        name: >-
+                          Nominierungsersatzverfahren - Exit (Hinweis: Dieser
+                          Code darf nur für Liefermonate vor dem 01.10.2016
+                          genutzt werden)
+                        description: GABi-RLMNEV
+                    x-apidog-folder: Bo4e/ENUM
+                  prognosegrundlage:
+                    type: string
+                    title: Prognosegrundlage
+                    description: |-
+                      Prognosegrundlage | 
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI</TipInfo>
+                    enum:
+                      - WERTE
+                      - PROFILE
+                    x-apidog-enum:
+                      - value: WERTE
+                        name: Prognose auf Basis von Werten
+                        description: ZC0
+                      - value: PROFILE
+                        name: Prognose auf Basis von Profilen
+                        description: ZA6
+                    x-apidog-folder: Bo4e/ENUM
+                  bilanzierungsbeginn:
+                    type: string
+                    description: >-
+                      Beginn der Zuordnung einer MaLo, Tranche zum Bilanzkreis. 
+
+                      DTM 158
+
+                      55238 55239 55062 55064 55065 55066 55071 55195 55196
+                      55223 55224 55197 55199 55203 55204 55205 55209 55210
+                      55211 | 
+
+                      <TipInfo>SG4.IDE+24.DTM+158</TipInfo>
+                    format: date-time
+                  jahresverbrauchsprognose:
+                    type: object
+                    properties:
+                      einheit:
+                        type: string
+                        title: Mengeneinheit
+                        description: >-
+                          Einheit: Messgrößen, die per Messung oder Vorgabe
+                          ermittelt werden können | 
+
+                          <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG9.QTY+31</TipInfo>
+                        enum:
+                          - W
+                          - WH
+                          - KW
+                          - KWH
+                          - KVARH
+                          - MW
+                          - MWH
+                          - STUECK
+                          - KUBIKMETER
+                          - STUNDE
+                          - TAG
+                          - MONAT
+                          - JAHR
+                          - PROZENT
+                          - ANZAHL
+                          - VAR
+                          - KVAR
+                          - VARH
+                          - KWHK
+                          - Z16
+                          - KWT
+                        x-apidog-enum:
+                          - value: W
+                            name: ''
+                            description: ''
+                          - value: WH
+                            name: ''
+                            description: ''
+                          - value: KW
+                            name: ''
+                            description: ''
+                          - value: KWH
+                            name: Kilowattstunde
+                            description: KWH
+                          - value: KVARH
+                            name: ''
+                            description: ''
+                          - value: MW
+                            name: ''
+                            description: ''
+                          - value: MWH
+                            name: ''
+                            description: ''
+                          - value: STUECK
+                            name: Stück
+                            description: H87
+                          - value: KUBIKMETER
+                            name: ''
+                            description: ''
+                          - value: STUNDE
+                            name: ''
+                            description: ''
+                          - value: TAG
+                            name: Tag
+                            description: ZD8
+                          - value: MONAT
+                            name: ''
+                            description: ''
+                          - value: JAHR
+                            name: ''
+                            description: ''
+                          - value: PROZENT
+                            name: Prozent
+                            description: P1
+                          - value: ANZAHL
+                            name: ''
+                            description: ''
+                          - value: VAR
+                            name: ''
+                            description: ''
+                          - value: KVAR
+                            name: ''
+                            description: ''
+                          - value: VARH
+                            name: ''
+                            description: ''
+                          - value: KWHK
+                            name: ''
+                            description: ''
+                          - value: Z16
+                            name: kWh/K (Kilowatt-Stunde/Kelvin)
+                            description: Z16
+                          - value: KWT
+                            name: Kilowatt
+                            description: ''
+                        x-apidog-folder: Bo4e/ENUM
+                      wert:
+                        type: object
+                        title: Schwellwert
+                        description: |-
+
+                          <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG9.QTY+31</TipInfo>
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                    x-apidog-orders:
+                      - einheit
+                      - wert
+                    x-apidog-ignore-properties: []
+                  kundenwert:
+                    type: object
+                    properties:
+                      wert:
+                        type: object
+                        title: Schwellwert
+                        description: |-
+
+                          <TipInfo>SG4.IDE+24.SG8.SEQ+Z01.SG9.QTY+Y02</TipInfo>
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                    x-apidog-orders:
+                      - wert
+                    x-apidog-ignore-properties: []
+                x-apidog-orders:
+                  - bilanzkreis
+                  - lastprofile
+                  - bilanzierungsende
+                  - fallgruppenzuordnung
+                  - prognosegrundlage
+                  - bilanzierungsbeginn
+                  - jahresverbrauchsprognose
+                  - kundenwert
+                x-apidog-ignore-properties: []
+            MESSLOKATIONverwendungsumfang=MESSLOKATION_PROZESSUAL_BEHANDELT:
+              type: array
+              items:
+                type: object
+                properties:
+                  ablesekartenempfaenger:
+                    type: object
+                    properties:
+                      partneradresse:
+                        type: object
+                        properties:
+                          hausnummer:
+                            type: string
+                            description: Hausnummer und Ergänzung
+                          postfach:
+                            type: string
+                            description: Postfach
+                          strasse:
+                            type: string
+                            description: Strasse
+                          ort:
+                            type: object
+                            title: Sort
+                            x-apidog-orders: []
+                            properties: {}
+                            x-apidog-ignore-properties: []
+                          landescode:
+                            type: string
+                            title: Landescode
+                            description: Der ISO-Landescode als Enumeration
+                            enum:
+                              - AC
+                              - AD
+                              - AE
+                              - AF
+                              - AG
+                              - AI
+                              - AL
+                              - AM
+                              - AN
+                              - AO
+                              - AQ
+                              - AR
+                              - AS
+                              - AT
+                              - AU
+                              - AW
+                              - AX
+                              - AZ
+                              - BA
+                              - BB
+                              - BD
+                              - BE
+                              - BF
+                              - BG
+                              - BH
+                              - BI
+                              - BJ
+                              - BL
+                              - BM
+                              - BN
+                              - BO
+                              - BQ
+                              - BR
+                              - BS
+                              - BT
+                              - BU
+                              - BV
+                              - BW
+                              - BY
+                              - BZ
+                              - CA
+                              - CC
+                              - CD
+                              - CF
+                              - CG
+                              - CH
+                              - CI
+                              - CK
+                              - CL
+                              - CM
+                              - CN
+                              - CO
+                              - CP
+                              - CR
+                              - CS
+                              - CU
+                              - CV
+                              - CW
+                              - CX
+                              - CY
+                              - CZ
+                              - DE
+                              - DG
+                              - DJ
+                              - DK
+                              - DM
+                              - DO
+                              - DZ
+                              - EA
+                              - EC
+                              - EE
+                              - EG
+                              - EH
+                              - ER
+                              - ES
+                              - ET
+                              - EU
+                              - FI
+                              - FJ
+                              - FK
+                              - FM
+                              - FO
+                              - FR
+                              - FX
+                              - GA
+                              - GB
+                              - GD
+                              - GE
+                              - GF
+                              - GG
+                              - GH
+                              - GI
+                              - GL
+                              - GM
+                              - GN
+                              - GP
+                              - GQ
+                              - GR
+                              - GS
+                              - GT
+                              - GU
+                              - GW
+                              - GY
+                              - HK
+                              - HM
+                              - HN
+                              - HR
+                              - HT
+                              - HU
+                              - IC
+                              - ID
+                              - IE
+                              - IL
+                              - IM
+                              - IN
+                              - IO
+                              - IQ
+                              - IR
+                              - IS
+                              - IT
+                              - JE
+                              - JM
+                              - JO
+                              - JP
+                              - KE
+                              - KG
+                              - KH
+                              - KI
+                              - KM
+                              - KN
+                              - KP
+                              - KR
+                              - KW
+                              - KY
+                              - KZ
+                              - LA
+                              - LB
+                              - LC
+                              - LI
+                              - LK
+                              - LR
+                              - LS
+                              - LT
+                              - LU
+                              - LV
+                              - LY
+                              - MA
+                              - MC
+                              - MD
+                              - ME
+                              - MF
+                              - MG
+                              - MH
+                              - MK
+                              - ML
+                              - MM
+                              - MN
+                              - MO
+                              - MP
+                              - MQ
+                              - MR
+                              - MS
+                              - MT
+                              - MU
+                              - MV
+                              - MW
+                              - MX
+                              - MY
+                              - MZ
+                              - NA
+                              - NC
+                              - NE
+                              - NF
+                              - NG
+                              - NI
+                              - NL
+                              - 'NO'
+                              - NP
+                              - NR
+                              - NT
+                              - NU
+                              - NZ
+                              - OM
+                              - PA
+                              - PE
+                              - PF
+                              - PG
+                              - PH
+                              - PK
+                              - PL
+                              - PM
+                              - PN
+                              - PR
+                              - PS
+                              - PT
+                              - PW
+                              - PY
+                              - QA
+                              - RE
+                              - RO
+                              - RS
+                              - RU
+                              - RW
+                              - SA
+                              - SB
+                              - SC
+                              - SD
+                              - SE
+                              - SF
+                              - SG
+                              - SH
+                              - SI
+                              - SJ
+                              - SK
+                              - SL
+                              - SM
+                              - SN
+                              - SO
+                              - SR
+                              - SS
+                              - ST
+                              - SU
+                              - SV
+                              - SX
+                              - SY
+                              - SZ
+                              - TA
+                              - TC
+                              - TD
+                              - TF
+                              - TG
+                              - TJ
+                              - TK
+                              - TL
+                              - TM
+                              - TN
+                              - TO
+                              - TP
+                              - TR
+                              - TT
+                              - TV
+                              - TW
+                              - TZ
+                              - UA
+                              - UG
+                              - UK
+                              - UM
+                              - US
+                              - UY
+                              - UZ
+                              - VA
+                              - VC
+                              - VE
+                              - VG
+                              - VI
+                              - VN
+                              - VU
+                              - WF
+                              - WS
+                              - XK
+                              - YE
+                              - YT
+                              - YU
+                              - ZA
+                              - ZM
+                              - ZR
+                              - ZW
+                            x-apidog-folder: Bo4e/ENUM
+                          ortsteil:
+                            type: string
+                            description: Ortsteil
+                          postleitzahl:
+                            type: string
+                            description: Postleitzahl
+                        x-apidog-orders:
+                          - hausnummer
+                          - postfach
+                          - strasse
+                          - ort
+                          - landescode
+                          - ortsteil
+                          - postleitzahl
+                        x-apidog-ignore-properties: []
+                      name3:
+                        type: string
+                        description: >-
+                          Dritter Teil des Namens. Hier können weitere
+                          Ergänzungen zum Firmennamen oder bei Privatpersonen
+                          Zusätze zum  Namen dargestellt werden. Beispiele: und
+                          Afrika oder Sängerin
+                      anrede:
+                        type: string
+                        description: |-
+                          Die Anrede für den GePa, Z.B. Herr.
+                          Z04 Korrespondenzanschrift des Kunden des Lieferanten
+                          PI 55001 55600 55601 55013 55014 55043 55168 55169
+                      gewerbekennzeichnung:
+                        type: boolean
+                        description: >-
+                          Kennzeichnung ob es sich um einen Gewerbe/Unternehmen
+                          (gewerbeKennzeichnung = true)
+
+                          oder eine Privatperson handelt. (gewerbeKennzeichnung
+                          = false)
+
+                          Z01 Struktur von Personennamen
+
+                          Z02 Struktur der Firmenbezeichnung
+                      name2:
+                        type: string
+                        description: >-
+                          Zweiter Teil des Namens. Hier kann der eine
+                          Erweiterung zum Firmennamen oder bei Privatpersonen
+                          beispielsweise der Vorname dargestellt werden.
+                          Beispiele: Bereich Süd oder Nina
+                      name4:
+                        type: string
+                        description: Name 4
+                      name1:
+                        type: string
+                        description: >-
+                          Erster Teil des Namens. Hier kann der Firmenname oder
+                          bei Privatpersonen beispielsweise der Nachname
+                          dargestellt werden. Beispiele: Yellow Strom GmbH oder
+                          Hagen
+                    x-apidog-orders:
+                      - partneradresse
+                      - name3
+                      - anrede
+                      - gewerbekennzeichnung
+                      - name2
+                      - name4
+                      - name1
+                    x-apidog-ignore-properties: []
+                  messlokationsId:
+                    type: string
+                    description: >-
+                      Angabe der ID der Messlokation,  für die die Stammdaten
+                      gelten. Die ID dient der eindeutigen Identifikation einer
+                      Messlokation und wird spätestens bei der Bestätigung vom
+                      NB mitgeliefert.
+
+                      LOC Z17
+
+                      PI 55002 55078 55600 55602 55601 55603 55013 55607 55611
+                      55620 55626 55632 55638 55175 55180 55173 55177 55690
+                      55643 55648 55653 55658 55663 55669 55035 55095 55060
+                      55039 55040 55041 55042 55043 55044 55168 55169 55170
+                      55051 55052 55053 55074 55075 55076
+
+                      RFF Z19
+
+                      PI 55002 55078 55602 55603 55013 55607 55690 55035 55095
+                      55060 55194 55043 55168 55169 
+
+                      RFF Z46
+
+                      PI 55643 55648 55663 55669 
+
+                      RFF Z19 ORDERS 
+
+                      PI 17121 17134
+
+                      IFTSTA 
+
+                      LOC 172
+
+                      PI 21000 21001 21002 21003 21004 21005 21007 21009 21010
+                      21011 21012 21013 21015 21018 21024 21025 21026 21027
+                      21036 21028 21029 21030 21031 21033 
+
+                      QUOTES
+
+                      LOC 172 
+
+                      PI 15001 15003 15004
+
+                      LOC 172 INVOIC
+
+                      PI 31003 31009 31004 
+                x-apidog-orders:
+                  - ablesekartenempfaenger
+                  - messlokationsId
+                x-apidog-ignore-properties: []
+            MESSLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  gasqualitaet:
+                    type: string
+                    title: Gasqualitaet
+                    description: >-
+                      Unterscheidung für hoch- und niedrig-kalorisches Gas. | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z18.SG10.CCI+++Y02.CAV</TipInfo>
+                    enum:
+                      - H_GAS
+                      - L_GAS
+                    x-apidog-enum:
+                      - value: H_GAS
+                        name: H-Gas
+                        description: Y04
+                      - value: L_GAS
+                        name: L-Gas
+                        description: Y05
+                    x-apidog-folder: Bo4e/ENUM
+                  marktrollen:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        weiterverpflichtet:
+                          type: boolean
+                          description: >-
+                            Art der Leistungserbringung
+
+                            Z19 Auf vertraglicher Grundlage gegenüber
+                            Anschlussnutzer / Anschlussnehmer
+
+                            Z20 In der Ausübung der Weiterverpflichtung durch
+                            den gMSB
+
+                            PI 55002 55078 55602 55603 55013 55616 55622 55628
+                            55634 55690 55035 55095 55060 55043 55168 55169 | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z18.SG10.CCI+++ZB3.CAV+Z91</TipInfo>
+                        rollencodenummer:
+                          type: string
+                          description: >-
+                            Gibt die Codenummer der Marktrolle an - MP ID
+
+                            NAD Z31 Übertragungsnetzbetreiber ORDERS
+
+                            PI 17134
+
+                            NAD DEB Messstellenbetreiber ORDERS
+
+                            PI 17003 17134 17135
+
+                            NAD DEB Messstellenbetreiber IFTSTA 
+
+                            PI 21007 21015 21018 | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z18.SG10.CCI+++ZB3.CAV+Z91,
+                            SG4.IDE+24.SG8.SEQ+Z18.SG10.CCI+++ZB3.CAV+ZF0</TipInfo>
+                        marktrolle:
+                          type: string
+                          title: Marktrolle
+                          description: >-
+                            Diese Rollen kann ein Marktteilnehmer einnehmen | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z18.SG10.CCI+++ZB3.CAV+Z91,
+                            SG4.IDE+24.SG8.SEQ+Z18.SG10.CCI+++ZB3.CAV+ZF0</TipInfo>
+                          enum:
+                            - NB
+                            - LF
+                            - MSB
+                            - MSBA
+                            - GMSB
+                            - MDL
+                            - DL
+                            - BKV
+                            - BKO
+                            - UENB
+                            - KUNDE-SELBST-NN
+                            - MGV
+                            - EIV
+                            - RB
+                            - KUNDE
+                            - INTERESSENT
+                            - KN
+                            - UBA
+                            - BIKO
+                            - ESA
+                          x-apidog-enum:
+                            - value: NB
+                              name: Netzbetreiber
+                              description: Z88
+                            - value: LF
+                              name: Lieferant
+                              description: Z89
+                            - value: MSB
+                              name: Messstellenbetreiber
+                              description: Z91
+                            - value: MSBA
+                              name: Messstellenbetreiber Alt
+                              description: ZB4
+                            - value: GMSB
+                              name: Grundzuständiger Messstellenbetreiber
+                              description: ZF0
+                            - value: MDL
+                              name: ''
+                              description: ''
+                            - value: DL
+                              name: ''
+                              description: ''
+                            - value: BKV
+                              name: ''
+                              description: ''
+                            - value: BKO
+                              name: ''
+                              description: ''
+                            - value: UENB
+                              name: Übertragungsnetzbetreiber
+                              description: Z90
+                            - value: KUNDE-SELBST-NN
+                              name: ''
+                              description: ''
+                            - value: MGV
+                              name: ''
+                              description: ''
+                            - value: EIV
+                              name: ''
+                              description: ''
+                            - value: RB
+                              name: ''
+                              description: ''
+                            - value: KUNDE
+                              name: ''
+                              description: ''
+                            - value: INTERESSENT
+                              name: ''
+                              description: ''
+                            - value: KN
+                              name: ''
+                              description: ''
+                            - value: UBA
+                              name: ''
+                              description: ''
+                            - value: BIKO
+                              name: ''
+                              description: ''
+                            - value: ESA
+                              name: ''
+                              description: ''
+                          x-apidog-folder: Bo4e/ENUM
+                      x-apidog-orders:
+                        - weiterverpflichtet
+                        - rollencodenummer
+                        - marktrolle
+                      x-apidog-ignore-properties: []
+                  messlokationsId:
+                    type: string
+                    description: >-
+                      Angabe der ID der Messlokation,  für die die Stammdaten
+                      gelten. Die ID dient der eindeutigen Identifikation einer
+                      Messlokation und wird spätestens bei der Bestätigung vom
+                      NB mitgeliefert.
+
+                      LOC Z17
+
+                      PI 55002 55078 55600 55602 55601 55603 55013 55607 55611
+                      55620 55626 55632 55638 55175 55180 55173 55177 55690
+                      55643 55648 55653 55658 55663 55669 55035 55095 55060
+                      55039 55040 55041 55042 55043 55044 55168 55169 55170
+                      55051 55052 55053 55074 55075 55076
+
+                      RFF Z19
+
+                      PI 55002 55078 55602 55603 55013 55607 55690 55035 55095
+                      55060 55194 55043 55168 55169 
+
+                      RFF Z46
+
+                      PI 55643 55648 55663 55669 
+
+                      RFF Z19 ORDERS 
+
+                      PI 17121 17134
+
+                      IFTSTA 
+
+                      LOC 172
+
+                      PI 21000 21001 21002 21003 21004 21005 21007 21009 21010
+                      21011 21012 21013 21015 21018 21024 21025 21026 21027
+                      21036 21028 21029 21030 21031 21033 
+
+                      QUOTES
+
+                      LOC 172 
+
+                      PI 15001 15003 15004
+
+                      LOC 172 INVOIC
+
+                      PI 31003 31009 31004  | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z18.RFF+Z19</TipInfo>
+                x-apidog-orders:
+                  - gasqualitaet
+                  - marktrollen
+                  - messlokationsId
+                x-apidog-ignore-properties: []
+          x-apidog-orders:
+            - ZAEHLER
+            - NETZNUTZUNGSVERTRAG
+            - MARKTLOKATION
+            - ENERGIELIEFERVERTRAG
+            - BILANZIERUNG
+            - MESSLOKATIONverwendungsumfang=MESSLOKATION_PROZESSUAL_BEHANDELT
+            - MESSLOKATION
+          x-apidog-ignore-properties: []
+        transaktionsdaten:
+          type: object
+          properties:
+            nachrichtenreferenznummer:
+              type: string
+              description: |-
+                EDIFact Referenz aus dem UNT Segment / UTILMD UNT+21 | 
+                <TipInfo>UNH</TipInfo>
+            kategorie:
+              type: string
+              title: Anfragekategorie
+              description: |-
+                Anfragekategorie | 
+                <TipInfo>BGM+E01</TipInfo>
+              enum:
+                - PROZESSDATENBERICHT
+                - GERAETEUEBERNAHME
+                - WEITERVERPFLICHTUNG_BETRIEB_MELO
+                - AENDERUNG_MELO
+                - STAMMDATEN_MALO_ODER_MELO
+                - BILANZIERTE_MENGE_MEHR_MINDER_MENGEN
+                - ALLOKATIONSLISTE_MEHR_MINDER_MENGEN
+                - ENERGIEMENGE_UND_LEISTUNGSMAXIMUM
+                - ABRECHNUNG_MESSSTELLENBETRIEB_MSB_AN_LF
+                - AENDERUNG_PROGNOSEGRUNDLAGE_GERAETEKONFIGURATION
+                - AENDERUNG_GERAETEKONFIGURATION
+                - REKLAMATION_VON_WERTEN
+                - LASTGANG_MALO_TRANCHE
+                - SPERRUNG
+                - ENTSPERRUNG
+                - REKLAMATION_ZAEHLZEITDEFINITION
+                - ZEITREIHEN_IM_RAHMEN_BILANZKREISABRECHNUNG
+                - GERAETEWECHSELABSICHT
+                - AENDERUNG_KONZESSIONSABGABE
+                - AENDERUNG_ZAEHLZEITDEFINITION
+                - UEBERMITTLUNG_WERTE_AN_ESA
+                - AENDERUNG
+                - BILANZKREISZUORDNUNGSLISTE
+                - CLEARINGLISTE
+                - NORMIERTES_PROFIL_PROFILSCHAR
+                - REDISPATCH_EINZELZEITREIHE_AUSFALLARBEIT
+                - REKLAMATION_PROFIL_PROFILSCHAR
+                - STAMMDATEN_MALO
+                - STAMMDATEN_MELO
+                - STAMMDATEN_TRANCHE
+                - BEENDIGUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINES_ANGEBOTS_EINER_KONFIGURATION
+                - REKLAMATION_EINER_KONFIGURATION
+                - >-
+                  BESTELLUNG_AENDERUNG_NETZENTGELTE_NETZORIENTIERTER_STEUERUNGSMOEGLICHKEIT
+                - AENDERUNG_DER_TECHNIK_DER_LOKATION
+                - AENDERUNG_INDIVIDUELLER_KONFIGURATION
+                - BESTELLUNG_AENDERUNG_ABRECHNUNGSDATEN
+                - EINRICHTUNG_KONFIGURATION_AUFGRUND_ZUORDNUNG_LF
+                - REKLAMATION_DEFINITION
+              x-apidog-folder: Bo4e/ENUM
+            nachrichtendatum:
+              type: string
+              description: |-
+                Erstellungdatum der EDIFact / DTM+137 | 
+                <TipInfo>DTM+137</TipInfo>
+              format: date-time
+            absender:
+              type: object
+              properties:
+                rufnummern:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      nummerntyp:
+                        type: string
+                        title: Rufnummernart
+                        description: >-
+
+                          <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                        enum:
+                          - RUF_ZENTRALE
+                          - FAX_ZENTRALE
+                          - SAMMELRUF
+                          - SAMMELFAX
+                          - ABTEILUNGRUF
+                          - ABTEILUNGFAX
+                          - RUF_DURCHWAHL
+                          - FAX_DURCHWAHL
+                          - MOBIL_NUMMER
+                        x-apidog-enum:
+                          - value: RUF_ZENTRALE
+                            name: weiteres Telefon
+                            description: AJ
+                          - value: FAX_ZENTRALE
+                            name: ''
+                            description: ''
+                          - value: SAMMELRUF
+                            name: ''
+                            description: ''
+                          - value: SAMMELFAX
+                            name: ''
+                            description: ''
+                          - value: ABTEILUNGRUF
+                            name: ''
+                            description: ''
+                          - value: ABTEILUNGFAX
+                            name: ''
+                            description: ''
+                          - value: RUF_DURCHWAHL
+                            name: ''
+                            description: ''
+                          - value: FAX_DURCHWAHL
+                            name: Telefax
+                            description: FX
+                          - value: MOBIL_NUMMER
+                            name: Handy
+                            description: AL
+                        x-apidog-folder: Bo4e/ENUM
+                      rufnummer:
+                        type: object
+                        title: Rufnummer
+                        description: >-
+
+                          <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                    x-apidog-orders:
+                      - nummerntyp
+                      - rufnummer
+                    x-apidog-ignore-properties: []
+                ansprechpartner:
+                  type: object
+                  properties:
+                    nachname:
+                      type: string
+                      description: |-
+                        Nachname (Familienname) des Ansprechpartners | 
+                        <TipInfo>SG2.NAD+MS.SG3.CTA</TipInfo>
+                    eMailAdresse:
+                      type: string
+                      description: >-
+                        E-Mail Adresse | 
+
+                        <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                  x-apidog-orders:
+                    - nachname
+                    - eMailAdresse
+                  x-apidog-ignore-properties: []
+                rollencodenummer:
+                  type: string
+                  description: |-
+                    Gibt die Codenummer der Marktrolle an - MP ID
+                    NAD Z31 Übertragungsnetzbetreiber ORDERS
+                    PI 17134
+                    NAD DEB Messstellenbetreiber ORDERS
+                    PI 17003 17134 17135
+                    NAD DEB Messstellenbetreiber IFTSTA 
+                    PI 21007 21015 21018 | 
+                    <TipInfo>SG2.NAD+MS, SG2.NAD+MR</TipInfo>
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: |-
+                    Rollencodetyp | 
+                    <TipInfo>SG2.NAD+MS, SG2.NAD+MR</TipInfo>
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+                  x-apidog-enum:
+                    - value: BDEW
+                      name: >-
+                        DE, BDEW (Bundesverband der Energie- und
+                        Wasserwirtschaft e.V.)
+                      description: '293'
+                    - value: GS1
+                      name: GS1
+                      description: '9'
+                    - value: GLN
+                      name: ''
+                      description: ''
+                    - value: DVGW
+                      name: DE, DVGW Service & Consult GmbH
+                      description: '332'
+                  x-apidog-folder: Bo4e/ENUM
+              x-apidog-orders:
+                - rufnummern
+                - ansprechpartner
+                - rollencodenummer
+                - rollencodetyp
+              x-apidog-ignore-properties: []
+            anfragereferenznummer:
+              type: string
+              description: >-
+                Referenz Vorgangsnummer 'aus Anfragenachricht' / ORDERS RFF+TN /
+                IFTSTA RFF+AAV / INSRPT RFF+TN RFF+AAV | 
+
+                <TipInfo>SG4.IDE+24.SG6.RFF+TN</TipInfo>
+            transaktionsgrundergaenzung:
+              type: string
+              description: |-
+                Ergänzung zum Transaktionsgrund / UTILMD STS+7++E01+###+E03 | 
+                <TipInfo>SG4.IDE+24.STS+Z17</TipInfo>
+            dokumentennummer:
+              type: string
+              description: |-
+                EDIFact Referenz aus dem BGM Segment / BGM | 
+                <TipInfo>BGM+E01</TipInfo>
+            transaktionsgrund:
+              type: string
+              description: >-
+                Der Transaktionsgrund beschreibt den Geschäftsvorfall zur
+                Kategorie genauer / UTILMD STS+7++###+ZW4+E03 | 
+
+                <TipInfo>SG4.IDE+24.STS+7</TipInfo>
+            antwortstatusCodeliste:
+              type: string
+              description: |-
+                Antwortstatus Codeliste / STS+E01 | 
+                <TipInfo>SG4.IDE+24.STS+E01</TipInfo>
+            vertragsbeginn:
+              type: string
+              description: >-
+                Gibt an, wann der Vertrag oder die Zuordnung beginnt.
+
+                DTM 92
+
+                PI 55001 55002 55077 55078 55600 55602 55601 55603 55013 55014
+                55607 55608 55004 55005 55051 55052 55238 55239 55235 55237 | 
+
+                <TipInfo>SG4.IDE+24.DTM+92</TipInfo>
+              format: date-time
+            vorgangsnummer:
+              type: string
+              description: >-
+                Nummer des Vorgangs / UTILMD UTILTS IDE+24 / INSRPT INVOIC DOC
+                | 
+
+                <TipInfo>SG4.IDE+24</TipInfo>
+            vertragsende:
+              type: string
+              description: >-
+                Gibt das Ende der Netznutzung oder einer Zuordnung an. 
+
+                DTM 93
+
+                PI 55016 55017 55001 55002 55600 55602 55013 55014 55607 55608
+                55010 55011 55004 55005 55007 55008 55039 55040 55051 55052
+                55240 55241 55242 55243 55236 55237 | 
+
+                <TipInfo>SG4.IDE+24.DTM+93</TipInfo>
+              format: date-time
+            antwortstatus:
+              type: string
+              description: |-
+                Antwortstatus
+                STS E01
+                E15 Zustimmung ohne Korrekturen
+                PI 23004
+                Z29 Ablehnung (kein Vertragsverhältnis mehr vorhanden)
+                ZB8 keine Störung feststellbar
+                PI 23003 | 
+                <TipInfo>SG4.IDE+24.STS+E01</TipInfo>
+            pruefidentifikator:
+              type: string
+              description: >-
+                Enthält den Prüfidentifikator aus der EDIFact Kommunikation /
+                RFF+Z13 | 
+
+                <TipInfo>SG4.IDE+24.SG6.RFF+Z13</TipInfo>
+            freitext:
+              type: object
+              title: Freitext
+              description: |-
+
+                <TipInfo>SG4.IDE+24.FTX+ACB</TipInfo>
+              x-apidog-orders: []
+              properties: {}
+              x-apidog-ignore-properties: []
+          x-apidog-orders:
+            - nachrichtenreferenznummer
+            - kategorie
+            - nachrichtendatum
+            - absender
+            - anfragereferenznummer
+            - transaktionsgrundergaenzung
+            - dokumentennummer
+            - transaktionsgrund
+            - antwortstatusCodeliste
+            - vertragsbeginn
+            - vorgangsnummer
+            - vertragsende
+            - antwortstatus
+            - pruefidentifikator
+            - freitext
+          x-apidog-ignore-properties: []
+      required:
+        - stammdaten
+        - transaktionsdaten
+      description: 44002 - Bestätigung der Anmeldung [NB an LF] UTILMD AHB Gas
+      x-apidog-orders:
+        - stammdaten
+        - transaktionsdaten
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    44036_Information_über_existierende_Zuordnung:
+      type: object
+      properties:
+        transaktionsdaten:
+          type: object
+          properties:
+            absender:
+              type: object
+              properties:
+                ansprechpartner:
+                  type: object
+                  properties:
+                    nachname:
+                      type: string
+                      description: |-
+                        Nachname (Familienname) des Ansprechpartners | 
+                        <TipInfo>SG2.NAD+MS.SG3.CTA</TipInfo>
+                    eMailAdresse:
+                      type: string
+                      description: >-
+                        E-Mail Adresse | 
+
+                        <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                  x-apidog-orders:
+                    - nachname
+                    - eMailAdresse
+                  x-apidog-ignore-properties: []
+                rollencodenummer:
+                  type: string
+                  description: |-
+                    Gibt die Codenummer der Marktrolle an - MP ID
+                    NAD Z31 Übertragungsnetzbetreiber ORDERS
+                    PI 17134
+                    NAD DEB Messstellenbetreiber ORDERS
+                    PI 17003 17134 17135
+                    NAD DEB Messstellenbetreiber IFTSTA 
+                    PI 21007 21015 21018 | 
+                    <TipInfo>SG2.NAD+MS, SG2.NAD+MR</TipInfo>
+                rufnummern:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      rufnummer:
+                        type: object
+                        title: Rufnummer
+                        description: >-
+
+                          <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                      nummerntyp:
+                        type: string
+                        title: Rufnummernart
+                        description: >-
+
+                          <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                        enum:
+                          - RUF_ZENTRALE
+                          - FAX_ZENTRALE
+                          - SAMMELRUF
+                          - SAMMELFAX
+                          - ABTEILUNGRUF
+                          - ABTEILUNGFAX
+                          - RUF_DURCHWAHL
+                          - FAX_DURCHWAHL
+                          - MOBIL_NUMMER
+                        x-apidog-enum:
+                          - value: RUF_ZENTRALE
+                            name: weiteres Telefon
+                            description: AJ
+                          - value: FAX_ZENTRALE
+                            name: ''
+                            description: ''
+                          - value: SAMMELRUF
+                            name: ''
+                            description: ''
+                          - value: SAMMELFAX
+                            name: ''
+                            description: ''
+                          - value: ABTEILUNGRUF
+                            name: ''
+                            description: ''
+                          - value: ABTEILUNGFAX
+                            name: ''
+                            description: ''
+                          - value: RUF_DURCHWAHL
+                            name: ''
+                            description: ''
+                          - value: FAX_DURCHWAHL
+                            name: Telefax
+                            description: FX
+                          - value: MOBIL_NUMMER
+                            name: Handy
+                            description: AL
+                        x-apidog-folder: Bo4e/ENUM
+                    x-apidog-orders:
+                      - rufnummer
+                      - nummerntyp
+                    x-apidog-ignore-properties: []
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: |-
+                    Rollencodetyp | 
+                    <TipInfo>SG2.NAD+MS, SG2.NAD+MR</TipInfo>
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+                  x-apidog-enum:
+                    - value: BDEW
+                      name: >-
+                        DE, BDEW (Bundesverband der Energie- und
+                        Wasserwirtschaft e.V.)
+                      description: '293'
+                    - value: GS1
+                      name: GS1
+                      description: '9'
+                    - value: GLN
+                      name: ''
+                      description: ''
+                    - value: DVGW
+                      name: DE, DVGW Service & Consult GmbH
+                      description: '332'
+                  x-apidog-folder: Bo4e/ENUM
+              x-apidog-orders:
+                - ansprechpartner
+                - rollencodenummer
+                - rufnummern
+                - rollencodetyp
+              x-apidog-ignore-properties: []
+            anfragereferenznummer:
+              type: string
+              description: >-
+                Referenz Vorgangsnummer 'aus Anfragenachricht' / ORDERS RFF+TN /
+                IFTSTA RFF+AAV / INSRPT RFF+TN RFF+AAV | 
+
+                <TipInfo>SG4.IDE+24.SG6.RFF+TN</TipInfo>
+            nachrichtendatum:
+              type: string
+              description: |-
+                Erstellungdatum der EDIFact / DTM+137 | 
+                <TipInfo>DTM+137</TipInfo>
+              format: date-time
+            beteiligterMarktpartner:
+              type: object
+              properties:
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: |-
+                    Rollencodetyp | 
+                    <TipInfo>SG4.IDE+24.SG12.NAD+VY</TipInfo>
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+                  x-apidog-enum:
+                    - value: BDEW
+                      name: >-
+                        DE, BDEW (Bundesverband der Energie- und
+                        Wasserwirtschaft e.V.)
+                      description: '293'
+                    - value: GS1
+                      name: GS1
+                      description: '9'
+                    - value: GLN
+                      name: ''
+                      description: ''
+                    - value: DVGW
+                      name: DE, DVGW Service & Consult GmbH
+                      description: '332'
+                  x-apidog-folder: Bo4e/ENUM
+                rollencodenummer:
+                  type: string
+                  description: |-
+                    Gibt die Codenummer der Marktrolle an - MP ID
+                    NAD Z31 Übertragungsnetzbetreiber ORDERS
+                    PI 17134
+                    NAD DEB Messstellenbetreiber ORDERS
+                    PI 17003 17134 17135
+                    NAD DEB Messstellenbetreiber IFTSTA 
+                    PI 21007 21015 21018 | 
+                    <TipInfo>SG4.IDE+24.SG12.NAD+VY</TipInfo>
+              x-apidog-orders:
+                - rollencodetyp
+                - rollencodenummer
+              x-apidog-ignore-properties: []
+            kategorie:
+              type: string
+              title: Anfragekategorie
+              description: |-
+                Anfragekategorie | 
+                <TipInfo>BGM+E44</TipInfo>
+              enum:
+                - PROZESSDATENBERICHT
+                - GERAETEUEBERNAHME
+                - WEITERVERPFLICHTUNG_BETRIEB_MELO
+                - AENDERUNG_MELO
+                - STAMMDATEN_MALO_ODER_MELO
+                - BILANZIERTE_MENGE_MEHR_MINDER_MENGEN
+                - ALLOKATIONSLISTE_MEHR_MINDER_MENGEN
+                - ENERGIEMENGE_UND_LEISTUNGSMAXIMUM
+                - ABRECHNUNG_MESSSTELLENBETRIEB_MSB_AN_LF
+                - AENDERUNG_PROGNOSEGRUNDLAGE_GERAETEKONFIGURATION
+                - AENDERUNG_GERAETEKONFIGURATION
+                - REKLAMATION_VON_WERTEN
+                - LASTGANG_MALO_TRANCHE
+                - SPERRUNG
+                - ENTSPERRUNG
+                - REKLAMATION_ZAEHLZEITDEFINITION
+                - ZEITREIHEN_IM_RAHMEN_BILANZKREISABRECHNUNG
+                - GERAETEWECHSELABSICHT
+                - AENDERUNG_KONZESSIONSABGABE
+                - AENDERUNG_ZAEHLZEITDEFINITION
+                - UEBERMITTLUNG_WERTE_AN_ESA
+                - AENDERUNG
+                - BILANZKREISZUORDNUNGSLISTE
+                - CLEARINGLISTE
+                - NORMIERTES_PROFIL_PROFILSCHAR
+                - REDISPATCH_EINZELZEITREIHE_AUSFALLARBEIT
+                - REKLAMATION_PROFIL_PROFILSCHAR
+                - STAMMDATEN_MALO
+                - STAMMDATEN_MELO
+                - STAMMDATEN_TRANCHE
+                - BEENDIGUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINES_ANGEBOTS_EINER_KONFIGURATION
+                - REKLAMATION_EINER_KONFIGURATION
+                - >-
+                  BESTELLUNG_AENDERUNG_NETZENTGELTE_NETZORIENTIERTER_STEUERUNGSMOEGLICHKEIT
+                - AENDERUNG_DER_TECHNIK_DER_LOKATION
+                - AENDERUNG_INDIVIDUELLER_KONFIGURATION
+                - BESTELLUNG_AENDERUNG_ABRECHNUNGSDATEN
+                - EINRICHTUNG_KONFIGURATION_AUFGRUND_ZUORDNUNG_LF
+                - REKLAMATION_DEFINITION
+              x-apidog-folder: Bo4e/ENUM
+            transaktionsgrund:
+              type: string
+              description: >-
+                Der Transaktionsgrund beschreibt den Geschäftsvorfall zur
+                Kategorie genauer / UTILMD STS+7++###+ZW4+E03 | 
+
+                <TipInfo>SG4.IDE+24.STS+7</TipInfo>
+            vorgangsnummer:
+              type: string
+              description: >-
+                Nummer des Vorgangs / UTILMD UTILTS IDE+24 / INSRPT INVOIC DOC
+                | 
+
+                <TipInfo>SG4.IDE+24</TipInfo>
+            nachrichtenreferenznummer:
+              type: string
+              description: |-
+                EDIFact Referenz aus dem UNT Segment / UTILMD UNT+21 | 
+                <TipInfo>UNH</TipInfo>
+            dokumentennummer:
+              type: string
+              description: |-
+                EDIFact Referenz aus dem BGM Segment / BGM | 
+                <TipInfo>BGM+E44</TipInfo>
+            pruefidentifikator:
+              type: string
+              description: >-
+                Enthält den Prüfidentifikator aus der EDIFact Kommunikation /
+                RFF+Z13 | 
+
+                <TipInfo>SG4.IDE+24.SG6.RFF+Z13</TipInfo>
+          x-apidog-orders:
+            - absender
+            - anfragereferenznummer
+            - nachrichtendatum
+            - beteiligterMarktpartner
+            - kategorie
+            - transaktionsgrund
+            - vorgangsnummer
+            - nachrichtenreferenznummer
+            - dokumentennummer
+            - pruefidentifikator
+          x-apidog-ignore-properties: []
+        stammdaten:
+          type: object
+          properties:
+            MARKTLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  marktlokationsId:
+                    type: string
+                    description: >-
+                      Die ID der Marktlokation der der zu sperrende Zähler
+                      zugeordnet ist. | 
+
+                      <TipInfo>SG4.IDE+24.SG5.LOC+172</TipInfo>
+                x-apidog-orders:
+                  - marktlokationsId
+                x-apidog-ignore-properties: []
+          x-apidog-orders:
+            - MARKTLOKATION
+          x-apidog-ignore-properties: []
+      required:
+        - transaktionsdaten
+        - stammdaten
+      description: >-
+        44036 - Information über existierende Zuordnung [NB an LFN] UTILMD AHB
+        Gas
+      x-apidog-orders:
+        - transaktionsdaten
+        - stammdaten
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    PI_55605:
+      type: object
+      properties:
+        transaktionsdaten:
+          type: object
+          properties:
+            dokumentennummer:
+              type: string
+              description: 'EDIFact Referenz aus dem BGM Segment / BGM | EDIFACT: BGM+E01'
+            freitext:
+              type: object
+              properties:
+                freitext2:
+                  type: string
+                  description: 'Freitext Zeile 2 | EDIFACT: SG4.IDE+24.FTX+ACB'
+                freitext4:
+                  type: string
+                  description: 'Freitext Zeile 4 | EDIFACT: SG4.IDE+24.FTX+ACB'
+                freitext1:
+                  type: string
+                  description: 'Freitext Zeile 1 | EDIFACT: SG4.IDE+24.FTX+ACB'
+                freitext5:
+                  type: string
+                  description: 'Freitext Zeile 5 | EDIFACT: SG4.IDE+24.FTX+ACB'
+                freitext3:
+                  type: string
+                  description: 'Freitext Zeile 3 | EDIFACT: SG4.IDE+24.FTX+ACB'
+              x-apidog-orders:
+                - freitext2
+                - freitext4
+                - freitext1
+                - freitext5
+                - freitext3
+              x-apidog-ignore-properties: []
+            kategorie:
+              type: string
+              title: Anfragekategorie
+              description: 'Anfragekategorie | EDIFACT: BGM+E01'
+              enum:
+                - PROZESSDATENBERICHT
+                - GERAETEUEBERNAHME
+                - WEITERVERPFLICHTUNG_BETRIEB_MELO
+                - AENDERUNG_MELO
+                - STAMMDATEN_MALO_ODER_MELO
+                - BILANZIERTE_MENGE_MEHR_MINDER_MENGEN
+                - ALLOKATIONSLISTE_MEHR_MINDER_MENGEN
+                - ENERGIEMENGE_UND_LEISTUNGSMAXIMUM
+                - ABRECHNUNG_MESSSTELLENBETRIEB_MSB_AN_LF
+                - AENDERUNG_PROGNOSEGRUNDLAGE_GERAETEKONFIGURATION
+                - AENDERUNG_GERAETEKONFIGURATION
+                - REKLAMATION_VON_WERTEN
+                - LASTGANG_MALO_TRANCHE
+                - SPERRUNG
+                - ENTSPERRUNG
+                - REKLAMATION_ZAEHLZEITDEFINITION
+                - ZEITREIHEN_IM_RAHMEN_BILANZKREISABRECHNUNG
+                - GERAETEWECHSELABSICHT
+                - AENDERUNG_KONZESSIONSABGABE
+                - AENDERUNG_ZAEHLZEITDEFINITION
+                - UEBERMITTLUNG_WERTE_AN_ESA
+                - AENDERUNG
+                - BILANZKREISZUORDNUNGSLISTE
+                - CLEARINGLISTE
+                - NORMIERTES_PROFIL_PROFILSCHAR
+                - REDISPATCH_EINZELZEITREIHE_AUSFALLARBEIT
+                - REKLAMATION_PROFIL_PROFILSCHAR
+                - STAMMDATEN_MALO
+                - STAMMDATEN_MELO
+                - STAMMDATEN_TRANCHE
+                - BEENDIGUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINES_ANGEBOTS_EINER_KONFIGURATION
+                - REKLAMATION_EINER_KONFIGURATION
+                - >-
+                  BESTELLUNG_AENDERUNG_NETZENTGELTE_NETZORIENTIERTER_STEUERUNGSMOEGLICHKEIT
+                - AENDERUNG_DER_TECHNIK_DER_LOKATION
+                - AENDERUNG_INDIVIDUELLER_KONFIGURATION
+                - BESTELLUNG_AENDERUNG_ABRECHNUNGSDATEN
+                - EINRICHTUNG_KONFIGURATION_AUFGRUND_ZUORDNUNG_LF
+                - REKLAMATION_DEFINITION
+            absender:
+              type: object
+              properties:
+                rufnummern:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      rufnummer:
+                        type: object
+                        title: Rufnummer
+                        description: 'EDIFACT: SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]'
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                      nummerntyp:
+                        type: string
+                        title: Rufnummernart
+                        description: 'EDIFACT: SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]'
+                        enum:
+                          - RUF_ZENTRALE
+                          - FAX_ZENTRALE
+                          - SAMMELRUF
+                          - SAMMELFAX
+                          - ABTEILUNGRUF
+                          - ABTEILUNGFAX
+                          - RUF_DURCHWAHL
+                          - FAX_DURCHWAHL
+                          - MOBIL_NUMMER
+                    x-apidog-orders:
+                      - rufnummer
+                      - nummerntyp
+                    x-apidog-ignore-properties: []
+                rollencodenummer:
+                  type: string
+                  description: 'Gibt die Codenummer der Marktrolle an. | EDIFACT: SG2.NAD+MS'
+                ansprechpartner:
+                  type: object
+                  properties:
+                    nachname:
+                      type: string
+                      description: >-
+                        Nachname (Familienname) des Ansprechpartners | EDIFACT:
+                        SG2.NAD+MS.SG3.CTA
+                    eMailAdresse:
+                      type: string
+                      description: >-
+                        E-Mail Adresse | EDIFACT:
+                        SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]
+                  x-apidog-orders:
+                    - nachname
+                    - eMailAdresse
+                  x-apidog-ignore-properties: []
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: 'Rollencodetyp | EDIFACT: SG2.NAD+MS'
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+              x-apidog-orders:
+                - rufnummern
+                - rollencodenummer
+                - ansprechpartner
+                - rollencodetyp
+              x-apidog-ignore-properties: []
+            nachrichtendatum:
+              type: string
+              description: 'Erstellungdatum der EDIFact / DTM+137 | EDIFACT: DTM+137'
+              format: date-time
+            nachrichtenreferenznummer:
+              type: string
+              description: >-
+                EDIFact Referenz aus dem UNT Segment / UTILMD UNT+21 | EDIFACT:
+                UNH
+            empfaenger:
+              type: object
+              properties:
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: 'Rollencodetyp | EDIFACT: SG2.NAD+MR'
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+                rollencodenummer:
+                  type: string
+                  description: 'Gibt die Codenummer der Marktrolle an. | EDIFACT: SG2.NAD+MR'
+              x-apidog-orders:
+                - rollencodetyp
+                - rollencodenummer
+              x-apidog-ignore-properties: []
+            anfragereferenznummer:
+              type: string
+              description: >-
+                Referenz Vorgangsnummer 'aus Anfragenachricht' / ORDERS RFF+TN /
+                IFTSTA RFF+AAV / INSRPT RFF+TN RFF+AAV | EDIFACT:
+                SG4.IDE+24.SG6.RFF+TN
+            transaktionsgrundergaenzung:
+              type: string
+              description: >-
+                Ergänzung zum Transaktionsgrund / UTILMD STS+7++E01+###+E03 |
+                EDIFACT: SG4.IDE+24.STS+7
+            beteiligterMarktpartner:
+              type: object
+              properties:
+                rollencodenummer:
+                  type: string
+                  description: >-
+                    Gibt die Codenummer der Marktrolle an. | EDIFACT:
+                    SG4.IDE+24.SG12.NAD+VY
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: 'Rollencodetyp | EDIFACT: SG4.IDE+24.SG12.NAD+VY'
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+              x-apidog-orders:
+                - rollencodenummer
+                - rollencodetyp
+              x-apidog-ignore-properties: []
+            antwortstatusCodeliste:
+              type: string
+              description: 'Antwortstatus Codeliste / STS+E01 | EDIFACT: SG4.IDE+24.STS+E01'
+            pruefidentifikator:
+              type: string
+              description: >-
+                Enthält den Prüfidentifikator aus der EDIFact Kommunikation /
+                RFF+Z13 | EDIFACT: SG4.IDE+24.SG6.RFF+Z13
+            transaktionsgrund:
+              type: string
+              description: >-
+                Der Transaktionsgrund beschreibt den Geschäftsvorfall zur
+                Kategorie genauer / UTILMD STS+7++###+ZW4+E03 | EDIFACT:
+                SG4.IDE+24.STS+7
+            antwortstatus:
+              type: string
+              description: 'Antwortstatus / STS+E01 | EDIFACT: SG4.IDE+24.STS+E01'
+            vorgangsnummer:
+              type: string
+              description: >-
+                Nummer des Vorgangs / UTILMD UTILTS IDE+24 / INSRPT INVOIC DOC |
+                EDIFACT: SG4.IDE+24
+          x-apidog-orders:
+            - dokumentennummer
+            - freitext
+            - kategorie
+            - absender
+            - nachrichtendatum
+            - nachrichtenreferenznummer
+            - empfaenger
+            - anfragereferenznummer
+            - transaktionsgrundergaenzung
+            - beteiligterMarktpartner
+            - antwortstatusCodeliste
+            - pruefidentifikator
+            - transaktionsgrund
+            - antwortstatus
+            - vorgangsnummer
+          x-apidog-ignore-properties: []
+        stammdaten:
+          type: object
+          properties:
+            MARKTLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  marktlokationsId:
+                    type: string
+                    description: >-
+                      Die ID der Marktlokation der der zu sperrende Zähler
+                      zugeordnet ist. | EDIFACT: SG4.IDE+24.SG5.LOC+Z16
+                x-apidog-orders:
+                  - marktlokationsId
+                x-apidog-ignore-properties: []
+          x-apidog-orders:
+            - MARKTLOKATION
+          x-apidog-ignore-properties: []
+      required:
+        - transaktionsdaten
+        - stammdaten
+      description: >-
+        55605 - NB an LF - Ablehnung der Anmeldung einer Zuordnung des LF zur
+        Marktlokation bzw. Tranche
+      x-apidog-orders:
+        - transaktionsdaten
+        - stammdaten
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    PI_55604:
+      type: object
+      properties:
+        transaktionsdaten:
+          type: object
+          properties:
+            dokumentennummer:
+              type: string
+              description: 'EDIFact Referenz aus dem BGM Segment / BGM | EDIFACT: BGM+E01'
+            freitext:
+              type: object
+              properties:
+                freitext2:
+                  type: string
+                  description: 'Freitext Zeile 2 | EDIFACT: SG4.IDE+24.FTX+ACB'
+                freitext4:
+                  type: string
+                  description: 'Freitext Zeile 4 | EDIFACT: SG4.IDE+24.FTX+ACB'
+                freitext1:
+                  type: string
+                  description: 'Freitext Zeile 1 | EDIFACT: SG4.IDE+24.FTX+ACB'
+                freitext5:
+                  type: string
+                  description: 'Freitext Zeile 5 | EDIFACT: SG4.IDE+24.FTX+ACB'
+                freitext3:
+                  type: string
+                  description: 'Freitext Zeile 3 | EDIFACT: SG4.IDE+24.FTX+ACB'
+              x-apidog-orders:
+                - freitext2
+                - freitext4
+                - freitext1
+                - freitext5
+                - freitext3
+              x-apidog-ignore-properties: []
+            kategorie:
+              type: string
+              title: Anfragekategorie
+              description: 'Anfragekategorie | EDIFACT: BGM+E01'
+              enum:
+                - PROZESSDATENBERICHT
+                - GERAETEUEBERNAHME
+                - WEITERVERPFLICHTUNG_BETRIEB_MELO
+                - AENDERUNG_MELO
+                - STAMMDATEN_MALO_ODER_MELO
+                - BILANZIERTE_MENGE_MEHR_MINDER_MENGEN
+                - ALLOKATIONSLISTE_MEHR_MINDER_MENGEN
+                - ENERGIEMENGE_UND_LEISTUNGSMAXIMUM
+                - ABRECHNUNG_MESSSTELLENBETRIEB_MSB_AN_LF
+                - AENDERUNG_PROGNOSEGRUNDLAGE_GERAETEKONFIGURATION
+                - AENDERUNG_GERAETEKONFIGURATION
+                - REKLAMATION_VON_WERTEN
+                - LASTGANG_MALO_TRANCHE
+                - SPERRUNG
+                - ENTSPERRUNG
+                - REKLAMATION_ZAEHLZEITDEFINITION
+                - ZEITREIHEN_IM_RAHMEN_BILANZKREISABRECHNUNG
+                - GERAETEWECHSELABSICHT
+                - AENDERUNG_KONZESSIONSABGABE
+                - AENDERUNG_ZAEHLZEITDEFINITION
+                - UEBERMITTLUNG_WERTE_AN_ESA
+                - AENDERUNG
+                - BILANZKREISZUORDNUNGSLISTE
+                - CLEARINGLISTE
+                - NORMIERTES_PROFIL_PROFILSCHAR
+                - REDISPATCH_EINZELZEITREIHE_AUSFALLARBEIT
+                - REKLAMATION_PROFIL_PROFILSCHAR
+                - STAMMDATEN_MALO
+                - STAMMDATEN_MELO
+                - STAMMDATEN_TRANCHE
+                - BEENDIGUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINES_ANGEBOTS_EINER_KONFIGURATION
+                - REKLAMATION_EINER_KONFIGURATION
+                - >-
+                  BESTELLUNG_AENDERUNG_NETZENTGELTE_NETZORIENTIERTER_STEUERUNGSMOEGLICHKEIT
+                - AENDERUNG_DER_TECHNIK_DER_LOKATION
+                - AENDERUNG_INDIVIDUELLER_KONFIGURATION
+                - BESTELLUNG_AENDERUNG_ABRECHNUNGSDATEN
+                - EINRICHTUNG_KONFIGURATION_AUFGRUND_ZUORDNUNG_LF
+                - REKLAMATION_DEFINITION
+            absender:
+              type: object
+              properties:
+                rufnummern:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      rufnummer:
+                        type: object
+                        title: Rufnummer
+                        description: 'EDIFACT: SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]'
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                      nummerntyp:
+                        type: string
+                        title: Rufnummernart
+                        description: 'EDIFACT: SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]'
+                        enum:
+                          - RUF_ZENTRALE
+                          - FAX_ZENTRALE
+                          - SAMMELRUF
+                          - SAMMELFAX
+                          - ABTEILUNGRUF
+                          - ABTEILUNGFAX
+                          - RUF_DURCHWAHL
+                          - FAX_DURCHWAHL
+                          - MOBIL_NUMMER
+                    x-apidog-orders:
+                      - rufnummer
+                      - nummerntyp
+                    x-apidog-ignore-properties: []
+                rollencodenummer:
+                  type: string
+                  description: 'Gibt die Codenummer der Marktrolle an. | EDIFACT: SG2.NAD+MS'
+                ansprechpartner:
+                  type: object
+                  properties:
+                    nachname:
+                      type: string
+                      description: >-
+                        Nachname (Familienname) des Ansprechpartners | EDIFACT:
+                        SG2.NAD+MS.SG3.CTA
+                    eMailAdresse:
+                      type: string
+                      description: >-
+                        E-Mail Adresse | EDIFACT:
+                        SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]
+                  x-apidog-orders:
+                    - nachname
+                    - eMailAdresse
+                  x-apidog-ignore-properties: []
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: 'Rollencodetyp | EDIFACT: SG2.NAD+MS'
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+              x-apidog-orders:
+                - rufnummern
+                - rollencodenummer
+                - ansprechpartner
+                - rollencodetyp
+              x-apidog-ignore-properties: []
+            nachrichtendatum:
+              type: string
+              description: 'Erstellungdatum der EDIFact / DTM+137 | EDIFACT: DTM+137'
+              format: date-time
+            nachrichtenreferenznummer:
+              type: string
+              description: >-
+                EDIFact Referenz aus dem UNT Segment / UTILMD UNT+21 | EDIFACT:
+                UNH
+            empfaenger:
+              type: object
+              properties:
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: 'Rollencodetyp | EDIFACT: SG2.NAD+MR'
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+                rollencodenummer:
+                  type: string
+                  description: 'Gibt die Codenummer der Marktrolle an. | EDIFACT: SG2.NAD+MR'
+              x-apidog-orders:
+                - rollencodetyp
+                - rollencodenummer
+              x-apidog-ignore-properties: []
+            anfragereferenznummer:
+              type: string
+              description: >-
+                Referenz Vorgangsnummer 'aus Anfragenachricht' / ORDERS RFF+TN /
+                IFTSTA RFF+AAV / INSRPT RFF+TN RFF+AAV | EDIFACT:
+                SG4.IDE+24.SG6.RFF+TN
+            transaktionsgrundergaenzung:
+              type: string
+              description: >-
+                Ergänzung zum Transaktionsgrund / UTILMD STS+7++E01+###+E03 |
+                EDIFACT: SG4.IDE+24.STS+7
+            beteiligterMarktpartner:
+              type: object
+              properties:
+                rollencodenummer:
+                  type: string
+                  description: >-
+                    Gibt die Codenummer der Marktrolle an. | EDIFACT:
+                    SG4.IDE+24.SG12.NAD+VY
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: 'Rollencodetyp | EDIFACT: SG4.IDE+24.SG12.NAD+VY'
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+              x-apidog-orders:
+                - rollencodenummer
+                - rollencodetyp
+              x-apidog-ignore-properties: []
+            antwortstatusCodeliste:
+              type: string
+              description: 'Antwortstatus Codeliste / STS+E01 | EDIFACT: SG4.IDE+24.STS+E01'
+            pruefidentifikator:
+              type: string
+              description: >-
+                Enthält den Prüfidentifikator aus der EDIFact Kommunikation /
+                RFF+Z13 | EDIFACT: SG4.IDE+24.SG6.RFF+Z13
+            transaktionsgrund:
+              type: string
+              description: >-
+                Der Transaktionsgrund beschreibt den Geschäftsvorfall zur
+                Kategorie genauer / UTILMD STS+7++###+ZW4+E03 | EDIFACT:
+                SG4.IDE+24.STS+7
+            antwortstatus:
+              type: string
+              description: 'Antwortstatus / STS+E01 | EDIFACT: SG4.IDE+24.STS+E01'
+            vorgangsnummer:
+              type: string
+              description: >-
+                Nummer des Vorgangs / UTILMD UTILTS IDE+24 / INSRPT INVOIC DOC |
+                EDIFACT: SG4.IDE+24
+          x-apidog-orders:
+            - dokumentennummer
+            - freitext
+            - kategorie
+            - absender
+            - nachrichtendatum
+            - nachrichtenreferenznummer
+            - empfaenger
+            - anfragereferenznummer
+            - transaktionsgrundergaenzung
+            - beteiligterMarktpartner
+            - antwortstatusCodeliste
+            - pruefidentifikator
+            - transaktionsgrund
+            - antwortstatus
+            - vorgangsnummer
+          x-apidog-ignore-properties: []
+        stammdaten:
+          type: object
+          properties:
+            MARKTLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  marktlokationsId:
+                    type: string
+                    description: >-
+                      Die ID der Marktlokation der der zu sperrende Zähler
+                      zugeordnet ist. | EDIFACT: SG4.IDE+24.SG5.LOC+Z16
+                x-apidog-orders:
+                  - marktlokationsId
+                x-apidog-ignore-properties: []
+          x-apidog-orders:
+            - MARKTLOKATION
+          x-apidog-ignore-properties: []
+      required:
+        - transaktionsdaten
+        - stammdaten
+      description: >-
+        55604 - NB an LF - Ablehnung der Anmeldung einer Zuordnung des LF zur
+        Marktlokation bzw. Tranche
+      x-apidog-orders:
+        - transaktionsdaten
+        - stammdaten
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    PI_55603:
+      type: object
+      properties:
+        stammdaten:
+          type: object
+          properties:
+            MESSLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  marktrollen:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        rollencodenummer:
+                          type: string
+                          description: >-
+                            Gibt die Codenummer der Marktrolle an. | EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+ZF3.SG10.CCI+++ZB3.CAV+Z91,
+                            SG4.IDE+24.SG8.SEQ+ZF3.SG10.CCI+++ZB3.CAV+ZF0
+                        weiterverpflichtet:
+                          type: boolean
+                          description: >-
+                            weiterverpflichtet | EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+ZF3.SG10.CCI+++ZB3.CAV+Z91
+                        messstellenbetreiberEigenschaft:
+                          type: string
+                          title: MSBEigenschaft
+                          description: >-
+                            EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+ZF3.SG10.CCI+++ZB3.CAV+Z91
+                          enum:
+                            - GRUNDZUSTAENDIGER_MESSSTELLENBETREIBER
+                            - WETTBEWERBLICHER_MESSSTELLENBETREIBER
+                            - AUFFANGMESSSTELLENBETREIBER
+                        marktrolle:
+                          type: string
+                          title: Marktrolle
+                          description: >-
+                            Diese Rollen kann ein Marktteilnehmer einnehmen |
+                            EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+ZF3.SG10.CCI+++ZB3.CAV+Z91,
+                            SG4.IDE+24.SG8.SEQ+ZF3.SG10.CCI+++ZB3.CAV+ZF0
+                          enum:
+                            - NB
+                            - LF
+                            - MSB
+                            - MSBA
+                            - GMSB
+                            - MDL
+                            - DL
+                            - BKV
+                            - BKO
+                            - UENB
+                            - KUNDE-SELBST-NN
+                            - MGV
+                            - EIV
+                            - RB
+                            - KUNDE
+                            - INTERESSENT
+                            - KN
+                            - UBA
+                            - BIKO
+                            - ESA
+                      x-apidog-orders:
+                        - rollencodenummer
+                        - weiterverpflichtet
+                        - messstellenbetreiberEigenschaft
+                        - marktrolle
+                      x-apidog-ignore-properties: []
+                  messlokationsId:
+                    type: string
+                    description: >-
+                      Die Messlokations-Identifikation. Das ist die frühere
+                      Zählpunktbezeichnung,
+
+                      z.B. DE 47108151234567 | EDIFACT: SG4.IDE+24.SG5.LOC+Z17,
+                      SG4.IDE+24.SG8.SEQ+ZF3.RFF+Z19
+                x-apidog-orders:
+                  - marktrollen
+                  - messlokationsId
+                x-apidog-ignore-properties: []
+            MARKTLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  marktrollen:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        rollencodenummer:
+                          type: string
+                          description: >-
+                            Gibt die Codenummer der Marktrolle an. | EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+Z98.SG10.CCI+++ZB3.CAV+Z91
+                        marktrolle:
+                          type: string
+                          title: Marktrolle
+                          description: >-
+                            Diese Rollen kann ein Marktteilnehmer einnehmen |
+                            EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+Z98.SG10.CCI+++ZB3.CAV+Z91
+                          enum:
+                            - NB
+                            - LF
+                            - MSB
+                            - MSBA
+                            - GMSB
+                            - MDL
+                            - DL
+                            - BKV
+                            - BKO
+                            - UENB
+                            - KUNDE-SELBST-NN
+                            - MGV
+                            - EIV
+                            - RB
+                            - KUNDE
+                            - INTERESSENT
+                            - KN
+                            - UBA
+                            - BIKO
+                            - ESA
+                        messstellenbetreiberEigenschaft:
+                          type: string
+                          title: MSBEigenschaft
+                          description: >-
+                            EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+Z98.SG10.CCI+++ZB3.CAV+Z91
+                          enum:
+                            - GRUNDZUSTAENDIGER_MESSSTELLENBETREIBER
+                            - WETTBEWERBLICHER_MESSSTELLENBETREIBER
+                            - AUFFANGMESSSTELLENBETREIBER
+                        weiterverpflichtet:
+                          type: boolean
+                          description: >-
+                            weiterverpflichtet | EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+Z98.SG10.CCI+++ZB3.CAV+Z91
+                      x-apidog-orders:
+                        - rollencodenummer
+                        - marktrolle
+                        - messstellenbetreiberEigenschaft
+                        - weiterverpflichtet
+                      x-apidog-ignore-properties: []
+                  marktlokationsId:
+                    type: string
+                    description: >-
+                      Die ID der Marktlokation der der zu sperrende Zähler
+                      zugeordnet ist. | EDIFACT: SG4.IDE+24.SG5.LOC+Z16
+                x-apidog-orders:
+                  - marktrollen
+                  - marktlokationsId
+                x-apidog-ignore-properties: []
+            NETZLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  marktrollen:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        messstellenbetreiberEigenschaft:
+                          type: string
+                          title: MSBEigenschaft
+                          description: >-
+                            EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+ZD7.SG10.CCI+++ZB3.CAV+Z91
+                          enum:
+                            - GRUNDZUSTAENDIGER_MESSSTELLENBETREIBER
+                            - WETTBEWERBLICHER_MESSSTELLENBETREIBER
+                            - AUFFANGMESSSTELLENBETREIBER
+                        marktrolle:
+                          type: string
+                          title: Marktrolle
+                          description: >-
+                            Diese Rollen kann ein Marktteilnehmer einnehmen |
+                            EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+ZD7.SG10.CCI+++ZB3.CAV+Z91
+                          enum:
+                            - NB
+                            - LF
+                            - MSB
+                            - MSBA
+                            - GMSB
+                            - MDL
+                            - DL
+                            - BKV
+                            - BKO
+                            - UENB
+                            - KUNDE-SELBST-NN
+                            - MGV
+                            - EIV
+                            - RB
+                            - KUNDE
+                            - INTERESSENT
+                            - KN
+                            - UBA
+                            - BIKO
+                            - ESA
+                        rollencodenummer:
+                          type: string
+                          description: >-
+                            Gibt die Codenummer der Marktrolle an. | EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+ZD7.SG10.CCI+++ZB3.CAV+Z91
+                      x-apidog-orders:
+                        - messstellenbetreiberEigenschaft
+                        - marktrolle
+                        - rollencodenummer
+                      x-apidog-ignore-properties: []
+                  netzlokationsId:
+                    type: string
+                    description: >-
+                      Identifikationsnummer einer Netzlokation, an der Energie
+                      entweder
+
+                      verbraucht, oder erzeugt wird (Like MarktlokationsId
+                      Marktlokation) | EDIFACT: SG4.IDE+24.SG5.LOC+Z18,
+                      SG4.IDE+24.SG8.SEQ+ZD7.RFF+Z32
+                x-apidog-orders:
+                  - marktrollen
+                  - netzlokationsId
+                x-apidog-ignore-properties: []
+            TRANCHE:
+              type: array
+              items:
+                type: object
+                properties:
+                  bildungTranchengroesse:
+                    type: string
+                    title: BildungTranchengroesse
+                    description: >-
+                      BildungTranchengroesse | EDIFACT:
+                      SG4.IDE+24.SG8.SEQ+Z15.SG10.CCI+Z37
+                    enum:
+                      - PROZENTUAL
+                      - AUFTEILUNGSFAKTOR
+                  aufteilungsmenge:
+                    type: object
+                    properties:
+                      wert:
+                        type: object
+                        title: Schwellwert
+                        description: 'EDIFACT: SG4.IDE+24.SG8.SEQ+Z15.SG9.QTY+11'
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                      einheit:
+                        type: string
+                        title: Mengeneinheit
+                        description: >-
+                          Einheit: Messgrößen, die per Messung oder Vorgabe
+                          ermittelt werden können | EDIFACT:
+                          SG4.IDE+24.SG8.SEQ+Z15.SG9.QTY+11
+                        enum:
+                          - W
+                          - WH
+                          - KW
+                          - KWH
+                          - KVARH
+                          - MW
+                          - MWH
+                          - STUECK
+                          - KUBIKMETER
+                          - STUNDE
+                          - TAG
+                          - MONAT
+                          - JAHR
+                          - PROZENT
+                          - ANZAHL
+                          - VAR
+                          - KVAR
+                          - VARH
+                          - KWHK
+                          - Z16
+                          - KWT
+                    x-apidog-orders:
+                      - wert
+                      - einheit
+                    x-apidog-ignore-properties: []
+                x-apidog-orders:
+                  - bildungTranchengroesse
+                  - aufteilungsmenge
+                x-apidog-ignore-properties: []
+            STEUERBARE_RESSOURCE:
+              type: array
+              items:
+                type: object
+                properties:
+                  marktrollen:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        marktrolle:
+                          type: string
+                          title: Marktrolle
+                          description: >-
+                            Diese Rollen kann ein Marktteilnehmer einnehmen |
+                            EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+ZF1.SG10.CCI+++ZB3.CAV+Z91
+                          enum:
+                            - NB
+                            - LF
+                            - MSB
+                            - MSBA
+                            - GMSB
+                            - MDL
+                            - DL
+                            - BKV
+                            - BKO
+                            - UENB
+                            - KUNDE-SELBST-NN
+                            - MGV
+                            - EIV
+                            - RB
+                            - KUNDE
+                            - INTERESSENT
+                            - KN
+                            - UBA
+                            - BIKO
+                            - ESA
+                        rollencodenummer:
+                          type: string
+                          description: >-
+                            Gibt die Codenummer der Marktrolle an. | EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+ZF1.SG10.CCI+++ZB3.CAV+Z91
+                        messstellenbetreiberEigenschaft:
+                          type: string
+                          title: MSBEigenschaft
+                          description: >-
+                            EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+ZF1.SG10.CCI+++ZB3.CAV+Z91
+                          enum:
+                            - GRUNDZUSTAENDIGER_MESSSTELLENBETREIBER
+                            - WETTBEWERBLICHER_MESSSTELLENBETREIBER
+                            - AUFFANGMESSSTELLENBETREIBER
+                      x-apidog-orders:
+                        - marktrolle
+                        - rollencodenummer
+                        - messstellenbetreiberEigenschaft
+                      x-apidog-ignore-properties: []
+                  ressourcenId:
+                    type: string
+                    description: >-
+                      ressourcenId | EDIFACT: SG4.IDE+24.SG5.LOC+Z19,
+                      SG4.IDE+24.SG8.SEQ+ZF1.RFF+Z38
+                x-apidog-orders:
+                  - marktrollen
+                  - ressourcenId
+                x-apidog-ignore-properties: []
+            NETZNUTZUNGSVERTRAG:
+              type: array
+              items:
+                type: object
+                properties:
+                  vertragsbeginn:
+                    type: string
+                    description: 'Datum Vertragsbeginn / DTM+92 | EDIFACT: SG4.IDE+24.DTM+92'
+                    format: date-time
+                x-apidog-orders:
+                  - vertragsbeginn
+                x-apidog-ignore-properties: []
+            TECHNISCHE_RESSOURCE:
+              type: array
+              items:
+                type: object
+                properties:
+                  ressourcenId:
+                    type: string
+                    description: 'ressourcenId | EDIFACT: SG4.IDE+24.SG5.LOC+Z20'
+                x-apidog-orders:
+                  - ressourcenId
+                x-apidog-ignore-properties: []
+          x-apidog-orders:
+            - MESSLOKATION
+            - MARKTLOKATION
+            - NETZLOKATION
+            - TRANCHE
+            - STEUERBARE_RESSOURCE
+            - NETZNUTZUNGSVERTRAG
+            - TECHNISCHE_RESSOURCE
+          x-apidog-ignore-properties: []
+        transaktionsdaten:
+          type: object
+          properties:
+            dokumentennummer:
+              type: string
+              description: 'EDIFact Referenz aus dem BGM Segment / BGM | EDIFACT: BGM+E01'
+            kategorie:
+              type: string
+              title: Anfragekategorie
+              description: 'Anfragekategorie | EDIFACT: BGM+E01'
+              enum:
+                - PROZESSDATENBERICHT
+                - GERAETEUEBERNAHME
+                - WEITERVERPFLICHTUNG_BETRIEB_MELO
+                - AENDERUNG_MELO
+                - STAMMDATEN_MALO_ODER_MELO
+                - BILANZIERTE_MENGE_MEHR_MINDER_MENGEN
+                - ALLOKATIONSLISTE_MEHR_MINDER_MENGEN
+                - ENERGIEMENGE_UND_LEISTUNGSMAXIMUM
+                - ABRECHNUNG_MESSSTELLENBETRIEB_MSB_AN_LF
+                - AENDERUNG_PROGNOSEGRUNDLAGE_GERAETEKONFIGURATION
+                - AENDERUNG_GERAETEKONFIGURATION
+                - REKLAMATION_VON_WERTEN
+                - LASTGANG_MALO_TRANCHE
+                - SPERRUNG
+                - ENTSPERRUNG
+                - REKLAMATION_ZAEHLZEITDEFINITION
+                - ZEITREIHEN_IM_RAHMEN_BILANZKREISABRECHNUNG
+                - GERAETEWECHSELABSICHT
+                - AENDERUNG_KONZESSIONSABGABE
+                - AENDERUNG_ZAEHLZEITDEFINITION
+                - UEBERMITTLUNG_WERTE_AN_ESA
+                - AENDERUNG
+                - BILANZKREISZUORDNUNGSLISTE
+                - CLEARINGLISTE
+                - NORMIERTES_PROFIL_PROFILSCHAR
+                - REDISPATCH_EINZELZEITREIHE_AUSFALLARBEIT
+                - REKLAMATION_PROFIL_PROFILSCHAR
+                - STAMMDATEN_MALO
+                - STAMMDATEN_MELO
+                - STAMMDATEN_TRANCHE
+                - BEENDIGUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINES_ANGEBOTS_EINER_KONFIGURATION
+                - REKLAMATION_EINER_KONFIGURATION
+                - >-
+                  BESTELLUNG_AENDERUNG_NETZENTGELTE_NETZORIENTIERTER_STEUERUNGSMOEGLICHKEIT
+                - AENDERUNG_DER_TECHNIK_DER_LOKATION
+                - AENDERUNG_INDIVIDUELLER_KONFIGURATION
+                - BESTELLUNG_AENDERUNG_ABRECHNUNGSDATEN
+                - EINRICHTUNG_KONFIGURATION_AUFGRUND_ZUORDNUNG_LF
+                - REKLAMATION_DEFINITION
+            absender:
+              type: object
+              properties:
+                rufnummern:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      rufnummer:
+                        type: object
+                        title: Rufnummer
+                        description: 'EDIFACT: SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]'
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                      nummerntyp:
+                        type: string
+                        title: Rufnummernart
+                        description: 'EDIFACT: SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]'
+                        enum:
+                          - RUF_ZENTRALE
+                          - FAX_ZENTRALE
+                          - SAMMELRUF
+                          - SAMMELFAX
+                          - ABTEILUNGRUF
+                          - ABTEILUNGFAX
+                          - RUF_DURCHWAHL
+                          - FAX_DURCHWAHL
+                          - MOBIL_NUMMER
+                    x-apidog-orders:
+                      - rufnummer
+                      - nummerntyp
+                    x-apidog-ignore-properties: []
+                rollencodenummer:
+                  type: string
+                  description: 'Gibt die Codenummer der Marktrolle an. | EDIFACT: SG2.NAD+MS'
+                ansprechpartner:
+                  type: object
+                  properties:
+                    nachname:
+                      type: string
+                      description: >-
+                        Nachname (Familienname) des Ansprechpartners | EDIFACT:
+                        SG2.NAD+MS.SG3.CTA
+                    eMailAdresse:
+                      type: string
+                      description: >-
+                        E-Mail Adresse | EDIFACT:
+                        SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]
+                  x-apidog-orders:
+                    - nachname
+                    - eMailAdresse
+                  x-apidog-ignore-properties: []
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: 'Rollencodetyp | EDIFACT: SG2.NAD+MS'
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+              x-apidog-orders:
+                - rufnummern
+                - rollencodenummer
+                - ansprechpartner
+                - rollencodetyp
+              x-apidog-ignore-properties: []
+            nachrichtendatum:
+              type: string
+              description: 'Erstellungdatum der EDIFact / DTM+137 | EDIFACT: DTM+137'
+              format: date-time
+            nachrichtenreferenznummer:
+              type: string
+              description: >-
+                EDIFact Referenz aus dem UNT Segment / UTILMD UNT+21 | EDIFACT:
+                UNH
+            vertragsbeginn:
+              type: string
+              description: 'Datum Vertragsbeginn / DTM+92 | EDIFACT: SG4.IDE+24.DTM+92'
+              format: date-time
+            empfaenger:
+              type: object
+              properties:
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: 'Rollencodetyp | EDIFACT: SG2.NAD+MR'
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+                rollencodenummer:
+                  type: string
+                  description: 'Gibt die Codenummer der Marktrolle an. | EDIFACT: SG2.NAD+MR'
+              x-apidog-orders:
+                - rollencodetyp
+                - rollencodenummer
+              x-apidog-ignore-properties: []
+            geplantesProduktpaket:
+              type: integer
+              description: >-
+                Informativ zur Umsetzung geplantes Produktpaket / RFF+Z60 |
+                EDIFACT: SG4.IDE+24.SG6.RFF+Z60
+            anfragereferenznummer:
+              type: string
+              description: >-
+                Referenz Vorgangsnummer 'aus Anfragenachricht' / ORDERS RFF+TN /
+                IFTSTA RFF+AAV / INSRPT RFF+TN RFF+AAV | EDIFACT:
+                SG4.IDE+24.SG6.RFF+TN
+            transaktionsgrundergaenzung:
+              type: string
+              description: >-
+                Ergänzung zum Transaktionsgrund / UTILMD STS+7++E01+###+E03 |
+                EDIFACT: SG4.IDE+24.STS+7
+            antwortstatusCodeliste:
+              type: string
+              description: 'Antwortstatus Codeliste / STS+E01 | EDIFACT: SG4.IDE+24.STS+E01'
+            pruefidentifikator:
+              type: string
+              description: >-
+                Enthält den Prüfidentifikator aus der EDIFact Kommunikation /
+                RFF+Z13 | EDIFACT: SG4.IDE+24.SG6.RFF+Z13
+            transaktionsgrund:
+              type: string
+              description: >-
+                Der Transaktionsgrund beschreibt den Geschäftsvorfall zur
+                Kategorie genauer / UTILMD STS+7++###+ZW4+E03 | EDIFACT:
+                SG4.IDE+24.STS+7
+            antwortstatus:
+              type: string
+              description: 'Antwortstatus / STS+E01 | EDIFACT: SG4.IDE+24.STS+E01'
+            vorgangsnummer:
+              type: string
+              description: >-
+                Nummer des Vorgangs / UTILMD UTILTS IDE+24 / INSRPT INVOIC DOC |
+                EDIFACT: SG4.IDE+24
+          x-apidog-orders:
+            - dokumentennummer
+            - kategorie
+            - absender
+            - nachrichtendatum
+            - nachrichtenreferenznummer
+            - vertragsbeginn
+            - empfaenger
+            - geplantesProduktpaket
+            - anfragereferenznummer
+            - transaktionsgrundergaenzung
+            - antwortstatusCodeliste
+            - pruefidentifikator
+            - transaktionsgrund
+            - antwortstatus
+            - vorgangsnummer
+          x-apidog-ignore-properties: []
+      required:
+        - stammdaten
+        - transaktionsdaten
+      description: 55603 - NB an LF - Zuordnung des LF zur Marktlokation bzw. Tranche
+      x-apidog-orders:
+        - stammdaten
+        - transaktionsdaten
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    PI_55602:
+      type: object
+      properties:
+        stammdaten:
+          type: object
+          properties:
+            MESSLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  marktrollen:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        rollencodenummer:
+                          type: string
+                          description: >-
+                            Gibt die Codenummer der Marktrolle an. | EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+ZF3.SG10.CCI+++ZB3.CAV+Z91,
+                            SG4.IDE+24.SG8.SEQ+ZF3.SG10.CCI+++ZB3.CAV+ZF0
+                        weiterverpflichtet:
+                          type: boolean
+                          description: >-
+                            weiterverpflichtet | EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+ZF3.SG10.CCI+++ZB3.CAV+Z91
+                        messstellenbetreiberEigenschaft:
+                          type: string
+                          title: MSBEigenschaft
+                          description: >-
+                            EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+ZF3.SG10.CCI+++ZB3.CAV+Z91
+                          enum:
+                            - GRUNDZUSTAENDIGER_MESSSTELLENBETREIBER
+                            - WETTBEWERBLICHER_MESSSTELLENBETREIBER
+                            - AUFFANGMESSSTELLENBETREIBER
+                        marktrolle:
+                          type: string
+                          title: Marktrolle
+                          description: >-
+                            Diese Rollen kann ein Marktteilnehmer einnehmen |
+                            EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+ZF3.SG10.CCI+++ZB3.CAV+Z91,
+                            SG4.IDE+24.SG8.SEQ+ZF3.SG10.CCI+++ZB3.CAV+ZF0
+                          enum:
+                            - NB
+                            - LF
+                            - MSB
+                            - MSBA
+                            - GMSB
+                            - MDL
+                            - DL
+                            - BKV
+                            - BKO
+                            - UENB
+                            - KUNDE-SELBST-NN
+                            - MGV
+                            - EIV
+                            - RB
+                            - KUNDE
+                            - INTERESSENT
+                            - KN
+                            - UBA
+                            - BIKO
+                            - ESA
+                      x-apidog-orders:
+                        - rollencodenummer
+                        - weiterverpflichtet
+                        - messstellenbetreiberEigenschaft
+                        - marktrolle
+                      x-apidog-ignore-properties: []
+                  messlokationsId:
+                    type: string
+                    description: >-
+                      Die Messlokations-Identifikation. Das ist die frühere
+                      Zählpunktbezeichnung,
+
+                      z.B. DE 47108151234567 | EDIFACT: SG4.IDE+24.SG5.LOC+Z17,
+                      SG4.IDE+24.SG8.SEQ+ZF3.RFF+Z19
+                x-apidog-orders:
+                  - marktrollen
+                  - messlokationsId
+                x-apidog-ignore-properties: []
+            MARKTLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  marktrollen:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        rollencodenummer:
+                          type: string
+                          description: >-
+                            Gibt die Codenummer der Marktrolle an. | EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+Z98.SG10.CCI+++ZB3.CAV+Z91
+                        marktrolle:
+                          type: string
+                          title: Marktrolle
+                          description: >-
+                            Diese Rollen kann ein Marktteilnehmer einnehmen |
+                            EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+Z98.SG10.CCI+++ZB3.CAV+Z91
+                          enum:
+                            - NB
+                            - LF
+                            - MSB
+                            - MSBA
+                            - GMSB
+                            - MDL
+                            - DL
+                            - BKV
+                            - BKO
+                            - UENB
+                            - KUNDE-SELBST-NN
+                            - MGV
+                            - EIV
+                            - RB
+                            - KUNDE
+                            - INTERESSENT
+                            - KN
+                            - UBA
+                            - BIKO
+                            - ESA
+                        messstellenbetreiberEigenschaft:
+                          type: string
+                          title: MSBEigenschaft
+                          description: >-
+                            EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+Z98.SG10.CCI+++ZB3.CAV+Z91
+                          enum:
+                            - GRUNDZUSTAENDIGER_MESSSTELLENBETREIBER
+                            - WETTBEWERBLICHER_MESSSTELLENBETREIBER
+                            - AUFFANGMESSSTELLENBETREIBER
+                        weiterverpflichtet:
+                          type: boolean
+                          description: >-
+                            weiterverpflichtet | EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+Z98.SG10.CCI+++ZB3.CAV+Z91
+                      x-apidog-orders:
+                        - rollencodenummer
+                        - marktrolle
+                        - messstellenbetreiberEigenschaft
+                        - weiterverpflichtet
+                      x-apidog-ignore-properties: []
+                  marktlokationsId:
+                    type: string
+                    description: >-
+                      Die ID der Marktlokation der der zu sperrende Zähler
+                      zugeordnet ist. | EDIFACT: SG4.IDE+24.SG5.LOC+Z16
+                x-apidog-orders:
+                  - marktrollen
+                  - marktlokationsId
+                x-apidog-ignore-properties: []
+            NETZNUTZUNGSVERTRAG:
+              type: array
+              items:
+                type: object
+                properties:
+                  vertragsende:
+                    type: string
+                    description: 'Datum Vertragsende / DTM+93 | EDIFACT: SG4.IDE+24.DTM+93'
+                    format: date-time
+                  vertragsbeginn:
+                    type: string
+                    description: 'Datum Vertragsbeginn / DTM+92 | EDIFACT: SG4.IDE+24.DTM+92'
+                    format: date-time
+                x-apidog-orders:
+                  - vertragsende
+                  - vertragsbeginn
+                x-apidog-ignore-properties: []
+            NETZLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  marktrollen:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        messstellenbetreiberEigenschaft:
+                          type: string
+                          title: MSBEigenschaft
+                          description: >-
+                            EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+ZD7.SG10.CCI+++ZB3.CAV+Z91
+                          enum:
+                            - GRUNDZUSTAENDIGER_MESSSTELLENBETREIBER
+                            - WETTBEWERBLICHER_MESSSTELLENBETREIBER
+                            - AUFFANGMESSSTELLENBETREIBER
+                        marktrolle:
+                          type: string
+                          title: Marktrolle
+                          description: >-
+                            Diese Rollen kann ein Marktteilnehmer einnehmen |
+                            EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+ZD7.SG10.CCI+++ZB3.CAV+Z91
+                          enum:
+                            - NB
+                            - LF
+                            - MSB
+                            - MSBA
+                            - GMSB
+                            - MDL
+                            - DL
+                            - BKV
+                            - BKO
+                            - UENB
+                            - KUNDE-SELBST-NN
+                            - MGV
+                            - EIV
+                            - RB
+                            - KUNDE
+                            - INTERESSENT
+                            - KN
+                            - UBA
+                            - BIKO
+                            - ESA
+                        rollencodenummer:
+                          type: string
+                          description: >-
+                            Gibt die Codenummer der Marktrolle an. | EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+ZD7.SG10.CCI+++ZB3.CAV+Z91
+                      x-apidog-orders:
+                        - messstellenbetreiberEigenschaft
+                        - marktrolle
+                        - rollencodenummer
+                      x-apidog-ignore-properties: []
+                  netzlokationsId:
+                    type: string
+                    description: >-
+                      Identifikationsnummer einer Netzlokation, an der Energie
+                      entweder
+
+                      verbraucht, oder erzeugt wird (Like MarktlokationsId
+                      Marktlokation) | EDIFACT: SG4.IDE+24.SG5.LOC+Z18,
+                      SG4.IDE+24.SG8.SEQ+ZD7.RFF+Z32
+                x-apidog-orders:
+                  - marktrollen
+                  - netzlokationsId
+                x-apidog-ignore-properties: []
+            STEUERBARE_RESSOURCE:
+              type: array
+              items:
+                type: object
+                properties:
+                  marktrollen:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        marktrolle:
+                          type: string
+                          title: Marktrolle
+                          description: >-
+                            Diese Rollen kann ein Marktteilnehmer einnehmen |
+                            EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+ZF1.SG10.CCI+++ZB3.CAV+Z91
+                          enum:
+                            - NB
+                            - LF
+                            - MSB
+                            - MSBA
+                            - GMSB
+                            - MDL
+                            - DL
+                            - BKV
+                            - BKO
+                            - UENB
+                            - KUNDE-SELBST-NN
+                            - MGV
+                            - EIV
+                            - RB
+                            - KUNDE
+                            - INTERESSENT
+                            - KN
+                            - UBA
+                            - BIKO
+                            - ESA
+                        rollencodenummer:
+                          type: string
+                          description: >-
+                            Gibt die Codenummer der Marktrolle an. | EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+ZF1.SG10.CCI+++ZB3.CAV+Z91
+                        messstellenbetreiberEigenschaft:
+                          type: string
+                          title: MSBEigenschaft
+                          description: >-
+                            EDIFACT:
+                            SG4.IDE+24.SG8.SEQ+ZF1.SG10.CCI+++ZB3.CAV+Z91
+                          enum:
+                            - GRUNDZUSTAENDIGER_MESSSTELLENBETREIBER
+                            - WETTBEWERBLICHER_MESSSTELLENBETREIBER
+                            - AUFFANGMESSSTELLENBETREIBER
+                      x-apidog-orders:
+                        - marktrolle
+                        - rollencodenummer
+                        - messstellenbetreiberEigenschaft
+                      x-apidog-ignore-properties: []
+                  ressourcenId:
+                    type: string
+                    description: >-
+                      ressourcenId | EDIFACT: SG4.IDE+24.SG5.LOC+Z19,
+                      SG4.IDE+24.SG8.SEQ+ZF1.RFF+Z38
+                x-apidog-orders:
+                  - marktrollen
+                  - ressourcenId
+                x-apidog-ignore-properties: []
+            TECHNISCHE_RESSOURCE:
+              type: array
+              items:
+                type: object
+                properties:
+                  ressourcenId:
+                    type: string
+                    description: 'ressourcenId | EDIFACT: SG4.IDE+24.SG5.LOC+Z20'
+                x-apidog-orders:
+                  - ressourcenId
+                x-apidog-ignore-properties: []
+          x-apidog-orders:
+            - MESSLOKATION
+            - MARKTLOKATION
+            - NETZNUTZUNGSVERTRAG
+            - NETZLOKATION
+            - STEUERBARE_RESSOURCE
+            - TECHNISCHE_RESSOURCE
+          x-apidog-ignore-properties: []
+        transaktionsdaten:
+          type: object
+          properties:
+            dokumentennummer:
+              type: string
+              description: 'EDIFact Referenz aus dem BGM Segment / BGM | EDIFACT: BGM+E01'
+            vertragsende:
+              type: string
+              description: 'Datum Vertragsende / DTM+93 | EDIFACT: SG4.IDE+24.DTM+93'
+              format: date-time
+            kategorie:
+              type: string
+              title: Anfragekategorie
+              description: 'Anfragekategorie | EDIFACT: BGM+E01'
+              enum:
+                - PROZESSDATENBERICHT
+                - GERAETEUEBERNAHME
+                - WEITERVERPFLICHTUNG_BETRIEB_MELO
+                - AENDERUNG_MELO
+                - STAMMDATEN_MALO_ODER_MELO
+                - BILANZIERTE_MENGE_MEHR_MINDER_MENGEN
+                - ALLOKATIONSLISTE_MEHR_MINDER_MENGEN
+                - ENERGIEMENGE_UND_LEISTUNGSMAXIMUM
+                - ABRECHNUNG_MESSSTELLENBETRIEB_MSB_AN_LF
+                - AENDERUNG_PROGNOSEGRUNDLAGE_GERAETEKONFIGURATION
+                - AENDERUNG_GERAETEKONFIGURATION
+                - REKLAMATION_VON_WERTEN
+                - LASTGANG_MALO_TRANCHE
+                - SPERRUNG
+                - ENTSPERRUNG
+                - REKLAMATION_ZAEHLZEITDEFINITION
+                - ZEITREIHEN_IM_RAHMEN_BILANZKREISABRECHNUNG
+                - GERAETEWECHSELABSICHT
+                - AENDERUNG_KONZESSIONSABGABE
+                - AENDERUNG_ZAEHLZEITDEFINITION
+                - UEBERMITTLUNG_WERTE_AN_ESA
+                - AENDERUNG
+                - BILANZKREISZUORDNUNGSLISTE
+                - CLEARINGLISTE
+                - NORMIERTES_PROFIL_PROFILSCHAR
+                - REDISPATCH_EINZELZEITREIHE_AUSFALLARBEIT
+                - REKLAMATION_PROFIL_PROFILSCHAR
+                - STAMMDATEN_MALO
+                - STAMMDATEN_MELO
+                - STAMMDATEN_TRANCHE
+                - BEENDIGUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINES_ANGEBOTS_EINER_KONFIGURATION
+                - REKLAMATION_EINER_KONFIGURATION
+                - >-
+                  BESTELLUNG_AENDERUNG_NETZENTGELTE_NETZORIENTIERTER_STEUERUNGSMOEGLICHKEIT
+                - AENDERUNG_DER_TECHNIK_DER_LOKATION
+                - AENDERUNG_INDIVIDUELLER_KONFIGURATION
+                - BESTELLUNG_AENDERUNG_ABRECHNUNGSDATEN
+                - EINRICHTUNG_KONFIGURATION_AUFGRUND_ZUORDNUNG_LF
+                - REKLAMATION_DEFINITION
+            absender:
+              type: object
+              properties:
+                rufnummern:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      rufnummer:
+                        type: object
+                        title: Rufnummer
+                        description: 'EDIFACT: SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]'
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                      nummerntyp:
+                        type: string
+                        title: Rufnummernart
+                        description: 'EDIFACT: SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]'
+                        enum:
+                          - RUF_ZENTRALE
+                          - FAX_ZENTRALE
+                          - SAMMELRUF
+                          - SAMMELFAX
+                          - ABTEILUNGRUF
+                          - ABTEILUNGFAX
+                          - RUF_DURCHWAHL
+                          - FAX_DURCHWAHL
+                          - MOBIL_NUMMER
+                    x-apidog-orders:
+                      - rufnummer
+                      - nummerntyp
+                    x-apidog-ignore-properties: []
+                rollencodenummer:
+                  type: string
+                  description: 'Gibt die Codenummer der Marktrolle an. | EDIFACT: SG2.NAD+MS'
+                ansprechpartner:
+                  type: object
+                  properties:
+                    nachname:
+                      type: string
+                      description: >-
+                        Nachname (Familienname) des Ansprechpartners | EDIFACT:
+                        SG2.NAD+MS.SG3.CTA
+                    eMailAdresse:
+                      type: string
+                      description: >-
+                        E-Mail Adresse | EDIFACT:
+                        SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]
+                  x-apidog-orders:
+                    - nachname
+                    - eMailAdresse
+                  x-apidog-ignore-properties: []
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: 'Rollencodetyp | EDIFACT: SG2.NAD+MS'
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+              x-apidog-orders:
+                - rufnummern
+                - rollencodenummer
+                - ansprechpartner
+                - rollencodetyp
+              x-apidog-ignore-properties: []
+            transaktionsgrundergaenzungBefristeteAnmeldung:
+              type: string
+              description: >-
+                Ergänzung zum Transaktionsgrund bei befristeten An-/Abmeldungen
+                / UTILMD STS+7++E01+ZW4+### | EDIFACT: SG4.IDE+24.STS+7
+            nachrichtendatum:
+              type: string
+              description: 'Erstellungdatum der EDIFact / DTM+137 | EDIFACT: DTM+137'
+              format: date-time
+            nachrichtenreferenznummer:
+              type: string
+              description: >-
+                EDIFact Referenz aus dem UNT Segment / UTILMD UNT+21 | EDIFACT:
+                UNH
+            vertragsbeginn:
+              type: string
+              description: 'Datum Vertragsbeginn / DTM+92 | EDIFACT: SG4.IDE+24.DTM+92'
+              format: date-time
+            empfaenger:
+              type: object
+              properties:
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: 'Rollencodetyp | EDIFACT: SG2.NAD+MR'
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+                rollencodenummer:
+                  type: string
+                  description: 'Gibt die Codenummer der Marktrolle an. | EDIFACT: SG2.NAD+MR'
+              x-apidog-orders:
+                - rollencodetyp
+                - rollencodenummer
+              x-apidog-ignore-properties: []
+            geplantesProduktpaket:
+              type: integer
+              description: >-
+                Informativ zur Umsetzung geplantes Produktpaket / RFF+Z60 |
+                EDIFACT: SG4.IDE+24.SG6.RFF+Z60
+            anfragereferenznummer:
+              type: string
+              description: >-
+                Referenz Vorgangsnummer 'aus Anfragenachricht' / ORDERS RFF+TN /
+                IFTSTA RFF+AAV / INSRPT RFF+TN RFF+AAV | EDIFACT:
+                SG4.IDE+24.SG6.RFF+TN
+            transaktionsgrundergaenzung:
+              type: string
+              description: >-
+                Ergänzung zum Transaktionsgrund / UTILMD STS+7++E01+###+E03 |
+                EDIFACT: SG4.IDE+24.STS+7
+            antwortstatusCodeliste:
+              type: string
+              description: 'Antwortstatus Codeliste / STS+E01 | EDIFACT: SG4.IDE+24.STS+E01'
+            pruefidentifikator:
+              type: string
+              description: >-
+                Enthält den Prüfidentifikator aus der EDIFact Kommunikation /
+                RFF+Z13 | EDIFACT: SG4.IDE+24.SG6.RFF+Z13
+            transaktionsgrund:
+              type: string
+              description: >-
+                Der Transaktionsgrund beschreibt den Geschäftsvorfall zur
+                Kategorie genauer / UTILMD STS+7++###+ZW4+E03 | EDIFACT:
+                SG4.IDE+24.STS+7
+            antwortstatus:
+              type: string
+              description: 'Antwortstatus / STS+E01 | EDIFACT: SG4.IDE+24.STS+E01'
+            vorgangsnummer:
+              type: string
+              description: >-
+                Nummer des Vorgangs / UTILMD UTILTS IDE+24 / INSRPT INVOIC DOC |
+                EDIFACT: SG4.IDE+24
+          x-apidog-orders:
+            - dokumentennummer
+            - vertragsende
+            - kategorie
+            - absender
+            - transaktionsgrundergaenzungBefristeteAnmeldung
+            - nachrichtendatum
+            - nachrichtenreferenznummer
+            - vertragsbeginn
+            - empfaenger
+            - geplantesProduktpaket
+            - anfragereferenznummer
+            - transaktionsgrundergaenzung
+            - antwortstatusCodeliste
+            - pruefidentifikator
+            - transaktionsgrund
+            - antwortstatus
+            - vorgangsnummer
+          x-apidog-ignore-properties: []
+      required:
+        - stammdaten
+        - transaktionsdaten
+      description: 55602 - NB an LF - Zuordnung des LF zur Marktlokation bzw. Tranche
+      x-apidog-orders:
+        - stammdaten
+        - transaktionsdaten
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    PI_55601:
+      type: object
+      properties:
+        stammdaten:
+          type: object
+          properties:
+            MARKTLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  lokationsadresse:
+                    type: object
+                    properties:
+                      zusatzInformation:
+                        type: object
+                        properties:
+                          zusatz3:
+                            type: string
+                            description: 'Adresszusatz 3 | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                          zusatz1:
+                            type: string
+                            description: 'Adresszusatz 1 | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                          zusatz5:
+                            type: string
+                            description: 'Adresszusatz 5 | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                          zusatz4:
+                            type: string
+                            description: 'Adresszusatz 4 | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                          zusatz2:
+                            type: string
+                            description: 'Adresszusatz 2 | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                        x-apidog-orders:
+                          - zusatz3
+                          - zusatz1
+                          - zusatz5
+                          - zusatz4
+                          - zusatz2
+                        x-apidog-ignore-properties: []
+                      ortsteil:
+                        type: string
+                        description: 'Ortsteil | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                      postleitzahl:
+                        type: string
+                        description: 'Postleitzahl | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                      strasse:
+                        type: string
+                        description: 'Strasse | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                      landescode:
+                        type: string
+                        title: Landescode
+                        description: >-
+                          Der ISO-Landescode als Enumeration | EDIFACT:
+                          SG4.IDE+24.SG12.NAD+Z60
+                        enum:
+                          - AC
+                          - AD
+                          - AE
+                          - AF
+                          - AG
+                          - AI
+                          - AL
+                          - AM
+                          - AN
+                          - AO
+                          - AQ
+                          - AR
+                          - AS
+                          - AT
+                          - AU
+                          - AW
+                          - AX
+                          - AZ
+                          - BA
+                          - BB
+                          - BD
+                          - BE
+                          - BF
+                          - BG
+                          - BH
+                          - BI
+                          - BJ
+                          - BL
+                          - BM
+                          - BN
+                          - BO
+                          - BQ
+                          - BR
+                          - BS
+                          - BT
+                          - BU
+                          - BV
+                          - BW
+                          - BY
+                          - BZ
+                          - CA
+                          - CC
+                          - CD
+                          - CF
+                          - CG
+                          - CH
+                          - CI
+                          - CK
+                          - CL
+                          - CM
+                          - CN
+                          - CO
+                          - CP
+                          - CR
+                          - CS
+                          - CU
+                          - CV
+                          - CW
+                          - CX
+                          - CY
+                          - CZ
+                          - DE
+                          - DG
+                          - DJ
+                          - DK
+                          - DM
+                          - DO
+                          - DZ
+                          - EA
+                          - EC
+                          - EE
+                          - EG
+                          - EH
+                          - ER
+                          - ES
+                          - ET
+                          - EU
+                          - FI
+                          - FJ
+                          - FK
+                          - FM
+                          - FO
+                          - FR
+                          - FX
+                          - GA
+                          - GB
+                          - GD
+                          - GE
+                          - GF
+                          - GG
+                          - GH
+                          - GI
+                          - GL
+                          - GM
+                          - GN
+                          - GP
+                          - GQ
+                          - GR
+                          - GS
+                          - GT
+                          - GU
+                          - GW
+                          - GY
+                          - HK
+                          - HM
+                          - HN
+                          - HR
+                          - HT
+                          - HU
+                          - IC
+                          - ID
+                          - IE
+                          - IL
+                          - IM
+                          - IN
+                          - IO
+                          - IQ
+                          - IR
+                          - IS
+                          - IT
+                          - JE
+                          - JM
+                          - JO
+                          - JP
+                          - KE
+                          - KG
+                          - KH
+                          - KI
+                          - KM
+                          - KN
+                          - KP
+                          - KR
+                          - KW
+                          - KY
+                          - KZ
+                          - LA
+                          - LB
+                          - LC
+                          - LI
+                          - LK
+                          - LR
+                          - LS
+                          - LT
+                          - LU
+                          - LV
+                          - LY
+                          - MA
+                          - MC
+                          - MD
+                          - ME
+                          - MF
+                          - MG
+                          - MH
+                          - MK
+                          - ML
+                          - MM
+                          - MN
+                          - MO
+                          - MP
+                          - MQ
+                          - MR
+                          - MS
+                          - MT
+                          - MU
+                          - MV
+                          - MW
+                          - MX
+                          - MY
+                          - MZ
+                          - NA
+                          - NC
+                          - NE
+                          - NF
+                          - NG
+                          - NI
+                          - NL
+                          - 'NO'
+                          - NP
+                          - NR
+                          - NT
+                          - NU
+                          - NZ
+                          - OM
+                          - PA
+                          - PE
+                          - PF
+                          - PG
+                          - PH
+                          - PK
+                          - PL
+                          - PM
+                          - PN
+                          - PR
+                          - PS
+                          - PT
+                          - PW
+                          - PY
+                          - QA
+                          - RE
+                          - RO
+                          - RS
+                          - RU
+                          - RW
+                          - SA
+                          - SB
+                          - SC
+                          - SD
+                          - SE
+                          - SF
+                          - SG
+                          - SH
+                          - SI
+                          - SJ
+                          - SK
+                          - SL
+                          - SM
+                          - SN
+                          - SO
+                          - SR
+                          - SS
+                          - ST
+                          - SU
+                          - SV
+                          - SX
+                          - SY
+                          - SZ
+                          - TA
+                          - TC
+                          - TD
+                          - TF
+                          - TG
+                          - TJ
+                          - TK
+                          - TL
+                          - TM
+                          - TN
+                          - TO
+                          - TP
+                          - TR
+                          - TT
+                          - TV
+                          - TW
+                          - TZ
+                          - UA
+                          - UG
+                          - UK
+                          - UM
+                          - US
+                          - UY
+                          - UZ
+                          - VA
+                          - VC
+                          - VE
+                          - VG
+                          - VI
+                          - VN
+                          - VU
+                          - WF
+                          - WS
+                          - XK
+                          - YE
+                          - YT
+                          - YU
+                          - ZA
+                          - ZM
+                          - ZR
+                          - ZW
+                      hausnummer:
+                        type: string
+                        description: >-
+                          Hausnummer und Ergänzung | EDIFACT:
+                          SG4.IDE+24.SG12.NAD+Z60
+                      ort:
+                        type: string
+                        description: 'Ort | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                      postfach:
+                        type: string
+                        description: 'Postfach | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                    x-apidog-orders:
+                      - zusatzInformation
+                      - ortsteil
+                      - postleitzahl
+                      - strasse
+                      - landescode
+                      - hausnummer
+                      - ort
+                      - postfach
+                    x-apidog-ignore-properties: []
+                  erforderlichesProduktpaket:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        produktpaket:
+                          type: object
+                          properties:
+                            priorisierung:
+                              type: string
+                              title: Priorisierung
+                              description: >-
+                                Priorisierung | EDIFACT:
+                                SG4.IDE+24.SG8.SEQ+ZH0.SG10.CCI+Z65.CAV
+                              enum:
+                                - PRIORITAET1
+                                - PRIORITAET2
+                                - PRIORITAET3
+                                - PRIORITAET4
+                                - PRIORITAET5
+                            produktpaketId:
+                              type: integer
+                              description: >-
+                                produktpaketId | EDIFACT:
+                                SG4.IDE+24.SG8.SEQ+Z79, SG4.IDE+24.SG8.SEQ+ZH0
+                            umsetzungsgradvorgabe:
+                              type: string
+                              title: Umsetzungsgradvorgabe
+                              description: >-
+                                Umsetzungsgradvorgabe | EDIFACT:
+                                SG4.IDE+24.SG8.SEQ+ZH0.SG10.CCI+Z65
+                              enum:
+                                - ZUORDNUNG_NUR_WENN_PRODUKTPAKET_UMSETZBAR
+                                - >-
+                                  ZUORDNUNG_AUCH_WENN_PRODUKTPAKET_NICHT_UMSETZBAR
+                          x-apidog-orders:
+                            - priorisierung
+                            - produktpaketId
+                            - umsetzungsgradvorgabe
+                          x-apidog-ignore-properties: []
+                        produkt:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              produkt:
+                                type: object
+                                properties:
+                                  wertedetails:
+                                    type: string
+                                    description: >-
+                                      wertedetails | EDIFACT:
+                                      SG4.IDE+24.SG8.SEQ+Z79.SG10.CCI+Z66.CAV+ZV4
+                                  produktCode:
+                                    type: string
+                                    description: >-
+                                      produktCode | EDIFACT:
+                                      SG4.IDE+24.SG8.SEQ+Z79.PIA+5
+                                  codeProdukteigenschaft:
+                                    type: string
+                                    description: >-
+                                      codeProdukteigenschaft | EDIFACT:
+                                      SG4.IDE+24.SG8.SEQ+Z79.SG10.CCI+Z66.CAV+ZH9
+                                x-apidog-orders:
+                                  - wertedetails
+                                  - produktCode
+                                  - codeProdukteigenschaft
+                                x-apidog-ignore-properties: []
+                            x-apidog-orders:
+                              - produkt
+                            x-apidog-ignore-properties: []
+                      x-apidog-orders:
+                        - produktpaket
+                        - produkt
+                      x-apidog-ignore-properties: []
+                  marktlokationsId:
+                    type: string
+                    description: >-
+                      Die ID der Marktlokation der der zu sperrende Zähler
+                      zugeordnet ist. | EDIFACT: SG4.IDE+24.SG5.LOC+Z16
+                  datenqualitaet:
+                    type: string
+                    title: Datenqualitaet
+                    description: 'Datenqualitaet | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                    enum:
+                      - ERWARTETE_DATEN
+                      - IM_SYSTEM_VORHANDENE_DATEN
+                      - INFORMATIVE_DATEN
+                      - GUELTIGE_DATEN
+                      - KEINE_DATEN
+                      - IM_SYSTEM_KEINE_DATEN_VORHANDEN
+                      - KEINE_DATEN_ERWARTET
+                      - DIFFERENZ_DATEN
+                      - DIFFERENZ_ERWARTETE_DATEN
+                      - DIFFERENZ_IM_SYSTEM_VORHANDENE_DATEN
+                  foerderungsLand:
+                    type: string
+                    description: >-
+                      foerderungsLand | EDIFACT:
+                      SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI+Z23
+                x-apidog-orders:
+                  - lokationsadresse
+                  - erforderlichesProduktpaket
+                  - marktlokationsId
+                  - datenqualitaet
+                  - foerderungsLand
+                x-apidog-ignore-properties: []
+            ENERGIELIEFERVERTRAG:
+              type: array
+              items:
+                type: object
+                properties:
+                  vertragspartner2:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name1:
+                          type: string
+                          description: >-
+                            Erster Teil des Namens. Hier kann der Firmenname
+                            oder bei Privatpersonen
+
+                            beispielsweise der Nachname dargestellt werden.
+                            Beispiele: Yellow Strom GmbH
+
+                            oder Hagen | EDIFACT: SG4.IDE+24.SG12.NAD+Z09
+                        name3:
+                          type: string
+                          description: >-
+                            Dritter Teil des Namens. Hier können weitere
+                            Ergänzungen zum Firmennamen oder
+
+                            bei Privatpersonen Zusätze zum Namen dargestellt
+                            werden. Beispiele: und Afrika
+
+                            oder Sängerin | EDIFACT: SG4.IDE+24.SG12.NAD+Z09
+                        anrede:
+                          type: string
+                          description: >-
+                            Die Anrede für den GePa, Z.B. Herr. | EDIFACT:
+                            SG4.IDE+24.SG12.NAD+Z09
+                        geschaeftspartnerrolle:
+                          type: string
+                          title: Geschaeftspartnerrolle
+                          description: >-
+                            Geschaeftspartnerrolle | EDIFACT:
+                            SG4.IDE+24.SG12.NAD+Z09
+                          enum:
+                            - KUNDE
+                            - LIEFERANT
+                            - DIENSTLEISTER
+                            - INTERESSENT
+                            - MARKTPARTNER
+                            - EIGENTUEMER
+                            - HAUSVERWALTER
+                            - KORRESPONDENZEMPFAENGER
+                            - ABLESEKARTENEMPFAENGER
+                        name4:
+                          type: string
+                          description: 'name4 | EDIFACT: SG4.IDE+24.SG12.NAD+Z09'
+                        name2:
+                          type: string
+                          description: >-
+                            Zweiter Teil des Namens. Hier kann der eine
+                            Erweiterung zum Firmennamen oder
+
+                            bei Privatpersonen beispielsweise der Vorname
+                            dargestellt werden. Beispiele:
+
+                            Bereich Süd oder Nina | EDIFACT:
+                            SG4.IDE+24.SG12.NAD+Z09
+                      x-apidog-orders:
+                        - name1
+                        - name3
+                        - anrede
+                        - geschaeftspartnerrolle
+                        - name4
+                        - name2
+                      x-apidog-ignore-properties: []
+                  korrespondenzpartner:
+                    type: object
+                    properties:
+                      partneradresse:
+                        type: object
+                        properties:
+                          ortsteil:
+                            type: string
+                            description: 'Ortsteil | EDIFACT: SG4.IDE+24.SG12.NAD+Z04'
+                          hausnummer:
+                            type: string
+                            description: >-
+                              Hausnummer und Ergänzung | EDIFACT:
+                              SG4.IDE+24.SG12.NAD+Z04
+                          landescode:
+                            type: string
+                            title: Landescode
+                            description: >-
+                              Der ISO-Landescode als Enumeration | EDIFACT:
+                              SG4.IDE+24.SG12.NAD+Z04
+                            enum:
+                              - AC
+                              - AD
+                              - AE
+                              - AF
+                              - AG
+                              - AI
+                              - AL
+                              - AM
+                              - AN
+                              - AO
+                              - AQ
+                              - AR
+                              - AS
+                              - AT
+                              - AU
+                              - AW
+                              - AX
+                              - AZ
+                              - BA
+                              - BB
+                              - BD
+                              - BE
+                              - BF
+                              - BG
+                              - BH
+                              - BI
+                              - BJ
+                              - BL
+                              - BM
+                              - BN
+                              - BO
+                              - BQ
+                              - BR
+                              - BS
+                              - BT
+                              - BU
+                              - BV
+                              - BW
+                              - BY
+                              - BZ
+                              - CA
+                              - CC
+                              - CD
+                              - CF
+                              - CG
+                              - CH
+                              - CI
+                              - CK
+                              - CL
+                              - CM
+                              - CN
+                              - CO
+                              - CP
+                              - CR
+                              - CS
+                              - CU
+                              - CV
+                              - CW
+                              - CX
+                              - CY
+                              - CZ
+                              - DE
+                              - DG
+                              - DJ
+                              - DK
+                              - DM
+                              - DO
+                              - DZ
+                              - EA
+                              - EC
+                              - EE
+                              - EG
+                              - EH
+                              - ER
+                              - ES
+                              - ET
+                              - EU
+                              - FI
+                              - FJ
+                              - FK
+                              - FM
+                              - FO
+                              - FR
+                              - FX
+                              - GA
+                              - GB
+                              - GD
+                              - GE
+                              - GF
+                              - GG
+                              - GH
+                              - GI
+                              - GL
+                              - GM
+                              - GN
+                              - GP
+                              - GQ
+                              - GR
+                              - GS
+                              - GT
+                              - GU
+                              - GW
+                              - GY
+                              - HK
+                              - HM
+                              - HN
+                              - HR
+                              - HT
+                              - HU
+                              - IC
+                              - ID
+                              - IE
+                              - IL
+                              - IM
+                              - IN
+                              - IO
+                              - IQ
+                              - IR
+                              - IS
+                              - IT
+                              - JE
+                              - JM
+                              - JO
+                              - JP
+                              - KE
+                              - KG
+                              - KH
+                              - KI
+                              - KM
+                              - KN
+                              - KP
+                              - KR
+                              - KW
+                              - KY
+                              - KZ
+                              - LA
+                              - LB
+                              - LC
+                              - LI
+                              - LK
+                              - LR
+                              - LS
+                              - LT
+                              - LU
+                              - LV
+                              - LY
+                              - MA
+                              - MC
+                              - MD
+                              - ME
+                              - MF
+                              - MG
+                              - MH
+                              - MK
+                              - ML
+                              - MM
+                              - MN
+                              - MO
+                              - MP
+                              - MQ
+                              - MR
+                              - MS
+                              - MT
+                              - MU
+                              - MV
+                              - MW
+                              - MX
+                              - MY
+                              - MZ
+                              - NA
+                              - NC
+                              - NE
+                              - NF
+                              - NG
+                              - NI
+                              - NL
+                              - 'NO'
+                              - NP
+                              - NR
+                              - NT
+                              - NU
+                              - NZ
+                              - OM
+                              - PA
+                              - PE
+                              - PF
+                              - PG
+                              - PH
+                              - PK
+                              - PL
+                              - PM
+                              - PN
+                              - PR
+                              - PS
+                              - PT
+                              - PW
+                              - PY
+                              - QA
+                              - RE
+                              - RO
+                              - RS
+                              - RU
+                              - RW
+                              - SA
+                              - SB
+                              - SC
+                              - SD
+                              - SE
+                              - SF
+                              - SG
+                              - SH
+                              - SI
+                              - SJ
+                              - SK
+                              - SL
+                              - SM
+                              - SN
+                              - SO
+                              - SR
+                              - SS
+                              - ST
+                              - SU
+                              - SV
+                              - SX
+                              - SY
+                              - SZ
+                              - TA
+                              - TC
+                              - TD
+                              - TF
+                              - TG
+                              - TJ
+                              - TK
+                              - TL
+                              - TM
+                              - TN
+                              - TO
+                              - TP
+                              - TR
+                              - TT
+                              - TV
+                              - TW
+                              - TZ
+                              - UA
+                              - UG
+                              - UK
+                              - UM
+                              - US
+                              - UY
+                              - UZ
+                              - VA
+                              - VC
+                              - VE
+                              - VG
+                              - VI
+                              - VN
+                              - VU
+                              - WF
+                              - WS
+                              - XK
+                              - YE
+                              - YT
+                              - YU
+                              - ZA
+                              - ZM
+                              - ZR
+                              - ZW
+                          ort:
+                            type: string
+                            description: 'Ort | EDIFACT: SG4.IDE+24.SG12.NAD+Z04'
+                          strasse:
+                            type: string
+                            description: 'Strasse | EDIFACT: SG4.IDE+24.SG12.NAD+Z04'
+                          postfach:
+                            type: string
+                            description: 'Postfach | EDIFACT: SG4.IDE+24.SG12.NAD+Z04'
+                          postleitzahl:
+                            type: string
+                            description: 'Postleitzahl | EDIFACT: SG4.IDE+24.SG12.NAD+Z04'
+                        x-apidog-orders:
+                          - ortsteil
+                          - hausnummer
+                          - landescode
+                          - ort
+                          - strasse
+                          - postfach
+                          - postleitzahl
+                        x-apidog-ignore-properties: []
+                      name3:
+                        type: string
+                        description: >-
+                          Dritter Teil des Namens. Hier können weitere
+                          Ergänzungen zum Firmennamen oder
+
+                          bei Privatpersonen Zusätze zum Namen dargestellt
+                          werden. Beispiele: und Afrika
+
+                          oder Sängerin | EDIFACT: SG4.IDE+24.SG12.NAD+Z04
+                      name4:
+                        type: string
+                        description: 'name4 | EDIFACT: SG4.IDE+24.SG12.NAD+Z04'
+                      name2:
+                        type: string
+                        description: >-
+                          Zweiter Teil des Namens. Hier kann der eine
+                          Erweiterung zum Firmennamen oder
+
+                          bei Privatpersonen beispielsweise der Vorname
+                          dargestellt werden. Beispiele:
+
+                          Bereich Süd oder Nina | EDIFACT:
+                          SG4.IDE+24.SG12.NAD+Z04
+                      name1:
+                        type: string
+                        description: >-
+                          Erster Teil des Namens. Hier kann der Firmenname oder
+                          bei Privatpersonen
+
+                          beispielsweise der Nachname dargestellt werden.
+                          Beispiele: Yellow Strom GmbH
+
+                          oder Hagen | EDIFACT: SG4.IDE+24.SG12.NAD+Z04
+                      anrede:
+                        type: string
+                        description: >-
+                          Die Anrede für den GePa, Z.B. Herr. | EDIFACT:
+                          SG4.IDE+24.SG12.NAD+Z04
+                    x-apidog-orders:
+                      - partneradresse
+                      - name3
+                      - name4
+                      - name2
+                      - name1
+                      - anrede
+                    x-apidog-ignore-properties: []
+                x-apidog-orders:
+                  - vertragspartner2
+                  - korrespondenzpartner
+                x-apidog-ignore-properties: []
+            STEUERBARE_RESSOURCE:
+              type: array
+              items:
+                type: object
+                properties:
+                  ressourcenId:
+                    type: string
+                    description: 'ressourcenId | EDIFACT: SG4.IDE+24.SG5.LOC+Z19'
+                x-apidog-orders:
+                  - ressourcenId
+                x-apidog-ignore-properties: []
+            NETZNUTZUNGSVERTRAG:
+              type: array
+              items:
+                type: object
+                properties:
+                  vertragsbeginn:
+                    type: string
+                    description: 'Datum Vertragsbeginn / DTM+92 | EDIFACT: SG4.IDE+24.DTM+92'
+                    format: date-time
+                x-apidog-orders:
+                  - vertragsbeginn
+                x-apidog-ignore-properties: []
+            MESSLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  messlokationsId:
+                    type: string
+                    description: >-
+                      Die Messlokations-Identifikation. Das ist die frühere
+                      Zählpunktbezeichnung,
+
+                      z.B. DE 47108151234567 | EDIFACT: SG4.IDE+24.SG5.LOC+Z17
+                x-apidog-orders:
+                  - messlokationsId
+                x-apidog-ignore-properties: []
+            ZAEHLER:
+              type: array
+              items:
+                type: object
+                properties:
+                  zaehlernummer:
+                    type: string
+                    description: >-
+                      Die Nummer des zu sperrenden Zählers | EDIFACT:
+                      SG4.IDE+24.SG8.SEQ+ZA4.SG10.CCI+++E13.CAV+Z30
+                x-apidog-orders:
+                  - zaehlernummer
+                x-apidog-ignore-properties: []
+            TECHNISCHE_RESSOURCE:
+              type: array
+              items:
+                type: object
+                properties:
+                  ressourcenId:
+                    type: string
+                    description: 'ressourcenId | EDIFACT: SG4.IDE+24.SG5.LOC+Z20'
+                x-apidog-orders:
+                  - ressourcenId
+                x-apidog-ignore-properties: []
+          x-apidog-orders:
+            - MARKTLOKATION
+            - ENERGIELIEFERVERTRAG
+            - STEUERBARE_RESSOURCE
+            - NETZNUTZUNGSVERTRAG
+            - MESSLOKATION
+            - ZAEHLER
+            - TECHNISCHE_RESSOURCE
+          x-apidog-ignore-properties: []
+        transaktionsdaten:
+          type: object
+          properties:
+            dokumentennummer:
+              type: string
+              description: 'EDIFact Referenz aus dem BGM Segment / BGM | EDIFACT: BGM+E01'
+            freitext:
+              type: object
+              properties:
+                freitext2:
+                  type: string
+                  description: 'Freitext Zeile 2 | EDIFACT: SG4.IDE+24.FTX+ACB'
+                freitext4:
+                  type: string
+                  description: 'Freitext Zeile 4 | EDIFACT: SG4.IDE+24.FTX+ACB'
+                freitext1:
+                  type: string
+                  description: 'Freitext Zeile 1 | EDIFACT: SG4.IDE+24.FTX+ACB'
+                freitext5:
+                  type: string
+                  description: 'Freitext Zeile 5 | EDIFACT: SG4.IDE+24.FTX+ACB'
+                freitext3:
+                  type: string
+                  description: 'Freitext Zeile 3 | EDIFACT: SG4.IDE+24.FTX+ACB'
+              x-apidog-orders:
+                - freitext2
+                - freitext4
+                - freitext1
+                - freitext5
+                - freitext3
+              x-apidog-ignore-properties: []
+            kategorie:
+              type: string
+              title: Anfragekategorie
+              description: 'Anfragekategorie | EDIFACT: BGM+E01'
+              enum:
+                - PROZESSDATENBERICHT
+                - GERAETEUEBERNAHME
+                - WEITERVERPFLICHTUNG_BETRIEB_MELO
+                - AENDERUNG_MELO
+                - STAMMDATEN_MALO_ODER_MELO
+                - BILANZIERTE_MENGE_MEHR_MINDER_MENGEN
+                - ALLOKATIONSLISTE_MEHR_MINDER_MENGEN
+                - ENERGIEMENGE_UND_LEISTUNGSMAXIMUM
+                - ABRECHNUNG_MESSSTELLENBETRIEB_MSB_AN_LF
+                - AENDERUNG_PROGNOSEGRUNDLAGE_GERAETEKONFIGURATION
+                - AENDERUNG_GERAETEKONFIGURATION
+                - REKLAMATION_VON_WERTEN
+                - LASTGANG_MALO_TRANCHE
+                - SPERRUNG
+                - ENTSPERRUNG
+                - REKLAMATION_ZAEHLZEITDEFINITION
+                - ZEITREIHEN_IM_RAHMEN_BILANZKREISABRECHNUNG
+                - GERAETEWECHSELABSICHT
+                - AENDERUNG_KONZESSIONSABGABE
+                - AENDERUNG_ZAEHLZEITDEFINITION
+                - UEBERMITTLUNG_WERTE_AN_ESA
+                - AENDERUNG
+                - BILANZKREISZUORDNUNGSLISTE
+                - CLEARINGLISTE
+                - NORMIERTES_PROFIL_PROFILSCHAR
+                - REDISPATCH_EINZELZEITREIHE_AUSFALLARBEIT
+                - REKLAMATION_PROFIL_PROFILSCHAR
+                - STAMMDATEN_MALO
+                - STAMMDATEN_MELO
+                - STAMMDATEN_TRANCHE
+                - BEENDIGUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINES_ANGEBOTS_EINER_KONFIGURATION
+                - REKLAMATION_EINER_KONFIGURATION
+                - >-
+                  BESTELLUNG_AENDERUNG_NETZENTGELTE_NETZORIENTIERTER_STEUERUNGSMOEGLICHKEIT
+                - AENDERUNG_DER_TECHNIK_DER_LOKATION
+                - AENDERUNG_INDIVIDUELLER_KONFIGURATION
+                - BESTELLUNG_AENDERUNG_ABRECHNUNGSDATEN
+                - EINRICHTUNG_KONFIGURATION_AUFGRUND_ZUORDNUNG_LF
+                - REKLAMATION_DEFINITION
+            absender:
+              type: object
+              properties:
+                rufnummern:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      rufnummer:
+                        type: object
+                        title: Rufnummer
+                        description: 'EDIFACT: SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]'
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                      nummerntyp:
+                        type: string
+                        title: Rufnummernart
+                        description: 'EDIFACT: SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]'
+                        enum:
+                          - RUF_ZENTRALE
+                          - FAX_ZENTRALE
+                          - SAMMELRUF
+                          - SAMMELFAX
+                          - ABTEILUNGRUF
+                          - ABTEILUNGFAX
+                          - RUF_DURCHWAHL
+                          - FAX_DURCHWAHL
+                          - MOBIL_NUMMER
+                    x-apidog-orders:
+                      - rufnummer
+                      - nummerntyp
+                    x-apidog-ignore-properties: []
+                rollencodenummer:
+                  type: string
+                  description: 'Gibt die Codenummer der Marktrolle an. | EDIFACT: SG2.NAD+MS'
+                ansprechpartner:
+                  type: object
+                  properties:
+                    nachname:
+                      type: string
+                      description: >-
+                        Nachname (Familienname) des Ansprechpartners | EDIFACT:
+                        SG2.NAD+MS.SG3.CTA
+                    eMailAdresse:
+                      type: string
+                      description: >-
+                        E-Mail Adresse | EDIFACT:
+                        SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]
+                  x-apidog-orders:
+                    - nachname
+                    - eMailAdresse
+                  x-apidog-ignore-properties: []
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: 'Rollencodetyp | EDIFACT: SG2.NAD+MS'
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+              x-apidog-orders:
+                - rufnummern
+                - rollencodenummer
+                - ansprechpartner
+                - rollencodetyp
+              x-apidog-ignore-properties: []
+            nachrichtendatum:
+              type: string
+              description: 'Erstellungdatum der EDIFact / DTM+137 | EDIFACT: DTM+137'
+              format: date-time
+            abtretungserklaerung:
+              type: object
+              properties:
+                link3:
+                  type: string
+                  description: 'Link Zeile 3 | EDIFACT: SG4.IDE+24.FTX+Z13'
+                link1:
+                  type: string
+                  description: 'Link Zeile 1 | EDIFACT: SG4.IDE+24.FTX+Z13'
+                passwort:
+                  type: string
+                  description: 'Passwort zum Abruf | EDIFACT: SG4.IDE+24.FTX+Z13'
+                link5:
+                  type: string
+                  description: 'Link Zeile 5 | EDIFACT: SG4.IDE+24.FTX+Z13'
+                link2:
+                  type: string
+                  description: 'Link Zeile 2 | EDIFACT: SG4.IDE+24.FTX+Z13'
+                link4:
+                  type: string
+                  description: 'Link Zeile 4 | EDIFACT: SG4.IDE+24.FTX+Z13'
+              x-apidog-orders:
+                - link3
+                - link1
+                - passwort
+                - link5
+                - link2
+                - link4
+              x-apidog-ignore-properties: []
+            nachrichtenreferenznummer:
+              type: string
+              description: >-
+                EDIFact Referenz aus dem UNT Segment / UTILMD UNT+21 | EDIFACT:
+                UNH
+            vertragsbeginn:
+              type: string
+              description: 'Datum Vertragsbeginn / DTM+92 | EDIFACT: SG4.IDE+24.DTM+92'
+              format: date-time
+            empfaenger:
+              type: object
+              properties:
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: 'Rollencodetyp | EDIFACT: SG2.NAD+MR'
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+                rollencodenummer:
+                  type: string
+                  description: 'Gibt die Codenummer der Marktrolle an. | EDIFACT: SG2.NAD+MR'
+              x-apidog-orders:
+                - rollencodetyp
+                - rollencodenummer
+              x-apidog-ignore-properties: []
+            transaktionsgrundergaenzung:
+              type: string
+              description: >-
+                Ergänzung zum Transaktionsgrund / UTILMD STS+7++E01+###+E03 |
+                EDIFACT: SG4.IDE+24.STS+7
+            pruefidentifikator:
+              type: string
+              description: >-
+                Enthält den Prüfidentifikator aus der EDIFact Kommunikation /
+                RFF+Z13 | EDIFACT: SG4.IDE+24.SG6.RFF+Z13
+            transaktionsgrund:
+              type: string
+              description: >-
+                Der Transaktionsgrund beschreibt den Geschäftsvorfall zur
+                Kategorie genauer / UTILMD STS+7++###+ZW4+E03 | EDIFACT:
+                SG4.IDE+24.STS+7
+            vorgangsnummer:
+              type: string
+              description: >-
+                Nummer des Vorgangs / UTILMD UTILTS IDE+24 / INSRPT INVOIC DOC |
+                EDIFACT: SG4.IDE+24
+          x-apidog-orders:
+            - dokumentennummer
+            - freitext
+            - kategorie
+            - absender
+            - nachrichtendatum
+            - abtretungserklaerung
+            - nachrichtenreferenznummer
+            - vertragsbeginn
+            - empfaenger
+            - transaktionsgrundergaenzung
+            - pruefidentifikator
+            - transaktionsgrund
+            - vorgangsnummer
+          x-apidog-ignore-properties: []
+      required:
+        - stammdaten
+        - transaktionsdaten
+      description: >-
+        55601 - LF an NB - Anmeldung einer Zuordnung des LF zur Marktlokation
+        bzw. Tranche
+      x-apidog-orders:
+        - stammdaten
+        - transaktionsdaten
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    PI_55600:
+      type: object
+      properties:
+        stammdaten:
+          type: object
+          properties:
+            MARKTLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  lokationsadresse:
+                    type: object
+                    properties:
+                      zusatzInformation:
+                        type: object
+                        properties:
+                          zusatz3:
+                            type: string
+                            description: 'Adresszusatz 3 | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                          zusatz1:
+                            type: string
+                            description: 'Adresszusatz 1 | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                          zusatz5:
+                            type: string
+                            description: 'Adresszusatz 5 | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                          zusatz4:
+                            type: string
+                            description: 'Adresszusatz 4 | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                          zusatz2:
+                            type: string
+                            description: 'Adresszusatz 2 | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                        x-apidog-orders:
+                          - zusatz3
+                          - zusatz1
+                          - zusatz5
+                          - zusatz4
+                          - zusatz2
+                        x-apidog-ignore-properties: []
+                      ortsteil:
+                        type: string
+                        description: 'Ortsteil | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                      postleitzahl:
+                        type: string
+                        description: 'Postleitzahl | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                      strasse:
+                        type: string
+                        description: 'Strasse | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                      landescode:
+                        type: string
+                        title: Landescode
+                        description: >-
+                          Der ISO-Landescode als Enumeration | EDIFACT:
+                          SG4.IDE+24.SG12.NAD+Z60
+                        enum:
+                          - AC
+                          - AD
+                          - AE
+                          - AF
+                          - AG
+                          - AI
+                          - AL
+                          - AM
+                          - AN
+                          - AO
+                          - AQ
+                          - AR
+                          - AS
+                          - AT
+                          - AU
+                          - AW
+                          - AX
+                          - AZ
+                          - BA
+                          - BB
+                          - BD
+                          - BE
+                          - BF
+                          - BG
+                          - BH
+                          - BI
+                          - BJ
+                          - BL
+                          - BM
+                          - BN
+                          - BO
+                          - BQ
+                          - BR
+                          - BS
+                          - BT
+                          - BU
+                          - BV
+                          - BW
+                          - BY
+                          - BZ
+                          - CA
+                          - CC
+                          - CD
+                          - CF
+                          - CG
+                          - CH
+                          - CI
+                          - CK
+                          - CL
+                          - CM
+                          - CN
+                          - CO
+                          - CP
+                          - CR
+                          - CS
+                          - CU
+                          - CV
+                          - CW
+                          - CX
+                          - CY
+                          - CZ
+                          - DE
+                          - DG
+                          - DJ
+                          - DK
+                          - DM
+                          - DO
+                          - DZ
+                          - EA
+                          - EC
+                          - EE
+                          - EG
+                          - EH
+                          - ER
+                          - ES
+                          - ET
+                          - EU
+                          - FI
+                          - FJ
+                          - FK
+                          - FM
+                          - FO
+                          - FR
+                          - FX
+                          - GA
+                          - GB
+                          - GD
+                          - GE
+                          - GF
+                          - GG
+                          - GH
+                          - GI
+                          - GL
+                          - GM
+                          - GN
+                          - GP
+                          - GQ
+                          - GR
+                          - GS
+                          - GT
+                          - GU
+                          - GW
+                          - GY
+                          - HK
+                          - HM
+                          - HN
+                          - HR
+                          - HT
+                          - HU
+                          - IC
+                          - ID
+                          - IE
+                          - IL
+                          - IM
+                          - IN
+                          - IO
+                          - IQ
+                          - IR
+                          - IS
+                          - IT
+                          - JE
+                          - JM
+                          - JO
+                          - JP
+                          - KE
+                          - KG
+                          - KH
+                          - KI
+                          - KM
+                          - KN
+                          - KP
+                          - KR
+                          - KW
+                          - KY
+                          - KZ
+                          - LA
+                          - LB
+                          - LC
+                          - LI
+                          - LK
+                          - LR
+                          - LS
+                          - LT
+                          - LU
+                          - LV
+                          - LY
+                          - MA
+                          - MC
+                          - MD
+                          - ME
+                          - MF
+                          - MG
+                          - MH
+                          - MK
+                          - ML
+                          - MM
+                          - MN
+                          - MO
+                          - MP
+                          - MQ
+                          - MR
+                          - MS
+                          - MT
+                          - MU
+                          - MV
+                          - MW
+                          - MX
+                          - MY
+                          - MZ
+                          - NA
+                          - NC
+                          - NE
+                          - NF
+                          - NG
+                          - NI
+                          - NL
+                          - 'NO'
+                          - NP
+                          - NR
+                          - NT
+                          - NU
+                          - NZ
+                          - OM
+                          - PA
+                          - PE
+                          - PF
+                          - PG
+                          - PH
+                          - PK
+                          - PL
+                          - PM
+                          - PN
+                          - PR
+                          - PS
+                          - PT
+                          - PW
+                          - PY
+                          - QA
+                          - RE
+                          - RO
+                          - RS
+                          - RU
+                          - RW
+                          - SA
+                          - SB
+                          - SC
+                          - SD
+                          - SE
+                          - SF
+                          - SG
+                          - SH
+                          - SI
+                          - SJ
+                          - SK
+                          - SL
+                          - SM
+                          - SN
+                          - SO
+                          - SR
+                          - SS
+                          - ST
+                          - SU
+                          - SV
+                          - SX
+                          - SY
+                          - SZ
+                          - TA
+                          - TC
+                          - TD
+                          - TF
+                          - TG
+                          - TJ
+                          - TK
+                          - TL
+                          - TM
+                          - TN
+                          - TO
+                          - TP
+                          - TR
+                          - TT
+                          - TV
+                          - TW
+                          - TZ
+                          - UA
+                          - UG
+                          - UK
+                          - UM
+                          - US
+                          - UY
+                          - UZ
+                          - VA
+                          - VC
+                          - VE
+                          - VG
+                          - VI
+                          - VN
+                          - VU
+                          - WF
+                          - WS
+                          - XK
+                          - YE
+                          - YT
+                          - YU
+                          - ZA
+                          - ZM
+                          - ZR
+                          - ZW
+                      hausnummer:
+                        type: string
+                        description: >-
+                          Hausnummer und Ergänzung | EDIFACT:
+                          SG4.IDE+24.SG12.NAD+Z60
+                      ort:
+                        type: string
+                        description: 'Ort | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                      postfach:
+                        type: string
+                        description: 'Postfach | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                    x-apidog-orders:
+                      - zusatzInformation
+                      - ortsteil
+                      - postleitzahl
+                      - strasse
+                      - landescode
+                      - hausnummer
+                      - ort
+                      - postfach
+                    x-apidog-ignore-properties: []
+                  erforderlichesProduktpaket:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        produktpaket:
+                          type: object
+                          properties:
+                            priorisierung:
+                              type: string
+                              title: Priorisierung
+                              description: >-
+                                Priorisierung | EDIFACT:
+                                SG4.IDE+24.SG8.SEQ+ZH0.SG10.CCI+Z65.CAV
+                              enum:
+                                - PRIORITAET1
+                                - PRIORITAET2
+                                - PRIORITAET3
+                                - PRIORITAET4
+                                - PRIORITAET5
+                            produktpaketId:
+                              type: integer
+                              description: >-
+                                produktpaketId | EDIFACT:
+                                SG4.IDE+24.SG8.SEQ+Z79, SG4.IDE+24.SG8.SEQ+ZH0
+                            umsetzungsgradvorgabe:
+                              type: string
+                              title: Umsetzungsgradvorgabe
+                              description: >-
+                                Umsetzungsgradvorgabe | EDIFACT:
+                                SG4.IDE+24.SG8.SEQ+ZH0.SG10.CCI+Z65
+                              enum:
+                                - ZUORDNUNG_NUR_WENN_PRODUKTPAKET_UMSETZBAR
+                                - >-
+                                  ZUORDNUNG_AUCH_WENN_PRODUKTPAKET_NICHT_UMSETZBAR
+                          x-apidog-orders:
+                            - priorisierung
+                            - produktpaketId
+                            - umsetzungsgradvorgabe
+                          x-apidog-ignore-properties: []
+                        produkt:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              produkt:
+                                type: object
+                                properties:
+                                  wertedetails:
+                                    type: string
+                                    description: >-
+                                      wertedetails | EDIFACT:
+                                      SG4.IDE+24.SG8.SEQ+Z79.SG10.CCI+Z66.CAV+ZV4
+                                  produktCode:
+                                    type: string
+                                    description: >-
+                                      produktCode | EDIFACT:
+                                      SG4.IDE+24.SG8.SEQ+Z79.PIA+5
+                                  codeProdukteigenschaft:
+                                    type: string
+                                    description: >-
+                                      codeProdukteigenschaft | EDIFACT:
+                                      SG4.IDE+24.SG8.SEQ+Z79.SG10.CCI+Z66.CAV+ZH9
+                                x-apidog-orders:
+                                  - wertedetails
+                                  - produktCode
+                                  - codeProdukteigenschaft
+                                x-apidog-ignore-properties: []
+                            x-apidog-orders:
+                              - produkt
+                            x-apidog-ignore-properties: []
+                      x-apidog-orders:
+                        - produktpaket
+                        - produkt
+                      x-apidog-ignore-properties: []
+                  marktlokationsId:
+                    type: string
+                    description: >-
+                      Die ID der Marktlokation der der zu sperrende Zähler
+                      zugeordnet ist. | EDIFACT: SG4.IDE+24.SG5.LOC+Z16
+                  datenqualitaet:
+                    type: string
+                    title: Datenqualitaet
+                    description: 'Datenqualitaet | EDIFACT: SG4.IDE+24.SG12.NAD+Z60'
+                    enum:
+                      - ERWARTETE_DATEN
+                      - IM_SYSTEM_VORHANDENE_DATEN
+                      - INFORMATIVE_DATEN
+                      - GUELTIGE_DATEN
+                      - KEINE_DATEN
+                      - IM_SYSTEM_KEINE_DATEN_VORHANDEN
+                      - KEINE_DATEN_ERWARTET
+                      - DIFFERENZ_DATEN
+                      - DIFFERENZ_ERWARTETE_DATEN
+                      - DIFFERENZ_IM_SYSTEM_VORHANDENE_DATEN
+                x-apidog-orders:
+                  - lokationsadresse
+                  - erforderlichesProduktpaket
+                  - marktlokationsId
+                  - datenqualitaet
+                x-apidog-ignore-properties: []
+            ENERGIELIEFERVERTRAG:
+              type: array
+              items:
+                type: object
+                properties:
+                  vertragspartner2:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name1:
+                          type: string
+                          description: >-
+                            Erster Teil des Namens. Hier kann der Firmenname
+                            oder bei Privatpersonen
+
+                            beispielsweise der Nachname dargestellt werden.
+                            Beispiele: Yellow Strom GmbH
+
+                            oder Hagen | EDIFACT: SG4.IDE+24.SG12.NAD+Z09
+                        name3:
+                          type: string
+                          description: >-
+                            Dritter Teil des Namens. Hier können weitere
+                            Ergänzungen zum Firmennamen oder
+
+                            bei Privatpersonen Zusätze zum Namen dargestellt
+                            werden. Beispiele: und Afrika
+
+                            oder Sängerin | EDIFACT: SG4.IDE+24.SG12.NAD+Z09
+                        anrede:
+                          type: string
+                          description: >-
+                            Die Anrede für den GePa, Z.B. Herr. | EDIFACT:
+                            SG4.IDE+24.SG12.NAD+Z09
+                        geschaeftspartnerrolle:
+                          type: string
+                          title: Geschaeftspartnerrolle
+                          description: >-
+                            Geschaeftspartnerrolle | EDIFACT:
+                            SG4.IDE+24.SG12.NAD+Z09
+                          enum:
+                            - KUNDE
+                            - LIEFERANT
+                            - DIENSTLEISTER
+                            - INTERESSENT
+                            - MARKTPARTNER
+                            - EIGENTUEMER
+                            - HAUSVERWALTER
+                            - KORRESPONDENZEMPFAENGER
+                            - ABLESEKARTENEMPFAENGER
+                        name4:
+                          type: string
+                          description: 'name4 | EDIFACT: SG4.IDE+24.SG12.NAD+Z09'
+                        name2:
+                          type: string
+                          description: >-
+                            Zweiter Teil des Namens. Hier kann der eine
+                            Erweiterung zum Firmennamen oder
+
+                            bei Privatpersonen beispielsweise der Vorname
+                            dargestellt werden. Beispiele:
+
+                            Bereich Süd oder Nina | EDIFACT:
+                            SG4.IDE+24.SG12.NAD+Z09
+                      x-apidog-orders:
+                        - name1
+                        - name3
+                        - anrede
+                        - geschaeftspartnerrolle
+                        - name4
+                        - name2
+                      x-apidog-ignore-properties: []
+                  korrespondenzpartner:
+                    type: object
+                    properties:
+                      partneradresse:
+                        type: object
+                        properties:
+                          ortsteil:
+                            type: string
+                            description: 'Ortsteil | EDIFACT: SG4.IDE+24.SG12.NAD+Z04'
+                          hausnummer:
+                            type: string
+                            description: >-
+                              Hausnummer und Ergänzung | EDIFACT:
+                              SG4.IDE+24.SG12.NAD+Z04
+                          landescode:
+                            type: string
+                            title: Landescode
+                            description: >-
+                              Der ISO-Landescode als Enumeration | EDIFACT:
+                              SG4.IDE+24.SG12.NAD+Z04
+                            enum:
+                              - AC
+                              - AD
+                              - AE
+                              - AF
+                              - AG
+                              - AI
+                              - AL
+                              - AM
+                              - AN
+                              - AO
+                              - AQ
+                              - AR
+                              - AS
+                              - AT
+                              - AU
+                              - AW
+                              - AX
+                              - AZ
+                              - BA
+                              - BB
+                              - BD
+                              - BE
+                              - BF
+                              - BG
+                              - BH
+                              - BI
+                              - BJ
+                              - BL
+                              - BM
+                              - BN
+                              - BO
+                              - BQ
+                              - BR
+                              - BS
+                              - BT
+                              - BU
+                              - BV
+                              - BW
+                              - BY
+                              - BZ
+                              - CA
+                              - CC
+                              - CD
+                              - CF
+                              - CG
+                              - CH
+                              - CI
+                              - CK
+                              - CL
+                              - CM
+                              - CN
+                              - CO
+                              - CP
+                              - CR
+                              - CS
+                              - CU
+                              - CV
+                              - CW
+                              - CX
+                              - CY
+                              - CZ
+                              - DE
+                              - DG
+                              - DJ
+                              - DK
+                              - DM
+                              - DO
+                              - DZ
+                              - EA
+                              - EC
+                              - EE
+                              - EG
+                              - EH
+                              - ER
+                              - ES
+                              - ET
+                              - EU
+                              - FI
+                              - FJ
+                              - FK
+                              - FM
+                              - FO
+                              - FR
+                              - FX
+                              - GA
+                              - GB
+                              - GD
+                              - GE
+                              - GF
+                              - GG
+                              - GH
+                              - GI
+                              - GL
+                              - GM
+                              - GN
+                              - GP
+                              - GQ
+                              - GR
+                              - GS
+                              - GT
+                              - GU
+                              - GW
+                              - GY
+                              - HK
+                              - HM
+                              - HN
+                              - HR
+                              - HT
+                              - HU
+                              - IC
+                              - ID
+                              - IE
+                              - IL
+                              - IM
+                              - IN
+                              - IO
+                              - IQ
+                              - IR
+                              - IS
+                              - IT
+                              - JE
+                              - JM
+                              - JO
+                              - JP
+                              - KE
+                              - KG
+                              - KH
+                              - KI
+                              - KM
+                              - KN
+                              - KP
+                              - KR
+                              - KW
+                              - KY
+                              - KZ
+                              - LA
+                              - LB
+                              - LC
+                              - LI
+                              - LK
+                              - LR
+                              - LS
+                              - LT
+                              - LU
+                              - LV
+                              - LY
+                              - MA
+                              - MC
+                              - MD
+                              - ME
+                              - MF
+                              - MG
+                              - MH
+                              - MK
+                              - ML
+                              - MM
+                              - MN
+                              - MO
+                              - MP
+                              - MQ
+                              - MR
+                              - MS
+                              - MT
+                              - MU
+                              - MV
+                              - MW
+                              - MX
+                              - MY
+                              - MZ
+                              - NA
+                              - NC
+                              - NE
+                              - NF
+                              - NG
+                              - NI
+                              - NL
+                              - 'NO'
+                              - NP
+                              - NR
+                              - NT
+                              - NU
+                              - NZ
+                              - OM
+                              - PA
+                              - PE
+                              - PF
+                              - PG
+                              - PH
+                              - PK
+                              - PL
+                              - PM
+                              - PN
+                              - PR
+                              - PS
+                              - PT
+                              - PW
+                              - PY
+                              - QA
+                              - RE
+                              - RO
+                              - RS
+                              - RU
+                              - RW
+                              - SA
+                              - SB
+                              - SC
+                              - SD
+                              - SE
+                              - SF
+                              - SG
+                              - SH
+                              - SI
+                              - SJ
+                              - SK
+                              - SL
+                              - SM
+                              - SN
+                              - SO
+                              - SR
+                              - SS
+                              - ST
+                              - SU
+                              - SV
+                              - SX
+                              - SY
+                              - SZ
+                              - TA
+                              - TC
+                              - TD
+                              - TF
+                              - TG
+                              - TJ
+                              - TK
+                              - TL
+                              - TM
+                              - TN
+                              - TO
+                              - TP
+                              - TR
+                              - TT
+                              - TV
+                              - TW
+                              - TZ
+                              - UA
+                              - UG
+                              - UK
+                              - UM
+                              - US
+                              - UY
+                              - UZ
+                              - VA
+                              - VC
+                              - VE
+                              - VG
+                              - VI
+                              - VN
+                              - VU
+                              - WF
+                              - WS
+                              - XK
+                              - YE
+                              - YT
+                              - YU
+                              - ZA
+                              - ZM
+                              - ZR
+                              - ZW
+                          ort:
+                            type: string
+                            description: 'Ort | EDIFACT: SG4.IDE+24.SG12.NAD+Z04'
+                          strasse:
+                            type: string
+                            description: 'Strasse | EDIFACT: SG4.IDE+24.SG12.NAD+Z04'
+                          postfach:
+                            type: string
+                            description: 'Postfach | EDIFACT: SG4.IDE+24.SG12.NAD+Z04'
+                          postleitzahl:
+                            type: string
+                            description: 'Postleitzahl | EDIFACT: SG4.IDE+24.SG12.NAD+Z04'
+                        x-apidog-orders:
+                          - ortsteil
+                          - hausnummer
+                          - landescode
+                          - ort
+                          - strasse
+                          - postfach
+                          - postleitzahl
+                        x-apidog-ignore-properties: []
+                      name3:
+                        type: string
+                        description: >-
+                          Dritter Teil des Namens. Hier können weitere
+                          Ergänzungen zum Firmennamen oder
+
+                          bei Privatpersonen Zusätze zum Namen dargestellt
+                          werden. Beispiele: und Afrika
+
+                          oder Sängerin | EDIFACT: SG4.IDE+24.SG12.NAD+Z04
+                      name4:
+                        type: string
+                        description: 'name4 | EDIFACT: SG4.IDE+24.SG12.NAD+Z04'
+                      name2:
+                        type: string
+                        description: >-
+                          Zweiter Teil des Namens. Hier kann der eine
+                          Erweiterung zum Firmennamen oder
+
+                          bei Privatpersonen beispielsweise der Vorname
+                          dargestellt werden. Beispiele:
+
+                          Bereich Süd oder Nina | EDIFACT:
+                          SG4.IDE+24.SG12.NAD+Z04
+                      name1:
+                        type: string
+                        description: >-
+                          Erster Teil des Namens. Hier kann der Firmenname oder
+                          bei Privatpersonen
+
+                          beispielsweise der Nachname dargestellt werden.
+                          Beispiele: Yellow Strom GmbH
+
+                          oder Hagen | EDIFACT: SG4.IDE+24.SG12.NAD+Z04
+                      anrede:
+                        type: string
+                        description: >-
+                          Die Anrede für den GePa, Z.B. Herr. | EDIFACT:
+                          SG4.IDE+24.SG12.NAD+Z04
+                    x-apidog-orders:
+                      - partneradresse
+                      - name3
+                      - name4
+                      - name2
+                      - name1
+                      - anrede
+                    x-apidog-ignore-properties: []
+                x-apidog-orders:
+                  - vertragspartner2
+                  - korrespondenzpartner
+                x-apidog-ignore-properties: []
+            NETZNUTZUNGSVERTRAG:
+              type: array
+              items:
+                type: object
+                properties:
+                  vertragsende:
+                    type: string
+                    description: 'Datum Vertragsende / DTM+93 | EDIFACT: SG4.IDE+24.DTM+93'
+                    format: date-time
+                  vertragskonditionen:
+                    type: object
+                    properties:
+                      haushaltskunde:
+                        type: boolean
+                        description: >-
+                          haushaltskunde | EDIFACT:
+                          SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI
+                    x-apidog-orders:
+                      - haushaltskunde
+                    x-apidog-ignore-properties: []
+                  vertragsbeginn:
+                    type: string
+                    description: 'Datum Vertragsbeginn / DTM+92 | EDIFACT: SG4.IDE+24.DTM+92'
+                    format: date-time
+                x-apidog-orders:
+                  - vertragsende
+                  - vertragskonditionen
+                  - vertragsbeginn
+                x-apidog-ignore-properties: []
+            STEUERBARE_RESSOURCE:
+              type: array
+              items:
+                type: object
+                properties:
+                  ressourcenId:
+                    type: string
+                    description: 'ressourcenId | EDIFACT: SG4.IDE+24.SG5.LOC+Z19'
+                x-apidog-orders:
+                  - ressourcenId
+                x-apidog-ignore-properties: []
+            MESSLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  messlokationsId:
+                    type: string
+                    description: >-
+                      Die Messlokations-Identifikation. Das ist die frühere
+                      Zählpunktbezeichnung,
+
+                      z.B. DE 47108151234567 | EDIFACT: SG4.IDE+24.SG5.LOC+Z17
+                x-apidog-orders:
+                  - messlokationsId
+                x-apidog-ignore-properties: []
+            ZAEHLER:
+              type: array
+              items:
+                type: object
+                properties:
+                  zaehlernummer:
+                    type: string
+                    description: >-
+                      Die Nummer des zu sperrenden Zählers | EDIFACT:
+                      SG4.IDE+24.SG8.SEQ+ZA4.SG10.CCI+++E13.CAV+Z30
+                x-apidog-orders:
+                  - zaehlernummer
+                x-apidog-ignore-properties: []
+            TECHNISCHE_RESSOURCE:
+              type: array
+              items:
+                type: object
+                properties:
+                  ressourcenId:
+                    type: string
+                    description: 'ressourcenId | EDIFACT: SG4.IDE+24.SG5.LOC+Z20'
+                x-apidog-orders:
+                  - ressourcenId
+                x-apidog-ignore-properties: []
+          x-apidog-orders:
+            - MARKTLOKATION
+            - ENERGIELIEFERVERTRAG
+            - NETZNUTZUNGSVERTRAG
+            - STEUERBARE_RESSOURCE
+            - MESSLOKATION
+            - ZAEHLER
+            - TECHNISCHE_RESSOURCE
+          x-apidog-ignore-properties: []
+        transaktionsdaten:
+          type: object
+          properties:
+            vertragsende:
+              type: string
+              description: 'Datum Vertragsende / DTM+93 | EDIFACT: SG4.IDE+24.DTM+93'
+              format: date-time
+            dokumentennummer:
+              type: string
+              description: 'EDIFact Referenz aus dem BGM Segment / BGM | EDIFACT: BGM+E01'
+            freitext:
+              type: object
+              properties:
+                freitext2:
+                  type: string
+                  description: 'Freitext Zeile 2 | EDIFACT: SG4.IDE+24.FTX+ACB'
+                freitext1:
+                  type: string
+                  description: 'Freitext Zeile 1 | EDIFACT: SG4.IDE+24.FTX+ACB'
+                freitext4:
+                  type: string
+                  description: 'Freitext Zeile 4 | EDIFACT: SG4.IDE+24.FTX+ACB'
+                freitext5:
+                  type: string
+                  description: 'Freitext Zeile 5 | EDIFACT: SG4.IDE+24.FTX+ACB'
+                freitext3:
+                  type: string
+                  description: 'Freitext Zeile 3 | EDIFACT: SG4.IDE+24.FTX+ACB'
+              x-apidog-orders:
+                - freitext2
+                - freitext1
+                - freitext4
+                - freitext5
+                - freitext3
+              x-apidog-ignore-properties: []
+            kategorie:
+              type: string
+              title: Anfragekategorie
+              description: 'Anfragekategorie | EDIFACT: BGM+E01'
+              enum:
+                - PROZESSDATENBERICHT
+                - GERAETEUEBERNAHME
+                - WEITERVERPFLICHTUNG_BETRIEB_MELO
+                - AENDERUNG_MELO
+                - STAMMDATEN_MALO_ODER_MELO
+                - BILANZIERTE_MENGE_MEHR_MINDER_MENGEN
+                - ALLOKATIONSLISTE_MEHR_MINDER_MENGEN
+                - ENERGIEMENGE_UND_LEISTUNGSMAXIMUM
+                - ABRECHNUNG_MESSSTELLENBETRIEB_MSB_AN_LF
+                - AENDERUNG_PROGNOSEGRUNDLAGE_GERAETEKONFIGURATION
+                - AENDERUNG_GERAETEKONFIGURATION
+                - REKLAMATION_VON_WERTEN
+                - LASTGANG_MALO_TRANCHE
+                - SPERRUNG
+                - ENTSPERRUNG
+                - REKLAMATION_ZAEHLZEITDEFINITION
+                - ZEITREIHEN_IM_RAHMEN_BILANZKREISABRECHNUNG
+                - GERAETEWECHSELABSICHT
+                - AENDERUNG_KONZESSIONSABGABE
+                - AENDERUNG_ZAEHLZEITDEFINITION
+                - UEBERMITTLUNG_WERTE_AN_ESA
+                - AENDERUNG
+                - BILANZKREISZUORDNUNGSLISTE
+                - CLEARINGLISTE
+                - NORMIERTES_PROFIL_PROFILSCHAR
+                - REDISPATCH_EINZELZEITREIHE_AUSFALLARBEIT
+                - REKLAMATION_PROFIL_PROFILSCHAR
+                - STAMMDATEN_MALO
+                - STAMMDATEN_MELO
+                - STAMMDATEN_TRANCHE
+                - BEENDIGUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINER_KONFIGURATION
+                - BESTELLUNG_EINES_ANGEBOTS_EINER_KONFIGURATION
+                - REKLAMATION_EINER_KONFIGURATION
+                - >-
+                  BESTELLUNG_AENDERUNG_NETZENTGELTE_NETZORIENTIERTER_STEUERUNGSMOEGLICHKEIT
+                - AENDERUNG_DER_TECHNIK_DER_LOKATION
+                - AENDERUNG_INDIVIDUELLER_KONFIGURATION
+                - BESTELLUNG_AENDERUNG_ABRECHNUNGSDATEN
+                - EINRICHTUNG_KONFIGURATION_AUFGRUND_ZUORDNUNG_LF
+                - REKLAMATION_DEFINITION
+            absender:
+              type: object
+              properties:
+                rufnummern:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      rufnummer:
+                        type: object
+                        title: Rufnummer
+                        description: 'EDIFACT: SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]'
+                        x-apidog-orders: []
+                        properties: {}
+                        x-apidog-ignore-properties: []
+                      nummerntyp:
+                        type: string
+                        title: Rufnummernart
+                        description: 'EDIFACT: SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]'
+                        enum:
+                          - RUF_ZENTRALE
+                          - FAX_ZENTRALE
+                          - SAMMELRUF
+                          - SAMMELFAX
+                          - ABTEILUNGRUF
+                          - ABTEILUNGFAX
+                          - RUF_DURCHWAHL
+                          - FAX_DURCHWAHL
+                          - MOBIL_NUMMER
+                    x-apidog-orders:
+                      - rufnummer
+                      - nummerntyp
+                    x-apidog-ignore-properties: []
+                rollencodenummer:
+                  type: string
+                  description: 'Gibt die Codenummer der Marktrolle an. | EDIFACT: SG2.NAD+MS'
+                ansprechpartner:
+                  type: object
+                  properties:
+                    nachname:
+                      type: string
+                      description: >-
+                        Nachname (Familienname) des Ansprechpartners | EDIFACT:
+                        SG2.NAD+MS.SG3.CTA
+                    eMailAdresse:
+                      type: string
+                      description: >-
+                        E-Mail Adresse | EDIFACT:
+                        SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]
+                  x-apidog-orders:
+                    - nachname
+                    - eMailAdresse
+                  x-apidog-ignore-properties: []
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: 'Rollencodetyp | EDIFACT: SG2.NAD+MS'
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+              x-apidog-orders:
+                - rufnummern
+                - rollencodenummer
+                - ansprechpartner
+                - rollencodetyp
+              x-apidog-ignore-properties: []
+            transaktionsgrundergaenzungBefristeteAnmeldung:
+              type: string
+              description: >-
+                Ergänzung zum Transaktionsgrund bei befristeten An-/Abmeldungen
+                / UTILMD STS+7++E01+ZW4+### | EDIFACT: SG4.IDE+24.STS+7
+            nachrichtendatum:
+              type: string
+              description: 'Erstellungdatum der EDIFact / DTM+137 | EDIFACT: DTM+137'
+              format: date-time
+            nachrichtenreferenznummer:
+              type: string
+              description: >-
+                EDIFact Referenz aus dem UNT Segment / UTILMD UNT+21 | EDIFACT:
+                UNH
+            vertragsbeginn:
+              type: string
+              description: 'Datum Vertragsbeginn / DTM+92 | EDIFACT: SG4.IDE+24.DTM+92'
+              format: date-time
+            empfaenger:
+              type: object
+              properties:
+                rollencodetyp:
+                  type: string
+                  title: Rollencodetyp
+                  description: 'Rollencodetyp | EDIFACT: SG2.NAD+MR'
+                  enum:
+                    - BDEW
+                    - GS1
+                    - GLN
+                    - DVGW
+                rollencodenummer:
+                  type: string
+                  description: 'Gibt die Codenummer der Marktrolle an. | EDIFACT: SG2.NAD+MR'
+              x-apidog-orders:
+                - rollencodetyp
+                - rollencodenummer
+              x-apidog-ignore-properties: []
+            transaktionsgrundergaenzung:
+              type: string
+              description: >-
+                Ergänzung zum Transaktionsgrund / UTILMD STS+7++E01+###+E03 |
+                EDIFACT: SG4.IDE+24.STS+7
+            pruefidentifikator:
+              type: string
+              description: >-
+                Enthält den Prüfidentifikator aus der EDIFact Kommunikation /
+                RFF+Z13 | EDIFACT: SG4.IDE+24.SG6.RFF+Z13
+            transaktionsgrund:
+              type: string
+              description: >-
+                Der Transaktionsgrund beschreibt den Geschäftsvorfall zur
+                Kategorie genauer / UTILMD STS+7++###+ZW4+E03 | EDIFACT:
+                SG4.IDE+24.STS+7
+            vorgangsnummer:
+              type: string
+              description: >-
+                Nummer des Vorgangs / UTILMD UTILTS IDE+24 / INSRPT INVOIC DOC |
+                EDIFACT: SG4.IDE+24
+          x-apidog-orders:
+            - vertragsende
+            - dokumentennummer
+            - freitext
+            - kategorie
+            - absender
+            - transaktionsgrundergaenzungBefristeteAnmeldung
+            - nachrichtendatum
+            - nachrichtenreferenznummer
+            - vertragsbeginn
+            - empfaenger
+            - transaktionsgrundergaenzung
+            - pruefidentifikator
+            - transaktionsgrund
+            - vorgangsnummer
+          x-apidog-ignore-properties: []
+      required:
+        - stammdaten
+        - transaktionsdaten
+      description: >-
+        55600 - LF an NB - Anmeldung einer Zuordnung des LF zur Marktlokation
+        bzw. Tranche
+      x-apidog-orders:
+        - stammdaten
+        - transaktionsdaten
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    13017_Antwort_Messwerte_Abo:
+      type: object
+      properties:
+        transaktionsdaten:
+          type: object
+          properties:
+            pruefidentifikator:
+              type: string
+              description: >-
+                Enthält den Prüfidentifikator aus der EDIFact Kommunikation /
+                RFF+Z13 | 
+
+                <TipInfo>SG1.RFF+Z13</TipInfo>
+          x-apidog-orders:
+            - pruefidentifikator
+          x-apidog-ignore-properties: []
+      required:
+        - transaktionsdaten
+      description: >-
+        13017 - Antwort Messwerte Abo [LF an MSB (Messlokation)/ MSB (entspricht
+        MSBA am Objekt Messlokation) an MSB (entspricht MSBN am Objekt
+        Messlokation)/ MSB (entspricht MSBN am Objekt Messlokation) an MSB
+        (entspricht MSBA am Objekt Messlokation)/ MSB (entspricht dem MSB am
+        Objekt Marktlokation) an LF/ MSB (entspricht dem MSB am Objekt
+        Marktlokation) an NB/ MSB (entspricht dem MSB am Objekt Messlokation) an
+        MSB (entspricht dem MSB am Objekt Marktlokation)/ MSB an LF/ MSB an NB/
+        NB an MSB (Messlokation)/ NB an RB HKN-R] MSCONS AHB
+      x-apidog-orders:
+        - transaktionsdaten
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     PI_55022:
