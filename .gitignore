@@ -1,2 +1,13 @@
 your-requests/
 api-requests/
+
+# Message downloader (local tooling, tokens, and downloaded data)
+message-downloader/
+
+.cursor/skills/conuti-edifact-converter/token.txt
+*.token.txt
+.mcp.json
+claude.md
+.claude
+.cursor/skills/*
+

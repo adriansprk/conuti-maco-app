@@ -6,7 +6,7 @@
     "maco-api-documentation": {
       "source": "git submodule or external repo",
       "path": "maco-api-documentation",
-      "last_synced": "2025-12-12T15:24:09Z",
+      "last_synced": "2026-02-27T09:58:19Z",
       "last_commit_hash": "e6725f643d9a3d57e1e06ec60d03e9fd09e10dbd",
       "tracked_files": {
         "build_script": {
@@ -104,7 +104,7 @@
     "docs-offline": {
       "source": "Downloaded from doc.macoapp.de",
       "path": "docs-offline",
-      "last_synced": "2025-12-12T15:24:09Z",
+      "last_synced": "2026-02-27T09:58:19Z",
       "last_download_date": null,
       "tracked_files": {
         "prozessuebersicht": {
@@ -131,12 +131,12 @@
           "Update llm.txt index if new processes added"
         ]
       },
-      "file_count": 234
+      "file_count": 235
     },
     "maco-edi-testfiles": {
       "source": "git submodule or external repo",
       "path": "maco-edi-testfiles",
-      "last_synced": "2025-12-12T15:24:09Z",
+      "last_synced": "2026-02-27T09:58:19Z",
       "last_commit_hash": "622f8db252d69a3db42476f21a76a717f633f61a",
       "tracked_files": {
         "edi_test_files": {

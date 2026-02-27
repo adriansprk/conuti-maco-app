@@ -1,7 +1,7 @@
 {
   "$schema": "./schemas/process-graph-schema.json",
   "version": "2.0.0-minimal",
-  "generated": "2026-01-23",
+  "generated": "2026-02-27T09:58:19Z",
   "description": "Minimal index pointing to source documentation. Agents should read source files for details.",
   "philosophy": "Point, don't interpret. This index helps discover files; agents read source docs for context.",
   "indexes": {

@@ -271,9 +271,16 @@ maco_agent_workspace/
 ├── 📁 ebd-diagrams/                # EBD validation trees
 │   └── FV{YYMM}/                   #    By format version
 │
-└── 📁 scripts/                     # Setup & sync scripts
-    ├── setup-workspace.sh          #    Initial setup
-    └── update-workspace.sh         #    Update documentation
+├── 📁 scripts/                     # Setup & sync scripts
+│   ├── setup-workspace.sh          #    Initial setup
+│   └── update-workspace.sh         #    Update documentation
+│
+└── 📁 message-downloader/          # Conuti message pipeline
+    ├── bin/                        #    Scripts (download, convert, split, clean)
+    ├── config/                     #    API tokens & config (gitignored)
+    ├── data/                       #    Downloaded MaLo data (gitignored)
+    ├── docs/                       #    Pipeline findings & plans
+    └── tests/                      #    Splitter tests & fixtures
 ```
 
 ---
@@ -288,6 +295,7 @@ maco_agent_workspace/
 | Validate a message before sending | Check against `PI_{ID}.yml` schema |
 | Handle an incoming webhook | Find process in `AI_AGENT_SETUP.md` → implement handler |
 | Update to latest documentation | Run `./scripts/update-workspace.sh` |
+| Convert EDIFACT to BO4E | Run `python message-downloader/bin/convert.py --file message.edi --token YOUR_TOKEN` |
 
 ---
 
