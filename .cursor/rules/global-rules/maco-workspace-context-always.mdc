@@ -47,6 +47,12 @@ version: 1.2.1
     - **Outbound examples**: `maco-edi-testfiles/outbound/v202510/` - BO4E JSON format (`.json` files only)
       - Messages TO Conuti API (triggers, requests) - sent as BO4E JSON
   - **⚠️ NEVER use v202404** - it's outdated and has different structure (both formats for both directions)
+- `ahb-tables/` - AHB (Anwendungshandbuch) tables for all 488+ BDEW Prüfidentifikatoren, downloaded from hochfrequenz.de (public API, no auth)
+  - **Use only** when there is a specific question about EDIFACT message structure (segment requiredness, qualifier codes, conditional field logic)
+  - **`ahb-tables/INDEX.json`** - Quick lookup: `by_pruefidentifikator["{ID}"]["FV2510"]` → `{description, direction, versionsnummer}`
+  - **`ahb-tables/FV2510/AHB_FV2510_{ID}.json`** - Full EDIFACT detail: `lines[].ahb_expression` (Muss/Kann), `lines[].conditions`, `lines[].value_pool_entry`
+  - **Not a substitute** for `PI_{ID}.yml`, `yaml_output`, or `docs-offline` — those cover the BO4E layer and process logic
+  - **Refresh**: `python3 scripts/download-ahb-tables.py`
 
 **API Schema Files** (`maco-api-documentation/_build/`):
 - `bo4e-openapi.min.json` - BO4E data structures and types
@@ -111,4 +117,4 @@ version: 1.2.1
    - ⚠️ **NEVER use v202404** - it's outdated and has different structure
 10. **Verify against schemas** (PI_[ID].yml) and business rules (yaml_output/[ID].yaml)
 11. **Cite sources** in your response (always cite the source file, not the index)
-12. **Build implementation** using verified schemas and business rules from source docs
+13. **Build implementation** using verified schemas and business rules from source docs
