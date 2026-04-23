@@ -90,19 +90,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Netzlokation'
-              example:
-                - boTyp: NETZLOKATION
-                  versionStruktur: '1'
-                  netzlokationsId: E1688110018
-                  sparte: STROM
-                  gueltigkeitszeitraum:
-                    zeitraumId: 1
-                    startdatum: '2024-10-20T22:00:00Z'
-                    enddatum: '2024-12-24T23:00:00Z'
-                  datenqualitaet: IM_SYSTEM_VORHANDENE_DATEN
-                  abrechnungsdaten:
-                    - zahlerBlindarbeitLf: true
+                type: array
+                items:
+                  $ref: '#/components/schemas/Netzlokation'
+                description: Liste der Netzlokationen
           headers: {}
           x-apidog-name: OK
         '400':

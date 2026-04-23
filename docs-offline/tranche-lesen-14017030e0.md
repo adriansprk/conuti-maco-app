@@ -73,7 +73,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Tranche'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tranche'
+                description: Liste der Tranchen
           headers: {}
           x-apidog-name: OK
         '400':

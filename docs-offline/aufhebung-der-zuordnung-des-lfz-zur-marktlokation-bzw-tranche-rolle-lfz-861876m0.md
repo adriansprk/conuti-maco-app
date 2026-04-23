@@ -44,7 +44,7 @@
           </Card>
       </Tab>        
       <Tab title="📄55038">
-          <Accordion title="PI_55022" defaultOpen={false}>
+          <Accordion title="PI_55038" defaultOpen={false}>
                <DataSchema id="5242374" />
           </Accordion>
       </Tab> 

@@ -3,15 +3,85 @@
 
 ![LW24h mit Abhängigkeiten - Übermittlung der bisher gemessenen Arbeits- und Leistungswerte (Rolle LF).png](https://api.apidog.com/api/v1/projects/816353/resources/367287/image-preview)
 
-
-<DataSchema id="8348181" />
 <Steps>
-  <Step title="13015 EDI">
+  <Step title="Prozessauslöser - eingehende EDI" defaultOpen={false}>
     <Tabs>
-  <Tab title="13015 Edi">
+      <Tab title="Übersicht">
+         <CardGroup cols={3}>
+                      
+          <Card title="13015">
+              Arbeit Leistungsmax. Kalenderjahr vor Lieferbeginn
+          </Card>
+          <Card title="13016">
+              Übertragung von Energiemenge und Leistungsmaximum Strom
+          </Card>
+          <Card title="13019">
+              Übertragung von Energiemengen Strom
+          </Card>
+        </CardGroup>
+     </Tab>   
+        <Tab title="📄13015 Arbeit Leistungsmax. Kalenderjahr vor Lieferbeginn">
+          <Accordion title="PI_13015" defaultOpen={false}>
+              <DataSchema id="12636010" />
+          </Accordion>
+          </Tab>
+      <Tab title="📄13016 Energiemengen und Leistungsmaximum">
+          <Accordion title="PI_13016" defaultOpen={false}>
+               <DataSchema id="12584850" />
+          </Accordion>
+      </Tab>
+
+      <Tab title="📄13019 Energiemengen">
+          <Accordion title="PI_13019" defaultOpen={false}>
+               <DataSchema id="12612264" />
+          </Accordion>
+      </Tab>
+    </Tabs>
+  </Step>
+<Step title="Schnittstelle lesend für APERAK">
+      <Tabs>
+      <Tab title="Übersicht">
+          <Card title="Marktlokation lesen"
+                href="https://doc.macoapp.de/marktlokation-lesen-14017020e0.md">
+                Lesen einer MaLo mittels LokationsId zu einem bestimmten Zeitpunkt
+          </Card>  
+          <Card title="Messlokation lesen"
+                href="https://doc.macoapp.de/messlokation-lesen-14017024e0.md">
+                Lesen einer MeLo mittels LokationsId zu einem bestimmten Zeitpunkt
+          </Card>  
+           
+      </Tab>        
+      <Tab title="📄Marktlokation ">
+          <Accordion title="Marktlokation" defaultOpen={false}>
+              <DataSchema id="5241973" />
+          </Accordion>
+          </Tab>
+          
+          <Tab title="📄Messlokation ">
+          <Accordion title="Messlokation" defaultOpen={false}>
+              <DataSchema id="5241975" />
+          </Accordion>
+          </Tab>
+          
+       </Tabs>
+    </Step>    
+<Step title="Schnittstellen schreibend">
+    <Tabs>
+      <Tab title="Übersicht">
+          <Card title="Erstellen der Prozessdaten"
+                href="https://doc.macoapp.de/prozessdaten-erstellen-14017183e0.md">
+              Übergabe der initialen Prozessdaten an das Backend
+          </Card>    
+      </Tab>
+       <Tab title="📄13015 Arbeit Leistungsmax. Kalenderjahr vor Lieferbeginn">
+          <Accordion title="PI_13015" defaultOpen={false}>
+                 <DataSchema id="12636010" />
+          </Accordion>
+       </Tab>
+       <Tab title="13015 Edi">
     <Accordion title="13015 Edi" defaultOpen>
- 
-  ```UNA:+,? '
+          
+         ```UNA:+,? '
 UNB+UNOC:3+9979100000001:500+9904400000002:500+251010:0453+24100204533914++EM'
 UNH+UNHM24CGBL4+MSCONS:D:04B:UN:2.4c'
 BGM+Z27+BGMM1WGORGW+9'
@@ -31,16 +101,13 @@ STS+Z32++Z88'
 UNT+16+UNHM24CGBL4'
 UNZ+1+24100204533914'
   ```
-</Accordion>
-  </Tab>
-</Tabs>
-  </Step>
-  <Step title="13015 JSON">
-    <Tabs>
+
+    </Accordion>
+      </Tab>
+
   <Tab title="13015 JSON">
     <Accordion title="13015 JSON" defaultOpen>
- 
-  ```{
+          ```{
   "businessKey": "<businessKey>",
   "processDate": null,
   "dataSource": "INBOUND",
@@ -105,18 +172,16 @@ UNZ+1+24100204533914'
   ```
 </Accordion>
   </Tab>
-</Tabs>
-  </Step>
-</Steps>
 
-<DataSchema id="8348182" />
-    <Steps>
-  <Step title="13016 EDI">
-    <Tabs>
-  <Tab title="13016 Edi">
-    <Accordion title="13016 Edi" defaultOpen>
-
-  ```UNA:+,? '
+       <Tab title="📄13016 Energiemengen und Leistungsmaximum">
+          <Accordion title="PI_13016" defaultOpen={false}>
+                 
+<DataSchema id="12584850" />
+          </Accordion>
+       </Tab>
+        <Tab title="📄13016 Edi">
+          <Accordion title="PI_13016" defaultOpen={false}>
+                          ```UNA:+,? '
 UNB+UNOC:3+9903000000001:500+9903000000002:500+251010:1148+DAOSVPKMWRQLGA++EM'
 UNH+UNHM23DNH3R+MSCONS:D:04B:UN:2.4c'
 BGM+Z28+BGMM28EY1DG+9'
@@ -140,67 +205,72 @@ STS+Z40++Z74'
 UNT+20+UNHM23DNH3R'
 UNZ+1+DAOSVPKMWRQLGA'
   ```
-</Accordion>
-  </Tab>
-</Tabs>
-  </Step>
-  <Step title="13016 JSON">
-    <Tabs>
-  <Tab title="13016 JSON">
-    <Accordion title="13016 JSON" defaultOpen>
- 
-  ```{
+  
+          </Accordion>
+       </Tab>
+        <Tab title="📄13016 JSON">
+          <Accordion title="PI_13016" defaultOpen={false}>
+                                ```{
+  {
   "businessKey": "<businessKey>",
   "processDate": null,
   "dataSource": "INBOUND",
   "version": 1,
-  "edifactVersion": 202510,
+  "edifactVersion": 202504,
   "data": {
     "stammdaten": {
       "ENERGIEMENGE": [
         {
           "boTyp": "ENERGIEMENGE",
           "versionStruktur": "1",
-          "lokationsId": "50375312838",
+          "lokationsId": "12345678901",
           "lokationsTyp": "MALO",
           "energieverbrauch": [
             {
-              "startdatum": "2023-12-22T05:00:00Z",
-              "enddatum": "2024-08-02T04:00:00Z",
-              "messwertstatus": "ERSATZWERT",
-              "obiskennzahl": "1-0:1.29.0",
-              "wert": 1223,
-              "nutzungszeitpunkt": "2024-08-02T04:00:00Z",
-              "position": 1
+              "messwertstatus": "ABGELESEN",
+              "statuszusatzinformationen": [
+                {
+                  "art": "PLAUSIBILISIERUNGSHINWEIS",
+                  "status": "KUNDENSELBSTABLESUNG"
+                },
+                {
+                  "art": "KORREKTURGRUND",
+                  "status": "STOERUNG_DEFEKT_MESSEINRICHTUNG"
+                }
+              ],
+              "obiskennzahl": "1-1:1.6.0",
+              "wert": 10123,
+              "position": 1,
+              "leistungsperiode": "202405"
             }
           ]
         }
       ]
     },
     "transaktionsdaten": {
-      "datenaustauschreferenz": "P1001099269230",
+      "datenaustauschreferenz": "DAOSVPKMWRQLGA",
       "sparte": "STROM",
-      "pruefidentifikator": "13027",
+      "pruefidentifikator": "13016",
       "absender": {
         "boTyp": "MARKTTEILNEHMER",
         "versionStruktur": "1",
         "gewerbekennzeichnung": true,
-        "rollencodenummer": "9979100000001",
+        "rollencodenummer": "9903000000001",
         "rollencodetyp": "BDEW"
       },
       "empfaenger": {
         "boTyp": "MARKTTEILNEHMER",
         "versionStruktur": "1",
         "gewerbekennzeichnung": true,
-        "rollencodenummer": "9904400000002",
+        "rollencodenummer": "9903000000002",
         "rollencodetyp": "BDEW"
       },
-      "dokumentennummer": "BGMM2B120EC",
-      "kategorie": "Z83",
+      "dokumentennummer": "BGMM28EY1DG",
+      "kategorie": "Z28",
       "nachrichtenfunktion": "9",
-      "nachrichtendatum": "2024-10-01T06:07:00Z",
-      "nachrichtenreferenznummer": "UNHM2BQ4A83",
-      "typ": "TL",
+      "nachrichtendatum": "2024-10-03T11:48:00Z",
+      "nachrichtenreferenznummer": "UNHM23DNH3R",
+      "typ": "EM",
       "anfrageReferenz": "PP172409301012154888888888888563413"
     },
     "zusatzdaten": {}
@@ -209,15 +279,14 @@ UNZ+1+DAOSVPKMWRQLGA'
   ```
 </Accordion>
   </Tab>
-</Tabs>
-  </Step>
-</Steps>
+    
 
-<DataSchema id="8348185" />
-        <Steps>
-  <Step title="13019 EDI">
-    <Tabs>
-  <Tab title="13019 Edi">
+<Tab title="📄13019 Energiemengen">
+          <Accordion title="PI_13019" defaultOpen={false}>
+                 <DataSchema id="12612264" />
+          </Accordion>
+       </Tab>      
+<Tab title="13019 Edi">
     <Accordion title="13019 Edi" defaultOpen>
  
   ```UNA:+.? '
@@ -247,10 +316,7 @@ UNZ+1+510029'
   ```
 </Accordion>
   </Tab>
-</Tabs>
-  </Step>
-  <Step title="13019 JSON">
-    <Tabs>
+
   <Tab title="13019 JSON">
     <Accordion title="13019 JSON" defaultOpen>
   

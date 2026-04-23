@@ -94,334 +94,6 @@ paths:
                 items:
                   $ref: '#/components/schemas/Marktlokation'
                 description: Liste der Marklokationen
-              example:
-                - boTyp: MARKTLOKATION
-                  versionStruktur: '1'
-                  marktlokationsId: '50754496000'
-                  marktlokationsTyp:
-                    - typ: STANDARD_MARKTLOKATION
-                      gueltigAb: '2023-08-01T22:00:00Z'
-                      gueltigBis: '2023-08-01T22:00:00Z'
-                  zukuenftigerMeldepunkt: null
-                  sparte: STROM
-                  gueltigkeitszeitraum:
-                    zeitraumId: null
-                    startdatum: null
-                    enddatum: null
-                  inbetriebnahmedatum: '2023-08-01T22:00:00Z'
-                  datenqualitaet: null
-                  energierichtung: AUSSP
-                  bilanzierungsmethode: SLP
-                  verbrauchsart: KL
-                  unterbrechbar: false
-                  netzebene: NSP
-                  umspannung: null
-                  netzbetreiberCodeNr: '9900702000004'
-                  gebietTyp: VERSORGUNGSGEBIET
-                  netzgebietNr: '12345'
-                  bilanzierungsgebiet: 11YR00000004025V
-                  grundversorgerCodeNr: '9900683000008'
-                  endkunde:
-                    boTyp: GESCHAEFTSPARTNER
-                    versionStruktur: '1'
-                    anrede: Herr
-                    name1: Haiko
-                    name2: Fisch
-                    name3: null
-                    gewerbekennzeichnung: false
-                    hrnummer: null
-                    amtsgericht: null
-                    kontaktweg:
-                      - TELEFONAT
-                      - E_MAIL
-                    umsatzsteuerId: null
-                    glaeubigerId: null
-                    eMailAdresse: hai.fisch@web.de
-                    website: null
-                    partneradresse:
-                      postleitzahl: '65189'
-                      ort: Wiesbaden
-                      strasse: Korallenweg
-                      hausnummer: '10'
-                      postfach: null
-                      adresszusatz: null
-                      coErgaenzung: null
-                      landescode: DE
-                      ortsteil: Riff
-                  lokationsadresse:
-                    postleitzahl: '65189'
-                    ort: Wiesbaden
-                    strasse: Korallenweg
-                    hausnummer: '10'
-                    postfach: null
-                    adresszusatz: null
-                    coErgaenzung: null
-                    landescode: DE
-                    ortsteil: Riff
-                    zusatzInformation:
-                      zusatz1: null
-                      zusatz2: null
-                      zusatz3: null
-                      zusatz4: null
-                      zusatz5: null
-                  katasteradresse:
-                    gemarkung_flur: '1'
-                    flurstueck: '1'
-                    flurstueckNummer: '1'
-                  geokoordinaten:
-                    breitengrad: '1'
-                    laengengrad: '1'
-                    ostwert: '1'
-                    nordwert: '1'
-                    zone: '1'
-                    hochwert: '1'
-                    rechtswert: '1'
-                  marktrollen:
-                    - boTyp: MARKTTEILNEHMER
-                      versionStruktur: '1'
-                      gueltigkeitszeitraum:
-                        zeitraumId: 1
-                        startdatum: '2022-12-31T23:00:00Z'
-                        enddatum: '2025-12-31T23:00:00Z'
-                      marktrolle: MSB
-                      gewerbekennzeichnung: true
-                      rollencodenummer: '9906464000001'
-                      rollencodetyp: BDEW
-                      weiterverpflichtet: false
-                      messstellenbetreiberEigenschaft: GRUNDZUSTAENDIGER_MESSSTELLENBETREIBER
-                    - boTyp: MARKTTEILNEHMER
-                      versionStruktur: '1'
-                      gueltigkeitszeitraum:
-                        zeitraumId: 1
-                        startdatum: '2022-12-31T23:00:00Z'
-                        enddatum: '2025-12-31T23:00:00Z'
-                      marktrolle: NB
-                      gewerbekennzeichnung: true
-                      rollencodenummer: '9900683000008'
-                      rollencodetyp: BDEW
-                    - boTyp: MARKTTEILNEHMER
-                      versionStruktur: '1'
-                      gueltigkeitszeitraum:
-                        zeitraumId: 1
-                        startdatum: '2022-12-31T23:00:00Z'
-                        enddatum: '2025-12-31T23:00:00Z'
-                      marktrolle: LF
-                      gewerbekennzeichnung: true
-                      rollencodenummer: '9979052000006'
-                      rollencodetyp: BDEW
-                    - boTyp: MARKTTEILNEHMER
-                      versionStruktur: '1'
-                      gueltigkeitszeitraum:
-                        zeitraumId: 1
-                        startdatum: '2022-12-31T23:00:00Z'
-                        enddatum: '2025-12-31T23:00:00Z'
-                      marktrolle: UENB
-                      gewerbekennzeichnung: true
-                      rollencodenummer: '4033872000058'
-                      rollencodetyp: BDEW
-                    - boTyp: MARKTTEILNEHMER
-                      versionStruktur: '1'
-                      gueltigkeitszeitraum:
-                        zeitraumId: 1
-                        startdatum: '2022-12-31T23:00:00Z'
-                        enddatum: '2025-12-31T23:00:00Z'
-                      marktrolle: BIKO
-                      gewerbekennzeichnung: true
-                      rollencodenummer: '4033872000027'
-                      rollencodetyp: BDEW
-                    - boTyp: MARKTTEILNEHMER
-                      versionStruktur: '1'
-                      gueltigkeitszeitraum:
-                        zeitraumId: 1
-                        startdatum: '2022-12-31T23:00:00Z'
-                        enddatum: '2025-12-31T23:00:00Z'
-                      marktrolle: BKV
-                      gewerbekennzeichnung: true
-                      rollencodenummer: '4033872000034'
-                      rollencodetyp: BDEW
-                  regelzone: '1'
-                  marktgebiet: null
-                  zeitreihentyp: SLS
-                  zaehlwerke:
-                    - zaehlwerkId: '1'
-                      bezeichnung: HT
-                      richtung: AUSSP
-                      obisKennzahl: 1-1:1.9.0
-                      wandlerfaktor: 1
-                      einheit: KWH
-                      schwachlastfaehig: NICHT_SCHWACHLASTFAEHIG
-                      verwendungszwecke:
-                        - marktrolle: NB
-                          zweck:
-                            - NETZNUTZUNGSABRECHNUNG
-                      verbrauchsart: KL
-                      unterbrechbarkeit: NUV
-                      waermenutzung: null
-                      konzessionsabgabe:
-                        satz: TA
-                        kosten: 0
-                        kategorie: '1'
-                      steuerbefreit: false
-                      vorkommastelle: 7
-                      nachkommastelle: 3
-                      abrechnungsrelevant: true
-                      anzahlAblesungen: 1
-                      zaehlzeiten:
-                        zaehlzeitDefinition: null
-                        register: null
-                        schwachlastfaehig: null
-                      leistungskurvendefinition: null
-                      konfiguration: null
-                      messprodukt: '9991000000044'
-                      wertegranularitaet: JAEHRLICH
-                      notwendigkeitZweiteMessung: NICHT_VORHANDEN
-                      werteuebermittlungVerwendungszweck: NICHT_VORHANDEN
-                      artEMobilitaet: null
-                  zaehlwerkeBeteiligteMarktrolle:
-                    - null
-                  verbrauchsmenge:
-                    - startdatum: '2023-10-14T07:52:00Z'
-                      enddatum: '2024-10-14T07:52:00Z'
-                      wertermittlungsverfahren: PROGNOSE
-                      messwertstatus: PROGNOSEWERT
-                      statuszusatzinformationen:
-                        - art: PLAUSIBILISIERUNGSHINWEIS
-                          status: KUNDENSELBSTABLESUNG
-                      obiskennzahl: 1-1:1.9.0
-                      wert: 2500
-                      einheit: KWH
-                  zugehoerigeMesslokationen:
-                    - messlokationsId: DE0009697056900614312080040415111
-                      arithmetik: ADDITION
-                      gueltigSeit: '2022-10-14T07:52:00Z'
-                      gueltigBis: '2025-10-14T07:52:00Z'
-                  messtechnischeEinordnung: KME_MME
-                  netznutzungsabrechnungsdaten:
-                    - artikelId: '1'
-                      artikelIdTyp: ARTIKELID
-                      anzahl: 5
-                      gemeinderabatt: 5.45
-                      zuschlag: 5.78
-                      abschlag: 5.87
-                      singulaereBetriebsmittel:
-                        wert: null
-                        einheit: null
-                      preisSingulaereBetriebsmittel:
-                        wert: null
-                        einheit: null
-                        bezugswert: null
-                        status: null
-                      abrechnungBlindarbeit: null
-                      zahlerBlindarbeit: null
-                      zahlerBlindarbeitLf: null
-                      zaehlzeiten:
-                        zaehlzeitDefinition: null
-                        register: null
-                  messstellenbetriebsabrechnungsdaten:
-                    - messstellenbetriebsabrechnung: true
-                      artikelId: '1'
-                      artikelIdTyp: ARTIKELID
-                      anzahl: 5
-                      zuschlag: 5.78
-                      abschlag: 5.87
-                  sperrstatus: ENTSPERRT
-                  referenzMarktlokationsId: '50754496000'
-                  energieherkunft:
-                    - erzeugungsart: null
-                      anteilProzent: null
-                  versorgungsart: null
-                  eigentuemer:
-                    boTyp: GESCHAEFTSPARTNER
-                    versionStruktur: '1'
-                    anrede: Herr
-                    name1: Haiko
-                    name2: Fisch>
-                    name3: null
-                    gewerbekennzeichnung: false
-                    geschaeftspartnerrolle:
-                      - EIGENTUEMER
-                    hrnummer: null
-                    amtsgericht: null
-                    kontaktweg:
-                      - TELEFON
-                    umsatzsteuerId: null
-                    glaeubigerId: null
-                    eMailAdresse: hai.fisch@web.de
-                    website: null
-                    partneradresse:
-                      postleitzahl: '65189'
-                      ort: Wiesbaden
-                      strasse: Körallenweg
-                      hausnummer: '10'
-                      postfach: null
-                      adresszusatz: null
-                      coErgaenzung: null
-                      landescode: DE
-                      ortsteil: Riff
-                  hausverwalter:
-                    boTyp: GESCHAEFTSPARTNER
-                    versionStruktur: '1'
-                    anrede: Herr
-                    name1: Haiko
-                    name2: Fisch>
-                    name3: null
-                    gewerbekennzeichnung: false
-                    geschaeftspartnerrolle:
-                      - HAUSVERWALTER
-                    hrnummer: null
-                    amtsgericht: null
-                    kontaktweg:
-                      - TELEFON
-                    umsatzsteuerId: null
-                    glaeubigerId: null
-                    eMailAdresse: hai.fisch@web.de
-                    website: null
-                    partneradresse:
-                      postleitzahl: '65189'
-                      ort: Wiesbaden
-                      strasse: Körallenweg
-                      hausnummer: '10'
-                      postfach: null
-                      adresszusatz: null
-                      coErgaenzung: null
-                      landescode: DE
-                      ortsteil: Riff
-                  verguetungEmpfaenger: null
-                  statusErzeugendeMalo: null
-                  fernsteuerbarkeit: TECHNISCH_NICHT_FERNSTEUERBAR
-                  foerderungsLand: null
-                  redispatch: false
-                  lokationszuordnung: null
-                  modulNetzentgelte: null
-                  produktdatenRelevanteRolle: LF
-                  konfigurationsprodukt: null
-                  leistungskurvendefinition: null
-                  beteiligterMarktpartner:
-                    boTyp: MARKTTEILNEHMER
-                    versionStruktur: '1'
-                    marktrolle: NB
-                    gewerbekennzeichnung: true
-                    rollencodenummer: '9900683000008'
-                    rollencodetyp: BDEW
-                  erforderlichesProduktpaket:
-                    - produktpaketId: 1
-                      produkt:
-                        - produktCode: '9991000002008'
-                          codeProdukteigenschaft: '9991000002115'
-                          wertedetails: null
-                      umsetzungsgradvorgabe: ZUORDNUNG_NUR_WENN_PRODUKTPAKET_UMSETZBAR
-                      priorisierung: PRIORITAET1
-                  datenDerBeteiligtenMarktrolle:
-                    - marktlokationsId: null
-                      regelzone: null
-                      bilanzierungsgebiet: null
-                      netzebene: null
-                      zaehlwerke:
-                        - obisKennzahl: null
-                          verwendungszwecke:
-                            - zweck:
-                                - null
-                  paketId: null
           headers: {}
           x-apidog-name: OK
         '400':
@@ -446,7 +118,7 @@ components:
       title: Marktlokation
       type: object
       properties:
-        boTyp: &ref_11
+        boTyp: &ref_12
           $ref: '#/components/schemas/BOTyp'
           default: MARKTLOKATION
         versionStruktur:
@@ -484,6 +156,10 @@ components:
 
             PI 55196 55043 55168 55169 
 
+            LOC 172
+
+            44037 44038
+
             ORDERS 
 
             RFF Z18 
@@ -519,7 +195,7 @@ components:
           description: Strom oder Gas
           title: Utility division
           $ref: '#/components/schemas/Sparte'
-        energierichtung: &ref_6
+        energierichtung: &ref_7
           $ref: '#/components/schemas/Energierichtung'
           description: >-
             Angabe, ob eine Malo Energie liefert, also erzeugt Z06 oder ob eine
@@ -533,7 +209,7 @@ components:
           description: Bilanzierungsmethode
         verbrauchsart:
           type: array
-          items: &ref_8
+          items: &ref_9
             $ref: '#/components/schemas/Verbrauchsart'
           description: Stromverbrauchsart/Verbrauchsart Marktlokation
         unterbrechbar:
@@ -595,7 +271,7 @@ components:
         endkunde: &ref_1
           $ref: '#/components/schemas/Geschaeftspartner'
           description: Link zum Geschäftspartner, dem diese Marktlokation gehört.
-        lokationsadresse: &ref_12
+        lokationsadresse: &ref_13
           $ref: '#/components/schemas/Adresse'
           description: |-
             Marktlokationsanschrift
@@ -879,6 +555,11 @@ components:
             Angabe der Typisierung der Marktlokation mit möglicher Angabe
             zeitlicher Gültigkeit
           title: Classification of the market location with optional validity period
+        zugehoerigeMarktlokationen:
+          type: array
+          items:
+            $ref: '#/components/schemas/MarktlokationsReferenz'
+          description: Referenzen zugehöriger Marktlokationen
       required:
         - boTyp
         - versionStruktur
@@ -937,17 +618,41 @@ components:
         - geokoordinaten
         - paketId
         - marktlokationsTyp
+        - zugehoerigeMarktlokationen
       x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    MarktlokationsReferenz:
+      $id: >-
+        https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/schemas/v1/com/MarktlokationsReferenz.schema.json
+      title: MarktlokationsReferenz
+      type: object
+      properties:
+        marktlokationsId:
+          type: string
+          description: Identifikationsnummer einer Marktlokation
+        typ: &ref_4
+          $ref: '#/components/schemas/MarktlokationsTyp'
+      x-apidog-orders:
+        - marktlokationsId
+        - typ
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    MarktlokationsTyp:
+      $id: >-
+        https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/schemas/v1/enum/MarktlokationsTyp.schema.json
+      title: MarktlokationsTyp
+      type: string
+      enum:
+        - STANDARD_MARKTLOKATION
+        - RUHENDE_MARKTLOKATION
+        - KUNDENANLAGE
+      description: MarktlokationsTyp
       x-apidog-folder: ''
     MarktlokationsTypisierung:
       title: MarktlokationsTypisierung
       type: object
       properties:
-        typ:
-          $ref: '#/components/schemas/MarktlokationsTyp'
-          description: >-
-            Typisierung der Marktlokation als standard Marktlokation, ruhende
-            Marktlokation oder Kundenanlage
+        typ: *ref_4
         gueltigAb:
           type: string
           format: date-time
@@ -961,15 +666,6 @@ components:
         - gueltigAb
         - gueltigBis
       x-apidog-ignore-properties: []
-      x-apidog-folder: ''
-    MarktlokationsTyp:
-      title: AbgabeArt
-      type: string
-      enum:
-        - STANDARD_MARKTLOKATION
-        - RUHENDE_MARKTLOKATION
-        - KUNDENANLAGE
-      description: AbgabeArt
       x-apidog-folder: ''
     Geokoordinaten:
       title: Geokoordinaten
@@ -1248,7 +944,7 @@ components:
             PIA Z02
 
             PI 55557
-        artikelIdTyp: &ref_4
+        artikelIdTyp: &ref_5
           $ref: '#/components/schemas/ArtikelIdTyp'
           description: Artikel-ID Z09
         anzahl:
@@ -1310,7 +1006,7 @@ components:
             Artikel-ID Produkt-/Leistungsnummer
             PIA Z02
             55218 55220 55225 55227 55557 55559 55035 
-        artikelIdTyp: *ref_4
+        artikelIdTyp: *ref_5
         anzahl:
           type: integer
           description: >-
@@ -1386,7 +1082,7 @@ components:
         differenzDaten:
           type: boolean
           description: Differenz Daten
-        zaehlzeiten: &ref_9
+        zaehlzeiten: &ref_10
           $ref: '#/components/schemas/Zaehlzeitregister'
           description: |-
             Zugeordnetes Zählzeitregister 
@@ -1449,7 +1145,7 @@ components:
             UTILTS RFF Z27
 
             PI 25004
-        schwachlastfaehig: &ref_7
+        schwachlastfaehig: &ref_8
           $ref: '#/components/schemas/Schwachlastfaehig'
           description: >-
             Schwachlastfähigkeit des Registers, hier wird übermittelt ob eine
@@ -1519,7 +1215,7 @@ components:
             Referenzwährung EUR
             CUX 2 
             PI 19116 
-        bezugswert: &ref_5
+        bezugswert: &ref_6
           $ref: '#/components/schemas/Mengeneinheit'
           description: |-
             Maßeinheit
@@ -1652,7 +1348,7 @@ components:
           type: number
           format: float
           description: Wert Mengenangabe
-        einheit: *ref_5
+        einheit: *ref_6
       x-apidog-orders:
         - wert
         - einheit
@@ -1775,7 +1471,7 @@ components:
             Energiemenge, Mengenangabe MSCONS
             QTY 136 Erreichte Menge in dem Zeitintervall
             PI 21045
-        einheit: *ref_5
+        einheit: *ref_6
         type:
           $ref: '#/components/schemas/Verbrauchsmengetyp'
           description: nicht in Benutzung
@@ -2293,7 +1989,7 @@ components:
             CCI Z63
 
             PI 55643 55648 55653 55658 55663 55669 55553 55555 55168 55169
-        richtung: *ref_6
+        richtung: *ref_7
         obisKennzahl:
           type: string
           description: >-
@@ -2334,11 +2030,11 @@ components:
             zum eigentlichen Verbrauch im Zeitraum zu
 
             kommen.
-        einheit: *ref_5
-        schwachlastfaehig: *ref_7
+        einheit: *ref_6
+        schwachlastfaehig: *ref_8
         verbrauchsart:
           type: array
-          items: *ref_8
+          items: *ref_9
           description: >-
             Angabe für welchen Verwendungszweck die Stromentnahme an der
             OBIS-Kennzahl der Marktlokation erfolgt. Definiert den
@@ -2398,7 +2094,7 @@ components:
         anzahlAblesungen:
           type: integer
           description: Anzahl Ablesungen
-        zaehlzeiten: *ref_9
+        zaehlzeiten: *ref_10
         konfiguration:
           type: string
           description: >-
@@ -2791,7 +2487,7 @@ components:
       title: Zeitraum
       type: object
       properties:
-        zeiteinheit: &ref_10
+        zeiteinheit: &ref_11
           $ref: '#/components/schemas/Zeiteinheit'
           description: nicht in Benutzung
         dauer:
@@ -2815,7 +2511,7 @@ components:
             DTM164 Verarbeitung, Endedatum/-zeit
             DTM 156 Rechnungsperiode, Endedatum
             DTM Z43 vorläufiger Abrechnungszeitraum Ende
-        einheit: *ref_10
+        einheit: *ref_11
         ableseZeitraum:
           type: string
           description: |-
@@ -2956,12 +2652,12 @@ components:
       title: Marktteilnehmer
       type: object
       properties:
-        boTyp: *ref_11
+        boTyp: *ref_12
         versionStruktur:
           type: string
           default: '1'
           description: versionStruktur
-        geschaeftspartnerrolle: &ref_13
+        geschaeftspartnerrolle: &ref_14
           $ref: '#/components/schemas/Geschaeftspartnerrolle'
           description: Rolle, die der Geschäftspartner hat (z.B. Interessent, Kunde).
         anrede:
@@ -2979,7 +2675,7 @@ components:
         name4:
           type: string
           description: Vierter Teil des Namens
-        partneradresse: *ref_12
+        partneradresse: *ref_13
         gewerbekennzeichnung:
           type: boolean
           description: >-
@@ -3444,7 +3140,7 @@ components:
       title: Ansprechpartner
       type: object
       properties:
-        boTyp: *ref_11
+        boTyp: *ref_12
         versionStruktur:
           type: string
           default: '1'
@@ -4201,7 +3897,7 @@ components:
       title: Geschaeftspartner
       type: object
       properties:
-        boTyp: *ref_11
+        boTyp: *ref_12
         versionStruktur:
           type: string
           default: '1'
@@ -4266,7 +3962,7 @@ components:
           description: >-
             Amtsgericht bzw Handelsregistergericht, das die
             Handelsregisternummer herausgegeben hat
-        partneradresse: *ref_12
+        partneradresse: *ref_13
         externeKundenummerLieferant:
           type: string
           description: externeKundenummerLieferant
@@ -4279,7 +3975,7 @@ components:
             SAP-GP-Nummer) (Details siehe ExterneReferenz)
         geschaeftspartnerrolle:
           type: array
-          items: *ref_13
+          items: *ref_14
           description: |-
             Rolle, die der Geschäftspartner hat (z.B. Interessent, Kunde).
             NAD Z09 ORDERS

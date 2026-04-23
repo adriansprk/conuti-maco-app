@@ -122,19 +122,22 @@ paths:
                     absender:
                       rollencodenummer: '9904000000005'
                       rollencodetyp: BDEW
+                      martkrolle: LF
                     empfaenger:
                       rollencodenummer: '9900936000002'
                       rollencodetyp: BDEW
+                      martkrolle: NB
                     beteiligterMarktpartner:
                       rollencodenummer: '9900936000002'
                       rollencodetyp: BDEW
+                      martkrolle: LF
                     vertragsbeginn: '2025-10-31T23:00:00Z'
                     vertragsende: '2025-10-31T23:00:00Z'
                     endezumtermin: '2025-10-31T23:00:00Z'
                   zusatzdaten:
                     prozessId: 00505688-E4A2-1EDF-A0C2-C81842E2515E
                     eventname: ECS_LIEFERBEGINN
-                summary: Maximum
+                summary: Maximum Strom
               '2':
                 value:
                   stammdaten:
@@ -196,18 +199,21 @@ paths:
                     absender:
                       rollencodenummer: '9904000000005'
                       rollencodetyp: BDEW
+                      martkrolle: LF
                     empfaenger:
                       rollencodenummer: '9900936000002'
                       rollencodetyp: BDEW
+                      martkrolle: NB
                     beteiligterMarktpartner:
                       rollencodenummer: '9900936000002'
                       rollencodetyp: BDEW
+                      martkrolle: LF
                     vertragsbeginn: '2025-10-31T23:00:00Z'
                     endezumtermin: '2025-10-31T23:00:00Z'
                   zusatzdaten:
                     prozessId: 00505688-E4A2-1EDF-A0C2-C81842E2515E
                     eventname: ECS_LIEFERBEGINN
-                summary: Min Kdg u Anm
+                summary: Min Kdg u Anm Strom
               '3':
                 value:
                   stammdaten:
@@ -276,7 +282,396 @@ paths:
                   zusatzdaten:
                     prozessId: 00505688-E4A2-1EDF-A0C2-C81842E2515E
                     eventname: ECS_LIEFERBEGINN
-                summary: Min Anm
+                summary: Min Anmeldung Strom
+              '4':
+                value:
+                  stammdaten:
+                    MARKTLOKATION:
+                      - boTyp: MARKTLOKATION
+                        versionStruktur: '1'
+                        marktlokationsId: '50074561188'
+                        marktlokationsTyp:
+                          - typ: STANDARD_MARKTLOKATION
+                        sparte: GAS
+                        zaehlwerke:
+                          - obisKennzahl: 7-0:3.0.0
+                            konzessionsabgabe:
+                              satz: KAS
+                              kosten: 0.0013
+                              kategorie: Staffel 1 bis 10.000
+                        lokationsadresse:
+                          postleitzahl: '12345'
+                          ort: Ort
+                          strasse: Str.
+                          hausnummer: '1'
+                          landescode: DE
+                          zusatzInformation:
+                            zusatz1: Mustermann
+                            zusatz2: Max
+                    MESSLOKATION:
+                      - boTyp: MESSLOKATION
+                        versionStruktur: '1'
+                        sparte: GAS
+                        ablesekartenempfaenger:
+                          boTyp: GESCHAEFTSPARTNER
+                          versionStruktur: '1'
+                          name1: Mustermann
+                          name2: Max
+                          gewerbekennzeichnung: false
+                          geschaeftspartnerrolle:
+                            - ABLESEKARTENEMPFAENGER
+                          partneradresse:
+                            postleitzahl: '12345'
+                            ort: Ort
+                            strasse: Str
+                            hausnummer: '1'
+                            landescode: DE
+                    NETZNUTZUNGSVERTRAG:
+                      - boTyp: VERTRAG
+                        versionStruktur: '1'
+                        vertragsart: NETZNUTZUNGSVERTRAG
+                        sparte: GAS
+                        vertragsbeginn: '2024-05-01T04:00:00Z'
+                        vertragsende: '2024-05-01T04:00:00Z'
+                        vertragskonditionen:
+                          haushaltskunde: true
+                          netznutzungsvertrag: LIEFERANTEN_NB
+                          netznutzungszahler: LIEFERANT
+                        gemeinderabatt: 0
+                        lokationsId: '50074561188'
+                        lokationsTyp: MALO
+                    ENERGIELIEFERVERTRAG:
+                      - boTyp: VERTRAG
+                        versionStruktur: '1'
+                        vertragsart: ENERGIELIEFERVERTRAG
+                        sparte: GAS
+                        vertragspartner2:
+                          - boTyp: GESCHAEFTSPARTNER
+                            versionStruktur: '1'
+                            name1: Mustermann
+                            name2: Max
+                            gewerbekennzeichnung: false
+                            geschaeftspartnerrolle:
+                              - KUNDE
+                            externeReferenzen:
+                              - exRefName: Kundennummer beim Altlieferanten
+                                exRefWert: '99999999'
+                        vertragskonditionen:
+                          abrechnungsintervall: 12
+                        korrespondenzpartner:
+                          boTyp: GESCHAEFTSPARTNER
+                          versionStruktur: '1'
+                          name1: Mustermann
+                          name2: Max
+                          gewerbekennzeichnung: false
+                          partneradresse:
+                            postleitzahl: '12345'
+                            ort: Ort
+                            strasse: Str
+                            hausnummer: '1'
+                            landescode: DE
+                    ZAEHLER:
+                      - boTyp: ZAEHLER
+                        versionStruktur: '1'
+                        zaehlernummer: '12345667890'
+                        sparte: GAS
+                    BILANZIERUNG:
+                      - boTyp: BILANZIERUNG
+                        versionStruktur: '1'
+                        lastprofile:
+                          - bezeichnung: XYZ
+                            verfahren: SYNTHETISCH
+                            einspeisung: false
+                            profilart: ART_LASTPROFIL
+                            herausgeber: TUM
+                        bilanzkreise:
+                          - bezeichnung: 11Y0-0000-0076-N
+                            prioritaet: 1
+                          - bezeichnung: 11Y0-0000-0077-N
+                            prioritaet: 2
+                        jahresverbrauchsprognose:
+                          wert: 50000
+                          einheit: KWH
+                        kundenwert:
+                          wert: 4100
+                        fallgruppenzuordnung: GABI_RLMmT
+                  transaktionsdaten:
+                    transaktionsgrund: E01
+                    identifikationslogik: Z12
+                    sparte: GAS
+                    absender:
+                      rollencodenummer: '9800044300007'
+                      rollencodetyp: DVGW
+                      marktrolle: LF
+                    empfaenger:
+                      rollencodenummer: '9870013800007'
+                      rollencodetyp: DVGW
+                      marktrolle: NB
+                    beteiligterMarktpartner:
+                      rollencodenummer: '9900936000002'
+                      rollencodetyp: DVGW
+                      marktrolle: LF
+                    vertragsbeginn: '2025-10-31T23:00:00Z'
+                    vertragsende: '2025-10-31T23:00:00Z'
+                    endezumtermin: '2025-10-31T23:00:00Z'
+                  zusatzdaten:
+                    prozessId: 00505688-E4A2-1EDF-A0C2-C81842E2515E
+                    eventname: ECS_LIEFERBEGINN
+                summary: Maximum Gas
+              '5':
+                value:
+                  stammdaten:
+                    MARKTLOKATION:
+                      - boTyp: MARKTLOKATION
+                        versionStruktur: '1'
+                        marktlokationsTyp:
+                          - typ: STANDARD_MARKTLOKATION
+                        sparte: GAS
+                        zaehlwerke:
+                          - obisKennzahl: 7-0:3.0.0
+                            konzessionsabgabe:
+                              satz: KAS
+                              kosten: 0.0013
+                              kategorie: Staffel 1 bis 10.000
+                        lokationsadresse:
+                          postleitzahl: '12345'
+                          ort: Ort
+                          strasse: Str.
+                          hausnummer: '1'
+                          landescode: DE
+                          zusatzInformation:
+                            zusatz1: Mustermann
+                            zusatz2: Max
+                    MESSLOKATION:
+                      - boTyp: MESSLOKATION
+                        versionStruktur: '1'
+                        sparte: GAS
+                        ablesekartenempfaenger:
+                          boTyp: GESCHAEFTSPARTNER
+                          versionStruktur: '1'
+                          name1: Mustermann
+                          name2: Max
+                          gewerbekennzeichnung: false
+                          geschaeftspartnerrolle:
+                            - ABLESEKARTENEMPFAENGER
+                          partneradresse:
+                            postleitzahl: '12345'
+                            ort: Ort
+                            strasse: Str
+                            hausnummer: '1'
+                            landescode: DE
+                    NETZNUTZUNGSVERTRAG:
+                      - boTyp: VERTRAG
+                        versionStruktur: '1'
+                        vertragsart: NETZNUTZUNGSVERTRAG
+                        sparte: GAS
+                        vertragsbeginn: '2024-05-01T04:00:00Z'
+                        vertragsende: '2024-05-01T04:00:00Z'
+                        vertragskonditionen:
+                          haushaltskunde: true
+                          netznutzungsvertrag: LIEFERANTEN_NB
+                          netznutzungszahler: LIEFERANT
+                        gemeinderabatt: 0
+                        lokationsId: '50074561188'
+                        lokationsTyp: MALO
+                    ENERGIELIEFERVERTRAG:
+                      - boTyp: VERTRAG
+                        versionStruktur: '1'
+                        vertragsart: ENERGIELIEFERVERTRAG
+                        sparte: GAS
+                        vertragspartner2:
+                          - boTyp: GESCHAEFTSPARTNER
+                            versionStruktur: '1'
+                            name1: Mustermann
+                            name2: Max
+                            gewerbekennzeichnung: false
+                            geschaeftspartnerrolle:
+                              - KUNDE
+                            externeReferenzen:
+                              - exRefName: Kundennummer beim Altlieferanten
+                                exRefWert: '99999999'
+                        vertragskonditionen:
+                          abrechnungsintervall: 12
+                        korrespondenzpartner:
+                          boTyp: GESCHAEFTSPARTNER
+                          versionStruktur: '1'
+                          name1: Mustermann
+                          name2: Max
+                          gewerbekennzeichnung: false
+                          partneradresse:
+                            postleitzahl: '12345'
+                            ort: Ort
+                            strasse: Str
+                            hausnummer: '1'
+                            landescode: DE
+                    ZAEHLER:
+                      - boTyp: ZAEHLER
+                        versionStruktur: '1'
+                        zaehlernummer: '12345667890'
+                        sparte: GAS
+                    BILANZIERUNG:
+                      - boTyp: BILANZIERUNG
+                        versionStruktur: '1'
+                        lastprofile:
+                          - bezeichnung: XYZ
+                            verfahren: SYNTHETISCH
+                            einspeisung: false
+                            profilart: ART_LASTPROFIL
+                            herausgeber: TUM
+                        bilanzkreise:
+                          - bezeichnung: 11Y0-0000-0076-N
+                            prioritaet: 1
+                          - bezeichnung: 11Y0-0000-0077-N
+                            prioritaet: 2
+                        jahresverbrauchsprognose:
+                          wert: 50000
+                          einheit: KWH
+                        kundenwert:
+                          wert: 4100
+                        fallgruppenzuordnung: GABI_RLMmT
+                  transaktionsdaten:
+                    transaktionsgrund: E01
+                    identifikationslogik: Z12
+                    sparte: GAS
+                    absender:
+                      rollencodenummer: '9800044300007'
+                      rollencodetyp: DVGW
+                      marktrolle: LF
+                    empfaenger:
+                      rollencodenummer: '9870013800007'
+                      rollencodetyp: DVGW
+                      marktrolle: NB
+                    beteiligterMarktpartner:
+                      rollencodenummer: '9900936000002'
+                      rollencodetyp: DVGW
+                      marktrolle: LF
+                    vertragsbeginn: '2025-10-31T23:00:00Z'
+                    endezumtermin: '2025-10-31T23:00:00Z'
+                  zusatzdaten:
+                    prozessId: 00505688-E4A2-1EDF-A0C2-C81842E2515E
+                    eventname: ECS_LIEFERBEGINN
+                summary: Min Kdg und Anm Gas
+              '6':
+                value:
+                  stammdaten:
+                    MARKTLOKATION:
+                      - boTyp: MARKTLOKATION
+                        versionStruktur: '1'
+                        marktlokationsId: '50074561188'
+                        marktlokationsTyp:
+                          - typ: STANDARD_MARKTLOKATION
+                        sparte: GAS
+                        zaehlwerke:
+                          - obisKennzahl: 7-0:3.0.0
+                            konzessionsabgabe:
+                              satz: KAS
+                              kosten: 0.0013
+                              kategorie: Staffel 1 bis 10.000
+                    MESSLOKATION:
+                      - boTyp: MESSLOKATION
+                        versionStruktur: '1'
+                        sparte: GAS
+                        ablesekartenempfaenger:
+                          boTyp: GESCHAEFTSPARTNER
+                          versionStruktur: '1'
+                          name1: Mustermann
+                          name2: Max
+                          gewerbekennzeichnung: false
+                          geschaeftspartnerrolle:
+                            - ABLESEKARTENEMPFAENGER
+                          partneradresse:
+                            postleitzahl: '12345'
+                            ort: Ort
+                            strasse: Str
+                            hausnummer: '1'
+                            landescode: DE
+                    NETZNUTZUNGSVERTRAG:
+                      - boTyp: VERTRAG
+                        versionStruktur: '1'
+                        vertragsart: NETZNUTZUNGSVERTRAG
+                        sparte: GAS
+                        vertragsbeginn: '2024-05-01T04:00:00Z'
+                        vertragsende: '2024-05-01T04:00:00Z'
+                        vertragskonditionen:
+                          haushaltskunde: true
+                          netznutzungsvertrag: LIEFERANTEN_NB
+                          netznutzungszahler: LIEFERANT
+                        gemeinderabatt: 0
+                        lokationsId: '50074561188'
+                        lokationsTyp: MALO
+                    ENERGIELIEFERVERTRAG:
+                      - boTyp: VERTRAG
+                        versionStruktur: '1'
+                        vertragsart: ENERGIELIEFERVERTRAG
+                        sparte: GAS
+                        vertragspartner2:
+                          - boTyp: GESCHAEFTSPARTNER
+                            versionStruktur: '1'
+                            name1: Mustermann
+                            name2: Max
+                            gewerbekennzeichnung: false
+                            geschaeftspartnerrolle:
+                              - KUNDE
+                        vertragskonditionen:
+                          abrechnungsintervall: 12
+                        korrespondenzpartner:
+                          boTyp: GESCHAEFTSPARTNER
+                          versionStruktur: '1'
+                          name1: Mustermann
+                          name2: Max
+                          gewerbekennzeichnung: false
+                          partneradresse:
+                            postleitzahl: '12345'
+                            ort: Ort
+                            strasse: Str
+                            hausnummer: '1'
+                            landescode: DE
+                    ZAEHLER:
+                      - boTyp: ZAEHLER
+                        versionStruktur: '1'
+                        zaehlernummer: '12345667890'
+                        sparte: GAS
+                    BILANZIERUNG:
+                      - boTyp: BILANZIERUNG
+                        versionStruktur: '1'
+                        lastprofile:
+                          - bezeichnung: XYZ
+                            verfahren: SYNTHETISCH
+                            einspeisung: false
+                            profilart: ART_LASTPROFIL
+                            herausgeber: TUM
+                        bilanzkreise:
+                          - bezeichnung: 11Y0-0000-0076-N
+                            prioritaet: 1
+                          - bezeichnung: 11Y0-0000-0077-N
+                            prioritaet: 2
+                        jahresverbrauchsprognose:
+                          wert: 50000
+                          einheit: KWH
+                        kundenwert:
+                          wert: 4100
+                        fallgruppenzuordnung: GABI_RLMmT
+                  transaktionsdaten:
+                    transaktionsgrund: E01
+                    identifikationslogik: Z12
+                    sparte: GAS
+                    absender:
+                      rollencodenummer: '9800044300007'
+                      rollencodetyp: DVGW
+                      marktrolle: LF
+                    empfaenger:
+                      rollencodenummer: '9870013800007'
+                      rollencodetyp: DVGW
+                      marktrolle: NB
+                    beteiligterMarktpartner:
+                      rollencodenummer: '9900936000002'
+                      rollencodetyp: DVGW
+                      marktrolle: LF
+                    vertragsbeginn: '2025-10-31T23:00:00Z'
+                  zusatzdaten:
+                    prozessId: 00505688-E4A2-1EDF-A0C2-C81842E2515E
+                    eventname: ECS_LIEFERBEGINN
+                summary: Min Anmeldung Gas
       responses:
         '201':
           description: Erfolg | Success
@@ -686,6 +1081,12 @@ components:
                 - E01
             sparte:
               type: string
+            identifikationslogik:
+              type: string
+              description: |-
+                IMD+Z36 
+                Z12 mit Malo
+                Z13 ohne Malo
           required:
             - ausfuehrungsdatum
             - absender
@@ -693,6 +1094,7 @@ components:
             - transaktionsgrund
             - transaktionsgrundergaenzung
             - sparte
+            - identifikationslogik
           x-apidog-orders:
             - ausfuehrungsdatum
             - absender
@@ -705,6 +1107,7 @@ components:
             - transaktionsgrundergaenzung
             - transaktionsgrundergaenzungBefristeteAnmeldung
             - sparte
+            - identifikationslogik
           x-apidog-ignore-properties: []
         zusatzdaten:
           type: object

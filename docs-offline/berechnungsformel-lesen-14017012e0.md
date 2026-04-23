@@ -14,7 +14,7 @@ paths:
       summary: Berechnungsformel lesen
       deprecated: false
       description: >-
-        Lesen des Berechnunungsformel einer Lokation (Parameter1) vom Typ
+        Lesen der Berechnunungsformel einer Lokation (Parameter1) vom Typ
         (Parameter2 - default MALO) zum Stichtag (Parameter3)
       operationId: LESEN_BRECHNUNGSFORMEL_BASIS
       tags:
@@ -86,7 +86,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Berechnungsformel'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Berechnungsformel'
+                description: Liste der Berechnungsformeln
               example:
                 boTyp: BERECHNUNGSFORMEL
                 versionStruktur: '1'

@@ -87,7 +87,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Vertrag'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Vertrag'
+                description: Liste der Messstellenbetriebsverträge
           headers: {}
           x-apidog-name: OK
         '400':

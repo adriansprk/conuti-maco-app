@@ -5,7 +5,7 @@
 ## Docs
 
 - [Avis lesen](https://doc.macoapp.de/avis-lesen-14017011e0.md): Lesen des Avises mittels Avisnummer (Parameter1) 
-- [Berechnungsformel lesen](https://doc.macoapp.de/berechnungsformel-lesen-14017012e0.md): Lesen des Berechnunungsformel einer Lokation (Parameter1) vom Typ (Parameter2 - default MALO) zum Stichtag (Parameter3)
+- [Berechnungsformel lesen](https://doc.macoapp.de/berechnungsformel-lesen-14017012e0.md): Lesen der Berechnunungsformel einer Lokation (Parameter1) vom Typ (Parameter2 - default MALO) zum Stichtag (Parameter3)
 - [Bilanzierung lesen](https://doc.macoapp.de/bilanzierung-lesen-14017013e0.md): Lesen einer Bilanzierung mittels LokationsId (Parameter1) zum Zeitpunkt (Parameter3)
 - [Energieliefervertrag lesen](https://doc.macoapp.de/energieliefervertrag-lesen-14017014e0.md): Lesen des Energieliefervertrages einer Lokation (Parameter1) vom Typ (Parameter2 - default MALO) zum Stichtag (Parameter3)
 - [Energiemengen aus Abrechnungskontext  lesen](https://doc.macoapp.de/energiemengen-aus-abrechnungskontext-lesen-14017015e0.md): Lesen der Energiemengen aus Abrechnungskontext über eine LokationId (Parameter1) und LokationsTyp (Parameter2) in einer Range (Parameter3/Parameter4) und einer OBIS Kennzahl (Parameter5 optional)

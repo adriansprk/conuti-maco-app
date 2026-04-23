@@ -75,7 +75,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TechnischeRessource'
+                type: array
+                items:
+                  $ref: '#/components/schemas/TechnischeRessource'
+                description: Liste der Technischen Ressourcen
           headers: {}
           x-apidog-name: OK
         '400':

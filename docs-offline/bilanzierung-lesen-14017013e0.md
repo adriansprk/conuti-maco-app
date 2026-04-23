@@ -84,7 +84,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Bilanzierung'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Bilanzierung'
+                description: Liste der Bilanzierung
               example:
                 stammdaten:
                   BILANZIERUNG:

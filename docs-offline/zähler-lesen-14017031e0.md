@@ -73,7 +73,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Zaehler'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Zaehler'
+                description: Liste der Zähler
           headers: {}
           x-apidog-name: OK
         '400':

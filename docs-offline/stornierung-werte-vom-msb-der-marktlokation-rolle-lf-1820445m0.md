@@ -15,7 +15,7 @@
       
       <Tab title="📄13006 Messwert Storno">
           <Accordion title="PI_13006" defaultOpen={false}>
-               
+               <DataSchema id="13310926" />
           </Accordion>
       </Tab>
     </Tabs>
@@ -31,7 +31,7 @@
       </Tab>
        <Tab title="📄13006 Messwert Storno">
           <Accordion title="PI_13006" defaultOpen={false}>
-                 <DataSchema id="5562216" />
+                 <DataSchema id="13310926" />
           </Accordion>
        </Tab>
         
