@@ -13,115 +13,176 @@
 - [Prozessdaten LF (Backend)](https://doc.macoapp.de/prozessdaten-lf-backend-3036640f0.md): 
 - [Prozessdaten NB (Backend)](https://doc.macoapp.de/prozessdaten-nb-backend-3187931f0.md): 
 - [Prozessdaten MSB (Backend)](https://doc.macoapp.de/prozessdaten-msb-backend-3188572f0.md): 
-- MaLo-Ident [Übersicht](https://doc.macoapp.de/%C3%BCbersicht-895124m0.md): 
 - [Übersicht](https://doc.macoapp.de/%C3%BCbersicht-1819302m0.md): 
 - [Abkürzungsverzeichnis](https://doc.macoapp.de/abk%C3%BCrzungsverzeichnis-1623168m0.md): 
-- [Lieferant](https://doc.macoapp.de/lief.md): 
-- Lieferant [Malo-Ident (Rolle LF)](https://doc.macoapp.de/malo-ident-rolle-lf-3119288f0.md): 
-- Lieferant > Malo-Ident (Rolle LF) [Prozessübersicht](https://doc.macoapp.de/prozess%C3%BCbersicht-860918m0.md): 
-- Lieferant [Kündigung LFA](https://doc.macoapp.de/k%C3%BCndigung-lfa-3118804f0.md): 
-- Lieferant > Kündigung LFA [Prozessübersicht](https://doc.macoapp.de/prozess%C3%BCbersicht-860885m0.md): 
-- Lieferant > Kündigung LFA > EBD [EBD E_0614](https://doc.macoapp.de/lf_0614.md): 
-- Lieferant [Kündigung LFN](https://doc.macoapp.de/k%C3%BCndigung-lfn-3118848f0.md): 
-- Lieferant > Kündigung LFN [Prozessübersicht](https://doc.macoapp.de/prozess%C3%BCbersicht-860891m0.md): 
-- Lieferant [Stornierung](https://doc.macoapp.de/stornierung-5000861f0.md): 
-- Lieferant > Stornierung [Prozessübersicht](https://doc.macoapp.de/prozess%C3%BCbersicht-1621227m0.md): 
-- Lieferant [Lieferbeginn (Rolle LFN)](https://doc.macoapp.de/lieferbeginn.md): 
-- Lieferant > Lieferbeginn (Rolle LFN) [Prozessübersicht](https://doc.macoapp.de/prozess%C3%BCbersicht-853953m0.md): 
-- Lieferant [Abmeldeanfrage NB -> LF (Rolle LFA)](https://doc.macoapp.de/abmeldeanfrage-nb-lf-rolle-lfa-3118774f0.md): 
-- Lieferant > Abmeldeanfrage NB -> LF (Rolle LFA) [Abmeldeanfrage NB -> LF (Rolle LFA)](https://doc.macoapp.de/abmeldeanfrage-nb-lf-rolle-lfa-860871m0.md): 
-- Lieferant > Abmeldeanfrage NB -> LF (Rolle LFA) > EBD [EBD E_0624](https://doc.macoapp.de/ebd-e-0624-860873m0.md): 
-- Lieferant [Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle LFZ)](https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-3130103f0.md): 
-- Lieferant > Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle LFZ) [Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle LFZ)](https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-861876m0.md): 
-- Lieferant [Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle LFA)](https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-3130117f0.md): 
-- Lieferant > Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle LFA) [Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle LFA)](https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-861878m0.md): 
-- Lieferant [Abrechnungsdaten Netznutzungsabrechnung (Rolle LF)](https://doc.macoapp.de/abrechnungsdaten-netznutzungsabrechnung-rolle-lf-3130129f0.md): 
-- Lieferant > Abrechnungsdaten Netznutzungsabrechnung (Rolle LF) [Abrechnungsdaten Netznutzungsabrechnung (Rolle LF)](https://doc.macoapp.de/abrechnungsdaten-netznutzungsabrechnung-rolle-lf-861883m0.md): 
-- Lieferant > Abrechnungsdaten Netznutzungsabrechnung (Rolle LF) > EBD [EBD E_0610](https://doc.macoapp.de/ebd-e-0610-861884m0.md): 
-- Lieferant [Abrechnungsdaten Bilanzkreisabrechnung (Rolle LF)](https://doc.macoapp.de/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md): 
-- Lieferant > Abrechnungsdaten Bilanzkreisabrechnung (Rolle LF) [Abrechnungsdaten Bilanzkreisabrechnung (Rolle LF)](https://doc.macoapp.de/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-861885m0.md): 
-- Lieferant > Abrechnungsdaten Bilanzkreisabrechnung (Rolle LF) > EBD [EBD E_0611](https://doc.macoapp.de/ebd-e-0611-861890m0.md): 
-- Lieferant [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle LF)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md): 
-- Lieferant > Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle LF) [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle LF)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md): 
-- Lieferant > Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle LF) > EBD [EBD_0408](https://doc.macoapp.de/ebd-0408-1664123m0.md): 
-- Lieferant [Stammdatenänderung vom MSB (verantwortlich) (Rolle LF)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md): 
-- Lieferant > Stammdatenänderung vom MSB (verantwortlich) (Rolle LF) [Stammdatenänderung vom MSB (verantwortlich) (Rolle LF)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-lf-861900m0.md): 
-- Lieferant > Stammdatenänderung vom MSB (verantwortlich) (Rolle LF) > EBD [EBD_0412](https://doc.macoapp.de/ebd-0412-1664125m0.md): 
-- Lieferant [Berechnungsformel (Rolle LF)](https://doc.macoapp.de/berechnungsformel-rolle-lf-3130236f0.md): 
-- Lieferant > Berechnungsformel (Rolle LF) [Berechnungsformel (Rolle LF)](https://doc.macoapp.de/berechnungsformel-rolle-lf-861896m0.md): 
-- Lieferant [Lieferende LF -> NB (Rolle LF)](https://doc.macoapp.de/lieferende-lf-nb-rolle-lf-3119196f0.md): 
-- Lieferant > Lieferende LF -> NB (Rolle LF) [Lieferende LF -> NB (Rolle LF)](https://doc.macoapp.de/lieferende-lf-nb-rolle-lf-860905m0.md): 
-- Lieferant [Lieferende NB -> LF (Rolle LF)](https://doc.macoapp.de/lieferende-nb-lf-rolle-lf-3129676f0.md): 
-- Lieferant > Lieferende NB -> LF (Rolle LF) [Lieferende NB -> LF (Rolle LF)](https://doc.macoapp.de/lieferende-nb-lf-rolle-lf-861871m0.md): 
-- Lieferant > Lieferende NB -> LF (Rolle LF) > EBD [EBD E_0609](https://doc.macoapp.de/ebd-e-0609-861872m0.md): 
-- Lieferant [Beginn der Ersatz-/Grundversorgung (Rolle LF)](https://doc.macoapp.de/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md): 
-- Lieferant > Beginn der Ersatz-/Grundversorgung (Rolle LF) [Beginn der Ersatz-/Grundversorgung (Rolle LF)](https://doc.macoapp.de/beginn-der-ersatz-grundversorgung-rolle-lf-861880m0.md): 
-- Lieferant > Beginn der Ersatz-/Grundversorgung (Rolle LF) > EBD [EBD E_0615](https://doc.macoapp.de/ebd-e-0615-861882m0.md): 
-- Lieferant > Bestellung einer Konfiguration vom LF an MSB ( LF ) [Bestellung einer Konfiguration vom LF an MSB ( LF )](https://doc.macoapp.de/bestellung-einer-konfiguration-vom-lf-an-msb-lf-1677424m0.md): 
-- Lieferant > Überprüfung einer EEG-Marktlokation mit DV-Pflicht auf 100% LF-Zuordnung ( Rolle LF ) [Überprüfung einer EEG-Marktlokation mit DV-Pflicht auf 100% LF-Zuordnung ( Rolle LF )](https://doc.macoapp.de/%C3%BCberpr%C3%BCfung-einer-eeg-marktlokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-lf-1677940m0.md): 
-- Lieferant > Überprüfung einer EEG-Marktlokation mit DV-Pflicht auf 100% LF-Zuordnung ( Rolle LF ) [E_0603, E_0604, E_0605, E_0606](https://doc.macoapp.de/e-0603-e-0604-e-0605-e-0606-1677942m0.md): 
-- Lieferant > Aufbereitung und Übermittlung von Werten vom MSB der Marktlokation (Rolle LF) [Aufbereitung und Übermittlung von Werten vom MSB der Marktlokation (Rolle LF)](https://doc.macoapp.de/aufbereitung-und-%C3%BCbermittlung-von-werten-vom-msb-der-marktlokation-rolle-lf-1820159m0.md): 
-- Lieferant > Übermittlung der bisher gemessenen Arbeits- und Leistungswerte (Rolle LF) [Übermittlung der bisher gemessenen Arbeits- und Leistungswerte (Rolle LF)](https://doc.macoapp.de/%C3%BCbermittlung-der-bisher-gemessenen-arbeits-und-leistungswerte-rolle-lf-1820160m0.md): 
-- Lieferant > Übermittlung von Werten nach Typ 2 vom MSB an NB oder LF (Rolle LF) [Übermittlung von Werten nach Typ 2 vom MSB an NB oder LF (Rolle LF)](https://doc.macoapp.de/%C3%BCbermittlung-von-werten-nach-typ-2-vom-msb-an-nb-oder-lf-rolle-lf-1820441m0.md): 
-- Lieferant [Stornierung Werte vom MSB der Marktlokation (Rolle LF)](https://doc.macoapp.de/stornierung-werte-vom-msb-der-marktlokation-rolle-lf-5825047f0.md): 
-- Lieferant > Stornierung Werte vom MSB der Marktlokation (Rolle LF) [Stornierung Werte vom MSB der Marktlokation (Rolle LF)](https://doc.macoapp.de/stornierung-werte-vom-msb-der-marktlokation-rolle-lf-1820445m0.md): 
-- [Netzbetreiber](https://doc.macoapp.de/netzbetreiber-3108591f0.md): 
-- Netzbetreiber [Malo-Ident (Rolle NB)](https://doc.macoapp.de/malo-ident-rolle-nb-3119292f0.md): 
-- Netzbetreiber > Malo-Ident (Rolle NB) [Prozessübersicht](https://doc.macoapp.de/prozess%C3%BCbersicht-860919m0.md): 
-- Netzbetreiber > Malo-Ident (Rolle NB) [EBD](https://doc.macoapp.de/ebd-3119296f0.md): 
-- Netzbetreiber > Malo-Ident (Rolle NB) > EBD [E_0594_Anfrage vom LF prüfen](https://doc.macoapp.de/ebd-e-0594-894801m0.md): E_0594_Anfrage vom LF prüfen
-- Netzbetreiber [Lieferbeginn (Rolle NB)](https://doc.macoapp.de/lieferbeginn-rolle-nb-3108594f0.md): 
-- Netzbetreiber > Lieferbeginn (Rolle NB) [Lieferbeginn (Rolle NB)](https://doc.macoapp.de/lieferbeginn-rolle-nb-860854m0.md): 
-- Netzbetreiber > Lieferbeginn (Rolle NB) > EBD [E_0622](https://doc.macoapp.de/e-0622-860859m0.md): 
-- Netzbetreiber > Lieferbeginn (Rolle NB) > EBD [E_0621](https://doc.macoapp.de/e-0621-860861m0.md): 
-- Netzbetreiber > Lieferbeginn (Rolle NB) > EBD [E_0623](https://doc.macoapp.de/e-0623-860863m0.md): 
-- Netzbetreiber [Abmeldeanfrage NB -> LFA (Rolle NB)](https://doc.macoapp.de/abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md): 
-- Netzbetreiber > Abmeldeanfrage NB -> LFA (Rolle NB) [Abmeldeanfrage NB -> LFA (Rolle NB)](https://doc.macoapp.de/abmeldeanfrage-nb-lfa-rolle-nb-860877m0.md): 
-- Netzbetreiber [Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle NB)](https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md): 
-- Netzbetreiber > Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle NB) [Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle NB)](https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-861913m0.md): 
-- Netzbetreiber [Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle NB)](https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md): 
-- Netzbetreiber > Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle NB) [Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle NB)](https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-861915m0.md): 
-- Netzbetreiber [Abrechnungsdaten Netznutzungsabrechnung (Rolle NB)](https://doc.macoapp.de/abrechnungsdaten-netznutzungsabrechnung-rolle-nb-3130409f0.md): 
-- Netzbetreiber > Abrechnungsdaten Netznutzungsabrechnung (Rolle NB) [Abrechnungsdaten Netznutzungsabrechnung (Rolle NB)](https://doc.macoapp.de/abrechnungsdaten-netznutzungsabrechnung-rolle-nb-861920m0.md): 
-- Netzbetreiber [Abrechnungsdaten Bilanzkreisabrechnung (Rolle NB)](https://doc.macoapp.de/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md): 
-- Netzbetreiber > Abrechnungsdaten Bilanzkreisabrechnung (Rolle NB) [Abrechnungsdaten Bilanzkreisabrechnung (Rolle NB)](https://doc.macoapp.de/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-861922m0.md): 
-- Netzbetreiber [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle NB)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md): 
-- Netzbetreiber > Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle NB) [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle NB)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md): 
-- Netzbetreiber [Stammdatenänderung vom MSB (verantwortlich) (Rolle NB)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md): 
-- Netzbetreiber > Stammdatenänderung vom MSB (verantwortlich) (Rolle NB) [Stammdatenänderung vom MSB (verantwortlich) (Rolle NB)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-nb-861944m0.md): 
-- Netzbetreiber > Stammdatenänderung vom MSB (verantwortlich) (Rolle NB) > EBD [EBD E_0415](https://doc.macoapp.de/ebd-e-0415-861945m0.md): 
-- Netzbetreiber [Einrichtung der Konfiguration aufgrund einer Zuordnung eines LF zu einer Marktlokation oder Tranche (Rolle NB)](https://doc.macoapp.de/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md): 
-- Netzbetreiber > Einrichtung der Konfiguration aufgrund einer Zuordnung eines LF zu einer Marktlokation oder Tranche (Rolle NB) [Einrichtung der Konfiguration aufgrund einer Zuordnung eines LF zu einer Marktlokation oder Tranche (Rolle NB)](https://doc.macoapp.de/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-861937m0.md): 
-- Netzbetreiber [Berechnungsformel (Rolle NB)](https://doc.macoapp.de/berechnungsformel-rolle-nb-3130464f0.md): 
-- Netzbetreiber > Berechnungsformel (Rolle NB) [Berechnungsformel (Rolle NB)](https://doc.macoapp.de/berechnungsformel-rolle-nb-861955m0.md): 
-- Netzbetreiber [Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle NB)](https://doc.macoapp.de/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-nb-3130602f0.md): 
-- Netzbetreiber > Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle NB) [Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle NB)](https://doc.macoapp.de/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-nb-861947m0.md): 
-- Netzbetreiber [Lieferende LF -> NB (Rolle NB)](https://doc.macoapp.de/lieferende-lf-nb-rolle-nb-3119240f0.md): 
-- Netzbetreiber > Lieferende LF -> NB (Rolle NB) [Lieferende LF -> NB (Rolle NB)](https://doc.macoapp.de/lieferende-lf-nb-rolle-nb-860912m0.md): 
-- Netzbetreiber > Lieferende LF -> NB (Rolle NB) > EBD [E_0607](https://doc.macoapp.de/e-0607-860914m0.md): 
-- Netzbetreiber [Lieferende NB → LF (Rolle NB)](https://doc.macoapp.de/lieferende-nb-lf-rolle-nb-3130313f0.md): 
-- Netzbetreiber > Lieferende NB → LF (Rolle NB) [Lieferende NB → LF (Rolle NB)](https://doc.macoapp.de/lieferende-nb-lf-rolle-nb-861909m0.md): 
-- Netzbetreiber [Beginn der Ersatz-/Grundversorgung (Rolle NB)](https://doc.macoapp.de/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md): 
-- Netzbetreiber > Beginn der Ersatz-/Grundversorgung (Rolle NB) [Beginn der Ersatz-/Grundversorgung (Rolle NB)](https://doc.macoapp.de/beginn-der-ersatz-grundversorgung-rolle-nb-861924m0.md): 
-- Netzbetreiber [Stornierung](https://doc.macoapp.de/stornierung-5001068f0.md): 
-- Netzbetreiber > Stornierung [Prozessübersicht](https://doc.macoapp.de/prozess%C3%BCbersicht-1621259m0.md): 
-- Netzbetreiber > Überprüfung einer EEG-Marktlokation mit DV-Pflicht auf 100% LF-Zuordnung ( Rolle NB VNB ) [Überprüfung einer EEG-Marktlokation mit DV-Pflicht auf 100% LF-Zuordnung ( Rolle NB VNB )](https://doc.macoapp.de/%C3%BCberpr%C3%BCfung-einer-eeg-marktlokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-nb-vnb-1678015m0.md): 
-- [Messstellenbetreiber](https://doc.macoapp.de/messstellenbetreiber-3108784f0.md): 
-- Messstellenbetreiber [Einrichtung der Konfigurationen aufgrund einer Zuordnung eines LF (MSB)](https://doc.macoapp.de/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md): 
-- Messstellenbetreiber > Einrichtung der Konfigurationen aufgrund einer Zuordnung eines LF (MSB) [Einrichtung der Konfigurationen aufgrund einer Zuordnung eines LF (MSB)](https://doc.macoapp.de/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-881450m0.md): 
-- Messstellenbetreiber [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle MSB)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md): 
-- Messstellenbetreiber > Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle MSB) [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle MSB)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-msb-861950m0.md): 
-- Messstellenbetreiber > Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle MSB) > EBD [EBD E_0409](https://doc.macoapp.de/ebd-e-0409-861952m0.md): 
-- Messstellenbetreiber [Stammdatenänderung vom MSB (verantwortlich) (Rolle MSB)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md): 
-- Messstellenbetreiber > Stammdatenänderung vom MSB (verantwortlich) (Rolle MSB) [Stammdatenänderung vom MSB (verantwortlich) (Rolle MSB)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-msb-861960m0.md): 
-- Messstellenbetreiber > Stammdatenänderung vom MSB (verantwortlich) (Rolle MSB) > EBD [EBD E_0634](https://doc.macoapp.de/ebd-e-0634-881448m0.md): 
-- Messstellenbetreiber > Stammdatenänderung vom MSB (verantwortlich) (Rolle MSB) > EBD [EBD E_0635](https://doc.macoapp.de/ebd-e-0635-881449m0.md): 
-- Messstellenbetreiber [Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle MSB)](https://doc.macoapp.de/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-msb-3130714f0.md): 
-- Messstellenbetreiber > Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle MSB) [Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle MSB)](https://doc.macoapp.de/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-msb-861961m0.md): 
-- Messstellenbetreiber [Stornierung](https://doc.macoapp.de/stornierung-5001051f0.md): 
-- Messstellenbetreiber > Stornierung [Prozessübersicht](https://doc.macoapp.de/prozess%C3%BCbersicht-1621257m0.md): 
-- [Steuerprozesse nach Kundenanforderung](https://doc.macoapp.de/steuerprozesse-nach-kundenanforderung-3139945f0.md): 
-- Steuerprozesse nach Kundenanforderung [ECS_Lieferbeginn (Rolle LF)](https://doc.macoapp.de/ecs-lieferbeginn-rolle-lf-863431m0.md): 
+- [Roadmap](https://doc.macoapp.de/roadmap-1867368m0.md): 
+- STROM > Lieferant [Steuerprozesse nach Kundenanforderung](https://doc.macoapp.de/steuerprozesse-nach-kundenanforderung-6624435f0.md): 
+- STROM > Lieferant > Steuerprozesse nach Kundenanforderung [ECS_Lieferbeginn (Rolle LF)](https://doc.macoapp.de/ecs-lieferbeginn-rolle-lf-863431m0.md): 
+- STROM > Lieferant [Malo-Ident (Rolle LF)](https://doc.macoapp.de/malo-ident-rolle-lf-3119288f0.md): 
+- STROM > Lieferant > Malo-Ident (Rolle LF) [Prozessübersicht](https://doc.macoapp.de/prozess%C3%BCbersicht-860918m0.md): 
+- STROM > Lieferant > Neuanlage [Neuanlage](https://doc.macoapp.de/neuanlage-1923206m0.md): 
+- STROM > Lieferant [Lieferbeginn STROM (Rolle LFN)](https://doc.macoapp.de/lieferbeginn.md): 
+- STROM > Lieferant > Lieferbeginn STROM (Rolle LFN) [Prozessübersicht](https://doc.macoapp.de/prozess%C3%BCbersicht-853953m0.md): 
+- STROM > Lieferant [Lieferende NB -> LF (Rolle LF)](https://doc.macoapp.de/lieferende-nb-lf-rolle-lf-3129676f0.md): 
+- STROM > Lieferant > Lieferende NB -> LF (Rolle LF) [Lieferende NB -> LF (Rolle LF)](https://doc.macoapp.de/lieferende-nb-lf-rolle-lf-861871m0.md): 
+- STROM > Lieferant > Lieferende NB -> LF (Rolle LF) > EBD [EBD E_0609](https://doc.macoapp.de/ebd-e-0609-861872m0.md): 
+- STROM > Lieferant [Lieferende LF -> NB (Rolle LF)](https://doc.macoapp.de/lieferende-lf-nb-rolle-lf-3119196f0.md): 
+- STROM > Lieferant > Lieferende LF -> NB (Rolle LF) [Lieferende LF -> NB (Rolle LF)](https://doc.macoapp.de/lieferende-lf-nb-rolle-lf-860905m0.md): 
+- STROM > Lieferant [Kündigung LFA](https://doc.macoapp.de/k%C3%BCndigung-lfa-3118804f0.md): 
+- STROM > Lieferant > Kündigung LFA [Prozessübersicht](https://doc.macoapp.de/prozess%C3%BCbersicht-860885m0.md): 
+- STROM > Lieferant > Kündigung LFA > EBD [EBD E_0614](https://doc.macoapp.de/lf_0614.md): 
+- STROM > Lieferant [Kündigung LFN](https://doc.macoapp.de/k%C3%BCndigung-lfn-3118848f0.md): 
+- STROM > Lieferant > Kündigung LFN [Prozessübersicht](https://doc.macoapp.de/prozess%C3%BCbersicht-860891m0.md): 
+- STROM > Lieferant [Stornierung](https://doc.macoapp.de/stornierung-5000861f0.md): 
+- STROM > Lieferant > Stornierung [Prozessübersicht](https://doc.macoapp.de/prozess%C3%BCbersicht-1621227m0.md): 
+- STROM > Lieferant [Abmeldeanfrage STROM NB -> LF (Rolle LFA)](https://doc.macoapp.de/abmeldeanfrage-strom-nb-lf-rolle-lfa-3118774f0.md): 
+- STROM > Lieferant > Abmeldeanfrage STROM NB -> LF (Rolle LFA) [Abmeldeanfrage NB -> LF (Rolle LFA)](https://doc.macoapp.de/abmeldeanfrage-nb-lf-rolle-lfa-860871m0.md): 
+- STROM > Lieferant > Abmeldeanfrage STROM NB -> LF (Rolle LFA) > EBD [EBD E_0624](https://doc.macoapp.de/ebd-e-0624-860873m0.md): 
+- STROM > Lieferant [Beginn der Ersatz-/Grundversorgung (Rolle LF)](https://doc.macoapp.de/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md): 
+- STROM > Lieferant > Beginn der Ersatz-/Grundversorgung (Rolle LF) [Beginn der Ersatz-/Grundversorgung (Rolle LF)](https://doc.macoapp.de/beginn-der-ersatz-grundversorgung-rolle-lf-861880m0.md): 
+- STROM > Lieferant > Beginn der Ersatz-/Grundversorgung (Rolle LF) > EBD [EBD E_0615](https://doc.macoapp.de/ebd-e-0615-861882m0.md): 
+- STROM > Lieferant [Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle LFZ)](https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-3130103f0.md): 
+- STROM > Lieferant > Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle LFZ) [Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle LFZ)](https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-861876m0.md): 
+- STROM > Lieferant [Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Lieferant alt)](https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-lieferant-alt-3130117f0.md): 
+- STROM > Lieferant > Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Lieferant alt) [Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle LFA)](https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-861878m0.md): 
+- STROM > Lieferant [Berechnungsformel (Rolle LF)](https://doc.macoapp.de/berechnungsformel-rolle-lf-3130236f0.md): 
+- STROM > Lieferant > Berechnungsformel (Rolle LF) [Berechnungsformel (Rolle LF)](https://doc.macoapp.de/berechnungsformel-rolle-lf-861896m0.md): 
+- STROM > Lieferant [Abrechnungsdaten Bilanzkreisabrechnung (Rolle LF)](https://doc.macoapp.de/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md): 
+- STROM > Lieferant > Abrechnungsdaten Bilanzkreisabrechnung (Rolle LF) [Abrechnungsdaten Bilanzkreisabrechnung (Rolle LF)](https://doc.macoapp.de/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-861885m0.md): 
+- STROM > Lieferant > Abrechnungsdaten Bilanzkreisabrechnung (Rolle LF) > EBD [EBD E_0611](https://doc.macoapp.de/ebd-e-0611-861890m0.md): 
+- STROM > Lieferant [Abrechnungsdaten Netznutzungsabrechnung (Rolle LF)](https://doc.macoapp.de/abrechnungsdaten-netznutzungsabrechnung-rolle-lf-3130129f0.md): 
+- STROM > Lieferant > Abrechnungsdaten Netznutzungsabrechnung (Rolle LF) [Abrechnungsdaten Netznutzungsabrechnung (Rolle LF)](https://doc.macoapp.de/abrechnungsdaten-netznutzungsabrechnung-rolle-lf-861883m0.md): 
+- STROM > Lieferant > Abrechnungsdaten Netznutzungsabrechnung (Rolle LF) > EBD [EBD E_0610](https://doc.macoapp.de/ebd-e-0610-861884m0.md): 
+- STROM > Lieferant [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle LF)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md): 
+- STROM > Lieferant > Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle LF) [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle LF)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md): 
+- STROM > Lieferant > Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle LF) > EBD [EBD_0408](https://doc.macoapp.de/ebd-0408-1664123m0.md): 
+- STROM > Lieferant [Stammdatenänderung vom MSB (verantwortlich) (Rolle LF)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md): 
+- STROM > Lieferant > Stammdatenänderung vom MSB (verantwortlich) (Rolle LF) [Stammdatenänderung vom MSB (verantwortlich) (Rolle LF)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-lf-861900m0.md): 
+- STROM > Lieferant > Stammdatenänderung vom MSB (verantwortlich) (Rolle LF) > EBD [EBD_0412](https://doc.macoapp.de/ebd-0412-1664125m0.md): 
+- STROM > Lieferant > Bestellung einer Änderung von Abrechnungsdaten von LF an NB (Rolle LF) [Bestellung einer Änderung von Abrechnungsdaten von LF an NB (Rolle LF)](https://doc.macoapp.de/bestellung-einer-%C3%A4nderung-von-abrechnungsdaten-von-lf-an-nb-rolle-lf-1868358m0.md): 
+- STROM > Lieferant > Bestellung zur Stammdatenänderung an NB / MSB (Lieferant) [Bestellung zur Stammdatenänderung an NB / MSB (Lieferant)](https://doc.macoapp.de/bestellung-zur-stammdaten%C3%A4nderung-an-nb-msb-lieferant-1923320m0.md): 
+- STROM > Lieferant > Bestellung einer Konfiguration vom LF an MSB ( LF ) [Bestellung einer Konfiguration vom LF an MSB ( LF )](https://doc.macoapp.de/bestellung-einer-konfiguration-vom-lf-an-msb-lf-1677424m0.md): 
+- STROM > Lieferant > Bestellung einer Konfiguration vom LF an NB ( LF ) [Bestellung einer Konfiguration vom LF an NB ( LF )](https://doc.macoapp.de/bestellung-einer-konfiguration-vom-lf-an-nb-lf-1885959m0.md): 
+- STROM > Lieferant > Überprüfung einer EEG-Marktlokation mit DV-Pflicht auf 100% LF-Zuordnung ( Rolle LF ) [Überprüfung einer EEG-Marktlokation mit DV-Pflicht auf 100% LF-Zuordnung ( Rolle LF )](https://doc.macoapp.de/%C3%BCberpr%C3%BCfung-einer-eeg-marktlokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-lf-1677940m0.md): 
+- STROM > Lieferant > Überprüfung einer EEG-Marktlokation mit DV-Pflicht auf 100% LF-Zuordnung ( Rolle LF ) [E_0603, E_0604, E_0605, E_0606](https://doc.macoapp.de/e-0603-e-0604-e-0605-e-0606-1677942m0.md): 
+- STROM > Lieferant > Aufbereitung und Übermittlung von Werten vom MSB der Marktlokation (Rolle LF) [Aufbereitung und Übermittlung von Werten vom MSB der Marktlokation (Rolle LF)](https://doc.macoapp.de/aufbereitung-und-%C3%BCbermittlung-von-werten-vom-msb-der-marktlokation-rolle-lf-1820159m0.md): 
+- STROM > Lieferant > Übermittlung der bisher gemessenen Arbeits- und Leistungswerte (Rolle LF) [Übermittlung der bisher gemessenen Arbeits- und Leistungswerte (Rolle LF)](https://doc.macoapp.de/%C3%BCbermittlung-der-bisher-gemessenen-arbeits-und-leistungswerte-rolle-lf-1820160m0.md): 
+- STROM > Lieferant > Übermittlung von Werten nach Typ 2 vom MSB an NB oder LF (Rolle LF) [Übermittlung von Werten nach Typ 2 vom MSB an NB oder LF (Rolle LF)](https://doc.macoapp.de/%C3%BCbermittlung-von-werten-nach-typ-2-vom-msb-an-nb-oder-lf-rolle-lf-1820441m0.md): 
+- STROM > Lieferant [Stornierung Werte vom MSB der Marktlokation (Rolle LF)](https://doc.macoapp.de/stornierung-werte-vom-msb-der-marktlokation-rolle-lf-5825047f0.md): 
+- STROM > Lieferant > Stornierung Werte vom MSB der Marktlokation (Rolle LF) [Stornierung Werte vom MSB der Marktlokation (Rolle LF)](https://doc.macoapp.de/stornierung-werte-vom-msb-der-marktlokation-rolle-lf-1820445m0.md): 
+- STROM > Lieferant > Übermittlung von Zählerständen vom LF (RolleLF) [Übermittlung von Zählerständen vom LF (Rolle LF)](https://doc.macoapp.de/%C3%BCbermittlung-von-z%C3%A4hlerst%C3%A4nden-vom-lf-rolle-lf-1915437m0.md): 
+- STROM > Lieferant > Netznutzungsabrechnung [Netznutzungsabrechnung](https://doc.macoapp.de/netznutzungsabrechnung-1981958m0.md): 
+- STROM > Lieferant > Mehr-/Mindermengenabrechnung zwischen NB und LF ( Rolle LF ) [Mehr-/Mindermengenabrechnung zwischen NB und LF ( Rolle LF )](https://doc.macoapp.de/mehr-mindermengenabrechnung-zwischen-nb-und-lf-rolle-lf-2112739m0.md): 
+- STROM [Netzbetreiber](https://doc.macoapp.de/netzbetreiber-3108591f0.md): 
+- STROM > Netzbetreiber [Malo-Ident (Rolle NB)](https://doc.macoapp.de/malo-ident-rolle-nb-3119292f0.md): 
+- STROM > Netzbetreiber > Malo-Ident (Rolle NB) [Prozessübersicht](https://doc.macoapp.de/prozess%C3%BCbersicht-860919m0.md): 
+- STROM > Netzbetreiber > Malo-Ident (Rolle NB) [EBD](https://doc.macoapp.de/ebd-3119296f0.md): 
+- STROM > Netzbetreiber > Malo-Ident (Rolle NB) > EBD [E_0594_Anfrage vom LF prüfen](https://doc.macoapp.de/ebd-e-0594-894801m0.md): E_0594_Anfrage vom LF prüfen
+- STROM > Netzbetreiber [Lieferbeginn (Rolle NB)](https://doc.macoapp.de/lieferbeginn-rolle-nb-3108594f0.md): 
+- STROM > Netzbetreiber > Lieferbeginn (Rolle NB) [Lieferbeginn (Rolle NB)](https://doc.macoapp.de/lieferbeginn-rolle-nb-860854m0.md): 
+- STROM > Netzbetreiber > Lieferbeginn (Rolle NB) > EBD [E_0622](https://doc.macoapp.de/e-0622-860859m0.md): 
+- STROM > Netzbetreiber > Lieferbeginn (Rolle NB) > EBD [E_0621](https://doc.macoapp.de/e-0621-860861m0.md): 
+- STROM > Netzbetreiber > Lieferbeginn (Rolle NB) > EBD [E_0623](https://doc.macoapp.de/e-0623-860863m0.md): 
+- STROM > Netzbetreiber [Abmeldeanfrage NB -> LFA (Rolle NB)](https://doc.macoapp.de/abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md): 
+- STROM > Netzbetreiber > Abmeldeanfrage NB -> LFA (Rolle NB) [Abmeldeanfrage NB -> LFA (Rolle NB)](https://doc.macoapp.de/abmeldeanfrage-nb-lfa-rolle-nb-860877m0.md): 
+- STROM > Netzbetreiber [Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle NB)](https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md): 
+- STROM > Netzbetreiber > Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle NB) [Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle NB)](https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-861913m0.md): 
+- STROM > Netzbetreiber [Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle NB)](https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md): 
+- STROM > Netzbetreiber > Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle NB) [Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle NB)](https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-861915m0.md): 
+- STROM > Netzbetreiber [Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle NB)](https://doc.macoapp.de/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-nb-3130602f0.md): 
+- STROM > Netzbetreiber > Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle NB) [Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle NB)](https://doc.macoapp.de/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-nb-861947m0.md): 
+- STROM > Netzbetreiber [Lieferende LF -> NB (Rolle NB)](https://doc.macoapp.de/lieferende-lf-nb-rolle-nb-3119240f0.md): 
+- STROM > Netzbetreiber > Lieferende LF -> NB (Rolle NB) [Lieferende LF -> NB (Rolle NB)](https://doc.macoapp.de/lieferende-lf-nb-rolle-nb-860912m0.md): 
+- STROM > Netzbetreiber > Lieferende LF -> NB (Rolle NB) > EBD [E_0607](https://doc.macoapp.de/e-0607-860914m0.md): 
+- STROM > Netzbetreiber [Lieferende NB → LF (Rolle NB)](https://doc.macoapp.de/lieferende-nb-lf-rolle-nb-3130313f0.md): 
+- STROM > Netzbetreiber > Lieferende NB → LF (Rolle NB) [Lieferende NB → LF (Rolle NB)](https://doc.macoapp.de/lieferende-nb-lf-rolle-nb-861909m0.md): 
+- STROM > Netzbetreiber [Beginn der Ersatz-/Grundversorgung (Rolle NB)](https://doc.macoapp.de/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md): 
+- STROM > Netzbetreiber > Beginn der Ersatz-/Grundversorgung (Rolle NB) [Beginn der Ersatz-/Grundversorgung (Rolle NB) Gas](https://doc.macoapp.de/beginn-der-ersatz-grundversorgung-rolle-nb-gas-1920670m0.md): 
+- STROM > Netzbetreiber > Beginn der Ersatz-/Grundversorgung (Rolle NB) [Beginn der Ersatz-/Grundversorgung (Rolle NB) Strom](https://doc.macoapp.de/beginn-der-ersatz-grundversorgung-rolle-nb-strom-861924m0.md): 
+- STROM > Netzbetreiber [Stornierung](https://doc.macoapp.de/stornierung-5001068f0.md): 
+- STROM > Netzbetreiber > Stornierung [Prozessübersicht](https://doc.macoapp.de/prozess%C3%BCbersicht-1621259m0.md): 
+- STROM > Netzbetreiber [Abrechnungsdaten Netznutzungsabrechnung (Rolle NB)](https://doc.macoapp.de/abrechnungsdaten-netznutzungsabrechnung-rolle-nb-3130409f0.md): 
+- STROM > Netzbetreiber > Abrechnungsdaten Netznutzungsabrechnung (Rolle NB) [Abrechnungsdaten Netznutzungsabrechnung (Rolle NB)](https://doc.macoapp.de/abrechnungsdaten-netznutzungsabrechnung-rolle-nb-861920m0.md): 
+- STROM > Netzbetreiber [Abrechnungsdaten Bilanzkreisabrechnung (Rolle NB)](https://doc.macoapp.de/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md): 
+- STROM > Netzbetreiber > Abrechnungsdaten Bilanzkreisabrechnung (Rolle NB) [Abrechnungsdaten Bilanzkreisabrechnung (Rolle NB)](https://doc.macoapp.de/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-861922m0.md): 
+- STROM > Netzbetreiber [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle NB)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md): 
+- STROM > Netzbetreiber > Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle NB) [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle NB)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md): 
+- STROM > Netzbetreiber [Stammdatenänderung vom MSB (verantwortlich) (Rolle NB)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md): 
+- STROM > Netzbetreiber > Stammdatenänderung vom MSB (verantwortlich) (Rolle NB) [Stammdatenänderung vom MSB (verantwortlich) (Rolle NB)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-nb-861944m0.md): 
+- STROM > Netzbetreiber > Stammdatenänderung vom MSB (verantwortlich) (Rolle NB) > EBD [EBD E_0415](https://doc.macoapp.de/ebd-e-0415-861945m0.md): 
+- STROM > Netzbetreiber [Berechnungsformel (Rolle NB)](https://doc.macoapp.de/berechnungsformel-rolle-nb-3130464f0.md): 
+- STROM > Netzbetreiber > Berechnungsformel (Rolle NB) [Berechnungsformel (Rolle NB)](https://doc.macoapp.de/berechnungsformel-rolle-nb-861955m0.md): 
+- STROM > Netzbetreiber [Einrichtung der Konfiguration aufgrund einer Zuordnung eines LF zu einer Marktlokation oder Tranche (Rolle NB)](https://doc.macoapp.de/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md): 
+- STROM > Netzbetreiber > Einrichtung der Konfiguration aufgrund einer Zuordnung eines LF zu einer Marktlokation oder Tranche (Rolle NB) [Einrichtung der Konfiguration aufgrund einer Zuordnung eines LF zu einer Marktlokation oder Tranche (Rolle NB)](https://doc.macoapp.de/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-861937m0.md): 
+- STROM > Netzbetreiber > Überprüfung einer EEG-Marktlokation mit DV-Pflicht auf 100% LF-Zuordnung ( Rolle NB VNB ) [Überprüfung einer EEG-Marktlokation mit DV-Pflicht auf 100% LF-Zuordnung ( Rolle NB VNB )](https://doc.macoapp.de/%C3%BCberpr%C3%BCfung-einer-eeg-marktlokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-nb-vnb-1678015m0.md): 
+- STROM > Netzbetreiber > Aufbereitung und Übermittlung von Werten vom MSB der Marktlokation (Rolle NB) [Aufbereitung und Übermittlung von Werten vom MSB der Marktlokation (Rolle NB)](https://doc.macoapp.de/aufbereitung-und-%C3%BCbermittlung-von-werten-vom-msb-der-marktlokation-rolle-nb-1929273m0.md): 
+- STROM > Netzbetreiber > Übermittlung von Zählerständen vom NB (Rolle NB) [Übermittlung von Zählerständen vom NB (Rolle NB)](https://doc.macoapp.de/%C3%BCbermittlung-von-z%C3%A4hlerst%C3%A4nden-vom-nb-rolle-nb-1981792m0.md): 
+- STROM > Netzbetreiber > Übermittlung des Lieferscheins zur Netznutzungsabrechnung (Rolle NB) [Übermittlung des Lieferscheins zur Netznutzungsabrechnung (Rolle NB)](https://doc.macoapp.de/%C3%BCbermittlung-des-lieferscheins-zur-netznutzungsabrechnung-rolle-nb-1946224m0.md): 
+- STROM [Messstellenbetreiber](https://doc.macoapp.de/messstellenbetreiber-3108784f0.md): 
+- STROM > Messstellenbetreiber [Einrichtung der Konfigurationen aufgrund einer Zuordnung eines LF (MSB)](https://doc.macoapp.de/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md): 
+- STROM > Messstellenbetreiber > Einrichtung der Konfigurationen aufgrund einer Zuordnung eines LF (MSB) [Einrichtung der Konfigurationen aufgrund einer Zuordnung eines LF (MSB)](https://doc.macoapp.de/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-881450m0.md): 
+- STROM > Messstellenbetreiber [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle MSB)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md): 
+- STROM > Messstellenbetreiber > Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle MSB) [Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle MSB)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-rolle-msb-861950m0.md): 
+- STROM > Messstellenbetreiber > Stammdatenänderung vom Netzbetreiber (verantwortlich) (Rolle MSB) > EBD [EBD E_0409](https://doc.macoapp.de/ebd-e-0409-861952m0.md): 
+- STROM > Messstellenbetreiber [Stammdatenänderung vom MSB (verantwortlich) (Rolle MSB)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md): 
+- STROM > Messstellenbetreiber > Stammdatenänderung vom MSB (verantwortlich) (Rolle MSB) [Stammdatenänderung vom MSB (verantwortlich) (Rolle MSB)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-rolle-msb-861960m0.md): 
+- STROM > Messstellenbetreiber > Stammdatenänderung vom MSB (verantwortlich) (Rolle MSB) > EBD [EBD E_0634](https://doc.macoapp.de/ebd-e-0634-881448m0.md): 
+- STROM > Messstellenbetreiber > Stammdatenänderung vom MSB (verantwortlich) (Rolle MSB) > EBD [EBD E_0635](https://doc.macoapp.de/ebd-e-0635-881449m0.md): 
+- STROM > Messstellenbetreiber [Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle MSB)](https://doc.macoapp.de/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-msb-3130714f0.md): 
+- STROM > Messstellenbetreiber > Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle MSB) [Wiederherstellung der Anschlussnutzung bei Lieferbeginn (Rolle MSB)](https://doc.macoapp.de/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-msb-861961m0.md): 
+- STROM > Messstellenbetreiber [Stornierung](https://doc.macoapp.de/stornierung-5001051f0.md): 
+- STROM > Messstellenbetreiber > Stornierung [Prozessübersicht](https://doc.macoapp.de/prozess%C3%BCbersicht-1621257m0.md): 
+- STROM > Messstellenbetreiber > Aufbereitung und Übermittlung von Werten (Rolle MSB) [Aufbereitung und Übermittlung von Werten (Rolle MSB](https://doc.macoapp.de/aufbereitung-und-%C3%BCbermittlung-von-werten-rolle-msb-1981808m0.md): 
+- STROM > Messstellenbetreiber > Übermittlung von Zählerständen vom LF (Rolle MSB)  [Übermittlung von Zählerständen vom NB (Rolle NB)](https://doc.macoapp.de/%C3%BCbermittlung-von-z%C3%A4hlerst%C3%A4nden-vom-nb-rolle-nb-1982055m0.md): 
+- STROM > Messstellenbetreiber > Übermittlung von Zählerständen vom NB (Rolle MSB)   [Übermittlung von Zählerständen vom NB (Rolle NB)](https://doc.macoapp.de/%C3%BCbermittlung-von-z%C3%A4hlerst%C3%A4nden-vom-nb-rolle-nb-2010446m0.md): 
+- STROM > Messstellenbetreiber > Bestellung einer Konfiguration vom NB oder LF an MSB ( Rolle MSB ) [Bestellung einer Konfiguration vom NB oder LF an MSB ( Rolle MSB )](https://doc.macoapp.de/bestellung-einer-konfiguration-vom-nb-oder-lf-an-msb-rolle-msb-1985804m0.md): 
+- STROM > Messstellenbetreiber > Übermittlung der Berechnungsformel [Übermittlung der Berechnungsformel (Rolle MSB)](https://doc.macoapp.de/%C3%BCbermittlung-der-berechnungsformel-rolle-msb-2024852m0.md): 
+- GAS [Lieferant](https://doc.macoapp.de/lief.md): 
+- GAS > Lieferant [Anfrage zur Stammdatenänderung von Netzbetreiber an Lieferant (verantwortlich) (Rolle LF)](https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-netzbetreiber-an-lieferant-verantwortlich-rolle-lf-7017874f0.md): 
+- GAS > Lieferant > Anfrage zur Stammdatenänderung von Netzbetreiber an Lieferant (verantwortlich) (Rolle LF) [Anfrage zur Stammdatenänderung von Netzbetreiber an Lieferant (verantwortlich) (Rolle LF)](https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-netzbetreiber-an-lieferant-verantwortlich-rolle-lf-2000973m0.md): 
+- GAS > Lieferant [Anfrage zur Stammdatenänderung von Messstellenbetreiber an den Lieferanten (verantwortlich) (Rolle LF)](https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-messstellenbetreiber-an-den-lieferanten-verantwortlich-rolle-lf-7067017f0.md): 
+- GAS > Lieferant > Anfrage zur Stammdatenänderung von Messstellenbetreiber an den Lieferanten (verantwortlich) (Rolle LF) [Anfrage zur Stammdatenänderung von Messstellenbetreiber an den Lieferanten (verantwortlich) (Rolle LF)](https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-messstellenbetreiber-an-den-lieferanten-verantwortlich-rolle-lf-2005971m0.md): 
+- GAS > Lieferant [Anfrage zur Stammdatenänderung von Messstellenbetreiber an Netzbetreiber (verantwortlich) (Rolle LF)](https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-messstellenbetreiber-an-netzbetreiber-verantwortlich-rolle-lf-7066889f0.md): 
+- GAS > Lieferant > Anfrage zur Stammdatenänderung von Messstellenbetreiber an Netzbetreiber (verantwortlich) (Rolle LF) [Anfrage zur Stammdatenänderung von Messstellenbetreiber an Netzbetreiber (verantwortlich) (Rolle LF)](https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-messstellenbetreiber-an-netzbetreiber-verantwortlich-rolle-lf-2005956m0.md): 
+- GAS > Lieferant [Anfrage zur Stammdatenänderung von Lieferant an Messstellenbetreiber (verantwortlich) (Rolle LF)](https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-lf-7020248f0.md): 
+- GAS > Lieferant > Anfrage zur Stammdatenänderung von Lieferant an Messstellenbetreiber (verantwortlich) (Rolle LF) [Anfrage zur Stammdatenänderung von Lieferant an Messstellenbetreiber (verantwortlich) (Rolle LF)](https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-lf-2001021m0.md): 
+- GAS > Lieferant [Anfrage zur Stammdatenänderung von Lieferant an Netzbetreiber (verantwortlich) (Rolle LF)](https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-lf-7025669f0.md): 
+- GAS > Lieferant > Anfrage zur Stammdatenänderung von Lieferant an Netzbetreiber (verantwortlich) (Rolle LF) [Anfrage zur Stammdatenänderung von Lieferant an Netzbetreiber (verantwortlich) (Rolle LF)](https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-lf-2001172m0.md): 
+- GAS > Lieferant [Steuerprozesse nach Kundenanforderung](https://doc.macoapp.de/steuerprozesse-nach-kundenanforderung-3139945f0.md): 
+- GAS > Lieferant > Steuerprozesse nach Kundenanforderung [ECS_Lieferbeginn (Rolle LF)](https://doc.macoapp.de/ecs-lieferbeginn-rolle-lf-1966290m0.md): 
+- GAS > Lieferant > Lieferbeginn GAS (Rolle LFN) [Anmeldung NN](https://doc.macoapp.de/anmeldung-nn-1930553m0.md): 
+- GAS > Lieferant > Abmeldeanfrage GAS NB->LF (LFA) [Abmeldeanfrage GAS NB->LF (LFA)](https://doc.macoapp.de/abmeldeanfrage-gas-nb-lf-lfa-1930621m0.md): 
+- GAS > Lieferant > Abmeldeanfrage GAS NB->LF (LFA) > EBD [Codeliste G_0009_G_0010](https://doc.macoapp.de/codeliste-g-0009-g-0010-1930773m0.md): 
+- GAS > Lieferant > GAS Anforderung und Bereitstellung von Messwerten (Rolle LF) [GAS Anforderung und Bereitstellung von Messwerten (Rolle LF)](https://doc.macoapp.de/gas-anforderung-und-bereitstellung-von-messwerten-rolle-lf-2106082m0.md): 
+- GAS > Lieferant > GAS Beendigung der Zuordnung des LFA (LF) [GAS Informationsmeldung zur Beendigung der Zuordnung NB an LFA (LFA)](https://doc.macoapp.de/gas-informationsmeldung-zur-beendigung-der-zuordnung-nb-an-lfa-lfa-1946464m0.md): 
+- GAS > Lieferant > GAS Informationsmeldung zur Aufhebung einer zuk. Zuordnung (LFZ) [GAS Informationsmeldung zur Aufhebung einer zuk. Zuordnung (LFZ)](https://doc.macoapp.de/gas-informationsmeldung-zur-aufhebung-einer-zuk-zuordnung-lfz-1946192m0.md): 
+- GAS > Lieferant [GAS Stammdatenänderung vom Lieferanten (verantwortlich) ausgehend (Rolle LF)](https://doc.macoapp.de/gas-stammdaten%C3%A4nderung-vom-lieferanten-verantwortlich-ausgehend-rolle-lf-7030223f0.md): 
+- GAS > Lieferant > GAS Stammdatenänderung vom Lieferanten (verantwortlich) ausgehend (Rolle LF) [GAS Stammdatenänderung vom Lieferanten (verantwortlich) ausgehend (Rolle LF)](https://doc.macoapp.de/gas-stammdaten%C3%A4nderung-vom-lieferanten-verantwortlich-ausgehend-rolle-lf-2001561m0.md): 
+- GAS > Lieferant > Stammdatenänderung vom Messstellenbetreiber (verantwortlich) ausgehend ( Rolle LF ) [Stammdatenänderung vom Messstellenbetreiber (verantwortlich) ausgehend ( Rolle LF )](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-messstellenbetreiber-verantwortlich-ausgehend-rolle-lf-2001140m0.md): 
+- GAS > Lieferant > Stammdatenänderung vom Netzbetreiber (verantwortlich) ausgehend (Rolle LF) [Stammdatenänderung vom Netzbetreiber (verantwortlich) ausgehend (Rolle LF)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-ausgehend-rolle-lf-2001332m0.md): 
+- GAS > Lieferant > Messwertübermittlung im Fehlerfall Gas Kap. C 4.3.1.2 [Messwertübermittlung im Fehlerfall Gas Kap. C 4.3.1.2](https://doc.macoapp.de/messwert%C3%BCbermittlung-im-fehlerfall-gas-kap-c-4-3-1-2-1946459m0.md): 
+- GAS > Netzbetreiber > Lieferbeginn GAS (Rolle NB) [Anmeldung NN](https://doc.macoapp.de/anmeldung-nn-1973643m0.md): 
+- GAS > Netzbetreiber [GAS Abmeldeanfrage NB -> LFA (Rolle NB) ](https://doc.macoapp.de/gas-abmeldeanfrage-nb-lfa-rolle-nb-6709300f0.md): 
+- GAS > Netzbetreiber > GAS Abmeldeanfrage NB -> LFA (Rolle NB)  [Abmeldeanfrage NB -> LFA (Rolle NB)](https://doc.macoapp.de/abmeldeanfrage-nb-lfa-rolle-nb-1982031m0.md): 
+- GAS > Netzbetreiber [GAS Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle NB) ](https://doc.macoapp.de/gas-beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-6709475f0.md): 
+- GAS > Netzbetreiber > GAS Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle NB)  [Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle NB)](https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-1982033m0.md): 
+- GAS > Netzbetreiber [GAS Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle NB) ](https://doc.macoapp.de/gas-aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-6709556f0.md): 
+- GAS > Netzbetreiber > GAS Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle NB)  [Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle NB)](https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-1982040m0.md): 
+- GAS > Netzbetreiber > Gerätewechsel Gas ( Rolle NB VNB ) [Gerätewechsel ( Rolle NB VNB )](https://doc.macoapp.de/ger%C3%A4tewechsel-rolle-nb-vnb-1946520m0.md): 
+- GAS > Netzbetreiber > GAS Anfrage zur Stammdatenänderung von Netzbetreiber (Rolle NB) [GAS Anfrage zur Stammdatenänderung von Netzbetreiber (Rolle NB)](https://doc.macoapp.de/gas-anfrage-zur-stammdaten%C3%A4nderung-von-netzbetreiber-rolle-nb-1991780m0.md): 
+- GAS > Netzbetreiber > GAS Anforderung und Bereitstellung von Messwerten (Rolle NB) [GAS Anforderung und Bereitstellung von Messwerten (Rolle NB)](https://doc.macoapp.de/gas-anforderung-und-bereitstellung-von-messwerten-rolle-nb-2105500m0.md): 
+- GAS > Netzbetreiber > Geschäftsdatenanfrage von Messstellenbetreiber an Netzbetreiber (Rolle NB) [Geschäftsdatenanfrage von Messstellenbetreiber an Netzbetreiber (Rolle NB)](https://doc.macoapp.de/gesch%C3%A4ftsdatenanfrage-von-messstellenbetreiber-an-netzbetreiber-rolle-nb-1998706m0.md): 
+- GAS > Netzbetreiber > Anfrage zur Stammdatenänderung vom MSB an NB (verantwortlich) (Rolle NB) [Anfrage zur Stammdatenänderung vom MSB an NB (verantwortlich) (Rolle NB)](https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-vom-msb-an-nb-verantwortlich-rolle-nb-2006901m0.md): 
+- GAS > Netzbetreiber > Stammdatenänderung vom MSB (verantwortlich) ausgehend (Rolle NB) [Stammdatenänderung vom MSB (verantwortlich) ausgehend (Rolle NB)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-ausgehend-rolle-nb-2043222m0.md): 
+- GAS > Netzbetreiber > Anfrage zur Stammdatenänderung vom LF an MSB (verantwortlich) (Rolle NB) [Anfrage zur Stammdatenänderung vom LF an MSB (verantwortlich) (Rolle NB)](https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-vom-lf-an-msb-verantwortlich-rolle-nb-2043225m0.md): 
+- GAS > Messstellenbetreiber > GAS Anfrage zur Stammdatenänderung von Messstellenbetreiber an Netzbetreiber (verantwortlich) ( Rolle MSB ) [GAS Anfrage zur Stammdatenänderung von Messstellenbetreiber an Netzbetreiber (verantwortlich) ( Rolle MSB )](https://doc.macoapp.de/gas-anfrage-zur-stammdaten%C3%A4nderung-von-messstellenbetreiber-an-netzbetreiber-verantwortlich-rolle-msb-1965209m0.md): 
+- GAS > Messstellenbetreiber > GAS Stammdatenänderung vom MSB (verantwortlich) (MSB) [GAS Stammdatenänderung vom MSB (verantwortlich) (MSB)](https://doc.macoapp.de/gas-stammdaten%C3%A4nderung-vom-msb-verantwortlich-msb-1965191m0.md): 
+- GAS > Messstellenbetreiber > Geschäftsdatenanfrage von Messstellenbetreiber an Netzbetreiber [Geschäftsdatenanfrage von Messstellenbetreiber an Netzbetreiber](https://doc.macoapp.de/gesch%C3%A4ftsdatenanfrage-von-messstellenbetreiber-an-netzbetreiber-1998507m0.md): 
+- GAS > Messstellenbetreiber > Stammdatenänderung vom NB (verantwortlich) ausgehend [Stammdatenänderung vom NB (verantwortlich) ausgehend](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-nb-verantwortlich-ausgehend-1998842m0.md): 
+- GAS > Messstellenbetreiber > Anfrage zur Stammdatenänderung vom LF an NB (verantwortlich) (Rolle MSB) [Anfrage zur Stammdatenänderung vom LF an NB (verantwortlich) (Rolle MSB)](https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-vom-lf-an-nb-verantwortlich-rolle-msb-2000860m0.md): 
+- GAS > Messstellenbetreiber > Anfrage zur Stammdatenänderung von Netzbetreiber an Lieferant (verantwortlich) ( Rolle MSB ) [Anfrage zur Stammdatenänderung von Lieferant an Netzbetreiber (verantwortlich) ( Rolle MSB )](https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-msb-2011145m0.md): 
+- GAS > Messstellenbetreiber > Anfrage zur Stammdatenänderung von Lieferant an Messstellenbetreiber (verantwortlich) ( Rolle MSB ) [Anfrage zur Stammdatenänderung von Lieferant an Messstellenbetreiber (verantwortlich) ( Rolle MSB )](https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-msb-2000787m0.md): 
+- GAS > Messstellenbetreiber > Anfrage zur Stammdatenänderung vom NB an MSB (verantwortlich) [Anfrage zur Stammdatenänderung vom NB an MSB (verantwortlich)](https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-vom-nb-an-msb-verantwortlich-2022349m0.md): 
 - MaLo-Ident [MaloIdent APP](https://doc.macoapp.de/maloident-app-895196m0.md): 
 - MaLo-Ident [Malo-Ident (Rolle LF)](https://doc.macoapp.de/malo-ident-rolle-lf-3312793f0.md): 
 - MaLo-Ident > Malo-Ident (Rolle LF) [Prozessübersicht](https://doc.macoapp.de/prozess%C3%BCbersicht-892746m0.md): 
@@ -130,6 +191,8 @@
 - MaLo-Ident > Malo-Ident (Rolle NB) [Konzeption Umsetzung Ermittlung SAP](https://doc.macoapp.de/konzeption-umsetzung-ermittlung-sap-896590m0.md): 
 - MaLo-Ident > Malo-Ident (Rolle NB) [EBD](https://doc.macoapp.de/ebd-3312797f0.md): 
 - MaLo-Ident > Malo-Ident (Rolle NB) > EBD [EBD E_0594](https://doc.macoapp.de/ebd-e-0594-894815m0.md): 
+- Global > APERAK [Verarbeitung eingehende Aperak](https://doc.macoapp.de/verarbeitung-eingehende-aperak-1920760m0.md): 
+- Global > CONTRL [Verarbeitung eingehende Contrl](https://doc.macoapp.de/verarbeitung-eingehende-contrl-1920761m0.md): 
 - [Übersicht](https://doc.macoapp.de/%C3%BCbersicht-1301648m0.md): 
 - [Änderungsprotokoll BO4E Objekte](https://doc.macoapp.de/%C3%A4nderungsprotokoll-bo4e-objekte-1259115m0.md): 
 - [Objekte](https://doc.macoapp.de/objekte-4440877f0.md): 
@@ -171,6 +234,7 @@
 - Prüfi > UTILMD-Strom [55077](https://doc.macoapp.de/55077-1805145m0.md): 
 - Prüfi > UTILMD-Strom [55078](https://doc.macoapp.de/55078-1305072m0.md): 
 - Prüfi > UTILMD-Strom [55080](https://doc.macoapp.de/55080-1805144m0.md): 
+- Mapping > 2025/10 [Untitled Doc](https://doc.macoapp.de/untitled-doc-2025079m0.md): 
 
 ## API Docs
 - Trigger (MACO APP) > Einzelansicht LF [ECS Steuerprozess Lieferbeginn](https://doc.macoapp.de/ecs-steuerprozess-lieferbeginn-14958780e0.md): Anmeldung Steuerprozess LW24 Strom (MaloIdent, Kündigung & Anmeldung)
@@ -180,6 +244,10 @@
 - Trigger (MACO APP) > Einzelansicht LF [Lieferende von Lieferant an Netzbetreiber](https://doc.macoapp.de/lieferende-von-lieferant-an-netzbetreiber-14992421e0.md): Abmeldung / Beendigung der Zuordnung - Lieferende von LF an NB
 - Trigger (MACO APP) > Einzelansicht LF [Stammdatenänderung vom Lieferanten (verantwortlich)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-lieferanten-verantwortlich-15239974e0.md): Triggert den Versand von Stammdatenänderungen vom verantwortlichen Lieferanten an Marktpartner durch die MACO APP. Die Anfrage wird identifiziert durch den Eventnamen START_VERSAND_SDAE. Zusätzlich ist eine eindeutige ID prozessId aus dem Backend mit zu übergeben, mit der die spätere Antwort vom Marktpartner wieder an das Backend übergeben werden kann.
 - Trigger (MACO APP) > Einzelansicht LF [Anfrage nach Stornierung ](https://doc.macoapp.de/anfrage-nach-stornierung-21893877e0.md): Prozess zur Anfrage nach Stornierung im Auftrag des Endkunden anstoßen
+- Trigger (MACO APP) > Einzelansicht LF [Übermittlung von Zählerständen vom LF](https://doc.macoapp.de/%C3%BCbermittlung-von-z%C3%A4hlerst%C3%A4nden-vom-lf-26625651e0.md): Übermittlung von Zählerständen vom LF
+- Trigger (MACO APP) > Einzelansicht LF [Bestellung zur Stammdatenänderung an NB / MSB (Lieferant)](https://doc.macoapp.de/bestellung-zur-stammdaten%C3%A4nderung-an-nb-msb-lieferant-26910595e0.md): Triggert den Versand von Stammdatenänderungen vom verantwortlichen Lieferanten an Marktpartner durch die MACO APP. Die Anfrage wird identifiziert durch den Eventnamen START_VERSAND_SDAE. Zusätzlich ist eine eindeutige ID prozessId aus dem Backend mit zu übergeben, mit der die spätere Antwort vom Marktpartner wieder an das Backend übergeben werden kann.
+- Trigger (MACO APP) > Einzelansicht LF [Reklamation von Werten](https://doc.macoapp.de/reklamation-von-werten-27333474e0.md): Prozess zur Anfrage nach Stornierung im Auftrag des Endkunden anstoßen
+- Trigger (MACO APP) > Einzelansicht LF [Bestellung Abrechnungsdaten](https://doc.macoapp.de/bestellung-abrechnungsdaten-32958376e0.md): Prozess zur Bestellung einer Änderung von Abrechnungsdaten
 - Trigger (MACO APP) > Einzelansicht NB [Anfrage zur Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche](https://doc.macoapp.de/anfrage-zur-beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-14992646e0.md): Anfrage zur Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche
 - Trigger (MACO APP) > Einzelansicht NB [Aufhebung der Zuordnung des LFZ zur Marklokation bzw. Tranche versenden](https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marklokation-bzw-tranche-versenden-14333135e0.md): Triggert den Versand von Aufhebung der Zuordnung des LFZ zur Marklokation bzw. Tranche an Marktpartner durch die MACO APP. Die Anfrage wird identifiziert durch den Eventnamen AUFH_ZUK_ZUORDNUNG. Zusätzlich ist eine eindeutige ID prozessId aus dem Backend mit zu übergeben, mit der die spätere Antwort vom Marktpartner wieder an das Backend übergeben werden kann.
 - Trigger (MACO APP) > Einzelansicht NB [Beendigung der Zuordnung des LFA zur Marklokation bzw. Tranche](https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marklokation-bzw-tranche-14994219e0.md): Triggert den Versand von Aufhebung der Zuordnung des LFA zur Marklokation bzw. Tranche an Marktpartner durch die MACO APP. Die Anfrage wird identifiziert durch den Eventnamen START_ENDE_ZUORDUNG. Zusätzlich ist eine eindeutige ID prozessId aus dem Backend mit zu übergeben, mit der die spätere Antwort vom Marktpartner wieder an das Backend übergeben werden kann.
@@ -193,12 +261,15 @@
 - Trigger (MACO APP) > Einzelansicht NB [Ersatz-/Grundversorgung](https://doc.macoapp.de/ersatz-grundversorgung-14984068e0.md): Prozess zur Anmeldung von Ersatz-/Grundversorgung starten.
 - Trigger (MACO APP) > Einzelansicht NB [Anfrage nach Stornierung](https://doc.macoapp.de/anfrage-nach-stornierung-21894158e0.md): Prozess zur Anfrage nach Stornierung im Auftrag des Endkunden anstoßen
 - Trigger (MACO APP) > Einzelansicht NB [Überprüfung einner EEG-Marklokation mit DV-Pflicht auf 100% LF-Zuordnung (Rolle NB)](https://doc.macoapp.de/%C3%BCberpr%C3%BCfung-einner-eeg-marklokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-nb-25151089e0.md): Triggert den Versand Ankündigung der Zuordnung des Lieferanten zur erzeugenden Malo bzw. Tranche an den Lieferanten durch die MACO APP. Die Ankündigung wird identifiziert durch den Eventnamen START_ZUORDNUNG_ERZ_MALO_TRANCHE. Zusätzlich ist eine eindeutige ID prozessId aus dem Backend mit zu übergeben, mit der die spätere Antwort vom Marktpartner wieder an das Backend übergeben werden kann.
+- Trigger (MACO APP) > Einzelansicht NB [Übermittlung des Lieferscheins zur Netznutzungsabrechnung](https://doc.macoapp.de/%C3%BCbermittlung-des-lieferscheins-zur-netznutzungsabrechnung-27328140e0.md): Prozess zur Anfrage nach Stornierung im Auftrag des Endkunden anstoßen
+- Trigger (MACO APP) > Einzelansicht NB [Übermittlung von Zählerständen vom NB](https://doc.macoapp.de/%C3%BCbermittlung-von-z%C3%A4hlerst%C3%A4nden-vom-nb-28679013e0.md): Übermittlung von Zählerständen vom NB
+- Trigger (MACO APP) > Einzelansicht NB [Widerspruch gegen Ablehnung](https://doc.macoapp.de/widerspruch-gegen-ablehnung-27328472e0.md): Prozess zur Anfrage nach Stornierung im Auftrag des Endkunden anstoßen
+- Trigger (MACO APP) > Einzelansicht NB [Stornierung Lieferschein](https://doc.macoapp.de/stornierung-lieferschein-27329360e0.md): Prozess zur Anfrage nach Stornierung im Auftrag des Endkunden anstoßen
 - Trigger (MACO APP) > Einzelansicht MSB [Stammdatenänderung vom Messstellenbetreiber (verantwortlich)](https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md): Triggert den Versand von Stammdatenänderungen vom verantwortlichen Messstellenbetreiber an Marktpartner durch die MACO APP. Die Anfrage wird identifiziert durch den Eventnamen START_VERSAND_SDAE. Zusätzlich ist eine eindeutige ID prozessId aus dem Backend mit zu übergeben, mit der die spätere Antwort vom Marktpartner wieder an das Backend übergeben werden kann.
 - Trigger (MACO APP) [Anfrage nach Stornierung](https://doc.macoapp.de/anfrage-nach-stornierung-21894185e0.md): Prozess zur Anfrage nach Stornierung im Auftrag des Endkunden anstoßen
-- Trigger (MACO APP) [Trigger Events](https://doc.macoapp.de/trigger-events-14016919e0.md): Triggert den Versand von EDIFACT Nachrichten an Marktpartner durch die MACO APP. Die Anfrage wird identifiziert durch den Eventnamen z.B. START_LIEFERBEGINN. Zusätzlich ist eine eindeutige ID prozessId aus dem Backend mit zu übergeben, mit der die spätere Antwort vom Marktpartner wieder an das Backend übergeben werden kann.
 - Trigger (MACO APP) [Authentifizierung](https://doc.macoapp.de/authentifizierung-15828008e0.md): # Authentifizierung via MACO APP OAuth (Service-Login für Trigger-Schnittstellen)
 - BO4E Lesen (Backend) [Avis lesen](https://doc.macoapp.de/avis-lesen-14017011e0.md): Lesen des Avises mittels Avisnummer (Parameter1) 
-- BO4E Lesen (Backend) [Berechnungsformel lesen](https://doc.macoapp.de/berechnungsformel-lesen-14017012e0.md): Lesen des Berechnunungsformel einer Lokation (Parameter1) vom Typ (Parameter2 - default MALO) zum Stichtag (Parameter3)
+- BO4E Lesen (Backend) [Berechnungsformel lesen](https://doc.macoapp.de/berechnungsformel-lesen-14017012e0.md): Lesen der Berechnunungsformel einer Lokation (Parameter1) vom Typ (Parameter2 - default MALO) zum Stichtag (Parameter3)
 - BO4E Lesen (Backend) [Bilanzierung lesen](https://doc.macoapp.de/bilanzierung-lesen-14017013e0.md): Lesen einer Bilanzierung mittels LokationsId (Parameter1) zum Zeitpunkt (Parameter3)
 - BO4E Lesen (Backend) [Energieliefervertrag lesen](https://doc.macoapp.de/energieliefervertrag-lesen-14017014e0.md): Lesen des Energieliefervertrages einer Lokation (Parameter1) vom Typ (Parameter2 - default MALO) zum Stichtag (Parameter3)
 - BO4E Lesen (Backend) [Energiemengen aus Abrechnungskontext  lesen](https://doc.macoapp.de/energiemengen-aus-abrechnungskontext-lesen-14017015e0.md): Lesen der Energiemengen aus Abrechnungskontext über eine LokationId (Parameter1) und LokationsTyp (Parameter2) in einer Range (Parameter3/Parameter4) und einer OBIS Kennzahl (Parameter5 optional)
@@ -216,6 +287,9 @@
 - BO4E Lesen (Backend) [Technische Ressource lesen](https://doc.macoapp.de/technische-ressource-lesen-14017029e0.md): Lesen einer technischen Ressource mittels LokationsId (Parameter1) zum Zeitpunkt (Parameter2) | Reading a technical resource using location ID (Parameter1) at the time (Parameter2)
 - BO4E Lesen (Backend) [Tranche lesen](https://doc.macoapp.de/tranche-lesen-14017030e0.md): Lesen einer Tranche mittels LokationsId (Parameter1) zum Zeitpunkt (Parameter2) | Reading a tranche using location ID (Parameter1) at the time (Parameter2)
 - BO4E Lesen (Backend) [Zähler lesen](https://doc.macoapp.de/z%C3%A4hler-lesen-14017031e0.md): Lesen einer Zaehlers mittels LokationsId (Parameter1) und lokationsTyp (Parameter2 - default MELO) zum Zeitpunkt (Parameter3) | Reading a tranche using location ID (Parameter1) at the time (Parameter2)
+- BO4E Lesen (Backend) [Schaltzeitdefinition lesen](https://doc.macoapp.de/schaltzeitdefinition-lesen-34260808e0.md): Lesen einer Schaltzeitdefinition anhand des Konfigurationsprodukt-Code (Parameter1) zum Zeitpunkt (Parameter3) | Reading a switchtime definition using konfigurationproduct-code (Parameter1) at the time (Parameter2)
+- BO4E Lesen (Backend) [Leistungskurvendefinition lesen](https://doc.macoapp.de/leistungskurvendefinition-lesen-34262535e0.md): Lesen einer Leistungskurvendefinition anhand des Konfigurationsprodukt-Code (Parameter1) zum Zeitpunkt (Parameter3) | Reading a perfomance definition using konfigurationproduct-code (Parameter1) at the time (Parameter2)
+- BO4E Lesen (Backend) [Zaehlzeitdefinition lesen ](https://doc.macoapp.de/zaehlzeitdefinition-lesen-34263168e0.md): Lesen einer Zaehlzeitdefinition anhand des Codes (Parameter1) zum Zeitpunkt (Parameter3) | Reading a perfomance definition using code (Parameter1) at the time (Parameter2)
 - Prozessdaten lesen (Backend) [Zuordnungsemächtigung lesen](https://doc.macoapp.de/zuordnungsem%C3%A4chtigung-lesen-14665842e0.md): Ermitteln ob eine Zuordnungsermächtigung vorhanden ist
 - Prozessdaten LF (Backend) [Prozessdaten aktualiseren](https://doc.macoapp.de/prozessdaten-aktualiseren-14017182e0.md): Aktualisieren der Prozessdaten anhand des BusinessKey.
 - Prozessdaten LF (Backend) [Prozessdaten erstellen](https://doc.macoapp.de/prozessdaten-erstellen-14017183e0.md): Verbuchung von Daten aus Marktprozesen im Backend
@@ -227,11 +301,3 @@
 - MaloIdent LF (Backend) [Identifikation einer Marktlokation](https://doc.macoapp.de/identifikation-einer-marktlokation-16024919e0.md): Prozess zur Identifikation einer Marktlokation beim Netzbetreiber anstoßen.
 - MaloIdent NB (Backend) [Identifizierung der MaLo](https://doc.macoapp.de/identifizierung-der-malo-14666443e0.md): `LESEN_MALOIDENT_BASIS`
 - MaloIdent NB (Backend) [Stammdaten der identifiz. MaLo](https://doc.macoapp.de/stammdaten-der-identifiz-malo-14666444e0.md): `LESEN_MALOIDENT_MARKTLOKATION`
-- Obsolet [Verwendungszeitraum einer Marktlokation ermitteln](https://doc.macoapp.de/verwendungszeitraum-einer-marktlokation-ermitteln-14017021e0.md): ** OBSOLET: Wird neu definiert**
-- Obsolet [Absenderdaten lesen](https://doc.macoapp.de/absenderdaten-lesen-14017022e0.md): ** OBSOLET: Daten sind bereits im Event Container vorhanden **
-- Obsolet [Empfängerdaten lesen](https://doc.macoapp.de/empf%C3%A4ngerdaten-lesen-14017023e0.md): ** OBSOLET: Daten sind bereits im Event Container vorhanden **
-- MaLo-Ident [MaloIdent Anfrage auslösen](https://doc.macoapp.de/maloident-anfrage-ausl%C3%B6sen-15144286e0.md): `START_MALOIDENT`
-- MaLo-Ident [Identifizierung der MaLo](https://doc.macoapp.de/identifizierung-der-malo-15144292e0.md): `LESEN_MALOIDENT_BASIS`
-- MaLo-Ident [Stammdaten der identifiz. MaLo](https://doc.macoapp.de/stammdaten-der-identifiz-malo-15144303e0.md): `LESEN_MALOIDENT_MARKTLOKATION`
-- MaLo-Ident [Prozessdaten aktualisieren](https://doc.macoapp.de/prozessdaten-aktualisieren-15144289e0.md): `AKTUALISIEREN_PROZESSDATEN`
-- MCS Eingang (MACO APP) [Empfang einer Marktnachricht](https://doc.macoapp.de/empfang-einer-marktnachricht-16367537e0.md): ## 📬 Beschreibung

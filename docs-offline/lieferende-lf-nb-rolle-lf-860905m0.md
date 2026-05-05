@@ -32,6 +32,12 @@
               Übergabe der Informationsmeldung über bestehende Zuordnung, sowie pos. (55005)und neg. (55006)Rückmeldung vom Netzbetreiber.
           </Card>    
       </Tab>
+              <Tab title="📄55004 Abmeldung">
+          <Accordion title="PI_55004" defaultOpen={false}>
+                  <DataSchema id="5242353" />
+          </Accordion>
+                    
+      </Tab>
         <Tab title="📄55005 Bestätigung Abmeldung">
             <Accordion title="PI_55005" defaultOpen={false}>
                 <DataSchema id="5242354" />

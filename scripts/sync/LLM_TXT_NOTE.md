@@ -2,71 +2,78 @@
 
 ## Source
 
-**`llm.txt` is manually downloaded from the online documentation** (`doc.macoapp.de`), not from `maco-api-documentation` repo.
+**Canonical portal index (live):** `https://doc.macoapp.de/llms.txt` (HTTP 200, stable path).
+
+The workspace copy **`docs/llm.txt`** is the same content saved locally for scripts (`grep`, offline use). It is **not** part of the `maco-api-documentation` submodule.
+
+## Fetch behaviour
+
+**`scripts/download-docs.sh`** runs **`scripts/fetch-llm-index.sh`** first by default (downloads **`llms.txt`** → **`docs/llm.txt`**), then crawls every linked `.md` URL.
+
+**Offline / pinned index:** set **`SKIP_LLM_FETCH=1`** so the existing committed **`docs/llm.txt`** is used without network:
+
+```bash
+SKIP_LLM_FETCH=1 ./scripts/download-docs.sh
+```
+
+**Index only** (no page crawl):
+
+```bash
+./scripts/fetch-llm-index.sh
+```
+
+---
+
+Legacy note: the index could be pasted by hand; **`fetch-llm-index.sh`** is now the normal source.
 
 ## Workflow
 
 ```
-doc.macoapp.de (online)
+https://doc.macoapp.de/llms.txt (canonical index)
     ↓
-llm.txt (manually downloaded)
+scripts/fetch-llm-index.sh  →  docs/llm.txt   (default before download-docs; optional SKIP_LLM_FETCH=1)
     ↓
 scripts/download-docs.sh
     ↓
 docs-offline/*.md (downloaded markdown files)
     ↓
-Extract Mermaid diagrams
+scripts/sync/update-process-graph-minimal.py
     ↓
 PROCESS_GRAPH.json (generated)
 ```
 
 ## Process
 
-1. **Download `llm.txt`** from `doc.macoapp.de` (manual step)
-2. **Place in workspace**: `docs/llm.txt`
-3. **Run download script**: `./scripts/download-docs.sh`
-   - Extracts URLs from `llm.txt`
-   - Downloads markdown files to `docs-offline/`
-4. **Generate PROCESS_GRAPH.json**:
-   - Extract Mermaid diagrams from markdown files
-   - Parse process sequences, dependencies, prerequisites
-   - Combine with API schemas and business rules
-   - Generate `docs/entry-points/PROCESS_GRAPH.json`
+1. **`docs/llm.txt`** — refreshed from **`llms.txt`** automatically when you run **`download-docs.sh`**, unless **`SKIP_LLM_FETCH=1`**.
+2. **`download-docs.sh`** — extracts URLs from **`docs/llm.txt`**, downloads **`docs-offline/*.md`**.
+3. **`PROCESS_GRAPH.json`** — `python3 scripts/sync/update-process-graph-minimal.py` (also from **`setup-workspace.sh`**).
 
 ## File Locations
 
-- **`docs/llm.txt`** - Manually downloaded from online docs (workspace-specific)
-- **`docs-offline/*.md`** - Downloaded markdown files (232 files)
-- **`docs/entry-points/PROCESS_GRAPH.json`** - Generated from markdown files + schemas
+- **`docs/llm.txt`** — copy of the portal index (`llms.txt`), workspace-local
+- **`docs-offline/*.md`** — downloaded markdown files
+- **`docs/entry-points/PROCESS_GRAPH.json`** — generated from markdown files + schemas
 
 ## Updating Workflow
 
 When online documentation updates:
 
 ```bash
-# 1. Manually download updated llm.txt from doc.macoapp.de
-#    Save to: docs/llm.txt
-
-# 2. Download updated markdown files
-./scripts/download-docs.sh
-
-# 3. Regenerate PROCESS_GRAPH.json (when script implemented)
-# Manual workflow:
 ./scripts/download-docs.sh
 python3 scripts/sync/update-process-graph-minimal.py
-# OR manually update PROCESS_GRAPH.json
 ```
+
+Use **`SKIP_LLM_FETCH=1`** only when you must not hit **`doc.macoapp.de`** for the index.
 
 ## Sync System
 
 The sync system now correctly reflects that:
-- ✅ `llm.txt` is **NOT** part of `maco-api-documentation` repo
-- ✅ It's **workspace-specific** (manually downloaded)
+
+- ✅ `docs/llm.txt` is **NOT** part of `maco-api-documentation` repo
+- ✅ It tracks **`https://doc.macoapp.de/llms.txt`** via **`fetch-llm-index.sh`** (default before doc download)
 - ✅ `PROCESS_GRAPH.json` is **generated** from `docs-offline/` markdown files
-- ✅ Mermaid diagrams are **extracted** from markdown files during generation
 
 ## Notes
 
 - `maco-api-documentation/README.MD` references `../llm.txt` because it expects it in the workspace root (parent directory)
-- The sync system no longer tries to sync `llm.txt` from the repo
-- Use manual workflow: `download-docs.sh` → `update-process-graph-minimal.py`
+- Default **`download-docs.sh`** **does** fetch the index first; use **`SKIP_LLM_FETCH=1`** for offline-only or frozen-index runs

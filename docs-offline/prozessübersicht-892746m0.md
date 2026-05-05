@@ -9,7 +9,7 @@
       <Tab title="Übersicht">
  
         <Card title="START_MALOIDENT"
-              href="https://doc.macoapp.de/maloident-anfrage-ausl%C3%B6sen-15144286e0.md">
+              href="https://doc.macoapp.de/15144286e0.md">
           Anfrage MaLo-ID der Marktlokation starten
         </Card>
 
@@ -27,7 +27,7 @@
     <Tabs>
       <Tab title="Übersicht">
           <Card title="Aktualisieren der Prozessdaten"
-                href="https://doc.macoapp.de/prozessdaten-aktualisieren-15144289e0.md">
+                href="https://doc.macoapp.de/15144289e0.md">
                 Übergabe der pos. sowie neg. Rückmeldung vom Netzbetreiber.
           </Card>    
       </Tab>        

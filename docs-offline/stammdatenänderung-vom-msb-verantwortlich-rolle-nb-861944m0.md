@@ -190,7 +190,7 @@
       <Tabs>
           <Tab title="Übersicht">
               <Card title="Entscheidungsbaumdiagramm E_0583"
-                    href="https://doc.macoapp.de/ebd-e-0583-894682m0.md"> 
+                    href="https://doc.macoapp.de/894682m0.md"> 
               </Card>
           </Tab>
       </Tabs>

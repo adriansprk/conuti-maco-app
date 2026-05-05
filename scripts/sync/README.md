@@ -64,7 +64,7 @@ python3 scripts/sync/update-process-graph-minimal.py
 
 ## Notes
 
-- **`llm.txt`** is manually downloaded from `doc.macoapp.de` (not from repos)
+- **`llm.txt`** is fetched from `https://doc.macoapp.de/llms.txt` by `scripts/fetch-llm-index.sh` (also run automatically before `download-docs.sh` unless `SKIP_LLM_FETCH=1`)
 - **Build script changes** are critical - always rebuild schemas if `maco-api-documentation/scripts/build-openapi-json.sh` changes
 - **Submodule patching**: Submodules are imported as-is, then automatically patched during build/index generation
   - Patches are version-controlled in this workspace (not in submodules)

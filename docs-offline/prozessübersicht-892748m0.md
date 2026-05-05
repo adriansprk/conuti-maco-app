@@ -26,7 +26,7 @@
       <Tab title="Übersicht">
           <CardGroup cols={2}>
           <Card title="Ermittlung der MaLo-IDs"
-                href="https://doc.macoapp.de/identifizierung-der-malo-15144292e0.md">
+                href="https://doc.macoapp.de/15144292e0.md">
                 Schnittstelle zur Ermittlung der MaLo-IDs auf Basis der Anfragedaten
           </Card>
            <Card title="Fachkonzept SAP"
@@ -60,7 +60,7 @@
     <Tabs>
       <Tab title="Übersicht">
           <Card title="Marktlokationsdaten lesen"
-                href="https://doc.macoapp.de/stammdaten-der-identifiz-malo-15144303e0.md">
+                href="https://doc.macoapp.de/15144303e0.md">
           </Card>
       </Tab>        
       <Tab title="Marktlokation lesen">

@@ -32,7 +32,14 @@
                 href="https://doc.macoapp.de/prozessdaten-aktualiseren-14017182e0.md">
               Übergabe der pos. sowie neg. Rückmeldung vom Lieferant alt.
           </Card>    
-      </Tab>        
+      </Tab>    
+              <Tab title="📄55016 Kündigung">
+          <Accordion title="[LF] 55016" defaultOpen={false}>
+                 <DataSchema id="5242227" />   
+          </Accordion>
+          
+          
+      </Tab>
       <Tab title="📄55018 neg. Rückmeldung">
           <Accordion title="PI_55018" defaultOpen={false}>
                  <DataSchema id="5242367" />   

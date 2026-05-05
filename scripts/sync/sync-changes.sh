@@ -78,7 +78,7 @@ if [ -d "$WORKSPACE_ROOT/maco-api-documentation" ]; then
             echo "  📋 Found $YAML_COUNT business rule files"
         fi
         
-        # Note: llm.txt is manually downloaded from doc.macoapp.de, not part of this repo
+        # Note: docs/llm.txt is refreshed from doc.macoapp.de/llms.txt via fetch-llm-index.sh (see download-docs.sh); not part of maco-api-documentation
     fi
 fi
 
