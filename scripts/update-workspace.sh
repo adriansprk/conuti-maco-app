@@ -71,7 +71,8 @@ echo ""
 
 # Step 3: Run full setup to rebuild everything with new versions
 echo "🔨 Step 3: Rebuilding workspace..."
-echo "  (This will rebuild schemas, re-download docs, regenerate index)"
+echo "  (Rebuild schemas, download docs, regenerate index)"
+echo "  Tip: SKIP_LLM_FETCH=1 skips fetching docs/llm.txt from https://doc.macoapp.de/llms.txt before downloads."
 echo ""
 
 "$WORKSPACE_ROOT/scripts/setup-workspace.sh"
