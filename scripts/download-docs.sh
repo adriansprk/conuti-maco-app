@@ -5,6 +5,7 @@
 # Don't exit on error - continue downloading other files even if one fails
 set +e
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 OUTPUT_DIR="docs-offline"
 INDEX_FILE="$OUTPUT_DIR/index.json"
 LOG_FILE="$OUTPUT_DIR/download.log"
@@ -13,6 +14,21 @@ echo "📥 Downloading MaCo API Documentation..."
 echo "Output directory: $OUTPUT_DIR"
 echo "Log file: $LOG_FILE"
 mkdir -p "$OUTPUT_DIR"
+
+# By default, refresh docs/llm.txt from https://doc.macoapp.de/llms.txt before crawling links.
+# Set SKIP_LLM_FETCH=1 to use the committed/local docs/llm.txt only (offline / reproducible).
+if [ "${SKIP_LLM_FETCH:-}" != "1" ]; then
+    echo "📄 Refreshing docs/llm.txt from doc.macoapp.de (llms.txt) ..."
+    if "$SCRIPT_DIR/fetch-llm-index.sh"; then
+        echo ""
+    else
+        echo "  ⚠️  fetch-llm-index.sh failed — continuing with existing docs/llm.txt"
+        echo ""
+    fi
+else
+    echo "📄 SKIP_LLM_FETCH=1 — using existing docs/llm.txt (no network fetch)"
+    echo ""
+fi
 
 # Extract all doc.macoapp.de URLs from llm.txt
 echo "Extracting URLs from docs/llm.txt..."
@@ -69,6 +85,13 @@ while IFS= read -r url; do
 done <<< "$URLS"
 
 echo "}" >> "$INDEX_FILE"
+
+# Merge llm.txt ↔ disk so index lists every offline file (curl may 404 while an older copy exists)
+if [ -f "$SCRIPT_DIR/rebuild-docs-offline-index.py" ]; then
+    echo ""
+    echo "📋 Reconciling index.json with docs/llm.txt and files on disk..."
+    python3 "$SCRIPT_DIR/rebuild-docs-offline-index.py" || echo "  ⚠️  rebuild-docs-offline-index.py failed - keeping curl-built index"
+fi
 
 echo ""
 echo "Completed at $(date)"
