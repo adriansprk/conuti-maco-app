@@ -35,6 +35,9 @@ echo ""
 
 # Step 3: Download documentation files
 echo "📚 Step 3: Downloading documentation files..."
+if [ "${SKIP_LLM_FETCH:-}" = "1" ]; then
+    echo "  (SKIP_LLM_FETCH=1 — docs download will use committed docs/llm.txt without fetching llms.txt)"
+fi
 if [ -f "$WORKSPACE_ROOT/scripts/download-docs.sh" ]; then
     echo "  Downloading from doc.macoapp.de..."
     "$WORKSPACE_ROOT/scripts/download-docs.sh" || {
