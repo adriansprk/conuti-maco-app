@@ -1,5 +1,7 @@
 your-requests/
 api-requests/
+.DS_Store
+**/.DS_Store
 
 # Message downloader (local tooling, tokens, and downloaded data)
 message-downloader/
@@ -10,4 +12,3 @@ message-downloader/
 claude.md
 .claude
 .cursor/skills/*
-
