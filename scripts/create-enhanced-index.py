@@ -6,11 +6,20 @@ create-enhanced-index.py - Create enhanced index mapping BDEW IDs to documentati
 import json
 import re
 from pathlib import Path
+from urllib.parse import unquote
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def decode_filename(url_part: str) -> str:
+    """Decode doc.macoapp.de path segment to local filename (handles %C3%A4 etc.)."""
+    return unquote(url_part.split("/")[-1])
+
 
 def extract_bdew_mappings():
     """Extract BDEW ID mappings from llm.txt"""
-    llm_file = Path('llm.txt')
-    docs_dir = Path('docs-offline')
+    llm_file = ROOT / "docs" / "llm.txt"
+    docs_dir = ROOT / "docs-offline"
     
     # Read llm.txt
     with open(llm_file, 'r', encoding='utf-8') as f:
@@ -34,11 +43,7 @@ def extract_bdew_mappings():
     
     # Process BDEW ID mappings
     for context, bdew_id, url in matches:
-        filename = url.split('/')[-1]
-        # Decode URL encoding
-        filename = filename.replace('%C3%BC', 'ü').replace('%C3%A4', 'ä').replace('%C3%B6', 'ö')
-        filename = filename.replace('%C3%9C', 'Ü').replace('%C3%84', 'Ä').replace('%C3%96', 'Ö')
-        filename = filename.replace('%C3%9F', 'ß')
+        filename = decode_filename(url)
         
         file_path = docs_dir / filename
         if file_path.exists():
@@ -52,11 +57,7 @@ def extract_bdew_mappings():
     
     # Process all URLs (including those without BDEW IDs)
     for context, url in url_matches:
-        filename = url.split('/')[-1]
-        # Decode URL encoding
-        filename = filename.replace('%C3%BC', 'ü').replace('%C3%A4', 'ä').replace('%C3%B6', 'ö')
-        filename = filename.replace('%C3%9C', 'Ü').replace('%C3%84', 'Ä').replace('%C3%96', 'Ö')
-        filename = filename.replace('%C3%9F', 'ß')
+        filename = decode_filename(url)
         
         file_path = docs_dir / filename
         if file_path.exists():
@@ -99,7 +100,7 @@ def main():
     index = extract_bdew_mappings()
     
     # Save enhanced index
-    output_file = Path('docs-offline/enhanced-index.json')
+    output_file = ROOT / "docs-offline" / "enhanced-index.json"
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(index, f, indent=2, ensure_ascii=False)
     
