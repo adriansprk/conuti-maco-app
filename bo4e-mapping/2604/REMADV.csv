@@ -1,0 +1,90 @@
+Nummer,Nr.,Typ,,,Max. Wdh,,,,,,stamm- oder transaktionsdaten,BO Objekt,BO4E - Feld,Mapping EDI <-> BO4E,powercloud - Variable,Schnittstelle,33001,33002,33003,33004,,,,,,,,,,,,,,,,,,,
+,,UNB,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0010,3,UNH,M,M,1,1,0,Nachrichtenanfang,UNH+1+REMADV:D:05A:UN:2.9e,,,,,,,,x,x,x,x,,,,,,,,,,,,,,,,,,,
+0020,4,BGM,M,M,1,1,0,Beginn der Nachricht,"BGM+239+MSI5422
+BGM+481+MSI5422","239 Abgelehnte Forderung (Nicht-Zahlungsavis)
+481 Zahlungsavis","T
+
+
+
+S","
+
+
+
+AVIS","kategorie 1:1
+dokumentennummer
+
+
+avistyp
+avisNummer","avisTyp
+239 -> ABGELEHNTE_FORDERUNG
+481 -> ZAHLUNGSAVIS",,,481,239,239,239,,,,,,,,,,,,,,,,,,,
+0030,5,DTM,M,M,5,1,1,Dokumentendatum,DTM+137:202102072200?+00:303,CCYYMMDDHHMMZZZ,T,,nachrichtendatum,,,,x,x,x,x,,,,,,,,,,,,,,,,,,,
+0040,6,RFF,C,R,5,1,1,Prüfidentifikator,"RFF+Z13:33001
+RFF+Z13:33002
+RFF+Z13:33003
+RFF+Z13:33004","33001 Bestätigung
+33002 Abweisung
+33003 Abweisung Kopf und Summe
+33004 Abweisung Position",T,,pruefidentifikator,,,,33001,33002,33003,33004,,,,,,,,,,,,,,,,,,,
+0090,,SG1,C,R,99,1,1,MP-ID Absender,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,7,NAD,M,M,1,1,1,MP-ID Absender,NAD+MS+1234567000008::9,"9 GS1
+293 DE, BDEW
+332 DE, DVGW",T,absender,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,,x,x,x,x,,,,,,,,,,,,,,,,,,,
+0140,,SG3,C,O,5,1,2,Kontaktdaten,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0150,8,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:Mustermann,IC Informationsstelle,T,absender.ansprechpartner,nachname,,,,Kann,Kann,Kann,Kann,,,,,,,,,,,,,,,,,,,
+0160,9,COM,C,R,5,5,3,Kommunikationsverbindung,COM+003222271020:TE,"EM E-Mail
+FX Telefax
+TE Telefon
+AJ weiteres Telefon
+AL Handy",T,absender.ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,x,x,x,x,,,,,,,,,,,,,,,,,,,
+0090,,SG1,C,R,99,1,1,MP-ID Empfänger,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,10,NAD,M,M,1,1,1,MP-ID Empfänger,NAD+MR+1234567000008::9,"9 GS1
+293 DE, BDEW
+332 DE, DVGW",T,empfaenger,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,,x,x,x,x,,,,,,,,,,,,,,,,,,,
+0170,,SG4,C,R,5,1,1,Währung,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0180,11,CUX,M,M,1,1,1,Währungsangaben,CUX+2:EUR:11,,S,avis.zuZahlen,waehrung,EUR -> EUR,,,x,x,x,x,,,,,,,,,,,,,,,,,,,
+0200,,SG5,C,R,999999,999999,1,Rückmeldung,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0210,12,DOC,M,M,1,1,1,Dokument-/Nachrichten-Einzelheiten,DOC+380+458011,"380 Handelsrechnung
+389 Selbst ausgestellte Rechnung (engl.: ""Self_x0002_billed invoice"")
+457 Storno für Belastung.
+Z25 Storno für selbst ausgestellte Rechnung (Gutschrift im Gutschriftsverfahren)",S,avis.positionen,"istStorno = true (457; Z25); false
+istSelbstausgestellt = true (389); false
+rechnungsNummer",,,,x,x,x,x,,,,,,,,,,,,,,,,,,,
+0220,13,MOA,M,M,5,1,2,Geforderter Rechnungsbetrag,MOA+9:10000,Fälliger Betrag (inkl. USt.),S,avis.positionen.zuZahlen,"wert
+waehrung",,,,x,x,x,x,,,,,,,,,,,,,,,,,,,
+0220,14,MOA,M,R,5,1,2,Überweisungsbetrag,MOA+12:10000,Überweisungsbetrag,S,avis.positionen.gesamtBrutto,"wert
+waehrung",,,,x,x,x,x,,,,,,,,,,,,,,,,,,,
+0230,15,DTM,C,R,5,1,2,Rechnungsdatum,DTM+137:202102072200?+00:303,CCYYMMDDHHMMZZZ,S,avis.positionen,rechnungsDatum,UTC -> 303,,,x,x,x,x,,,,,,,,,,,,,,,,,,,
+0240,16,RFF,C,D,5,1,2,Referenz auf COMDIS,RFF+ACW:COMDIS-123,ACW Referenznummer einer vorangegangenen Nachricht,S,avis.positionen,referenz,,,,,Soll,x,x,,,,,,,,,,,,,,,,,,,
+0290,,SG7,C,D,100,100,2,Abweichungsgrund,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0300,17,AJT,M,M,1,1,2,Abweichungsgrund,AJT+5+G_0079,AJT+[Prüfschrittcode]+[Codeliste/EBD],S,avis.positionen.abweichung,"abweichungsgrundCode
+abweichungsgrundCodeliste",,,,,x,x,,,,,,,,,,,,,,,,,,,,
+0320,18,RFF,C,D,1,1,3,Zugehörige Rechnung,RFF+AFL:Rechnungsnummer_12345,AFL Zugehörige Rechnungen,S,avis.positionen.abweichung,zugehoerigeRechnung,,,,,,x,,,,,,,,,,,,,,,,,,,,
+0330,19,FTX,C,D,5,1,3,Nähere Erläuterung des Abweichungsgrundes,FTX+ABO+++Korrekturrechnung nicht zulässig,ABO Information über Abweichung,S,avis.positionen.abweichung,abweichungsgrundBemerkung1-5,,,,,x,x,,,,,,,,,,,,,,,,,,,,
+0330,20,FTX,C,D,5,5,3,Enthaltene Abschlagsrechnungen,FTX+Z14+++Rechnungsnummer_12345,Z14 Enthaltene Abschläge,S,avis.positionen.abweichung,abschlagsrechnungen,,,,,,x,,,,,,,,,,,,,,,,,,,,
+,21,FTX,C,D,5,5,3,Fehlende Positionen,FTX+Z16+++123456,Z16 Positionsnummern aus dem Angebot,S,avis.positionen.abweichung,fehlendePositionen1-5,,,,,,,,,,,,,,,,,,,,,,,,,,
+0410,,SG10,C,D,9999,9999,2,Rückmeldungen auf Positionsebene,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0420,22,DLI,M,M,1,1,2,Identifikation der Zeile/Position im Dokument,DLI+1+13,1 Enthalten in Dokument/Nachricht,S,avis.positionen.positionen,positionsnummer,,,,,,,x,,,,,,,,,,,,,,,,,,,
+0490,,SG12,C,R,10,10,3,Abweichungsgrund auf Positionsebene,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,23,AJT,M,M,1,1,3,Abweichungsgrund auf Positionsebene,AJT+A02+E_0406,AJT+[EBD-/Prüfschrittcode]+[Codeliste/EBD],S,avis.positionen.positionen.abweichung,"abweichungsgrundCode
+abweichungsgrundCodeliste
+",,,,,,,x,,,,,,,,,,,,,,,,,,,
+0520,24,RFF,C,D,1,1,4,Zugehörige Rechnung oder Bestellung auf Positionsebene,RFF+AFL:1234567890,"AFL Zugehörige Rechnungen
+ACW Referenznummer einer vorangegangenen Nachricht",S,avis.positionen.positionen.abweichung,"AFL -> zugehoerigeRechnung
+ACW -> referenz",,,,,,,x,,,,,,,,,,,,,,,,,,,
+0530,25,FTX,C,D,5,5,4,Nähere Erläuterung des Abweichungsgrundes auf Positionsebene,FTX+ABO+++Die Artikel-ID xy ist im Zeitraum 1.12.22-31.12.22 ungültig.:X:X:X:X',ABO Information über Abweichung,S,avis.positionen.positionen.abweichung,abweichungsgrundBemerkung1-5,,,,,,,x,,,,,,,,,,,,,,,,,,,
+0570,26,UNS,M,M,1,1,0,Trennung von Positions- und Summenteil,UNS+S,,,,,,,,x,x,x,x,,,,,,,,,,,,,,,,,,,
+0580,27,MOA,M,M,99,1,1,Summenbetrag,MOA+12:50000,Überweisungsbetrag,S,avis.zuZahlen,"wert
+waehrung",,,,x,x,x,x,,,,,,,,,,,,,,,,,,,
+0620,28,UNT,M,M,1,1,0,Nachrichtenende,UNT+47+1,,,,,,,,x,x,x,x,,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,45 @@
+Nummer,,Typ,,,Max. Wdh,,,,,,stamm- oder transaktionsdaten,BO Objekt,BO4E - Feld,Mapping EDI <-> BO4E
+,,UNB,,,,,,,UNB+UNOC:3+9979052000006:500+9903526000002:500+250115:1031+C3136937099701',,T,,"absender.rollencodenummer
+absender.rollencodetyp
+
+empfaenger.rollencodenummer
+empfaenger.rollencodetyp
+
+nachrichtendatum
+datenaustauschreferenz","500 = BDEW
+502 = DVGW"
+0010,C0001,UNH,M,M,1,1,0,Nachrichten-Kopfsegment,UNH+hji78+CONTRL:D:3:UN:2.0b',,T,,nachrichtenreferenznummer,
+0020,C0002,UCI,M,M,1,1,0,Übertragungsdatei-Antwort,UCI+hfdaölksa+4012345000023:14+4078901000029:14+4+2+UNB+2:2',,S,STATUSBERICHT.uebertragungsdateiAntwort,"
+
+datenaustauschreferenz
+
+absenderUebertragungsdatei.rollencodenummer
+absenderUebertragungsdatei.rollencodetyp
+
+empfaengerUebertragungsdatei.rollencodenummer
+empfaengerUebertragungsdatei.rollencodetyp
+
+aktion
+syntaxFehler
+serviceSegmentbezeichner
+positionFehlerDatenelement
+positionFehlerGruppendatenelement",
+0030,,SG1,C,D,99999,99999,1,UCM-SG2,,,,,,
+0040,C0003,UCM,M,M,1,1,1,Nachrichtenantwort,UCM+5zg7989jhz+APERAK:D:XYZ:UN:XYZ+4+12+UNH+3:2',,S,STATUSBERICHT.nachrichtenAntwort,"nachrichtenReferenznummer
+nachrichtentypKennung
+versionsnummerNachrichtentyp = ""D""
+freigabenummerNachrichtentyp
+verwaltendeOrganisation = ""UN""
+anwendungscodeOrganisation
+aktion
+syntaxFehler
+serviceSegmentbezeichner
+positionFehlerDatenelement
+positionFehlerGruppendatenelement",
+0050,,SG2,C,D,999,999,2,UCS-UCD,,,,,,
+0060,C0004,UCS,M,M,1,1,2,Segment-Fehleranzeige,UCS+9+13',,S,STATUSBERICHT.nachrichtenAntwort.segmentFehleranzeige,"segmentpositionNachricht
+syntaxFehler",
+0070,C0005,UCD,C,D,99,99,3,Datenelement-Fehleranzeige,UCD+12+3:2',,S,STATUSBERICHT.nachrichtenAntwort.datenelementFehleranzeige,"syntaxFehler
+positionFehlerDatenelement
+positionFehlerGruppendatenelement",
+0150,C0006,UNT,M,M,1,1,0,Nachrichten-Endesegment,UNT+6+hji78',,T,,nachrichtenreferenznummer,

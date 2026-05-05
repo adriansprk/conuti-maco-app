@@ -1,0 +1,1189 @@
+Nummer,,Typ,,,Max. Wdh,,,,,,stamm- oder transaktionsdaten,BO Objekt,BO4E - Feld,Mapping EDI <-> BO4E,Templater Segmentbildungs-Hinweise,Schnittstelle,44001,44002,44003,44004,44005,44006,44007,44008,44009,44010,44011,44012,44013,44014,44015,44019,44020,44021,44022,44023,44024,44035,44215,44036,44037,44038,44109,44112,44113,44115,44116,44117,44119,44120,44121,44123,44124,44159,44160,44161,44175,44176,44137,44138,44139,44140,44142,44143,44172,44145,44146,44147,44148,44149,44150,44151,44152,44156,44157,44162,44163,44164,44165,44166,44167,44180,44181,44182,44039,44040,44041,44042,44043,44044,44168,44169,44170,44051,44052,44053,44060,44101,44102,44103,44104,44105,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,LF -> NB,NB -> LF,NB -> LF,LF -> NB,NB -> LF,NB -> LF,NB -> LF,LF -> NB,LF -> NB,NB -> LFA,LFA -> NB,LFA -> NB,NB -> LFG,LFG -> NB,LFG -> NB,NB -> LF,LF -> NB,NB -> LF,NB <-> LF ,NB <-> LF,NB <-> LF,NB -> LF,NB -> ÜNB,NB -> LF,NB -> LF,NB -> LF,LF -> NB,NB -> LF,NB -> MSB,"LF -> NB
+MSB -> NB",MSB -> NB,NB -> LF,"NB -> MSB
+LF -> NB
+MSB -> NB",LF -> NB,NB -> LF,"NB -> LF
+NB -> MSB","LF -> NB
+MSB -> NB",MSB -> NB,"NB -> LF
+NB -> MSB","NB -> MSB
+LF -> NB
+MSB -> NB",NB -> LF,LF -> NB,NB -> LF,LF -> NB,LF -> NB,MSB -> NB,"NB -> LF
+NB -> MSB",LF -> NB,MSB -> NB,NB -> LF/MSB,NB -> LF/MSB,NB -> MSB,NB -> MSB,MSB -> NB,NB -> LF,LF -> NB,LF -> NB,LF/MSB -> NB,NB -> LF/MSB,LF/MSB -> NB,NB -> LF/MSB,NB -> LF/MSB,NB -> MSB,NB -> MSB,MSB -> NB,LF -> NB,NB -> LF,NB -> LF,MSBN -> MSBA,MSBA -> MSBN,MSBA -> MSBN,MSB -> NB,NB -> MSB,NB -> MSB,NB -> gMSB,gMSB -> NB,gMSB -> NB,MSB -> NB,NB -> MSB,NB -> MSB,"NB -> MSB
+NB -> ÜNB",NB -> MSB,NB -> MSB,NB -> LF,NB -> LF,LF -> NB,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0,,UNB,,,,,,,UNB+UNOC:3+9900321000005:500+9903790000002:500+260404:0942+689022',,T,,datenaustauschreferenz,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0010,3,UNH,M,M,1,1,0,Nachrichten-Kopfsegment,UNH+1+UTILMD:D:11A:UN:G1.1+UNB_DE0020_nr_1+1:C',,T,,"nachrichtenreferenznummer
+zuordnungsReferenz
+uebermittlungsfolgenummer
+statusUebermittlung (""C"" oder ""F"")",,,PROZESSLOGIK,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0020,4,BGM,M,M,1,1,0,Beginn der Nachricht,"BGM+E01+XXXXXXXXXX
+BGM+E02+XXXXXXXXXX
+BGM+E03+XXXXXXXXXX
+BGM+E06+XXXXXXXXXX
+BGM+E35+XXXXXXXXXX
+BGM+E44+XXXXXXXXXX
+BGM+Z02+XXXXXXXXXX
+BGM+Z14+XXXXXXXXXX
+BGM+Z22+XXXXXXXXXX
+BGM+Z26+XXXXXXXXXX
+BGM+Z40+XXXXXXXXXX","Anmeldungen
+Abmeldungen
+Änderungsmeldungen
+Bestandsliste
+Kündigung
+Informationsmeldung
+Deklarationsliste
+Stammdaten der Markt- oder Messlokation
+Netzbetreiberwechsel
+Vorläufige Meldung zur Marktraumumstellung
+Aufforderung",T,,"kategorie 1:1
+dokumentennummer 
+",,,PROZESSLOGIK,E01,E01,E01,E02,E02,E02,E02,E02,E02,E02,E02,E02,E01,E01,E01,E06,E03,E03,"E01
+E02
+E35","E01
+E02
+E35",Z54,Z14,Z14,E44,E44,E44,E03,"E03
+Z26","E03
+Z26","E03
+Z26",E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E03,E35,E35,E35,E01,E01,E01,"E01
+Z40",E01,E01,E02,E02,E02,Z14,Z22,Z22,Z22,Z22,Z22,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0030,5,DTM,M,M,9,1,1,Nachrichtendatum,DTM+137:CCYYMMDDHHMMZZ:303,Dokumenten-/Nachrichtendatum/-zeit,T,,nachrichtendatum,UTC -> 303,,PROZESSLOGIK,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0030,6,DTM,M,D,9,1,1,"Gültigkeit, Beginndatum",DTM+157:CCYYMM:610,"Gültigkeit, Beginndatum",T,,gueltigAb,,,z.B. DECLIST_DATA,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0070,,SG1,C,D,9,1,1,Referenz auf eine vorangegangene Anfrage,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0080,7,RFF,M,M,1,1,1,Referenz auf eine vorangegangene Anfrage,RFF+AAV:XXXXXXXXXX,Nummer der Anfrage,T,,anfragereferenznummer,,,PROZESSLOGIK,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,,SG2,C,R,99,1,1,MP-ID Absender,,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0110,8,NAD,M,M,1,1,1,MP-ID Absender,NAD+MS+XXXXXXXXXXXXX::332 NAD+MS+XXXXXXXXXXXXX::9,"9 GS1
+332 DE, DVGW Service & Consult GmbH",T,absender,"rollencodenummer
+rollencodetyp","9 = GLN
+332 = DVGW",,PROZESSLOGIK,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0150,,SG3,C,D,9,1,2,Kontaktinformationen,,,,,,,,,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,9,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:M Mustermann,Informationskontakt,T,absender.ansprechpartner,nachname,,,PROZESSLOGIK,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0170,10,COM,C,R,9,5,3,Kommunikationsverbindung,                                                                     COM+XXXXXXXXXX:EM                                   COM+XXXXXXXXXX:FX                                        COM+XXXXXXXXXX:TE                                        COM+XXXXXXXXXX:AJ                                        COM+XXXXXXXXXX:AL,Ansprechpartner Kommunikation                                                                             EM = Elektronische Post                                                                                               FX = Telefax                                                                                                                     TE = Telefon                                                                                                                     AJ = weiteres Telefon                                                                                                    AL = Handy ,T,absender.ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,PROZESSLOGIK,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,,SG2,C,R,99,1,1,MP-ID Empfänger,,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0110,11,NAD,M,M,1,1,1,MP-ID Empfänger,NAD+MS+XXXXXXXXXXXXX::332 NAD+MS+XXXXXXXXXXXXX::9             NAD+MS+XXXXXXXXXXXXX::293,"9 GS1                                                                                                                             332 DE, DVGW Service & Consult GmbH                                                               293 DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",T,empfaenger,"rollencodenummer
+rollencodetyp","9 = GLN
+332 = DVGW",,PROZESSLOGIK,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0180,,SG4,C,R,99999,99999,1,Vorgangs-Identifikation,,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0190,12,IDE,M,M,1,1,1,Vorgang,IDE+24+XXXXXXXXXX,Transaktion,T,,eingehend: vorgangsnummer / ausgehend -> Nummer erzeugen,,,PROZESSLOGIK,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0220,13,+#,C,D,9,1,2,Identifikationslogik,"IMD++Z36+Z12
+IMD++Z36+Z13","Marktlokations-ID
+Alle Identifikationsdaten",T,,identifikationslogik,,TransaktionsdatenSegmentBuilder::createIMDZ36,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0230,14,DTM,C,D,99,1,2,Datum zum geplanten Leistungsbeginn,DTM+76:CCYYMMDDHHMMZZZ:303,"Lieferdatum/-zeit, geplant",T,,datumleistungsbeginn,UTC -> 303,,PROZESSLOGIK,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,X,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0230,15,DTM,C,D,99,1,2,Datum und Uhrzeit der Übergabe,DTM+294:CCYYMMDDHHMMZZZ:303,"Datum/Zeit der Übergabe, geplant",T,,datumuebergabe,,,PROZESSLOGIK,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0230,16,DTM,C,D,99,1,2,Beginn zum,DTM+92:CCYYMMDDHHMMZZZ:303,Datum Vertragsbeginn,"eingehend:
+S
+
+
+
+
+ausgehend:
+S/T","vertrag.netznutzungsvertrag
+
+
+",vertragsbeginn,UTC -> 303,,SERVICE_DATA,X,X,,X,X,,,,,,,,X,X,,X,K,S,,,,,,,,X,X,X,X,,X,X,,X,,X,,X,X,,X,,X,X,X,X,X,X,X,X,,X,X,X,X,X,,X,X,X,X,,X,X,X,X,X,,,,,,,,,,,X,X,,,X,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0230,17,DTM,C,D,99,1,2,Ende zum,DTM+93:CCYYMMDDHHMMZZZ:303,Datum Vertragsende,"eingehend:
+
+S
+
+T (nur PI 44016/44017)
+
+ausgehend:
+S/T","vertrag.netznutzungsvertrag
+
+
+","eingehend:
+
+vertragsende
+
+endezumtermin
+
+ausgehend:
+
+vertragsende",UTC -> 303,,PROZESSLOGIK,X,X,,X,X,,X,X,,X,X,,X,X,,S,K,S,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,X,X,,,X,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0230,18,DTM,C,D,99,1,2,Datum des bereits bestätigtem Vertragsende,"DTM+Z05:CCYYMMDDHHMMZZZ:303
+DTM+Z06:CCYYMMDDHHMMZZZ:303","gegenüber Kunde bestätigtes Kündigungsdatum
+gegenüber Lieferant bestätigtes Kündigungsdatum",T,,"Z05 -> datumKuendigungKd
+Z06 -> datumKuendigungLf",UTC -> 303,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0230,19,DTM,C,D,99,1,2,"Änderung zum, Gültigkeit, Beginndatum",DTM+157:CCYYMMDDHHMMZZZ:303,"Gültigkeit, Beginndatum",T,,gueltigAb,,,PROZESSLOGIK,,,,,,,,,,,,,,,,,,,,,,,,,,,X,X,X,,X,X,,X,,X,,X,X,,X,,X,X,X,X,X,X,X,X,,X,X,X,X,X,,X,X,X,X,,X,X,X,X,X,,,,X,,,,,,,,,,,X,X,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0230,20,DTM,C,D,99,1,2,Ende zum (nächstmöglichem Termin),DTM+471:CCYYMMDDHHMMZZZ:303,Ende zum (nächstmöglichem Termin),T,,endezumtermin,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0230,21,DTM,C,D,99,1,2,Bilanzierungsbeginn,DTM+158:CCYYMMDDHHMMZZZ:303,Bilanzierungsbeginn,S,bilanzierung,bilanzierungsbeginn,UTC -> 303,,EDM_DATA,,X,,,,,,,,,,,X,X,,X,K,S,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0230,22,DTM,C,D,99,1,2,Bilanzierungsende,DTM+159:CCYYMMDDHHMMZZZ:303,Bilanzierungsende,S,bilanzierung,bilanzierungsende,UTC -> 303,,EDM_DATA,,X,,,X,,S,S,,,,,X,X,,X,K,S,,,,,,,S,S,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0230,23,DTM,C,D,99,1,2,Kündigungsfrist des Vertrags,DTM+Z01:03MQ:Z01,Kündigungsfrist (Format ZZRB),S,vertrag.energieliefervertrag.vertragskonditionen.kuendigungsfrist,zeitraumText,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0230,24,DTM,C,D,99,1,2,Kündigungstermin des Vertrags,"DTM+Z10:CCYYMMDDHHMMZZZ:303
+DTM+Z10:MMDD:106",Kündigungstermin,S,vertrag.energieliefervertrag.vertragskonditionen,kuendigungstermin,UTC -> 303,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0230,25,DTM,C,D,99,1,2,Lieferbeginndatum in Bearbeitung,DTM+Z07:CCYYMMDDHHMMZZZ:303,Lieferbeginndatum in Bearbeitung,T,,lieferbeginndatuminbearbeitung,UTC -> 303,,PROZESSLOGIK,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0230,26,DTM,C,D,99,1,2,Datum für nächste Bearbeitung,DTM+Z08:CCYYMMDDHHMMZZZ:303,Datum für nächste Bearbeitung,T,,naechsteBearbeitung,,,PROZESSLOGIK,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0250,27,STS,C,D,9,1,2,Transaktionsgrund,"STS+7++E01
+STS+7++E02
+STS+7++E03
+STS+7++E05
+STS+7++E06
+STS+7++Z02
+STS+7++Z15
+STS+7++Z26
+STS+7++Z33
+STS+7++Z36
+STS+7++Z37
+STS+7++Z39
+STS+7++Z40
+STS+7++Z41
+STS+7++Z69
+STS+7++ZC6
+STS+7++ZC7
+STS+7++ZC8
+STS+7++ZD0
+STS+7++ZD2
+STS+7++ZE3
+STS+7++ZE4
+STS+7++ZE5
+STS+7++ZE6
+STS+7++ZE7","Ein-/Auszug (Umzug)
+Einzug in Neuanlage
+Wechsel
+Stornierung
+Ersatzbelieferung
+Kündigung Lieferantenrahmenvertrag
+Zusätzlicher Datensatz
+Information über existierende Zuordnung
+Auszug wegen Stilllegung
+EoG aus Ein-/Auszug (Umzug)
+EoG wegen Einzug in Neuanlage
+EoG aus vorübergehendem Anschluss
+Geschäftsdatenanfrage
+Ende der ESV ohne Folgelieferung
+Wiederinbetriebnahme
+EoG aus Bilanzkreisschließung
+EoG aufgrund Erlöschen der Zuordnungsermächtigung
+Beendigung der Zuordnung
+Fehlerkorrektur
+Lieferbeginn und Abmeldung aus der Ersatzversorgung
+Stammdatenänderung
+Weggefallene Markt- bzw. Messlokation
+Initialmeldung
+Nicht bila.rel. Änderung vom LF
+Nicht bila.rel. Änderung vom NB",T,,transaktionsgrund,,,PROZESSLOGIK,"E01
+E02
+E03
+ZD2","E01
+E02
+E03
+ZD2","E01
+E02
+E03
+ZD2","E01
+Z33
+Z41
+ZG9
+ZH1
+ZH2
+ZT4
+ZT5","E01
+Z33
+Z41
+ZG9
+ZH1
+ZH2
+ZT4
+ZT5","E01
+Z33
+Z41
+ZG9
+ZH1
+ZH2
+ZT4
+ZT5",Z33,Z33,Z33,"E01
+E03
+ZD2","E01
+E03
+ZD2","E01
+E03
+ZD2","E06
+Z02
+Z36
+Z37
+Z39
+ZC6
+ZC7
+ZT6
+ZT7","E06
+Z02
+Z36
+Z37
+Z39
+ZC6
+ZC7
+ZT6
+ZT7","E06
+Z02
+Z36
+Z37
+Z39
+ZC6
+ZC7
+ZT6
+ZT7",,ZD0,ZD0,E05,E05,E05,Z40,Z40,Z26,ZC8,"ZC9
+ZH0
+ZH1",ZE6,ZE7,ZE7,ZE7,ZE8,ZE8,ZE8,ZE9,ZE9,ZF0,ZF0,ZG7,ZG7,ZG7,ZI9,ZI9,ZF3,ZF3,ZF4,ZF4,ZF4,ZS5,ZS5,ZS5,ZS5,ZF5,ZF5,ZF5,ZF6,ZF6,ZF6,ZF8,ZF8,ZG8,ZG8,ZG8,ZG8,ZG8,ZG8,ZJ1,ZJ1,ZJ1,"E03
+ZR9","E03
+ZR9","E03
+ZR9","E01
+E02
+E03","E01
+E02
+E03","E01
+E02
+E03","E01
+E02
+E03","E01
+E02
+E03","E01
+E02
+E03","E01
+E03
+Z33
+ZG9
+ZH1
+ZH2","E01
+E03
+Z33
+ZG9
+ZH1
+ZH2","E01
+E03
+Z33
+ZG9
+ZH1
+ZH2",Z40,ZE5,"Z15
+ZE3
+ZE4",ZE5,"Z15
+ZE3
+ZE4","Z15
+ZE3
+ZE4
+ZE5",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,"STS+7++ZE8
+STS+7++ZE9
+STS+7++ZF0
+STS+7++ZF3
+STS+7++ZF4
+STS+7++ZF5
+STS+7++ZF6
+STS+7++ZF7
+STS+7++ZF8
+STS+7++ZG7
+STS+7++ZG8
+STS+7++ZG9
+STS+7++ZH0                                                                                       
+STS+7++ZH1
+STS+7++ZH2
+STS+7++ZI9
+STS+7++ZJ0
+STS+7++ZJ1
+STS+7++ZP3
+STS+7++ZR9
+STS+7++ZT4
+STS+7++ZT5
+STS+7++ZT6
+STS+7++ZT7
+STS+7++ZZD","Änderung vom MSB mit Abhängigkeiten
+Bila.rel. Änderung vom LF
+Bila.rel. Änderung vom NB mit Abhängigkeiten
+Nicht bila.rel. Anfrage an LF
+Nicht bila.rel. Anfrage an NB
+Anfrage an MSB mit Abhängigkeiten
+Bila.rel. Anfrage an LF
+Bila.rel. Anfrage an NB ohne Abhängigkeiten
+Bila.rel. Anfrage an NB mit Abhängigkeiten
+Änderung vom MSB ohne Abhängigkeiten
+Anfrage an MSB ohne Abhängigkeiten
+Aufhebung einer zukünftigen Zuordnung wegen Auszug des Kunden
+Aufhebung einer zukünftigen Zuordnung wegen Anmeldung eines anderen Lieferanten
+Aufhebung einer zukünftigen Zuordnung wegen Stilllegung
+Aufhebung einer zukünftigen Zuordnung wegen aufgehobenem Vertragsverhältnis
+Änderung der komplexen Marktlokationsstruktur
+Anfrage der Lokationsbündelstruktur
+Anfrage der komplexen Marktlokationsstruktur
+Stammdaten
+Kündigung aufgrund Vertrag mit Anschlussnehmer
+Ende wegen Kündigung durch LF
+Ende wegen Kündigung durch Kunde/LFN
+EoG wegen Kündigung durch LF
+EoG wegen Kündigung durch Kunde/LFN
+Übergangsversorgung",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0250,28,STS,C,D,9,1,2,Transaktionsgundergänzung für Lieferende bei befristeter Anmeldung,"STS+Z17++E01
+STS+Z17++E03","Ein-/Auszug (Umzug)
+Wechsel",T,,transaktionsgrundergaenzungBefristeteAnmeldung,n.v.,TransaktionsdatenSegmentBuilder::createSTSZ17,PROZESSLOGIK,S,S,S,,,,,,,,,,S,S,S,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0250,29,STS,C,D,9,9,2,Status der Antwort,STS+E01++A01:G_0003,Antwortcode aus den Entscheidungsbaumdiagrammen,T,,"antwortstatus
+antwortstatusCodeliste",n.v.,,PROZESSLOGIK,,X,X,,X,X,,X,X,,X,X,,X,X,,,X,,X,X,,,,,,,,,X,,,X,,X,,X,,,X,,X,,X,,,X,,,X,X,,,X,,X,X,,X,,X,X,,,X,,X,X,,X,X,,X,X,,X,X,,X,X,,,,,,GS_001,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0250,30,STS,C,D,9,3,2,Status der Antwort des dritten Marktbeteiligten,STS+Z35++E17:G_0403,Antwortcode aus Codeliste Gas Nr. G_0009,T,,"antwortstatusdritter
+antwortstatusdritterCodeliste",n.v.,,PROZESSLOGIK,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0250,31,STS,C,D,9,1,2,Bilanzkreiszuordnung zur Marktlokation,"STS+Z18+Z13
+STS+Z18+Z14","gescheitert
+erfolgreich",T,,bilanzkreiszuordnung,"Z13 = "" GESCHEITERT""
+Z14 = ""ERFOLGREICH""",,PROZESSLOGIK,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0280,32,FTX,C,D,9,1,2,Bemerkung (Feld für allgemeine Hinweise),"FTX+ACB+++Die Ablehnung: erfolgte, da die Marktlokation:aufgrund eines:Brandes nicht:mehr existiert.",Zusätzliche Informationen (für allgemeine Hinweise),T,,freitext,,TransaktionsdatenSegmentBuilder::createFTXACB,PROZESSLOGIK,K,K,X,K,,X,K,,X,,,,K,K,X,,,,K,,X,K,K,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0280,33,FTX,C,D,9,1,2,Beschreibung der Abweichung zur übermittelten Liste,"FTX+ABO++Z03+Abweichung aufgrund von Zuordnungsfehler""","Ergänzende Marktlokation & Freitext
+Änderung vorhanden & Freitext",T,,"infoAbweichung
+
+ergaenzteMarktlokation","Z03 = ergaenzteMarktlokation = true
+Z05 = ergaenzteMarktlokation = false",,PROZESSLOGIK,,,,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0280,34,FTX,C,D,9,1,2,Information zum Zählerstand,FTX+ADM++Z01,"Ankündigung, dass per MSCONS noch der Zählerstand übermittelt wird",T,,zaehlerstandsinfo,Z01 = true,,INFO,S,,,S,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0290,35,AGR,C,D,9,2,2,Beauftragung oder Beendigung liegt vor,"AGR+9:Z04
+AGR+9:Z06","Vertrag zwischen AN und MSB
+Vertragsbeendigung liegt vor",S,vertrag.messstellenbetriebsvertrag.vertragskonditionen,beauftragungMsb,"Z04 -> VERTRAG_AN_MSB
+Z06 -> VERTRAGSBEENDIGUNG_MSB",,PROZESSLOGIK,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0320,,SG5,C,D,999999,999999,2,Meldepunkt,,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Soll,Soll,Soll,Soll,Soll,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0330,36,LOC,M,M,1,1,2,Meldepunkt,LOC+172+XXXXXXXXXXX,Meldepunkt,S,"auf jeweiliges BO Objekt:
+
+marktlokation
+messlokation","
+
+marktlokationsId
+messlokationsId",n.v.,,MALO_DATA,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,,,,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0320,,SG5,C,D,999999,999999,2,zukünftiger Meldepunkt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0330,37,LOC,M,M,1,1,2,zukünftiger Meldepunkt,LOC+Z08+XXXXXXXXXXX,zukünftiger Meldepunkt,S,"auf jeweiliges BO Objekt
+
+marktlokation
+messlokation",zukuenftigerMeldepunkt = true,,,MALO_DATA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0350,,SG6,C,D,99,1,2,Prüfidentifikator,,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0360,38,RFF,M,M,1,1,2,Prüfidentifikator,"RFF+Z13:44001
+RFF+Z13:44002
+RFF+Z13:44003
+RFF+Z13:44004
+RFF+Z13:44005
+RFF+Z13:44006
+RFF+Z13:44007
+RFF+Z13:44008
+RFF+Z13:44009
+RFF+Z13:44010
+RFF+Z13:44011
+RFF+Z13:44012
+RFF+Z13:44013
+RFF+Z13:44014
+RFF+Z13:44015
+RFF+Z13:44016
+RFF+Z13:44017
+RFF+Z13:44018
+RFF+Z13:44019
+RFF+Z13:44020
+RFF+Z13:44021
+RFF+Z13:44022
+RFF+Z13:44023
+RFF+Z13:44024
+RFF+Z13:44035","GeLi Gas / Anmeldung NN
+GeLi Gas / Bestätigung Anmeldung
+GeLi Gas / Ablehnung Anmeldung
+GeLi Gas / Abmeldung NN
+GeLi Gas / Bestätigung Abmeldung
+GeLi Gas / Ablehnung Abmeldung
+GeLi Gas / Abmeldung NN vom NB
+GeLi Gas / Bestätigung Abmeldung vom NB
+GeLi Gas / Ablehnung Abmeldung vom NB
+GeLi Gas / Abmeldeanfrage des NB
+GeLi Gas / Bestätigung Abmeldeanfrage
+GeLi Gas / Ablehnung Abmeldeanfrage
+GeLi Gas / Anmeldung EoG
+GeLi Gas / Bestätigung EoG Anmeldung
+GeLi Gas / Ablehnung EoG Anmeldung
+GeLi Gas / Kündigung beim alten Lieferanten
+GeLi Gas / Bestätigung Kündigung
+GeLi Gas / Ablehnung Kündigung
+GeLi Gas / Bestandsliste zugeordnete Marktlokationen
+GeLi Gas / Änderungsmeldung zur Bestandsliste
+GeLi Gas / Antwort auf Änderungsmeldung zur Bestandsliste
+GeLi Gas / Anfrage nach Stornierung
+GeLi Gas / Bestätigung Anfrage Stornierung
+GeLi Gas / Ablehnung Anfrage Stornierung
+GeLi Gas / Antwort auf die Geschäftsdatenanfrage",T,,pruefidentifikator,n.v.,,PROZESSLOGIK,44001,44002,44003,44004,44005,44006,44007,44008,44009,44010,44011,44012,44013,44014,44015,44016,44017,44018,44019,44020,44021,44022,44023,44024,44025,44026,44027,44028,44029,44030,44031,44032,44033,44034,44035,44036,44037,44038,44039,44040,44041,44042,44043,44044,44045,44046,44047,44048,44049,44050,44051,44052,44053,44054,44055,44056,44057,44058,44059,44060,44061,44062,44063,44064,44065,44066,44067,44068,44069,44070,44071,44072,44073,44074,44075,44076,44077,44078,44079,44080,44081,44082,44083,44084,44085,44086,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,"RFF+Z13:44036
+RFF+Z13:44037
+RFF+Z13:44038
+RFF+Z13:44039
+RFF+Z13:44040
+RFF+Z13:44041
+RFF+Z13:44042
+RFF+Z13:44043
+RFF+Z13:44044
+RFF+Z13:44051
+RFF+Z13:44052
+RFF+Z13:44053
+RFF+Z13:44060
+RFF+Z13:44096
+RFF+Z13:44097
+RFF+Z13:44101
+RFF+Z13:44102
+RFF+Z13:44103
+RFF+Z13:44104
+RFF+Z13:44105
+RFF+Z13:44109
+RFF+Z13:44111
+RFF+Z13:44112
+RFF+Z13:44113
+RFF+Z13:44115","GeLi Gas / Informationsmeldung über existierende Zuordnung
+GeLi Gas / Informationsmeldung zur Beendigung der Zuordnung
+GeLi Gas / Informationsmeldung zur Aufhebung einer zuk. Zuordnung
+WiM Gas / Kündigung MSB
+WiM Gas / Bestätigung Kündigung MSB
+WiM Gas / Ablehnung Kündigung MSB
+WiM Gas / Anmeldung MSB
+WiM Gas / Bestätigung Anmeldung MSB
+WiM Gas / Ablehnung Anmeldung MSB
+WiM Gas / Ende MSB
+WiM Gas / Bestätigung Ende MSB
+WiM Gas / Ablehnung Ende MSB
+WiM Gas / Antwort auf die MSB Geschäftsdatenanfrage
+TSIMSG / Deklarationsliste an MGV
+TSIMSG / Deklarationsliste an BKV
+NBW Gas / Stammdaten zur Messlokation
+NBW Gas / Aktualisierte Stammdaten zur Messlokation
+NBW Gas / Stammdaten zur verbrauchenden Marktlokation
+NBW Gas / Aktualisierte Stammdaten zur verbrauchenden Marktlokation
+NBW Gas / Ablehnung auf Stammdaten zur verbrauchenden Marktlokation
+SDÄ Gas / Nicht bila.rel. Änderung vom LF an NB
+SDÄ Gas / Antwort auf Änderung vom LF AG an AF
+SDÄ Gas / Nicht bila.rel. Änderung vom NB an LF
+SDÄ Gas / Nicht bila.rel. Änderung vom NB an MSB
+SDÄ Gas / Antwort auf Änderung vom NB AG an NB",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,"RFF+Z13:44116
+RFF+Z13:44117
+RFF+Z13:44119
+RFF+Z13:44120
+RFF+Z13:44121
+RFF+Z13:44123
+RFF+Z13:44124                                                                               
+                                                                              RFF+Z13:44137
+RFF+Z13:44138
+RFF+Z13:44139
+RFF+Z13:44140
+RFF+Z13:44142
+RFF+Z13:44143
+RFF+Z13:44145
+RFF+Z13:44146
+RFF+Z13:44147
+RFF+Z13:44148
+RFF+Z13:44149
+RFF+Z13:44150
+RFF+Z13:44151
+RFF+Z13:44152
+RFF+Z13:44156
+RFF+Z13:44157
+RFF+Z13:44159
+RFF+Z13:44160","SDÄ Gas / Änderung vom MSB an NB
+SDÄ Gas / Änderung vom MSB NB an LF
+SDÄ Gas / Antwort auf Änderung vom MSB AG an AF
+SDÄ Gas / Bila.rel. Änderung vom LF an NB
+SDÄ Gas / Antwort auf bila.rel. Änderung vom LF NB an LF
+SDÄ Gas / Bila.rel. Änderung vom NB mit Abhängigkeiten NB an LF / MSB
+SDÄ Gas / Antwort auf bila.rel. Änderung vom NB mit Abhängigkeiten AG an NB
+SDÄ Gas / Nicht bila.rel. Anfrage an LF NB [Berechtigt] an LF
+SDÄ Gas / Antwort auf nicht bila.rel. Anfrage an LF LF an NB
+SDÄ Gas / Nicht bila.rel. Anfrage an NB LF an NB
+SDÄ Gas / Nicht bila.rel. Anfrage an NB MSB an NB
+SDÄ Gas / Antwort auf nicht bila.rel. Anfrage an NB NB an AF
+SDÄ Gas / Anfrage an MSB mit Abhängigkeiten LF an NB
+SDÄ Gas / Antwort auf Anfrage an MSB mit Abhängigkeiten NB an AF
+SDÄ Gas / Ablehnung der Anfrage an MSB mit Abhängigkeiten NB an AF
+SDÄ Gas / Anfrage an MSB mit Abhängigkeiten NB [Verteiler] an MSB
+SDÄ Gas / Anfrage an MSB mit Abhängigkeiten
+SDÄ Gas / Antwort auf Anfrage an MSB mit Abhängigkeiten MSB an NB
+SDÄ Gas / Bila.rel. Anfrage an LF NB an LF
+SDÄ Gas / Antwort auf bila.rel. Anfrage an LF LF an NB
+SDÄ Gas / Ablehnung der bila.rel. Anfrage an LF LF an NB
+SDÄ Gas / Bila.rel. Anfrage an NB mit Abhängigkeiten
+SDÄ Gas / Antwort auf bila.rel. Anfrage an NB mit Abhängigkeiten
+SDÄ Gas / Änderung vom MSB ohne Abhängigkeiten MSB an NB
+SDÄ Gas / Änderung vom MSB ohne Abhängigkeiten NB an LF / MSB",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,"RFF+Z13:44161
+RFF+Z13:44162
+RFF+Z13:44163
+RFF+Z13:44164
+                                                                              RFF+Z13:44165
+RFF+Z13:44166
+RFF+Z13:44167
+RFF+Z13:44168
+RFF+Z13:44169
+RFF+Z13:44170
+RFF+Z13:44172
+RFF+Z13:44175
+RFF+Z13:44176
+RFF+Z13:44180
+RFF+Z13:44181                                                                          
+                                                                              RFF+Z13:44182","                                                                                                                                                                                                                                                                                                                                                SDÄ Gas / Änderung vom MSB ohne Abhängigkeiten AG an AF
+SDÄ /Anfrage an MSB ohne Abhängigkeiten von LF / MSB an NB
+SDÄ Gas / Antwort auf Anfrage an MSB ohne Abhängigkeiten LF / MSB an NB
+SDÄ Gas / Ablehnung auf Anfrage an MSB ohne Abhängigkeiten LF / MSB an NB
+SDÄ Gas /Anfrage an MSB ohne Abhängigkeiten NB [Verteiler] an MSB
+SDÄ Gas /Anfrage an MSB ohne Abhängigkeiten NB [Berechtigter] an MSB
+SDÄ Gas / Antwort auf Anfrage an MSB ohne Abhängigkeiten MSB an NB
+WiM Gas / Verpflichtungsanfrage / Aufforderung
+WiM Gas / Bestätigung Verpflichtungsanfrage
+WiM Gas / Ablehnung Verpflichtungsanfrage
+SDÄ Gas / Anfrage an MSB mit Abhängigkeit MSB an NB
+SDÄ Gas / Änderung der Marktlokationsstruktur NB an LF
+SDÄ Gas / Antwort auf Änderung der Marktlokationsstruktur LF an NB
+SDÄ Gas / Anfrage der komplexen Marktlokationsstruktur LF an NB
+SDÄ Gas / Antwort auf Anfrage der komplexen Marktlokationsstruktur NB an LF
+SDÄ Gas / Ablehnung der Anfrage der komplexen Marktlokationsstruktur NB an LF",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0350,,SG6,C,D,99,1,2,Referenz Vorgangsnummer (aus Anfragenachricht),,,,,,,,,,Muss,Muss,,Muss,Muss,,Muss,Muss,,Muss,Muss,,Muss,Muss,,Muss,Muss,,Muss,Muss,,,Muss,,,,,,Muss,,,Muss,,Muss,,Muss,,,Muss,,Muss,,Soll,,,Muss,,,Muss,Muss,,,Muss,,Muss,Muss,,Muss,,Muss,Muss,,,Muss,,Muss,Muss,,Muss,Muss,,Muss,Muss,,Muss,Muss,,Muss,Muss,,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0360,39,RFF,M,M,1,1,2,Referenz Vorgangsnummer (aus Anfragenachricht),RFF+TN:XXXXXXXXXX,Transaktions-Referenznummer,T,,anfragereferenznummer,,,PROZESSLOGIK,,X,X,,X,X,,X,X,,X,X,,X,X,,X,X,,X,X,,,X,,,,,,X,,,X,,X,,X,,,X,,X,,X,,,X,,,X,X,,,X,,X,X,,X,,X,X,,,X,,X,X,,X,X,,X,X,,X,X,,X,X,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0350,,SG6,C,D,99,1,2,Referenz auf zu stornierende Vorgangsnummer,,,,,,,,,,,,,,,,,,,,,,,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0360,40,RFF,M,M,1,1,2,Referenz auf zu stornierende Vorgangsnummer,RFF+ACW:XXXXXXXXXX,Referenznummer einer vorangegangenen Nachricht,T,,vorgangsreferenznummer,,,PROZESSLOGIK,,,,,,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0350,,SG6,C,D,99,1,2,Referenz auf eine vorangegangene Anfrage,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Muss,Muss,,,,,,,,,Muss S,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0360,41,RFF,M,M,1,1,2,Referenz auf eine vorangegangene Anfrage,RFF+AAV:XXXXXXXXXX,Nummer der Anfrage,T,,anfragereferenznummer,,,PROZESSLOGIK,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0350,,SG6,C,D,99,1,2,Termine der Marktlokation,,,,,,,,,Muss,Muss,,,,,,,,,,,Muss,Muss,,,,,,,,Muss,,,,,Soll,Soll,,,,,,,,,,Soll S,Soll S,,,,Kann,Soll,Kann,,Soll,,,,,,,,,,,,,Kann S,Soll S,,Soll S,Kann S,Soll S,,,,,,,,Muss,,Muss,Muss,,,,,Muss S,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0360,42,RFF,M,M,1,1,2,Referenz auf die ID der Marktlokation für Termine der Marktlokation,RFF+Z18:XXXXXXXXXXX,Marktlokation,S,marktlokation,marktlokationsId,,,MALO_DATA,X,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,X,X,,,,,,,,,,X,X,,,,X,X,X,,X,,,,,,,,,,,,,X,X,,X,X,X,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0370,43,DTM,C,D,9,1,3,Start des Abrechnungsjahr bei Marktlokationen mit Jahresleistungspreis,DTM+155:CCYYMMDDHHMMZZZ:303,"Rechnungsperiode, Beginndatum",S,vetrag.netznutzungsvertrag.vertragskonditionen,startAbrechnungsjahr,,,MALO_DATA,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,X,,,,,,,,,,,,,,,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0370,44,DTM,C,D,9,1,3,Abrechnungsintervall des LF,DTM+Z20:12:802,Abrechnungintervall des LF (1/3/6/12 Erlaubte Einträge),S,vertrag.energieliefervertrag.vertragskonditionen,abrechnungsintervall,,,MALO_DATA,X,X,,,,,,,,,,,,X,,,,,,,,,,,,,S,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0370,45,DTM,C,D,9,1,3,Termin der Netznutzungsabrechnung,"DTM+Z21:MMWWMMWW:104
+DTM+Z21:MMDD:106","Angabe Zeitraum NN Abrechnung
+Angabe Tag NN Abrechnung",S,vetrag.netznutzungsvertrag.vertragskonditionen.netznutzungsabrechnung,abrechnungsZeitraum,noch offen Datumskonvertierung ,,MALO_DATA,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,X,,,,,,,,,,,,,,,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0370,46,DTM,C,D,9,1,3,Nächste Netznutzungsabrechnung,DTM+Z09:CCYY:602,Nächste Netznutzungsabrechnung,S,vetrag.netznutzungsvertrag.vertragskonditionen,naechstenetznutzungsabrechnung,,,MALO_DATA,,X,,,,,,,,,,,X,X,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0370,47,DTM,C,D,9,1,3,Netznutzungsabrechnungsintervall des NB,DTM+Z22:12:802,Netznuntzungsabrechnungs- bzw. Einseisevergütungsintervall des NB (1/3/6/12 Erlaubte Einträge),S,vetrag.netznutzungsvertrag.vertragskonditionen,netznutzungsabrechnungIntervall,,,MALO_DATA,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,X,,,,,,,,,,,,,,,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0350,,SG6,C,D,99,99,2,Termine der Messlokation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0360,48,RFF,M,M,1,1,2,Referenz auf die ID der Messlokation für Termine der Messlokation,RFF+Z19:DE0000000000000000000000000000000,Messlokation,S,vertrag.messstellenbetriebsvertrag,"lokationsId
+lokationsTyp = MELO",,,MELO_DATA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,K,X,,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,G,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0370,49,DTM,C,D,9,1,3,Turnusablesung des NB,"DTM+752:MMWWMMWW:104
+DTM+752:MMDD:106","Angabe Zeitraum Turnusablesung
+Angabe Tag Turnusablesung",S,"vetrag.messstellenbetriebsvertrag.vertragskonditionen.geplanteTurnusablesung
+
+VERTRAG.messstellenbetriebsvertrag.lokationsTyp = ""MELO""",ableseZeitraum,noch offen Datumskonvertierung ,,MELO_DATA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0410,,SG8,C,D,99999,1,2,Daten der Marktlokation,,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Soll,Soll,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Soll,Soll,,Muss S,Muss S,,Muss,,Muss,,,,,Muss,Muss,Soll,Soll,Soll,Soll,Soll,Muss,Muss,Muss,,Muss,Muss,Muss,Muss,Soll,,Muss,Muss,,,,,,,Muss,Muss,,,,,,Muss,,Muss,Muss,,,,,Muss S,Muss S,Muss S,Muss S,Muss S,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0420,50,SEQ,M,M,1,1,2,Daten der Marktlokation,SEQ+Z01,Daten der Marktlokation,,,,,,PROZESSLOGIK,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,,X,X,,X,,X,,,,,X,X,X,X,X,X,X,X,X,X,,X,X,X,X,X,,X,X,,,,,,,X,X,,,,,,X,,X,X,,,,,X,X,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0450,,SG9,C,D,99,1,3,Veranschlagte Jahresmenge gesamt,,,,,,,,,Kann,Muss,,,,,,,,,,,Muss,Muss,,Muss,Kann ,Soll,,,,Muss,Muss,,,,,,,,,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,Kann,Muss,,,,,,,,,,,,,,Muss,,Muss,Muss,,,,,Muss,Muss,Muss,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0460,51,QTY,M,M,1,1,3,Veranschlagte Jahresmenge gesamt,QTY+31:XXXX:KWH,Veranschlagte Jahresmenge gesamt,S,bilanzierung.jahresverbrauchsprognose,"wert
+einheit",,,EDM_DATA,X,X,,,,,,,,,,,X,X,,X,X,X,,,,X,X,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,X,,X,X,,,,,X,X,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0450,,SG9,C,D,99,1,3,TUM Kundenwert,,,,,,,,,Kann,Soll,,,,,,,,,,,Soll,Soll,,Soll,Kann,Soll,,,,Soll,,,,,,,,,,,,,,Soll,,,,,,,,,,,,,,,,,,,,,,Kann,Muss,,,,,,,,,,,,,,,,,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0460,52,QTY,M,M,1,1,3,TUM Kundenwert,QTY+Y02:XXXX:KWH,Kundenwert,S,bilanzierung.kundenwert,"wert
+einheit",,,EDM_DATA,X,X,,,,,,,,,,,X,X,,X,X,X,,,,X,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0450,,SG9,C,D,99,1,3,Vorjahresverbrauch vom Lieferant,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0460,53,QTY,M,M,1,1,3,Vorjahresverbrauch vom Lieferant,QTY+Z09:XXXX:KWH,Vorjahresverbrauch,S,bilanzierung.vorjahresverbrauch,"wert
+einheit",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,5,3,Bilanzkreis,,,,,,,,,Muss,Muss,,,,,,,,,,,Muss,Muss,,Muss,Kann,Soll,,,,,,,,,,,,,,,,Muss,,,,,,,,,,,,,,,,,,,,,Kann,Soll,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,54,CCI,M,M,1,1,3,Bilanzkreis,CCI+Z19++XXXXXXXXXXXXXXXX,Bilanzkreis,S,"
+
+Bilanzierung",bilanzkreise[].bezeichnung,,BilanzierungSegmentBuilder::createCCIZ19,EDM_DATA,X,X,,,,,,,,,,,X,X,,X,X,X,,,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,55,CAV,C,D,99,1,4,Angabe der Priorisierung für GeLi Gas,"CAV+Z75
+CAV+Z76
+CAV+Z77
+CAV+Z78
+CAV+Z79","1. Priorität
+2. Priorität
+3. Priorität
+4. Priorität
+5. Priorität",S,"
+
+Bilanzierung",bilanzkreise[].prioritaet,"Z75 -> 1
+Z76 -> 2
+Z77 -> 3
+Z78 -> 4
+Z79 -> 5",BilanzierungSegmentBuilder::createCAVPrioGeLiGas,INFO,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,2,3,Marktgebiet,,,,,,,,,,Muss,,,,,,,,,,,Muss,Muss,,,,,,,,Muss,,,,,,Soll G,,,,,,,,,,,,,,,,,Kann G,,Soll G,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,56,CCI,M,M,1,1,3,Marktgebiet,CCI+Z21++37Y005053MH0000R,Marktgebiet,S,marktlokation,marktgebiet,,,EDM_DATA,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,X,,,,,,,,,,,,,,,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Druckebene der Marktlokation,,,,,,,,,,Muss,,,,,,,,,,,Muss,Muss,,,,,,,,Muss,,,,,,Soll G,,,,,,,,,,,,,,,,,Kann G,,Soll G,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,57,CCI,M,M,1,1,3,Druckebene der Marktlokation,CCI+++Y01,Druckebene der Marktlokation,,,,,,PROZESSLOGIK,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,X,,,,,,,,,,,,,,,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,58,CAV,C,R,99,1,4,Druckebene der Marktlokation,"CAV+Y01
+CAV+Y02
+CAV+Y03","Hochdruck
+Mitteldruck
+Niederdruck",S,marktlokation,netzebene,"HD = Y01
+MD = Y02
+ND = Y03",,MALO_DATA,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,X,,,,,,,,,,,,,,,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Prognosegrundlage der Marktlokation,,,,,,,,,,Muss,,,,,,,,,,,Muss,Muss,,Muss,Kann,Soll,,,,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Kann,Muss,,,,,,,,,,,,,,Muss,,Muss,Muss,,,,,Muss,Muss,Muss,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,59,CCI,M,M,1,1,3,Prognosegrundlage der Marktlokation,"CCI+++ZC0
+CCI+++ZA6","Prognose auf Basis von Werten
+Prognose auf Basis von Profilen",S,bilanzierung,prognosegrundlage,"ZC0 -> ""WERTE""
+ZA6 -> ""PROFILE""",,EDM_DATA,,X,,,,,,,,,,,X,X,,X,X,X,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,X,,X,X,,,,,X,X,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Bereits ausgetauschte Prognosegrundlage der Marktlokation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Muss,,,,,,,,,Muss,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,60,CCI,M,M,1,1,3,Bereits ausgetauschte Prognosegrundlage der Marktlokation,"CCI+++ZB0
+CCI+++ZB1","Prognose auf Basis von Werten gültig
+Prognose auf Basis von Profilen gültig",S,bilanzierung,prognosegrundlage,"ZB0 -> ""WERTE""
+ZB1 -> ""PROFILE""",,PROZESSLOGIK,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,,,,,,,,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Gruppenzuordnung (nach EnWG),,,,,,,,,Muss,Muss,,,,,,,,,,,Muss,Muss,,Muss,Kann,Soll,,,,Muss,,,,,Soll,,,,,,,,,,,,,,,,Kann,Soll,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,61,CCI,M,M,1,1,3,Gruppenzuordnung (nach EnWG),"CCI+++Z15
+CCI+++Z18","Haushaltskunde gem. EnWG
+kein Haushaltskunde gem. EnWG",S,vetrag.netznutzungsvertrag.vertragskonditionen,haushaltskunde,"Z15 = true
+Z18 = false",,MALO_DATA,X,X,,,,,,,,,,,X,X,,X,X,X,,,,X,,,,,X,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Fallgruppenzuordnung,,,,,,,,,Kann,Muss,,,,,,,,,,,Muss,Muss,,Muss,Kann,Soll,,,,Muss,,,,,,,,,,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,Kann G,Muss,,,,,,,,,,,,,,,,,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,62,CCI,M,M,1,1,3,Fallgruppenzuordnung,"CCI+++Z17:GABi-RLMNEV
+CCI+++Z17:GABi-RLMmT
+CCI+++Z17:GABi-RLMoT
+CCI+++Z17:GABi-SLPana
+CCI+++Z17:GABi-SLPsyn","Nominierungsersatzverfahren - Exit
+RLM-Kunde in Tagesregime - Exit
+RLM-Kunde im Stundenregime - Exit
+SLP-Kunden analytisches Verfahren - Exit
+SLP-Kunden synthetisches Verfahren - Exit",S,bilanzierung,fallgruppenzuordnung,"GABi-RLMmT -> ""GABI_RLMmT""
+GABi-RLMoT -> ""GABI_RLMoT""
+GABi-RLMNEV -> ""GABI_RLMNEV""",,EDM_DATA,"GABi-RLMNEV
+GABi-RLMmT
+GABi-RLMoT","GABi-RLMNEV
+GABi-RLMmT
+GABi-RLMoT",,,,,,,,,,,"GABi-RLMNEV
+GABi-RLMmT
+GABi-RLMoT","GABi-RLMNEV
+GABi-RLMmT
+GABi-RLMoT",,"GABi-RLMNEV
+GABi-RLMmT
+GABi-RLMoT","GABi-RLMNEV
+GABi-RLMmT
+GABi-RLMoT","GABi-RLMNEV
+GABi-RLMmT
+GABi-RLMoT",,,,"GABi-RLMNEV
+GABi-RLMmT
+GABi-RLMoT",,,,,,,,,,,,,,"GABi-RLMNEV
+GABi-RLMmT
+GABi-RLMoT",,,,,,,,,,,,,,,,,,,,,,"X
+X
+X
+
+","X
+X
+X
+
+",,,,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Netznutzung,,,,,,,,,Muss,Muss,,,,,,,,,,,Muss,Muss,,Muss,Kann,Soll,,,,Muss,,,,,,Soll ,,,,,,,,,,,,,,,,,Kann,,Soll,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,63,CCI,M,M,1,1,3,Netznutzung,CCI+++Z88,Netznutzung,,,,,,PROZESSLOGIK,X,X,,,,,,,,,,,X,X,,X,X,X,,,,X,,,,,,X,,,,,,,,,,,,,,,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,64,CAV,C,R,99,1,4,Netznutzungsvertrag,"CAV+Z74:::Z08
+CAV+Z74:::Z09","Direkter Vertrag zwischen Kunden und NB
+Vertrag zwischen Lieferanten und NB",S,vetrag.netznutzungsvertrag.vertragskonditionen,netznutzungsvertrag,"Z08 = ""KUNDEN_NB""
+Z09 = ""LIEFERANTEN_NB""",,MALO_DATA,X,X,,,,,,,,,,,X,X,,X,X,X,,,,X,,,,,,X,,,,,,,,,,,,,,,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,65,CAV,C,D,99,1,4,Zahlung der Netznutzung,"CAV+Z73:::Z10
+CAV+Z73:::Z11","Kunde
+Lieferant",S,vetrag.netznutzungsvertrag.vertragskonditionen,netznutzungszahler,"Z10 = ""KUNDE""
+Z11 = ""LIEFERANT""",,MALO_DATA,X,X,,,,,,,,,,,X,X,,X,X,X,,,,S,,,,,,X,,,,,,,,,,,,,,,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,66,CAV,C,D,99,1,4,Netznutzungsabrechnungsvariante,"CAV+ZB1:::Z14
+CAV+ZB1:::Z15","Arbeitspreis/Grundpreis
+Arbeitspreis/Leistungspreis",S,vetrag.netznutzungsvertrag.vertragskonditionen,netznutzungsabrechnungsvariante,"Z14 = ""ARBEITSPREIS_GRUNDPREIS""
+Z15 = ""ARBEITSPREIS_LEISTUNGSPREIS""",,MALO_DATA,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,X,,,,,,,,,,,,,,,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Betriebszustand der Marktlokation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Soll ,,,,,,,,,,,,,,,,,Kann S,,Soll S,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,67,CCI,M,M,1,1,3,Betriebszustand der Marktlokation,"CCI+Z42++ZB9
+CCI+Z42++ZD3","Marktlokation gesperrt
+Marktlokation im Regelbetrieb",S,marktlokation,sperrstatus,"ZB9 = ""GESPERRT""
+ZD3 = ""ENTSPERRT""",,MALO_DATA,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0410,,SG8,C,D,99999,99999,2,OBIS-Daten der Marktlokation,,,,,,,,,,Muss,,,,,,,,,,,Muss S,Muss S,,,,,,,,Muss,Muss,,,,,Soll,,,Muss S,Muss S,,,,,,,,,,,,,Kann,,Soll,Kann S,Kann S,Muss S,,Kann S,Kann S,Muss S,,,,,,,,,,,,,,,,,,,Muss,,Muss,Muss,,,,,Muss S,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0420,68,SEQ,M,M,1,1,2,OBIS-Daten der Marktlokation,SEQ+Z02,OBIS-Daten der Marktlokation,,,,,,PROZESSLOGIK,,X,,,,,,,,,,,X,X,,,,,,,,X,X,,,,,X,,,X,X,,,,,,,,,,,,,X,,X,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0440,69,PIA,C,R,9,1,3,OBIS-Kennzahl der Marktlokation,PIA+5+1-1?:1.9.1:SRW,OBIS-Kennzahl,S,marktlokation.zaehlwerke,obisKennzahl,,,MALO_METERING,,X,,,,,,,,,,,X,X,,,,,,,,X,X,,,,,X,,,X,X,,,,,,,,,,,,,X,,X,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Wertegranularität,,,,,,,,,,Muss ,,,,,,,,,,,Muss S,Muss S,,,,,,,,Muss S,,,,,,,,,Muss,Muss,,,,,,,,,,,,,Muss,,Muss,Muss,Muss,Muss,,Muss,Muss,Muss,,,,,,,,,,,,,,,,,,,Muss,,Muss,Muss,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,70,CCI,M,M,1,1,3,Wertegranularität,CCI+++ZE4,Wertegranulatität,,,,,,PROZESSLOGIK,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,X,,X,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,71,CAV,C,R,99,1,4,Wertegranularität,"CAV+ZD9
+CAV+ZE8
+CAV+ZE9
+CAV+ZB7","Jährlich
+Halbjährlich
+Quartalsweise
+Monatlich",S,marktlokation.zaehlwerke,wertegranularitaet,"ZD9 = ""JAEHRLICH""
+ZE8 = ""HALBJAEHRLICH""
+ZE9 = ""QUARTALSWEISE""
+ZB7 = ""MONATLICH""",,MALO_METERING,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,X,,X,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0410,,SG8,C,D,99999,99999,2,Konzessionsabgabedaten,,,,,,,,,Soll,Muss,,,,,,,,,,,Muss,Muss,,,,,,,,Muss,,,,,,Soll,,,,,,,,,,,,,,,,,Kann,,Soll,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0420,72,SEQ,M,M,1,1,2,Konzessionsabgabedaten,SEQ+Z07,Konzessionsabgabedaten,,,,,,PROZESSLOGIK,X,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,X,,,,,,,,,,,,,,,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0430,73,RFF,C,D,9,1,3,Referenz auf die OBIS-Kennzahl der Marktlokation,RFF+Z10:1-1?:1.9.1,OBIS-Kennzahl,S,marktlokation.zaehlwerke,obisKennzahl,,,MALO_METERING,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,X,,,,,,,,,,,,,,,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Konzessionsabgabe,,,,,,,,,Muss,Muss,,,,,,,,,,,Muss,Muss,,,,,,,,Muss,,,,,,Muss,,,,,,,,,,,,,,,,,Muss,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,74,CCI,M,M,1,1,3,Zuordnung Konzessionsabgabe,CCI+++Z08,Konzessionsabgabe,,,,,,PROZESSLOGIK,X,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,X,,,,,,,,,,,,,,,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,75,CAV,C,R,99,1,4,Konzessionsabgabe,"CAV+XXX:::0.00XX:Staffel 1 bis 10.000
+CAV+KAS
+CAV+SA
+CAV+SAS
+CAV+TA
+CAV+TAS
+CAV+TK
+CAV+TKS","                                                                                                                                                 bei dem Eintrag optional wenn nicht Höchstbetrag nach KAV
+                                                                                                                                                                              für alle konzessionsvertraglichen Sonderregelungen, die nicht in die Systematik der KAV eingegliedert sind
+Sondervertragskunden < 1 kV nach § 2 (7) und > 1 kV, Preis nach § 2 (3) (für Strom 0,11 ct/kWh und für Gas 0,03 ct/kWh)
+Kennzeichnung, dass ein abweichender Preis für Sondervertragskunden vorliegt
+Tarifkunden, für Strom § 2. (2) 1b HT bzw. ET (hohe KA) und für Gas § 2 (2) 2b
+Kennzeichnung, dass ein abweichender Preis für Tarifkunden vorliegt
+für Gas nach KAV § 2 (2) 2a bei ausschließlicher Nutzung zum Kochen und Warmwassererzeugung
+Kennzeichnung, wenn nach KAV § 2 (2) 2a ein anderer Preis zu verwenden ist",S,marktlokation.zaehlwerke(OBIS Zuordnung beachten).konzessionsabgabe,"satz (ENUM)
+kosten 
+kategorie",,,MALO_METERING,"KAS
+SA
+SAS
+TAS
+TK
+TKS",X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,X,,,,,,,,,,,,,,,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0410,,SG8,C,D,99999,1,2,Gemeinderabatt,,,,,,,,,Muss,Muss,,,,,,,,,,,Muss,Muss,,,,,,,,Muss,,,,,,Soll ,,,,,,,,,,,,,,,,,Kann,,Soll,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0420,76,SEQ,M,M,1,1,2,Gemeinderabatt,SEQ+Z12,Gemeinderabatt,,,,,,PROZESSLOGIK,X,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,X,,,,,,,,,,,,,,,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0450,,SG9,C,M,99,1,3,Gemeinderabatt,,,,,,,,,Muss,Muss,,,,,,,,,,,Muss,Muss,,,,,,,,Muss,,,,,,Muss,,,,,,,,,,,,,,,,,Muss,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0460,77,QTY,M,M,1,1,3,Gemeinderabatt,QTY+Z16:0:P1,Gemeinderabatt in Prozent,S,vertrag.netznutzungsvertrag,gemeinderabatt,,,MALO_METERING,X,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,X,,,,,,,,,,,,,,,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0410,,SG8,C,D,99999,99999,2,Daten der Messlokation,,,,,,,,,,Muss,,,,,,,,,,,Muss,Muss,,,,,,,,Muss,,,,,,Muss,Muss,,Muss S,Muss S,,,,,,,,,Muss,,,,Kann,Kann,Soll,Muss S,Muss S,Muss S,,Muss S,Muss S,Muss S,,,,,,,,,,,,Muss,Muss,,,,,,Muss,,Muss,Muss,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0420,78,SEQ,M,M,1,1,2,Daten der Messlokation,SEQ+Z18,Daten der Messlokation,,,,,,PROZESSLOGIK,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,X,X,,X,X,,,,,,,,,X,,,,X,X,X,X,X,X,,X,X,X,,,,,,,,,,,,X,X,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0430,79,RFF,C,D,9,1,3,Referenz auf die ID der Messlokation,RFF+Z19:DE0000000000000000000000000000000,Messlokation,S,messlokation,messlokationsId,,,PROZESSLOGIK,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,X,X,,X,X,,,,,,,,,X,,,,X,X,X,X,X,X,,X,X,X,,,,,,,,,,,,X,X,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Zugeordnete Marktpartner,,,,,,,,,,Muss,,,,,,,,,,,Muss,Muss,,,,,,,,Muss,,,,,,Soll,Soll,,,,,,,,,,,,,,,,Kann,Kann,Soll,,,,,,,,,,,,,,,,,,,,,,,,,,Muss,,Muss,Muss,,,,,Muss S,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,80,CCI,M,M,1,1,3,Zugeordnete Marktpartner,CCI+++ZB3,Zugeordneter Marktpartner,,,,,,PROZESSLOGIK,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,81,CAV,C,R,99,1,4,Messstellenbetreiber,"CAV+Z91:XXXXXXXXXXXXX::Z19
+CAV+Z91:XXXXXXXXXXXXX::Z20","MSB / Auf vertraglicher Grundlage gegenüber Anschlussnutzer / Anschlussnehmer
+MSB / In der Ausübung der Weiterverpflichtung durch den gMSB",S,messlokation.marktrollen,"marktrolle = ""MSB""
+rollencodenummer
+weiterverpflichtung","weiterverpflichtung = true -> Z20
+weiterverpflichtung = false -> Z19",,SERVICE_DATA,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,82,CAV,C,R,99,1,4,Grundzuständiger Messstellenbetreiber,CAV+ZF0:XXXXXXXXXXXXX,gMSB,S,messlokation.marktrollen,"marktrolle = ""GMSB""
+rollencodenummer",,,SERVICE_DATA,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,83,CAV,C,D,99,1,4,Messstellenbetreiber alt,CAV+ZB4:XXXXXXXXXXXXX,MSBA,S,messlokation.marktrollen,"marktrolle = ""MSBA""
+rollencodenummer
+",,,SERVICE_DATA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Gasqualität,,,,,,,,,,Muss,,,,,,,,,,,Muss,Muss,,,,,,,,Muss,,,,,,Muss,Muss,,,,,,,,,,,,,,,,Kann,Kann,Soll,,,,,,,,,,,,,,,,,,,,,,,,,,Muss,,Muss,Muss,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,84,CCI,M,M,1,1,3,Gasqualität,CCI+++Y02,Gasqualität,,,,,,PROZESSLOGIK,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,85,CAV,C,R,99,1,4,Gasqualität,"CAV+Y04
+CAV+Y05","H-Gas
+L-Gas",S,messlokation,gasqualitaet,"Y04 = ""H_GAS""
+Y05 = ""L_GAS""",,MELO_DATA,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Betriebszustand der Messlokation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Muss,,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,86,CCI,M,M,1,1,3,Betriebszustand der Messlokation,"CCI+Z32++ZC1
+CCI+Z32++ZC2
+CCI+Z32++ZC3","Messlokation gesperrt und darf nicht entsperrt werden
+Messlokation gesperrt und darf entsperrt werden
+Messlokation im Regelbetrieb",S,messlokation,betriebszustand,"ZC1 = ""GESPERRT_NICHT_ENTSPERREN""
+ZC2 = ""GESPERRT""
+ZC3 = ""REGELBETRIEB""",,MELO_DATA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0410,,SG8,C,D,99999,99999,2,Erforderliches Messprodukt der Messlokation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Muss,,Muss,Muss,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0420,87,SEQ,M,M,1,1,2,Erforderliches Messprodukt der Messlokation,SEQ+Z19,Erforderliches Produkt der Messlokation,,,,,,PROZESSLOGIK,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0440,88,PIA,C,R,9,1,3,Erforderliches Messprodukt der Messlokation,PIA+5+XXXXXXXXXXXXXX:Z11,Messprodukt der Messlokation,S,messlokation.zaehlwerke,messprodukt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0410,,SG8,C,D,99999,99999,2,Zähleinrichtungsdaten,,,,,,,,,Kann,Muss,,,,,,,,,,,Muss,Muss,,,,,,,,Muss,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,Kann,Kann,Muss,,Soll,Kann,Muss,,,,,,,,,,,,,,,Muss,Muss,,Muss,Muss,,Muss,Muss,,,,,Soll,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0420,89,SEQ,M,M,1,1,2,Zähleinrichtungsdaten,SEQ+Z03,Zähleinrichtungsdaten,,,,,,PROZESSLOGIK,X,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,X,X,,X,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0430,90,RFF,C,D,9,1,3,Referenz auf die ID einer Messlokation,RFF+Z19:DE0000000000000000000000000000000,Messlokation,S,zaehler,messlokationsId,,,PROZESSLOGIK,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,X,X,,X,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Zähleinrichtung,,,,,,,,,X,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,Muss,Muss,Muss,,Muss,Muss,Muss,,,,,,,,,,,,,,,Muss,Muss,,Muss,Muss,,Muss,Muss,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,91,CCI,M,M,1,1,3,Zählertyp,CCI+++E13,Zählertyp,,,,,,PROZESSLOGIK,X,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,X,X,,X,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,92,CAV,C,D,99,1,4,Zählertyp,"CAV+BGZ
+CAV+DKZ
+CAV+EHZ
+CAV+IVA
+CAV+NMG
+CAV+TRZ
+CAV+UGZ
+CAV+WGZ","Balgengaszähler
+Drehkolbengaszähler
+elektionischer Haushaltszähler
+Individuelle Abstimmung (Sonderausstattung)
+neue Messeinrichtung Gas nach MsbG
+Turbinenradgaszähler
+Ultraschallgaszähler
+Wirbelgaszähler",S,zaehler,"zaehlertyp
+zaehlertypSpezifikation","AHZ = ""DREHSTROMZAEHLER""
+WSZ = ""WECHSELSTROMZAEHLER""
+LAZ = ""LEISTUNGSZAEHLER""
+MAZ = ""MAXIMUMZAEHLER""
+MME = ""MODERNEMESSEINRICHTUNG""
+NMG = ?
+DKZ = ""DREHKOLBENZAEHLER""
+BGZ = ""BALGENGASZAEHLER""
+TRZ = ""TURBINENRADGASZAEHLER""
+UGZ = ""ULTRASCHALLGASZAEHLER""
+WGZ = ""WIRBELGASZAEHLER""
+EHZ = ""ELEKTRONISCHERHAUSHALTSZAEHLER""
+IVA = ""SONDERAUSSTATTUNG""
+Z01 = ""EDL40""
+Z02 = ""EDL21""
+Z03 = ""SONSTIGER_EHZ""
+Z04 = ""MME_STANDARD""
+Z05 = ""MME_MEDA""",,METER_DATA,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,93,CAV,C,D,99,1,4,Zählergröße,"CAV+:::G10
+CAV+:::G100
+CAV+:::G1000
+CAV+:::G10000
+CAV+:::G12500
+CAV+:::G16
+CAV+:::G160
+CAV+:::G1600
+CAV+:::G16000
+CAV+:::G2.5
+CAV+:::G25
+CAV+:::G250
+CAV+:::G2500
+CAV+:::G350
+CAV+:::G4
+CAV+:::G40
+CAV+:::G400
+CAV+:::G4000
+CAV+:::G6
+CAV+:::G65
+CAV+:::G650
+CAV+:::G6500","Gaszähler G10
+Gaszähler G100
+Gaszähler G1000
+Gaszähler G10000
+Gaszähler G12500
+Gaszähler G16
+Gaszähler G160
+Gaszähler G1600
+Gaszähler G16000
+Gaszähler G2.5
+Gaszähler G25
+Gaszähler G250
+Gaszähler G2500
+Gaszähler G350
+Gaszähler G4
+Gaszähler G40
+Gaszähler G400
+Gaszähler G4000
+Gaszähler G6
+Gaszähler G65
+Gaszähler G650
+Gaszähler G6500",S,zaehler,zaehlergroesse (ENUM),"G10 =""GAS_G10""
+G100 =""GAS_G100""
+G1000 =""GAS_G1000""
+G10000 =""GAS_10000""
+G12500 =""GAS_12500""
+G16 =""GAS_G16""
+G160 =GAS_G160""
+G1600 =""GAS_G1600""
+G16000 =""GAS_G16000""
+G2.5 = ""GAS_G2P5""
+G25 =""GAS_G25""
+G250 =""GAS_G250""
+G2500 =""GAS_G2500""
+G350 =""GAS_G350""
+G4 =""GAS_G4""
+G40 =""GAS_G40""
+G400 =""GAS_G400""
+G4000 =""GAS_G4000""
+G6 =""GAS_G6""
+G65 =""GAS_G65""
+G650 =""GAS_G650""
+G6500 =""GAS_G6500""",,METER_DATA,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,,X,,X,X,X,,,,,,,,,,,,,,,,,,,G,,G,G,,,,,G,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,94,CAV,C,R,99,1,4,Identifikation / Nummer des Gerätes,CAV+Z30:::XXXXXXXXXX                  CAV+Z30:::XXXXXXXXXX:x',Gerätenummer                                                                                                    Gerätenummer mit Teil Nummer bzw. Zeichenfolge auf dem Gerät,S,zaehler,zaehlernummer,,,METER_DATA,X,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,X,X,,X,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,95,CAV,C,D,99,1,4,Art der Volumenerfassung,CAV+ZC0:::Z16,Hochfrequenzsonde,S,zaehler,volumenerfassung,Z16 = HOCHFREQUENZSONDE,,METER_DATA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,S,,,,,,,,,,,,,,,,,,,,,,S,S,,,,,,,,,,,,,,,,,,,G,,G,G,,,,,G,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Befestigungsart Zähleinrichtung,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,,,,Muss,,Muss,Muss,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,96,CCI,M,M,1,1,3,Befestigungsart Zähleinrichtung,CCI+++Z28,Befestigungsart Zähleinrichtung,,,,,,PROZESSLOGIK,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,97,CAV,C,R,99,1,4,Befestigungsart Zähleinrichtung,"CAV+Z31
+CAV+Z32","Einstutzen-Zähler
+Zweistutzen-Zähler",S,zaehler,befestigungsart,"BKE =""STECKTECHNIK""
+DPA =""DREIPUNKT""
+HUT =""HUTSCHIENE""
+Z31 = ""EINSTUTZEN""
+Z32 = ""ZWEISTUTZEN""",,METER_DATA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Messwerterfassung an der Zähleinrichtung,,,,,,,,,,Muss,,,,,,,,,,,Muss,Muss,,,,,,,,Muss,,,,,,,,,Muss,,,,,,,,,,,,,,,,,Muss,Muss,Muss,,Muss,Muss,Muss,,,,,,,,,,,,,,,,,,,Muss,,Muss,Muss,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,98,CCI,M,M,1,1,3,Messwerterfassung an der Zähleinrichtung,CCI+++E12,Messwerterfassung an der Zähleinrichtung,,,,,,PROZESSLOGIK,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,99,CAV,C,R,99,1,4,Messwerterfassung an der Zähleinrichtung,"CAV+AMR
+CAV+MMR","fernauslesbarere Zähler
+manuell ausgelesene Zähler",S,zaehler,messwerterfassung,"AMR = ""FERNAUSLESBAR""
+MMR = ""MANUELL_AUSGELESENE""",,METER_DATA,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0410,,SG8,C,D,99999,99999,2,Messdatenregistriergerätedaten,,,,,,,,,,Soll,,,,,,,,,,,Soll,Soll,,,,,,,,Soll,,,,,,,,,Soll,Soll,,,,,,,,,,,,,,,,Kann,,Soll,,Soll,Kann,Soll,,,,,,,,,,,,,,,,,,,Soll,,Soll,Soll,,,,,Soll,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0420,100,SEQ,M,M,1,1,2,Messdatenregistriergerätedaten,SEQ+Z50,Messdatenregistriergerätedaten,,,,,,PROZESSLOGIK,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0430,101,RFF,C,D,9,9,3,Referenz auf die ID der Messlokation,RFF+Z19:XXXXXXXXXXXXXXXXXXXXX,Messlokation,S,zaehler,messlokationsId,,,MDM_DATA,,,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Messdatenregistriergerät,,,,,,,,,,X,,,,,,,,,,,Soll,Soll,,,,,,,,Muss,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,Muss,,Muss,,Muss,Muss,Muss,,,,,,,,,,,,,,,,,,,Muss,,Muss,Muss,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,102,CCI,M,M,1,1,3,Messdatenregistriergerät,CCI+++E13,Zählertyp,,zaehler.geraete.geraeteeigenschaften,geraetetyp = MESSDATENREGISTRIERGERAET,,,,,,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,103,CAV,C,R,99,1,4,Identifikation / Nummer des Gerätes,CAV+Z30:::XXXXXXXXXX                       CAV+Z30:::XXXXXXXXXX:x,Gerätenummer                                                                                      Gerätenummer mit Teil Nummer bzw. Zeichenfolge auf dem Gerät,S,zaehler.geraete,geraetenummer,,,MDM_DATA,,,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,104,CAV,C,D,99,1,4,Art der Volumenerfassung,CAV+ZC0:::Z16,Hochfrequenzsonde,S,zaehler.geraete.geraeteeigenschaften,volumenerfassung,Z16 = HOCHFREQUENZSONDE,GeraetSegmentBuilder::createCAVZC0,MDM_DATA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,S,,,,,,,,,,,,,,,,,,,,,,S,S,,,,,,,,,,,,,,,,,,,S,,S,S,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0410,,SG8,C,D,99999,99999,2,Mengenumwerterdaten,,,,,,,,,,Soll,,,,,,,,,,,Soll,Soll,,,,,,,,Soll,,,,,,,,,Soll,Soll,,,,,,,,,,,,,,,,Kann,,Soll,,Soll,Kann,Soll,,,,,,,,,,,,,,,,,,,Soll,,Soll,Soll,,,,,Soll,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0420,105,SEQ,M,M,1,1,2,Mengenumwerterdaten,SEQ+Z09,Mengenumwerterdaten,,,,,,PROZESSLOGIK,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0430,106,RFF,C,D,9,9,3,Referenz auf die Gerätenummer,RFF+MG:XXXXXXXXXXX,Gerätenummer des Zählers,S,zaehler,zaehlernummer,,,VCD_DATA,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Mengenumwerter,,,,,,,,,,Muss,,,,,,,,,,,Muss,Muss,,,,,,,,Muss,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,Muss,,Muss,,Muss,Muss,Muss,,,,,,,,,,,,,,,,,,,Muss,,Muss,Muss,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,107,CCI,M,M,1,1,3,Mengenumwerter,CCI+++Z64,Mengenumwerter,,zaehler.geraete.geraeteeigenschaften,geraetetyp = MENGENUMWERTER,,,PROZESSLOGIK,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,108,CAV,C,R,99,1,4,Identifikation / Nummer des Gerätes,CAV+Z30:::XXXXXXXXXX                           CAV+Z30:::XXXXXXXXXX:x,Gerätenummer                                                                                    Gerätenummer mit Teil Nummer bzw. Zeichenfolge auf dem Gerät,S,zaehler.geraete,geraetenummer,,,VCD_DATA,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,109,CAV,C,D,99,1,4,Mengenumwertertyp,"CAV+DMU
+CAV+TMU
+CAV+ZMU","Dichtemengenumwerter
+Temperaturmengenumwerter
+Zustandsmengenumwerter",S,zaehler.geraete.geraeteeigenschaften,geraetemerkmal (ENUM),"DMU = DICHTEMENGENUMWERTER
+TMU = TEMPERATURMENGENUMWERTER
+ZMU = ZUSTANDSMENGENUMWERTER",,VCD_DATA,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,110,CAV,C,D,99,2,4,Art der Volumenerfassung,"CAV+ZC0:::Z17
+CAV+ZC0:::Z18","Kennlinienkorrektur
+Schleichmengenunterdrückung",S,zaehler.geraete.geraeteeigenschaften,volumenerfassung,"Z17 = KENNLINIENKORREKTUR
+Z18 = SCHLEICHMENGENUNTERDRUECKUNG",,VCD_DATA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,S,S,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0410,,SG8,C,D,99999,99999,2,OBIS-Daten der Zähleinrichtung / Mengenumwerter,,,,,,,,,,Muss,,,,,,,,,,,Muss,Muss,,,,,,,,Muss,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,Kann,Kann S,Muss,,Soll,Kann,Muss,,,,,,,,,,,,,,,,,,,Muss,,Muss,Muss,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0420,111,SEQ,M,M,1,1,2,OBIS-Daten der Zähleinrichtung / Mengenumwerter,SEQ+Z20,OBIS-Daten der Zähleinrichtung,,,,,,PROZESSLOGIK,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0430,112,RFF,C,D,9,1,3,Referenz auf die Gerätenummer,"RFF+MG:XXXXXXXXXXX
+RFF+Z11:XXXXXXXXXXX","Gerätenummer des Zählers
+Gerätenummer des Mengenumwerters",S,"zaehler  (Wenn RFF+MG vorliegt)
+
+
+zaehler.geraete  (Wenn RFF+Z11 vorliegt)","zaehlernummer (Wenn RFF+MG vorliegt)
+
+geraetenummer (Bei RFF+Z11)
+geraeteeigenschaften.geraetetyp = MENGENUMWERTER  (Bei RFF+Z11)",,,"METER_DATA
+VCD_DATA
+GW_DATA",,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,"X
+
+X",X,,X,X,X,,,,,,,,,,,,,,,,,,,"X
+X
+X",,"X
+X
+X","X
+X
+X",,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0430,113,RFF,C,D,9,1,3,Referenz auf die ID der Messlokation,RFF+Z19:XXXXXXXXXXXXXXXXXXXXX,Messlokation,S,ZAEHLER,messlokationsId,,,PROZESSLOGIK,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0440,114,PIA,C,R,9,1,3,OBIS-Kennzahl der Zähleinrichtung / Mengenumwerter,PIA+5+1-1?:1.8.1:SRW,OBIS-Kennzahl,S,zaehler.zaehlwerke,obisKennzahl,,,"METER_DATA
+VCD_DATA",,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Wertegranularität,,,,,,,,,,Muss,,,,,,,,,,,Muss,Muss,,,,,,,,Muss,,,,,,,,,M uss,Muss,,,,,,,,,,,,,,,,Muss,Muss,Muss,,Muss,Muss,Muss,,,,,,,,,,,,,,,,,,,Muss,,Muss,Muss,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,115,CCI,M,M,1,1,3,Wertegranularität,CCI+++ZE4,Wertegranulatität,,,,,,PROZESSLOGIK,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,116,CAV,C,R,99,1,4,Wertegranularität,"CAV+ZD9
+CAV+ZE8
+CAV+ZE9
+CAV+ZB7","Jährlich
+Halbjährlich
+Quartalsweise
+Monatlich",S,zaehler.zaehlwerke,wertegranularitaet,"ZD9 = ""JAEHRLICH""
+ZE8 = ""HALBJAEHRLICH""
+ZE9 = ""QUARTALSWEISE""
+ZB7 = ""MONATLICH""",,MELO_METERING,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Vor- und Nachkommastellen des Zählwerks,,,,,,,,,,Muss,,,,,,,,,,,Muss,Muss,,,,,,,,Muss,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,Muss,Muss,Muss,,Soll,Muss,Muss,,,,,,,,,,,,,,,,,,,Muss,,Muss,Muss,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,117,CCI,M,M,1,1,3,Vor- und Nachkommastellen des Zählwerks,CCI+11++Z33,Vor- und Nachkommastellen des Zählwerks,,,,,,PROZESSLOGIK,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,118,CAV,C,R,99,1,4,Vor- und Nachkommastellen des Zählwerks,CAV+:::8:3,Angabe Vorkommastelle / Angabe Nachkommastelle,S,zaehler.zaehlwerke (unter korrespondierender Obis zu PIA+5),"vorkommastellen
+nachkommastellen",,,"METER_DATA
+VCD_DATA",,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Bezeichnung des Zählwerks auf dem Gerät,,,,,,,,,,Muss,,,,,,,,,,,Muss,Muss,,,,,,,,Muss,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,Muss,,Muss,,Soll,Muss,Muss,,,,,,,,,,,,,,,,,,,,,Muss,Muss,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,119,CCI,M,M,1,1,3,Bezeichnung des Zählwerks auf dem Gerät,CCI+++Z63:::HT, Bezeichnung des Zählwerks auf dem Gerät   ,S,zaehler.zaehlwerke (unter korrespondierender Obis zu PIA+5),bezeichnung,,,"METER_DATA
+VCD_DATA",,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,,X,,X,X,X,,,,,,,,,,,,,,,,,,,,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0410,,SG8,C,D,99999,99999,2,Kommunikationseinrichtungsdaten,,,,,,,,,,Muss/Soll,,,,,,,,,,,Muss/Soll,Muss/Soll,,,,,,,,Muss/Soll,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,Kann,Kann S,Muss,,Soll,Kann,Muss,,,,,,,,,,,,,,,,,,,Muss,,Muss,Muss,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0420,120,SEQ,M,M,1,1,2,Kommunikationseinrichtungsdaten,SEQ+Z05,Kommunikationseinrichtungsdaten,,,,,,PROZESSLOGIK,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0430,121,RFF,C,D,9,9,3,Referenz auf die Gerätenummer,RFF+MG:XXXXXXXXXXX,Gerätenummer des Zählers,S,zaehler,zaehlernummer,,,COMDEV_DATA,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Kommunikationseinrichtung,,,,,,,,,,Muss,,,,,,,,,,,Muss,Muss,,,,,,,,Muss,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,Muss,Muss,Muss,,Muss,Muss,Muss,,,,,,,,,,,,,,,,,,,Muss,,Muss,Muss,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,122,CCI,M,M,1,1,3,Kommunikationseinrichtung,CCI+++Z26,Kommunikationseinrichtung,,zaehler.geraete.geraeteeigenschaften,geraetetyp = KOMMUNIKATIONSEINRICHTUNG,,,PROZESSLOGIK,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,123,CAV,C,R,99,1,4,Identifikation / Nummer des Gerätes,CAV+Z30:::XXXXXXXXXX                      CAV+Z30:::XXXXXXXXXX:x,Gerätenummer                                                                                                    Gerätenummer mit Teil Nummer bzw. Zeichenfolge auf dem Gerät,S,zaehler.geraete,geraetenummer,,,COMDEV_DATA,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,124,CAV,C,D,99,1,4,Kommunikationseinrichtungstyp,"CAV+GSM
+CAV+ETH
+CAV+PLC
+CAV+PST
+CAV+DSL
+CAV+LTE","GSM/GPRS/UMTS-Kom.-Einr.
+Ethernet-Kom.-Einricht. LAN/WLAN
+PLC-Kom.-Einrichtung
+Festnetz-Kom.-Einricht. TAE
+DSL-Kom.Einr.
+LTE-Kom.-Einr.",S,zaehler.geraete.geraeteeigenschaften,"
+geraetemerkmal (ENUM)
+","GSM = MODEM_GSM
+ETH = ETHERNET_KOM
+PLC = PLC_COM
+PST = MODEM_FESTNETZ
+DSL = DSL_KOM
+LTE = LTE_KOM",,COMDEV_DATA,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0410,,SG8,C,D,99999,99999,2,Smartmeter-Gateway,,,,,,,,,,Soll,,,,,,,,,,,Soll,Soll,,,,,,,,Soll,,,,,,,,,Soll,Soll,,,,,,,,,,,,,,,,Kann,Kann,Soll,,Soll,Kann,Soll,,,,,,,,,,,,,,,,,,,,,Soll,Soll,,,,,Soll,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0420,125,SEQ,M,M,1,1,2,Smartmeter-Gateway,SEQ+Z13,Smartmeter-Gateway,,,,,,PROZESSLOGIK,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,R,99,1,3,Smartmeter-Gateway,,,,,,,,,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,Muss,Muss,Muss,,Muss,Muss,Muss,,,,,,,,,,,,,,,,,,,,,Muss,Muss,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,126,CCI,M,M,1,1,3,Smartmeter-Gateway,CCI+++Z75,Smartmeter-Gateway,,zaehler.geraete.geraeteeigenschaften,geraetetyp = SMARTMETERGATEWAY,,,PROZESSLOGIK,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,127,CAV,C,R,99,1,4,Identifikation / Nummer des Gerätes,CAV+Z30:::XXXXXXXXXX,Gerätenummer,S,zaehler.geraete,geraetenummer,,,MELO_METERING,,X,,,,,,,,,,,X,X,,,,,,,,X,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,X,X,X,,,,,,,,,,,,,,,,,,,,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0410,,SG8,C,D,99999,1,2,Lastprofildaten,,,,,,,,,Kann G,Muss,,,,,,,,,,,Muss,Muss,,Muss,Kann,Soll,,,,Muss,,,,,,,,,,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0420,128,SEQ,M,M,1,1,2,Lastprofildaten,SEQ+Z35,Lastprofildaten,,,,,,PROZESSLOGIK,X,X,,,,,,,,,,,X,X,,X,X,X,,,,X,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,R,99,1,3,Lastprofil,,,,,,,,,Muss,Muss,,,,,,,,,,,Muss,Muss,,Muss,Muss,Muss,,,,Muss,,,,,,,,,,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,129,CCI,M,M,1,1,3,Lastprofil,"CCI+Z12++E01
+CCI+Z12++Z10","synthetisches Verfahren
+analytisches Verfahren",S,bilanzierung.lastprofile,"verfahren
+profilart = ""ART_LASTPROFIL""
+einspeisung = false","E01 -> ""SYNTHETISCH""
+Z10 -> ""ANALYTISCH""",,EDM_DATA,X,X,,,,,,,,,,,X,X,,X,X,X,,,,X,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,130,CAV,C,R,99,1,4,Lastprofil,"CAV+N14::293
+CAV+F95::89","N14 nach TUM mit Qualifier, DE, BDEW 293
+F95 eigenes Profil Netzbetreiber mit Qualifier, Vergeben vom Händler 89",S,bilanzierung.lastprofile,"bezeichnung 
+herausgeber","293 = ""TUM""
+89 = ""NB""",,EDM_DATA,X,X,,,,,,,,,,,X,X,,X,X,X,,,,X,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,D,99,1,3,Klimazone / Temperaturmessstelle,,,,,,,,,,Muss,,,,,,,,,,,Muss,Muss,,Muss,Muss,Muss,,,,Muss,,,,,,,,,,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,131,CCI,M,M,1,1,3,Klimazone / Temperaturmessstelle,"CCI+Z99++1234:ZT1:293
+CCI+ZA0++5678::89","Temperaturmessstelle 1234 des Anbieters ZT1
+Klimazone 5678 vom NB",S,bilanzierung.lastprofile.tagesparameter,"bei ZA0 -> ""klimazone"" ;  herausgeber:""NB""
+bei Z99 -> ""temperaturmessstelle"" ;  ""dienstanbieter"": ""DWD"" ; ""herausgeber"":""BDEW""","ZT1 = ""DWD""
+293 = ""BDEW"" / 89 = ""NB""",,EDM_DATA,,X,,,,,,,,,,,X,X,,X,X,X,,,,X,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0410,,SG8,C,D,99999,1,2,Daten der Deklarationsliste,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0420,132,SEQ,M,M,1,1,2,Daten der Deklarationsliste,SEQ+Z26,Daten der Deklarationsliste,,,,,,PROZESSLOGIK,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,R,99,1,3,Bilanzkreis,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,133,CCI,M,M,1,1,3,Bilanzkreis,CCI+Z19++XXXXXXXXXXXXXXXX,Bilanzkreis,,,,,,DECLIST_DATA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,,SG10,C,R,99,1,3,Fallgruppenzuordnung,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,134,CCI,M,M,1,1,3,Fallgruppenzuordnung,"CCI+++Z17:GABi-RLMmT
+CCI+++Z17:GABi-RLMoT
+CCI+++Z17:GABi-SLPana
+CCI+++Z17:GABi-SLPsyn","RLM-Kunde in Tagesregime - Exit
+RLM-Kunde im Stundenregime - Exit
+SLP-Kunden analytisches Verfahren - Exit
+SLP-Kunden synthetisches Verfahren - Exit",,,,,,DECLIST_DATA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0570,,SG12,C,D,99,1,2,Kunde des Lieferanten,,,,,,,,,Muss,Muss,,,,,,,,Muss,,,Muss,Muss,,Soll,Kann,Soll,,,,Soll,,,,,S,,,,,,,,,,,,,,,,Kann,Soll,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Soll S,,Soll S,Soll S,,,,,Soll S,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0580,135,NAD,M,M,1,1,2,Kunde des Lieferanten,"NAD+Z09+++Max:Mustermann::::Z01
+NAD+Z09+++Firma AG:Musterfirma::::Z02","Struktur von Personennamen
+Struktur der Firmenbezeichnung",S,"vertrag.energieliefervertrag.vertragspartner2.GESCHAEFTPARTNER (GP-Rolle=""KUNDE"")","anrede
+name1
+name2
+name3
+name4
+gewerbekennzeichnung",,,PARTNER_DATA,X,X,,,,,,,,X,,,X,X,,X,X,X,,,,X,,,,,X,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0590,136,RFF,C,D,9,1,3,Kundennummer beim Lieferanten,RFF+AVC:KDXXXXXXXXXX,Kundennummer beim Lieferanten,S,"vertrag.energieliefervertrag.vertragspartner2.GESCHAEFTPARTNER (GP-Rolle=""KUNDE"")","exRefName = ""Kundennummer beim Lieferanten""
+exRefWert",,,PROZESSLOGIK,K,S,,,,,,,,,,,,,,,,,,,,K,,,,,K,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0590,137,RFF,C,D,9,1,3,Kundennummer beim Altlieferanten,RFF+Z01:KDXXXXXXXXXX,Kundennummer beim Altlieferanten,S,"vertrag.energieliefervertrag.vertragspartner2.GESCHAEFTPARTNER (GP-Rolle=""KUNDE"")","exRefName = ""Kundennummer beim Altlieferanten""
+exRefWert",,,PROZESSLOGIK,Soll,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0570,,SG12,C,D,99,99,2,Korrespondenzanschrift des Kunden des Lieferanten,,,,,,,,,Muss,Muss,,,,,,,,,,,Muss,Muss,,,,,,,,,,,,,S,,,,,,,,,,,,,,,,Kann,Soll,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Soll S,,Soll S,Soll S,,,,,Soll S,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0580,138,NAD,M,M,1,1,2,Korrespondenzanschrift des Kunden des Lieferanten,"NAD+Z04+++Fank Müller:::::Z01+Wohnstrasse::25:Musterortsteil+Musterstadt++55555+DE
+NAD+Z04+++Firma Meier:::::Z02+Wohnstrasse::25:Musterortsteil+Musterstadt++55555+DE","Struktur von Personennamen
+Struktur der Firmenbezeichnung",S,vertrag.energieliefervertrag.korrespondenzpartner,"anrede
+name1
+name2
+name3
+name4
+gewerbekennzeichnung
+partneradresse.postleitzahl
+partneradresse.ort
+partneradresse.strasse
+partneradresse.postfach
+partneradresse.hausnummer
+lpartneradresse.landescode
+partneradresse.ortsteil",,,PARTNER_DATA,X,X,,,,,,,,,,,X,X,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0570,,SG12,C,D,99,1,2,Kunde des Messstellenbetreibers,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Soll,Soll,,,,,,,,,,,,,,,,,,,,,Kann S,Soll S,,Soll S,Kann,Soll,,,,Muss,Muss,,Muss,Muss,,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0580,139,NAD,M,M,1,1,2,Kunde des Messstellenbetreibers,"NAD+Z07+++Max:Mustermann::::Z01
+NAD+Z07+++Firma AG:Musterfirma::::Z02","Struktur von Personennamen
+Struktur der Firmenbezeichnung",S,"vertrag.messstellenbetriebsvertrag.vertragspartner2.GESCHAEFTPARTNER (GP-Rolle=""KUNDE"")","anrede
+name1
+name2
+name3
+name4
+gewerbekennzeichnung",,,PARTNER_DATA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,X,X,,X,X,X,,,,X,X,,X,X,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0570,,SG12,C,D,99,1,2,Korrespondenzanschrift des Kunden des Messstellenbetreibers,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Soll,Soll,,,,,,,,,,,,,,,,,,,,,Kann S,Soll S,,Soll S,Kann,Soll,,,,,,,Muss,Muss,,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0580,140,NAD,M,M,1,1,2,Korrespondenzanschrift des Kunden des Messstellenbetreibers,"NAD+Z08+++Fank Müller:::::Z01+Wohnstrasse::25:Musterortsteil+Musterstadt++55555+DE
+NAD+Z08+++Firma Meier:::::Z02+Wohnstrasse::25:Musterortsteil+Musterstadt++55555+DE","Struktur von Personennamen
+Struktur der Firmenbezeichnung",S,vertrag.messstellenbetriebsvertrag..korrespondenzpartner,"anrede
+name1
+name2
+name3
+name4
+gewerbekennzeichnung
+partneradresse.postleitzahl
+partneradresse.ort
+partneradresse.strasse
+partneradresse.hausnummer
+partneradresse.landescode
+partneradresse.ortsteil
+partneradresse.postfach",,,PARTNER_DATA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,X,X,,X,X,X,,,,,,,X,X,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0570,,SG12,C,D,99,1,2,Kunde des Netzbetreibers,,,,,,,,,,,,,,,,,,,,,Muss,,,,,,,,,,,,,,,Kann,Kann,,,,,,,,,,,,,,,,Kann,Kann,Kann,,,,,,,,,,,,,,,,,,,,,,,,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0580,141,NAD,M,M,1,1,2,Kunde des Netzbetreibers,"NAD+Z25+++Max:Mustermann::::Z01
+NAD+Z25+++Firma AG:Musterfirma::::Z02","Struktur von Personennamen
+Struktur der Firmenbezeichnung",S,"vertrag.netznutzungsvertrag.vertragspartner2.GESCHAEFTPARTNER (GP-Rolle=""KUNDE"") ","anrede
+name1
+name2
+name3
+name4
+gewerbekennzeichnung",,,PARTNER_DATA,,,,,,,,,,,,,X,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0570,,SG12,C,D,99,1,2,Korrespondenzanschrift des Kunden des Netzbetreibers,,,,,,,,,,,,,,,,,,,,,Muss,,,,,,,,,,,,,,,Kann,Kann,,,,,,,,,,,,,,,,Kann,Kann,Kann,,,,,,,,,,,,,,,,,,,,,,,,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0580,142,NAD,M,M,1,1,2,Korrespondenzanschrift des Kunden des Netzbetreibers,"NAD+Z26+++Fank Müller:::::Z01+Wohnstrasse::25:Musterortsteil+Musterstadt++55555+DE
+NAD+Z26+++Firma Meier:::::Z02+Wohnstrasse::25:Musterortsteil+Musterstadt++55555+DE","Struktur von Personennamen
+Struktur der Firmenbezeichnung",S,vertrag.netznutzungsvertrag..korrespondenzpartner,"anrede
+name1
+name2
+name3
+name4
+gewerbekennzeichnung
+postleitzahl
+ort
+strasse
+hausnummer
+landescode
+ortsteil",,,PARTNER_DATA,,,,,,,,,,,,,X,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0570,,SG12,C,D,99,1,2,Netzanschlusseigentümer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Kann,Kann,,,,,,,,,,,,,,,,Kann,Kann,Kann,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0580,143,NAD,M,M,1,1,2,Anschlussnehmer,"NAD+EO+++Huber:Karlheinz:::Dr.:Z01+Teststraße::815b:X+Entenhausen++10010+DE
+NAD+EO+++Firma:Meyer::::Z02+Teststraße::815b:X+Entenhausen++10010+DE","Struktur von Personennamen
+Struktur der Firmenbezeichnung",S,marktlokation.eigentuemer,"geschaeftspartnerrolle = ""EIGENTUEMER""
+anrede
+name1
+name2
+name3
+name4
+gewerbekennzeichnung
+partneradresse.postleitzahl
+partneradresse.ort
+partneradresse.strasse
+partneradresse.hausnummer
+partneradresse.landescode
+partneradresse.ortsteil",,,PARTNER_DATA,,,,,,,,,,,,,X,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0570,,SG12,C,D,99,1,2,Hausverwalter,,,,,,,,,,,,,,,,,,,,,Kann,,,,,,,,,,,,,,,Kann,Kann,,,,,,,,,,,,,,,,Kann,Kann,Kann,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0580,144,NAD,M,M,1,1,2,Hausverwalter,"NAD+DDO+++Huber:Karlheinz:::Dr.:Z01+Teststraße::815b:X+Entenhausen++10010+DE
+NAD+DDO+++Firma:Meyer::::Z02+Teststraße::815b:X+Entenhausen++10010+DE","Location manager                                                                                              Struktur von Personennamen
+Struktur der Firmenbezeichnung",S,marktlokation.hausverwalter,"geschaeftspartnerrolle = ""HAUSVERWALTER""
+anrede
+name1
+name2
+name3
+name4
+gewerbekennzeichnung
+partneradresse.postleitzahl
+partneradresse.ort
+partneradresse.strasse
+partneradresse.hausnummer
+partneradresse.landescode
+partneradresse.ortsteil",,,PARTNER_DATA,,,,,,,,,,,,,X,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0570,,SG12,C,D,99,99,2,Beteiligter Marktpartner MP-ID,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Muss,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Muss,Muss,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0580,145,NAD,M,M,1,1,2,Beteiligter Marktpartner MP-ID,NAD+VY+XXXXXXXXXXXXX::9                            NAD+VY+XXXXXXXXXXXXX::332,"GS1
+DE, DVGW Service & Consult GmbH",T,beteiligterMarktpartner,"rollencodenummer
+rollencodetyp","9 = GLN
+332 = DVGW",,PROZESSLOGIK,,,X,,,,,,,X,,,,,,,,,,,,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,X,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0570,,SG12,C,D,99,1,2,Marktlokationsanschrift,,,,,,,,,Soll,Muss,,,,,,,,,,,Muss,Muss,,Muss,Kann ,Soll,,,,Muss,,,,,,Soll,,,,,,,,,,,,,,,,,Kann,,Soll,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0580,146,NAD,M,M,1,1,2,Marktlokationsanschrift,NAD+DP++Die Marktlokation befindet sich i:m Hinterhaus im u:nteren K:eller recht:s++Eichelbergstr.::36:Musterortsteil+Musterstadt++55555+DE,Lieferanschrift,S,marktlokation.lokationsadresse,"
+postleitzahl
+ort
+strasse
+hausnummer
+postfach
+adresszusatz
+landescode (ENUM)
+ortsteil
+zusatzInformation.zusatz1
+zusatzInformation.zusatz2
+zusatzInformation.zusatz3
+zusatzInformation.zusatz4
+zusatzInformation.zusatz5","Z06 <-> EINSP
+Z07 <-> AUSSP",,MALO_DATA,X,X,,,,,,,,,,,X,X,,X,X,X,,,,X,,,,,,X,,,,,,,,,,,,,,,,,X,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0570,,SG12,C,D,99,1,2,Messlokationsadresse,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Soll,Soll S,,,,,,,,,,,,,,,,,,,,,Kann S,Soll S,,Soll S,Kann ,Soll,,,,Soll,Muss,,Soll,Muss,,Soll,Muss,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0580,147,NAD,M,M,1,1,2,Messlokationsadresse,NAD+Z03++Hinter:hof gan:z am En:de lin:ks++Ferritplatz:X:27a:X+Eisenstadt++54321+DE,Messlokationsadresse,S,messlokation.messadresse,"
+postleitzahl
+ort
+strasse
+hausnummer
+postfach
+landescode (ENUM)
+ortsteil
+zusatzInformation.zusatz1
+zusatzInformation.zusatz2
+zusatzInformation.zusatz3
+zusatzInformation.zusatz4
+zusatzInformation.zusatz5","Z06 <-> EINSP
+Z07 <-> AUSSP",,MELO_DATA,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,X,X,,X,X,X,,,,X,X,,X,X,,X,X,,,,,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0570,,SG12,C,D,99,9,2,Name und Adresse für die Ablesekarte,,,,,,,,,Muss,Muss,,,,,,,,,,,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,Soll,Soll,,,,,,,,,,,,,,,,,,,,,Kann,Muss,,Soll,Kann,Muss,,,,,,,Muss,Muss,,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0580,148,NAD,M,M,1,1,2,Name und Adresse für die Ablesekarte,"NAD+Z05+++Max:Mustermann::::Z01+Industriestr.::81:Musterorsteil+Ettlingen++76275+DE
+NAD+Z05+++Gbr. Haak Flanschen KG::z.Hd. Hausmeister:::Z02+Industriestr.::81:Musterorsteil+Ettlingen++76275+DE",Name und Adresse für die Ablesekarte,S,messlokation.ablesekartenempfaenger,"geschaeftspartnerrolle = ""ABLESEKARTENEMPFAENGER""
+anrede
+name1
+name2
+name3
+name4
+gewerbekennzeichnung
+partneradresse.
+.postleitzahl
+.ort
+.strasse
+.hausnummer
+.adresszusatz
+.landescode
+.ortsteil",,,PARTNER_DATA,X,X,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,X,X,,X,X,X,,,,,,,X,X,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0590,149,RFF,C,D,9,9,3,Referenz auf die ID einer Messlokation,RFF+Z19:DE0000000000000000000000000000000,Messlokation,S,messlokation,messlokationsId,,,PARTNER_DATA,Kann,X,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,,,,X,X,,,,,,,,,,,,,,,,,,,,,X,X,,X,X,X,,,,,,,X,X,,X,X,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0670,150,UNT,M,M,1,1,0,Nachrichten-Endesegment,UNT+21+172147',Gesamtzahl der Segmente / Referenznummer aus dem UNH-Segment,T,,nachrichtenreferenznummer,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,UNZ,,,,,,,UNZ+1+689022',,T,,datenaustauschreferenz,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

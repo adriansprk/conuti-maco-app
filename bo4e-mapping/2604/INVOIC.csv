@@ -1,0 +1,522 @@
+Nummer,Nr.,Typ,,,Max. Wdh,,,,,,stamm- oder transaktionsdaten,BO Objekt,BO4E - Feld,Mapping EDI <-> BO4E,powercloud - Variable,Schnittstelle,31001,31002,31003,31009,31004,31005,31006,31007,31008,31010,31011,,,,,,,,,,,,
+,,UNB,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0010,3,UNH,M,M,1,1,0,Nachrichtenanfang,UNH+1+INVOIC:D:06A:UN:2.8e,,,,,,,,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,
+0020,4,BGM,M,M,1,1,0,Rechnungsnummer,"BGM+380+INV12435422+9
+BGM+380+INV12435422+7
+BGM+389+INV12435422+9
+BGM+389+INV12435422+7
+BGM+457+INV12435422+9
+BGM+457+INV12435422+7
+BGM+Z25+INV12435422+9
+BGM+Z25+INV12435422+7","Handelsrechnung Orginal
+Handelsrechnung Dublikat
+Selbst ausgestellte Rechnung Original
+Selbst ausgestellte Rechnung Dublikat
+Storno einer Belastung Original
+Storno einer Belastung Dublikat
+Storno für selbst ausgestellte Rechnung Original
+Storno für selbst ausgestellte Rechnung Dublikat","T
+S","kategorie/dokumentennummer
+rechnung","istSelbstausgestellt
+storno
+rechnungsstatus ","istSelbstausgestellt:
+380 -> false
+389 -> true
+457 -> false
+Z25 -> true
+storno:
+380 -> false
+389 -> false
+457 -> true
+Z25 -> true
+original:
+7 -> DUPLIKAT
+9 -> ORIGINAL",,,"X
+X
+
+
+
+
+
+","X
+X
+
+
+
+
+
+","X
+X
+
+
+
+
+
+","X
+X
+
+
+
+
+
+","
+
+
+
+X
+X
+X
+X","X
+X
+
+
+
+
+
+","
+
+X
+X
+
+
+
+","X
+X
+
+
+
+
+
+","
+
+X
+X
+
+
+
+","X
+X
+
+
+
+
+
+","X
+X
+
+
+
+
+
+",,,,,,,,,,,,
+0030,5,DTM,M,M,35,1,1,Nachrichtendatum,DTM+137:CCYYMMDDHHMMZZZ:303,Dokumenten-/Nachrichtendatum/-zeit,"T
+S","
+rechnung","Eingehend: nachrichtendatum
+
+Ausgehend: rechnungsdatum",,,,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,
+0030,6,DTM,M,R,35,1,1,Bearbeitungs-/Verarbeitungsdatum,DTM+9:CCYYMMDDHHMMZZZ:303,Bearbeitungs-/Verarbeitungsdatum/-zeit,S,rechnung,bearbeitungsdatum,,,,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,
+0030,7,DTM,M,D,35,1,1,Abrechnungszeitraum Beginn,DTM+155:CCYYMMDDHHMMZZZ:303,"Rechnungsperiode, Beginndatum",S ,rechnung.rechnungsperiode,startdatum,,,,,X,S,X,X,X,X,X,X,X,X,,,,,,,,,,,,
+0030,8,DTM,M,D,35,1,1,Abrechnungszeitraum Ende,DTM+156:CCYYMMDDHHMMZZZ:303,"Rechnungsperiode, Endedatum",S,rechnung.rechnungsperiode,enddatum,,,,,X,S,X,X,X,X,X,X,X,X,,,,,,,,,,,,
+0030,9,DTM,M,D,35,1,1,vorläufiger Abrechnungszeitraum Beginn,DTM+Z42:CCYYMMDDHHMMZZZ:303,vorläufiger Abrechnungszeitraum Beginn,S,rechnung.vorlaeufigerAbrechnungszeitraum,startdatum,,,,X,,,,X,,,,,,,,,,,,,,,,,,
+0030,10,DTM,M,D,35,1,1,vorläufiger Abrechnungszeitraum Ende,DTM+Z43:CCYYMMDDHHMMZZZ:303,vorläufiger Abrechnungszeitraum Ende,S,rechnung.vorlaeufigerAbrechnungszeitraum,enddatum,,,,X,,,,X,,,,,,,,,,,,,,,,,,
+0030,11,DTM,M,D,35,1,1,Ausführungsdatum,"DTM+203:CCYYMMDDHHMMZZZ:303
+DTM+203:CCYYMMDD:102",Ausführungsdatum/-zeit,S,rechnung,ausfuehrungsdatum,,,,,,S,,S,,,,,,"
+X",,,,,,,,,,,,
+0030,12,DTM,M,D,35,1,1,Beginn Bilanzierung,DTM+Z11:CCYYMMDDHHMMZZZ:303,Beginndatum Bilanzierung zugeordnete Periode,S,rechnung,beginnPeriodeBilanzierung,,,,,,,,,S,S,,,,,,,,,,,,,,,,
+0030,13,DTM,M,D,35,1,1,Ende Netznutzung,DTM+Z12:CCYYMMDDHHMMZZZ:303,Ende Netznutzung zugeordnete Periode,S,rechnung,endePeriodeNetznutzung,,,,,,,,,S,S,,,,,,,,,,,,,,,,
+0060,14,IMD,C,R,1,1,0,Rechnungstyp,"IMD++ABR+Z06
+IMD++ABR+Z07
+IMD++ABS+Z06
+IMD++ABS+Z07
+IMD++JVR+Z06
+IMD++JVR+Z07
+IMD++MVR+Z06
+IMD++MVR+Z07
+IMD++WIM+Z06
+IMD++WIM+Z07
+IMD++ZVR+Z06
+IMD++ZVR+Z07
+IMD++13I+Z06
+IMD++13I+Z07
+IMD++13R+Z06
+IMD++13R+Z07
+IMD++MMM+Z06
+IMD++MMM+Z07
+IMD++MSB+Z06
+IMD++MSB+Z07
+IMD++NAP+Z06
+IMD++NAP+Z07
+IMD++Z43
+IMD++Z44
+IMD++Z45
+IMD++SOR
+IMD++TEC","Abschlussrechnung Erzeugung
+Abschlussrechnung Verbrauch
+Abschlagsrechnung Erzeugung
+Abschlagsrechnung Verbrauch
+Turnusrechnung Erzeugung
+Turnusrechnung Verbrauch
+Monatsrechnung Erzeugung
+Monatsrechnung Verbrauch
+Rechnungs für WIM Erzeugung
+Rechnungs für WIM Verbrauch
+Zwischenrechnung Erzeugung
+Zwischenrechnung Verbrauch
+Integrierte 13. Rechnung Erzeugung
+Integreirte 13. Rechnung Verbrauch
+13. Rechnung Erzeugung
+13. Rechnung Verbrauch
+Mehr-/MIndermengenabrechnung  Erzeugung
+Mehr-/MIndermengenabrechnung Verbrauch
+Rechung für Messstellenbetrieb Erzeugung
+Rechung für Messstellenbetrieb Verbrauch
+Kapazitätsrechnung Erzeugung
+Kapazitätsrechnung Verbrauch
+Rechnung für Sperren und Wiederinbetriebnahme
+Verzugskostenrechnung
+Blindarbeitrechnung
+Sonderrechnung
+Abrechnung von Technik",S,rechnung,"rechnungstyp
+energierichtung","ABR -> ABSCHLUSSRECHNUNG
+ABS -> ABSCHLAGSRECHNUNG
+JVR -> TURNUSRECHNUNG
+KON -> ABRECHNUNG_VON_KONFIGURATIONEN_UNIVERSALBESTELLPROZESS 
+MVR -> MONATSRECHNUNG
+WIM -> WIMRECHNUNG
+ZVR -> ZWISCHENRECHNUNG
+13I -> INTEGRIERTE_13TE_RECHNUNG
+13R -> ZUSAETZLICHE_13TE_RECHNUNG
+MMM -> MEHRMINDERMENGENRECHNUNG
+MSB -> MSBRECHNUNG
+NAP -> KAPAZITAETSRECHNUNG
+Z43 -> SPERRUNG_INBETRIEBNAHME
+Z44 -> VERZUGSKOSTEN
+Z45 -> BLINDARBEIT
+SOR -> SONDERRECHNUNG
+TEC -> ABRECHNUNG_VON_TECHNIK",,,ABS,"ABR
+JVR
+MVR
+ZVR
+13I
+13R
+SOR",WIM,MSB,X,MMM,MMM,MMM,MMM,NAP,"Z43
+Z44
+Z45",,,,,,,,,,,,
+,,,,,,,,,,,,,,"Z06 -> EINSP
+Z07 -> AUSSP",,,,,,,,,,,,,,,,,,,,,,,,,
+0070,15,FTX,C,D,99,1,1,Meldeinformationen,FTX+REG++RCH,Reverse Charge gemäß §13b UStG / Steuerschuldnerschaft des Leistungsempfängers,S,rechnung,istReverseCharge,true/false,,,S,S,S,S,S,S,S,S,S,S,S,,,,,,,,,,,,
+0090,16,GEI,C,D,10,10,1,Spezifikation der Sonderrechnung,"GEI+Z01+Z01
+GEI+Z01+Z02
+GEI+Z01+Z03
+GEI+Z01+Z04
+GEI+Z01+Z05
+GEI+Z01+Z06
+GEI+Z01+Z07
+GEI+Z01+Z08
+GEI+Z01+Z09
+GEI+Z01+Z10","Konzessionsabgabe (Testat)
+Individuelle Vereinbarung für atypische und energieintensive Netznutzung
+Individuelle Vereinbarung für singuläre Netznutzung
+KWKG-Umlage
+Offshore-Netzumlage
+§ 19 StromNEV-Umlage
+§18 AbLaV
+Konzessionsabgabe (Wechsel auf Lastgangmessung)
+Privilegierung nach EnFG
+Konzessionsabgabe (weitergeleitete Mengen)",S,rechnung,sonderrechnungsarten[],"Z01 -> KONZESSIONSABGABE_TESTAT
+Z02 -> INDIVIDUELL_ATYPISCH
+Z03 -> INDIVIDUELL_SINGULAER
+Z04 -> KWKG_UMLAGE
+Z05 -> OFFSHORE_UMLAGE
+Z06 -> P19_STROM_NEV_UMLAGE
+Z07 -> P18_ABLAV
+Z08 -> KONZESSIONSABGABE_WECHSEL_RLM
+Z09 -> PRIVILEGIERUNG_NACH_ENFG
+Z10 -> KONZESSIONSABGABE_WEITERGELEITETE_MENGEN",,,,X,,,,,,,,,,,,,,,,,,,,,
+0120,,SG1,C,R,99999,1,1,Prüfidentifikator,,,,,,,,,,,,,,,,,Muss,Muss,Muss,,,,,,,,,,,,
+0130,17,RFF,M,M,1,1,1,Prüfidentifikator,"RFF+Z13:31001
+RFF+Z13:31002
+RFF+Z13:31003
+RFF+Z13:31004
+RFF+Z13:31005
+RFF+Z13:31006
+RFF+Z13:31007
+RFF+Z13:31008
+RFF+Z13:31009
+RFF+Z13:31010
+RFF+Z13:31011","Abschlagsrechnung
+NN-Rechnung
+WiM-Rechnung
+Stornorechnung
+MMM-Rechnung
+MMM-selbst ausgestellte Rechnung
+Aggregierte MMM-Rechnung
+Aggregierte MMM-selbst ausgestellte Rechnung
+MSB-Rechnung
+Kapazitätsrechnung
+Rechnung sonstige Leistung",T,,pruefidentifikator,,,,31001,31002,31003,31009,31004,31005,31006,31007,31008,31010,31011,,,,,,,,,,,,
+0120,,SG1,C,D,99999,1,1,Referenz auf Ursprungsrechnungsnummer,,,,,,,,,,Muss,,,Muss,,,,,,Muss,,,,,,,,,,,,
+0130,18,RFF,M,M,1,1,1,Referenz auf Ursprungsrechnungsnummer,RFF+OI:AFN5834569523,Ursprungsrechnungsnummer,S,rechnung,originalRechnungsnummer,,,,,X,,,X,,,,,,X,,,,,,,,,,,,
+0140,19,DTM,C,R,5,1,2,Referenzdatum,DTM+171:CCYYMMDDHHMMZZZ:303,Nachrichtendatum Referenznachricht,S,rechnung,referenzNachrichtendatum,,,,,X,,,X,,,,,,X,,,,,,,,,,,,
+0120,,SG1,C,D,99999,1,1,Referenz auf Nummer des zugehörigen Dokuments,,,,,,,,,,Muss,Muss,Muss,,Muss,Muss,Muss,Muss,,Muss,,,,,,,,,,,,
+0130,20,RFF,M,M,1,1,1,Referenz auf Nummer des zugehörigen Dokuments,RFF+ACE:XXXXX,Dokumentennummer Referenznachricht,S,rechnung,referenzDokumentennummer,,,,,X,X,X,,X,X,X,X,,X,,,,,,,,,,,,
+0120,,SG1,C,D,99999,1,1,Preise des Netzbetreibers,,,,,,,,,,Muss,Muss,Muss,,Muss,Muss,Muss,Muss,,Muss,,,,,,,,,,,,
+0130,21,RFF,M,M,1,1,1,Preise des Netzbetreibers,RFF+Z56:9907165000001,Z56 Preise des Netzbetreibers,S,rechnung,preisNetzbetreiberCodenummer,,,,,,,,,,,,,,,,,,,,,,,,,,
+0220,,SG2,C,R,99,1,1,Absender,,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,,,,,,,,,,,,
+0230,22,NAD,M,M,1,1,1,Name und Anschrift des Nachrichtensenders,NAD+MS+9900020455303::293++Rechnungsersteller GmbH:::::Z01+Teststraße::123+Testort++12345+DE,Name und Anschrift Absender,T,absender,"rollencodenummer
+rollencodetyp
+name1
+name2
+name3
+name4
+anrede
+gewerbekennzeichnung = true/false
+partneradresse.postleitzahl
+partneradresse.ort
+partneradresse.strasse
+partneradresse.postfach
+partneradresse.hausnummer
+partneradresse.ortsteil
+partneradresse.landescode","9 = GLN
+293 = BDEW
+332 = DVGW",,,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,
+0270,,SG3,C,R,9999,1,2,"Steuernummer, Umsatzsteuer-ID",,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,,,,,,,,,,,,
+0280,23,RFF,M,M,1,1,2,"Steuernummer, Umsatzsteuer-ID","RFF+VA:DE999999999
+RFF+FC:99/999/9999/9","Umsatzsteueridentfikationsnummer Absender
+Steuernummer Absender",T,absender,"umsatzsteuerId
+steuernummer",,,,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,
+0330,,SG5,C,O,5,1,2,Ansprechpartner,,,,,,,,,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,,,,,,,,,,,,
+0340,24,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:M Mustermann,Ansprechpartner Name,T,absender.ansprechpartner,nachname,,,,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,
+0350,25,COM,C,R,5,5,3,Kommunikationsverbindung,COM+XXXXXXXXXX:TE,Ansprechpartner Kommunikation EM = Email ; FX = Telefax ; TE = Telefon ; AJ = weiteres Telefon ; AL = Handy,T,absender.ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,
+0220,,SG2,C,R,99,1,1,Empfänger,,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,,,,,,,,,,,,
+0230,26,NAD,M,M,1,1,1,Name und Anschrift des Nachrichtenempfängers,NAD+MR+9900020455303::293++Rechnungsersteller GmbH:::::Z02+Teststraße::123+Testort+Testortsteil+12345+DE,Name und Anschrift Empfänger,T,empfaenger,"rollencodenummer
+rollencodetyp
+name1
+name2
+name3
+name4
+anrede
+gewerbekennzeichnung = true/false
+partneradresse.postleitzahl
+partneradresse.ort
+partneradresse.strasse
+partneradresse.postfach
+partneradresse.hausnummer
+partneradresse.ortsteil
+partneradresse.landescode","9 = GLN
+293 = BDEW
+332 = DVGW",,,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,
+0270,,SG3,C,D,9999,1,2,"Steuernummer, Umsatzsteuernummer",,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,,,,,,,,,,,,
+0280,27,RFF,M,M,1,1,2,"Steuernummer, Umsatzsteuernummer","RFF+VA:DE999999999
+RFF+FC:99/999/9999/9","Umsatzsteuernummer Empfänger
+Steuernummer Empfänger",T,empfaenger,"umsatzsteuerId
+steuernummer",,,,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,
+0220,,SG2,C,D,99,1,1,Lieferanschrift,,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,,,,Muss,,,,,,,,,,,,
+0230,28,NAD,M,M,1,1,1,Adresse der Leistungserbringung,NAD+DP++++Musterstrasse::123+Testort++12345+DE,Adresse der Leistungserbringung,S,"marktlokation
+messlokation","lokationsadresse (Marklokation) / messadresse (Messlokation)
+.postleitzahl
+.ort
+.strasse
+.hausnummer
+.postfach
+.adresszusatz
+.landescode
+.zusatzInformation.zusatz1-5
+",,,,X,X,X,X,X,X,X,,,,X,,,,,,,,,,,,
+0240,29,LOC,C,R,25,1,2,Meldepunkt,LOC+172+DE000562668020O6G56M11SN51G21M24S,Meldepunkt,"S
+","marktlokation
+messlokation
+netzlokation
+STEUERBARE_RESSOURCE
+TECHNISCHE_RESSOURCE","marktlokationsId
+messlokationsId
+netzlokationsId
+ressourcenId
+ressourcenId",,,,X,X,X,X,X,X,X,,,,X,,,,,,,,,,,,
+0220,,SG2,C,D,99,1,1,Netzbetreiberkonto,,,,,,,,,,,,,Muss,,,Muss,Muss,,,,,,,,,,,,,,
+0230,30,NAD,M,M,1,1,1,Netzbetreiberkontonummer,NAD+ZSH+NBKCODE,Netzkonto,S,rechnung,netzkonto,,,,,,,,X,,,X,X,,,,,,,,,,,,,,
+0400,,SG7,C,R,99,1,1,Referenzwährung,,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,,,,,,,,,,,,
+0410,31,CUX,M,M,1,1,1,Währungsangaben,CUX+2:EUR:4,Währung der Rechnung,,,,,,,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,
+0430,,SG8,C,R,10,1,1,Fälligkeitsdatum,,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,,,,,,,,,,,,
+0440,32,PYT,M,M,1,1,1,Zahlungsbedingungen,PYT+3,Fixdatum Zahlungsbedingungen,,,,,,,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,
+0450,33,DTM,C,R,5,1,2,Fälligkeitsdatum,DTM+265:CCYYMMDDHHMMZZZ:303,Fälligkeitsdatum,S,rechnung,faelligkeitsdatum,,,,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,
+1090,,SG26,C,D,9999999,9999999,1,Rechnungspositionen,,,,,,,,,Muss,Muss,Muss,Muss,,Muss,Muss,Muss,Muss,Muss,Muss,,,,,,,,,,,,
+1100,34,LIN,M,M,1,1,1,Positionsdaten,"LIN+1++9900010000011:Z01
+LIN+1++1-01-1-001:Z09","Artikelnummer
+Artikel-ID",S,rechnung.rechnungspositionen,"positionsnummer
+artikelnummer (Z01 -> ENUM BDEWArtikelnummer)
+artikelnummer (Z09 -> 1:1)","9990001000053 -> LEISTUNG
+9990001000079 -> LEISTUNG_PAUSCHAL
+9990001000087 -> GRUNDPREIS
+9990001000128 -> REGELENERGIE_ARBEIT
+9990001000136 -> REGELENERGIE_LEISTUNG
+9990001000144 -> NOTSTROMLIEFERUNG_ARBEIT
+9990001000152 -> NOTSTROMLIEFERUNG_LEISTUNG
+9990001000160 -> RESERVENETZKAPAZITAET
+9990001000178 -> RESERVELEISTUNG
+9990001000186 -> ZUSAETZLICHE_ABLESUNG
+9990001000219 -> PRUEFGEBUEHREN_AUSSERPLANMAESSIG
+9990001000269 -> WIRKARBEIT
+9990001000285 -> SINGULAER_GENUTZTE_BETRIEBSMITTEL
+9990001000334 -> ABGABE_KWKG
+9990001000376 -> ABSCHLAG
+9990001000417 -> KONZESSIONSABGABE
+9990001000433 -> ENTGELT_FERNAUSLESUNG
+9990001000475 -> UNTERMESSUNG
+9990001000508 -> BLINDMEHRARBEIT
+9990001000532 -> ENTGELT_ABRECHNUNG
+9990001000540 -> SPERRKOSTEN
+9990001000558 -> ENTSPERRKOSTEN
+9990001000566 -> MAHNKOSTEN
+9990001000574 -> MEHR_MINDERMENGEN
+9990001000582 -> INKASSOKOSTEN
+9990001000590 -> BLINDMEHRLEISTUNG
+9990001000615 -> ENTGELT_MESSUNG_ABLESUNG
+9990001000623 -> ENTGELT_EINBAU_BETRIEB_WARTUNG_MESSTECHNIK
+9990001000631 -> AUSGLEICHSENERGIE
+9990001000805 -> AUSGLEICHSENERGIE_UNTERDECKUNG
+9990001000649 -> ZAEHLEINRICHTUNG
+9990001000657 -> WANDLER_MENGENUMWERTER
+9990001000665 -> KOMMUNIKATIONSEINRICHTUNG
+9990001000673 -> TECHNISCHE_STEUEREINRICHTUNG
+9990001000681 -> PARAGRAF_19_STROM_NEV_UMLAGE
+9990001000699 -> BEFESTIGUNGSEINRICHTUNG
+9990001000706 -> OFFSHORE_HAFTUNGSUMLAGE
+9990001000714 -> FIXE_ARBEITSENTGELTKOMPONENTE
+9990001000722 -> FIXE_LEISTUNGSENTGELTKOMPONENTE
+9990001000730 -> UMLAGE_ABSCHALTBARE_LASTEN
+9990001000748 -> MEHRMENGE
+9990001000756 -> MINDERMENGE
+9990001000764 -> ENERGIESTEUER
+9990001000772 -> SMARTMETER_GATEWAY
+9990001000780 -> STEUERBOX
+9990001000798 -> MSB_INKL_MESSUNG
+9990001000813 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_2_1_MSBG
+9990001000821 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_2_2_MSBG
+9990001000839 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_2_3_MSBG
+9990001000847 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_2_4_MSBG
+9990001000855 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_2_5_MSBG
+9990001000863 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_3_MSBG
+9990001000871 -> ENTGELT_KAPAZITAETEN",,,"X
+","X
+X","X
+","X
+",,"X
+","X
+","X
+","X
+","X
+","
+X",,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1150,35,QTY,C,D,5,1,2,energetische Mengenangaben,QTY+47:40:KWH,Berechnete (fakturierte) Menge,S,rechnung.rechnungspositionen.positionsMenge,"wert
+einheit (-> ENUM Mengeneinheit)",,,,H87,X,H87,H87,,KWH,KWH,KWH,KWH,,K3 / H87,,,,,,,,,,,,
+1150,36,QTY,C,D,5,1,2,zeitliche Mengenangaben,QTY+136:31:DAY,Erreichte Menge in dem Zeitintervall,S,rechnung.rechnungspositionen.zeitbezogeneMenge,"wert
+einheit (-> ENUM Mengeneinheit)",,,,,S,S,X,,,,,,,,,,,,,,,,,,,
+1150,37,QTY,C,D,5,1,2,Korrekturfaktor,QTY+Z17:-1,Korrekturfaktor,S,rechnung.rechnungspositionen,korrekturfaktor,,,,,,,,,X,,,,,,,,,,,,,,,,,
+1180,38,DTM,C,D,35,1,2,Positionsbezogener Abrechnungszeitraum Beginn,DTM+155:CCYYMMDDHHMMZZZ:303,Abrechnungszeitraum Beginn,S,rechnung.rechnungspositionen,lieferungVon,,,,X,X,X,X,,X,X,X,X,,X,,,,,,,,,,,,
+1180,39,DTM,C,D,35,1,2,Positionsbezogener Abrechnungszeitraum Ende,DTM+156:CCYYMMDDHHMMZZZ:303,Abrechnungszeitraum Ende,S,rechnung.rechnungspositionen,lieferungBis,,,,X,X,X,X,,X,X,X,X,,X,,,,,,,,,,,,
+1180,40,DTM,C,D,35,1,2,Ausführungsdatum/ -zeit,"DTM+203:CCYYMMDDHHMMZZZ:303
+DTM+203:CCYYMMDD:102",Ausführungsdatum/-zeit,S,rechnung.rechnungspositionen,ausfuehrungsdatum,,,,,,X,,,,,,,X,"
+X",,,,,,,,,,,,
+1250,,SG27,C,R,99,1,2,Positionsnettobetrag,,,,,,,,,Muss,Muss,Muss,Muss,,Muss,Muss,Muss,Muss,,Muss,,,,,,,,,,,,
+1260,41,MOA,M,M,1,1,2,Positionsnettobetrag,MOA+203:580,Positionsbetrag (ohne USt.),S,rechnung.rechnungspositionen.teilsummeNetto,"wert
+waehrung",,,,X,X,X,X,,X,X,X,X,,X,,,,,,,,,,,,
+1250,,SG27,C,D,99,1,2,Gesamtzu- oder abschlagsbetrag,,,,,,,,,,Muss,,,,,,,,,,,,,,,,,,,,,
+1260,42,MOA,M,M,1,1,2,Gesamtzu- oder abschlagsbetrag,MOA+131:580,Gesamtzu- oder abschlagsbetrag,S,rechnung.rechnungspositionen,gesamtZuAbschlagsbetrag,,,,,X,,,,,,,,,,,,,,,,,,,,,
+1330,,SG29,C,D,25,1,2,Preis,,,,,,,,,Muss,Muss,Muss,Muss,,Muss,Muss,Muss,Muss,,Muss,,,,,,,,,,,,
+1340,43,PRI,M,M,1,1,2,Preis,"PRI+CAL:36::::ANN
+PRI+CAL:14.50","zeitabhängiger Preis
+Preis",S,rechnung.rechnungspositionen.einzelpreis,"wert
+einheit (-> ENUM Waehrungseinheit)
+bezugswert (-> ENUM Mengeneinheit)
+status (-> ENUM Preisstatus","
+Bezugswert:
+
+DAY -> TAG
+MON ->MONAT
+ANN -> JAHR",,,X,X,X,"ANN
+X",,X,X,X,X,,X,,,,,,,,,,,,
+1550,,SG34,C,R,99,1,2,Steuersatz (Position),,,,,,,,,Muss,Muss,Muss,Muss,,Muss,Muss,Muss,Muss,Muss,Muss,,,,,,,,,,,,
+1560,44,TAX,M,M,1,1,2,Umsatzsteuer der Position,TAX+7+VAT+++:::19+S,Umsatzsteuersatz,S,rechnung.rechnungspositionen.teilsummeSteuer,steuerkennzeichen,"19+S -> UST_19
+16+S -> UST_16
+7+S -> UST_7
+0+O -> VST_0
+19+O -> VST_19
+16+O -> VST_16
+7+O -> VST_7
+0+AE -> RCV",,,X,X,X,X,,X,X,X,X,X,X,,,,,,,,,,,,
+1720,,SG39,C,D,30,2,2,Abschlag,,,,,,,,,,Soll,,,,,,,,,,,,,,,,,,,,,
+1730,45,ALC,M,M,1,1,2,Abschlag,"ALC+A+:Z01
+ALC+A+:Z04","Gemeinderabatt nach Konzessionsabgabenverordnung
+Anpassung nach § 19, Absatz 2 Stromnetzentgeltverordnung",S,rechnung.rechnungspositionen.abschlag,typ,"Z01 -> GEMEINDERABATT_KAV
+Z04 -> ANPASSUNG_P19_STROM_NEV",,,,X,,,,,,,,,,,,,,,,,,,,,
+1800,,SG41,C,R,1,1,3,Prozentangabe des Abschlags,,,,,,,,,,Muss,,,,,,,,,,,,,,,,,,,,,
+1810,46,PCD,M,M,1,1,3,Prozentangabe des Abschlags,PCD+3:10,Abschlag in Prozent,S,rechnung.rechnungspositionen.abschlag,prozent,,,,,X,,,,,,,,,,,,,,,,,,,,,
+1830,,SG42,C,D,2,1,3,Bemessungsgrundlage des Gemeinderabatts,,,,,,,,,,Muss,,,,,,,,,,,,,,,,,,,,,
+1840,47,MOA,M,M,1,1,3,Bemessungsgrundlage des Gemeinderabatts,MOA+25:536,Bemessungsgrundlage des Gemeinderabatts,S,rechnung.rechnungspositionen.gemeinderabatt,bemessungsgrundlage,,,,,X,,,,,,,,,,,,,,,,,,,,,
+1830,,SG42,C,D,2,1,3,Gemeinderabatt der Position,,,,,,,,,,Muss,,,,,,,,,,,,,,,,,,,,,
+1840,48,MOA,M,M,1,1,3,Gemeinderabatt der Position,MOA+Z01:53.6,Gemeinderabatt der Position Betrag,S,rechnung.rechnungspositionen.gemeinderabatt,wert,,,,,X,,,,,,,,,,,,,,,,,,,,,
+1720,,SG39,C,D,30,3,2,Zuschlag,,,,, ,,,,,Soll,,,,,,,,,,,,,,,,,,,,,
+1730,49,ALC,M,M,1,1,2,Zuschlag,"ALC+C+:Z02
+ALC+C+:Z03
+ALC+C+:Z04
+ALC+C+:Z05","Umspannungszuschlag
+allein genutzte Betriebsmittel nach § 19, Absatz 3 Stromnetzentgeltverordnung
+Anpassung nach § 19, Absatz 2 Stromnetzentgeltverordnung
+Anpassung Pauschale Netzentgeltreduzierung nach § 14a EnWG auf Höhe der NNE",S,rechnung.rechnungsposition.zuschlag,typ,"Z02 -> UMSPANNUNGSZUSCHLAG
+Z03 -> BETRIEBSMITTEL_P19_STROM_NEV
+Z04 -> ANPASSUNG_P19_STROM_NEV
+Z05 -> ANPASSUNG_PAUSCHALE_NETZENTGELTREDUZIERUNG_NACH_P14A_ENWG_AUF_HOEHE_DER_NNE
+",,,,X,,,,,,,,,,,,,,,,,,,,,
+1800,,SG41,C,R,1,1,3,Prozentangabe des Zuschlags,,,,,,,,,,Muss,,,,,,,,,,,,,,,,,,,,,
+1810,50,PCD,M,M,1,1,3,Prozentangabe des Zuschlags,PCD+3:10,Zuschlag in Prozent,S,rechnung.rechnungsposition.zuschlag,prozent,,,,,X,,,,,,,,,,,,,,,,,,,,,
+2180,51,UNS,M,M,1,1,0,Abschnitts-Kontrollsegment,UNS+S,,,,,,,,X,X,X,X,X,X,X,X,X,X,X,,,,,,,,,,,,
+2200,,SG50,M,R,100,1,1,Rechnungsbetrag (inkl. USt.),,,,,,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,,,,,,,,,,,,
+2210,52,MOA,M,M,1,1,1,Rechnungsbetrag,MOA+77:11900,Rechnungsbetrag,S,rechnung.gesamtbrutto,"wert
+waehrung",,,,,,,,X,X,X,X,X,X,X,,,,,,,,,,,,
+2200,,SG50,M,D,100,20,1,Vorausbezahlter Betrag (inkl. USt.),,,,,,,,,,,,,Soll,,,,,Soll,,,,,,,,,,,,,
+2210,53,MOA,M,M,1,1,1,Vorausbezahlter Betrag,MOA+113:175,Vorausbezahlter Betrag (inkl. USt.),S,rechnung.vorauszahlungen.betrag,wert,,,,,,,,X,,,,,X,,,,,,,,,,,,,
+2220,,SG51,C,D,1,1,2,Referenz auf Vorgängerrechnung,,,,,,,,,,,,,,,,,,Muss,,,,,,,,,,,,,
+2230,54,RFF,M,R,1,1,2,Referenz auf Vorgängerrechnung,RFF+AFL:RE12435422,Referenz Vorgängerrechnung,S,rechnung,referenzVorgaengerrechnung,,,,,,,,,,,,,X,,,,,,,,,,,,,
+2240,55,DTM,C,R,5,1,3,Datum der Vorgängerrechnung,DTM+3:CCYYMMDDHHMMZZZ:303,Datum der Vorgängerrechnung,S,rechnung,datumVorgaengerrechnung,,,,,,,,,,,,,X,,,,,,,,,,,,,
+2200,,SG50,M,D,100,1,1,Gemeinderabatt,,,,,,,,,,,,,Soll,,,,,,,,,,,,,,,,,,
+2210,56,MOA,M,M,1,1,1,Gemeinderabatt,MOA+Z01:1000,Gemeinderabatt,S,rechnung.gemeinderabatt,wert,,,,,,,,X,,,,,,,,,,,,,,,,,,
+2200,,SG50,M,R,100,1,1,Fälliger Betrag (inkl. USt.),,,,,,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,,,,,,,,,,,,
+2210,57,MOA,M,M,1,1,1,Fälliger Betrag,MOA+9:33,Fälliger Betrag  (inkl. USt.),S,rechnung.zuZahlen,"wert
+waehrung",,,,,,,,X,X,X,X,X,X,X,,,,,,,,,,,,
+2250,,SG52,C,R,10,10,1,Steuerangaben u. -mengen (Summen),,,,,,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,,,,,,,,,,,,
+2260,58,TAX,M,M,1,1,1,Umsatzsteuer der Rechnung,"TAX+7+VAT+++:::19+S
+TAX+7+VAT+++:::0+O
+TAX+7+VAT+++:::0+AE","Umsatzsteuer der Rechung Einheitssatz
+Umsatzsteuer der Rechung nicht steuerbar
+Umsatzsteuer der Rechung Reverse Charge",S,rechnung.steuerbetraege,steuerkennzeichen,"19+S -> UST_19
+16+S -> UST_16
+7+S -> UST_7
+0+O -> VST_0
+19+O -> VST_19
+16+O -> VST_16
+7+O -> VST_7
+0+AE -> RCV",,,,,,,X,X,X,X,X,X,X,,,,,,,,,,,,
+2270,59,MOA,C,D,9,1,2,Vorausbezahlter Betrag (steuersatzbezogen),MOA+113:116,Vorausbezahlter Betrag (inkl. USt.) (steuersatzbezogen),S,rechnung.steuerbetraege,basiswertVorausbezahlt,,,,,,,,S,,,,,S,,,,,,,,,,,,,
+2270,60,MOA,C,D,9,1,2,Vorausbezahlte Steuern (steuersatzbezogen),MOA+115:19,Vorausbezahlte Steuern (USt.-Anteil) (steuersatzbezogen),S,rechnung.steuerbetraege,steuerwertVorausbezahlt,,,,,,,,S,,,,,S,,,,,,,,,,,,,
+2270,61,MOA,C,R,9,1,2,Besteuerungsgrundlage (steuersatzbezogen),MOA+125:28.45,Besteuerungsgrundlage (steuersatzbezogen),S,rechnung.steuerbetraege,basiswert,,,,,,,,X,X,X,X,X,X,X,,,,,,,,,,,,
+2270,62,MOA,C,R,9,1,2,Steuerbetrag (steuersatzbezogen),MOA+161:4.55,Steuerbetrag (steuersatzbezogen) ,S,rechnung.steuerbetraege,steuerwert,,,,,,,,X,X,X,X,X,X,X,,,,,,,,,,,,
+2330,63,UNT,M,M,1,1,0,Nachrichtenende,UNT+47+1,,,,,,,,,,,,X,X,X,X,X,X,X,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,109 @@
+Nummer,Nr.,Typ,,,Max. Wdh,,,,,,stamm- oder transaktionsdaten,BO Objekt,BO4E - Feld,Mapping EDI <-> BO4E,powercloud - Variable,Schnittstelle,35001,35002,35003,,,,,,,,,,,,,,,,,,,,
+,,UNB,,,,,,,,,,,,,,,MSBN -> MSBA,LF -> MSB,ESA -> MSB,,,,,,,,,,,,,,,,,,,,
+0010,1,UNH,M,M,1,1,0,Nachrichten-Kopfsegment,UNH+1+REQOTE:D:10A:UN:1.3c,,,,,,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0020,2,BGM,M,M,1,1,0,Beginn der Nachricht,BGM+Z29+BGMMCCYU9QY,"311 Aufforderung zur Angebotsabgabe (Anfrage)
+Z29 Abrechnung des Messstellenbetriebs vom MSB an den LF
+Z57 Übermittlung von Werten an ESA
+Z74 Bestellung eines Angebots einer Konfiguration 
+Z82 Bestellung eines Angebots einer Konfiguration durch den LF",T,,"kategorie
+dokumentennummer",,,,311,Z29,Z57,,,,,,,,,,,,,,,,,,,,
+0030,3,DTM,M,M,35,1,1,Nachrichtendatum,DTM+137:CCYYMMDDHHMMZZZ:303,137 Dokumenten-/Nachrichtendatum/-zeit,T,,nachrichtendatum,,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0030,4,DTM,M,D,35,1,1,Datum zum geplanten Leistungsbeginn,DTM+76:200710012200?+00:303,"76 Lieferdatum/-zeit, geplant",T,,lieferdatum,,,,x,,x,,,,,,,,,,,,,,,,,,,,
+0030,5,DTM,M,D,35,1,1,Ausführungsdatum,DTM+203:CCYYMMDDHHMMZZZ:303,203 Ausführungsdatum/-zeit,T,,ausfuehrungsdatum,,,,,x,,,,,,,,,,,,,,,,,,,,,
+0030,6,DTM,M,D,35,1,1,Beginn zum (nächstmöglichen Termin),DTM+469:200710012200?+00:303,"469 Startdatum oder -zeitpunkt, frühestes/r",T,,ausfuehrungsdatum,,,,,x,,,,,,,,,,,,,,,,,,,,,
+0060,7,IMD,C,D,999,1,1,Grund des Angebots,IMD++Z55,"Z55 Änderung Konfiguration
+Z64 Neukonfiguration",S,anfrage,anfragetyp,"Z55 -> AENDERUNG_KONFIGURATION
+Z64 -> NEUKONFIGURATION",,,,,,,,,,,,,,,,,,,,,,,,,
+0080,8,FTX,C,D,99,1,1,Allgemeine Information (Feld für allgemeine Hinweise),FTX+ACB+++Text:Text2:Text3:Text4:Text5,ACB Zusätzliche Informationen (für allgemeine Hinweise),T,,freitext,,,,,,Kann,,,,,,,,,,,,,,,,,,,,
+0090,,SG1,C,R,9999,1,1,Prüfidentifikator,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,9,RFF,M,M,1,1,1,Prüfidentifikator,"RFF+Z13:35001
+RFF+Z13:35002
+RFF+Z13:35003
+RFF+Z13:35004","35001 Anforderung Angebot Geräteübernahme
+35002 Anfrage Rechnungsabwicklung MSB über LF
+35003 Anfrage von Werten für ESA
+35004 Anfrage einer Konfiguration",T,,pruefidentifikator,,,,35001,35002,35003,,,,,,,,,,,,,,,,,,,,
+0090,,SG1,C,D,9999,1,1,Referenznummer des Vorgangs der Anmeldung nach WiM,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,10,RFF,M,M,1,1,1,Referenznummer des Vorgangs der Anmeldung nach WiM,RFF+Z41:3467768456AST345',Z41 Referenznummer des Vorgangs der Anmeldung nach WiM,T,,vorgangsreferenznummer,,,,,,,,,,,,,,,,,,,,,,,,,,
+0090,,SG1,C,D,9999,1,1,Referenznummer der Nachricht der betroffenen Antwort auf Bestellung,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,11,RFF,M,M,1,1,1,Referenznummer der Nachricht der betroffenen Antwort auf Bestellung,RFF+Z42:98786423423435',Z42 Referenznummer der Nachricht der betroffenen Antwort auf Bestellung (Bestellbestätigung),T,,nachrichtenReferenzBestellbestaetigung,,,,,,,,,,,,,,,,,,,,,,,,,,
+0090,,SG1,C,D,9999,1,1,Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,12,RFF,M,M,1,1,1,Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung,RFF+Z43:12',Z43 Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung (Bestellbestätigung),T,,vorgangsReferenzBestellbestaetigung,,,,,,,,,,,,,,,,,,,,,,,,,,
+0090,,SG1,C,D,9999,1,1,MP-ID des NB des Vorgangs der Anmeldung nach WiM,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,13,NAD,M,M,1,1,1,MP-ID des NB des Vorgangs der Anmeldung nach WiM,NAD+DDM+9900259000002::9',"9 GS1 
+293 DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",T,beteiligterMarktpartner,"rollencodenummer
+rollencodetyp",,,,,,,,,,,,,,,,,,,,,,,,,,
+0510,,SG11,C,R,99,1,1,MP-ID Absender,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,14,NAD,M,M,1,1,1,MP-ID Absender,"NAD+MS+9900259000002::9
+NAD+MS+9900259000002::293
+NAD+MS+9900259000002::332","GS1
+DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)
+DE, DVGW Service & Consult GmbH",T,absender,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0610,,SG14,C,D,5,1,2,Kontaktinformationen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0620,15,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:M Mustermann,Informationskontakt,T,absender.ansprechpartner,nachname,,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0630,16,COM,C,R,5,5,3,Kommunikationsverbindung,COM+XXXXXXXXXX:TE,Ansprechpartner Kommunikation EM = Email ; FX = Telefax ; TE = Telefon ; AJ = weiteres Telefon ; AL = Handy,T,absender.ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0510,,SG11,C,R,99,1,1,MP-ID Empfänger,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,17,NAD,M,M,1,1,1,MP-ID Empfänger,"NAD+MR+9900259000002::9
+NAD+MR+9900259000002::293
+NAD+MR+9900259000002::332","GS1
+DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)
+DE, DVGW Service & Consult GmbH",T,empfaenger,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0510,,SG11,C,R,99,1,1,Marktlokation bzw. Messlokation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0520,18,NAD,M,M,1,1,1,"Liefer-, bzw. Bezugsort",NAD+DP,DP Lieferanschrift,,,,,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0530,19,LOC,C,R,99,1,2,Meldepunkt,LOC+172+DE00014545768S0000000000000003054,172 Meldepunkt,S,"Auf jeweiliges BO:
+
+marktlokation
+tranche
+messlokation
+netzlokation
+STEUERBARE_RESSOURCE","
+
+marktlokationsId
+tranchenId
+messlokationsId
+netzlokationsId
+ressourcenId",,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+1020,,SG27,M,D,200000,1,1,LIN,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1030,20,LIN,M,M,1,1,1,Positionsdaten,LIN+1,,T,,positionsnummer,,,,x,x,,,,,,,,,,,,,,,,,,,,,
+1020,,SG27,M,D,200000,1,1,Erforderliches Produkt Schaltzeitdefinitionen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1030,21,LIN,M,M,1,1,1,Erforderliches Produkt Schaltzeitdefinitionen,LIN+1+Z64,Z64 Erforderliches Produkt Schaltzeitdefinitionen,T,,positionsnummer,,,,,,x,,,,,,,,,,,,,,,,,,,,
+1040,22,PIA,C,R,25,1,2,Erforderliches Produkt Schaltzeitdefinitionen,PIA+5+9991000000713:Z11,Z11 Produkt,S,schaltzeitdefinition.schaltzeiten,konfigurationsprodukt,,,,,,x,,,,,,,,,,,,,,,,,,,,
+1170,,SG28,C,R,999,1,2,Zugeordnete Schaltzeitdefinition,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1180,23,CCI,M,M,,1,2,Zugeordnete Schaltzeitdefinition,CCI+Z52++NBX,Z52 Code der Schaltzeitdefinition,S,schaltzeitdefinition.schaltzeiten,code,,,,,,,,,,,,,,,,,,,,,,,,,,
+1020,,SG27,M,D,200000,1,1,Erforderliches Produkt Leistungskurvendefinitionen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1030,24,LIN,M,M,1,1,1,Erforderliches Produkt Leistungskurvendefinitionen,LIN+1+Z65,Z65 Erforderliches Produkt Leistungskurvendefinitionen,T,,positionsnummer,,,,,,x,,,,,,,,,,,,,,,,,,,,
+1040,25,PIA,C,R,25,1,2,Erforderliches Produkt Leistungskurvendefinitionen,PIA+5+9991000000721:Z11,Z11 Produkt,S,leistungskurvendefinition.leistungskurven,konfigurationsprodukt,,,,,,x,,,,,,,,,,,,,,,,,,,,
+1170,,SG28,C,R,999,1,2,Zugeordnete Leistungskurvendefinitionen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1180,26,CCI,M,M,,1,2,Zugeordnete Leistungskurvendefinitionen,CCI+Z53++NBF,Z53 Code der Leistungskurvendefinition,S,leistungskurvendefinition.leistungskurven,code,,,,,,,,,,,,,,,,,,,,,,,,,,
+1020,,SG27,M,D,200000,1,1,Erforderliches Produkt Ad-hoc-Steuerkanal,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1030,27,LIN,M,M,1,1,1,Erforderliches Produkt Ad-hoc-Steuerkanal,LIN+1+Z66,Z66 Erforderliches Produkt Ad-hoc-Steuerkanal,T,,positionsnummer,,,,,,x,,,,,,,,,,,,,,,,,,,,
+1040,28,PIA,C,R,25,1,2,Erforderliches Produkt Ad-hoc-Steuerkanal,PIA+5+9991000000739:Z11,Z11 Produkt,S,AD_HOC_STEUERKANAL,konfigurationsprodukt,,,,,,x,,,,,,,,,,,,,,,,,,,,
+1020,,SG27,M,D,200000,1,1,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1030,29,LIN,M,M,1,1,1,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,LIN+1+Z67,Z67 Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,T,,positionsnummer,,,,,,x,,,,,,,,,,,,,,,,,,,,
+1040,30,PIA,C,R,25,1,2,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,PIA+5+9991000000739:Z11',Z11 Produkt,S,WERTE_NACH_TYP2,messprodukt,,,,,,x,,,,,,,,,,,,,,,,,,,,
+1020,,SG27,M,D,200000,1,1,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1030,31,LIN,M,M,1,1,1,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,LIN+1+Z68,Z68 Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,T,,positionsnummer,,,,,,x,,,,,,,,,,,,,,,,,,,,
+1040,32,PIA,C,R,25,1,2,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,PIA+5+9991000000739:Z11,Z11 Produkt,S,WERTE_NACH_TYP2,konfigurationsprodukt,,,,,,x,,,,,,,,,,,,,,,,,,,,
+1040,33,FTX,C,R,99,1,2,Zieladresse URI,FTX+Z17+++X:X',Z17 Zieladresse URI,S,WERTE_NACH_TYP2.zieladresse,zieladresse1-2,,,,,,x,,,,,,,,,,,,,,,,,,,,
+1040,34,FTX,C,R,99,1,2,Zertifikatsaussteller (Issuer),"FTX+Z24+++SERIALNUMBER = 3, C = DE, O = SM-PKI-DE, CN = T-Systems-EnergyCA.CA:X:X:X:X'",Z24 Aussteller (Issuer),S,WERTE_NACH_TYP2.aussteller,aussteller1-5,,,,,,x,,,,,,,,,,,,,,,,,,,,
+1040,35,FTX,C,R,99,1,2,Zertifikatsnutzer (Subject),"FTX+Z23+++L = Stadt, SERIALNUMBER = 1, C = DE,OU = Firma GmbH, O = SM-PKI-DE,CN = Firma.EMT.Erweiterung:X:X:X:X'",,S,WERTE_NACH_TYP2.zertifikatsNutzer,zertifikatsNutzer1-5,,,,,,x,,,,,,,,,,,,,,,,,,,,
+1170,,SG28,C,D,999,1,2,Änderungsmöglichkeit der Konfiguration im SMGW,,Z54 Änderungsmöglichkeit der Konfiguration im SMGW,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1180,36,CCI,M,M,,1,2,Änderungsmöglichkeit der Konfiguration im SMGW,CCI+Z54++ZF7',"ZF7 selbständige Änderungsmöglichkeit erforderlich 
+ZF8 selbständige Änderungsmöglichkeit nicht erforderlich",S,WERTE_NACH_TYP2,aenderungsmoeglichkeitKonfiguration,"ZF7 = ERFORDERLICH
+ZF8 = NICHT_ERFORDERLICH",,,,,,,,,,,,,,,,,,,,,,,,,
+1170,,SG28,C,D,999,999,2,Schwellwerte,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1180,37,CCI,M,M,1,1,2,Schwellwerte,CCI+Z60++9991000001042:::207.22:168.81',Z60 Schwellwerte,S,WERTE_NACH_TYP2,"schwellwerte.konfigurationsprodukt
+schwellwerte.obererSchwellwert
+schwellwerte.untererSchwellwert",,,,,,,,,,,,,,,,,,,,,,,,,,
+2200,38,UNS,M,M,1,1,0,Abschnitts-Kontrollsegment,UNS+S,Trennung von Positions- und Summenteil,,,,,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+2270,39,UNT,M,M,1,1,0,Nachrichten-Endesegment,UNT+47+1,,,,,,,,x,x,x,,,,,,,,,,,,,,,,,,,,

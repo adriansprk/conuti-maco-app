@@ -1,0 +1,991 @@
+Nummer,Nr.,Typ,,,Max. Wdh,,,,,,stamm- oder transaktionsdaten,BO Objekt,BO4E - Feld,Mapping EDI <-> BO4E,powercloud - Variable,Schnittstelle,13017,13019,13016,13015,13002,13009,13018,13025,13008,13010,13011,13012,13003,13023,13005,13026,13020,13022,13021,13007,13013,13014,13006
+,2,UNB,,,,,,,UNB+UNOC:3+9900051000002:500+9904079000002:500+230130:1925+SEBAS743670271++VL',,T,,typ 1:1,,,,VL,EM,EM,EM,EM,VL,TL,TL,TL,TL,TL,TL,TL,TL,TL,TL,TL,TL,TL,TL,EM,EM,"EM
+VL"
+0010,3,UNH,M,M,1,1,0,Nachrichtenkopfsegment,UNH+4+MSCONS:D:04B:UN:2.4c,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss
+0020,4,BGM,M,M,1,1,0,Beginn der Nachricht,"BGM+7+XXXXXXXX+9
+BGM+7+XXXXXXXX+1
+BGM+270+XXXXXXXX+9
+BGM+270+XXXXXXXX+1
+BGM+BK+XXXXXXXX+9
+BGM+BK+XXXXXXXX+1
+BGM+Z06+XXXXXXXX+9
+BGM+Z06+XXXXXXXX+1
+BGM+Z15+XXXXXXXX+9
+BGM+Z15+XXXXXXXX+1
+BGM+Z16+XXXXXXXX+9
+BGM+Z16+XXXXXXXX+1
+BGM+Z20+XXXXXXXX+9
+BGM+Z20+XXXXXXXX+1
+BGM+Z21+XXXXXXXX+9
+BGM+Z21+XXXXXXXX+1
+BGM+Z23+XXXXXXXX+9
+BGM+Z23+XXXXXXXX+1
+BGM+Z24+XXXXXXXX+9
+BGM+Z24+XXXXXXXX+1
+BGM+Z27+XXXXXXXX+9
+BGM+Z27+XXXXXXXX+1
+BGM+Z28+XXXXXXXX+9
+BGM+Z28+XXXXXXXX+1
+BGM+Z39+XXXXXXXX+9
+BGM+Z39+XXXXXXXX+1","Prozessdatenbericht
+Prozessdatenbericht (Storno)
+Lieferschein
+Lieferschein (Storno)
+BK Zeitreihen im Rahmen der Bilanzkreisabrechnung
+BK Zeitreihen im Rahmen der Bilanzkreisabrechnung (Storno)
+normiertes Profil
+normiertes Profil (Storno)
+EEG-Überführungszeitreihe
+EEG-Überführungszeitreihe (Storno)
+Profilschar
+Profilschar (Storno)
+Vergangenheitswerte für TEP mit Referenzmessung
+Vergangenheitswerte für TEP mit Referenzmessung (Storno)
+Gasbeschaffenheitsdaten
+Gasbeschaffenheitsdaten (Storno)
+Bilanzierte Menge (MMMA)
+Bilanzierte Menge (MMMA) (Storno)
+Allokationsliste (MMMA)
+Allokationsliste (MMMA) (Storno)
+Bewegungsdaten im Kalenderjahr vor Lieferbeginn Energiemenge und Leistungsmaximum
+Bewegungsdaten im Kalenderjahr vor Lieferbeginn Energiemenge und Leistungsmaximum (Storno)
+Tägliche Summenzeitreihe
+Tägliche Summenzeitreihe (Storno)",T,,"kategorie 1:1
+dokumentennummer
+nachrichtenfunktion 1:1",,,PROZESSLOGIK,BGM+7,"BGM+7
+BGM+Z41","BGM+Z28
+BGM+Z42",BGM+Z27,BGM+7,BGM+7,BGM+7,BGM+Z48,BGM+7,BGM+Z06,BGM+Z16,BGM+20,"BGM+BK
+BGM+Z39",BGM+Z46,BGM+Z15,BGM+Z50,"BGM+Z43
+BGM+Z69",BGM+Z45,BGM+Z44,BGM+Z21,BGM+Z24,BGM+Z23,"BGM+7
+BGM+270
+BGM+Z27
+BGM+Z28
+BGM+Z41
+BGM+Z42"
+,,,,,,,,,"BGM+Z41+XXXXXXXX+9
+BGM+Z41+XXXXXXXX+1
+BGM+Z42+XXXXXXXX+9
+BGM+Z42+XXXXXXXX+1
+BGM+Z43+XXXXXXXX+9
+BGM+Z43+XXXXXXXX+1
+BGM+Z44+XXXXXXXX+9
+BGM+Z44+XXXXXXXX+1
+BGM+Z45+XXXXXXXX+9
+BGM+Z45+XXXXXXXX+1
+BGM+Z46+XXXXXXXX+9
+BGM+Z46+XXXXXXXX+1
+BGM+Z48+XXXXXXXX+9
+BGM+Z48+XXXXXXXX+1
+BGM+Z50+XXXXXXXX+9
+BGM+Z50+XXXXXXXX+1
+BGM+Z69+XXXXXXXX+9
+BGM+Z69+XXXXXXXX+1
+BGM+Z83+XXXXXXXX+9
+BGM+Z83+XXXXXXXX+1
+BGM+Z85+XXXXXXXX+9
+BGM+Z85+XXXXXXXX+1","Lieferschein Grund- / Arbeitspreis
+Lieferschein Grund- / Arbeitspreis (Storno)
+Lieferschein Arbeits- / Leistungspreis
+Lieferschein Arbeits- / Leistungspreis (Storno)
+Redispatch Ausfallarbeitsüberführungszeitreihe
+Redispatch Ausfallarbeitsüberführungszeitreihe (Storno)
+Redispatch Übermittlung von meteorologischen Daten
+Redispatch Übermittlung von meteorologischen Daten (Storno)
+Redispatch Einzelzeitreihe Ausfallarbeit
+Redispatch Einzelzeitreihe Ausfallarbeit (Storno)
+Redispatch Ausfallarbeitssummenzeitreihe
+Redispatch Ausfallarbeitssummenzeitreihe (Storno)
+Lastgang Marktlokation, Tranche
+Lastgang Marktlokation, Tranche (Storno)
+Redispatch EEG-Überführungszeitreihe aufgrund Ausfallarbeit
+Redispatch EEG-Überführungszeitreihe aufgrund Ausfallarbeit (Storno)
+Redispatch tägliche Ausfallarbeitsüberführungszeitreihe
+Redispatch tägliche Ausfallarbeitsüberführungszeitreihe (Storno)
+Werte nach Typ 2
+Werte nach Typ 2 (Storno)
+Grundlage POG-Ermittlung
+Grundlage POG-Ermittlung (Storno)",,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0030,5,DTM,M,M,9,1,1,Nachrichtendatum,DTM+137:CCYYMMDDHHMMZZZ:303,Dokumenten-/Nachrichtendatum/-zeit,T,,nachrichtendatum,,,PROZESSLOGIK,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X
+0050,,SG1,C,D,9,1,1,Referenz,,,,,,,,,Soll,Soll,Soll,Muss,Soll,Soll,Soll,Soll,Soll,Soll,,,,,,,,Soll,,,Muss,Muss,Muss
+0060,6,RFF,M,M,1,1,1,Referenzangaben,"RFF+AGI:AFNXXXX
+RFF+ACW:XXXXXXXXXX","Beantragungsnummer
+Referenznummer einer vorangegangenen Nachricht",T,,"anfrageReferenz
+vorgangsreferenznummer (storno = true)",,,PROZESSLOGIK,"X
+","X
+","X
+","X
+","X
+","X
+","X
+","X
+","X
+","X
+",,,,,,,,"X
+",,,"X
+","X
+","
+X"
+0070,7,DTM,C,D,9,1,2,Versionsangabe marktlokationsscharfe Allokationsliste Gas (MMMA),DTM+293:CCYYMMDDHHMMSSZZZ:304,Fertigstellungsdatum/-zeit,S,energiemenge,fertigstellungsdatum,,,,,,,,,,,,,,,,,,,,,,,,X,,
+0050,,SG1,C,D,9,1,1,Referenz auf vorherige Stammdatenmeldung des MSB,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0060,8,RFF,M,M,1,1,1,Referenz auf vorherige Stammdatenmeldung des MSB,RFF+Z30:UTILMDXYZ_1235,Z30 Referenz auf vorherige Stammdatenmeldung des MSB,S,energiemenge,referenzStammdatenmeldungMsb,,,,,,,,,,,,,,,,,,,,,,,,,,
+0050,,SG1,C,R,9,1,1,Prüfidentifikator,,,,,,,,,Muss,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss
+0060,9,RFF,M,M,1,1,1,Prüfidentifikator,"RFF+Z13:13002
+RFF+Z13:13003
+RFF+Z13:13005
+RFF+Z13:13006
+RFF+Z13:13007
+RFF+Z13:13008
+RFF+Z13:13009
+RFF+Z13:13010
+RFF+Z13:13011
+RFF+Z13:13012
+RFF+Z13:13013
+RFF+Z13:13014
+RFF+Z13:13015
+RFF+Z13:13016
+RFF+Z13:13017
+RFF+Z13:13018
+RFF+Z13:13019
+RFF+Z13:13020
+RFF+Z13:13021
+RFF+Z13:13022
+RFF+Z13:13023
+RFF+Z13:13025
+RFF+Z13:13026
+RFF+Z13:13027
+RFF+Z13:13028","Messw. Zählerstand (Gas)
+Summenzeitreihe
+EEG-Überf.ZR
+Messw. Storno
+Gasbeschaffenheitsdaten
+Messwert Lastgang (Gas)
+Messwert Energiemenge (Gas)
+Profil
+Profilschar
+TEP Vergangenheitswerte Referenz-Messung
+Marktlokationsscharfe Allokationsliste Gas (MMMA)
+Marktlokationsscharfe bilanzierte Menge (MMMA)
+Bewegungsdaten im Kalenderjahr vor Lieferbeginn
+Energiemenge und Leistungsmaximum
+Messw. Zählerstand (Strom)
+Lastgang Messlokation, Netzkoppelpunkt
+Messwert Energiemenge (Strom)
+Redispatch Ausfallarbeitsüberführungszeitreihe
+Redispatch Übermittlung von meteorologischen Daten
+Redispatch Einzelzeitreihe Ausfallarbeit
+Redispatch Ausfallarbeitssummenzeitreihe
+Lastgang Marktlokation, Tranche
+Redispatch EEG-Überführungszeitreihe aufgrund Ausfallarbeit
+Werte nach Typ 2
+Grundlage POG-Ermittlung",T,,pruefidentifikator,,,PROZESSLOGIK,13017,13019,13016,13015,13002,13009,13018,13025,13008,13010,13011,13012,13003,13023,13005,13026,13020,13022,13021,13007,13013,13014,13006
+0080,,SG2,C,R,99,1,1,MP-ID Absender,,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss
+0090,10,NAD,M,M,1,1,1,MP-ID Absender,NAD+MS+XXXXXXXXXXXXX::293,Sender MP-ID,T,absender,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,PROZESSLOGIK,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X
+0130,,SG4,C,D,9,1,2,Kontaktinformation,,,,,,,,,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann,Kann
+0140,11,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:M Mustermann,Ansprechpartner Name,T,absender.ansprechpartner,nachname,,,PROZESSLOGIK,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X
+0150,12,COM,C,R,9,5,3,Kommunikationsverbindung,COM+XXXXXXXXXX:TE,Ansprechpartner Kommunikation EM = Email ; FX = Telefax ; TE = Telefon ; AJ = weiteres Telefon ; AL = Handy,T,absender.ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,PROZESSLOGIK,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X
+0080,,SG2,C,R,99,1,1,MP-ID Empfänger,,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss
+0090,13,NAD,M,M,1,1,1,MP-ID Empfänger,NAD+MR+XXXXXXXXXXXXX::293,Empfänger MP-ID,T,empfaenger,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,PROZESSLOGIK,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X
+0160,14,UNS,M,M,1,1,0,Abschnitts-Kontrollsegment,UNS+D,,,,,,,,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X
+0170,,SG5,M,M,99999,99999,1,"Liefer-, bzw. Bezugsort",,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss
+0180,15,NAD,M,M,1,1,1,Name und Adresse,"NAD+DP
+NAD+DED
+NAD+Z15","Lieferanschrift
+Profilerstellung
+Überführungszeitreihe",,,,,,PROZESSLOGIK,DP,DP,DP,DP,DP,DP,DP,DP,DP,DED,DED,DED,DP,DP,Z15,Z15,Z15,DP,DP,DP,DP,DP,DP
+0190,,SG6,M,D,99999,1,2,Bilanzkreis,,,,,,,,,,,,,,,,,,,,,,,Muss,Muss,,,,,,,
+0200,16,LOC,M,M,1,1,2,Bilanzkreis,LOC+237+11XUENBSOLS----X+11XVNBSOLS-----X,Bilanzkreis ,S,bilanzierung,"bilanzkreisAn
+bilanzkreisVon",,,,,,,,,,,,,,,,,,X,X,,,,,,,
+0190,,SG6,M,M,99999,1,2,Wert- und Erfassungsangaben zum Objekt,,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss
+0200,17,LOC,M,M,1,1,2,Identifikationsangabe,"LOC+107+11YR000000011247
+LOC+172+DE00014559929E00856996N5139699L01
+LOC+Z04+H0
+LOC+Z06+TP1","Bilanzierungsgebiet
+Meldepunkt
+Profilbezeichnung
+Profilschar",S,"marktlokation
+energiemenge
+bilanzierung.lastprofile
+bilanzierung.lastprofile","bilanzierungsgebiet
+lokationsId
+bezeichnung
+profilschar","MALO (11-stellig)
+MELO (33-stellig)
+TRANCHE
+NELO
+NKP",,,LOC+172,LOC+172,LOC+172,LOC+172,LOC+172,LOC+172,LOC+172,LOC+172,LOC+172,LOC+Z04,LOC+Z06,LOC+Z04,LOC+172,LOC+172,LOC+107,LOC+107,LOC+172,LOC+172,LOC+172,LOC+172,LOC+172,LOC+172,LOC+172
+0210,18,DTM,C,D,9,1,3,Beginn Messperiode Übertragunszeitraum,DTM+163:CCYYMMDDHHMMZZZ:303,Beginn Messperiode,S,energiemenge,startdatum,UTC -> 303,,METERING_DATA,,,,,,,X,X,X,,,,,,X,X,,X,X,X,,,
+0210,19,DTM,C,D,9,1,3,Ende Messperiode Übertragungszeitraum,DTM+164:CCYYMMDDHHMMZZZ:303,Ende Messperiode,S,energiemenge,enddatum,UTC -> 303,,METERING_DATA,,,,,,,X,X,X,,,,,,X,X,,X,X,X,,,
+0210,20,DTM,C,D,9,1,3,Bilanzierungsmonat,DTM+492:CCYYMM:610,Bilanzierungsdatum,S,energiemenge,bilanzierungsdatum,,,,,,,,,,,,,,,,X,X,,,X,,,,,,
+0210,21,DTM,C,D,9,1,3,Versionsangabe,DTM+293:CCYYMMDDHHMMSSZZZ:304,Fertigstellungsdatum/-zeit,S,energiemenge,fertigstellungsdatum,,,,,,,,,,,,,X,X,X,X,X,,,X,X,X,X,X,,
+0210,22,DTM,C,D,9,1,3,"Gültigkeit, Beginndatum Profilschar",DTM+157:CCYYMM:610,Profilschar gültig ab,S,energiemenge,beginndatum,,,,,,,,,,,,,,X,,,,,,,,,,,,
+0220,,SG7,C,D,99,1,3,Referenzangaben,,,,,,,,,Muss,,,,Muss,,,,,,,,,,,,,,,,,,
+0230,23,RFF,M,M,1,1,3,Gerätenummer,RFF+MG:8465929523,Gerätenummer Referenz,S,zaehler,zaehlernummer,,,METERING_DATA,X,,,,X,,,,,,,,,,,,,,,,,,
+0220,,SG7,C,D,99,1,3,Referenzangaben,,,,,,,,,Soll,Soll,,,,,,,,,,,,,,,,,,,,,
+0230,24,RFF,M,M,1,1,3,Konfigurations-ID,RFF+AGK:34590456ujdfsdghdlktztwqq-053trg,Konfigurations-ID,S,energiemenge,konfiguration,,,METERING_DATA,X,X,,,,,,,,,,,,,,,,,,,,,
+0250,,SG8,C,D,99,1,3,Zeitreihentyp,,,,,,,,,,,,,,,,,,,,,,,Muss,Muss,Muss,,,,,,
+0260,25,CCI,M,M,1,1,3,Zeitreihentyp,CCI+15++XXX,Zeitreihentyp Überführungszeitreihe,S,bilanzierung,zeitreihentyp,,,,,,,,,,,,,,,,,,X,X,X,,,,,,
+0280,,SG9,C,D,99999,99999,3,Positionsdaten,,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,
+0290,26,LIN,M,M,1,1,3,lfd. Position,LIN+1,laufende Position,S,energiemenge.energieverbrauch,position,,,PROZESSLOGIK,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,
+0300,27,PIA,C,R,9,1,4,Produktidentifikation,"PIA+5+1-1?:1.8.1:SRW
+PIA+5+2-7?:1.8.1:Z02
+PIA+5+AUA:Z08","OBIS-Kennzahl
+BDEW OBIS-ähnliche Kennzahl
+Medium",S,energiemenge.energieverbrauch,obiskennzahl,,,METERING_DATA,X,"X
+
+","X
+X
+","X
+
+","X
+
+","X
+
+",SRW,SRW,SRW,SRW,"SRW
+Z02",SRW,SRW,Z08,SRW,Z08,Z08,Z08,"
+
+X",SWR,Z02,Z02,
+0350,,SG10,M,M,9999,9999,4,Mengen- und Statusangaben,,,,,,,,,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,Muss,
+0360,28,QTY,M,M,1,1,4,Mengenangaben,"QTY+220:4250.465:KWH
+QTY+67:4250.465:KWH
+QTY+201:4250.465:KWH
+QTY+20:4250.465:KWH
+QTY+187:4250.465:KWH
+QTY+79:4250.465:KWH
+QTY+Z18:4250.465:KWH
+QTY+Z30
+QTY+Z31:4250.465:KWH
+QTY+Z47:4250.465:KWH","Wahrer Wert
+Ersatzwert
+Vorschlagswert
+Nicht verwendbarer Wert
+Prognosewert
+Energiemenge summiert
+Vorläufiger Wert
+Fehlender Wert
+Angabe für Lieferschein
+Grundlage POG-Ermittlung",S,energiemenge.energieverbrauch,"messwertstatus -> ENUM
+wert
+einheit
+wertermittlungsverfahren","220 -> ABGELESEN
+67 -> ERSATZWERT
+201 -> VORSCHLAGSWERT
+20 -> NICHT_VERWENDBAR
+187 -> PROGNOSEWERT
+79 -> ENERGIEMENGESUMMIERT
+Z18 -> VOLAEUFIGERWERT
+Z30 -> FEHLT
+Z31 -> ANGABE_FUER_LIEFERSCHEIN
+Z47 -> GRUNDLAGE_POG_ERMITTLUNG",,METERING_DATA,"QTY+220
+QTY+67
+QTY+Z18","QTY+220
+QTY+67
+QTY+Z31","QTY+220
+QTY+67
+QTY+Z18
+QTY+Z31","QTY+220
+QTY+67","QTY+220
+QTY+67
+QTY+201
+QTY+20
+QTY+Z18","QTY+220
+QTY+67
+QTY+201
+QTY+20
+QTY+187","QTY+220
+QTY+67
+QTY+Z18","QTY+220
+QTY+67
+QTY+Z18","QTY+220
+QTY+67
+QTY+201
+QTY+20
+QTY+187
+QTY+Z18",QTY+187,QTY+187,QTY+187,"QTY+220
+QTY+67
+QTY+79
+QTY+Z18
+QTY+Z30",QTY+79,QTY+79,QTY+79,QTY+79,QTY+220,QTY+220,"QTY+220
+QTY+67
+QTY+201
+QTY+20",QTY+79,QTY+79,
+0370,29,DTM,C,D,9,1,5,Beginn Messperiode,DTM+163:CCYYMMDDHHMMZZZ:303,Beginn Messperiode,S,energiemenge.energieverbrauch,startdatum,UTC,,METERING_DATA,,X,X,X,X,X,X,X,X,X,,X,X,X,X,X,X,X,X,X,,X,
+0370,30,DTM,C,D,9,1,5,Ende Messperiode ,DTM+164:CCYYMMDDHHMMZZZ:303,Ende Messperiode,S,energiemenge.energieverbrauch,enddatum,UTC,,METERING_DATA,,X,X,X,X,X,X,X,X,X,,X,X,X,X,X,X,X,X,X,,X,
+0370,31,DTM,C,D,9,1,5,Ablesedatum,"DTM+9:20210201:102
+DTM+9:202107011655?+00:303",tats. Ablesedatum,S,energiemenge.energieverbrauch,ablesedatum,,,METERING_DATA,S,,,,S,,,,,,,,,,,,,,,,,,
+0370,32,DTM,C,D,9,1,5,Nutzungszeitpunkt,DTM+7:202106012200?+00:303,Nutzungszeitpunkt,S,energiemenge.energieverbrauch,nutzungszeitpunkt,UTC -> 303,,METERING_DATA,X,,,,X,,,,,,,,,,,,,,,,,,
+0370,33,DTM,C,D,9,1,5,Ausführungs-/ Änderungszeitpunkt,DTM+60:202106011730?+00:303,Konstruktionsänderungsdatum,S,energiemenge.energieverbrauch,ausfuehrungszeitpunkt,UTC -> 303,,METERING_DATA,S,,,,S,,,,,,,,,,,,,,,,,,
+0370,34,DTM,C,D,9,1,5,Leistungsperiode,"DTM+306:CCYYMMDD:102
+DTM+306:CCYYMM:610'",Leistungsperiode,S,energiemenge.energieverbrauch,leistungsperiode,,,,,,,,,,,,,,,,,,,,,,,,,,
+0380,35,STS,C,D,9,4,5,Plausibilisierungshinweis,"STS+Z33++Z83
+STS+Z33++Z84
+STS+Z33++Z85
+STS+Z33++Z86
+STS+Z33++Z87
+STS+Z33++ZC3
+STS+Z33++ZR5
+STS+Z33++ZS2","Kundenselbstablesung
+Leerstand
+Realer Zählerüberlauf geprüft
+Plausibel wg. Kontrollablesung
+Plausibel wg. Kundenhinweis
+Austausch des Ersatzwertes
+Rechnenwert (Gas)
+Werst auf Basis der modernen Messeinrichtung",S,energiemenge.energieverbrauch.statuszusatzinformationen,"art = ""PLAUSIBILISIERUNGSHINWEIS"" = Z33
+status -> ENUM","Z83 = KUNDENSELBSTABLESUNG
+Z84 = LEERSTAND
+Z85 = REALER_ZAEHLERUEBERLAUF_GEPRUEFT
+Z86 = PLAUSIBEL_WG_KONTROLLABLESUNG
+Z87 = PLAUSIBEL_WG_KUNDENHINWEIS
+ZC3 = AUSTAUSCH_DES_ERSATZWERTES
+ZR5 = RECHENWERT
+ZS2 = BASIS_MME",,METERING_DATA,S,S,S,,"Z83
+Z84
+Z85
+Z86
+Z87
+ZC3
+ZR5","Z83
+Z84
+Z85
+Z86
+Z87
+ZC3
+ZR5","Z83
+Z84
+Z85
+Z86
+Z87
+ZC3","Z83
+Z84
+Z85
+Z86
+Z87
+ZC3","Z83
+Z84
+Z85
+Z86
+Z87
+ZC3
+ZR5",,,,,,,,,,,,,,
+0380,36,STS,C,D,9,1,5,Ersatzwertbildungsverfahren,"STS+Z32++Z88
+STS+Z32++Z89
+STS+Z32++Z90
+STS+Z32++Z91
+STS+Z32++Z92
+STS+Z32++Z93
+STS+Z32++Z94
+STS+Z32++Z95
+STS+Z32++ZJ2
+STS+Z32++ZQ8
+STS+Z32++ZQ9
+STS+Z32++ZR0
+STS+Z32++ZS0","Vergleichsmessung (geeicht)
+Vergleichsmessung (nicht geeicht)
+Messwertnachbildung aus geeichten Werten
+Messwertnachbildung aus nicht geeichten Werten
+Interpolation
+Haltewert
+Bilanzierung Netzabschnitt
+Historische Messwerte
+Statistische Methode
+Aufteilung
+Verwendung von Werten des Störmengenzählwerks
+Umgangs- und Korrekturmengen
+Ersatzwertbildungsverfahren gemäß Angaben auf Ebene der Messloklation",S,energiemenge.energieverbrauch.statuszusatzinformationen,"art = ""ERSATZWERTBILDUNGSVERFAHREN"" = Z32
+status -> ENUM","Z88 = VERGLEICHSMESSUNG_GEEICHT
+Z89 = VERGLEICHSMESSUNG_NICHT_GEEICHT
+Z90 = MESSWERTNACHBILDUNG_AUS_GEEICHTEN_WERTEN
+Z91 = MESSWERTNACHBILDUNG_AUS_NICHT_GEEICHTEN_WERTEN
+Z92 = INTERPOLATION
+Z93 = HALTEWERT
+Z94 = BILANZIERUNG_NETZABSCHNITT
+Z95 = HISTORISCHE_MESSWERTE
+ZJ2 = STATISTISCHE_METHODE
+ZQ8 = AUFTEILUNG
+ZQ9 = VERWENDUNG_VON_WERTEN_DES_STOERMENGENZAEHLWERKS
+ZR0 = UMGANGS_UND_KORREKTURMENGEN
+ZS0 = ANGABEN_MESSLOKATION",,METERING_DATA,X,"Z88
+Z89
+Z92
+ZJ2
+ZS0","Z88
+Z89
+Z92
+ZJ2
+ZS0","Z88
+Z89
+Z92
+ZJ2
+","Z89
+Z90
+Z91
+Z92
+Z93
+Z94
+Z95
+ZQ8
+ZQ9
+ZR0","Z89
+Z90
+Z91
+Z92
+Z93
+Z94
+Z95
+ZQ8
+ZQ9
+ZR0
+ZS0","Z88
+Z89
+Z92
+ZJ2","Z88
+Z89
+Z92
+ZJ2
+ZS0","Z89
+Z90
+Z91
+Z92
+Z93
+Z94
+Z95
+ZQ8
+ZQ9
+ZR0
+ZS0",,,,,,,,,,,"Z91
+Z92
+Z93
+Z94
+Z95
+ZQ8
+ZQ9
+ZR0",,,
+0380,37,STS,C,D,9,1,5,Korrekturgrund,"STS+Z34++Z74
+STS+Z34++Z75
+STS+Z34++Z76
+STS+Z34++Z77
+STS+Z34++Z78
+STS+Z34++Z79
+STS+Z34++Z80
+STS+Z34++Z81
+STS+Z34++Z82
+STS+Z34++Z98
+STS+Z34++Z99
+STS+Z34++ZA0
+STS+Z34++ZA1","kein Zugang
+Kommunikationsstörung
+Netzausfall
+Spannungsausfall
+Gerätewechsel
+Kalibrierung
+Gerät arbeitet außerhalb der Betreibsbedingungen
+Messeinrichtung gestört/defekt
+Unsicherheit Messung
+Berücksichtigung Störmengenzählwerk
+Mengenumwertung unvollständig
+Uhrzeit gestellt / Synchronisation
+Messwert unplausibel",S,energiemenge.energieverbrauch.statuszusatzinformationen,"art = ""KORREKTURGRUND"" = Z34
+status -> ENUM","Z74 = KEIN_ZUGANG
+Z75 = KOMMUNIKATIONSSTOERUNG
+Z76 = NETZAUSFALL
+Z77 = SPANNUNGSAUSFALL
+Z78 = STATUS_GERAETEWECHSEL
+Z79 = KALIBRIERUNG
+Z80 = GERAET_ARBEITET_AUSSERHALB_DER_BETRIEBSBEDINGUNGEN
+Z81 = MESSEINRICHTUNG_GESTOERT_DEFEKT
+Z82 = UNSICHERHEIT_MESSUNG
+Z98 = BERUECKSICHTIGUNG_STOERMENGENZAEHLWERK
+Z99 = MENGENUMWERTUNG_VOLLSTAENDIG
+ZA0 = UHRZEIT_GESTELLT_SYNCHRONISATION
+ZA1 = MESSWERT_UNPLAUSIBEL
+ZA3 = FALSCHER_WANDLERFAKTOR
+ZA4 = FEHLERHAFTE_ABLESUNG
+ZA5 = AENDERUNG_DER_BERECHNUNG
+ZA6 = UMBAU_DER_MESSLOKATION
+ZA7 = DATENBEARBEITUNGSFEHLER
+ZA8 = BRENNWERTKORREKTUR
+ZA9 = Z_ZAHL_KORREKTUR
+ZB0 = STOERUNG_DEFEKT_MESSEINRICHTUNG
+ZB9 = AENDERUNG_TARIFSCHALTZEITEN
+ZC2 = TARIFSCHALTGERAET_DEFEKT
+ZC4 = IMPULSWERTIGKEIT_NICHT_AUSREICHEND
+ZJ8 = ENERGIEMENGE_IN_UNGEMESSENEM_ZEITINTERVALL
+ZJ9 = ENERGIEMENGE_AUS_DEM_UNGEPAIRTEN_ZEITINTERVALL
+ZR1 = WARTUNGSARBEITEN_AN_GEEICHTEM_MESSGERAET
+ZR2 = GESTOERTE_WERTE
+ZR3 = WARTUNGSARBEITEN_AN_EICHRECHTSKONFORMEN_MESSGERAETEN
+ZR4 = KONSISTENZ_UND_SYNCHRONPRUEFUNG",,206,S,"Z74
+Z75
+Z76
+Z77
+Z78
+Z79
+Z80
+Z81
+Z82
+ZA0
+ZA1
+ZA3
+ZA4
+ZA5
+ZA6
+ZA7
+ZB0
+ZB9
+ZC2
+ZC4
+ZJ8
+ZJ9","Z74
+Z75
+Z76
+Z77
+Z78
+Z79
+Z80
+Z81
+Z82
+ZA0
+ZA1
+ZA3
+ZA4
+ZA5
+ZA6
+ZA7
+ZB0
+ZB9
+ZC2
+ZC4","Z88
+Z89
+Z92
+ZJ2
+","Z74
+Z75
+Z76
+Z78
+Z80
+Z81
+Z82
+Z98
+Z99
+ZA0
+ZA1
+ZA4
+ZA5
+ZA6
+ZA7
+ZA8
+ZA9
+ZB0
+ZC4
+ZR1
+ZR2
+ZR3
+ZR4","Z74
+Z75
+Z76
+Z78
+Z80
+Z81
+Z82
+Z98
+Z99
+ZA0
+ZA1
+ZA4
+ZA5
+ZA6
+ZA7
+ZA8
+ZA9
+ZB0
+ZC4
+ZJ9
+ZR1
+ZR2
+ZR3
+ZR4","Z74
+Z75
+Z76
+Z77
+Z78
+Z80
+Z81
+Z82
+ZA0
+ZA1
+ZA4
+ZA5
+ZA6
+ZA7
+ZA8
+ZA9
+ZB0
+ZB9
+ZC4
+ZJ8
+ZJ9","Z74
+Z75
+Z76
+Z77
+Z78
+Z80
+Z81
+Z82
+ZA0
+ZA1
+ZA4
+ZA5
+ZA6
+ZA7
+ZA8
+ZA9
+ZB0
+ZB9
+ZC4","Z74
+Z75
+Z76
+Z78
+Z80
+Z81
+Z82
+Z98
+Z99
+ZA0
+ZA1
+ZA4
+ZA5
+ZA6
+ZA7
+ZA8
+ZA9
+ZB0
+ZC4
+ZJ9
+ZR1
+ZR2
+ZR3
+ZR4",,,,,,,,,,,"Z74
+Z75
+Z76
+Z78
+Z80
+Z81
+Z82
+Z98
+Z99
+ZA0
+ZA1
+ZA4
+ZA5
+ZA6
+ZA7
+ZA8
+ZA9
+ZB0
+ZC4
+ZR1
+ZR2
+ZR3
+ZR4",,,
+,,,,,,,,,"STS+Z34++ZA3
+STS+Z34++ZA4
+STS+Z34++ZA5
+STS+Z34++ZA6
+STS+Z34++ZA7
+STS+Z34++ZA8
+STS+Z34++ZA9
+STS+Z34++ZB0
+STS+Z34++ZB9
+STS+Z34++ZC2
+STS+Z34++ZC4
+STS+Z34++ZJ8
+STS+Z34++ZJ9
+STS+Z34++ZR1
+STS+Z34++ZR2
+STS+Z34++ZR3
+STS+Z34++ZR4","Falscher Wandlerfaktor
+Fehlerhafte Ablesung
+Änderung der Berechnung
+Umbau der Messlokation
+Datenbearbeitungsfehler
+Brennwertkorrektur
+Z-Zahl-Korrektur
+Störung / Defekt Messeinrichtung
+Änderung Tarifzeitschalten
+Tarifschaltgerät defekt
+Impulswertigkeit nicht ausreichend
+Energiemenge in ungemessenem Zeitintervall
+Energiemenge aus dem ungepairten Zeitintervall
+Wartungsarbeiten an geeichtem Messgerät
+gestörte Wete
+Wartungsarbeiten an eichrechtskonformen Messgeräten
+Konsitenz- und Synchronprüfung",,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0380,38,STS,C,D,9,1,5,Grund der Ersatzwertbildung,"STS+Z40++Z74
+STS+Z40++Z75
+STS+Z40++Z76
+STS+Z40++Z77
+STS+Z40++Z78
+STS+Z40++Z79
+STS+Z40++Z80
+STS+Z40++Z81
+STS+Z40++Z82
+STS+Z40++Z98
+STS+Z40++Z99
+STS+Z40++ZA0
+STS+Z40++ZA1","kein Zugang
+Kommunikationsstörung
+Netzausfall
+Spannungsausfall
+Gerätewechsel
+Kalibrierung
+Gerät arbeitet außerhalb der Betreibsbedingungen
+Messeinrichtung gestört/defekt
+Unsicherheit Messung
+Berücksichtigung Störmengenzählwerk
+Mengenumwertung unvollständig
+Uhrzeit gestellt / Synchronisation
+Messwert unplausibel",S,energiemenge.energieverbrauch.statuszusatzinformationen,"art = ""GRUND_ERSATZWERTBILDUNGSVERFAHREN"" = Z40
+status -> ENUM","Z74 = KEIN_ZUGANG
+Z75 = KOMMUNIKATIONSSTOERUNG
+Z76 = NETZAUSFALL
+Z77 = SPANNUNGSAUSFALL
+Z78 = STATUS_GERAETEWECHSEL
+Z79 = KALIBRIERUNG
+Z80 = GERAET_ARBEITET_AUSSERHALB_DER_BETRIEBSBEDINGUNGEN
+Z81 = MESSEINRICHTUNG_GESTOERT_DEFEKT
+Z82 = UNSICHERHEIT_MESSUNG
+Z98 = BERUECKSICHTIGUNG_STOERMENGENZAEHLWERK
+Z99 = MENGENUMWERTUNG_VOLLSTAENDIG
+ZA0 = UHRZEIT_GESTELLT_SYNCHRONISATION
+ZA1 = MESSWERT_UNPLAUSIBEL
+ZA3 = FALSCHER_WANDLERFAKTOR
+ZA4 = FEHLERHAFTE_ABLESUNG
+ZA5 = AENDERUNG_DER_BERECHNUNG
+ZA6 = UMBAU_DER_MESSLOKATION
+ZA7 = DATENBEARBEITUNGSFEHLER
+ZB0 = STOERUNG_DEFEKT_MESSEINRICHTUNG
+ZB9 = AENDERUNG_TARIFSCHALTZEITEN
+ZC2 = TARIFSCHALTGERAET_DEFEKT
+ZC4 = IMPULSWERTIGKEIT_NICHT_AUSREICHEND
+ZR1 = WARTUNGSARBEITEN_AN_GEEICHTEM_MESSGERAET
+ZR2 = GESTOERTE_WERTE
+ZR3 = WARTUNGSARBEITEN_AN_EICHRECHTSKONFORMEN_MESSGERAETEN
+ZR4 = KONSISTENZ_UND_SYNCHRONPRUEFUNG
+ZS9 = GRUND_ANGABEN_MESSLOKATION
+ZT8 = ANFORDERUNG_IN_DIE_VERGANGENHEIT_ZUM_ANGEFORDERTEN_ZEITPUNKT_LIEGT_KEIN_WERT_VOR",,METERING_DATA,X,"Z74
+Z75
+Z76
+Z77
+Z78
+Z79
+Z80
+Z81
+Z82
+ZA0
+ZA1
+ZA3
+ZA4
+ZA5
+ZA6
+ZA7
+ZB0
+ZB9
+ZC2
+ZC4
+ZS9","Z74
+Z75
+Z76
+Z77
+Z78
+Z79
+Z80
+Z81
+Z82
+ZA0
+ZA1
+ZA3
+ZA4
+ZA5
+ZA6
+ZA7
+ZB0
+ZB9
+ZC2
+ZC4
+ZS9",,"Z74
+Z75
+Z76
+Z78
+Z80
+Z81
+Z82
+Z98
+Z99
+ZA0
+ZA1
+ZA4
+ZA5
+ZA6
+ZA7
+ZB0
+ZC4
+ZR1
+ZR2
+ZR3
+ZR4","Z74
+Z75
+Z76
+Z78
+Z80
+Z81
+Z82
+Z98
+Z99
+ZA0
+ZA1
+ZA4
+ZA5
+ZA6
+ZA7
+ZB0
+ZC4
+ZR1
+ZR2
+ZR3
+ZR4
+ZS9","Z74
+Z75
+Z76
+Z77
+Z78
+Z79
+Z80
+Z81
+Z82
+ZA0
+ZA1
+ZA3
+ZA4
+ZA5
+ZA6
+ZA7
+ZB0
+ZB9
+ZC2
+ZC4","Z74
+Z75
+Z76
+Z77
+Z78
+Z79
+Z80
+Z81
+Z82
+ZA0
+ZA1
+ZA3
+ZA4
+ZA5
+ZA6
+ZA7
+ZB0
+ZB9
+ZC2
+ZC4
+ZS9","Z74
+Z75
+Z76
+Z78
+Z80
+Z81
+Z82
+Z98
+Z99
+ZA0
+ZA1
+ZA4
+ZA5
+ZA6
+ZA7
+ZB0
+ZC4
+ZR1
+ZR2
+ZR3
+ZR4
+ZS9",,,,,,,,,,,"Z74
+Z75
+Z76
+Z78
+Z80
+Z81
+Z82
+Z98
+Z99
+ZA0
+ZA1
+ZA4
+ZA5
+ZA6
+ZA7
+ZB0
+ZC4
+ZR1
+ZR2
+ZR3
+ZR4",,,
+,,,,,,,,,"STS+Z40++ZA3
+STS+Z40++ZA4
+STS+Z40++ZA5
+STS+Z40++ZA6
+STS+Z40++ZA7
+STS+Z40++ZB0
+STS+Z40++ZB9
+STS+Z40++ZC2
+STS+Z40++ZC4
+STS+Z40++ZR1
+STS+Z40++ZR2
+STS+Z40++ZR3
+STS+Z40++ZR4
+STS+Z40++ZS9
+STS+Z40++ZT8","Falscher Wandlerfaktor
+Fehlerhafte Ablesung
+Änderung der Berechnung
+Umbau der Messlokation
+Datenbearbeitungsfehler
+Störung / Defekt Messeinrichtung
+Änderung Tarifzeitschalten
+Tarifschaltgerät defekt
+Impulswertigkeit nicht ausreichend
+Wartungsarbeiten an geeichtem Messgerät
+gestörte Wete
+Wartungsarbeiten an eichrechtskonformen Messgeräten
+Konsitenz- und Synchronprüfung
+Grund der Ersatzwertbildung gemäß Angaben auf Ebene der Messlokation
+Anforderung in die Vergangenheit, zum angeforderten Zeitpunkt liegt kein Wert vor",,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0380,39,STS,C,D,9,1,5,Gasqualität,STS+Z31++ZG3,Umstellung Gasqualität,S,energiemenge.energieverbrauch.statuszusatzinformationen,"art = ""GASQUALITAET"" = Z31
+status -> ENUM",ZG3 = UMSTELLUNG_GASQUALITAET,,PROZESSLOGIK,,,,,S,S,,,S,,,,,,,,,,,X,,,
+0380,40,STS,C,D,9,2,5,Grundlage der Energiemenge,"STS+10+Z36
+STS+10+Z37
+STS+10+Z38
+STS+10+Z39","Zählerstand zum Beginn der angegebenen Energiemenge vorhanden und kommuniziert
+Zählerstand zum Ende der angegebenen Energiemenge vorhanden und kommuniziert
+Zählerstand zum Beginn der angegebenen Energiemenge nicht vorhanden da Mengenabgrenzung
+Zählerstand zum Ende der angegebenen Energiemenge nicht vorhanden da Mengenabgrenzung",S,energiemenge.energieverbrauch.statuszusatzinformationen,"art = ""MESSKLASSIFIZIERUNG"" = 10
+status -> ENUM","Z36 = ZAEHLERSTAND_ZUM_BEGINN_DER_ANGEGEBENEN_ENERGIEMENGE_VORHANDEN_UND_KOMMUNIZIERT
+Z37 = ZAEHLERSTAND_ZUM_ENDE_DER_ANGEGEBENEN_ENERGIEMENGE_VORHANDEN_UND_KOMMUNIZIERT
+Z38 = ZAEHLERSTAND_ZUM_BEGINN_DER_ANGEGEBENEN_ENERGIEMENGE_NICHT_VORHANDEN_DA_MENGENABGRENZUNG
+Z39 = ZAEHLERSTAND_ZUM_ENDE_DER_ANGEGEBENEN_ENERGIEMENGE_NICHT_VORHANDEN_DA_MENGENABGRENZUNG",,PROZESSLOGIK,,X,,,,,,,,,,,,,,,,,,,,,
+0440,41,UNT,M,M,1,1,0,Nachrichten-Endesegment,,,,,,,,,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X,X
+0000,42,UNZ,M,M,1,1,0,Nutzdaten-Endesegment,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,299 @@
+Nummer,,Typ,,,Max. Wdh,,,,,,stamm- oder transaktionsdaten,BO Objekt,BO4E - Feld,Mapping EDI <-> BO4E,powercloud - Variable,Schnittstelle,25001,25003,25002,25004,25005,25006,25007,25008,25009
+,,,,,,,,,,,,,,,,,"NB -> MSB
+NB -> LF",MSB -> NB,MSB -> NB,"NB -> MSB
+NB -> LF
+LF -> MSB","NB -> MSB
+NB -> LF
+LF -> MSB","NB -> LF 
+NB -> MSB
+LF -> MSB","NB -> LF
+NB -> MSB
+LF -> NB
+LF -> MSB","NB -> LF
+NB -> MSB
+LF -> NB
+LF -> MSB","NB -> LF
+NB -> MSB
+LF -> NB
+LF -> MSB"
+0010,3,UNH,M,M,1,1,0,Nachrichten-Kopfsegment,UNH+1+UTILTS:D:18A:UN:1.1e,,,,,,,,Muss,Muss,Muss,Muss,Muss,,,,
+0020,2,BGM,M,M,1,1,0,Beginn der Nachricht,"BGM+Z36+MKIDI5422
+BGM+Z59+MKIDI5422
+BGM+Z60+MKIDI5422
+BGM+Z81+MKIDI5422
+BGM+Z80+MKIDI5422
+BGM+Z79+MKIDI5422
+BGM+Z78+MKIDI5422","Berechnungsformel
+Ausgerollte Zählzeitdefinition
+Übersicht Zählzeitdefinition
+Z81 - Ausgerollte Leistungskurvendefinition
+Z80 - Ausgerollte Schaltzeitdefinition
+Z79 - Übersicht Leistungskurvendefinitionen
+Z78 - Übersicht Schaltzeitdefinitionen",T,,"kategorie 1:1
+dokumentennummer ",,,,"X
+
+","X
+
+","X
+
+","
+
+X","
+X
+",,,,
+0030,3,DTM,M,M,9,1,1,Nachrichtendatum,DTM+137:CCYYMMDDHHMMZZZ:303,Dokumenten-/Nachrichtendatum/-zeit,T,,nachrichtendatum,UTC -> 303,,,X,X,X,X,X,,,,
+0090,,SG2,C,R,99,1,1,MP-ID Absender,,,,,,,,,Muss,Muss,Muss,Muss,Muss,,,,
+0100,4,NAD,M,M,1,1,1,MP-ID Absender,NAD+MS+XXXXXXXXXXXXX::293,Sender MP-ID,T,absender,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,,X,X,X,X,X,,,,
+0130,,SG3,C,D,9,1,2,Kontaktinformationen,,,,,,,,,Muss,Kann,Muss,Muss,Muss,,,,
+0140,5,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:M Mustermann,Ansprechpartner Name,T,absender.ansprechpartner,nachname,,,,X,X,X,X,X,,,,
+0150,6,COM,C,R,9,5,3,Kommunikationsverbindung,COM+XXXXXXXXXX:TE,Ansprechpartner Kommunikation EM = Email ; FX = Telefax ; TE = Telefon ; AJ = weiteres Telefon ; AL = Handy,T,absender.ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,X,X,X,X,X,,,,
+0090,,SG2,C,R,99,1,1,MP-ID Empfänger,,,,,,,,,Muss,Muss,Muss,Muss,Muss,,,,
+0100,7,com,M,M,1,1,1,MP-ID Empfänger,NAD+MR+XXXXXXXXXXXXX::293,Empfänger MP-ID,T,empfaenger,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,,X,X,X,X,X,,,,
+0200,,SG5,C,R,99999,9,1,Vorgang,,,,,,,,,Muss,Muss,Muss,Muss,Muss,,,,
+0210,8,IDE,M,M,1,1,1,Vorgang,IDE+24+XXXXXXXXXX,Vorgangs-ID,T,,eingehend: vorgangsnummer / ausgehend -> Nummer erzeugen,,,,X,X,X,X,X,,,,
+0220,9,LOC,C,D,9,1,2,Meldepunkt,LOC+172+XXXXXXXXXXX,172 Meldepunkt,T,,"lokationsId
+lokationsTyp","MALO, NELO",,,X,,,,,,,,
+0220,10,LOC,C,D,9,1,2,Code der Definition,LOC+Z09+ZZ1,Z09 Code der Definition,S,"zaehlzeitdefinition (RFF+Z13 25004, 25005)
+schaltzeitdefinition (RFF+Z13 25006, 25008)
+leistungskurvendefinition (RFF+Z13 25007, 25009)",code,,,,,,,,X,,,,
+0280,11,DTM,C,D,9,1,2,Gültig ab,DTM+157:CCYYMMDDHHMMZZZ:303,"Änderung zum, Gültigkeit, Beginndatum",S,"berechnungsformel (RFF+Z13 25001, 25003, 25002)
+zaehlzeitdefinition (RFF+Z13 25004, 25005)
+schaltzeitdefinition (RFF+Z13 25006, 25008)
+leistungskurvendefinition (RFF+Z13 25007, 25009)",beginndatum,UTC -> 303,,,X,,X,X,,,,,
+0280,12,DTM,C,D,9,1,2,Gültigkeitsbeginn der ausgerollten Definition,DTM+Z34:CCYYMMDDHHMMZZZ:303,Z34 Gültigkeitsbeginn,S,"zaehlzeitdefinition (RFF+Z13 25004, 25005)
+schaltzeitdefinition (RFF+Z13 25006, 25008)
+leistungskurvendefinition (RFF+Z13 25007, 25009)",beginndatum,UTC -> 303,,,,,,,X,,,,
+0280,13,DTM,C,D,9,1,2,Gültigkeitsende der ausgerollten Definition,DTM+Z35:CCYYMMDDHHMMZZZ:303,Z35 Gültigkeitsende,S,"zaehlzeitdefinition (RFF+Z13 25004, 25005)
+schaltzeitdefinition (RFF+Z13 25006, 25008)
+leistungskurvendefinition (RFF+Z13 25007, 25009)",endedatum,UTC -> 303,,,,,,,X,,,,
+0280,14,DTM,C,D,9,1,2,Versionsangabe,DTM+293:CCYYMMDDHHMMSSZZZ:304,Fertigstellungsdatum/-zeit,S,"zaehlzeitdefinition (RFF+Z13 25004, 25005)
+schaltzeitdefinition (RFF+Z13 25006, 25008)
+leistungskurvendefinition (RFF+Z13 25007, 25009)",version,,,,,,,X,X,,,,
+0300,15,STS,C,D,9,1,2,Status der Antwort,STS+E01++A01:E_0218::1',Antwortcode aus den Entscheidungsbaumdiagrammen,T,,"antwortstatus
+antwortstatusCodeliste
+
+
+
+
+
+(Wenn STS 9092 mit Zeitraum-ID vorhanden) 
+
+antwortStatusZeitraum[].code
+antwortStatusZeitraum[].liste
+antwortStatusZeitraum[].zeitraumId",,,,,E_0218,x,,,,,,
+0300,16,STS,C,D,9,1,2,Status der Berechnungsformel,STS+Z23+Z33+2,"Z33 Berechnungsformel angefügt
+Z34 Berechnungsformel muss beim Absender angefragt werden
+Z40 Berechnungsformel besitzt keine Rechenoperation
+Z41 Berechnungsformel nicht erforderlich",S,berechnungsformel,"notwendigkeit
+
+gueltigkeitszeitraum.zeitraumId
+gueltigkeitszeitraum.startdatum (Aus DTM+Z25 der jeweiligen zeitraumId)
+gueltigkeitszeitraum.enddatum (Aus DTM+Z26 der jeweiligen zeitraumId)","Z33 -> BERECHNUNGSFORMEL_NOTWENDIG
+Z34 -> BERECHNUNGSFORMEL_MUSS_ANGEFRAGT_WERDEN
+Z40 -> BERECHNUNGSFORMEL_TRIVIAL
+Z41 -> BERECHNUNGSFORMEL_NICHT_NOTWENDIG",,,X,,,,,,,,
+0300,17,STS,C,D,9,1,2,Status der Nutzung von Definitionen,"STS+Z36+Z45
+STS+Z36+Z46","Z45 Definitionen werden verwendet
+Z46 Definitionen werden nicht verwendet",S,"zaehlzeitdefinition (RFF+Z13 25004, 25005)
+schaltzeitdefinition (RFF+Z13 25006, 25008)
+leistungskurvendefinition (RFF+Z13 25007, 25009)",notwendigkeit,"Z45 -> DEFINITIONEN_WERDEN_VERWENDET
+Z46 -> DEFINITIONEN_WERDEN_NICHT_VERWENDET",,,,,,X,,,,,
+0330,18,FTX,C,D,9,9,2,Bemerkung (Feld für allgemeine Hinweise),FTX+ACB++3+X:X:X:X:X,"ACB Zusätzliche Informationen (für allgemeine Hinweise)
++
+Zeitraum-ID
++
+Freier Text
+Freier Text
+Freier Text
+Freier Text
+Freier Text",T,antwortStatusZeitraum[],"zeitraumId
+freitext",,,,,,,,,,,,
+0340,,SG6,C,R,99999,1,2,Prüfidentifikator,,,,,,,,,Muss,Muss,Muss,Muss,Muss,,,,
+0350,19,RFF,M,M,1,1,2,Prüfidentifikator,"RFF+Z13:25001
+RFF+Z13:25002
+RFF+Z13:25003
+RFF+Z13:25004
+RFF+Z13:25005
+RFF+Z13:25006
+RFF+Z13:25007
+RFF+Z13:25008
+RFF+Z13:25009","Berechnungsformel
+Ablehnung Berechnungsformel
+Zustimmung Berechnungsformel
+Übersicht Zählzeitdefinitionen
+Ausgerollte Zählzeitdefinition
+Übersicht Schaltzeitdefinitionen
+Übersicht Leistungskurvendefinitionen
+Ausgerollte Schaltzeitdefinition
+Ausgerollte Leistungskurvendefinition",T,,pruefidentifikator,,,,25001,25003,25002,25004,25005,,,,
+0340,,SG6,C,D,99999,1,2,Referenz auf Reklamation,,,,,,,,,,,,Soll,Soll,,,,
+0350,20,RFF,M,M,1,1,2,Referenz auf Reklamation,RFF+AGI:FGEFW566TTDF123E,Beantragungsnummer,T,,anfrageReferenz,,,,,,,X,X,,,,
+0340,,SG6,C,D,99999,1,2,Referenz-Vorgangsnummer (aus Berechnungsformel),,,,,,,,,,Muss,Muss,,,,,,
+0350,21,RFF,M,M,1,1,2,Referenz-Vorgangsnummer (aus Berechnungsformel),RFF+TN:XXXXXXXXXX,Vorgangsnummer Anfragenachricht,T,,anfragereferenznummer,,,,,X,X,,,,,,
+0340,,SG6,C,D,99999,9,2,Verwendungszeitraum der Daten,,,,,,,,,,Muss,Muss,,,,,,
+0350,22,RFF,M,M,1,1,2,Verwendungszeitraum der Daten,RFF+Z49::1,"Z49 Gültige Daten 
+Z53 Keine Daten",S,VERWENDUNGSZEITRAUM[],"datenqualitaet
+zeitraumId","Z49 -> GUELTIGE_DATEN
+Z53 -> KEINE_DATEN",,,,,,,,,,,
+0360,23,DTM,C,R,9,1,3,Verwendung der Daten ab,DTM+Z25:202704012200???+00:303,Z25 Verwendung der Daten ab,S,VERWENDUNGSZEITRAUM[],verwendungAb,,,,,,,,,,,,
+0360,24,DTM,C,D,9,1,3,Verwendung der Daten bis,DTM+Z26:202806012200?+00:303,Z26 Verwendung der Daten bis,S,VERWENDUNGSZEITRAUM[],verwendungBis,,,,,,,,,,,,
+0400,,SG8,C,D,99999,1,2,Energiemenge der Markt- bzw. Netzlokation,,,,,,,,,Muss,,,,,,,,
+0410,25,SEQ,M,M,1,1,2,Energiemenge der Markt- bzw. Netzlokation,SEQ+Z36,Z36 Energiemenge der Markt- bzw. Netzlokation,,,,,,,X,,,,,,,,
+0430,26,RFF,C,R,9,1,3,Referenz auf eine Zeitraum-ID,RFF+Z46:1,Z46 Referenz auf Zeitraum-ID,S,BERECHNUNGSFORMEL[],"gueltigkeitszeitraum.zeitraumId
+gueltigkeitszeitraum.startdatum (Aus DTM+Z25 der jeweiligen zeitraumId)
+gueltigkeitszeitraum.enddatum (Aus DTM+Z26 der jeweiligen zeitraumId)",,,,X,,,,,,,,
+0430,27,RFF,C,R,9,1,3,Referenz auf einen Rechenschritt,RFF+Z23:3,Rechenschrittidentifikator,S,berechnungsformel,rechenschrittId,,,,X,,,,,,,,
+0400,,SG8,C,D,99999,99999,2,Bestandteil des Rechenschritts,,,,,,,,,Muss,,,,,,,,
+0410,28,SEQ,M,M,1,1,2,Bestandteil des Rechenschritts,SEQ+Z37+1,Z37 Bestandteil des Rechenschritts,S,berechnungsformel.rechenschritte,rechenschrittBestandteilId,,,,X,,,,,,,,
+0430,29,RFF,C,R,9,1,3,Referenz auf eine Zeitraum-ID,RFF+Z46:6,Z46 Referenz auf Zeitraum-ID,S,BERECHNUNGSFORMEL[],"gueltigkeitszeitraum.zeitraumId
+gueltigkeitszeitraum.startdatum (Aus DTM+Z25 der jeweiligen zeitraumId)
+gueltigkeitszeitraum.enddatum (Aus DTM+Z26 der jeweiligen zeitraumId)",,,,X,,,,,,,,
+0430,30,RFF,C,D,9,1,3,Referenz auf die ID einer Messlokation,RFF+Z19:XXXXXXXXXXXXXXXXXXXXX,Messlokation,S,berechnungsformel.rechenschritte,messlokationsId,,,,X,,,,,,,,
+0430,31,RFF,C,D,9,1,3,Referenz auf einen Rechenschritt,RFF+Z23:1,Rechenschrittidentifikator,S,berechnungsformel.rechenschritte,referenzRechenschrittId,,,,X,,,,,,,,
+0470,,SG9,C,R,99,1,3,Mathematischer Operator,,,,,,,,,Muss,,,,,,,,
+0480,32,CCI,M,M,1,1,3,Mathematischer Operator,CCI+++Z86,Mathematischer Operator,,,,,,,X,,,,,,,,
+0490,33,CAV,C,R,99,1,4,Operator / Operation,"CAV+Z69
+CAV+Z70
+CAV+Z80
+CAV+Z81
+CAV+Z82
+CAV+Z83","Addition
+Subtraktion
+Divisor
+Dividend
+Faktor
+Positivwert",S,berechnungsformel.rechenschritte,operation,"Z69 -> ADDITION
+Z70 -> SUBTRAKTION
+Z80 -> DIVISION
+Z81 -> DIVIDEND
+Z82 -> MULTIPLIKATION
+Z83 -> POSITIVWERT",,,X,,,,,,,,
+0470,,SG9,C,D,99,1,3,Energieflussrichtung,,,,,,,,,Muss,,,,,,,,
+0480,34,CCI,M,M,1,1,3,Energieflussrichtung,CCI+++Z87,Energieflussrichtung,,,,,,,X,,,,,,,,
+0490,35,CAV,C,R,99,1,4,Energieflussrichtung,"CAV+Z71
+CAV+Z72","Verbrauch
+Erzeugung",S,berechnungsformel.rechenschritte,energieflussrichtung,"Z71 -> AUSSP
+Z72 -> EINSP",,,X,,,,,,,,
+0470,,SG9,C,D,99,1,3,Verlustfaktor Trafo,,,,,,,,,Soll ,,,,,,,,
+0480,36,CCI,M,M,1,1,3,Verlustfaktor Trafo,CCI+++Z16,Verlustfaktor Trafo,,,,,,,X,,,,,,,,
+0490,37,CAV,C,R,99,1,4,Verlustfaktor Trafo,CAV+Z28:::1.04,Verlustfaktor,S,berechnungsformel.rechenschritte,verlustfaktorTrafo,,,,X,,,,,,,,
+0470,,SG9,C,D,99,1,3,Verlustfaktor Leitung,,,,,,,,,Soll ,,,,,,,,
+0480,38,CCI,M,M,1,1,3,Verlustfaktor Leitung,CCI+++ZB2,Verlustfaktor Leitung,,,,,,,X,,,,,,,,
+0490,39,CAV,C,R,99,1,4,Verlustfaktor Leitung,CAV+Z28:::1.04,Verlustfaktor,S,berechnungsformel.rechenschritte,verlustfaktorLeitung,,,,X,,,,,,,,
+0470,,SG9,C,D,99,1,3,Aufteilungsfaktor Energiemenge,,,,,,,,,,,,,,,,,
+0480,40,CCI,M,M,1,1,3,Aufteilungsfaktor Energiemenge,CCI+++ZG6',ZG6 Aufteilungsfaktor Energiemenge,,,,,,,,,,,,,,,
+0490,41,CAV,C,R,99,1,4,Aufteilungsfaktor Energiemenge,CAV+ZH6:::20',ZH6 Aufteilungsfaktor Energiemenge,S,berechnungsformel.rechenschritte,aufteilungsfaktorEnergiemenge,,,,,,,,,,,,
+0400,,SG8,C,D,99999,99999,2,Zählzeitdefinition,,,,,,,,,,,,Muss,,,,,
+0410,42,SEQ,M,M,1,1,2,Zählzeit,"SEQ+Z42
+SEQ+Z43","Z42 Zählzeitdefinition
+Z43 Ausgerollte Zählzeitdefinition",,,,,,,,,,X,,,,,
+0420,43,DTM,C,D,9,1,3,Zählzeitänderungszeitpunkt,DTM+Z33:202110070605?+00:303',Z33 Zählzeitänderungszeitpunkt,S,zaehlzeitdefinition.zaehlzeiten,"aenderungszeitpunkt 
+
+haeufigkeit
+","
+
+EINMALIG bei 401
+JAEHRLICH bei 303",,,,,,,,,,,
+0430,44,RFF,C,D,9,1,3,Zählendes Register,RFF+Z28:RZ1',Z28 Code des zählenden Registers,S,zaehlzeitdefinition.zaehlzeiten,register,,,,,,,,,,,,
+0470,,SG9,C,R,99,1,3,Zählzeit,,,,,,,,,,,,Muss,,,,,
+0480,45,CCI,M,M,1,1,3,Code der Zählzeitdefinition,CCI+Z39++ZZ1,Z39 Code der Zählzeitdefinition,S,zaehlzeitdefinition.zaehlzeiten,code,,,,,,,X,,,,,
+0490,46,CAV,C,R,99,1,4,Häufigkeit der Übermittlung,"CAV+ZE0:::Z33
+CAV+ZE0:::Z34","Z33 einmalig zu übermittelnde ausgerollte Definition
+Z34 jährlich zu übermittelnde ausgerollte Definition",S,zaehlzeitdefinition.zaehlzeiten,haeufigkeit,"Z33 -> EINMALIG
+Z34 -> JAEHRLICH",,,,,,X,,,,,
+0490,47,CAV,C,R,99,1,4,Übermittelbarkeit der ausgerollten Zählzeitdefinition,"CAV+ZD5:::Z23
+CAV+ZD5:::Z24","Z23 elektronisch übermittelbar
+Z24 elektronisch nicht übermittelbar",S,zaehlzeitdefinition.zaehlzeiten,uebermittelbarkeit,"Z23 -> ELEKTRONISCH
+Z24 -> NICHT_ELEKTRONISCH",,,,,,X,,,,,
+0490,48,CAV,C,D,99,1,4,Ermittlung des Leistungsmaximums bei atypischer,"CAV+ZD4:::Z25
+CAV+ZD4:::Z26","Z25 Verwendung des Hochlastzeitfensters
+Z26 keine Verwendung des Hochlastzeitfensters",S,zaehlzeitdefinition.zaehlzeiten,ermittlungLeistungsmaximum,"Z25 -> VERWENDUNG_HOCHLASTFENSTER
+Z26 -> KEINE_VERWENDUNG_HOCHLASTFENSTER",,,,,,X,,,,,
+0490,49,CAV,C,D,99,1,4,Bestellbarkeit der Zählzeitdefinition,"CAV+ZD7:::Z27
+CAV+ZD7:::Z28","Z27 Zählzeitdefinition ist bestellbar
+Z28 Zählzeitdefinition ist nicht bestellbar",S,zaehlzeitdefinition.zaehlzeiten,istBestellbar,"Z27 -> true
+Z28 -> false",,,,,,X,,,,,
+0490,50,CAV,C,D,99,1,4,Zählzeitdefinitionstyp,"CAV+ZD3:::Z29:Beschreibungstext
+CAV+ZD3:::Z30:Beschreibungstext
+CAV+ZD3:::Z31:Beschreibungstext
+CAV+ZD3:::Z32:Beschreibungstext
+CAV+ZD3:::Z35:Beschreibungstext","Z29 Wärmepumpe
+Z30 Nachtspeicherheizung
+Z31 Schwachlastzeitfenster
+Z32 sonstiger Zählzeitdefinitionstyp
+Z35 Hochlastzeitfenster",S,zaehlzeitdefinition.zaehlzeiten,"typ
+beschreibungTyp","Z29 -> WAERMEPUMPE
+Z30 -> NACHTSPEICHERHEIZUNG
+Z31 -> SCHWACHLASTZEITFENSTER
+Z32 -> SONSTIGE
+Z35 -> HOCHLASTZEITFENSTER",,,,,,X,,,,,
+0400,,SG8,C,D,99999,99999,2,Register der Zählzeitdefinition,,,,,,,,,,,,Muss,,,,,
+0410,51,SEQ,M,M,1,1,2,Register der Zählzeitdefinition,SEQ+Z41,Register der Zählzeitdefinition,,,,,,,,,,X,,,,,
+0430,52,RFF,C,R,9,1,3,Referenz auf eine Zählzeitdefinition,RFF+Z27:ZZ1,Code der Zählzeitdefinition,S,zaehlzeitdefinition.zaehlzeitregister,zaehlzeitDefinition,,,,,,,X,,,,,
+0470,,SG9,C,R,99,1,3,Register,,,,,,,,,,,,Muss,,,,,
+0480,53,CCI,M,M,1,1,3,Code des Zählzeitregister,CCI+Z38++RZ1,Code des Zählzeitregisters,S,zaehlzeitdefinition.zaehlzeitregister,register,,,,,,,X,,,,,
+0470,,SG9,C,D,99,1,3,Schwachlastfähigkeit,,,,,,,,,,,,Muss,,,,,
+0480,54,CCI,M,M,1,1,3,Schwachlastfähigkeit,"CCI+Z10++Z59
+CCI+Z10++Z60","Nicht-Schwachlast fähig
+Schwachlastfähig",S,zaehlzeitdefinition.zaehlzeitregister,schwachlastfaehig,"Z59 -> NICHT_SCHWACHLASTFAEHIG
+Z60 -> SCHWACHLASTFAEHIG",,,,,,X,,,,,
+0400,,SG8,C,D,99999,99999,2,Schaltzeitdefinition,,,,,,,,,,,,,Muss,,,,
+0410,55,SEQ,M,M,1,1,2,Schaltzeitdefinition,"SEQ+Z69
+SEQ+Z73","Z69 Schaltzeitdefinition
+Z73 Ausgerollte Schaltzeitdefinition",,,,,,,,,,,X,,,,
+0420,56,DTM,C,D,9,1,3,Schaltzeitänderungszeitpunkt,DTM+Z44:202110070605?+00:303',Z44 Schaltzeitänderungszeitpunkt,S,schaltzeitdefinition.schaltzeiten,"aenderungszeitpunkt 
+
+haeufigkeit
+","
+
+EINMALIG bei 401
+JAEHRLICH bei 303",,,,,,,,,,,
+0470,,SG9,C,D,99,1,3,Schaltzeitdefinition,,,,,,,,,,,,Muss,,,,,
+0480,57,CCI,M,M,1,1,3,Code der Schaltzeitdefinition,CCI+Z52++EDF,Z52 Code der Schaltzeitdefinition,S,schaltzeitdefinition.schaltzeiten,code,,,,,,,X,,,,,
+0490,58,CAV,C,R,99,1,4,Häufigkeit der Übermittlung,"CAV+ZE0:::Z33
+CAV+ZE0:::Z34","Z33 einmalig zu übermittelnde ausgerollte Definition
+Z34 jährlich zu übermittelnde ausgerollte Definition",S,schaltzeitdefinition.schaltzeiten,haeufigkeit,"Z33 -> EINMALIG
+Z34 -> JAEHRLICH",,,,,,X,,,,,
+0490,59,CAV,C,R,99,1,4,Übermittelbarkeit der ausgerollten Schaltzeitdefinition,"CAV+ZD5:::Z23
+CAV+ZD5:::Z24","Z23 elektronisch übermittelbar
+Z24 elektronisch nicht übermittelbar",S,schaltzeitdefinition.schaltzeiten,uebermittelbarkeit,"Z23 -> ELEKTRONISCH
+Z24 -> NICHT_ELEKTRONISCH",,,,,,X,,,,,
+0470,,SG9,C,D,99,1,3,Schalthandlung an der Lokation,,,,,,,,,,,,Muss,,,,,
+0480,60,CCI,M,M,1,1,3,Schalthandlung an der Lokation,"CCI+Z58++ZF4
+CCI+Z58++ZF5","ZF4 Leistung an der Lokation an
+ZF5 Leistung an der Lokation aus",S,schaltzeitdefinition.schaltzeiten,schalthandlung,"ZF4 -> LEISTUNG_AN
+ZF5 -> LEISTUNG_AUS",,,,,,X,,,,,
+0400,,SG8,C,D,99999,99999,2,Leistungskurvendefinition,,,,,,,,,,,,,Muss,,,,
+0410,61,SEQ,M,M,1,1,2,Leistungskurvendefinition,"SEQ+Z70
+SEQ+Z74","Z70 Leistungskurvendefinition
+Z74 Ausgerollte Leistungskurvendefinition",,,,,,,,,,,X,,,,
+0420,62,DTM,C,D,9,1,3,Leistungskurvenänderungszeitpunkt,DTM+Z45:202110070605?+00:303',Z45 Leistungskurvenänderungszeitpunkt,S,leistungskurvendefinition.leistungskurven,"aenderungszeitpunkt 
+
+haeufigkeit
+","
+
+EINMALIG bei 401
+JAEHRLICH bei 303",,,,,,,,,,,
+0470,,SG9,C,D,99,1,3,Leistungskurvendefinition,,,,,,,,,,,,Muss,,,,,
+0480,63,CCI,M,M,1,1,3,Code der Leistungskurvendefinition,CCI+Z53++ES1',Z53 Code der Leistungskurvendefinition,S,leistungskurvendefinition.leistungskurven,code,,,,,,,X,,,,,
+0490,64,CAV,C,R,99,1,4,Häufigkeit der Übermittlung,"CAV+ZE0:::Z33
+CAV+ZE0:::Z34","Z33 einmalig zu übermittelnde ausgerollte Definition
+Z34 jährlich zu übermittelnde ausgerollte Definition",S,leistungskurvendefinition.leistungskurven,haeufigkeit,"Z33 -> EINMALIG
+Z34 -> JAEHRLICH",,,,,,X,,,,,
+0490,65,CAV,C,R,99,1,4,Übermittelbarkeit der ausgerollten Leistungskurvendefinition,"CAV+ZD5:::Z23
+CAV+ZD5:::Z24","Z23 elektronisch übermittelbar
+Z24 elektronisch nicht übermittelbar",S,leistungskurvendefinition.leistungskurven,uebermittelbarkeit,"Z23 -> ELEKTRONISCH
+Z24 -> NICHT_ELEKTRONISCH",,,,,,X,,,,,
+0530,,SG11,C,D,99999,1,3,oberer Schwellwert,,,,,,,,,,,,Muss,,,,,
+0540,66,QTY,M,M,1,1,3,oberer Schwellwert,QTY+Z40:70.00:P1',Z40 oberer Schwellwert,S,leistungskurvendefinition.leistungskurven,schwellwert.obererSchwellwert,,,,,,,,,,,,
+0640,67,UNT,M,M,1,1,0,Nachrichten-Endesegment,UNT+51+1,,,,,,,,X,X,X,X,X,,,,

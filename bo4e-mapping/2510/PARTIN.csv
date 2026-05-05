@@ -1,0 +1,437 @@
+Nummer,Nr.,Typ,,,Max. Wdh,,,,,,stamm- oder transaktionsdaten,BO Objekt,BO4E - Feld,Mapping EDI <-> BO4E,powercloud - Variable,Schnittstelle,37000,37001,37002,,,,,,,,,,,,,,,,,,,,
+,,UNB,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0010,1,UNH,M,M,1,1,0,Nachrichten-Kopfsegment,UNH+CS3TTZTT555558+PARTIN:D:20B:UN:1.0e,,,,,,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0020,2,BGM,M,M,1,1,0,Beginn der Nachricht,BGM+10+CS356455854555+++11,"10 Partnerstammdaten
+Z87 Kommunikationsparameter API Steuerbefehl","T
+
+
+S","
+
+
+KOMMUNIKATIONSDATEN","kategorie
+dokumentennummer
+
+kommunikationsDatenBlattInaktiv = true (Code 11 vorhanden)",,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0030,3,DTM,M,M,5,1,1,Nachrichtendatum,DTM+137:CCYYMMDDHHMMZZZ:303,137 Dokumenten-/Nachrichtendatum/-zeit,T,,nachrichtendatum,,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0060,,SG1,C,R,5,1,1,Prüfidentifikator,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0070,4,RFF,M,M,1,1,1,Prüfidentifikator,"RFF+Z13:37000
+RFF+Z13:37001
+RFF+Z13:37002
+RFF+Z13:37003
+RFF+Z13:37004
+RFF+Z13:37005
+RFF+Z13:37006
+RFF+Z13:37007","37000 Übermittlung Kommunikationsdaten des LF
+37001 Übermittlung Kommunikationsdaten des NB
+37002 Übermittlung Kommunikationsdaten des MSB
+37003 Übermittlung Kommunikationsdaten des BKV 
+37004 Übermittlung Kommunikationsdaten des BIKO 
+37005 Übermittlung Kommunikationsdaten des ÜNB 
+37006 Übermittlung Kommunikationsdaten des ESA 
+37007 Übermittlung Kommunikationsparameter",T,,pruefidentifikator,,,,37000,37001,37002,,,,,,,,,,,,,,,,,,,,
+0060,,SG1,C,R,5,1,1,Version / Gültig Ab,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0070,5,RFF,M,M,1,1,1,Versionsnummer,RFF+AGK:::13,AGK Anwendungsreferenznummer,T,,anwendungsreferenznummer,,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0080,6,DTM,C,D,1,1,2,Gültig Ab,DTM+157:202106070702?+00:303,"157 Gültigkeit, Beginndatum",S,kommunikationsdaten,gueltigkeit,,,,Soll,Soll,Soll,,,,,,,,,,,,,,,,,,,,
+0060,,SG1,C,D,5,1,1,Vorgängerversion,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0070,7,RFF,M,M,1,1,1,Vorgängerversion,RFF+ACW:::56484,ACW Referenznummer einer vorangegangenen Nachricht,T,,vorgangsreferenznummer,,,,Soll,Soll,Soll,,,,,,,,,,,,,,,,,,,,
+0090,,SG2,C,R,2,1,1,MP-ID Absender,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,8,NAD,M,M,1,1,1,MP-ID Absender,NAD+MS+9900259000002::9,"9 GS1
+293 DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",T,absender,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0110,,SG3,C,D,5,1,2,Kontaktinformationen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0120,9,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:Max Mustermann,IC Informationskontakt,T,absender.ansprechpartner,nachname,,,,Kann,Kann,Kann,,,,,,,,,,,,,,,,,,,,
+0130,10,COM,C,R,5,5,3,Kommunikationsverbindung,COM+?+49322227120:TE,"EM Elektronische Post
+FX Telefax
+TE Telefon
+AJ weiteres Telefon
+AL Handy",T,absender.ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0090,,SG2,C,R,2,1,1,MP-ID Empfänger,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,11,NAD,M,M,1,1,1,MP-ID Empfänger,NAD+MR+9900259000002::9,"9 GS1
+293 DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",T,empfaenger,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0140,12,UNS,M,M,1,1,0,Abschnitts-Kontrollsegment,UNS+D,D Trennung von Kopf- und Positionsteil,,,,,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0150,,SG4,C,D,200000,1,1,Unternehmensinformationen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,13,NAD,M,M,1,1,1,Name und Adresse des Unternehmens,NAD+SU+++Unternehmensname:::::Z02+Teststraße::815b:Musterortsteil+Entenhausen++10010+DE,"SU Lieferant
+DDM Netzbetreiber
+DEB Messstellenbetreiber 
+Z31 Übertragungsnetzbetreiber 
+Z34 Bilanzkoordinator 
+Z35 Bilanzkreisverantwortlicher 
+Z36 Energieserviceanbieter",S,kommunikationsdaten.marktteilnehmer,"marktrolle
+name1
+name2
+name3
+name4
+anrede
+partneradresse (as p)
+p.postleitzahl
+p.ort
+p.strasse
+p.hausnummer
+p.postfach
+p.adresszusatz
+p.landescode
+p.ortsteil","SU ->  LF
+DDM ->  NB
+DEB ->  MSB
+Z31 -> UENB
+Z34 -> BIKO
+Z35 -> BKV
+Z36 -> ESA",,,SU,DDM,DEB,,,,,,,,,,,,,,,,,,,,
+0180,14,FII,C,D,10,10,2,Bankverbindung,FII+BK+DE00000000000000000000:Unternehmens GmbH+BICXXXXXXXX::::::Bankname',BK Kreditinstitut,S,kommunikationsdaten.marktteilnehmer.bankverbindung,"iban
+kontoinhaber
+bic
+kreditinstitut",,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0200,15,FTX,C,D,9,1,2,Internetseite (URL),FTX+Z13+++https?://www.eine-unternehmens-adresse.de,Z13 Internetseite,S,kommunikationsdaten.marktteilnehmer,website,,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0200,16,FTX,C,D,9,1,2,Gericht und Handelsregister-Nummer,FTX+Z15+++Amtsgericht Musterhausen:xyz 123456789,Z15 Gericht und Handelsregister-Nummer,S,kommunikationsdaten.marktteilnehmer,"amtsgericht
+hrnummer",,,,Soll,Soll,Soll,,,,,,,,,,,,,,,,,,,,
+0260,,SG6,C,D,15,2,2,"Steuernummer, Umsatzsteuernummer",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0270,17,RFF,M,M,1,1,2,"Steuernummer, Umsatzsteuernummer",RFF+VA:DE999999999,"VA Umsatzsteuernummer
+FC Steuernummer",S,kommunikationsdaten.marktteilnehmer,"umsatzsteuerId
+steuernummer",,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0260,,SG6,C,D,15,1,2,Faxnummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0270,18,RFF,M,D,1,1,2,Faxnummer,RFF+Z25:020188888888,Z25 Faxnummer,S,kommunikationsdaten.marktteilnehmer,faxnummer,,,,Kann,Kann,Kann,,,,,,,,,,,,,,,,,,,,
+0490,,SG12,C,D,999,1,2,Erreichbarkeit an Werktagen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,19,CCI,M,M,1,1,2,Erreichbarkeit an Werktagen,CCI+Z40,Z40 Erreichbarkeit des Unternehmens,,,,,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0540,20,DTM,C,R,9,6,3,Erreichbarkeit,DTM+Z36:HHMMHHMM:501,"Z36 Verfügbarkeit Montag
+Z37 Verfügbarkeit Dienstag
+Z38 Verfügbarkeit Mittwoch
+Z39 Verfügbarkeit Donnerstag
+Z40 Verfügbarkeit Freitag
+Z41 Mittagspause (= Ausschluss der Verfügbarkeit)",S,kommunikationsdaten.marktteilnehmer.erreichbarkeit,"verfuegbarkeit (ENUM)
+zeit","Z36 -> MONTAG
+Z37 -> DIENSTAG
+Z38 -> MITTWOCH
+Z39 -> DONNERSTAG
+Z40 -> FREITAG
+Z41 -> PAUSE",,,x,x,x,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0490,,SG12,C,D,999,1,2,Bilanzkreis,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0500,21,CCI,M,M,1,1,2,Bilanzkreis,CCI+Z19++1A---Bilanzkreis',Z19 Bilanzkreis,S,kommunikationsdaten.marktteilnehmer,bilanzkreis,,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0530,22,CAV,C,R,9,1,3,Verwendungszweck,CAV+Z48',"Z48 Bilanzkreis für verbrauchende Marktlokation 
+Z49 Bilanzkreis für erzeugende Marktlokation EEG 
+Z50 Bilanzkreis für erzeugende Marktlokation KWKG 
+Z51 Bilanzkreis für sonstige erzeugende Marktlokation",S,kommunikationsdaten.marktteilnehmer,verwendungszweckBilanzkreis,"Z48 = VERBRAUCHENDE_MARKTLOKATION
+Z49 = ERZEUGENDE_MARKTLOKATION_EEG
+Z50 = ERZEUGENDE_MARKTLOKATION_KWKG
+Z51 = SONSTIGE_ERZEUGENDE_MARKTLOKATION",,,,,,,,,,,,,,,,,,,,,,,,,
+0160,23,NAD,M,M,1,1,1,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,NAD+Z10+++Unternehmensname:::::Z02+Teststraße::815b:Musterortsteil+Entenhausen++10010+DE,Z10 Ansprechpartner Übertragungsweg / Datenaustausch,S,kommunikationsdaten.kommunikationsangaben,"kommunikationsrolle = DATENAUSTAUSCH
+
+name1
+name2
+name3
+name4
+anrede
+partneradresse (as p)
+p.postleitzahl
+p.ort
+p.strasse
+p.hausnummer
+p.postfach
+p.adresszusatz
+p.landescode
+p.ortsteil",Z10 -> DATENAUSTAUSCH,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0290,,SG7,C,D,5,1,2,Kontaktinformationen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0300,24,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:Abteilung XY,IC Informationskontakt,S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=DATENAUSTAUSCH].ansprechpartner,nachname,,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0310,25,COM,C,R,5,3,3,Kommunikationsverbindung,COM+?+49322227120:TE,"EM Elektronische Post
+TE Telefon
+FX Telefax",S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=DATENAUSTAUSCH].ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0150,,SG4,C,D,200000,1,1,Ansprechpartner Rahmenverträge,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,26,NAD,M,M,1,1,1,Name und Anschrift Ansprechpartner Rahmenverträge,NAD+Z11+++Unternehmensname:::::Z02+Teststraße::815b:Musterortsteil+Entenhausen++10010+DE,Z11 Ansprechpartner Rahmenverträge,S,kommunikationsdaten.kommunikationsangaben,"kommunikationsrolle = RAHMENVERTRAEGE
+
+name1
+name2
+name3
+name4
+anrede
+partneradresse (as p)
+p.postleitzahl
+p.ort
+p.strasse
+p.hausnummer
+p.postfach
+p.adresszusatz
+p.landescode
+p.ortsteil",Z11 -> RAHMENVERTRAEGE,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0290,,SG7,C,D,5,1,2,Kontaktinformationen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0300,27,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:Abteilung XY,IC Informationskontakt,S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=RAHMENVERTRAEGE].ansprechpartner,nachname,,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0310,28,COM,C,R,5,3,3,Kommunikationsverbindung,COM+?+49322227120:TE,"EM Elektronische Post
+TE Telefon
+FX Telefax",S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=RAHMENVERTRAEGE].ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0150,,SG4,C,D,200000,1,1,Ansprechpartner Kündigungsprozess,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,29,NAD,M,M,1,1,1,Name und Anschrift Ansprechpartner Kündigungsprozess,NAD+Z12+++Unternehmensname:::::Z02+Teststraße::815b:Musterortsteil+Entenhausen++10010+DE,Z12 Ansprechpartner Kündigungsprozesse,S,kommunikationsdaten.kommunikationsangaben,"kommunikationsrolle = KUENDIGUNGSPROZESSE
+
+name1
+name2
+name3
+name4
+anrede
+partneradresse (as p)
+p.postleitzahl
+p.ort
+p.strasse
+p.hausnummer
+p.postfach
+p.adresszusatz
+p.landescode
+p.ortsteil",Z12 -> KUENDIGUNGSPROZESSE,,,x,,,,,,,,,,,,,,,,,,,,,,
+0290,,SG7,C,D,5,1,2,Kontaktinformationen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0300,30,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:Abteilung XY,IC Informationskontakt,S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=KUENDIGUNGSPROZESSE].ansprechpartner,nachname,,,,x,,,,,,,,,,,,,,,,,,,,,,
+0310,31,COM,C,R,5,3,3,Kommunikationsverbindung,COM+?+49322227120:TE,"EM Elektronische Post
+TE Telefon
+FX Telefax",S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=KUENDIGUNGSPROZESSE].ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,x,,,,,,,,,,,,,,,,,,,,,,
+0150,,SG4,C,D,200000,1,1,Ansprechpartner Wechselprozesse,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,32,NAD,M,M,1,1,1,Name und Anschrift Ansprechpartner Wechselprozesse,NAD+Z13+++Unternehmensname:::::Z02+Teststraße::815b:Musterortsteil+Entenhausen++10010+DE',Z13 Ansprechpartner Wechselprozesse,S,kommunikationsdaten.kommunikationsangaben.ansprechpartner,"kommunikationsrolle = WECHSELPROZESSE
+
+name1
+name2
+name3
+name4
+anrede
+partneradresse (as p)
+p.postleitzahl
+p.ort
+p.strasse
+p.hausnummer
+p.postfach
+p.adresszusatz
+p.landescode
+p.ortsteil",Z13 -> WECHSELPROZESSE,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0290,,SG7,C,D,5,1,2,Kontaktinformationen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0300,33,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:Abteilung XY,IC Informationskontakt,S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=WECHSELPROZESSE].ansprechpartner,nachname,,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0310,34,COM,C,R,5,3,3,Kommunikationsverbindung,COM+?+49322227120:TE,"EM Elektronische Post
+TE Telefon
+FX Telefax",S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=WECHSELPROZESSE].ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0150,,SG4,C,D,200000,1,1,Ansprechpartner Stammdatenprozesse,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,35,NAD,M,M,1,1,1,Name und Anschrift Ansprechpartner Stammdatenprozesse,NAD+Z14+++Unternehmensname:::::Z02+Teststraße::815b:Musterortsteil+Entenhausen++10010+DE,Z14 Ansprechpartner Stammdatenprozesse,S,kommunikationsdaten.kommunikationsangaben.ansprechpartner,"kommunikationsrolle = STAMMDATENPROZESSE
+
+name1
+name2
+name3
+name4
+anrede
+partneradresse (as p)
+p.postleitzahl
+p.ort
+p.strasse
+p.hausnummer
+p.postfach
+p.adresszusatz
+p.landescode
+p.ortsteil",Z14 -> STAMMDATENPROZESSE,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0290,,SG7,C,D,5,1,2,Kontaktinformationen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0300,36,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:Abteilung XY,IC Informationskontakt,S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=STAMMDATENPROZESSE].ansprechpartner,nachname,,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0310,37,COM,C,R,5,3,3,Kommunikationsverbindung,COM+?+49322227120:TE,"EM Elektronische Post
+TE Telefon
+FX Telefax",S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=STAMMDATENPROZESSE].ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0150,,SG4,C,D,200000,1,1,Ansprechpartner Einspeiseprozesse,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,38,NAD,M,M,1,1,1,Name und Anschrift Ansprechpartner Einspeiseprozesse,NAD+Z16+++Unternehmensname:::::Z02+Teststraße::815b:Musterortsteil+Entenhausen++10010+DE,Z16 Ansprechpartner Einspeiseprozesse,S,kommunikationsdaten.kommunikationsangaben.ansprechpartner,"kommunikationsrolle = EINSPEISEPROZESSE
+
+name1
+name2
+name3
+name4
+anrede
+partneradresse (as p)
+p.postleitzahl
+p.ort
+p.strasse
+p.hausnummer
+p.postfach
+p.adresszusatz
+p.landescode
+p.ortsteil",Z16 -> EINSPEISEPROZESSE,,,x,x,,,,,,,,,,,,,,,,,,,,,
+0290,,SG7,C,D,5,1,2,Kontaktinformationen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0300,39,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:Abteilung XY,IC Informationskontakt,S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=EINSPEISEPROZESSE].ansprechpartner,nachname,,,,x,x,,,,,,,,,,,,,,,,,,,,,
+0310,40,COM,C,R,5,3,3,Kommunikationsverbindung,COM+?+49322227120:TE,"EM Elektronische Post
+TE Telefon
+FX Telefax",S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=EINSPEISEPROZESSE].ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,x,x,,,,,,,,,,,,,,,,,,,,,
+0150,,SG4,C,D,200000,1,1,Ansprechpartner Abrechnungsprozesse,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,41,NAD,M,M,1,1,1,Name und Anschrift Ansprechpartner Abrechnungsprozesse,NAD+Z17+++Unternehmensname:::::Z02+Teststraße::815b:Musterortsteil+Entenhausen++10010+DE,Z17 Ansprechpartner Abrechnungsprozesse,S,kommunikationsdaten.kommunikationsangaben.ansprechpartner,"kommunikationsrolle = ABRECHNUNGSPROZESSE
+
+name1
+name2
+name3
+name4
+anrede
+partneradresse (as p)
+p.postleitzahl
+p.ort
+p.strasse
+p.hausnummer
+p.postfach
+p.adresszusatz
+p.landescode
+p.ortsteil",Z17 -> ABRECHNUNGSPROZESSE,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0290,,SG7,C,D,5,1,2,Kontaktinformationen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0300,42,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:Abteilung XY,IC Informationskontakt,S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=ABRECHNUNGSPROZESSE].ansprechpartner,nachname,,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0310,43,COM,C,R,5,3,3,Kommunikationsverbindung,COM+?+49322227120:TE,"EM Elektronische Post
+TE Telefon
+FX Telefax",S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=ABRECHNUNGSPROZESSE].ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0150,,SG4,C,D,200000,1,1,Ansprechpartner MMMA Prozesse,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,44,NAD,M,M,1,1,1,Name und Anschrift Ansprechpartner MMMA Prozesse,NAD+Z18+++Unternehmensname:::::Z02+Teststraße::815b:Musterortsteil+Entenhausen++10010+DE,Z18 Ansprechpartner MMMA-Prozesse,S,kommunikationsdaten.kommunikationsangaben.ansprechpartner,"kommunikationsrolle = MMMA_PROZESSE
+
+name1
+name2
+name3
+name4
+anrede
+partneradresse (as p)
+p.postleitzahl
+p.ort
+p.strasse
+p.hausnummer
+p.postfach
+p.adresszusatz
+p.landescode
+p.ortsteil",Z18 -> MMMA_PROZESSE,,,x,x,,,,,,,,,,,,,,,,,,,,,
+0290,,SG7,C,D,5,1,2,Kontaktinformationen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0300,45,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:Abteilung XY,IC Informationskontakt,S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=MMMA_PROZESSE].ansprechpartner,nachname,,,,x,x,,,,,,,,,,,,,,,,,,,,,
+0310,46,COM,C,R,5,3,3,Kommunikationsverbindung,COM+?+49322227120:TE,"EM Elektronische Post
+TE Telefon
+FX Telefax",S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=MMMA_PROZESSE].ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,x,x,,,,,,,,,,,,,,,,,,,,,
+0150,,SG4,C,D,200000,1,1,Ansprechpartner Bewegungsdaten,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,47,NAD,M,M,1,1,1,Name und Anschrift Ansprechpartner Bewegungsdaten,NAD+Z19+++Unternehmensname:::::Z02+Teststraße::815b:Musterortsteil+Entenhausen++10010+DE,Z19 Ansprechpartner Bewegungsdaten,S,kommunikationsdaten.kommunikationsangaben.ansprechpartner,"kommunikationsrolle = BEWEGUNGSDATEN
+
+name1
+name2
+name3
+name4
+anrede
+partneradresse (as p)
+p.postleitzahl
+p.ort
+p.strasse
+p.hausnummer
+p.postfach
+p.adresszusatz
+p.landescode
+p.ortsteil",Z19 -> BEWEGUNGSDATEN,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0290,,SG7,C,D,5,1,2,Kontaktinformationen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0300,48,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:Abteilung XY,IC Informationskontakt,S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=BEWEGUNGSDATEN].ansprechpartner,nachname,,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0310,49,COM,C,R,5,3,3,Kommunikationsverbindung,COM+?+49322227120:TE,"EM Elektronische Post
+TE Telefon
+FX Telefax",S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=BEWEGUNGSDATEN].ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0150,,SG4,C,D,200000,1,1,Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,50,NAD,M,M,1,1,1,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,NAD+Z20+++Unternehmensname:::::Z02+Teststraße::815b:Musterortsteil+Entenhausen++10010+DE,Z20 Ansprechpartner Sperr-/Entsperrprozesse,S,kommunikationsdaten.kommunikationsangaben.ansprechpartner,"kommunikationsrolle = ENT_SPERR_PROZESSE
+
+name1
+name2
+name3
+name4
+anrede
+partneradresse (as p)
+p.postleitzahl
+p.ort
+p.strasse
+p.hausnummer
+p.postfach
+p.adresszusatz
+p.landescode
+p.ortsteil",Z20 -> ENT_SPERR_PROZESSE,,,x,x,,,,,,,,,,,,,,,,,,,,,
+0290,,SG7,C,D,5,1,2,Kontaktinformationen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0300,51,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:Abteilung XY,IC Informationskontakt,S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=ENT_SPERR_PROZESSE].ansprechpartner,nachname,,,,x,x,,,,,,,,,,,,,,,,,,,,,
+0310,52,COM,C,R,5,3,3,Kommunikationsverbindung,COM+?+49322227120:TE,"EM Elektronische Post
+TE Telefon
+FX Telefax",S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=ENT_SPERR_PROZESSE].ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,x,x,,,,,,,,,,,,,,,,,,,,,
+0150,,SG4,C,D,200000,1,1,Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,53,NAD,M,M,1,1,1,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,NAD+Z21+++Unternehmensname:::::Z02+Teststraße::815b:Musterortsteil+Entenhausen++10010+DE,Z21 Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,S,kommunikationsdaten.kommunikationsangaben.ansprechpartner,"kommunikationsrolle = BILANZIERUNGSPROZESSE
+
+name1
+name2
+name3
+name4
+anrede
+partneradresse (as p)
+p.postleitzahl
+p.ort
+p.strasse
+p.hausnummer
+p.postfach
+p.adresszusatz
+p.landescode
+p.ortsteil",Z21 ->  BILANZIERUNGSPROZESSE,,,x,x,,,,,,,,,,,,,,,,,,,,,
+0290,,SG7,C,D,5,1,2,Kontaktinformationen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0300,54,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:Abteilung XY,IC Informationskontakt,S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=BILANZIERUNGSPROZESSE].ansprechpartner,nachname,,,,x,x,,,,,,,,,,,,,,,,,,,,,
+0310,55,COM,C,R,5,3,3,Kommunikationsverbindung,COM+?+49322227120:TE,"EM Elektronische Post
+TE Telefon
+FX Telefax",S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=BILANZIERUNGSPROZESSE].ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,x,x,,,,,,,,,,,,,,,,,,,,,
+0150,,SG4,C,D,200000,1,1,Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,56,NAD,M,M,1,1,1,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,NAD+Z33+++Unternehmensname:::::Z02+Teststraße::815b:Musterortsteil+Entenhausen++10010+DE,Z33 Ansprechpartner technischer Netzanschluss für Neuanlagen und Anlagenumbau,S,kommunikationsdaten.kommunikationsangaben.ansprechpartner,"kommunikationsrolle = NETZANSCHLUSS_ANLAGEN
+
+name1
+name2
+name3
+name4
+anrede
+partneradresse (as p)
+p.postleitzahl
+p.ort
+p.strasse
+p.hausnummer
+p.postfach
+p.adresszusatz
+p.landescode
+p.ortsteil",Z33 -> NETZANSCHLUSS_ANLAGEN,,,,x,,,,,,,,,,,,,,,,,,,,,
+0290,,SG7,C,D,5,1,2,Kontaktinformationen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0300,57,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:Abteilung XY,IC Informationskontakt,S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=NETZANSCHLUSS_ANLAGEN].ansprechpartner,nachname,,,,,x,,,,,,,,,,,,,,,,,,,,,
+0310,58,COM,C,R,5,3,3,Kommunikationsverbindung,COM+?+49322227120:TE,"EM Elektronische Post
+TE Telefon
+FX Telefax",S,kommunikationsdaten.kommunikationsangaben[kommunikationsrolle=NETZANSCHLUSS_ANLAGEN].ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,,x,,,,,,,,,,,,,,,,,,,,,
+0650,59,UNT,M,M,1,1,0,Nachrichten-Endesegment,UNT+47+1,,,,,,,,x,x,x,,,,,,,,,,,,,,,,,,,,

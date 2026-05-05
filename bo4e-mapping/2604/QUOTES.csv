@@ -1,0 +1,509 @@
+Nummer,Nr.,Typ,,,Max. Wdh,,,,,,stamm- oder transaktionsdaten,BO Objekt,BO4E - Feld,Mapping EDI <-> BO4E,powercloud - Variable,Schnittstelle,15001,15002,15003,15004,,,,,,,,,
+,,UNB,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0010,1,UNH,M,M,1,1,0,Nachrichten-Kopfsegment,UNH+1+QUOTES:D:10A:UN:1.3b,,,,,,,,x,x,x,,,,,,,,,,
+0020,2,BGM,M,M,1,1,0,Beginn der Nachricht,"BGM+310+MKIDI5422
+BGM+Z29+MKIDI5422
+BGM+Z57+MKIDI5422
+BGM+Z74+MKIDI5422","310 Angebot
+Z29 Abrechnung des Messstellenbetreibs vom MSB an den LF
+Z57 Übermittlung von Werten an ESA
+Z74 Bestellung eines Angebots einer Konfiguration",T,,"katetorie
+dokumentennummer",,,,x,x,x,x,,,,,,,,,
+0030,3,DTM,M,M,35,1,1,Nachrichtendatum,DTM+137:199904081315?+00:303,137 Dokumenten-/Nachrichtendatum/-zeit,T,,nachrichtendatum,,,,x,x,x,x,,,,,,,,,
+0030,4,DTM,M,D,35,1,1,Datum zum geplanten Leistungsbeginn,DTM+76:200710012200?+00:303,"76 Lieferdatum/-zeit, geplant",S,angebot,angebotsdatum,,,,x,,,,,,,,,,,,
+0030,5,DTM,M,D,35,1,1,Ausführungsdatum,DTM+203:200710012200?+00:303,203 Ausführungsdatum/-zeit,T,,ausfuehrungsdatum,,,,,x,,x,,,,,,,,,
+0030,6,DTM,M,D,35,1,1,Beginn zum (nächstmöglichen Termin),DTM+469:200710012200?+00:303,"469 Startdatum oder -zeitpunkt, frühestes/r",T,,startdatum,,,,,x,x,x,,,,,,,,,
+0030,7,DTM,M,D,35,1,1,Erforderliche Zeitspanne zur Einrichtung der Übermittlung von Werten ab Bestellung,"DTM+279:10:802
+DTM+279:10:803
+DTM+279:10:804","802 Monat
+803 Woche
+804 Tag",S,angebot.zeitspanneEinrichtungUebermittlungWerte,"dauer
+einheit","802 = MONAT
+803 = WOCHE
+804 = TAG",,,,,Kann,,,,,,,,,,
+0030,8,DTM,M,D,35,1,1,Gültigkeitsdauer (Bindungsfrist des Angebots),"DTM+273:10:802
+DTM+273:10:803
+DTM+273:10:804","802 Monat
+803 Woche
+804 Tag",S,angebot.bindefristAngebot,"dauer
+einheit","802 = MONAT
+803 = WOCHE
+804 = TAG",,,,,x,,,,,,,,,,
+0060,9,IMD,C,D,999,1,1,Produkt-/Leistungsbeschreibung,"IMD++Z07
+IMD++Z08
+IMD++Z33
+IMD++Z34
+IMD++Z55
+IMD++Z64","Z07 Kauf
+Z08 Nutzungsüberlassung
+Z33 Angebot auf Basis Preisblatt
+Z34 Individuelles Angebot
+Z55 Änderung Konfiguration
+Z64 Neukonfiguration",S,anfrage,anfragetyp,"Z07 -> KAUF
+Z08 -> NUTZUNGSUEBERLASSUNG
+Z33 -> ANGEBOT_AUF_BASIS_PREISBLATT
+Z34 -> INDIVIDUELLES_ANGEBOT
+Z55 -> AENDERUNG_KONFIGURATION
+Z64 -> NEUKONFIGURATION",,,x,x,,x,,,,,,,,,
+0080,10,FTX,C,D,99,1,1,Allgemeine Information (Feld für allgemeine Hinweise),FTX+ACB+++Text:Text2:Text3:Text4:Text5,ACB Zusätzliche Informationen (für allgemeine Hinweise),T,,freitext,,,,,,Kann,,,,,,,,,,
+0100,,SG1,C,D,9999,1,1,Referenz der Anfrage,,,,,,,,,,,,,,,,,,,,,
+0110,11,RFF,M,M,1,1,1,Nachrichtennummer der Anfrage,RFF+AAV:123456789,AAV Nummer der Anfrage,S,angebot,anfragereferenz,,,,x,Soll,x,x,,,,,,,,,
+0100,,SG1,C,R,9999,1,1,Prüfidentifikator,,,,,,,,,,,,,,,,,,,,,
+0110,12,RFF,M,M,1,1,1,Prüfidentifikator,"RFF+Z13:15001
+RFF+Z13:15002
+RFF+Z13:15003
+RFF+Z13:15004","15001 Angebot Geräteübernahme
+15002 Angebot Rechnungsabwicklung MSB über LF
+15003 Angebot zur Anfrage von Werten für ESA
+15004 Angebot zur Anfrage einer Konfiguration",T,,pruefidentifikator,,,,x,x,x,x,,,,,,,,,
+0200,,SG4,C,D,5,1,1,Währungsangaben,,,,,,,,,,,,,,,,,,,,,
+0210,13,CUX,M,M,1,1,1,Währungsangaben,CUX+2:EUR:4,,S,angebot.gesamtkosten,waehrung,,,,x,x,x,,,,,,,,,,
+0530,,SG11,C,R,99,1,1,MP-ID Absender,,,,,,,,,,,,,,,,,,,,,
+0540,14,NAD,M,M,1,1,1,MP-ID Absender,NAD+MS+9900259000002::293,"9 GS1
+293 DE, BDEW
+332 DE, DVGW",T,absender,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,,x,x,x,x,,,,,,,,,
+0640,,SG14,C,R,5,1,2,Kontaktinformationen,,,,,,,,,,,,,,,,,,,,,
+0650,15,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:P GETTY,IC Informationskontakt,T,absender.ansprechpartner,nachname,,,,x,x,x,,,,,,,,,,
+0660,16,COM,C,R,5,5,3,Kommunikationsverbindung,COM+003222271020:TE,"EM Elektronische Post
+FX Telefax
+TE Telefon
+AJ weiteres Telefon
+AL Handy",T,absender.ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,x,x,x,x,,,,,,,,,
+0530,,SG11,C,R,99,1,1,MP-ID Empfänger,,,,,,,,,,,,,,,,,,,,,
+0540,17,NAD,M,M,1,1,1,MP-ID Empfänger,NAD+MR+9900259000002::293,"9 GS1
+293 DE, BDEW
+332 DE, DVGW",T,empfaenger,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,,x,x,x,x,,,,,,,,,
+0530,,SG11,C,R,99,1,1,"Liefer-, bzw. Bezugsort",,,,,,,,,,,,,,,,,,,,,
+0540,18,NAD,M,M,1,1,1,"Liefer-, bzw. Bezugsort",NAD+DP,DP Lieferanschrift,,,,,,,x,x,x,x,,,,,,,,,
+0550,19,LOC,C,R,99,1,2,Meldepunkt,LOC+172+DE00014545768S0000000000000003054,172 Meldepunkt,S,"Auf jeweiliges BO:
+
+marktlokation
+tranche
+messlokation
+netzlokation
+STEUERBARE_RESSOURCE","
+
+marktlokationsId
+tranchenId
+messlokationsId
+netzlokationsId
+ressourcenId",,,,x,x,x,x,,,,,,,,,
+1060,,SG27,M,D,200000,200000,1,Positionsteil,,,,,,,,,,,,,,,,,,,,,
+1070,20,LIN,M,M,1,1,1,Positionsdaten,LIN+1++9990001000649:Z01,"Z01 Artikelnummer
+Z09 Artikel-ID",S,angebot.positionsdaten,"positionsbezeichnung
+
+artikelnummer (Z01 -> ENUM bdewArtikelnummer)
+
+artikelId (Z09 -> 1:1)
+
+","9990001000053 -> LEISTUNG
+9990001000079 -> LEISTUNG_PAUSCHAL
+9990001000087 -> GRUNDPREIS
+9990001000128 -> REGELENERGIE_ARBEIT
+9990001000136 -> REGELENERGIE_LEISTUNG
+9990001000144 -> NOTSTROMLIEFERUNG_ARBEIT
+9990001000152 -> NOTSTROMLIEFERUNG_LEISTUNG
+9990001000160 -> RESERVENETZKAPAZITAET
+9990001000178 -> RESERVELEISTUNG
+9990001000186 -> ZUSAETZLICHE_ABLESUNG
+9990001000219 -> PRUEFGEBUEHREN_AUSSERPLANMAESSIG
+9990001000269 -> WIRKARBEIT
+9990001000285 -> SINGULAER_GENUTZTE_BETRIEBSMITTEL
+9990001000334 -> ABGABE_KWKG
+9990001000376 -> ABSCHLAG
+9990001000417 -> KONZESSIONSABGABE
+9990001000433 -> ENTGELT_FERNAUSLESUNG
+9990001000475 -> UNTERMESSUNG
+9990001000508 -> BLINDMEHRARBEIT
+9990001000532 -> ENTGELT_ABRECHNUNG
+9990001000540 -> SPERRKOSTEN
+9990001000558 -> ENTSPERRKOSTEN
+9990001000566 -> MAHNKOSTEN
+9990001000574 -> MEHR_MINDERMENGEN
+9990001000582 -> INKASSOKOSTEN
+9990001000590 -> BLINDMEHRLEISTUNG
+9990001000615 -> ENTGELT_MESSUNG_ABLESUNG
+9990001000623 -> ENTGELT_EINBAU_BETRIEB_WARTUNG_MESSTECHNIK
+9990001000631 -> AUSGLEICHSENERGIE
+9990001000805 -> AUSGLEICHSENERGIE_UNTERDECKUNG
+9990001000649 -> ZAEHLEINRICHTUNG
+9990001000657 -> WANDLER_MENGENUMWERTER
+9990001000665 -> KOMMUNIKATIONSEINRICHTUNG
+9990001000673 -> TECHNISCHE_STEUEREINRICHTUNG
+9990001000681 -> PARAGRAF_19_STROM_NEV_UMLAGE
+9990001000699 -> BEFESTIGUNGSEINRICHTUNG
+9990001000706 -> OFFSHORE_HAFTUNGSUMLAGE
+9990001000714 -> FIXE_ARBEITSENTGELTKOMPONENTE
+9990001000722 -> FIXE_LEISTUNGSENTGELTKOMPONENTE
+9990001000730 -> UMLAGE_ABSCHALTBARE_LASTEN
+9990001000748 -> MEHRMENGE
+9990001000756 -> MINDERMENGE
+9990001000764 -> ENERGIESTEUER
+9990001000772 -> SMARTMETER_GATEWAY
+9990001000780 -> STEUERBOX
+9990001000798 -> MSB_INKL_MESSUNG
+9990001000813 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_2_1_MSBG
+9990001000821 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_2_2_MSBG
+9990001000839 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_2_3_MSBG
+9990001000847 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_2_4_MSBG
+9990001000855 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_2_5_MSBG
+9990001000863 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_3_MSBG",,,x,x,,x,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1080,21,PIA,C,D,25,1,2,Zusätzliche Produktidentifikation,PIA+1+FX12:Z06,Z06 Preisschlüsselstamm,S,angebot.positionsdaten,preisschluesselstamm,,,,,x,,,,,,,,,,,
+1090,22,IMD,C,D,99,1,2,Produkt-/Leistungsbeschreibung,IMD++Z09,Z09 Kann nicht angeboten werden,S,angebot.positionsdaten,anbietbar,Z09 = false,,,Soll,,,,,,,,,,,,
+1140,23,DTM,C,D,35,1,2,Baujahr/Jahr des In Verkehrs bringen,"DTM+94:1999:602
+DTM+Z03:2023:602","94 Produktions-/Herstellungsdatum
+Z03 Baujahr/Jahr des in Verkehrs bringens
+Format: 602 CCYY",S,zaehler,"Wenn artikelnummer = ZAEHLEINRICHTUNG:
+
+herstellungsdatum
+baujahr
+
+ansonsten:
+
+geraeteeigenschaften.geraetetyp = je nach artikelnummer
+
+geraete.geraeteeigenschaften.herstellungsdatum
+geraete.geraeteeigenschaften.baujahr","artikelnummer ENUM -> geraetetyp:
+
+WANDLER_MENGENUMWERTER -> WANDLER (bei STROM)
+WANDLER_MENGENUMWERTER -> MENGENUMWERTER (bei GAS)
+KOMMUNIKATIONSEINRICHTUNG -> KOMMUNIKATIONSEINRICHTUNG
+TECHNISCHE_STEUEREINRICHTUNG -> TECHNISCHESTEUEREINRICHTUNG
+BEFESTIGUNGSEINRICHTUNG -> BEFESTIGUNGSEINRICHTUNG
+SMARTMETER_GATEWAY -> SMARTMETERGATEWAY
+STEUERBOX -> STEUERBOX
+
+",,,x,,,,,,,,,,,,
+1140,24,DTM,C,D,35,1,2,Eichgültigkeitsdauer bis,DTM+Z04:2012:602,"Z04 Eichgültigkeit
+Fortmat: 602 CCYY",S,zaehler,"Wenn artikelnummer = ZAEHLEINRICHTUNG:
+
+eichungBis
+
+ansonsten:
+
+geraeteeigenschaften.geraetetyp = je nach artikelnummer
+
+geraete.geraeteeigenschaften.eichungBis","artikelnummer ENUM -> geraetetyp:
+
+WANDLER_MENGENUMWERTER -> WANDLER (bei STROM)
+WANDLER_MENGENUMWERTER -> MENGENUMWERTER (bei GAS)
+KOMMUNIKATIONSEINRICHTUNG -> KOMMUNIKATIONSEINRICHTUNG
+TECHNISCHE_STEUEREINRICHTUNG -> TECHNISCHESTEUEREINRICHTUNG
+BEFESTIGUNGSEINRICHTUNG -> BEFESTIGUNGSEINRICHTUNG
+SMARTMETER_GATEWAY -> SMARTMETERGATEWAY
+STEUERBOX -> STEUERBOX
+
+",,,x,,,,,,,,,,,,
+1150,25,GIN,C,D,1000,3,2,Herstellernummer,GIN+BN+124332458763,BN Serialnummer,S,zaehler,"Wenn artikelnummer = ZAEHLEINRICHTUNG:
+
+serialnummer
+
+ansonsten:
+
+geraeteeigenschaften.geraetetyp = je nach artikelnummer
+
+geraete.geraeteeigenschaften.serialnummer","artikelnummer ENUM -> geraetetyp:
+
+WANDLER_MENGENUMWERTER -> WANDLER (bei STROM)
+WANDLER_MENGENUMWERTER -> MENGENUMWERTER (bei GAS)
+KOMMUNIKATIONSEINRICHTUNG -> KOMMUNIKATIONSEINRICHTUNG
+TECHNISCHE_STEUEREINRICHTUNG -> TECHNISCHESTEUEREINRICHTUNG
+BEFESTIGUNGSEINRICHTUNG -> BEFESTIGUNGSEINRICHTUNG
+SMARTMETER_GATEWAY -> SMARTMETERGATEWAY
+STEUERBOX -> STEUERBOX
+
+",,,Soll,,,,,,,,,,,,
+1180,26,FTX,C,D,99,1,2,Allgemeine Information (Feld für allgemeine Hinweise),FTX+ACB+++Text:Text2:Text3:Text4:Text5,ACB Zusätzliche Informationen (für allgemeine Hinweise),S,angebot.positionsdaten,freitext,,,,Kann,,,,,,,,,,,,
+1230,,SG28,C,D,999,1,2,Zähleinrichtung,,,,,,,,,,,,,,,,,,,,,
+1240,27,CCI,M,M,1,1,2,Zähleinrichtung,CCI+++E13,E13 Zählertyp,,,,,,,x,,,,,,,,,,,,
+1250,28,CAV,C,R,10,1,3,Zähleinrichtung/Zählertyp,CAV+EHZ:::Z01,"Stromzählereinrichtungen:
+AHZ analoger Haushaltszähler (Drehstrom)
+WSZ analoger Wechselstromzähler
+LAZ Lastgangzähler
+MAZ Maximumzähler
+Gaszählereinrichtungen:
+DKZ Drehkolbengaszähler
+BGZ Balgengaszähler
+TRZ Turbinenradgaszähler
+UGZ Ultraschallgaszähler
+WGZ Wirbelgaszähler
+MRG Messdatenregistriergerät
+Strom und Gas:
+EHZ elektronischer Haushaltszähler
+MME moderne Messeinrichtung nach MsbG
+IVA Individuelle Abstimmung (Sonderausstattung)
+:
+Zählertyp:
+Z01 EDL40
+Z02 EDL21
+Z03 sonstiger EHZ
+Z04 Standard
+Z05 MeDa-Zähler ",S,zaehler,"zaehlertyp
+zaehlertypSpezifikation","AHZ -> DREHSTROMZAEHLER
+WSZ -> WECHSELSTROMZAEHLER
+LAZ -> LEISTUNGSZAEHLER
+MAZ -> MAXIMUMZAEHLER
+DKZ -> DREHKOLBENZAEHLER
+BGZ -> BALGENGASZAEHLER
+TRZ -> TURBINENRADGASZAEHLER
+UGZ -> ULTRASCHALLGASZAEHLER
+WGZ -> WIRBELGASZAEHLER
+MRG -> MESSDATENREGISTRIERGERAET
+EHZ -> ELEKTRONISCHERHAUSHALTSZAEHLER
+MME -> MODERNE_MESSEINRICHTUNG
+IVA -> SONDERAUSSTATTUNG
+:
+Z01 -> EDL40
+Z02 -> EDL21
+Z03 -> SONSTIGER_EHZ
+Z04 -> MME_STANDARD
+Z05 -> MME_MEDA",,,x,,,,,,,,,,,,
+1250,29,CAV,C,D,10,1,3,Zähleinrichtung/Zählergröße (Gas),CAV+:::G16,"G10 Gaszähler G10
+G100 Gaszähler G100
+G1000 Gaszähler G1000
+G10000 Gaszähler G10000
+G12500 Gaszähler G12500
+G16 Gaszähler G16
+G160 Gaszähler G160
+G1600 Gaszähler G1600
+G16000 Gaszähler G16000
+G2.5 Gaszähler G2.5
+G25 Gaszähler G25
+G250 Gaszähler G250
+G2500 Gaszähler G2500
+G350 Gaszähler G350
+G4 Gaszähler G4
+G40 Gaszähler G40
+G400 Gaszähler G400
+G4000 Gaszähler G4000
+G6 Gaszähler G6
+G65 Gaszähler G65
+G650 Gaszähler G650
+G6500 Gaszähler G6500",S,zaehler,zaehlergroesse (ENUM),"G10 =""GAS_G10""
+G100 =""GAS_G100""
+G1000 =""GAS_G1000""
+G10000 =""G10000""
+G12500 =""G12500""
+G16 =""GAS_G16""
+G160 =GAS_G160""
+G1600 =""GAS_G1600""
+G16000 =""GAS_G16000""
+G2.5 = ""GAS_G2P5""
+G25 =""GAS_G25""
+G250 =""GAS_G250""
+G2500 =""GAS_G2500""
+G350 =""GAS_G350""
+G4 =""GAS_G4""
+G40 =""GAS_G40""
+G400 =""GAS_G400""
+G4000 =""GAS_G4000""
+G6 =""GAS_G6""
+G65 =""GAS_G65""
+G650 =""GAS_G650""
+G6500 =""GAS_G6500""",,,x,,,,,,,,,,,,
+1250,30,CAV,C,D,10,1,3,Zähleinrichtung/Tarifanzahl,CAV+ETZ,"ETZ Eintarif
+ZTZ Zweitarif
+NTZ Mehrtarif",S,zaehler,tarifart,"ETZ -> EINTARIF
+ZTZ -> ZWEITARIF
+NTZ -> MEHRTARIF",,,x,,,,,,,,,,,,
+1250,31,CAV,C,D,10,1,3,Zähleinrichtung/Energierichtung,CAV+ERZ,"ERZ Einrichtungszähler
+ZRZ Zweirichtungszähler",S,zaehler,zaehlerauspraegung,"ERZ -> EINRICHTUNGSZAEHLER
+ZRZ -> ZWEIRICHTUNGSZAEHLER",,,x,,,,,,,,,,,,
+1230,,SG28,C,D,999,1,2,Wandler,,,,,,,,,,,,,,,,,,,,,
+1240,32,CCI,M,M,1,1,2,Wandler,CCI+++Z25,Z25 Wandler,,zaehler.geraete.geraeteeigenschaften,geraetetyp = WANDLER,,,,x,,,,,,,,,,,,
+1250,33,CAV,C,R,10,1,3,Wandlertyp und Faktor,CAV+MIW:::10,"MBW Blockstromwandler
+MIW Messwandlersatz Strom
+MPW Kombimesswandlersatz (Strom und Spannung)
+MUW Messwandlersatz Spannung",S,zaehler.geraete.geraeteeigenschaften,"geraetemerkmal (ENUM)
+
+faktor","MBW -> BLOCKSTROMWANDLER
+MIW -> MESSWANDLERSATZ_IMS_MME
+MPW -> KOMBIMESSWANDLER
+MUW -> SPANNUNGSWANDLER",,,x,,,,,,,,,,,,
+1230,,SG28,C,D,999,1,2,Mengenumwerter,,,,,,,,,,,,,,,,,,,,,
+1240,34,CCI,M,M,1,1,2,Mengenumwerter,CCI+++Z64,Z64 Mengenumwerter,,zaehler.geraete.geraeteeigenschaften,geraetetyp = MENGENUMWERTER,,,,x,,,,,,,,,,,,
+1250,35,CAV,C,R,10,1,3,Mengenumwertertyp,CAV+DMU,"DMU Dichtemengenumwerter
+TMU Temperaturmengenumwerter
+ZMU Zustandsmengenumwerter",S,zaehler.geraete.geraeteeigenschaften,geraetemerkmal (ENUM),"DMU -> DICHTEMENGENUMWERTER
+TMU -> TEMPERATURMENGENUMWERTER
+ZMU -> ZUSTANDSMENGENUMWERTER",,,x,,,,,,,,,,,,
+1230,,SG28,C,D,999,1,2,Kommunikationseinrichtung,,,,,,,,,,,,,,,,,,,,,
+1240,36,CCI,M,M,1,1,2,Kommunikationseinrichtung,CCI+++Z26,Z26 Kommunikationseinrichtung,,zaehler.geraete.geraeteeigenschaften,geraetetyp = KOMMUNIKATIONSEINRICHTUNG,,,,x,,,,,,,,,,,,
+1250,37,CAV,C,R,10,1,3,Kommunikationseinrichtung,CAV+GSM,"GSM GSM/GPRS/UMTS-Kom.-Einr.
+ETH Ethernet-Kom.-Einricht. LAN/WLAN
+PLC PLC-Kom.-Einrichtung
+PST Festnetz-Kom.-Einricht. TAE
+DSL DSL-Kom.Einr.
+LTE LTE-Kom.-Einr.",S,zaehler.geraete.geraeteeigenschaften,geraetemerkmal (ENUM),"GSM -> MODEM_GSM
+ETH -> ETHERNET_KOM
+PLC -> PLC_KOM
+PST -> MODEM_FESTNETZ
+DSL -> DSL_KOM
+LTE -> LTE_KOM",,,x,,,,,,,,,,,,
+1230,,SG28,C,D,999,1,2,Technische Steuereinrichtung,,,,,,,,,,,,,,,,,,,,,
+1240,38,CCI,M,M,1,1,2,Technische Steuereinrichtung,CCI+++Z27,Z27 Technische Steuereinrichtung,,zaehler.geraete.geraeteeigenschaften,geraetetyp = STEUEREINRICHTUNG,,,,x,,,,,,,,,,,,
+1250,39,CAV,C,R,10,1,3,Technische Steuereinrichtung,CAV+RSU,"RSU Rundsteuerempfänger
+TSU Tarifschaltuhr",S,zaehler.geraete.geraeteeigenschaften,"
+geraetemerkmal (ENUM)
+","RSU = RUNDSTEUEREMPFAENGER
+TSU = TARIFSCHALTGERAET",,,x,,,,,,,,,,,,
+1230,,SG28,C,D,999,1,2,Smartmeter-Gateway,,,,,,,,,,,,,,,,,,,,,
+1240,40,CCI,M,M,1,1,2,Smartmeter-Gateway,CCI+++Z75,Z75 Smartmeter-Gateway,S,zaehler.geraete.geraeteeigenschaften,geraetetyp = SMARTMETERGATEWAY,,,,x,,,,,,,,,,,,
+1230,,SG28,C,D,999,1,2,Steuerbox,,,,,,,,,,,,,,,,,,,,,
+1240,41,CCI,M,M,1,1,2,Steuerbox,CCI+++Z76,Z76 Steuerbox,S,zaehler.geraete.geraeteeigenschaften,geraetetyp = STEUERBOX,,,,x,,,,,,,,,,,,
+1230,,SG28,C,D,999,1,2,Befestigungsart,,,,,,,,,,,,,,,,,,,,,
+1240,42,CCI,M,M,1,1,2,Befestigungsart,CCI+++Z28,Z28 Befestigungsart Zähleinrichtung,,,,,,,x,,,,,,,,,,,,
+1250,43,CAV,C,R,10,1,3,Befestigungsart,CAV+DPA,"bei Strom:
+BKE Stecktechnik (Befestigungs- und Kontaktierungseinrichtung)
+DPA 3-Dreipunktaufhängung
+HUT Hutschiene
+bei Gas:
+Z31 Einstutzen-Zähler
+Z32 Zweistutzen-Zähler",S,zaehler,befestigungsart,"BKE -> STECKTECHNIK
+DPA -> DREIPUNKT
+HUT -> HUTSCHIENE
+Z31 -> EINSTUTZEN
+Z32 -> ZWEISTUTZEN",,,x,,,,,,,,,,,,
+1230,,SG28,C,D,999,1,2,Messwerterfassung,,,,,,,,,,,,,,,,,,,,,
+1240,44,CCI,M,M,1,1,2,Messwerterfassung,CCI+++E12,E12 Messwerterfassung an der Zähleinrichtung,,,,,,,x,,,,,,,,,,,,
+1250,45,CAV,C,R,10,1,3,Messwerterfassung,CAV+AMR,"AMR fernauslesbare Zähler
+MMR manuell ausgelesene Zähler",S,zaehler,messwerterfassung,"AMR -> FERNAUSLESBAR
+MMR -> MANUELL_AUSGELESENE",,,x,,,,,,,,,,,,
+1360,,SG31,C,D,99,2,2,Preisangabe zur Position,,,,,,,,,,,,,,,,,,,,,
+1370,46,PRI,M,M,1,1,2,Preisangaben,PRI+CAL:5.1234:::1:H87,"CAL Berechnungspreis
+
+H87 Stück
+DAY Tag",S,angebot.positionsdaten.positionspreis[],"wert
+menge
+bezugswert
+","DAY = TAG
+H87 = STUECK",,,x,,,,,,,,,,,,
+1420,,SG32,C,D,9999,9999,2,Gerätenummer,,,,,,,,,,,,,,,,,,,,,
+1430,47,RFF,M,M,1,1,2,Gerätenummer,RFF+Z09:8465929523,Z09 Gerätenummer,S,zaehler,"artikelnummer = ZAEHLEINRICHTUNG:
+
+zaehlernummer
+
+ansonsten:
+
+geraeteeigenschaften.geraetetyp = je nach artikelnummer
+geraete.geraetenummer
+
+weitere RFF+Z09 auf geraete.weitereGeraetenummern","artikelnummer ENUM -> geraetetyp:
+
+WANDLER_MENGENUMWERTER -> WANDLER (bei STROM)
+WANDLER_MENGENUMWERTER -> MENGENUMWERTER (bei GAS)
+KOMMUNIKATIONSEINRICHTUNG -> KOMMUNIKATIONSEINRICHTUNG
+TECHNISCHE_STEUEREINRICHTUNG -> TECHNISCHESTEUEREINRICHTUNG
+BEFESTIGUNGSEINRICHTUNG -> BEFESTIGUNGSEINRICHTUNG
+SMARTMETER_GATEWAY -> SMARTMETERGATEWAY
+STEUERBOX -> STEUERBOX
+
+",,,Soll,,,,,,,,,,,,
+1420,,SG32,C,D,9999,9999,2,Referenz auf ID weiterer Marktlokationen,,,,,,,,,,,,,,,,,,,,,
+1430,48,RFF,M,M,1,1,2,Referenz auf ID weiterer Marktlokationen,RFF+Z18:57685676748',Z18 Marktlokation,S,angebot.positionsdaten,referenzMarktlokationsIds[],,,,,x,,,,,,,,,,,
+1420,,SG32,C,D,9999,9999,2,Referenz auf veröffentlichte Preiseliste,,,,,,,,,,,,,,,,,,,,,
+1430,49,RFF,M,M,1,1,2,Referenz auf einen veröffentlichten Preiskatalog,RFF+APF:X:X:X,APF Verweis auf Katalognummer,S,angebot.positionsdaten.verweisKatalognummer,"katalognummer
+zeilennummer
+versionsnummer",,,,Kann,,,,,,,,,,,,
+1840,,SG42,C,D,999,1,2,Beteiligter Marktpartner MP-ID,,,,,,,,,,,,,,,,,,,,,
+1850,50,NAD,M,M,1,1,2,Beteiligter Marktpartner MP-ID,NAD+VY+9900259000002::293,"9 GS1
+293 DE, BDEW
+332 DE, DVGW",S,angebot.positionsdaten.beteiligterMarktpartner,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,,Soll,,,,,,,,,,,,
+1060,,SG27,M,D,200000,1,1,Erforderliches Produkt Schaltzeitdefinitionen,,,,,,,,,,,,,,,,,,,,,
+1070,51,LIN,M,M,1,1,1,Erforderliches Produkt Schaltzeitdefinitionen,LIN+1+Z64,Z64 Erforderliches Produkt Schaltzeitdefinitionen,S,angebot.positionsdaten,positionsbezeichnung,,,,,,,x,,,,,,,,,
+1080,52,PIA,C,R,25,1,2,Erforderliches Produkt Schaltzeitdefinitionen,PIA+5+9991000000713:Z11,Z11 Produkt,S,schaltzeitdefinition.schaltzeiten,konfigurationsprodukt,,,,,,,x,,,,,,,,,
+1080,53,PIA,C,R,25,3,2,Artikel-ID,PIA+Z02+9991000000713-01:Z09',Z09 Artikel-ID,S,angebot.positionsdaten,artikelId (Z09 -> 1:1),,,,,,,x,,,,,,,,,
+1230,,SG28,C,R,999,1,2,Zugeordnete Schaltzeitdefinition,,,,,,,,,,,,,,,,,,,,,
+1240,54,CCI,M,M,1,1,2,Zugeordnete Schaltzeitdefinition,CCI+Z52++NBW,Z52 Code der Schaltzeitdefinition,S,schaltzeitdefinition.schaltzeiten,code,,,,,,,x,,,,,,,,,
+1060,,SG27,M,D,200000,1,1,Erforderliches Produkt Leistungskurvendefinitionen,,,,,,,,,,,,,,,,,,,,,
+1070,55,LIN,M,M,1,1,1,Erforderliches Produkt Leistungskurvendefinitionen,LIN+1+Z65,Z65 Erforderliches Produkt Leistungskurvendefinitionen,S,angebot.positionsdaten,positionsbezeichnung,,,,,,,soll,,,,,,,,,
+1080,56,PIA,C,R,25,1,2,Erforderliches Produkt Leistungskurvendefinitionen,PIA+5+9991000000721:Z11,Z11 Produkt,,leistungskurvendefinition.leistungskurven,konfigurationsprodukt,,,,,,,x,,,,,,,,,
+1080,57,PIA,C,R,25,3,2,Artikel-ID,PIA+Z02+9991000000721-01:Z09',Z09 Artikel-ID,S,angebot.positionsdaten,artikelId (Z09 -> 1:1),,,,,,,x,,,,,,,,,
+1230,,SG28,C,R,999,1,2,Zugeordnete Leistungskurvendefinitionen,,,,,,,,,,,,,,,,,,,,,
+1240,58,CCI,M,M,1,1,2,Zugeordnete Leistungskurvendefinitionen,CCI+Z53++NBF,Z53 Code der Leistungskurvendefinition,S,leistungskurvendefinition.leistungskurven,code,,,,,,,x,,,,,,,,,
+1060,,SG27,M,D,200000,1,1,Erforderliches Produkt Ad-hoc-Steuerkanal,,,,,,,,,,,,,,,,,,,,,
+1070,59,LIN,M,M,1,1,1,Erforderliches Produkt Ad-hoc-Steuerkanal,LIN+1+Z66,Z66 Erforderliches Produkt Ad-hoc-Steuerkanal,S,angebot.positionsdaten,positionsbezeichnung,,,,,,,soll,,,,,,,,,
+1080,60,PIA,C,R,25,1,2,Erforderliches Produkt Ad-hoc-Steuerkanal,PIA+5+9991000000739:Z11,Z11 Produkt,S,AD_HOC_STEUERKANAL,konfigurationsprodukt,,,,,,,x,,,,,,,,,
+1080,61,PIA,C,R,25,3,2,Artikel-ID,PIA+Z02+9991000000739-01:Z09,Z09 Artikel-ID,S,angebot.positionsdaten,artikelId (Z09 -> 1:1),,,,,,,x,,,,,,,,,
+1060,,SG27,M,D,200000,1,1,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,,,,,,,,,,,,,,,,,,,,,
+1070,62,LIN,M,M,1,1,1,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,LIN+1+Z67,Z67 Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,S,angebot.positionsdaten,positionsbezeichnung,,,,,,,soll,,,,,,,,,
+1080,63,PIA,C,R,25,1,2,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,PIA+5+9991000000739:Z11,Z11 Produkt,S,WERTE_NACH_TYP2,messprodukt,,,,,,,x,,,,,,,,,
+1080,64,PIA,C,R,25,3,2,Artikel-ID,PIA+Z02+9991000000739-01:Z09',Z09 Artikel-ID,S,angebot.positionsdaten,artikelId (Z09 -> 1:1),,,,,,,x,,,,,,,,,
+1080,65,PIA,C,D,25,23,2,OBIS Kennzahl für Werte nach Typ 2 Backend,PIA+5+1 1?:1.29.0:SRW,SRW OBIS Kennzahl,S,WERTE_NACH_TYP2.zaehlwerke,obisKennzahl,,,,,,,,,,,,,,,,
+1360,,SG31,C,D,99,3,2,Preisangabe zur Position,,,,,,,,,,,,,,,,,,,,,
+1370,66,PRI,M,M,1,1,2,Preisangaben,PRI+CAL:5.1234::Z01:1:H87,"CAL Berechnungspreis
+
+Z01 Einrichtungspreis
+Z02 Transaktionspreis
+Z03 Betriebspreis
+
+H87 Stück
+DAY Tag",S,angebot.positionsdaten.positionspreis[],"wert
+preisart
+menge
+bezugswert
+","ENUM preisart:
+
+Z01 = EINRICHTUNGSPREIS
+Z02 = TRANSAKTIONSPREIS
+Z03 = BETRIEBSPREIS
+
+ENUM bezugswert:
+
+DAY = TAG
+H87 = STUECK",,,,,,,,,,,,,,,
+1060,,SG27,M,D,200000,1,1,"Erforderliches Produkt Konfigurationserlaubnis für
+Werte nach Typ 2 aus SMGW",,,,,,,,,,,,,,,,,,,,,
+1070,67,LIN,M,M,1,1,1,"Erforderliches Produkt Konfigurationserlaubnis für Werte
+nach Typ 2 aus SMGW",LIN+1+Z68,Z68 Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,S,angebot.positionsdaten,positionsbezeichnung,,,,,,,soll,,,,,,,,,
+1080,68,PIA,C,R,25,1,2,"Erforderliches Produkt Konfigurationserlaubnis für Werte
+nach Typ 2 aus SMGW",PIA+5+9991000000739:Z11,Z11 Produkt,S,WERTE_NACH_TYP2,konfigurationsprodukt,,,,,,,x,,,,,,,,,
+1080,69,PIA,C,R,25,3,2,Artikel-ID,PIA+Z02+9991000000739-01:Z09',Z09 Artikel-ID,S,angebot.positionsdaten,artikelId (Z09 -> 1:1),,,,,,,x,,,,,,,,,
+1230,,SG28,C,D,999,1,2,Änderungsmöglichkeit der Konfiguration im SMGW,,,,,,,,,,,,,,,,,,,,,
+1240,70,CCI,M,M,1,1,2,Änderungsmöglichkeit der Konfiguration im SMGW,"CCI+Z54++ZF7'
+CCI+Z54++ZF8'","ZF7 selbständige Änderungsmöglichkeit erforderlich
+ZF8 selbständige Änderungsmöglichkeit nicht erforderlich",S,WERTE_NACH_TYP2,aenderungsmoeglichkeitKonfiguration,"ZF7 = ERFORDERLICH
+ZF8 = NICHT_ERFORDERLICH",,,,,,x,,,,,,,,,
+1230,,SG28,C,R,999,1,2,Schwellwerte,,,,,,,,,,,,,,,,,,,,,
+1240,71,CCI,M,M,1,1,2,Schwellwerte,CCI+Z60++9991000001042:::207.22:168.81',Schwellwerte,S,WERTE_NACH_TYP2,"schwellwerte.konfigurationsprodukt
+schwellwerte.obererSchwellwert
+schwellwerte.untererSchwellwert",,,,,,,x,,,,,,,,,
+1360,,SG31,C,D,99,3,2,Preisangabe zur Position,,,,,,,,,,,,,,,,,,,,,
+1370,72,PRI,M,M,1,1,2,Preisangaben,PRI+CAL:5.1234::Z01:1:H87,"CAL Berechnungspreis
+
+Z01 Einrichtungspreis
+Z02 Transaktionspreis
+Z03 Betriebspreis
+
+H87 Stück
+DAY Tag",S,angebot.positionsdaten.positionspreis[],"wert
+preisart
+menge
+bezugswert
+","ENUM preisart:
+
+Z01 = EINRICHTUNGSPREIS
+Z02 = TRANSAKTIONSPREIS
+Z03 = BETRIEBSPREIS
+
+ENUM bezugswert:
+
+DAY = TAG
+H87 = STUECK",,,,,,,,,,,,,,,
+2270,73,UNS,M,M,1,1,0,Abschnitts-Kontrollsegment,UNS+S,S Trennung von Positions- und Summenteil,,,,,,,,,,,,,,,,,,,
+2340,74,UNT,M,M,1,1,0,Nachrichten-Endesegment,UNT+76+1,,,,,,,,,,,,,,,,,,,,

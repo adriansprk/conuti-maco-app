@@ -1,0 +1,339 @@
+Nummer,Nr.,Typ,,,Max. Wdh,,,,,,stamm- oder transaktionsdaten,BO Objekt,BO4E - Feld,Mapping EDI <-> BO4E,powercloud - Variable,Schnittstelle,19101,19102,19103,19104,19110,19115,19116,19117,19118,19119,19128,19129,19121,19122,19123,19124,19120,19127,19114,19001,19002,19015,19016,19003,19004,19005,19006,19007,19008,19009,19010,19011,19012,19013,19014,,,,
+,,UNB,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0010,1,UNH,M,M,1,1,0,Nachrichten-Kopfsegment,UNH+1+ORDRSP:D:10A:UN:1.4a,,,,,,,,Muss,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0020,2,BGM,M,M,1,1,0,Beginn der Nachricht,"BGM+7+MKIDI5422
+BGM+BK+MKIDI5422
+BGM+Z10+MKIDI5422
+BGM+Z11+MKIDI5422
+BGM+Z12+MKIDI5422
+BGM+Z13+MKIDI5422
+BGM+Z14+MKIDI5422
+BGM+Z23+MKIDI5422
+BGM+Z24+MKIDI5422
+BGM+Z28+MKIDI5422
+BGM+Z29+MKIDI5422
+BGM+Z30+MKIDI5422
+BGM+Z31+MKIDI5422
+BGM+Z34+MKIDI5422
+BGM+Z48+MKIDI5422
+BGM+Z51+MKIDI5422
+BGM+Z52+MKIDI5422
+BGM+Z55+MKIDI5422
+BGM+Z56+MKIDI5422
+BGM+Z57+MKIDI5422
+BGM+Z68+MKIDI5422
+BGM+Z72+MKIDI5422
+BGM+Z73+MKIDI5422
+BGM+Z74+MKIDI5422
+BGM+Z76+MKIDI5422
+BGM+Z91+MKIDI5422
+BGM+Z93+MKIDI5422","Prozessdatenbericht
+Zeitreihen im Rahmen der Bilanzkreisabrechnung
+Geräteübernahme
+Weiterverpflichtung zum Betrieb der Messlokation
+Änderung der Technik der Lokation
+Gerätewechselabsicht
+Stammdaten der Markt- oder Messlokation
+Bilanzierte Menge (MMMA)
+Allokationsliste (MMMA)
+Energiemenge und Leistungsmaximum
+Abrechnung des Messstellenbetriebs vom MSB an den LF
+Änderung Prognosegrundlage
+Änderung Gerätekonfiguration
+Reklamation von Werten
+Lastgang Marktlokation, Tranche
+Sperrung
+Entsperrung
+Reklamation der Übersicht der Definitionen oder einer Definition
+Änderung individueller Konfiguration
+Übermittlung von Werten an ESA
+Änderung
+Beendigung einer Konfiguration
+Bestellung einer Konfiguration
+Bestellung eines Angebots einer Konfiguration
+Reklamation einer Konfiguration
+Bestellung Än derung Abrechnungsdaten
+Bestellung eines Angebots Änderung der Technik der Lokation","S
+T","ANFRAGE
+","anfragekategorie
+dokumentennummer
+kategorie","7 = PROZESSDATENBERICHT
+BK = ZEITREIHEN_IM_RAHMEN_BILANZKREISABRECHNUNG
+Z10 = GERAETEUEBERNAHME
+Z11 = WEITERVERPFLICHTUNG_BETRIEB_MELO
+Z12 = AENDERUNG_DER_TECHNIK_DER_LOKATION
+Z13 = GERAETEWECHSELABSICHT
+Z14 = STAMMDATEN_MALO_ODER_MELO
+Z23 = BILANZIERTE_MENGE_MEHR_MINDER_MENGEN
+Z24 = ALLOKATIONSLISTE_MEHR_MINDER_MENGEN
+Z28 = ENERGIEMENGE_UND_LEISTUNGSMAXIMUM
+Z29 = ABRECHNUNG_MESSSTELLENBETRIEB_MSB_AN_LF
+Z30 = AENDERUNG_PROGNOSEGRUNDLAGE_GERAETEKONFIGURATION
+Z31 = AENDERUNG_GERAETEKONFIGURATION
+Z34 = REKLAMATION_VON_WERTEN
+Z48 = LASTGANG_MALO_TRANCHE
+Z51 = SPERRUNG
+Z52 = ENTSPERRUNG
+Z55 = REKLAMATION_DEFINITION
+Z56 = AENDERUNG_INDIVIDUELLER_KONFIGURATION
+Z57 = UEBERMITTLUNG_WERTE_AN_ESA
+Z68 = AENDERUNG
+Z72 = BEENDIGUNG_EINER_KONFIGURATION
+Z73 = BESTELLUNG_EINER_KONFIGURATION
+Z74 = BESTELLUNG_EINES_ANGEBOTS_EINER_KONFIGURATION
+Z76 = REKLAMATION_EINER_KONFIGURATION
+Z91 = BESTELLUNG_AENDERUNG_ABRECHNUNGSDATEN
+Z93 = BESTELLUNG_ANGEBOT_AENDERUNG_TECHNIK_LOKATION
+",,,x,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0030,3,DTM,M,M,35,1,1,Nachrichtendatum,DTM+137:CCYYMMDDHHMMZZZ:303,Dokumenten-/Nachrichtendatum/-zeit,T,,nachrichtendatum,,,,x,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0030,4,DTM,M,D,35,1,1,Ausführungsdatum,DTM+203:CCYYMMDDHHMMZZZ:303,Ausführungsdatum/-zeit,S,auftrag,ausfuehrungsdatum,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0030,5,DTM,M,D,35,1,1,verschobener Abmeldetermin,DTM+Z02:CCYYMMDDHHMMZZZ:303,Verschobener Abmeldetermin,S,auftrag,verschobenerAbmeldetermin,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0030,6,DTM,M,D,35,1,1,geplanter Behebungszeitpunkt,DTM+292:CCYYMMDDHHMMZZZ:303,geplanter Behebungszeitpunkt,S,auftrag,behebungsZeitpunkt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0030,7,DTM,M,D,35,1,1,Startdatum oder Zeitpunkt,DTM+469:CCYYMMDDHHMMZZZ:303,"Startdatum oder -zeitpunkt, frühestes/r",S,auftrag,startdatum,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0030,8,DTM,M,D,35,1,1,Endedatum oder Zeitpunkt,DTM+472:CCYYMMDDHHMMZZZ:303,Endedatum oder Zeitpunkt,S,auftrag,enddatum,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0060,9,IMD,C,D,999,1,1,Abonnement,"IMD++Z01
+IMD++Z02
+IMD++Z03","Start Abo
+Ende Abo
+ohne Abo",S,ANFRAGE,abonnement,"Z01 = START_ABO
+Z02 = ENDE_ABO
+Z03 = OHNE_ABO
+",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0060,10,IMD,C,D,999,1,1,Produkt-/Leistungsbeschreibung,"IMD++Z10
+IMD++Z11
+IMD++Z12
+IMD++Z13
+IMD++Z35","Abrechnungsbrennwert und Zustandszahl
+Lastgangdaten
+Zählerstände
+Werteermittlung
+Energiemenge Einzelwert",,,anfragetyp,"Z10 = ABRECHNUNGSBRENNWERT_UND_ZUSTANDSZAHL
+Z11 = LASTGANGDATEN
+Z12 = ZAEHLERSTAENDE
+Z13 = WERTEERMITTLUNG
+Z35 = ENERGIEMENGE_EINZELWERT",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0090,,SG1,C,D,9999,1,1,Referenz der Anfrage/Bestellung/Stornierung,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,11,RFF,M,M,1,1,1,Referenz Nachrichtennummer,RFF+ON:AFN9523,ON Auftragsnummer (Einkauf),T,,auftragsReferenz,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0090,,SG1,C,D,9999,1,1,Referenz einer vorangegangenen Nachricht,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,12,RFF,M,M,1,1,1,Referenz einer vorangegangenen Nachricht,RFF+ACW:REF32412,ACW Referenznummer einer vorangegangenen Nachricht,T,,vorgangsreferenznummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0090,,SG1,C,D,9999,1,1,Referenz Vorgangsnummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,13,RFF,M,M,1,1,1,Referenz Vorgangsnummer,RFF+TN:VORG123490,TN Transaktions-Referenznummer,T,,anfragereferenznummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0090,,SG1,C,R,9999,1,1,Prüfidentifikator,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,14,RFF,M,M,1,1,1,Prüfidentifikator,"RFF+Z13:19001
+RFF+Z13:19002
+RFF+Z13:19003
+RFF+Z13:19004
+RFF+Z13:19005
+RFF+Z13:19006
+RFF+Z13:19007
+RFF+Z13:19009
+RFF+Z13:19010
+RFF+Z13:19011
+RFF+Z13:19012
+RFF+Z13:19013
+RFF+Z13:19014
+RFF+Z13:19015
+RFF+Z13:19016
+RFF+Z13:19101
+RFF+Z13:19102
+RFF+Z13:19103
+RFF+Z13:19104
+RFF+Z13:19110
+RFF+Z13:19114
+RFF+Z13:19115
+RFF+Z13:19116
+RFF+Z13:19117
+RFF+Z13:19118
+RFF+Z13:19119
+RFF+Z13:19120
+RFF+Z13:19121
+RFF+Z13:19123
+RFF+Z13:19124
+RFF+Z13:19128
+RFF+Z13:19129
+RFF+Z13:19130
+RFF+Z13:19131
+RFF+Z13:19132
+RFF+Z13:19133
+RFF+Z13:19204
+RFF+Z13:19301
+RFF+Z13:19302","Bestellbestätigung
+Ablehnung der Bestellung
+Fortführungsbestätigung MSBA
+Ablehnung Fortführung
+Auftragsbestätigung der Änderung der Messlokation
+Ablehnung der Ändeurng der Messlokation
+Ablehnung Anforderung Messwerte
+Bestätigung Beendigung Rechnungsabwicklung MSB über LF
+Ablehnung Beendigung Rechnungsabwicklung MSB über LF
+Bestätigung der Ab-/Bestellung von Werten für ESA
+Ablehnung der Ab-/Bestellung von Werten für ESA
+Bestätigung der Stornierung einer Bestellung für ESA
+Ablehnung der Stornierung einer Bestellung für ESA
+Bestätigung Gerätewechselabsicht
+Ablehnung Gerätewechselabsicht
+Ablehnung Anfrage Stammdaten
+Ablehnung Anfrage Werte
+Ablehnung Brennwert und Zustandszahl
+Ablehnung Anfrage vom MSB Gas
+Ablehnung Allokationsliste
+Ablehnung der Reklamation von Werte
+Ablehnung Anforderung bilanzierte Menge
+Bestätigung Sperr-/Entsperrauftrag
+Ablehnung Sperr-/Entsperrauftrag
+Bestätigung Anfrage Sperrung
+Ablehnung Anfrage Sperrung
+Mitteilung zur Änderung
+Mitteilung zur Änderung Prognosegrundlage
+Ablehnung der Reklamation einer Definition
+Mitteilung zur Änderung Zählzeitdefinition
+Mitteilung zur Konfigurationsänderung
+Bestätigung Stornierung Sperr-/ Entsperrauftrag
+Ablehnung Stornierung Sperr-/Entsperrauftrag
+Bearbeitungsstand zur Reklamation einer Konfiguration
+Antwort auf Bestellung Beendigung einer Konfiguration
+Mitteilung zur Bestellung Änderung einer Konfiguration
+Bearbeitungsstand Bestellung Abrechnungsdaten
+Ablehnung Ab-/Bestellung der Aggregationsebene
+Ablehnung Abo
+Bestätigung Ende Abo",T,,pruefidentifikator,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0120,,SG2,C,D,1,1,1,Antwortkategorie,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0130,15,AJT,M,M,1,1,1,Einzelheiten zu einer Anpassung/Änderung,AJT+A01+E_0003,"E_0003 EBD Nr. E_0003
+E_0022 EBD Nr. E_0022
+E_0206 EBD Nr. E_0206
+E_0209 EBD Nr. E_0209
+E_0249 EBD Nr. E_0249
+E_0250 EBD Nr. E_0250
+E_0254 EBD Nr. E_0254
+E_0256 EBD Nr. E_0256
+E_0257 EBD Nr. E_0257
+E_0279 EBD Nr. E_0279
+E_0283 EBD Nr. E_0283
+E_0441 EBD Nr. E_0441
+E_0442 EBD Nr. E_0442
+E_0443 EBD Nr. E_0443
+E_0468 EBD Nr. E_0468
+E_0470 EBD Nr. E_0470
+E_0488 EBD Nr. E_0488
+E_0497 EBD Nr. E_0497
+E_0523 EBD Nr. E_0523
+E_0526 EBD Nr. E_0526
+E_0527 EBD Nr. E_0527
+E_0533 EBD Nr. E_0533
+E_0538 EBD Nr. E_0538
+E_0539 EBD Nr. E_0539
+E_0540 EBD Nr. E_0540
+E_0544 EBD Nr. E_0544
+E_0545 EBD Nr. E_0545
+E_0546 EBD Nr. E_0546
+E_0547 EBD Nr. E_0547
+E_0548 EBD Nr. E_0548
+E_0549 EBD Nr. E_0549
+E_0550 EBD Nr. E_0550
+E_0551 EBD Nr. E_0551
+E_0552 EBD Nr. E_0552
+E_0553 EBD Nr. E_0553
+E_0554 EBD Nr. E_0554
+E_0595 EBD Nr. E_0595
+E_0800 EBD Nr. E_0800
+E_1000 EBD Nr. E_1000
+E_1001 EBD Nr. E_1001
+E_1004 EBD Nr. E_1004
+E_1006 EBD Nr. E_1006
+G_0001 Codeliste Gas Nr. G_0001
+G_0015 Codeliste Gas Nr. G_0015
+G_0049 Codeliste Gas Nr. G_0049
+G_0050 Codeliste Gas Nr. G_0050
+G_0059 Codeliste Gas Nr. G_0059
+G_0060 Codeliste Gas Nr. G_0060
+G_0061 Codeliste Gas Nr. G_0061
+G_0062 Codeliste Gas Nr. G_0062
+G_0063 Codeliste Gas Nr. G_0063
+G_0064 Codeliste Gas Nr. G_0064
+G_0065 Codeliste Gas Nr. G_0065
+G_0066 Codeliste Gas Nr. G_0066
+G_0072 Codeliste Gas Nr. G_0072
+G_0073 Codeliste Gas Nr. G_0073
+G_0074 Codeliste Gas Nr. G_0074
+G_0075 Codeliste Gas Nr. G_0075
+G_0078 Codeliste Gas Nr. G_0078
+G_0082 Codeliste Gas Nr. G_0082
+S_0061 Codeliste Strom Nr. S_0061
+S_0062 Codeliste Strom Nr. S_0062
+S_0065 Codeliste Strom Nr. S_0065
+S_0066 Codeliste Strom Nr. S_0066
+S_0067 Codeliste Strom Nr. S_0067
+S_0068 Codeliste Strom Nr. S_0068
+S_0073 Codeliste Strom Nr. S_0073
+S_0074 Codeliste Strom Nr. S_0074
+S_0075 Codeliste Strom Nr. S_0075
+S_0076 Codeliste Strom Nr. S_0076
+S_0077 Codeliste Strom Nr. S_0077
+S_0078 Codeliste Strom Nr. S_0078
+S_0079 Codeliste Strom Nr. S_0079
+S_0092 Codeliste Strom Nr. S_0092
+S_0093 Codeliste Strom Nr. S_0093",T,,"antwortstatus
+antwortstatusCodeliste",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0140,16,FTX,C,D,5,1,2,Allgemeine Information (Feld für allgemeine Hinweise),FTX+AAP+++Text1:Text2:Text3:Text4:Text5,Antwort (Freier Text),T,,freitext,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0120,,SG3,C,R,99,1,1,MP-ID Absender,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0130,17,NAD,M,M,1,1,1,MP-ID Absender,"NAD+MS+9900259000002::9
+NAD+MS+9900259000002::293
+NAD+MS+9900259000002::332","GS1
+DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)
+DE, DVGW Service & Consult GmbH",T,absender,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0220,,SG6,C,D,5,1,2,Kontaktinformationen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0230,19,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:M Mustermann,Informationskontakt,T,absender.ansprechpartner,nachname,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0240,20,COM,C,R,5,5,3,Kommunikationsverbindung,COM+XXXXXXXXXX:TE,Ansprechpartner Kommunikation EM = Email ; FX = Telefax ; TE = Telefon ; AJ = weiteres Telefon ; AL = Handy,T,absender.ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0120,,SG3,C,R,99,1,1,MP-ID Empfänger,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0130,21,NAD,M,M,1,1,1,MP-ID Empfänger,"NAD+MR+9900259000002::9
+NAD+MR+9900259000002::293
+NAD+MR+9900259000002::332","GS1
+DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)
+DE, DVGW Service & Consult GmbH",T,empfaenger,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0150,,SG3,C,D,99,1,1,Beteiligter Marktpartner MP-ID,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,22,NAD,M,M,1,1,1,Beteiligter Marktpartner MP-ID,"NAD+VY+9900259000002::9
+NAD+VY+9900259000002::293
+NAD+VY+9900259000002::332","GS1
+DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)
+DE, DVGW Service & Consult GmbH",T,beteiligterMarktpartner,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0150,,SG3,C,D,99,1,1,Name und Lieferadresse für Altgeräte,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,23,NAD,M,M,1,1,1,Name und Lieferadresse für Altgeräte,NAD+Z22+++Unternehmensname:::::Z02+Reinhardtstr.::815b:Musterortsteil+Berlin++10010+DE,Lieferadresse für Altgeräte,S,auftrag.lieferadresseAltgeraete,"name1-4
+anrede
+gewerbekennzeichnung: true
+partneradresse.-
+-postleitzahl
+-ort
+-ortsteil
+-strasse
+-hausnummer
+-landescode",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0320,,SG8,C,D,5,1,1,Währungsangaben,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0330,24,CUX,M,M,1,1,1,Währungsangaben,CUX+2:EUR:9,2 Referenzwährung; 9 Auftragswährung,S,"auftrag.mindestpreis
+auftrag.hoechstpreis",einheit,EUR = EUR,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1040,,SG27,C,D,200000,200000,1,Positionsteil,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1050,25,LIN,M,M,1,1,1,Positionsdaten,LIN+1,Positionsnummer,S,auftrag.positionsdaten,positionsnummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1210,26,FTX,C,D,99,1,2,Besondere Sachverhalte zur Sperrung (nicht pauschal im Preisblatt abgebildet),FTX+ABO+++Text1:Text2:Text3:Text4:Text5,Information über Abweichung,S,auftrag.positionsdaten.infoAbweichung,abweichung1-abweichung5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1210,27,FTX,C,D,99,1,2,IP Adresse des Absenders,FTX+Z27+++2001?:db8?:85a3?:?:8a2e?:370?:7344',Z27 IP Adresse des Absenders,T,absender,ipAdresse,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1210,28,FTX,C,D,99,1,2,IP Range des Absenders,FTX+Z28+++203.0.113.195:203.0.113.255',Z28 IP Range des Absenders,T,absender.ipRange,"untereGrenze
+obereGrenze",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2400,29,UNS,M,M,1,1,0,Abschnitts-Kontrollsegment,UNS+S,Trennung von Positions- und Summenteil,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2410,30,MOA,C,D,12,1,1,Mindestbetrag (netto) der Kosten einer Sperrung,MOA+Z02:9,Mindestbetrag,S,auftrag,mindestpreis.wert,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2410,31,MOA,C,D,12,1,1,Höchstbetrag (netto) der Kosten einer Sperrung,MOA+Z03:9,Höchstbetrag,S,auftrag,hoechstpreis.wert,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2470,32,UNT,M,M,1,1,0,Nachrichten-Endesegment,UNT+47+1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

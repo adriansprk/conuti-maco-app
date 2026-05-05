@@ -1,0 +1,113 @@
+Nummer,,Typ,,,Max. Wdh,,,,,,stamm- oder transaktionsdaten,BO Objekt,BO4E - Feld,Mapping EDI <-> BO4E
+,,,,,,,,,,,,,,
+0010,1,UNH,M,M,1,1,0,Nachrichten-Kopfsegment,UNH+1+APERAK:D:07B:UN:2.1i,,,,,
+0020,2,BGM,M,M,1,1,0,Beginn der Nachricht,BGM+313+XXXXXXXXXX,Anwendungssystemfehlermeldung,"T
+
+
+
+
+S",STATUSBERICHT,"kategorie 313
+dokumentennummer
+
+
+
+status","312 = ERFOLGREICH
+313 = FEHLER"
+0030,3,DTM,C,R,9,1,1,Dokumentendatum,DTM+137:CCYYMMDDHHMMZZZ:303,Dokumenten-/Nachrichtendatum/-zeit,T,,nachrichtendatum,
+0090,,SG2,C,R,9,1,1,Referenznummer/-version mit Datum,,,,,,
+0100,4,RFF,M,M,1,1,1,Referenzangaben,RFF+ACE:TG9523,Nummer des zugehörigen Dokuments,S,STATUSBERICHT,pruefgegenstand,
+0110,5,DTM,C,R,9,1,2,Referenzdatum,DTM+171:CCYYMMDDHHMMZZZ:303,Referenzdatum/-zeit,S,STATUSBERICHT,datumPruefung,
+0090,,SG2,C,D,9,1,1,Dokumentennummer der referenzierten Nachricht,,,,,,
+0100,6,RFF,M,M,1,1,1,Dokumentennummer der referenzierten Nachricht,RFF+AGO:12312,Absenderreferenz für die Original Nachricht,S,STATUSBERICHT,absenderreferenz,
+0090,,SG2,C,D,9,1,1,Referenznummer des Vorgangs,,,,,,
+0100,7,RFF,M,M,1,1,1,Referenznummer des Vorgangs,RFF+TN:1,Transaktions Referenznummer,S,STATUSBERICHT,transaktionsReferenznummer,
+0120,,SG3,C,R,9,1,1,MP-ID Absender,,,,,,
+0130,8,NAD,M,M,1,1,1,MP-ID Absender,NAD+MS+9900204000002::293,Dokumenten-/Nachrichtenaussteller bzw. - absender,T,,"absender.rollencodenummer
+absender.rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW"
+0140,9,CTA,C,O,9,1,2,Ansprechpartner,CTA+IC+:P FORGET,Informationskontakt,T,absender,nachname,
+0150,10,COM,C,D,9,5,2,Kommunikationsverbindung,COM+003222271020:TE,Ansprechpartner Kommunikation EM = Email ; FX = Telefax ; TE = Telefon ; AJ = weiteres Telefon ; AL = Handy,T,absender,eMailAdresse,EM; FX; TE; AJ; AL = eMailAdresse
+0120,,SG3,C,R,9,1,1,MP-ID Empfänger,,,,,,
+0130,11,NAD,M,M,1,1,1,MP-ID Empfänger,NAD+MR+4012345000023::9,Nachrichtenempfänger,T,,"empfaenger.rollencodenummer
+empfaenger.rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW"
+0160,,SG4,C,D,99999,99999,1,Fehlerbeschreibung,,,,,,
+0170,12,ERC,M,M,1,1,1,Fehlercode,ERC+Z10,ID unbekannt,S,STATUSBERICHT -> fehler.fehlerDetails,code,"Z10 = ID_UNBEKANNT
+Z17 = ABSENDER_NICHT_ZUGEORDNET
+Z18 = EMPFAENGER_NICHT_ZUGEORDNET
+Z19 = GERAET_UNBEKANNT
+Z20 = OBIS_UNBEKANNT
+Z21 = REFERENZIERUNG_FEHLERHAFT
+Z24 = TUPEL_UNBEKANNT
+Z25 = ABSENDER_TUPEL_NICHT_ZUGEORDNET
+Z26 = EMPFAENGER_TUPEL_NICHT_ZUGEORDNET
+Z27 = VORKOMMA_ZU_VIELE_STELLEN
+Z30 = ZEITREIHE_UNVOLLSTAENDIG
+Z33 = REFERENZIERTES_TUPEL_UNBEKANNT
+Z42 = KONFIGURATIONSID_UNBEKANNT
+Z14 = OBJEKT_NICHT_GEFUNDEN
+Z15 = OBJEKT_NICHT_EINDEUTIG
+Z16 = MELDEPUNKT_NICHT_MEHR_IM_NETZ
+Z29 = ERFORDERLICHE_ANGABE_FEHLT
+Z31 = GESCHAEFTSVORFALL_ZURUECKGEWIESEN
+Z34 = ZEITINTERVALL_NEGATIV
+Z35 = FORMAT_NICHT_EINGEHALTEN
+Z37 = GESCHAEFTSVORFALL_ABSENDER
+Z38 = ANZAHLCODES_UEBERSCHRITTEN
+Z39 = CODE_NICHT_ERLAUBT
+Z40 = SEGMENTWIEDERHOLUNG_UEBERSCHRITTEN
+Z41 = ZEITANGABE_UNPLAUSIBEL
+Z43 = GESCHAEFTSVORFALL_OBJEKT_EIGENSCHAFT_NICHT_ERLAUBT
+Z44 = EIGENSCHAFT_OBJEKT_WEICHT_VON_GESCHAEFTSVORFALL_CODIERTEN_EIGENSCHAFT_AB
+
+MARKTLOKATION_UNBEKANNT
+MESSLOKATION_UNBEKANNT"
+,,,,,,,,,ERC+Z17,Absender ist zum angegebenen Zeitintervall / Zeitpunkt dem Objekt nicht zugeordnet,,,,
+,,,,,,,,,ERC+Z18,Empfänger ist zum angegebenen Zeitintervall / Zeitpunkt dem Objekt nicht zugeordnet,,,,
+,,,,,,,,,ERC+Z19,Gerätenummer zum angegebenen Zeitintervall / Zeitpunkt an der Messlokation nicht bekannt,,,,
+,,,,,,,,,ERC+Z20,OBIS-Kennzahl zum angegebenen Zeitintervall / Zeitpunkt am Objekt nicht bekannt,,,,
+,,,,,,,,,ERC+Z21,Geschäftsvorfallinterne Referenzierung fehlerhaft,,,,
+,,,,,,,,,ERC+Z24,Zuordnungs-Tupel unbekannt,,,,
+,,,,,,,,,ERC+Z25,Absender ist zum angegebenen Zeitintervall / Zeitpunkt dem durch das Zuordnungs-Tupel identifizierten Objekt nicht zugeordnet,,,,
+,,,,,,,,,ERC+Z26,Empfänger ist zum angegebenen Zeitintervall / Zeitpunkt dem durch das Zuordnungs-Tupel identifizierten Objekt nicht zugeordnet,,,,
+,,,,,,,,,ERC+Z27,Vorkomma-Stellenzahl des Zählwertes ist zu lang,,,,
+,,,,,,,,,ERC+Z30,Zeitreihe unvollständig,,,,
+,,,,,,,,,ERC+Z33,Referenziertes Geschäftsvorfall-Tupel nicht vorhanden,,,,
+,,,,,,,,,ERC+Z42,Konfigurations-ID zum angegebenen Zeitintervall / Zeitp,,,,
+,,,,,,,,,ERC+Z43,Geschäftsvorfall für Objekt mit der Eigenschaft nicht erlaubt,,,,
+,,,,,,,,,ERC+Z44,Eigenschaft des Objekts weicht von der im Geschäftsvorfall codierten Eigenschaft ab,,,,
+,,,,,,,,,ERC+Z14,Objekt im IT-System nicht gefunden,,,,
+,,,,,,,,,ERC+Z15,Objekt im IT-System nicht eindeutig,,,,
+,,,,,,,,,ERC+Z16,Objekt nicht mehr im Netzgebiet,,,,
+,,,,,,,,,ERC+Z29,Erforderliche Angabe für diesen Anwendungsfall fehlt,,,,
+,,,,,,,,,ERC+Z31,Geschäftsvorfall wird vom Empfänger zurückgewiesen,,,,
+,,,,,,,,,ERC+Z34,Zeitintervall negativ oder Null,,,,
+,,,,,,,,,ERC+Z35,Format nicht eingehalten,,,,
+,,,,,,,,,ERC+Z37,Geschäftsvorfall darf vom Sender nicht gesendet werden,,,,
+,,,,,,,,,ERC+Z38,Anzahl der übermittelten Codes überschreitet Paketdefinition,,,,
+,,,,,,,,,ERC+Z39,Code nicht aus erlaubtem Wertebereich,,,,
+,,,,,,,,,ERC+Z40,Segment- bzw. Segmentgruppenwiederholbarkeit überschritten,,,,
+,,,,,,,,,ERC+Z41,Zeitangabe unplausibel,,,,
+0180,13,FTX,C,D,1,1,2,Freier Text,FTX+ABO+++DE00056266802AO6G56M11SN51G21M24S:201204181115?+00?:303,Information über Abweichung,S,STATUSBERICHT -> fehler.fehlerDetails.beschreibung,"beschreibung1
+beschreibung2",
+0190,,SG5,C,R,9,1,2,Referenznummer der Nachricht,,,,,,
+0200,14,RFF,M,M,1,1,2,Referenznummer der Nachricht,RFF+ACW:9878u7987gh7,Referenznummer einer vorangegangenen Nachricht,S,STATUSBERICHT -> fehler.fehlerDetails.ursache,dokument,
+0190,,SG5,C,R,9,1,2,Information zur fehlerhaften Nachricht,,,,,,
+0200,15,RFF,M,M,1,1,2,Dokumentennummer der referenzierenden Nachricht,RFF+AGO:798790034532,Absenderreferenz für die Original-Nachricht,S,STATUSBERICHT -> fehler.fehlerDetails.ursache,nachricht,
+0210,16,FTX,C,O,9,1,3,Fehlerbeschreibung,FTX+AAO+++Die Marktlokation ist bei Netzbetreiber Gasverteilung AG:ggf. weiterer Text,Fehlerbeschreibung (Freier Text),S,STATUSBERICHT -> fehler.fehlerDetails.ursache.beschreibung,"beschreibung1
+beschreibung2",
+0210,17,FTX,C,D,9,1,3,Ortsangabe des AHB-Fehlers,FTX+Z02+++Referenz Vorgangsnummer (aus Anfragenachricht):RFF?+TN?:TG9523',Ortsangabe des AHB-Fehlers,S,STATUSBERICHT -> fehler.fehlerDetails.ursache.gruppe,"gruppe1
+gruppe2",
+0190,,SG5,C,D,9,1,2,Informationen zum fehlerhaften Vorgang,,,,,,
+0200,18,RFF,M,M,1,1,2,Referenznummer des Vorgangs,RFF+TN:200815,Transaktions-Referenznummer,S,STATUSBERICHT -> fehler.fehlerDetails.ursache,transaktion,
+0000,19,FTX,C,O,9,1,3,Fehlerbeschreibung,FTX+AAO+++Die Marktlokation ist bei Netzbetreiber Gasverteilung AG:ggf. weiterer Text,Fehlerbeschreibung (Freier Text),S,STATUSBERICHT -> fehler.fehlerDetails.ursache.beschreibung,"beschreibung1
+beschreibung2",
+0210,20,FTX,C,D,9,1,3,Ortsangabe des AHB-Fehlers,FTX+Z02+++Referenz Vorgangsnummer (aus Anfragenachricht):RFF?+TN?:TG9523',Ortsangabe des AHB-Fehlers,S,STATUSBERICHT -> fehler.fehlerDetails.ursache.gruppe,"gruppe1
+gruppe2",
+0190,,SG5,C,D,9,1,2,Netzbetreiber,,,,,,
+0200,21,RFF,M,M,1,1,2,Netzbetreiber,RFF+Z08:4399901957459,MP-ID des nachfolgenden Netzbetreibers,T,,"beteiligterMarktpartner.rollencodenummer
+
+marktrolle = ""NB""",
+0220,22,UNT,M,M,1,1,0,Nachrichten-Endesegment,,,,,,

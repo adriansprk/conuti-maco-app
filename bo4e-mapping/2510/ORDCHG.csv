@@ -1,0 +1,87 @@
+Nummer,Nr.,Typ,,,Max. Wdh,,,,,,stamm- oder transaktionsdaten,BO Objekt,BO4E - Feld,Mapping EDI <-> BO4E,powercloud - Variable,Schnittstelle,39000,39001,39002,,,,,,,,,,,,,,,,,,,,
+,,UNB,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0010,1,UNH,M,M,1,1,0,Nachrichten-Kopfsegment,UNH+1+ORDCHG:D:20B:UN:1.1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0020,2,BGM,M,M,1,1,0,Beginn der Nachricht,"BGM+Z51+EDI4711+1
+BGM+Z52+EDI4711+1
+BGM+Z57+EDI4711+1","Z51 Sperrung
+Z52 Entsperrung
+Z57 Übermittlung von Werten an ESA","T
+-
+S","
+-
+anfrage","
+dokumentennummer
+-
+anfragekategorie (ENUMs)
+-
+storno (1 = true)","7 = PROZESSDATENBERICHT
+E40 = BILANZKREISZUORDNUNGSLISTE
+Z05 = CLEARINGLISTE
+BK = ZEITREIHEN_IM_RAHMEN_BILANZKREISABRECHNUNG
+Z10 = GERAETEUEBERNAHME
+Z11 = WEITERVERPFLICHTUNG_BETRIEB_MELO
+Z12 = AENDERUNG_MELO
+Z13 = GERAETEWECHSELABSICHT
+Z14 = STAMMDATEN_MALO_ODER_MELO
+Z19 = NORMIERTES_PROFIL_PROFILSCHAR
+Z23 = BILANZIERTE_MENGE_MEHR_MINDER_MENGEN
+Z24 = ALLOKATIONSLISTE_MEHR_MINDER_MENGEN
+Z28 = ENERGIEMENGE_UND_LEISTUNGSMAXIMUM
+Z29 = ABRECHNUNG_MESSSTELLENBETRIEB_MSB_AN_LF
+Z30 = AENDERUNG_PROGNOSEGRUNDLAGE_GERAETEKONFIGURATION
+Z31 = AENDERUNG_GERAETEKONFIGURATION
+Z34 = REKLAMATION_VON_WERTEN
+Z45 = REDISPATCH_EINZELZEITREIHE_AUSFALLARBEIT
+Z48 = LASTGANG_MALO_TRANCHE
+Z51 = SPERRUNG
+Z52 = ENTSPERRUNG
+Z53 = AENDERUNG_KONZESSIONSABGABE
+Z55 = REKLAMATION_ZAEHLZEITDEFINITION
+Z56 = AENDERUNG_ZAEHLZEITDEFINITION
+Z57 = UEBERMITTLUNG_WERTE_AN_ESA
+Z58 = REKLAMATION_PROFIL_PROFILSCHAR
+Z61 = STAMMDATEN_MALO
+Z62 = STAMMDATEN_MELO
+Z63 = STAMMDATEN_TRANCHE
+Z68 = AENDERUNG
+",,,Z61,Z62,Z63,"7
+Z28
+Z48",7,Z14,Z24,Z23,Z51,Z51,Z52,Z53,Z30,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0030,3,DTM,M,M,35,1,1,Nachrichtendatum,DTM+137:CCYYMMDDHHMMZZZ:303,Dokumenten-/Nachrichtendatum/-zeit,T,,nachrichtendatum,,,,x,x,x,x,x,x,x,x,x,x,x,x,x,,,,,,,,,,
+0090,,SG1,C,D,9999,1,1,Referenz der Anfrage/Bestellung,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,4,RFF,M,M,1,1,1,Nachrichtennummer der Anfrage/Bestellung,RFF+ON:AFN9523,ON Auftragsnummer (Einkauf),T,,auftragsReferenz,,,,,,,,,,,,,,,,,,,,,,,,,,
+0090,,SG1,C,D,9999,1,1,Referenz des Vorgangs der Anfrage/Bestellung,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,5,RFF,M,M,1,1,1,Vorgangsnummer der Anfrage/Bestellung,RFF+TN:8,TN Transaktions-Referenznummer,T,,anfragereferenznummer,,,,,x,,,,,,,,,,,,,,,,,,,,,
+0090,,SG1,C,R,9999,1,1,Prüfidentifikator,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,6,RFF,M,M,1,1,1,Prüfidentifikator,"RFF+Z13:39000
+RFF+Z13:39001
+RFF+Z13:39002","39000 Stornierung Sperr-/Entsperrauftrag
+39001 Weiterleitung der Stornierung
+39002 Stornierung der Bestellung für ESA",T,,pruefidentifikator,,,,17101,17126,17127,17102,17103,17104,17110,17114,17115,17116,17117,17119,17120,,,,,,,,,,
+0150,,SG3,C,R,99,1,1,MP-ID Absender,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,7,NAD,M,M,1,1,1,MP-ID Absender,NAD+MS+9900259000002::293,"9 GS1
+293 DE, BDEW",T,absender,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,,x,x,x,x,x,x,x,x,x,x,x,x,x,,,,,,,,,,
+0250,,SG6,C,D,5,1,2,Kontaktinformationen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0260,8,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:Max Mustermann,IC Informationskontakt,S,absender.ansprechpartner,nachname,,,,Kann,Kann,Kann,Kann,Kann,x,Kann,Kann,x,x,x,Kann,Kann,,,,,,,,,,
+0270,9,COM,C,R,5,5,3,Kommunikationsverbindung,"COM+max@mustermann.de:EM
+COM+0123 456789 30:AJ'","EM E-Mail
+FX Telefax
+TE Telefon
+AJ weiteres Telefon
+AL Handy",S,absender.ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,x,x,x,x,x,x,x,x,x,x,x,x,x,,,,,,,,,,
+0150,,SG3,C,R,99,1,1,MP-ID Empfänger,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,10,NAD,M,M,1,1,1,MP-ID Empfänger,NAD+MR+9900259000002::293,"9 GS1
+293 DE, BDEW",T,empfaenger,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,,x,x,x,x,x,x,x,x,x,x,x,x,x,,,,,,,,,,
+2380,11,UNS,M,M,1,1,0,Abschnitts-Kontrollsegment,UNS+S,Trennung von Positions- und Summenteil,,,,,,,x,x,x,x,x,x,x,x,x,x,x,,,,,,,,,,,,
+2450,12,UNT,M,M,1,1,0,Nachrichten-Endesegment,UNT+13+1,,,,,,,,x,x,x,x,x,x,x,x,x,x,x,,,,,,,,,,,,

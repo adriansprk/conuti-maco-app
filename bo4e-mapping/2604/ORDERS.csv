@@ -1,0 +1,839 @@
+Nummer,Nr.,Typ,,,Max. Wdh,,,,,,stamm- oder transaktionsdaten,BO Objekt,BO4E - Feld,Mapping EDI <-> BO4E,powercloud - Variable,Schnittstelle,17101,17126,17127,17102,17103,17104,17110,17114,17115,17116,17117,17119,17120,17122,17123,17121,17118,17113,17001,17009,17002,17003,17004,17005,17006,17007,17008,,,,,,,
+,,UNB,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0010,1,UNH,M,M,1,1,0,Nachrichten-Kopfsegment,UNH+1+ORDERS:D:09B:UN:1.4b',,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0020,2,BGM,M,M,1,1,0,Beginn der Nachricht,"BGM+7+MKIDI5422
+BGM+E40+MKIDI5422
+BGM+Z05+MKIDI5422
+BGM+BK+MKIDI5422
+BGM+Z10+MKIDI5422
+BGM+Z11+MKIDI5422
+BGM+Z12+MKIDI5422
+BGM+Z13+MKIDI5422
+BGM+Z14+MKIDI5422
+BGM+Z19+MKIDI5422
+BGM+Z23+MKIDI5422
+BGM+Z24+MKIDI5422
+BGM+Z28+MKIDI5422
+BGM+Z29+MKIDI5422
+BGM+Z30+MKIDI5422
+BGM+Z31+MKIDI5422
+BGM+Z34+MKIDI5422
+BGM+Z45+MKIDI5422
+BGM+Z48+MKIDI5422
+BGM+Z51+MKIDI5422
+BGM+Z52+MKIDI5422
+BGM+Z55+MKIDI5422
+BGM+Z56+MKIDI5422
+BGM+Z57+MKIDI5422
+BGM+Z58+MKIDI5422
+BGM+Z61+MKIDI5422
+BGM+Z62+MKIDI5422
+BGM+Z68+MKIDI5422
+BGM+Z72+MKIDI5422
+BGM+Z73+MKIDI5422
+BGM+Z74+MKIDI5422
+BGM+Z76+MKIDI5422
+BGM+Z91+MKIDI5422
+BGM+Z92+MKIDI5422
+BGM+Z93+MKIDI5422","Prozessdatenbericht
+Bilanzkreiszuordnungsliste
+Clearingliste
+Zeitreihen im Rahmen der Bilanzkreisabrechnung
+Geräteübernahme
+Weiterverpflichtung zum Betrieb der Messlokation
+Änderung der Technik der Lokation
+Gerätewechselabsicht
+Stammdaten der Markt- oder Messlokation
+normiertes Profil/Profilschar
+Bilanzierte Menge (MMMA)
+Allokationsliste (MMMA)
+Energiemenge und Leistungsmaximum
+Abrechnung des Messstellenbetriebs vom MSB an den LF
+Änderung Prognosegrundlage
+Änderung Gerätekonfiguration
+Reklamation von Werten
+Redispatch Einzelzeitreihe Ausfallarbeit
+Lastgang Marktlokation, Tranche
+Sperrung
+Entsperrung
+Reklamation Übersicht oder einer ausgerollten Zählzeitdefinition
+Änderung individueller Konfiguration
+Übermittlung von Werten an ESA
+Reklamation Profil/Profilschar
+Stammdaten der Marktlokation
+Stammdaten der Messlokation
+Änderung
+Beendigung einer Konfiguration
+Bestellung einer Konfiguration
+Bestellung eines Angebots einer Konfiguration
+Reklamation einer Konfiguration
+Bestellung Änderung Abrechnungsdaten
+Einrichtung Konfiguration aufgrund Zuordnung LF
+Bestellung eines Angebots Änderung der Technik der Lokation","T
+-
+S","
+-
+anfrage","
+dokumentennummer
+-
+anfragekategorie (ENUMs)","7 = PROZESSDATENBERICHT
+E40 = BILANZKREISZUORDNUNGSLISTE
+Z05 = CLEARINGLISTE
+BK = ZEITREIHEN_IM_RAHMEN_BILANZKREISABRECHNUNG
+Z10 = GERAETEUEBERNAHME
+Z11 = WEITERVERPFLICHTUNG_BETRIEB_MELO
+Z12 = AENDERUNG_DER_TECHNIK_DER_LOKATION
+Z13 = GERAETEWECHSELABSICHT
+Z14 = STAMMDATEN_MALO_ODER_MELO
+Z19 = NORMIERTES_PROFIL_PROFILSCHAR
+Z23 = BILANZIERTE_MENGE_MEHR_MINDER_MENGEN
+Z24 = ALLOKATIONSLISTE_MEHR_MINDER_MENGEN
+Z28 = ENERGIEMENGE_UND_LEISTUNGSMAXIMUM
+Z29 = ABRECHNUNG_MESSSTELLENBETRIEB_MSB_AN_LF
+Z30 = AENDERUNG_PROGNOSEGRUNDLAGE_GERAETEKONFIGURATION
+Z31 = AENDERUNG_GERAETEKONFIGURATION
+Z34 = REKLAMATION_VON_WERTEN
+Z45 = REDISPATCH_EINZELZEITREIHE_AUSFALLARBEIT
+Z48 = LASTGANG_MALO_TRANCHE
+Z51 = SPERRUNG
+Z52 = ENTSPERRUNG
+Z55 = REKLAMATION_DEFINITION
+Z56 = AENDERUNG_INDIVIDUELLER_KONFIGURATION
+Z57 = UEBERMITTLUNG_WERTE_AN_ESA
+Z58 = REKLAMATION_PROFIL_PROFILSCHAR
+Z61 = STAMMDATEN_MALO
+Z62 = STAMMDATEN_MELO
+Z68 = AENDERUNG
+Z72 = BEENDIGUNG_EINER_KONFIGURATION
+Z73 = BESTELLUNG_EINER_KONFIGURATION
+Z74 = BESTELLUNG_EINES_ANGEBOTS_EINER_KONFIGURATION
+Z76 = REKLAMATION_EINER_KONFIGURATION 
+Z91 = BESTELLUNG_AENDERUNG_ABRECHNUNGSDATEN
+Z92 = EINRICHTUNG_KONFIGURATION_AUFGRUND_ZUORDNUNG_LF
+Z93 - BESTELLUNG_ANGEBOT_AENDERUNG_TECHNIK_LOKATION",,,Z61,Z62,Z63,"7
+Z28
+Z48",7,Z14,Z24,Z23,Z51,Z51,Z52,Z53,Z30,Z55,Z56,Z68,Z31,Z34,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0030,3,DTM,M,M,35,1,1,Nachrichtendatum,DTM+137:CCYYMMDDHHMMZZZ:303,Dokumenten-/Nachrichtendatum/-zeit,T,,nachrichtendatum,303 -> UTC,,,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,,,,,,,,,,,,,,,,
+0030,4,DTM,M,D,35,1,1,Ausführungsdatum,DTM+203:CCYYMMDDHHMMZZZ:303,Ausführungsdatum/-zeit,S,auftrag,ausfuehrungsdatum,,,,,,,,,,,,x,x,,x,x,,x,x,x,,,,,,,,,,,,,,,,,
+0030,5,DTM,M,D,35,1,1,verschobener Abmeldetermin,DTM+Z02:CCYYMMDDHHMMZZZ:303,Verschobener Abmeldetermin,S,auftrag,verschobenerAbmeldetermin,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0030,6,DTM,M,D,35,1,1,Betrachtungszeitintervall,DTM+273:CCYYMM:610,Gültigkeitszeitspanne,S,anfrage,gueltigkeitszeitspanne,,,,,,,,,,x,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0030,7,DTM,M,D,35,1,1,Startdatum oder Zeitpunkt,DTM+469:CCYYMMDDHHMMZZZ:303,"Startdatum oder -zeitpunkt, frühestes/r",S,auftrag,startdatum,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,,,,,,,,,
+0030,8,DTM,M,D,35,1,1,Endedatum oder Zeitpunkt,DTM+472:CCYYMMDDHHMMZZZ:303',"Endedatum oder -zeitpunkt, spätestes/r",S,auftrag,enddatum,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0060,9,IMD,C,D,999,1,1,Abonnement,"IMD++Z01
+IMD++Z02
+IMD++Z03","Start Abo
+Ende Abo
+ohne Abo",S,anfrage,abonnement,"Z01 = START_ABO
+Z02 = ENDE_ABO
+Z03 = OHNE_ABO
+Z10 = ABRECHNUNGSBRENNWERT_UND_ZUSTANDSZAHL
+Z11 = LASTGANGDATEN
+Z12 = ZAEHLERSTAENDE
+Z13 = WERTEERMITTLUNG
+Z35 = ENERGIEMENGE_EINZELWERT
+Z53 = INNERHALB_DER_ARBEITSZEIT
+Z54 = AUCH_AUSSERHALB_DER_ARBEITSZEIT
+Z58 = WECHSEL_SAEMTLICHER_EINRICHTUNGEN
+Z59 = TEILWEISER_WECHSEL 
+Z55 = AENDERUNG_KONFIGURATION
+Z57 = ABBESTELLUNG_ZAEHLZEITEN
+Z60 = ABBESTELLUNG_MESSPRODUKT",,,,,,,,,"Z01
+Z02",,,,,,,,,,,,,,,,,,,,,,,,,,,
+0060,10,IMD,C,D,999,1,1,Produkt-/Leistungsbeschreibung,"IMD++Z10
+IMD++Z11
+IMD++Z12
+IMD++Z13
+IMD++Z35
+IMD++Z53
+IMD++Z54
+IMD++Z58
+IMD++Z59","Abrechnungsbrennwert und Zustandszahl
+Lastgangdaten
+Zählerstände
+Werteermittlung
+Energiemenge Einzelwert
+innerhalb der Arbeitszeit
+auch außerhalb der Arbeitszeit
+Wechsel sämtlicher technischen Einrichtungen
+Teilweiser Wechsel technischer Einrichtungen",,,anfragetyp,,,,,,,"Z11
+Z12
+Z35",Z10,,,,,,"Z53
+Z54",,,,,,,"Z11
+Z12
+Z35",,,,,,,,,,,,,,,,
+0060,11,IMD,C,D,999,1,1,Bestellung Zählzeitdefinition,"IMD++Z55
+IMD++Z57
+IMD++Z60","Änderung Konfiguration
+Abbestellung Zählzeitdefinition
+Abbestellung Messprodukt mit Zählzeit des LF",,,,,,,,,,,,,,,,,,,,,"Z55
+Z57",,"
+
+x",,,,,,,,,,,,,,,,,
+0060,12,IMD,C,D,999,1,1,Lieferrichtung,"IMD++Z14+Z06
+IMD++Z14+Z07","Erzeugung
+Verbrauch",S,anfrage,energierichtung,"Z06 = EINSP
+Z07 = AUSSP",,,x,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,,
+0060,13,IMD,C,D,999,1,1,Kundenanlage nach §20 Abs.1d EnWG,"IMD++Z66
+IMD++Z67","Beendigung Konfiguration aufgrund Überführung der Marktlokation zu ruhender Marktlokation
+Aktivierung Konfiguration in der derzeit ruhenden Marktlokation",S,anfrage,anfragetyp,"Z66 = BEENDIGUNG_KONFIGURATION 
+Z67 = AKTIVIERUNG_KONFIGURATION",,,x,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,,
+0070,14,FTX,C,D,99,1,1,Reklamation von normierten Profilen bzw. Profilscharen,"FTX+AFH++A01:E_0100
+FTX+AFH++A01:E_0101",Überführung der Marktlokation zu ruhender,MaBiS,reklamation,reklamationsgrundBemerkung,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0090,,SG1,C,D,9999,1,1,Referenz Nachrichtennummer,,Marktlokation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,15,RFF,M,M,1,1,1,Referenz Nachrichtennummer,RFF+ACW:AFN9523,Referenznummer einer vorangegangenen Nachricht,T,,"AAG = angebotsnummer
+ACW = angebotsreferenz",,,,x,,,,,,,,,,,,,ACW,,,,ACW,,,,,,,,,,,,,,,,
+0090,,SG1,C,D,9999,1,1,Referenz Angebotsnummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,16,RFF,M,M,1,1,1,Referenz Angebotsnummer,RFF+AAG:AFN9523',Angebotsnummer,,,angebotsnummer,,,Prozesslogik,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,,,,
+0090,,SG1,C,D,9999,1,1,Referenz Vorgangsnummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,17,RFF,M,M,1,1,1,Referenz Vorgangsnummer,RFF+TN:AFN9523,Transaktions-Referenznummer,T,,anfragereferenznummer,,,Prozesslogik,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,,,,
+0090,,SG1,C,D,9999,1,1,Referenz auf Redispatch-Maßnahme,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,18,RFF,M,M,1,1,1,ID der Redispatch-Maßnahme,RFF+AGK:AFN9523,Anwendungsreferenznummer,"MaBiS
+T",,anwendungsreferenznummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0090,,SG1,C,D,9999,1,1,"Referenznummer des Vorgangs der Anmeldung nach
+WiM",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,19,RFF,M,M,1,1,1,Referenznummer des Vorgangs der Anmeldung nach WiM,RFF+Z41:3546546E,Referenznummer des Vorgangs der Anmeldung nach WiM,T,,vorgangsreferenznummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0090,,SG1,C,D,9999,1,1,Referenznummer der Nachricht der betroffenen Antwort auf Bestellung,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,20,RFF,M,M,1,1,1,Referenznummer der Nachricht der betroffenen Antwort auf Bestellung,RFF+Z42:3546546E',Referenznummer der Nachricht der betroffenen Antwort auf Bestellung (Bestellbestätigung),T,,nachrichtenReferenzBestellbestaetigung,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0090,,SG1,C,D,9999,1,1,Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,21,RFF,M,M,1,1,1,Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung,RFF+Z43:9',Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung (Bestellbestätigung),T,,vorgangsReferenzBestellbestaetigung,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0090,,SG1,C,R,9999,1,1,Prüfidentifikator,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,22,RFF,M,M,1,1,1,Prüfidentifikator,"RFF+Z13:17001
+RFF+Z13:17002
+RFF+Z13:17003
+RFF+Z13:17004
+RFF+Z13:17005
+RFF+Z13:17006
+RFF+Z13:17007
+RFF+Z13:17008
+RFF+Z13:17009
+RFF+Z13:1701
+RFF+Z13:17101
+RFF+Z13:17102
+RFF+Z13:17103
+RFF+Z13:17104
+RFF+Z13:17110
+RFF+Z13:17113
+RFF+Z13:17114
+RFF+Z13:17115
+RFF+Z13:17116
+RFF+Z13:17117
+RFF+Z13:17118
+RFF+Z13:17120
+RFF+Z13:17121
+RFF+Z13:17122
+RFF+Z13:17123
+RFF+Z13:17126
+RFF+Z13:17128
+RFF+Z13:17129
+RFF+Z13:17130
+RFF+Z13:17131
+RFF+Z13:17132
+RFF+Z13:17133
+RFF+Z13:17134
+RFF+Z13:17135
+RFF+Z13:17201
+RFF+Z13:17202
+RFF+Z13:17203
+RFF+Z13:17204
+RFF+Z13:17205
+RFF+Z13:17206
+RFF+Z13:17207
+RFF+Z13:17208
+RFF+Z13:17209
+RFF+Z13:17210
+RFF+Z13:17211
+RFF+Z13:17301","Bestellung Geräteübernahme
+Weiterverpflichtung MSBA
+Beauftragung zur Änderung der Messlokation
+Anforderung Messwerte
+Bestellung Rechnungsabwicklung MSB über LF
+Beendigung Rechnungsabwicklung MSB über LF
+Bestellung von Werten für ESA
+Abbestellung von Werten für ESA
+Anzeige Gerätewechselabsicht
+Bestellung eines Angebots Änderung Technik
+Anfrage Stammdaten Marktlokation
+Anfrage Werte
+Anfrage Brennwert und Zustandszahl
+Anfrage vom MSB Gas
+Anforderung Allokationsliste
+Meldung einer Reklamation von Werten
+Anforderung bilanzierte Menge
+Sperrauftrag
+Anfrage Sperrung
+Entsperrauftrag
+Bestellung Konfigurationsänderung
+Bestellung Änderung Prognosegrundlage
+Bestellung Änderung
+Reklamation einer Definition
+Bestellung Änderung Zählzeitdefinition
+Anfrage Stammdaten Messlokation
+Reklamation einer Konfiguration
+Bestellung Beendigung einer Konfiguration
+Bestellung Änderung einer Konfiguration
+Bestellung eines Angebots einer Konfiguration
+Anfrage Stammdaten
+Bestellung Änderung Abrechnungsdaten
+Einrichtung Konfiguration aufgrund Zuordnung LF von NB an MSB
+Einrichtung Konfiguration aufgrund Zuordnung LF von MSB an MSB
+Anforderung normierter Profile/Profilscharen
+Anforderung Lieferantenclearingliste
+Anforderung Bilanzkreiszuordnungsliste
+Anforderung Clearingliste BAS
+Anforderung Clearingliste DZR
+Anforderung BIlanzierungsgebietsclearingliste
+Ab-/Bestellung BK-SZR auf Aggregationsebene RZ
+Anforderung Clearingliste ÜNB-DZR
+Anforderung Ausfallarbeit
+Anforderung Lieferantenausfallarbeitsclearingliste
+Reklamation Profile bzw. Profilscharen
+Anforderung Abo",T,,pruefidentifikator,,,,17101,17126,17127,17102,17103,17104,17110,17114,17115,17116,17117,17119,17120,17122,17123,17121,17118,17113,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0120,,SG2,C,R,99,1,1,MP-ID Absender,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0130,23,NAD,M,M,1,1,1,MP-ID Absender,"NAD+MS+9900259000002::9
+NAD+MS+9900259000002::293
+NAD+MS+9900259000002::332","GS1
+DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)
+DE, DVGW Service & Consult GmbH",T,absender,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,,,,,,,,,,,,,,,,
+0220,,SG5,C,D,5,1,2,Kontaktinformationen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0230,24,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:M Mustermann,Informationskontakt,T,absender.ansprechpartner,nachname,,,,Kann,Kann,Kann,Kann,Kann,x,Kann,Kann,x,x,x,Kann,Kann,Kann,Kann,Kann,x,Kann,,,,,,,,,,,,,,,,
+,,,,,,,,,COM+XXXXXXXXXX:EM,,T,absender.ansprechpartner,bei EM = eMailAdresse,,,,,,,,,,,,,,,,,x,x,x,x,x,,,,,,,,,,,,,,,,
+0240,25,COM,C,R,5,5,3,Kommunikationsverbindung,COM+XXXXXXXXXX:TE,Ansprechpartner Kommunikation  FX = Telefax ; TE = Telefon ; AJ = weiteres Telefon ; AL = Handy,T,absender.ansprechpartner,"bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,,,,,,,,,,,,,,,,
+0120,,SG2,C,R,99,1,1,MP-ID Empfänger,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0130,26,NAD,M,M,1,1,1,MP-ID Empfänger,"NAD+MR+9900259000002::9
+NAD+MR+9900259000002::293
+NAD+MR+9900259000002::332","GS1
+DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)
+DE, DVGW Service & Consult GmbH",T,empfaenger,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,,,,,,,,,,,,,,,,
+0140,27,LOC,C,D,99,1,2,Bilanzierungsgebiet/Regelzone,"LOC+107+11YR00000001234Y
+LOC+231+11YR00000001234Y","Bilanzierungsgebiet
+Regelzone","MaBiS
+S",marktlokation,"bilanzierungsgebiet
+regelzone
+-Eingabe von MaLo-ID aus RFF+Z18",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0120,,SG2,C,D,99,1,1,"Marktlokation, Messlokation, Tranche bzw. Ressource",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0130,28,NAD,M,M,1,1,1,Meldepunkt,NAD+DP,Lieferanschrift,,,,,,,x,x,x,x,x,x,,x,x,x,x,x,x,,x,x,x,x,,,,,,,,,,,,,,,,
+0140,29,LOC,C,D,99,1,2,Meldepunkt,LOC+172+DE00014545768S0000000000000003054,"Meldepunkt (Malo, Melo, Tranche, steuerbare Ressource)",S,"anfrage
+reklamation (PID 17122, 17113, 17128)
+
+
+
+eingehend:
+
+
+marktlokation
+marktlokationsTyp[].typ = STANDARD_MARKTLOKATION
+
+messlokation
+tranche
+STEUERBARE_RESSOURCE
+netzlokation","lokationsId
+lokationsTyp (ENUM)
+
+eingehend: 
+zusätzlich auf jeweiliges Geschäftsobjekt
+
+
+marktlokationsId
+messlokationsId
+tranchenId
+ressourcenId
+netzlokationsId","MALO (11-stellig)
+MELO (33-stellig)
+STEUERBARE_RESSOURCE
+TRANCHE
+NELO
+
+
+
+
+
+
+",,,x,x,x,x,x,x,,x,x,x,x,x,x,,x,x,x,x,,,,,,,,,,,,,,,,
+0160,,SG3,C,D,99,99,2,Referenz auf ID der Marktlokation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0170,30,RFF,M,M,1,1,2,Referenz auf ID der Marktlokation,RFF+Z18:57685676748,Marktlokation,S,marktlokation,"marktlokationsId
+
+marktlokationsTyp[].typ = STANDARD_MARKTLOKATION",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,,SG3,C,D,99,99,2,Referenz auf ID der Tranche,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0170,31,RFF,M,M,1,1,2,Referenz auf ID der Tranche,RFF+Z20:57685676748,Z20 Tranche,S,TRANCHE,tranchenId,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,,SG3,C,D,99,99,2,Referenz auf ID der Steuerbaren Ressource,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0170,32,RFF,M,M,1,1,2,Referenz auf ID der Steuerbaren Ressource,RFF+Z38:C816417ST77,Z38 Steuerbare Ressource,S,STEUERBARE_RESSOURCE,ressourcenId,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,,SG3,C,D,99,99,2,Referenz auf ID der Technischen Ressource,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0170,33,RFF,M,M,1,1,2,Referenz auf ID der Technischen Ressource,RFF+Z37:D417MLM8164,Z37 Technische Ressource,S,TECHNISCHE_RESSOURCE,ressourcenId,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,,SG3,C,D,99,99,2,Referenz auf die ID der Marktlokation der Kundenanlage,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0170,34,RFF,M,M,1,1,2,Referenz auf die ID der Marktlokation der Kundenanlage,RFF+Z59:57685676748,Z59 Marktlokation Kundenanlage,S,MARKTLOKATION,"marktlokationsId
+
+marktlokationsTyp[].typ = KUNDENANLAGE",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,,SG3,C,D,99,1,2,Konfigurations-ID,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0170,35,RFF,M,M,1,1,2,Konfigurations-ID,RFF+AGK:34590456ujdfsdghdlktztwqq-053trg,Anwendungsreferenznummer,S,reklamation,konfiguration,,,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,
+0120,,SG2,C,D,99,1,1,Marktlokationsadresse,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0130,36,NAD,M,M,1,1,1,Marktlokationsadresse,NAD+Z23++Hinterhof:ganz:am:Ende:links++Musterstrasse::123:Testortsteil+Testort++12345+DE,Marktlokationsadresse,S,marktlokation.lokationsadresse,"postleitzahl
+ort
+strasse
+hausnummer
+postfach
+adresszusatz
+landescode (ENUM)
+ortsteil
+zusatzInformation.zusatz1-5",,,,x,,x,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0120,,SG2,C,D,99,1,1,Messlokationsadresse,,,, ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0130,37,NAD,M,M,1,1,1,Messlokationsadresse,NAD+Z03++Hinterhof:ganz:am:Ende:links++Musterstrasse::123:Testortsteil+Testort++12345+DE,Messlokationsadresse,S,messlokation.messadresse,"postleitzahl
+ort
+strasse
+hausnummer
+postfach
+adresszusatz
+landescode (ENUM)
+ortsteil
+zusatzInformation.zusatz1-5",,,,,x,,,,Soll,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0120,,SG2,C,D,99,1,1,Kunde des Lieferanten,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0130,38,NAD,M,M,1,1,1,Kunde des Lieferanten,NAD+Z09+++Mustermann:Karl:::Dr.:Z01,Kunde des LF (Z01 Stuktur Personenname; Z02 Struktur Firmenbezeichnung),S,"ENERGIELIEFERVERTRAG.vertragspartner2[geschaeftspartnerrolle=""KUNDE""]","anrede
+name1
+name2
+name3
+name4
+gewerbekennzeichnung",,,,x ^ k,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,,SG3,C,D,99,1,2,Kundenummer beim Lieferanten, ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0170,39,RFF,M,M,1,1,2,Kundenummer beim Lieferanten,RFF+AVC:KD_NB_09881,Kundennummer beim Lieferanten,S,"ENERGIELIEFERVERTRAG.vertragspartner2[geschaeftspartnerrolle=""KUNDE""]","exRefName = ""Kundennummer beim Lieferanten""
+exRefWert",,,,Kann,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0220,,SG5,C,D,5,5,2,Kontaktdaten des Kunden, ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0230,40,CTA,M,M,1,1,2,Kontaktdaten des Kunden,CTA+IC+:X,IC Informationsstelle,T,ansprechpartnerKunde,nachname,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0240,41,COM,C,R,5,5,3,Kommunikationsverbindung,"COM+xx.de:EM
+COM+?+49123462343:FX
+COM+?+49123462343:TE
+COM+?+49123462343:AJ
+COM+?+49123462343:AL","EM E Mail
+FX Telefax
+TE Telefon
+AJ weiteres Telefon
+AL Handy",T.ansprechpartnerKunde,"bei EM = eMailAdresse
+bei other = rufnummern.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0120,,SG2,C,D,99,1,1,Kunde des Messstellenbetreibers,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0130,42,NAD,M,M,1,1,1,Kunde des Messstellenbetreibers,NAD+Z07+++Mustermann:Karl:::Dr.:Z01,Kunde des MSB (Z01 Stuktur Personenname; Z02 Struktur Firmenbezeichnung),S,"MESSSTELLENBETRIEBSVERTRAG.vertragspartner2[geschaeftspartnerrolle=""KUNDE""]","anrede
+name1
+name2
+name3
+name4
+gewerbekennzeichnung",,,,,x ^ k,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0120,,SG2,C,D,99,1,1,Adresse für Treffpunkt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0130,43,NAD,M,M,1,1,1,Adresse für Treffpunkt,NAD+Z24++Hinterhof:ganz:am:Ende:links++Musterstrasse::123:Testortsteil+Testort++12345+DE,Treffpunkt,S,sperrauftrag.treffpunkt,"postleitzahl
+ort
+strasse
+hausnummer
+postfach
+adresszusatz
+landescode (ENUM)
+ortsteil
+zusatzInformation.zusatz1-5",,,,,,,,,,,,Kann,Kann,Kann,,,,,,,,,,,,,,,,,,,,,,,
+0120,,SG2,C,D,99,1,1,MP-ID des Eigentümers der Liste der Zählzeitdefinitionen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0130,44,NAD,M,M,1,1,1,MP-ID des Eigentümers der Liste der Zählzeitdefinitionen,"NAD+VY+1234567890128::9
+NAD+VY+1234567890128::293",andere zugehörige Partei,T,beteiligterMarktpartner,"rollencodenummer
+rollencodetyp",,,,,,,,,,,,,,,,,,,,x 1,,,,,,,,,,,,,,,,,
+0120,,SG2,C,D,99,1,1,MP-ID des NB des Vorgangs der Anmeldung nach WiM,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0130,45,NAD,M,M,1,1,1,MP-ID des NB des Vorgangs der Anmeldung nach WiM,NAD+DDM+1234567890128::9,"9 GS1
+293 DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",T,beteiligterMarktpartner,"rollencodenummer
+rollencodetyp",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0120,,SG2,C,D,99,1,1,Lieferant der Lokation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0130,46,NAD,M,M,99,99,1,Lieferant der Lokation,NAD+SU+1234567890128::9',"9 GS1
+293 DE, BDEW (Bundesverband der Energie und Wasserwirtschaft e.V.)",S,"bei RFF+Z18 -> MARKTLOKATION.marktrollen [marktrolle=LF)
+marktlokationsTyp[].typ = STANDARD_MARKTLOKATION
+
+bei RFF+Z20 -> TRANCHE.marktrollen [marktrolle=LF)
+
+bei RFF+Z59 -> MARKTLOKATION.marktrollen [marktrolle=LF)
+marktlokationsTyp[].typ = KUNDENANLAGE","rollencodenummer
+rollencodetyp",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,,SG3,C,R,99,1,2,Referenz auf die ID der Lokation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0170,47,RFF,M,M,1,1,2,Referenz auf die ID der Lokation,"RFF+Z18:20072281644
+RFF+Z20:20072281644
+RFF+Z59:20072281644","Z18 Marktlokation
+Z20 Tranche
+Z59 Marktlokation Kundenanlage",S,"bei RFF+Z18 -> MARKTLOKATION
+marktlokationsTyp[].typ = STANDARD_MARKTLOKATION
+
+bei RFF+Z20 -> TRANCHE
+
+bei RFF+Z59 -> MARKTLOKATION
+marktlokationsTyp[].typ = KUNDENANLAGE","marktlokationsId
+tranchenId",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0120,,SG2,C,D,99,1,1,ÜNB der Marktlokation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0130,48,NAD,M,M,1,1,1,ÜNB der Marktlokation,NAD+Z31+1234567890128::9,"9 GS1
+293 DE, BDEW (Bundesverband der Energie und Wasserwirtschaft e.V.)",S,MARKTLOKATION.marktrollen [marktrolle=UENB),"rollencodenummer
+rollencodetyp",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,,SG3,C,R,99,1,2,Referenz auf die ID der Marktlokation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0170,49,RFF,M,M,1,1,2,Referenz auf die ID der Marktlokation,RFF+Z18:20072281644,Z18 Marktlokation,S,MARKTLOKATION,marktlokationsId,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0120,,SG2,C,D,99,1,1,MSB der Marktlokation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0130,50,NAD,M,M,1,1,1,MSB der Marktlokation,NAD+DEB+1234567890128::9,"9 GS1
+293 DE, BDEW (Bundesverband der Energie und Wasserwirtschaft e.V.)",S,"Wenn RFF+Z18 vorhanden:
+MARKTLOKATION.marktrollen [marktrolle=MSB)
+marktlokationsTyp[].typ = STANDARD_MARKTLOKATION
+
+Wenn RFF+Z59 vorhanden:
+MARKTLOKATION.marktrollen [marktrolle=MSB)
+marktlokationsTyp[].typ = KUNDENANLAGE","rollencodenummer
+rollencodetyp",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0120,,SG3,C,D,99,1,2,Referenz auf die ID der Marktlokation der Kundenanlage,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0170,51,RFF,M,M,1,1,2,Referenz auf die ID der Marktlokation der Kundenanlage,RFF+Z59:20072281644,Z59 Marktlokation Kundenanlage,S,"MARKTLOKATION
+marktlokationsTyp[].typ = KUNDENANLAGE",marktlokationsId,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1100,,SG29,C,D,200000,200000,1,Positionsteil,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1110,52,LIN,M,M,1,1,1,Positionsteil,"LIN+1+Z42+9990001000649:Z01
+LIN+1+Z69+9990001000649:Z01
+LIN+1+Z70+9990001000649:Z01","Zählzeitdefinition:Artikelnummer
+Schaltzeitdefinition:Artikelnummer
+Leistungskurvendefinition:Artikelnummer",S,auftrag.positionsdaten,"definitionsTyp (ENUM)
+positionsnummer
+
+artikelnummer (ENUM BDEWArtikelnummer)","Z42 = ZAEHLZEIT
+Z69 = SCHALTZEIT
+Z70 = LEISTUNGSKURVEN
+
+
+https://github.com/Hochfrequenz/BO4E-dotnet/blob/main/BO4E/ENUM/BDEWArtikelnummer.cs",,,,,,,,,,,,,,,,x,x,,,,,,,,,,,,,,,,,,,
+1120,53,PIA,C,D,25,25,2,OBIS-Kennzahl,PIA+5+1-1?:1.8.1:SRW,OBIS-KZ,S,"reklamation (PID 17122, 17113)
+auftrag.positionsdaten",obiskennzahl,,obisData.obisCode,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,
+1130,54,IMD,C,D,99,1,2,Grund der Anforderung von Werten,"IMD++Z46
+IMD++Z47
+IMD++Z48
+IMD++Z49
+IMD++Z61
+IMD++Z62
+IMD++Z63","Abgrenzung von Energiemengen
+Abgrenzung
+Wechselereignis
+Zwischenablesung
+Direkter Vertrag MSB - AN
+Direkter Vertrag MSB - ANN
+Änderung im Lokationsbündel",S,auftrag.positionsdaten,anfragegrund,"Z46 = ABGRENZUNG_VON_ENERGIEMENGEN
+Z47 = ABGRENZUNG
+Z48 = WECHSELEREIGNIS
+Z49 = ZWISCHENABLESUNG
+Z61 = DIREKTER_VERTRAG_MSB_AN
+Z62 = DIREKTER_VERTRAG_MSB_ANN
+Z63 = AENDERUNG_IM_LOKATIONSBUENDEL
+
+",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1180,55,DTM,C,D,35,1,2,Zeitpunkt für Wertanfrage,DTM+7:CCYYMMDDHHMMZZZ:303,Gültigkeitsdatum/-zeit,S,auftrag.positionsdaten,gueltigAb,,,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,
+1180,56,DTM,C,D,35,1,2,Beginn Zeitraum für Wertanfrage,DTM+163:CCYYMMDDHHMMZZZ:303,"Verarbeitung, Beginndatum/-zeit",S,"reklamation.zeitraumMesswertanfrage (PID 17122, 17113)
+
+auftrag.positionsdaten",startdatum,,,,,,,x,x,,,x,,,,,,,,,,x,,,,,,,,,,,,,,,,
+1180,57,DTM,C,D,35,1,2,Ende Zeitraum für Wertanfrage,DTM+164:CCYYMMDDHHMMZZZ:303,"Verarbeitung, Endedatum/-zeit",S,"reklamation.zeitraumMesswertanfrage (PID 17122, 17113)
+
+auftrag.positionsdaten",enddatum,,,,,,,x,x,,,x,,,,,,,,,,x,,,,,,,,,,,,,,,,
+1270,58,FTX,C,D,99,1,2,Allgemeine Information (Feld für allgemeine Hinweise),FTX+ACB+++Text1:Text2:Text3:Text4:Text5,Zusätzliche Informationen (für allgemeine Hinweise),S,auftrag.positionsdaten.allgemeineInformationen,info1-5,,,,Kann,Kann,Kann,,,,,,x,x,x,,,,,,,,,,,,,,,,,,,,,,,
+1270,59,FTX,C,D,99,1,2,Beschreibung der Reklamation von Werten und Definitionen,FTX+Z04+++Text1:Text2:Text3:Text4:Text5,"Z04 Werte zu hoch im angegebenen Zeitintervall
+Z05 Werte zu niedrig im angegebenen Zeitintervall
+Z06 Werte fehlen im angegebenen Zeitintervall
+Z07 Übersicht der Definition fehlt
+Z08 Übersicht der Definition ist unplausibel
+Z09 Ausgerollte Definition fehlt
+Z10 Ausgerollte Definition ist unplausibel",S,reklamation,"reklamationsgrund
+reklamationsgrundBemerkung.bemerkung1
+reklamationsgrundBemerkung.bemerkung2
+reklamationsgrundBemerkung.bemerkung3
+reklamationsgrundBemerkung.bemerkung4
+reklamationsgrundBemerkung.bemerkung5","Z04 = WERTE_ZU_HOCH
+Z05 = WERTE_ZU_NIEDRIG
+Z06 = WERTE_FEHLEN
+Z07 = UEBERSICHT_FEHLT
+Z08 = UEBERSICHT_UNPLAUSIBEL
+Z09 = AUSGEROLLTE_DEFINITION_FEHLT
+Z10 = AUSGEROLLTE_DEFINITION_UNPLAUSIBEL",,,,,,,,,,,,,,,,"Z07
+Z08
+Z09
+Z10",,,,"Z04
+Z05
+Z06",,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,1,2,Profilgruppe,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,60,CCI,M,M,1,1,2,Profilgruppe,CCI+Z02,"Z02 Standardlastprofil
+Z03 tagesparameterabhängiges Lastprofil
+Z04 Standardeinspeiseprofil
+Z05 tagesparameterabhängiges Einspeiseprofil","MaBiS
+S",bilanzierung.lastprofile,profilart,"Z02 = STANDARDLASTPROFIL
+Z03 = TAGESPARAMETERABHÄNGIGES_LASTPROFIL
+Z04 = STANDARDEINSPEISEPROFIL
+Z05 = TAGESPARAMETERABHÄNGIGES_EINSPEISEPROFIL",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,1,2,Prognosegrundlage,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,61,CCI,M,M,1,1,2,Prognosegrundlage,CCI+++Z77,Prognosegrundlage,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,,,,,
+1300,62,CAV,C,R,10,1,3,Prognosegrundlage,CAV+Z38,"Z38 Prognose auf Basis von Profilen
+Z39 Prognose auf Basis von Werten",S,bilanzierung,prognosegrundlage (ENUM),"Z38 = PROFILE
+Z39 = WERTE",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,1,2,Konzessionsabgabe,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,63,CCI,M,M,1,1,2,Konzessionsabgabe,CCI+++Z08,Konzessionsabgabe,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,,,,,,
+1300,64,CAV,C,R,10,1,3,Konzessionsabgabe,"CAV+ZA9
+CAV+ZB0","ZA9 Energie in Schwachlastzeiten im Zusammenhang mit Schwachlast_x0002_Konzessionsabgabe separat erfassen
+ZB0 Energie in Schwachlastzeiten im Zusammenhang mit dem Entfall der Schwachlast-Konzessionsabgabe nicht separat erfassen",S,auftrag.positionsdaten,energieerfassung,"ZA9 = SEPARAT_ERFASSEN
+ZB0 = NICHT_SEPARAT_ERFASSEN",,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,1,2,Zugeordnete Zählzeitdefinition,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,65,CCI,M,M,1,1,2,Zugeordnete Zählzeitdefinition,CCI+Z39++XYZ,Z39 Code der Zählzeitdefinition,S,zaehlzeitdefinition.zaehlzeiten,code,,,,,,,,,,,,,,,,,x,x,,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,1,2,Zugeordnete Schaltzeitdefinition,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,66,CCI,M,M,1,1,2,Zugeordnete Schaltzeitdefinition,CCI+Z52++XYZ,Z52 Code der Schaltzeitdefinition,S,schaltzeitdefinition.schaltzeiten,code,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,1,2,Zugeordnete Leistungskurvendefinition,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,67,CCI,M,M,1,1,2,Zugeordnete Leistungskurvendefinition,CCI+Z53++XYZ,Z53 Code der Leistungskurvendefinition,S,leistungskurvendefinition.leistungskurven,code,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,1,2,Geräteart,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,68,CCI,M,M,1,1,2,Geräteart,CCI+++Z25,"Z25 Wandler
+Z26 Kommunikationseinrichtung
+Z27 Technische Steuereinrichtung
+Z64 Mengenumwerter
+Z75 Smartmeter-Gateway
+Z76 Steuerbox
+ZD4 Zähleinrichtung",S,zaehler.geraete.geraeteeigenschaften,geraetetyp,"Z25 = WANDLER
+Z26 = KOMMUNIKATIONSEINRICHTUNG
+Z27 = TECHNISCHESTEUEREINRICHTUNG
+Z64 = MENGENUMWERTER
+Z75 = SMARTMETERGATEWAY
+Z76 = STEUERBOX
+ZD4 = OPTIONALE_ZUS_ZAEHLEINRICHTUNG",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1450,,SG34,C,D,9999,1,2,Versionsangabe der Summenzeitreihe,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1460,69,RFF,M,M,1,1,2,Versionsangabe der Summenzeitreihe,RFF+AUU:20201231132445?+00,Referenz auf eine Zeitreihe,MaBiS,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1450,,SG34,C,D,9999,3,2,Gerätenummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1460,70,RFF,M,M,1,1,2,Gerätenummer,RFF+Z09:8465929523,Gerätenummer,S,zaehler,"geraete.geraetenummer
+
+weitere RFF+Z09 auf geraete.weitereGeraetenummern",,,, ,Kann,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1450,,SG34,C,D,9999,1,2,Positionsnummer aus dem Angebot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1460,71,RFF,M,M,1,1,2,Positionsnummer aus dem Angebot,RFF+Z03:12,Positionsnummer des Angebots,S,auftrag.positionsdaten,positionsnummerAngebot,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1630,,SG38,C,D,9999,1,2,MaBiS-ZP,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1640,72,LOC,M,M,1,1,2,Meldepunkt,LOC+172+DE00014545768S0000000000000003054,Meldepunkt (MaBiS-ZPB),MaBiS,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1630,,SG38,C,D,9999,1,2,Bilanzkreis für Strom,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1640,73,LOC,M,M,1,1,2,Bilanzkreis für Strom,LOC+237+11XMUSTERXY----O,Bilanzkreis,MaBiS,bilanzierung,bilanzkreis,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1100,,SG29,C,D,200000,200000,1,Erforderliches Produkt der Marktlokation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1110,74,LIN,M,M,1,1,1,Erforderliches Produkt der Marktlokation,LIN+1+Z54,Z54 Erforderliches Produkt der Marktlokation,S,"auftrag.positionsdaten
+
+zusätzlich (ausgehend):
+
+AUFTRAG.positionsdaten[]","positionsnummer
+
+
+
+lokationsId",,,,,,,,,,,,,,,,,,x,x,,,,,,,,,,,,,,,,,,
+1120,75,PIA,C,R,25,1,2,Erforderliches Produkt der Marktlokation,PIA+5+9991000000078:Z11,Z11 Produkt,S,marktlokation.zaehlwerke,messprodukt,,,,,,,,,,,,,,,,,,x,x,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,1,2,Zugeordnete Zählzeitdefinition,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,76,CCI,M,M,1,1,2,Zugeordnete Zählzeitdefinition,"CCI+Z39++XYZ
+CCI+Z41","Z39 Code der Zählzeitdefinition
+Z41 Keine Zählzeit für Messprodukt erforderlich",S,marktlokation.zaehlwerke.zaehlzeiten,zaehlzeitDefinition,"Z39 = 1:1
+Z41 = null",,,,,,,,,,,,,,,,,x,x,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,1,2,Messprodukt für Netzbetreiber relevant,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,77,CCI,M,M,1,1,2,Messprodukt für Netzbetreiber relevant,CCI+++ZA8,NB,,,,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,,
+1300,78,CAV,C,R,10,4,3,Verwendungszweck der Werte,CAV+Z84,"Z84 Netznutzungsabrechnung
+Z85 Bilanzkreisabrechnung
+Z86 Mehrmindermengenabrechnung
+Z92 Übermittlung an das HKNR
+ZE1 Es liegt kein Verwendungszweck vor",S,"marktlokation.zaehlwerke.verwendungszwecke
+","marktrolle = NB
+zweck","Z84 = NETZNUTZUNGSABRECHNUNG
+Z85 = BILANZKREISABRECHNUG
+Z86 = MEHRMINDERMENGENABRECHNUNG
+Z92 = UEBERMITTLUNG_AN_DAS_HKNR
+ZE1 = ES_LIEGT_KEIN_VERWENDUNGSZWECK_VOR",,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,1,2,Messprodukt für Lieferant relevant,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,79,CCI,M,M,1,1,2,Messprodukt für Lieferant relevant,CCI+++ZA7,LF,,,,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,,
+1300,80,CAV,C,R,10,4,3,Verwendungszweck der Werte,CAV+Z84,"Z47 Endkundenabrechnung
+Z84 Netznutzungsabrechnung
+Z85 Bilanzkreisabrechnung
+Z86 Mehrmindermengenabrechnung
+ZE1 Es liegt kein Verwendungszweck vor",S,"marktlokation.zaehlwerke.verwendungszwecke
+
+","marktrolle = LF
+zweck","Z47 = ENDKUNDENABRECHNUNG
+Z84 = NETZNUTZUNGSABRECHNUNG
+Z85 = BILANZKREISABRECHNUNG
+Z86 = MEHRMINDERMENGENABRECHNUNG
+ZE1 = ES_LIEGT_KEIN_VERWENDUNGSZWECK_VOR",,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,1,2,Messprodukt für Übertragungsnetzbetreiber relevant,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,81,CCI,M,M,1,1,2,Messprodukt für Übertragungsnetzbetreiber relevant,CCI+++ZA9,ÜNB,,,,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,,
+1300,82,CAV,C,R,10,4,3,Verwendungszweck der Werte,CAV+Z85,"Z85 Bilanzkreisabrechnung
+ZB5 Zur Ermittlung der Ausgeglichenheit von Bilanzkreisen",S,"marktlokation.zaehlwerke.verwendungszwecke
+
+","marktrolle = UENB
+zweck","Z85 = BILANZKREISABRECHNUNG
+ZB5 = ERMITTLUNG_AUSGEGLICHENHEIT_BILANZKREIS",,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,,
+1100,,SG29,C,D,200000,200000,1,Erforderliches Produkt der Tranche,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1110,83,LIN,M,M,1,1,1,Erforderliches Produkt der Tranche,LIN+1+Z16,Erforderliches Produkt der Tranche,S,auftrag.positionsdaten,positionsnummer,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,,
+1120,84,PIA,C,R,25,1,2,Erforderliches Messprodukt der Tranche,PIA+5+9991000000143:Z11,Z11 Produkt,S,tranche.zaehlwerke,messprodukt,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,,
+1130,85,IMD,C,D,99,1,2,Leistungsbeschreibung Konfiguration,"IMD++Z64
+IMD++Z65","Z64 Neukonfiguration
+Z65 Konfiguration unverändert",S,auftrag.positionsdaten,anfragegrund,"Z64 = NEUKONFIGURATION
+Z65 = KONFIGURATION_UNVERAENDERT",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1150,86,QTY,C,D,99,1,2,Prozentualer Anteil der Tranche an der erzeugenden Marktlokation,QTY+11:4.12:P1,"11 Aufteilungsmenge
+P1 Prozent",S,tranche.aufteilungsmenge,produktCode,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,1,2,Basis zur Bildung der Tranchengröße,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,87,CCI,M,M,1,1,2,Basis zur Bildung der Tranchengröße,CCI+Z37++ZD1,"ZD1 Prozentual
+ZD2 Aufteilungsfaktor auf Basis von Referenzenträger/installierter Leistung",S,TRANCHE[],bildungTranchengroesse,"ZD1 = PROZENTUAL
+ZD2 = AUFTEILUNGSFAKTOR",,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,1,2,Messprodukt für Netzbetreiber relevant,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,88,CCI,M,M,1,1,2,Messprodukt für Netzbetreiber relevant,CCI+++ZA8,NB,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1300,89,CAV,C,R,10,4,3,Verwendungszweck der Werte,CAV+Z85,"Z85 Bilanzkreisabrechnung
+Z92 Übermittlung an das HKNR",S,tranche.zaehlwerke.verwendungszwecke,"marktrolle = NB
+zweck","Z85 = BILANZKREISABRECHNUNG
+Z92 = UEBERMITTLUNG_AN_DAS_HKNR",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,1,2,Messprodukt für Lieferant relevant,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,90,CCI,M,M,1,1,2,Messprodukt für Lieferant relevant,CCI+++ZA7,LF,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1300,91,CAV,C,R,10,4,3,Verwendungszweck der Werte,CAV+Z85,"Z47 Endkundenabrechnung
+Z85 Bilanzkreisabrechnung",S,tranche.zaehlwerke.verwendungszwecke,"marktrolle = LF
+zweck","Z47 = ENDKUNDENABRECHNUNG
+Z85 = BILANZKREISABRECHNUNG",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,1,2,Messprodukt für Übertragungsnetzbetreiber relevant,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,92,CCI,M,M,1,1,2,Messprodukt für Übertragungsnetzbetreiber relevant,CCI+++ZA9,ÜNB,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1300,93,CAV,C,R,10,4,3,Verwendungszweck der Werte,CAV+Z85,"Z85 Bilanzkreisabrechnung
+ZB5 Zur Ermittlung der Ausgeglichenheit von Bilanzkreisen",S,tranche.zaehlwerke.verwendungszwecke,"marktrolle = UENB
+zweck","Z85 = BILANZKREISABRECHNUNG
+ZB5 = ERMITTLUNG_AUSGEGLICHENHEIT_BILANZKREIS",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1450,,SG34,C,D,9999,1,2,Referenz auf ID der Tranche,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1460,94,RFF,M,M,1,1,2,Referenz auf ID der Tranche,RFF+Z20:DE000562668020O6G56M11SN51G21M24S,Tranche,S,tranche,tranchenId,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1100,,SG29,C,D,200000,200000,1,Erforderliches Produkt der Messlokation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1110,95,LIN,M,M,1,1,1,Erforderliches Produkt der Messlokation,LIN+1+Z19,Z19 Erforderliches Produkt der Messlokation,S,auftrag.positionsdaten,positionsnummer,,,,,,,,,,,,,,,,,,,, ,,,,,,,,,,,,,,,,,
+1120,96,PIA,C,R,25,1,2,Erforderliches Produkt der Messlokation,PIA+5+9988000000154:Z11,Z11 Produkt,S,messlokation.zaehlwerke,messprodukt,,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,1,2,Weitere Beschreibung erforderliches Messprodukt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,97,CCI,M,M,1,1,1,Weitere Beschreibung erforderliches Messprodukt,CCI+Z35,Z35 Beschreibung erforderlicher Wert,,,,,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,
+1300,98,CAV,C,R,10,1,3,Notwendigkeit einer zweiten Messung,CAV+ZC9:::Z06,"Z06 vorhanden
+Z07 nicht vorhanden",S,messlokation.zaehlwerke,notwendigkeitZweiteMessung,"Z06 = VORHANDEN
+Z07 = NICHT_VORHANDEN",,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,
+1300,99,CAV,C,R,10,1,3,Werteübermittlung an den NB aufgrund weiterem Verwendungszweck,CAV+Z88:::Z06,"Z06 vorhanden
+Z07 nicht vorhanden",S,messlokation.zaehlwerke,werteuebermittlungVerwendungszweck,"Z06 = VORHANDEN
+Z07 = NICHT_VORHANDEN",,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,1,2,Zugeordnete Zählzeitdefinition,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,100,CCI,M,M,1,1,2,Zugeordnete Zählzeitdefinition,"CCI+Z39++XYZ
+CCI+Z41","Z39 Code der Zählzeitdefinition
+Z41 Keine Zählzeit für Messprodukt erforderlich",S,messlokation.zaehlwerke.zaehlzeiten,zaehlzeitDefinition,"Z39 = 1:1
+Z41 = null",,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,,,,
+1450,,SG34,C,D,9999,1,2,Referenz auf ID der Messlokation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1460,101,RFF,M,M,1,1,2,Referenz auf ID der Messlokation,RFF+Z19:DE000562668020O6G56M11SN51G21M24S,Messlokation,S,"messlokation
+
+
+
+zusätzlich:
+
+AUFTRAG.positionsdaten[]","messlokationsId
+
+
+
+
+lokationsId",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1100,,SG29,C,D,200000,1,1,Erforderliches Produkt der Netzlokation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1110,102,LIN,M,M,1,1,1,Erforderliches Produkt der Netzlokation,LIN+1+Z55,Z55 Erforderliches Produkt der Netzlokation,S,auftrag.positionsdaten,positionsnummer,,,,, ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1120,103,PIA,C,R,25,1,2,Erforderliches Produkt der Netzlokation,PIA+5+9991000000656:Z11,Z11 Produkt,S,netzlokation.zaehlwerke,messprodukt,,,,,x,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,1,2,Messprodukt für Netzbetreiber relevant,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,104,CCI,M,M,1,1,2,Messprodukt für Netzbetreiber relevant,CCI+++ZA8,ZA8 NB,,,,,,,,x,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1300,105,CAV,C,R,10,1,3,Verwendungszweck der Werte,CAV+ZD1,ZD1 Blindarbeitabrechnung / Betriebsführung,S,netzlokation.zaehlwerke.verwendungszwecke,"marktrolle = NB
+zweck","ZD1 = BLINDARBEITABRECHNUNG_BETRIEBSFUEHRUNG
+ZE1 = ES_LIEGT_KEIN_VERWENDUNGSZWECK_VOR",,,,x,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,1,2,Messprodukt für Lieferant relevant,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,106,CCI,M,M,1,1,2,Messprodukt für Lieferant relevant,CI+++ZA7,ZA7 LF,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1300,107,CAV,C,R,10,1,3,Verwendungszweck der Werte,CAV+ZD1,"ZD1 Blindarbeitabrechnung / Betriebsführung
+ZE1 Es liegt kein Verwendungszweck vor",S,netzlokation.zaehlwerke.verwendungszwecke,"marktrolle = LF
+zweck","ZD1 = BLINDARBEITABRECHNUNG_BETRIEBSFUEHRUNG
+ZE1 = ES_LIEGT_KEIN_VERWENDUNGSZWECK_VOR",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1100,,SG29,C,D,200000,200000,1,Erforderliches Produkt der Steuerbaren Ressource,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1110,108,LIN,M,M,1,1,1,Erforderliches Produkt der Steuerbaren Ressource,LIN+1+Z56,Z56 Erforderliches Produkt der Steuerbaren Ressource,S,auftrag.positionsdaten,positionsnummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1120,109,PIA,C,R,25,1,2,Erforderliches Produkt der Steuerbaren Ressource,PIA+5+9991000002371:Z11,Z11 Produkt,S,"SR aus LOC+172:
+
+STEUERBARE_RESSOURCE[].erforderlicheProdukte[]",produktCode,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1100,,SG29,C,D,200000,1,1,Erforderliches Produkt Schaltzeitdefinitionen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1110,110,LIN,M,M,1,1,1,Erforderliches Produkt Schaltzeitdefinitionen,LIN+1+Z64,Z64 Erforderliches Produkt Schaltzeitdefinitionen,S,auftrag.positionsdaten,positionsnummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1120,111,PIA,C,R,25,1,2,Erforderliches Produkt Schaltzeitdefinitionen,PIA+5+9991000000713:Z11,Z11 Produkt,S,SCHALTZEITDEFINITIONEN.schaltzeiten,konfigurationsprodukt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1270,112,FTX,C,D,99,1,2,Beschreibung der Reklamation der Konfiguration,FTX+Z19+++X:X:X:X:X',"Z19 Konfiguration wirkt nicht
+Z20 Konfiguration wirkt teilweise
+Z21 Werte werden nicht nach Vorgaben übermittelt",S,reklamation,"reklamationsgrund
+reklamationsgrundBemerkung.bemerkung1
+reklamationsgrundBemerkung.bemerkung2
+reklamationsgrundBemerkung.bemerkung3
+reklamationsgrundBemerkung.bemerkung4
+reklamationsgrundBemerkung.bemerkung5","Z19 = KONFIGURATION_WIRKT_NICHT
+Z20 = KONFIGURATION_WIRKT_TEILWEISE
+Z21 = WERTE_WERDEN_NICHT_NACH_VORGABEN_UEBERMITTELT",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,R,999,1,2,Zugeordnete Schaltzeitdefinition,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,113,CCI,M,M,1,1,2,Zugeordnete Schaltzeitdefinition,CCI+Z52++NBX,Z52 Code der Schaltzeitdefinition,S,schaltzeitdefinition.schaltzeiten,code,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1100,,SG29,C,D,200000,1,1,Erforderliches Produkt Leistungskurvendefinitionen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1110,114,LIN,M,M,1,1,1,Erforderliches Produkt Leistungskurvendefinitionen,LIN+1+Z65,Z65 Erforderliches Produkt Leistungskurvendefinitionen,S,auftrag.positionsdaten,positionsnummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1120,115,PIA,C,R,25,1,2,Erforderliches Produkt Leistungskurvendefinitionen,PIA+5+9991000000721:Z11,Z11 Produkt,S,LEISTUNGSKURVENDEFINITIONEN.leistungskurven,konfigurationsprodukt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1270,116,FTX,C,R,100,1,2,Beschreibung der Reklamation der Konfiguration,FTX+Z19+++X:X:X:X:X',"Z19 Konfiguration wirkt nicht
+Z20 Konfiguration wirkt teilweise
+Z21 Werte werden nicht nach Vorgaben übermittelt",S,reklamation,"reklamationsgrund
+reklamationsgrundBemerkung.bemerkung1
+reklamationsgrundBemerkung.bemerkung2
+reklamationsgrundBemerkung.bemerkung3
+reklamationsgrundBemerkung.bemerkung4
+reklamationsgrundBemerkung.bemerkung5","Z19 = KONFIGURATION_WIRKT_NICHT
+Z20 = KONFIGURATION_WIRKT_TEILWEISE
+Z21 = WERTE_WERDEN_NICHT_NACH_VORGABEN_UEBERMITTELT",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,R,999,1,2,Zugeordnete Leistungskurvendefinition,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,117,CCI,M,M,1,1,2,Zugeordnete Leistungskurvendefinition,CCI+Z53++NBF,Z53 Code der Leistungskurvendefinition,S,leistungskurvendefinition.leistungskurven,code,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1100,,SG29,C,D,200000,1,1,Erforderliches Produkt Ad-hoc-Steuerkanal,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1110,118,LIN,M,M,1,1,1,Erforderliches Produkt Ad-hoc-Steuerkanal,LIN+1+Z66,Z66 Erforderliches Produkt Ad-hoc-Steuerkanal,S,auftrag.positionsdaten,positionsnummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1120,119,PIA,C,R,25,1,2,Erforderliches Produkt Ad-hoc-Steuerkanal,PIA+5+9991000000739:Z11,Z11 Produkt,S,AD_HOC_STEUERKANAL,konfigurationsprodukt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1270,120,FTX,C,D,99,1,2,Beschreibung der Reklamation der Konfiguration,FTX+Z19+++X:X:X:X:X',"Z19 Konfiguration wirkt nicht
+Z20 Konfiguration wirkt teilweise
+Z21 Werte werden nicht nach Vorgaben übermittelt",S,reklamation,"reklamationsgrund
+reklamationsgrundBemerkung.bemerkung1
+reklamationsgrundBemerkung.bemerkung2
+reklamationsgrundBemerkung.bemerkung3
+reklamationsgrundBemerkung.bemerkung4
+reklamationsgrundBemerkung.bemerkung5","Z19 = KONFIGURATION_WIRKT_NICHT
+Z20 = KONFIGURATION_WIRKT_TEILWEISE
+Z21 = WERTE_WERDEN_NICHT_NACH_VORGABEN_UEBERMITTELT",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1100,,SG29,C,D,200000,1,1,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1110,121,LIN,M,M,1,1,1,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,LIN+1+Z67,Z67 Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,S,auftrag.positionsdaten,positionsnummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1120,122,PIA,C,R,25,1,2,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,PIA+5+9991000000739:Z11,Z11 Produkt,S,WERTE_NACH_TYP2,messprodukt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1270,123,FTX,C,D,99,1,2,Beschreibung der Reklamation der Konfiguration,FTX+Z19+++X:X:X:X:X',"Z19 Konfiguration wirkt nicht
+Z20 Konfiguration wirkt teilweise
+Z21 Werte werden nicht nach Vorgaben übermittelt",S,reklamation,"reklamationsgrund
+reklamationsgrundBemerkung.bemerkung1
+reklamationsgrundBemerkung.bemerkung2
+reklamationsgrundBemerkung.bemerkung3
+reklamationsgrundBemerkung.bemerkung4
+reklamationsgrundBemerkung.bemerkung5","Z19 = KONFIGURATION_WIRKT_NICHT
+Z20 = KONFIGURATION_WIRKT_TEILWEISE
+Z21 = WERTE_WERDEN_NICHT_NACH_VORGABEN_UEBERMITTELT",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1100,,SG29,C,D,200000,1,1,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1110,124,LIN,M,M,1,1,1,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,LIN+1+Z68,Z68 Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,S,auftrag.positionsdaten,positionsnummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1120,125,PIA,C,R,25,1,2,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,PIA+5+9991000000739:Z11,Z11 Produkt,S,WERTE_NACH_TYP2,konfigurationsprodukt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1270,126,FTX,C,R,99,1,2,Zieladresse URI,FTX+Z17+++X:X',Z17 Zieladresse URI,S,WERTE_NACH_TYP2.zieladresse,zieladresse1-2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1270,127,FTX,C,R,99,1,2,Zertifikatsaussteller (Issuer),"FTX+Z24+++SERIALNUMBER = 3, C = DE, O = SM-PKI-DE, CN = T-Systems-EnergyCA.CA:X:X:X:X'",Z24 Aussteller (Issuer),S,WERTE_NACH_TYP2.aussteller,aussteller1-5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1270,128,FTX,C,R,99,1,2,Zertifikatsnutzer (Subject),"FTX+Z23+++L = Stadt, SERIALNUMBER = 1, C = DE,OU = Firma GmbH, O = SM-PKI-DE,CN = Firma.EMT.Erweit
+erung:X:X:X:X'",Z23 Zertifikatsnutzer (Subject),S,WERTE_NACH_TYP2.zertifikatsNutzer,zertifikatsNutzer1-5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1270,129,FTX,C,D,99,1,2,Beschreibung der Reklamation der Konfiguration,FTX+Z19+++X:X:X:X:X',"Z19 Konfiguration wirkt nicht
+Z20 Konfiguration wirkt teilweise
+Z21 Werte werden nicht nach Vorgaben übermittelt",S,reklamation,"reklamationsgrund
+reklamationsgrundBemerkung.bemerkung1
+reklamationsgrundBemerkung.bemerkung2
+reklamationsgrundBemerkung.bemerkung3
+reklamationsgrundBemerkung.bemerkung4
+reklamationsgrundBemerkung.bemerkung5","Z19 = KONFIGURATION_WIRKT_NICHT
+Z20 = KONFIGURATION_WIRKT_TEILWEISE
+Z21 = WERTE_WERDEN_NICHT_NACH_VORGABEN_UEBERMITTELT",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,R,999,1,2,Änderungsmöglichkeit der Konfiguration im SMGW,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,130,CCI,M,M,1,1,2,Änderungsmöglichkeit der Konfiguration im SMGW,CCI+Z54++ZF7,"ZF7 selbstständige Änderungsmöglichkeit erforderlich
+ZF8 selbstständige Änderungsmöglichkeit nicht erforderlich",S,WERTE_NACH_TYP2,aenderungsmoeglichkeitKonfiguration,"ZF7 = ERFORDERLICH
+ZF8 = NICHT_ERFORDERLICH",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,999,2,Schwellwerte,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,131,CCI,M,M,1,1,2,Schwellwerte,CCI+Z60++9991000001042:::207.22:168.81',Z60 Schwellwerte,S,WERTE_NACH_TYP2,"schwellwerte.konfigurationsprodukt
+schwellwerte.obererSchwellwert
+schwellwerte.untererSchwellwert",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1100,,SG29,C,D,200000,1,1,Erforderliches Produkt Abrechnungsdaten,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1110,132,LIN,M,M,1,1,1,Erforderliches Produkt Abrechnungsdaten,LIN+1+Z79,Z79 Bestandteil eines Produktpakets,S,auftrag.positionsdaten,positionsnummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1120,133,PIA,C,R,25,1,2,Erforderliches Produkt Abrechnungsdaten,PIA+5+9991000002016:Z11,Z11 Produkt,S,MARKTLOKATION[].erforderlichesProduktpaket[].produkt[],produktCode,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1270,134,FTX,C,D,99,1,2,Link zur Abtretungserklärung / Vollmacht vom Kunden,FTX+Z13++KWH_2007?+22!KW+https?://www.stadtwerke xy.de/LF_Abtretung?+_23e8rodfhjewrqretgf:X:X:X:X,Z13 Internetseite,T,abtretungserklaerung,"passwort
+link1
+link2
+link3
+link4
+link5",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1280,,SG30,C,D,999,1,2,Produkteigenschaft,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1290,135,CCI,M,M,1,1,2,Produkteigenschaft,CCI+Z66,Z66 Produkteigenschaft,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1300,136,CAV,C,D,10,1,3,Code der Produkteigenschaft,CAV+ZH9:::9991000002131,ZH9 Code der Produkteigenschaft,S,MARKTLOKATION[].erforderlichesProduktpaket[].produkt[],codeProdukteigenschaft,,,,,x,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1300,137,CAV,C,D,10,1,3,Wertedetails zum Produkt,CAV+ZV4:::11XENBW V O,ZV4 Wertedetails zum Produkt,S,MARKTLOKATION[].erforderlichesProduktpaket[].produkt[],wertedetails,,,,,x,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+2490,138,UNS,M,M,1,1,0,Abschnitts-Kontrollsegment,UNS+S,Trennung von Positions- und Summenteil,,,,,,,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,,x,x,,,,,,,,,,,,,,,,
+2560,139,UNT,M,M,1,1,0,Nachrichten-Endesegment,UNT+47+1,,,,,,,,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,,x,x,,,,,,,,,,,,,,,,

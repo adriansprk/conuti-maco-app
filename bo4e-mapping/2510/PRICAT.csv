@@ -1,0 +1,449 @@
+Nummer,Nr.,Typ,,,Max. Wdh,,,,,,stamm- oder transaktionsdaten,BO Objekt,BO4E - Feld,Mapping EDI <-> BO4E,powercloud - Variable,Schnittstelle,27001,27002,27003,,,,,,,,,,,,,,,,,,,,
+,,UNB,,,,,,,,,,,,,,,für NB irrelevant!,,,,,,,,,,,,,,,,,,,,,,
+0010,1,UNH,M,M,1,1,0,Nachrichten-Kopfsegment,UNH+767097019+PRICAT:D:20B:UN:2.0e,,,,,,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0020,2,BGM,M,M,1,1,0,Beginn der Nachricht,BGM+Z54+1313+++11,"Z04 Ausgleichsenergiepreis
+Z32 Preisblatt Messstellenbetrieb
+Z54 Preisblatt Sperren / Entsperren und
+Verzugskosten
+Z64 Preisblatt Netznutzung ohne
+gemeindespezifische Konzessionsabgaben
+Z67 Preisblatt Blindarbeit
+Z70 Preisblatt Netznutzung: Gemeindespezifische Konzessionsabgaben
+Z77 Preisblatt Konfigurationen
+Z94 Preisblatt Technik","T
+
+
+S","
+
+
+preisblatt","kategorie 1:1
+dokumentennummer 
+
+
+nichtGenutzt
+","
+
+
+11 = true",,?,Z04,Z32,"Z54
+Z64
+Z67
+Z70",,,,,,,,,,,,,,,,,,,,
+0030,3,DTM,M,D,35,1,1,Betrachtungszeitintervall,DTM+492:201105:610,CCYYMM,S,preisblatt,bilanzierungsdatum,,,,x,,,,,,,,,,,,,,,,,,,,,,
+0030,4,DTM,M,M,35,1,1,Nachrichtendatum,DTM+137:199904081315?+00:303,CCYYMMDDHHMMZZZ,T,,nachrichtendatum,UTC -> 303,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+0030,5,DTM,M,D,35,1,1,Gültigkeitsbeginn,DTM+157:199904081315?+00:303,CCYYMMDDHHMMZZZ,S,preisblatt.gueltigkeit,"startdatum
+",UTC -> 303,,"/api/processes/market-communication/process-document-process-message/{guid}
+validFrom",,x,x,,,,,,,,,,,,,,,,,,,,
+0060,,SG1,C,D,99,1,1,Vorgängerversion,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0070,6,RFF,M,M,1,1,1,Vorgängerversion,RFF+ACW:123GSDF3434,ACW Referenznummer einer vorangegangenen Nachricht,T,,vorgangsreferenznummer,,,?,,Soll,Soll,,,,,,,,,,,,,,,,,,,,
+0060,,SG1,C,D,99,1,1,Preise des Netzbetreibers,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0070,7,RFF,M,M,1,1,1,Preise des Netzbetreibers,RFF+Z56:9907165000001,Z56 Preise des Netzbetreibers,S,preisblatt,preisNetzbetreiberCodenummer,,,,,,,,,,,,,,,,,,,,,,,,,,
+0060,,SG1,C,R,99,1,1,Prüfidentifikator,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0070,8,RFF,M,M,1,1,1,Prüfidentifikator,"RFF+Z13:27001
+RFF+Z13:27002
+RFF+Z13:27003","27001 Übermittlung der Ausgleichsenergiepreise
+27002 Preisblatt MSB-Leistungen
+27003 Preisblatt NB-Leistungen",T,,pruefidentifikator,,,?,x,x,x,,,,,,,,,,,,,,,,,,,,
+0090,,SG2,C,R,99,1,1,Empfänger-ID,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,9,NAD,M,M,1,1,1,Empfänger-ID,NAD+MR+4078901000029::9,"9 GS1
+293 DE, BDEW
+332 DE, DVGW Service & Consult GmbH",T,empfaenger,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,ok,x,x,x,,,,,,,,,,,,,,,,,,,,
+0090,,SG2,C,R,99,1,1,Sender-ID,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0100,10,NAD,M,M,1,1,1,Sender-ID,NAD+MS+4012345000023::9,"9 GS1
+293 DE, BDEW
+332 DE, DVGW Service & Consult GmbH",T,absender,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,ok,x,x,x,,,,,,,,,,,,,,,,,,,,
+0110,11,LOC,C,D,25,1,2,Regelzone,LOC+231+10YDE-VNBNET---9,,S,preisblatt,regelzone,,,,x,,,,,,,,,,,,,,,,,,,,,,
+0150,,SG4,C,O,5,1,2,CTA-COM,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0160,12,CTA,M,M,1,1,2,Ansprechpartner,CTA+IC+:P GETTY,IC Informationskontakt,S,absender.ansprechpartner,nachname,,,?,Kann,Kann,Kann,,,,,,,,,,,,,,,,,,,,
+0170,13,COM,C,R,5,5,3,Kommunikationsverbindung,COM+003222271020:TE,"EM Elektronische Post
+FX Telefax
+TE Telefon
+AJ weiteres Telefon
+AL Handy",S,absender.ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummer.rufnummertyp =""Mappingwert"" und rufnummer.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,?,x,x,x,,,,,,,,,,,,,,,,,,,,
+0220,,SG6,C,D,20,1,1,Währungsangaben,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0230,14,CUX,M,M,1,1,1,Währungsangaben,CUX+2:EUR:8,,S,preisblatt.preispositionen,preiseinheit,"EUR -> EUR
+CT -> CT",,?,x,x,x,,,,,,,,,,,,,,,,,,,,
+0590,,SG17,C,D,1000,1,1,PGI-SG36,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0600,15,PGI,M,M,1,1,1,Produktgruppen-Information,PGI+9,9 keine Gruppe genutzt,,,,,,ok,x,x,x,,,,,,,,,,,,,,,,,,,,
+1310,,SG36,C,R,999999,999999,2,LIN-PIA-IMD-SG40,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1320,16,LIN,M,M,1,1,2,Positionsdaten,LIN+1++9990001000649:Z01,"Z01 Artikelnummer
+Z09 Artikel-ID",S,preisblatt.preispositionen,"positionsnummer
+bdewArtikelnummer (Z01 -> ENUM BDEWArtikelnummer)
+artikelId (Z09 -> 1:1)","9990001000053 -> LEISTUNG
+9990001000079 -> LEISTUNG_PAUSCHAL
+9990001000087 -> GRUNDPREIS
+9990001000128 -> REGELENERGIE_ARBEIT
+9990001000136 -> REGELENERGIE_LEISTUNG
+9990001000144 -> NOTSTROMLIEFERUNG_ARBEIT
+9990001000152 -> NOTSTROMLIEFERUNG_LEISTUNG
+9990001000160 -> RESERVENETZKAPAZITAET
+9990001000178 -> RESERVELEISTUNG
+9990001000186 -> ZUSAETZLICHE_ABLESUNG
+9990001000219 -> PRUEFGEBUEHREN_AUSSERPLANMAESSIG
+9990001000269 -> WIRKARBEIT
+9990001000285 -> SINGULAER_GENUTZTE_BETRIEBSMITTEL
+9990001000334 -> ABGABE_KWKG
+9990001000376 -> ABSCHLAG
+9990001000417 -> KONZESSIONSABGABE
+9990001000433 -> ENTGELT_FERNAUSLESUNG
+9990001000475 -> UNTERMESSUNG
+9990001000508 -> BLINDMEHRARBEIT
+9990001000532 -> ENTGELT_ABRECHNUNG
+9990001000540 -> SPERRKOSTEN
+9990001000558 -> ENTSPERRKOSTEN
+9990001000566 -> MAHNKOSTEN
+9990001000574 -> MEHR_MINDERMENGEN
+9990001000582 -> INKASSOKOSTEN
+9990001000590 -> BLINDMEHRLEISTUNG
+9990001000615 -> ENTGELT_MESSUNG_ABLESUNG
+9990001000623 -> ENTGELT_EINBAU_BETRIEB_WARTUNG_MESSTECHNIK
+9990001000631 -> AUSGLEICHSENERGIE
+9990001000805 -> AUSGLEICHSENERGIE_UNTERDECKUNG
+9990001000649 -> ZAEHLEINRICHTUNG
+9990001000657 -> WANDLER_MENGENUMWERTER
+9990001000665 -> KOMMUNIKATIONSEINRICHTUNG
+9990001000673 -> TECHNISCHE_STEUEREINRICHTUNG
+9990001000681 -> PARAGRAF_19_STROM_NEV_UMLAGE
+9990001000699 -> BEFESTIGUNGSEINRICHTUNG
+9990001000706 -> OFFSHORE_HAFTUNGSUMLAGE
+9990001000714 -> FIXE_ARBEITSENTGELTKOMPONENTE
+9990001000722 -> FIXE_LEISTUNGSENTGELTKOMPONENTE
+9990001000730 -> UMLAGE_ABSCHALTBARE_LASTEN
+9990001000748 -> MEHRMENGE
+9990001000756 -> MINDERMENGE
+9990001000764 -> ENERGIESTEUER
+9990001000772 -> SMARTMETER_GATEWAY
+9990001000780 -> STEUERBOX
+9990001000798 -> MSB_INKL_MESSUNG
+9990001000813 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_2_1_MSBG
+9990001000821 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_2_2_MSBG
+9990001000839 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_2_3_MSBG
+9990001000847 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_2_4_MSBG
+9990001000855 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_2_5_MSBG
+9990001000863 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_3_MSBG",,/api/processes/pricing/prices -> mit Datum -> articleId,x,x,x,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1330,17,PIA,C,D,99,1,3,Preisschlüsselstamm,PIA+1+FX12:Z06,Z06 Preisschlüsselstamm,S,preisblatt.preispositionen,preisschluesselstamm,,,,,x,,,,,,,,,,,,,,,,,,,,,
+1340,18,IMD,C,D,999,1,3,Produktbeschreibung,IMD+X+Z41+Z11:::Blockstromwandler und weitere Details zu diesem:X',"C Code (aus der Liste einer codepflegenden
+Organisation)
+F Freier Text
+X Teilstrukturiert (Code und Text)
++
+Z15 POG bei verbrauchender Marktlokation > 100.000 kWh/a mit iMS
+Z16 POG bei verbrauchender Marktlokation ]50.000 kWh/a; 100.000 kWh/a] mit iMS
+Z17 POG bei verbrauchender Marktlokation ]20.000 kWh/a; 50.000 kWh/a] mit iMS
+Z18 POG bei verbrauchender Marktlokation ]10.000 kWh/a; 20.000 kWh/a] mit iMS
+Z19 POG bei verbrauchender Marktlokation mit unterbrechbaren Verbrauchseinrichtung nach § 14a EnWG mit iMS
+Z20 POG bei verbrauchender Marktlokation ]6.000 kWh/a; 10.000 kWh/a] mit iMS
+Z21 POG bei erzeugender Marktlokation ]7 kW; 15 kW] mit iMS
+Z22 POG bei erzeugender Marktlokation ]15 kW; 30 kW] mit iMS
+Z23 POG bei erzeugender Marktlokation ]30 kW; 100 kW] mit iMS
+Z24 POG bei erzeugender Marktlokation > 100 kW mit iMS
+Z25 POG bei Marktlokation mit mME
+Z28 POG bei verbrauchender Marktlokation ]4.000 kWh/a; 6.000 kWh/a] mit iMS
+Z29 POG bei verbrauchender Marktlokation ]3.000 kWh/a; 4.000 kWh/a] mit iMS
+Z30 POG bei verbrauchender Marktlokation ]2.000 kWh/a; 3.000 kWh/a] mit iMS
+Z31 POG bei verbrauchender Marktlokation [0 kWh/a; 2.000 kWh/a] mit iMS
+Z32 POG bei optionaler Ausstattung mit iMS von Neuanlagen von erzeugender Marktlokation
+Z41 Zusatzleistung
++
+Z08 Höchstspannung
+Z09 Hochspannung
+Z10 Mittelspannung
+Z11 Niederspannung
+:::
+Produkt-/Leistungsbeschreibung
+:
+Produkt-/Leistungsbeschreibung",S,preisblatt.preispositionen,"beschreibungsformat
++
+leistungsbezeichnung (ENUM)
++
+messebene (ENUM Netzebene)
+:
+beschreibung","beschreibungsformat-> (ENUM Beschreibungsformat):
+
+C -> CODE
+F -> FREIER_TEXT
+X -> TEILSTRUKTURIERT
+
+
+leistungsbezeichnung (ENUM):
+
+Z15 -> POG_VERBRAUCH_IMS_UEBER_100K
+Z16 -> POG_VERBRAUCH_IMS_50K_BIS_100K
+Z17 -> POG_VERBRAUCH_IMS_20K_BIS_50K
+Z18 -> POG_VERBRAUCH_IMS_10K_BIS_20K
+Z19 -> POG_VERBRAUCH_IMS_UNTERBRECHBAR
+Z20 -> POG_VERBRAUCH_IMS_6K_BIS_10K
+Z21 -> POG_ERZEUGUNG_IMS_7_BIS_15
+Z22 -> POG_ERZEUGUNG_IMS_15_BIS_30
+Z23 -> POG_ERZEUGUNG_IMS_30_BIS_100
+Z24 -> POG_ERZEUGUNG_IMS_UEBER_100
+Z25 -> POG_MME
+Z28 -> POG_VERBRAUCH_IMS_4K_BIS_6K
+Z29 -> POG_VERBRAUCH_IMS_3K_BIS_4K
+Z30 -> POG_VERBRAUCH_IMS_2K_BIS_3K
+Z31 -> POG_VERBRAUCH_IMS_0_BIS_2K
+Z32 -> POG_ERZEUGUNG_IMS_OPTIONAL
+Z41 -> ZUSATZLEISTUNG",,?,,x,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1560,,SG40,C,D,100,100,3,Preisangabe,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1570,19,PRI,M,M,1,1,3,Preisangaben,PRI+CAL:168.06::::ANN,ANN Jahr,S,"preisblatt.preispositionen.preisstaffeln
+
+preisblatt.preispositionen","einheitspreis
+
+zeitbasis",ANN -> JAHR,,?,x,x,x,,,,,,,,,,,,,,,,,,,,
+1600,20,RNG,C,D,1,1,4,Preisschlüsselstamm,RNG+10+H87:9:9,"10 jährlicher Mengenbereich
++
+H87 Stück
+DAY Tag",S,preisblatt.preispositionen.preisstaffeln,"staffelgrenzeVon
+staffelgrenzeBis
+einheit","H87 -> STUECK
+DAY -> TAG
+KWH -> KWH",,from / until,x,,,,,,,,,,,,,,,,,,,,,,
+1610,21,DTM,C,D,5,2,4,Datum/Uhrzeit/Zeitspanne,"DTM+163:201104010815?+00:303
+DTM+164:201104010815?+00:303",CCYYMMDDHHMMZZZ,S,preisblatt.preispositionen.verarbeitungszeitraum,"startdatum
+enddatum",,,from / until,x,,,,,,,,,,,,,,,,,,,,,,
+0590,,SG17,C,D,1000,1,1,Netzbetreiberindividuelle Artikel-ID,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0600,22,PGI,M,M,1,1,1,Netzbetreiberindividuelle Artikel-ID,PGI+Z01,,,,,,,?,,,x,,,,,,,,,,,,,,,,,,,,
+1310,,SG36,C,R,999999,999999,2,Positionsdaten,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1320,23,LIN,M,R,1,1,2,Positionsdaten,LIN+1++1-08-1-03254005-01-3:Z09,Z09 Artikel-ID,S,preisblatt.preispositionen,"positionsnummer
+bdewArtikelnummer (Z01 -> ENUM BDEWArtikelnummer)
+artikelId (Z09 -> 1:1)","9990001000053 -> LEISTUNG
+9990001000079 -> LEISTUNG_PAUSCHAL
+9990001000087 -> GRUNDPREIS
+9990001000128 -> REGELENERGIE_ARBEIT
+9990001000136 -> REGELENERGIE_LEISTUNG
+9990001000144 -> NOTSTROMLIEFERUNG_ARBEIT
+9990001000152 -> NOTSTROMLIEFERUNG_LEISTUNG
+9990001000160 -> RESERVENETZKAPAZITAET
+9990001000178 -> RESERVELEISTUNG
+9990001000186 -> ZUSAETZLICHE_ABLESUNG
+9990001000219 -> PRUEFGEBUEHREN_AUSSERPLANMAESSIG
+9990001000269 -> WIRKARBEIT
+9990001000285 -> SINGULAER_GENUTZTE_BETRIEBSMITTEL
+9990001000334 -> ABGABE_KWKG
+9990001000376 -> ABSCHLAG
+9990001000417 -> KONZESSIONSABGABE
+9990001000433 -> ENTGELT_FERNAUSLESUNG
+9990001000475 -> UNTERMESSUNG
+9990001000508 -> BLINDMEHRARBEIT
+9990001000532 -> ENTGELT_ABRECHNUNG
+9990001000540 -> SPERRKOSTEN
+9990001000558 -> ENTSPERRKOSTEN
+9990001000566 -> MAHNKOSTEN
+9990001000574 -> MEHR_MINDERMENGEN
+9990001000582 -> INKASSOKOSTEN
+9990001000590 -> BLINDMEHRLEISTUNG
+9990001000615 -> ENTGELT_MESSUNG_ABLESUNG
+9990001000623 -> ENTGELT_EINBAU_BETRIEB_WARTUNG_MESSTECHNIK
+9990001000631 -> AUSGLEICHSENERGIE
+9990001000805 -> AUSGLEICHSENERGIE_UNTERDECKUNG
+9990001000649 -> ZAEHLEINRICHTUNG
+9990001000657 -> WANDLER_MENGENUMWERTER
+9990001000665 -> KOMMUNIKATIONSEINRICHTUNG
+9990001000673 -> TECHNISCHE_STEUEREINRICHTUNG
+9990001000681 -> PARAGRAF_19_STROM_NEV_UMLAGE
+9990001000699 -> BEFESTIGUNGSEINRICHTUNG
+9990001000706 -> OFFSHORE_HAFTUNGSUMLAGE
+9990001000714 -> FIXE_ARBEITSENTGELTKOMPONENTE
+9990001000722 -> FIXE_LEISTUNGSENTGELTKOMPONENTE
+9990001000730 -> UMLAGE_ABSCHALTBARE_LASTEN
+9990001000748 -> MEHRMENGE
+9990001000756 -> MINDERMENGE
+9990001000764 -> ENERGIESTEUER
+9990001000772 -> SMARTMETER_GATEWAY
+9990001000780 -> STEUERBOX
+9990001000798 -> MSB_INKL_MESSUNG
+9990001000813 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_2_1_MSBG
+9990001000821 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_2_2_MSBG
+9990001000839 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_2_3_MSBG
+9990001000847 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_2_4_MSBG
+9990001000855 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_2_5_MSBG
+9990001000863 -> ZUSATZDIENSTLEISTUNG_PARAGRAPH_35_3_MSBG",,,,,x,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1560,,SG40,C,R,100,1,3,Preisangabe,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1570,24,PRI,M,M,1,1,3,Preisangaben,PRI+CAL:168.06,,S,preisblatt.preispositionen.preisstaffeln,einheitspreis,,,?,,,x,,,,,,,,,,,,,,,,,,,,
+1600,25,RNG,C,D,1,1,4,Zonenintervallgrenzen,RNG+10+KWH:0:12000,,S,preisblatt.preispositionen.preisstaffeln,"staffelgrenzeVon
+staffelgrenzeBis",,,quantityFrom / quantityUntil,,,x,,,,,,,,,,,,,,,,,,,,
+2400,26,UNT,M,M,1,1,0,Nachrichten-Endesegment,UNT+76+1,,,,,,,,x,x,x,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
