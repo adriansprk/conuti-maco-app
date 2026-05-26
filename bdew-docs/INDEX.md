@@ -8,6 +8,7 @@ This index helps agents choose the right BDEW source document before answering M
 |---|---|---|
 | Supplier switching, cancellation, Lieferbeginn, Lieferende, Ersatz-/Grundversorgung, net usage billing, master data exchange | [`bk620160_gpke.md`](./bk620160_gpke.md) | Core GPKE process description for electricity customer supply processes. |
 | 24h supplier switching details, timing, follow-up data after Lieferbeginn, BGM+E03 changes, iMS configuration, §14a, shutdown examples | [`BDEW_AWH_LFW24_V1_7_20251208.md`](./BDEW_AWH_LFW24_V1_7_20251208.md) | BDEW application help for Lieferantenwechsel 24 Stunden, with worked examples and clarification scenarios. |
+| LFW24 go-live (06.06.2025), cutover from Universalbestellprozess, async→sync billing, GPKE/GeLi Gas holiday, migration send windows, transitional correction examples | [`AWH_Einführungsszenario_LFW24_Version_1.2.md`](./AWH_Einführungsszenario_LFW24_Version_1.2.md) | BDEW introduction scenario for BK6-22-024 rollout: cutover rules, end of Asynchronmodell, and worked examples A–G for Netznutzungs-/Bilanzierungswechsel around 06.06.2025. |
 | Metering operator processes: MSB cancellation/start/end, device changes, iMS/mME installation, MSB billing, MSB price sheets | [`BK6-24-174_WiM_Teil1_Lesefassung.md`](./BK6-24-174_WiM_Teil1_Lesefassung.md) | WiM Teil 1 covers metering base processes and MSB commercial processes. |
 | Meter readings, measured values, value requests, reclamations, cancellations, values after Typ 2, ESA value access | [`BK6-24-174_WiM_Teil2_Lesefassung.md`](./BK6-24-174_WiM_Teil2_Lesefassung.md) | WiM Teil 2 covers collection, preparation, request, transmission, reclamation, and cancellation of values. |
 | Network operator change, old/new NB handover, package ID, affected locations, data transfer to LF/MSB/ÜNB | [`BDEW_AWH_Netzbetreiberwechselprozesse_Strom_V1_2_20251030.md`](./BDEW_AWH_Netzbetreiberwechselprozesse_Strom_V1_2_20251030.md) | Application help for market processes when a location changes responsible NB MP-ID. |
@@ -21,7 +22,7 @@ This index helps agents choose the right BDEW source document before answering M
 
 ## How To Choose
 
-1. If the question is about **what market process should happen and in which order**, start with GPKE, WiM, LFW24, or Netzbetreiberwechsel.
+1. If the question is about **what market process should happen and in which order**, start with GPKE, WiM, LFW24, or Netzbetreiberwechsel. For **LFW24 go-live cutover, 06.06.2025 migration windows, or transitional async→sync billing corrections**, start with the LFW24 Einführungsszenario before the operational LFW24 AWH.
 2. If the question is about **how an EDIFACT message is physically structured**, start with the matching MIG.
 3. If the question is about **APERAK or CONTRL feedback, syntax errors, processing errors, acknowledgements, or ERC codes**, start with the APERAK AHB.
 4. If the question is about **which MSCONS variant is allowed for a value scenario**, start with the MSCONS AHB, then check the MSCONS MIG for segment placement.
@@ -39,6 +40,11 @@ This index helps agents choose the right BDEW source document before answering M
 - [`BDEW_AWH_LFW24_V1_7_20251208.md`](./BDEW_AWH_LFW24_V1_7_20251208.md) - 24h supplier switching application help.
   - Use for LFW24-specific interpretation, especially changes to billing/master data, Lieferbeginn follow-up data, configuration setup, iMS/§14a examples, Lieferende deadline examples, and Marktlokation shutdown cases.
   - Good companion to GPKE when GPKE gives the process but not enough operational nuance.
+
+- [`AWH_Einführungsszenario_LFW24_Version_1.2.md`](./AWH_Einführungsszenario_LFW24_Version_1.2.md) - LFW24 introduction / go-live scenario (BK6-22-024).
+  - Use for the 06.06.2025 cutover: GPKE/GeLi Gas holiday calendar, migration from Universalbestellprozess, message-version switch date, send windows (05.06./06.06.2025), end of Asynchronmodell (sync Netznutzung + Bilanzierung from 10.06.2025), and worked examples A–G for correcting Netznutzungs-/Bilanzierungswechsel timing mismatches.
+  - Covers BK6-24-174 meter-reading transmission cutover in ch. 6; annex references per-process sequence diagrams for GPKE, WiM Strom, MPES.
+  - Prefer this over `BDEW_AWH_LFW24_V1_7_20251208.md` for rollout/migration questions; prefer the operational AWH for steady-state LFW24 process interpretation.
 
 - [`BK6-24-174_WiM_Teil1_Lesefassung.md`](./BK6-24-174_WiM_Teil1_Lesefassung.md) - WiM base metering processes.
   - Use for MSB contract/process topics: Kündigung Messstellenbetrieb, Beginn/Ende Messstellenbetrieb, Verpflichtung gMSB, Gerätewechsel, Geräteübernahme, Messlokationsänderung, mME/iMS installation, MSB price sheets, and MSB billing.
