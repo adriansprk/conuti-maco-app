@@ -183,7 +183,7 @@ paths:
                       gueltigkeitszeitraum:
                         zeitraumId: 1
                         startdatum: '2022-12-31T23:00:00Z'
-                        enddatum: '2026-06-30T22:00:00Z'
+                        enddatum: '2026-07-01T04:00:00Z'
                       marktrolle: MSB
                       gewerbekennzeichnung: true
                       rollencodenummer: '9906464000001'
