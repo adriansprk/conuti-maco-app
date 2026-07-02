@@ -193,6 +193,7 @@
 - MaLo-Ident > Malo-Ident (Rolle NB) > EBD [EBD E_0594](https://doc.macoapp.de/ebd-e-0594-894815m0.md): 
 - Global > APERAK [Verarbeitung eingehende Aperak](https://doc.macoapp.de/verarbeitung-eingehende-aperak-1920760m0.md): 
 - Global > CONTRL [Verarbeitung eingehende Contrl](https://doc.macoapp.de/verarbeitung-eingehende-contrl-1920761m0.md): 
+- Global > Clearing Prozess [INCIDENT_CLEARINGPROZESS](https://doc.macoapp.de/incident-clearingprozess-2170439m0.md): 
 - [Übersicht](https://doc.macoapp.de/%C3%BCbersicht-1301648m0.md): 
 - [Änderungsprotokoll BO4E Objekte](https://doc.macoapp.de/%C3%A4nderungsprotokoll-bo4e-objekte-1259115m0.md): 
 - [Objekte](https://doc.macoapp.de/objekte-4440877f0.md): 

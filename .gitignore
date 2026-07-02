@@ -5,6 +5,8 @@ api-requests/
 
 # Message downloader (local tooling, tokens, and downloaded data)
 message-downloader/
+workbench/bo4e
+workbench/bo4e-download
 
 .cursor/skills/conuti-edifact-converter/token.txt
 *.token.txt
