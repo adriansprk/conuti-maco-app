@@ -19,6 +19,7 @@ This index helps agents choose the right BDEW source document before answering M
 | Invoice EDIFACT structure, invoice header/positions/taxes/amounts/payment terms | [`INVOIC_MIG_2.8e_20250401.md`](./INVOIC_MIG_2.8e_20250401.md) | INVOIC Message Implementation Guide, version 2.8e. |
 | Order EDIFACT structure, requests/orders, product descriptions, references, locations, participants | [`ORDERS_MIG_1_4b_20250401.md`](./ORDERS_MIG_1_4b_20250401.md) | ORDERS Message Implementation Guide, version 1.4b. |
 | OBIS codes, media codes, allowed OBIS for MSCONS/UTILMD, electricity/gas measuring identifiers | [`Codeliste-OBIS-Kennzahlen_Medien_2_5c_Konsultationsfassung_20250801.md`](./Codeliste-OBIS-Kennzahlen_Medien_2_5c_Konsultationsfassung_20250801.md) | External codelist for OBIS/media syntax and AHB checks. |
+| Messprodukt-/Konfigurationsprodukt-Codes (9991…), Standard-Messprodukte Strom/Gas Typ 1, Typ 2 SMGW/Backend/ESA, Schaltzeit-/Leistungskurven-/Ad-Hoc-Steuerkanal config, Mindestumfang Messprodukte in UTILMD, Bestell-/Änderungsprodukte (UTILMD/ORDERS) | [`Codeliste-Konfigurationen_1_3c_Fehlerkorrektur_20251211.md`](./Codeliste-Konfigurationen_1_3c_Fehlerkorrektur_20251211.md) | Codelist of measurement/configuration products ordered between MSB and NB/LF/MSB/ESA. |
 
 ## How To Choose
 
@@ -27,7 +28,8 @@ This index helps agents choose the right BDEW source document before answering M
 3. If the question is about **APERAK or CONTRL feedback, syntax errors, processing errors, acknowledgements, or ERC codes**, start with the APERAK AHB.
 4. If the question is about **which MSCONS variant is allowed for a value scenario**, start with the MSCONS AHB, then check the MSCONS MIG for segment placement.
 5. If the question is about **OBIS codes or media identifiers**, start with the OBIS/media codelist.
-6. If the question is about **BO4E API fields, Conuti schemas, or trigger payloads**, do not rely on this folder alone. Use the repo schema sources in `maco-api-documentation/` after reading the relevant BDEW process context.
+6. If the question is about **which Messprodukt-/Konfigurationsprodukt-Code (9991…) to order, what a product code means, or the Mindestumfang of products in a UTILMD/ORDERS message**, start with the Codeliste der Konfigurationen.
+7. If the question is about **BO4E API fields, Conuti schemas, or trigger payloads**, do not rely on this folder alone. Use the repo schema sources in `maco-api-documentation/` after reading the relevant BDEW process context.
 
 ## Document Groups
 
@@ -82,6 +84,11 @@ This index helps agents choose the right BDEW source document before answering M
 - [`Codeliste-OBIS-Kennzahlen_Medien_2_5c_Konsultationsfassung_20250801.md`](./Codeliste-OBIS-Kennzahlen_Medien_2_5c_Konsultationsfassung_20250801.md) - OBIS and media codelist.
   - Use for OBIS syntax, electricity/thermal-energy value groups, allowed OBIS codes in market communication, usage restrictions by MSCONS Prüfidentifikator, UTILMD master-data OBIS usage, media identifiers, and examples.
   - Note that this file is marked as a consultation version.
+
+- [`Codeliste-Konfigurationen_1_3c_Fehlerkorrektur_20251211.md`](./Codeliste-Konfigurationen_1_3c_Fehlerkorrektur_20251211.md) - Codelist of configurations / measurement products (v1.3c).
+  - Use for Messprodukt- and Konfigurationsprodukt-Codes (`9991…`): Standard-Messprodukte Strom/Gas für Werte nach Typ 1 (Markt-/Mess-/Netzlokation, Tranche), Konfigurationsprodukte (Schaltzeitdefinition, Leistungskurvendefinition, Ad-Hoc-Steuerkanal), Messprodukte für Werte nach Typ 2 aus SMGW/Backend und für ESA, Art der Werte / Messprodukt-Position-Codes, Mindestumfang der Messprodukte in der UTILMD (Strom/Gas), and Produkte zur Bestellung/Änderung von Daten an Lokationen (UTILMD/ORDERS).
+  - Tells you which product codes a given Marktrolle (NB/LF/MSB/ESA) may order against the MSB. Read alongside WiM Teil 2 (value transmission) and the UTILMD/ORDERS/MSCONS MIGs for segment placement; this is a code/value codelist, not a process description.
+  - This is a consolidated reading version with error corrections (Stand 11.12.2025).
 
 ## Agent Guardrails
 
