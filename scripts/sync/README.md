@@ -1,13 +1,13 @@
 # Sync Scripts - Quick Guide
 
-This workspace tracks external repositories (`maco-api-documentation`, `maco-edi-testfiles`, `docs-offline`) and regenerates `PROCESS_GRAPH.json` when they change.
+This workspace tracks external repositories (`maco-api-documentation`, `maco-edi-testfiles`, `ebd-diagrams`), reference data (`ahb-tables`, `ebd-diagrams`), and `docs-offline`, then regenerates `PROCESS_GRAPH.json` when process docs or schemas change.
 
 ## How It Works
 
-1. **External repos change** → Pull/update them in your workspace
-2. **Check what changed** → `check-changes.sh` reports updates
+1. **External repos / reference data change** → Pull submodules or download AHB tables
+2. **Check what changed** → `check-changes.sh` or `check-maco-sync` reports updates
 3. **Sync tracking** → `sync-changes.sh` updates metadata
-4. **Regenerate index** → `update-process-graph-minimal.py` rebuilds `PROCESS_GRAPH.json`
+4. **Regenerate index** → `update-process-graph-minimal.py` rebuilds `PROCESS_GRAPH.json` (process docs only)
 
 ## Quick Start
 
@@ -44,6 +44,11 @@ python3 scripts/sync/update-process-graph-minimal.py
 # Pull latest from external repos
 cd maco-api-documentation && git pull && cd ..
 cd maco-edi-testfiles && git pull && cd ..
+cd ebd-diagrams && git pull && cd ..
+
+# Refresh AHB tables when API drift is reported
+python3 scripts/download-ahb-tables.py
+python3 scripts/generate-ahb-index.py
 
 # Check what changed
 ./scripts/sync/check-changes.sh
@@ -62,9 +67,10 @@ python3 scripts/sync/update-process-graph-minimal.py
 
 | Script | Purpose | When to Use |
 |--------|---------|-------------|
-| `.agents/skills/check-maco-sync/scripts/check-updates.sh` | Full check: remote git + llm.txt + tracker | Before syncing (recommended) |
-| `check-changes.sh` | Local git/docs count vs tracker only | Quick offline check |
-| `sync-changes.sh` | Update tracking metadata | After pulling changes |
+| `.agents/skills/check-maco-sync/scripts/check-updates.sh` | Full check: remote git + llm.txt + AHB/EBD drift + tracker | Before syncing (recommended) |
+| `check-changes.sh` | Local git/docs/AHB/EBD vs tracker | Quick offline check |
+| `reference-data-status.py` | AHB API drift + EBD format-version snapshot | Used by sync scripts; run directly for detail |
+| `sync-changes.sh` | Update tracking metadata | After pulling/downloading changes |
 | `rebuild-schemas.sh` | Rebuild JSON schemas | When build script changes |
 | `update-process-graph-minimal.py` | Regenerate PROCESS_GRAPH.json | When docs or schemas change |
 
@@ -75,6 +81,8 @@ python3 scripts/sync/update-process-graph-minimal.py
 
 ## Notes
 
+- **`ebd-diagrams`** is a git submodule (Hochfrequenz EBD JSON/SVG). Update with `cd ebd-diagrams && git pull`. Latest format version is in `format_versions.json` when present.
+- **`ahb-tables`** are downloaded from the Hochfrequenz API via `scripts/download-ahb-tables.py`; regenerate `INDEX.json` with `scripts/generate-ahb-index.py`.
 - **`llm.txt`** is fetched from `https://doc.macoapp.de/llms.txt` by `scripts/fetch-llm-index.sh` (also run automatically before `download-docs.sh` unless `SKIP_LLM_FETCH=1`)
 - **Build script changes** are critical - always rebuild schemas if `maco-api-documentation/scripts/build-openapi-json.sh` changes
 - **Submodule patching**: Submodules are imported as-is, then automatically patched during build/index generation

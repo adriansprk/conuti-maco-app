@@ -140,6 +140,61 @@ fi
 
 echo ""
 
+# Update ebd-diagrams tracking
+if [ -d "$WORKSPACE_ROOT/ebd-diagrams" ]; then
+    echo "📊 Processing ebd-diagrams..."
+
+    cd "$WORKSPACE_ROOT/ebd-diagrams"
+
+    if [ -d ".git" ] || [ -f ".git" ]; then
+        CURRENT_HASH=$(git rev-parse HEAD)
+        REF_SNAPSHOT=$(python3 "$SCRIPT_DIR/reference-data-status.py" snapshot)
+        LATEST_FV=$(echo "$REF_SNAPSHOT" | jq -r '.ebd_diagrams.latest_format_version // ""')
+        EBD_COUNT=$(echo "$REF_SNAPSHOT" | jq -r '.ebd_diagrams.ebd_count_latest // 0')
+        FV_LIST=$(echo "$REF_SNAPSHOT" | jq -c '.ebd_diagrams.format_versions // []')
+
+        jq \
+          ".external_repos.\"ebd-diagrams\".last_synced = \"$TIMESTAMP\" |
+           .external_repos.\"ebd-diagrams\".last_commit_hash = \"$CURRENT_HASH\" |
+           .external_repos.\"ebd-diagrams\".latest_format_version = $(echo "$LATEST_FV" | jq -R .) |
+           .external_repos.\"ebd-diagrams\".ebd_count_latest = $EBD_COUNT |
+           .external_repos.\"ebd-diagrams\".format_versions = $FV_LIST" \
+           "$VERSION_TRACKER" > "$VERSION_TRACKER.tmp" && mv "$VERSION_TRACKER.tmp" "$VERSION_TRACKER"
+
+        echo "  ✅ Updated version tracker"
+        echo "  📝 Commit: $CURRENT_HASH"
+        echo "  📋 Latest format version: ${LATEST_FV:-unknown} ($EBD_COUNT EBD JSON files)"
+    else
+        echo "  ⚠️  Not a git repository - cannot track changes"
+    fi
+else
+    echo "  ⚠️  ebd-diagrams not found"
+fi
+
+echo ""
+
+# Update ahb-tables tracking
+if [ -d "$WORKSPACE_ROOT/ahb-tables" ]; then
+    echo "📋 Processing ahb-tables..."
+
+    REF_SNAPSHOT=$(python3 "$SCRIPT_DIR/reference-data-status.py" snapshot)
+    AHB_VERSIONS=$(echo "$REF_SNAPSHOT" | jq -c '.ahb_tables.versions // []')
+    AHB_COUNTS=$(echo "$REF_SNAPSHOT" | jq -c '.ahb_tables.version_counts // {}')
+
+    jq \
+      ".external_repos.\"ahb-tables\".last_synced = \"$TIMESTAMP\" |
+       .external_repos.\"ahb-tables\".versions = $AHB_VERSIONS |
+       .external_repos.\"ahb-tables\".version_counts = $AHB_COUNTS" \
+       "$VERSION_TRACKER" > "$VERSION_TRACKER.tmp" && mv "$VERSION_TRACKER.tmp" "$VERSION_TRACKER"
+
+    echo "  ✅ Updated version tracker"
+    echo "$REF_SNAPSHOT" | jq -r '.ahb_tables.version_counts | to_entries[] | "  📝 \(.key): \(.value) Prüfidentifikatoren"'
+else
+    echo "  ⚠️  ahb-tables not found"
+fi
+
+echo ""
+
 # Update PROCESS_GRAPH.json metadata
 if [ -f "$PROCESS_GRAPH" ]; then
     echo "📊 Updating PROCESS_GRAPH.json metadata..."

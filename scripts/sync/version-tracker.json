@@ -6,7 +6,7 @@
     "maco-api-documentation": {
       "source": "git submodule or external repo",
       "path": "maco-api-documentation",
-      "last_synced": "2026-05-27T15:15:43Z",
+      "last_synced": "2026-07-10T12:00:55Z",
       "last_commit_hash": "e6725f643d9a3d57e1e06ec60d03e9fd09e10dbd",
       "tracked_files": {
         "build_script": {
@@ -104,7 +104,7 @@
     "docs-offline": {
       "source": "Downloaded from doc.macoapp.de",
       "path": "docs-offline",
-      "last_synced": "2026-05-27T15:15:43Z",
+      "last_synced": "2026-07-10T12:00:55Z",
       "last_download_date": null,
       "tracked_files": {
         "prozessuebersicht": {
@@ -136,7 +136,7 @@
     "maco-edi-testfiles": {
       "source": "git submodule or external repo",
       "path": "maco-edi-testfiles",
-      "last_synced": "2026-05-27T15:15:43Z",
+      "last_synced": "2026-07-10T12:00:55Z",
       "last_commit_hash": "622f8db252d69a3db42476f21a76a717f633f61a",
       "tracked_files": {
         "edi_test_files": {
@@ -181,6 +181,53 @@
           "Update example message references in PROCESS_GRAPH.json if new processes added",
           "Verify test files match current schema versions",
           "Check for new version directories (e.g., v202510, v202604)"
+        ]
+      }
+    },
+    "ebd-diagrams": {
+      "source": "git submodule (Hochfrequenz/machine-readable_entscheidungsbaumdiagramme)",
+      "path": "ebd-diagrams",
+      "last_synced": "2026-07-10T12:00:55Z",
+      "last_commit_hash": "834fd748cca1b51c37e883d8beb67001247bd552",
+      "latest_format_version": "FV2610",
+      "format_versions": [
+        "FV2304",
+        "FV2310",
+        "FV2404",
+        "FV2410",
+        "FV2504",
+        "FV2510",
+        "FV2604",
+        "FV2610"
+      ],
+      "ebd_count_latest": 361,
+      "sync_actions": {
+        "on_ebd_change": [
+          "Pull submodule: cd ebd-diagrams && git pull",
+          "Prefer latest FV directory (see format_versions.json when present)",
+          "Run ./scripts/sync/sync-changes.sh to update tracking"
+        ]
+      }
+    },
+    "ahb-tables": {
+      "source": "Downloaded from ahb-tabellen.hochfrequenz.de (public API)",
+      "path": "ahb-tables",
+      "last_synced": "2026-07-10T12:00:55Z",
+      "versions": [
+        "FV2510",
+        "FV2604",
+        "FV2610"
+      ],
+      "version_counts": {
+        "FV2510": 488,
+        "FV2604": 495,
+        "FV2610": 487
+      },
+      "sync_actions": {
+        "on_ahb_change": [
+          "Download: python3 scripts/download-ahb-tables.py",
+          "Regenerate index: python3 scripts/generate-ahb-index.py",
+          "Run ./scripts/sync/sync-changes.sh to update tracking"
         ]
       }
     }

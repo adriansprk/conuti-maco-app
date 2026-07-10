@@ -184,6 +184,18 @@ fi
 section "Git submodules / external repos"
 check_git_repo "maco-api-documentation"
 check_git_repo "maco-edi-testfiles"
+check_git_repo "ebd-diagrams"
+
+section "Reference data (AHB + EBD)"
+if [ -d "$WORKSPACE_ROOT/ahb-tables" ] || [ -d "$WORKSPACE_ROOT/ebd-diagrams" ]; then
+    if python3 "$SYNC_DIR/reference-data-status.py" check; then
+        status_ok "ahb-tables and ebd-diagrams reference data look current"
+    else
+        status_warn "ahb-tables and/or ebd-diagrams need refresh — see output above"
+    fi
+else
+    status_warn "ahb-tables/ and/or ebd-diagrams/ not found"
+fi
 
 section "docs-offline"
 check_docs_offline
@@ -211,6 +223,8 @@ echo ""
 echo "Typical apply sequence:"
 echo "  cd maco-api-documentation && git pull && cd .."
 echo "  cd maco-edi-testfiles && git pull && cd .."
+echo "  cd ebd-diagrams && git pull && cd .."
+echo "  python3 scripts/download-ahb-tables.py && python3 scripts/generate-ahb-index.py  # if AHB drift"
 echo "  ./scripts/fetch-llm-index.sh          # if llm.txt differed"
 echo "  ./scripts/download-docs.sh            # if llm.txt or docs-offline need refresh"
 echo "  ./scripts/sync/rebuild-schemas.sh     # if maco-api build script changed"

@@ -137,6 +137,54 @@ else
 fi
 
 echo ""
+
+# Check ebd-diagrams changes
+if [ -d "$WORKSPACE_ROOT/ebd-diagrams" ]; then
+    echo "📊 Checking ebd-diagrams..."
+
+    cd "$WORKSPACE_ROOT/ebd-diagrams"
+
+    if [ -d ".git" ] || [ -f ".git" ]; then
+        CURRENT_HASH=$(git rev-parse HEAD)
+        LAST_HASH=$(jq -r '."external_repos"."ebd-diagrams".last_commit_hash' "$VERSION_TRACKER" 2>/dev/null || echo "null")
+
+        if [ "$CURRENT_HASH" != "$LAST_HASH" ] && [ "$LAST_HASH" != "null" ]; then
+            echo "  ⚠️  Changes detected!"
+            echo "  📝 Last synced: $(jq -r '."external_repos"."ebd-diagrams".last_synced' "$VERSION_TRACKER")"
+            echo "  🔄 Current commit: $CURRENT_HASH"
+            echo "  📋 Changed files summary:"
+            CHANGED_FILES=$(git diff --name-only "$LAST_HASH" HEAD)
+            EBD_JSON_COUNT=$(echo "$CHANGED_FILES" | grep -cE 'FV[0-9]+/E_[0-9]+\.json$' || echo "0")
+            echo "    - EBD JSON files: $EBD_JSON_COUNT"
+            echo "    - Total files: $(echo "$CHANGED_FILES" | wc -l | tr -d ' ')"
+            echo "  📋 Sample changed files:"
+            echo "$CHANGED_FILES" | head -10 | sed 's/^/    /'
+            echo ""
+            echo "  💡 Run: ./scripts/sync/sync-changes.sh to update tracking"
+        else
+            echo "  ✅ No changes detected (or first run)"
+        fi
+
+        echo "  📋 Local snapshot:"
+        python3 "$SCRIPT_DIR/reference-data-status.py" check-ebd | sed 's/^/    /'
+    else
+        echo "  ⚠️  Not a git repository - cannot track changes"
+    fi
+else
+    echo "  ⚠️  ebd-diagrams not found"
+fi
+
+echo ""
+
+# Check ahb-tables drift vs API
+if [ -d "$WORKSPACE_ROOT/ahb-tables" ]; then
+    echo "📋 Checking ahb-tables..."
+    python3 "$SCRIPT_DIR/reference-data-status.py" check-ahb | sed 's/^/  /'
+else
+    echo "  ⚠️  ahb-tables not found"
+fi
+
+echo ""
 echo "✅ Change check complete!"
 echo ""
 echo "To update PROCESS_GRAPH.json after changes:"

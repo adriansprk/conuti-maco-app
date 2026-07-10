@@ -35,6 +35,8 @@ Exit code: **0** = all checks pass; **1** = updates or drift detected.
 |--------|-------|----------------------------------------|
 | `maco-api-documentation` | `git fetch`, commits behind `origin`, HEAD vs `version-tracker.json`, local dirty tree | Remote behind count |
 | `maco-edi-testfiles` | Same as above | Remote behind count |
+| `ebd-diagrams` | Same as above (EBD submodule) | Remote behind count |
+| `ahb-tables` | Local file counts vs Hochfrequenz API; probe for newer FV | **Yes — network fetch** |
 | `docs-offline/` | `.md` file count vs tracker | — |
 | `docs/llm.txt` | Fetch `llms.txt`, SHA-256 + byte compare | **Yes — always network-fetch** |
 
@@ -79,6 +81,9 @@ Full refresh sequence after pulls:
 ```bash
 cd maco-api-documentation && git pull && cd ..
 cd maco-edi-testfiles && git pull && cd ..
+cd ebd-diagrams && git pull && cd ..
+python3 scripts/download-ahb-tables.py
+python3 scripts/generate-ahb-index.py
 ./scripts/fetch-llm-index.sh
 ./scripts/download-docs.sh
 ./scripts/sync/rebuild-schemas.sh    # only if build script changed
