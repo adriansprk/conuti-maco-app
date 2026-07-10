@@ -11,10 +11,20 @@ This workspace tracks external repositories (`maco-api-documentation`, `maco-edi
 
 ## Quick Start
 
+### Full update check (recommended)
+
+Includes remote `git fetch`, `docs/llm.txt` vs `doc.macoapp.de/llms.txt`, and version-tracker drift:
+
+```bash
+.agents/skills/check-maco-sync/scripts/check-updates.sh
+```
+
+See skill: `.agents/skills/check-maco-sync/SKILL.md`
+
 ### Typical Workflow
 
 ```bash
-# 1. Check for changes in external repos
+# 1. Check for changes in external repos (local vs tracker only)
 ./scripts/sync/check-changes.sh
 
 # 2. If schemas need rebuilding (build script changed)
@@ -52,7 +62,8 @@ python3 scripts/sync/update-process-graph-minimal.py
 
 | Script | Purpose | When to Use |
 |--------|---------|-------------|
-| `check-changes.sh` | Check for updates in external repos | Before syncing |
+| `.agents/skills/check-maco-sync/scripts/check-updates.sh` | Full check: remote git + llm.txt + tracker | Before syncing (recommended) |
+| `check-changes.sh` | Local git/docs count vs tracker only | Quick offline check |
 | `sync-changes.sh` | Update tracking metadata | After pulling changes |
 | `rebuild-schemas.sh` | Rebuild JSON schemas | When build script changes |
 | `update-process-graph-minimal.py` | Regenerate PROCESS_GRAPH.json | When docs or schemas change |

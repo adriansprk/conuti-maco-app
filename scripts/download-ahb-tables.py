@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Downloads all AHB tables from ahb-tabellen.hochfrequenz.de (public API, no auth required).
-Usage: python3 scripts/download-ahb-tables.py [--versions FV2510 FV2604] [--workers 10]
+Usage: python3 scripts/download-ahb-tables.py [--versions FV2510 FV2604 FV2610] [--workers 10]
 """
 
 import argparse
@@ -114,8 +114,8 @@ def process_version(fv: str, workers: int) -> dict:
 def main():
     parser = argparse.ArgumentParser(description="Download AHB tables from hochfrequenz.de")
     parser.add_argument(
-        "--versions", nargs="+", default=["FV2510", "FV2604"],
-        help="Format versions to download (default: FV2510 FV2604)"
+        "--versions", nargs="+", default=["FV2510", "FV2604", "FV2610"],
+        help="Format versions to download (default: FV2510 FV2604 FV2610)"
     )
     parser.add_argument(
         "--workers", type=int, default=10,
