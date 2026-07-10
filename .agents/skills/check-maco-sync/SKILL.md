@@ -33,6 +33,8 @@ Exit code: **0** = all checks pass; **1** = updates or drift detected.
 
 | Source | Check | Not covered by `check-changes.sh` alone |
 |--------|-------|----------------------------------------|
+| `bo4e-schema` | Same as above | Remote behind count |
+| `cdoc-schema` | Same as above | Remote behind count |
 | `maco-api-documentation` | `git fetch`, commits behind `origin`, HEAD vs `version-tracker.json`, local dirty tree | Remote behind count |
 | `maco-edi-testfiles` | Same as above | Remote behind count |
 | `ebd-diagrams` | Same as above (EBD submodule) | Remote behind count |
@@ -79,9 +81,7 @@ Structure the answer as:
 Full refresh sequence after pulls:
 
 ```bash
-cd maco-api-documentation && git pull && cd ..
-cd maco-edi-testfiles && git pull && cd ..
-cd ebd-diagrams && git pull && cd ..
+./scripts/sync/update-submodules.sh
 python3 scripts/download-ahb-tables.py
 python3 scripts/generate-ahb-index.py
 ./scripts/fetch-llm-index.sh

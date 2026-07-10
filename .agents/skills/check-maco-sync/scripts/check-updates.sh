@@ -182,6 +182,8 @@ else
 fi
 
 section "Git submodules / external repos"
+check_git_repo "bo4e-schema"
+check_git_repo "cdoc-schema"
 check_git_repo "maco-api-documentation"
 check_git_repo "maco-edi-testfiles"
 check_git_repo "ebd-diagrams"
@@ -221,9 +223,7 @@ if [ "$WARNINGS" -gt 0 ]; then
 fi
 echo ""
 echo "Typical apply sequence:"
-echo "  cd maco-api-documentation && git pull && cd .."
-echo "  cd maco-edi-testfiles && git pull && cd .."
-echo "  cd ebd-diagrams && git pull && cd .."
+echo "  ./scripts/sync/update-submodules.sh"
 echo "  python3 scripts/download-ahb-tables.py && python3 scripts/generate-ahb-index.py  # if AHB drift"
 echo "  ./scripts/fetch-llm-index.sh          # if llm.txt differed"
 echo "  ./scripts/download-docs.sh            # if llm.txt or docs-offline need refresh"

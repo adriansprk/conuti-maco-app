@@ -6,7 +6,7 @@
     "maco-api-documentation": {
       "source": "git submodule or external repo",
       "path": "maco-api-documentation",
-      "last_synced": "2026-07-10T12:00:55Z",
+      "last_synced": "2026-07-10T12:08:08Z",
       "last_commit_hash": "e6725f643d9a3d57e1e06ec60d03e9fd09e10dbd",
       "tracked_files": {
         "build_script": {
@@ -104,7 +104,7 @@
     "docs-offline": {
       "source": "Downloaded from doc.macoapp.de",
       "path": "docs-offline",
-      "last_synced": "2026-07-10T12:00:55Z",
+      "last_synced": "2026-07-10T12:08:08Z",
       "last_download_date": null,
       "tracked_files": {
         "prozessuebersicht": {
@@ -136,7 +136,7 @@
     "maco-edi-testfiles": {
       "source": "git submodule or external repo",
       "path": "maco-edi-testfiles",
-      "last_synced": "2026-07-10T12:00:55Z",
+      "last_synced": "2026-07-10T12:08:08Z",
       "last_commit_hash": "622f8db252d69a3db42476f21a76a717f633f61a",
       "tracked_files": {
         "edi_test_files": {
@@ -187,7 +187,7 @@
     "ebd-diagrams": {
       "source": "git submodule (Hochfrequenz/machine-readable_entscheidungsbaumdiagramme)",
       "path": "ebd-diagrams",
-      "last_synced": "2026-07-10T12:00:55Z",
+      "last_synced": "2026-07-10T12:08:08Z",
       "last_commit_hash": "834fd748cca1b51c37e883d8beb67001247bd552",
       "latest_format_version": "FV2610",
       "format_versions": [
@@ -209,10 +209,34 @@
         ]
       }
     },
+    "bo4e-schema": {
+      "source": "git submodule (conuti-gmbh/bo4e-schema)",
+      "path": "bo4e-schema",
+      "last_synced": "2026-07-10T12:08:08Z",
+      "last_commit_hash": "2cd72112f7068f7eaee4579401faf248632de33c",
+      "sync_actions": {
+        "on_schema_change": [
+          "Pull submodule: ./scripts/sync/update-submodules.sh",
+          "Run ./scripts/sync/sync-changes.sh to update tracking"
+        ]
+      }
+    },
+    "cdoc-schema": {
+      "source": "git submodule (conuti-gmbh/cdoc-schema)",
+      "path": "cdoc-schema",
+      "last_synced": "2026-07-10T12:08:08Z",
+      "last_commit_hash": "2874c38bc067ab7ef9a94e9e9c094e88123339a1",
+      "sync_actions": {
+        "on_schema_change": [
+          "Pull submodule: ./scripts/sync/update-submodules.sh",
+          "Run ./scripts/sync/sync-changes.sh to update tracking"
+        ]
+      }
+    },
     "ahb-tables": {
       "source": "Downloaded from ahb-tabellen.hochfrequenz.de (public API)",
       "path": "ahb-tables",
-      "last_synced": "2026-07-10T12:00:55Z",
+      "last_synced": "2026-07-10T12:08:08Z",
       "versions": [
         "FV2510",
         "FV2604",

@@ -84,6 +84,36 @@ fi
 
 echo ""
 
+# Update bo4e-schema tracking
+if [ -d "$WORKSPACE_ROOT/bo4e-schema" ]; then
+    echo "📦 Processing bo4e-schema..."
+    cd "$WORKSPACE_ROOT/bo4e-schema"
+    if [ -d ".git" ] || [ -f ".git" ]; then
+        CURRENT_HASH=$(git rev-parse HEAD)
+        jq ".external_repos.\"bo4e-schema\".last_synced = \"$TIMESTAMP\" | .external_repos.\"bo4e-schema\".last_commit_hash = \"$CURRENT_HASH\"" \
+           "$VERSION_TRACKER" > "$VERSION_TRACKER.tmp" && mv "$VERSION_TRACKER.tmp" "$VERSION_TRACKER"
+        echo "  ✅ Updated version tracker"
+        echo "  📝 Commit: $CURRENT_HASH"
+    fi
+fi
+
+echo ""
+
+# Update cdoc-schema tracking
+if [ -d "$WORKSPACE_ROOT/cdoc-schema" ]; then
+    echo "📦 Processing cdoc-schema..."
+    cd "$WORKSPACE_ROOT/cdoc-schema"
+    if [ -d ".git" ] || [ -f ".git" ]; then
+        CURRENT_HASH=$(git rev-parse HEAD)
+        jq ".external_repos.\"cdoc-schema\".last_synced = \"$TIMESTAMP\" | .external_repos.\"cdoc-schema\".last_commit_hash = \"$CURRENT_HASH\"" \
+           "$VERSION_TRACKER" > "$VERSION_TRACKER.tmp" && mv "$VERSION_TRACKER.tmp" "$VERSION_TRACKER"
+        echo "  ✅ Updated version tracker"
+        echo "  📝 Commit: $CURRENT_HASH"
+    fi
+fi
+
+echo ""
+
 # Update docs-offline tracking
 if [ -d "$WORKSPACE_ROOT/docs-offline" ]; then
     echo "📚 Processing docs-offline..."

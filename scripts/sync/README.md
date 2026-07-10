@@ -41,10 +41,8 @@ python3 scripts/sync/update-process-graph-minimal.py
 ### Example: Updating After External Repo Changes
 
 ```bash
-# Pull latest from external repos
-cd maco-api-documentation && git pull && cd ..
-cd maco-edi-testfiles && git pull && cd ..
-cd ebd-diagrams && git pull && cd ..
+# Pull latest from all git submodules
+./scripts/sync/update-submodules.sh
 
 # Refresh AHB tables when API drift is reported
 python3 scripts/download-ahb-tables.py
@@ -70,6 +68,7 @@ python3 scripts/sync/update-process-graph-minimal.py
 | `.agents/skills/check-maco-sync/scripts/check-updates.sh` | Full check: remote git + llm.txt + AHB/EBD drift + tracker | Before syncing (recommended) |
 | `check-changes.sh` | Local git/docs/AHB/EBD vs tracker | Quick offline check |
 | `reference-data-status.py` | AHB API drift + EBD format-version snapshot | Used by sync scripts; run directly for detail |
+| `update-submodules.sh` | Pull all git submodules to tracked branches | When submodule drift is reported |
 | `sync-changes.sh` | Update tracking metadata | After pulling/downloading changes |
 | `rebuild-schemas.sh` | Rebuild JSON schemas | When build script changes |
 | `update-process-graph-minimal.py` | Regenerate PROCESS_GRAPH.json | When docs or schemas change |
