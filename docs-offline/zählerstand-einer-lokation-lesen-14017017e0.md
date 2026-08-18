@@ -60,7 +60,7 @@ paths:
         - name: parameter4
           in: query
           description: 'Datum (Gültig bis) '
-          required: false
+          required: true
           schema:
             format: date-time
             pattern: ^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$
@@ -70,7 +70,7 @@ paths:
         - name: parameter5
           in: query
           description: OBIS Kennzah
-          required: false
+          required: true
           schema:
             type: string
             examples:
@@ -95,10 +95,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Energiemenge'
-                description: Liste der Zählerstände
+                $ref: '#/components/schemas/Energiemenge'
           headers: {}
           x-apidog-name: OK
         '400':

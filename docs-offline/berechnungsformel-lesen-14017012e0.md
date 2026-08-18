@@ -86,27 +86,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Berechnungsformel'
-                description: Liste der Berechnungsformeln
-              example:
-                boTyp: BERECHNUNGSFORMEL
-                versionStruktur: '1'
-                gueltigkeitszeitraum:
-                  zeitraumId: 1
-                  startdatum: '2025-02-28T23:00:00Z'
-                notwendigkeit: BERECHNUNGSFORMEL_NOTWENDIG
-                rechenschrittId: 1
-                rechenschritte:
-                  - rechenschrittBestandteilId: 1
-                    operation: ADDITION
-                    messlokationsId: DE0009697056900614312080040415222
-                    energieflussrichtung: AUSSP
-                  - rechenschrittBestandteilId: 1
-                    operation: ADDITION
-                    messlokationsId: DE0009697056900614312080040415333
-                    energieflussrichtung: AUSSP
+                $ref: '#/components/schemas/Berechnungsformel'
           headers: {}
           x-apidog-name: OK
         '400':

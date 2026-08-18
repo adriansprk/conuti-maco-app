@@ -75,10 +75,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/SteuerbareRessource'
-                description: Liste der Steuerbaren Ressourcen
+                $ref: '#/components/schemas/SteuerbareRessource'
           headers: {}
           x-apidog-name: OK
         '400':

@@ -46,10 +46,10 @@ graph LR
 </Card>    
 
 <CardGroup cols={2}>
-  <Card title="Netzbetreiber" href="https://doc.macoapp.de/trigger-nb.md" icon="material-two-tone-ev_station">
+  <Card title="Netzbetreiber" href="https://doc.macoapp.de/einzelansicht-nb-3110891f0.md" icon="material-two-tone-ev_station">
     Zu den Prozesstriggern für die Marktrolle Netzbetreiber.
   </Card>
-  <Card title="Lieferant" href="https://doc.macoapp.de/trigger-lf.md" icon="material-two-tone-account_balance">
+  <Card title="Lieferant" href="https://doc.macoapp.de/einzelansicht-lf-3110897f0.md" icon="material-two-tone-account_balance">
     Zu den Prozesstriggern für die Marktrolle Lieferant.
   </Card>
 </CardGroup>  
@@ -102,7 +102,7 @@ graph LR
 
 
 <CardGroup cols={2}>
-  <Card title="Stammdaten lesen" href="https://doc.macoapp.de/lesen.md" icon="material-two-tone-person_search">
+  <Card title="Stammdaten lesen" href="https://doc.macoapp.de/bo4e-lesen-backend-3036584f0.md" icon="material-two-tone-person_search">
     Liest BO4E-Objekte zur Verarbeitung von Marktprozessen oder Versand von Antwortnachrichten.
   </Card>
   <Card title="Prozessdaten lesen" href="https://doc.macoapp.de/prozessdaten-lesen-backend-3187758f0.md" icon="material-two-tone-description">

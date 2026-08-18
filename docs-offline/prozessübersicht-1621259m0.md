@@ -72,17 +72,15 @@
           </Card>    
       </Tab>        
       <Tab title="📄55024 Ablehnung Anfrage Stornierung">
-          <Accordion title="PI_55024" defaultOpen={false}>
-           
-<DataSchema id="5242370" />
+          <Accordion title="PI_55023" defaultOpen={false}>
+                 <DataSchema id="5562217" />
           </Accordion>
           
           
         </Tab>
       <Tab title="📄55023 Bestätigung Anfrage Stornierung">
-          <Accordion title="PI_55023" defaultOpen={false}>
-          
-<DataSchema id="5242369" />
+          <Accordion title="PI_55024" defaultOpen={false}>
+                 <DataSchema id="5242370" />
           </Accordion>
           
           

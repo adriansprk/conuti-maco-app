@@ -86,10 +86,29 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Lokationsbuendel'
-                description: Liste der Lokationsbündel
+                $ref: '#/components/schemas/Lokationsbuendel'
+              example:
+                boTyp: LOKATIONSBUENDEL
+                versionStruktur: '1'
+                gueltigkeitszeitraum:
+                  zeitraumId: null
+                  startdatum: null
+                  enddatum: null
+                datenqualitaet: null
+                lokationsbuendelstrukturId: '56143614'
+                lokationsbuendelNummer: 1
+                standardisierteLokationsbuendelstruktur: true
+                zuordnungObjectcode:
+                  - referenzLokationsTyp: MALO
+                    referenzLokationsId: '50754496001'
+                    objectcode:
+                      - objectcode: '1463515'
+                        lokationsbuendelNummer: 1
+                    vorgelagerteLokationTyp: NELO
+                    vorgelagerteLokationId: '12754496001'
+                    referenzMarktlokationTechnischeRessource:
+                      - Marktlokation1
+                      - Marktlokation2
           headers: {}
           x-apidog-name: OK
         '400':

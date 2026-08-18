@@ -98,7 +98,7 @@
           <Tabs>
                 <Tab title="Übersicht">
           <Card title="Entscheidungsbaumdiagramm E_0614"
-                href="https://doc.macoapp.de/lf_0614.md">
+                href="https://doc.macoapp.de/ebd-e-0614-860896m0.md">
           </Card>    
       </Tab> 
       </Tabs>

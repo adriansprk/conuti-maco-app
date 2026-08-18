@@ -70,7 +70,7 @@ paths:
         - name: parameter5
           in: query
           description: OBIS Kennzahl
-          required: false
+          required: true
           schema:
             type: string
             examples:
@@ -130,10 +130,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Energiemenge'
-                description: Liste der Lastgänge
+                $ref: '#/components/schemas/Energiemenge'
           headers: {}
           x-apidog-name: OK
         '400':

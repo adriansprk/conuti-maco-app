@@ -74,10 +74,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Vertrag'
-                description: Liste der Netznutzungsverträge
+                $ref: '#/components/schemas/Vertrag'
           headers: {}
           x-apidog-name: OK
         '400':

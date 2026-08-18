@@ -223,8 +223,6 @@ components:
             - $ref: '#/components/schemas/PI_13019'
             - $ref: '#/components/schemas/PI_13025'
             - $ref: '#/components/schemas/PI_13015'
-            - $ref: '#/components/schemas/PI_13006'
-            - $ref: '#/components/schemas/PI_13027'
         - $ref: '#/components/schemas/ZUSATZDATEN%20(%20SST%20erstellen)'
       x-apidog-folder: ''
     ZUSATZDATEN ( SST erstellen):
@@ -261,405 +259,6 @@ components:
         - zusatzdaten
       required:
         - zusatzdaten
-      x-apidog-ignore-properties: []
-      x-apidog-folder: ''
-    PI_13027:
-      type: object
-      properties:
-        transaktionsdaten:
-          type: object
-          properties:
-            anfrageReferenz:
-              type: string
-              description: |-
-                Beantragungsnummer / RFF+AGI | 
-                <TipInfo>SG1.RFF+AGI</TipInfo>
-            absender:
-              type: object
-              properties:
-                ansprechpartner:
-                  type: object
-                  properties:
-                    rufnummern:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          nummerntyp:
-                            description: >-
-                              Art des Kommunikationsmittels
-
-                              COM | 
-
-                              <TipInfo>SG2.NAD+MS.SG4.CTA+IC.COM+[EM|FX|TE|AJ|AL]</TipInfo>
-                            $ref: '#/components/schemas/Rufnummernart'
-                          rufnummer:
-                            type: string
-                            description: >-
-                              Rufnummer | 
-
-                              <TipInfo>SG2.NAD+MS.SG4.CTA+IC.COM+[EM|FX|TE|AJ|AL]</TipInfo>
-                        x-apidog-orders:
-                          - nummerntyp
-                          - rufnummer
-                        x-apidog-ignore-properties: []
-                    nachname:
-                      type: string
-                      description: |-
-                        Nachname (Familienname) des Ansprechpartners | 
-                        <TipInfo>SG2.NAD+MS.SG4.CTA+IC</TipInfo>
-                  x-apidog-orders:
-                    - rufnummern
-                    - nachname
-                  x-apidog-ignore-properties: []
-                rollencodenummer:
-                  type: string
-                  description: |-
-                    Gibt die Codenummer der Marktrolle an - MP ID
-                    ORDERS NAD Z31 Übertragungsnetzbetreiber 
-                    PI 17134
-                    ORDERS NAD DEB Messstellenbetreiber
-                    PI 17003 17134 17135
-                    IFTSTA NAD DEB Messstellenbetreiber 
-                    PI 21007 21015 21018 | 
-                    <TipInfo>SG2.NAD+MS</TipInfo>
-                rufnummern:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      ansprechpartner:
-                        type: object
-                        properties:
-                          eMailAdresse:
-                            type: string
-                            description: >-
-                              E-Mail Adresse | 
-
-                              <TipInfo>SG2.NAD+MS.SG4.CTA+IC.COM+[EM|FX|TE|AJ|AL]</TipInfo>
-                        x-apidog-orders:
-                          - eMailAdresse
-                        x-apidog-ignore-properties: []
-                    x-apidog-orders:
-                      - ansprechpartner
-                    x-apidog-ignore-properties: []
-                rollencodetyp: &ref_0
-                  description: >-
-                    Gibt den Typ des Codes an - Verantwortliche Stelle für die
-                    Codepflege
-
-                    9 GS1
-
-                    293 DE, BDEW (Bundesverband der Energie- und
-                    Wasserwirtschaft e.V.)
-
-                    332 DE, DVGW Service & Consult GmbH  | 
-
-                    <TipInfo>SG2.NAD+MS</TipInfo>
-                  $ref: '#/components/schemas/Rollencodetyp'
-              x-apidog-orders:
-                - ansprechpartner
-                - rollencodenummer
-                - rufnummern
-                - rollencodetyp
-              x-apidog-ignore-properties: []
-            empfaenger:
-              type: object
-              properties:
-                rollencodetyp: *ref_0
-                rollencodenummer:
-                  type: string
-                  description: |-
-                    Gibt die Codenummer der Marktrolle an - MP ID
-                    ORDERS NAD Z31 Übertragungsnetzbetreiber 
-                    PI 17134
-                    ORDERS NAD DEB Messstellenbetreiber
-                    PI 17003 17134 17135
-                    IFTSTA NAD DEB Messstellenbetreiber 
-                    PI 21007 21015 21018 | 
-                    <TipInfo>SG2.NAD+MR</TipInfo>
-              x-apidog-orders:
-                - rollencodetyp
-                - rollencodenummer
-              x-apidog-ignore-properties: []
-            kategorie:
-              type: string
-              description: >-
-                Gebührenkategorie der Konzessionsabgabe - Übermittlung von
-                zusätzlichen Informationen | 
-
-                <TipInfo>BGM+Z83</TipInfo>
-            nachrichtendatum:
-              type: string
-              description: |-
-                Erstellungdatum der EDIFact / DTM+137 | 
-                <TipInfo>DTM+137</TipInfo>
-              format: date-time
-            pruefidentifikator:
-              type: string
-              description: >-
-                Enthält den Prüfidentifikator aus der EDIFact Kommunikation /
-                RFF+Z13 | 
-
-                <TipInfo>SG1.RFF+Z13</TipInfo>
-            nachrichtenreferenznummer:
-              type: string
-              description: |-
-                EDIFact Referenz aus dem UNT Segment / UTILMD UNT+21 | 
-                <TipInfo>UNH</TipInfo>
-            nachrichtenfunktion:
-              type: string
-              description: |-
-                Nachrichtenfunktionskennzeichen / BGM | 
-                <TipInfo>BGM+Z83</TipInfo>
-            dokumentennummer:
-              type: string
-              description: |-
-                EDIFact Referenz aus dem BGM Segment / BGM | 
-                <TipInfo>BGM+Z83</TipInfo>
-          x-apidog-orders:
-            - anfrageReferenz
-            - absender
-            - empfaenger
-            - kategorie
-            - nachrichtendatum
-            - pruefidentifikator
-            - nachrichtenreferenznummer
-            - nachrichtenfunktion
-            - dokumentennummer
-          x-apidog-ignore-properties: []
-        stammdaten:
-          type: object
-          properties:
-            ENERGIEMENGE:
-              type: array
-              items:
-                type: object
-                properties:
-                  lokationsId:
-                    type: string
-                    description: |-
-                      LokationsId | 
-                      <TipInfo>SG5.NAD+DP.SG6.LOC+172</TipInfo>
-                  konfiguration:
-                    type: string
-                    description: >-
-                      Angabe der Konfigurations-ID
-
-                      RFF AGK
-
-                      PI 55643 55648 55653 55658 55663 55669 55553 55555 55035
-                      55095 55060 55043 55168 55169 55074 55075 55076 | 
-
-                      <TipInfo>SG5.NAD+DP.SG6.LOC+172</TipInfo>
-                x-apidog-orders:
-                  - lokationsId
-                  - konfiguration
-                x-apidog-ignore-properties: []
-          x-apidog-orders:
-            - ENERGIEMENGE
-          x-apidog-ignore-properties: []
-      required:
-        - transaktionsdaten
-        - stammdaten
-      description: 13027 - Werte an NB [MSB an ESA/ MSB an LF/ MSB an NB] MSCONS AHB
-      x-apidog-orders:
-        - transaktionsdaten
-        - stammdaten
-      x-apidog-ignore-properties: []
-      x-apidog-folder: ''
-    Rollencodetyp:
-      type: string
-      title: Rollencodetyp
-      description: Rollencodetyp
-      enum:
-        - BDEW
-        - GS1
-        - GLN
-        - DVGW
-      x-apidog-enum:
-        - value: BDEW
-          name: DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)
-          description: '293'
-        - value: GS1
-          name: GS1
-          description: '9'
-        - value: GLN
-          name: ''
-          description: ''
-        - value: DVGW
-          name: DE, DVGW Service & Consult GmbH
-          description: '332'
-      x-apidog-folder: ''
-    Rufnummernart:
-      type: string
-      title: Rufnummernart
-      description: Rufnummernart
-      enum:
-        - RUF_ZENTRALE
-        - FAX_ZENTRALE
-        - SAMMELRUF
-        - SAMMELFAX
-        - ABTEILUNGRUF
-        - ABTEILUNGFAX
-        - RUF_DURCHWAHL
-        - FAX_DURCHWAHL
-        - MOBIL_NUMMER
-      x-apidog-enum:
-        - value: RUF_ZENTRALE
-          name: weiteres Telefon
-          description: AJ
-        - value: FAX_ZENTRALE
-          name: ''
-          description: ''
-        - value: SAMMELRUF
-          name: ''
-          description: ''
-        - value: SAMMELFAX
-          name: ''
-          description: ''
-        - value: ABTEILUNGRUF
-          name: ''
-          description: ''
-        - value: ABTEILUNGFAX
-          name: ''
-          description: ''
-        - value: RUF_DURCHWAHL
-          name: Telefon
-          description: TE
-        - value: FAX_DURCHWAHL
-          name: Telefax
-          description: FX
-        - value: MOBIL_NUMMER
-          name: Handy
-          description: AL
-      x-apidog-folder: ''
-    PI_13006:
-      type: object
-      properties:
-        transaktionsdaten:
-          type: object
-          properties:
-            kategorie:
-              type: string
-              description: Kategorie EDIFACT BGM+7 / 270 / Z27 / Z28 / Z41 / Z42 / Z85
-            dokumentennummer:
-              type: string
-              description: Dokumentennummer EDIFACT BGM+7/ Z41...+xxx
-            nachrichtenfunktion:
-              type: string
-              description: Nachrichtenfunktion Original EDIFACT BGM+7/ Z41+xxx+1
-            nachrichtendatum:
-              type: string
-              description: Nachrichtendatum EDIFACT DTM+137
-              format: date-time
-            vorgangsreferenznummer:
-              type: string
-              description: Referenz auf vorangegangenen Nachricht EDIFACT SG1. RFF+ACW:xxx
-            pruefidentifikator:
-              type: string
-              description: Prüfidentifikator EDIFACT SG1. RFF+Z13
-            absender:
-              type: object
-              properties:
-                rollencodenummer:
-                  type: string
-                  description: Nachrichtenabsender EDIFACT SG2. NAD MS+MP-ID
-                rollencodetyp: *ref_0
-                ansprechpartner:
-                  type: object
-                  properties:
-                    rufnummern:
-                      type: string
-                      description: Kontakt EDIFACT SG4. CTA+IC+Kontaktname
-                    eMailAdresse:
-                      type: string
-                      description: Kommunikationsadresse EDIFACT SG4. COM + eMail EM
-                  x-apidog-orders:
-                    - rufnummern
-                    - eMailAdresse
-                  description: Informationskontakt EDIFACT SG4. CTA+IC
-                  x-apidog-ignore-properties: []
-                rufnummern:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      nummertyp:
-                        type: string
-                        description: >-
-                          Rufnummerntyp - EDIFACT SG4. COM+Rufnummer: FX TE AJ
-                          AL
-                      rufnummer:
-                        type: string
-                        description: Rufnummer EDIFACT SG4. COM+Rufnummer
-                    x-apidog-orders:
-                      - nummertyp
-                      - rufnummer
-                    required:
-                      - rufnummer
-                    x-apidog-ignore-properties: []
-                  description: Rufnummern - EDIFACT SG4. COM + Rufnummer
-              x-apidog-orders:
-                - rollencodenummer
-                - rollencodetyp
-                - ansprechpartner
-                - rufnummern
-              description: 'Nachrichtenabsender EDIFACT SG2. NAD MS '
-              x-apidog-ignore-properties: []
-            empfaenger:
-              type: object
-              properties:
-                rollencodenummer:
-                  type: string
-                  description: MP-ID EDIFACT SG2. NAD+MR+MP-ID
-                rollencodetyp: *ref_0
-              x-apidog-orders:
-                - rollencodenummer
-                - rollencodetyp
-              description: Nachrichtenempfänger EDIFACT SG2. NAD MR
-              x-apidog-ignore-properties: []
-          x-apidog-orders:
-            - kategorie
-            - dokumentennummer
-            - nachrichtenfunktion
-            - nachrichtendatum
-            - vorgangsreferenznummer
-            - pruefidentifikator
-            - absender
-            - empfaenger
-          description: Transaktionsdaten
-          x-apidog-ignore-properties: []
-        stammdaten:
-          type: object
-          properties:
-            ENERGIEMENGE:
-              type: array
-              items:
-                type: object
-                properties:
-                  lokationsId:
-                    type: string
-                    description: Meldepunktangabe EDIFACT SG6. LOC+172
-                x-apidog-orders:
-                  - lokationsId
-                required:
-                  - lokationsId
-                x-apidog-ignore-properties: []
-              description: BO ENERGIEMENGE
-          x-apidog-orders:
-            - ENERGIEMENGE
-          description: Stammdaten
-          required:
-            - ENERGIEMENGE
-          x-apidog-ignore-properties: []
-      required:
-        - transaktionsdaten
-        - stammdaten
-      description: '13006 - Messwert Storno '
-      x-apidog-orders:
-        - transaktionsdaten
-        - stammdaten
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     PI_13015:
@@ -760,7 +359,7 @@ components:
               x-apidog-orders:
                 - rollencodenummer
                 - rollencodetyp
-              description: Nachrichtenempfänger EDIFACT SG2. NAD MR
+              description: Nachrichtenempfänger EDIFACT SG11. NAD MR
               required:
                 - rollencodenummer
                 - rollencodetyp
@@ -818,11 +417,28 @@ components:
                         enddatum:
                           type: string
                           description: Ende Messperiode EDIFACT SG10. DTM+164
-                        nutzungszeitpunkt:
+                        leistungsperiode:
                           type: string
-                          description: >-
-                            Nutzungszeitpunkt Gültigkeitsdatum EDIFACT SG10.
-                            DTM+7
+                          description: Leistungsperiode EDIFACT SG10. DTM+306
+                        statuszusatzinformationen:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              art:
+                                type: string
+                                description: Zählerstandshinweise EDIFACT SG10. STS+Z32
+                              status:
+                                type: string
+                                description: Statushinweis EDIFACT SG10. STS+Z32++Z88
+                            x-apidog-orders:
+                              - art
+                              - status
+                            required:
+                              - art
+                              - status
+                            x-apidog-ignore-properties: []
+                          description: Zählerstandshinweise EDIFACT SG10. STS
                       x-apidog-orders:
                         - position
                         - obiskennzahl
@@ -830,13 +446,14 @@ components:
                         - wert
                         - startdatum
                         - enddatum
-                        - nutzungszeitpunkt
+                        - leistungsperiode
+                        - statuszusatzinformationen
                       required:
                         - position
                         - obiskennzahl
                         - messwertstatus
                         - wert
-                        - nutzungszeitpunkt
+                        - statuszusatzinformationen
                       x-apidog-ignore-properties: []
                     description: Positionsdaten EDIFACT SG9. LIN+x
                 x-apidog-orders:
@@ -1122,7 +739,7 @@ components:
               properties:
                 rollencodenummer:
                   type: string
-                  description: 'Nachrichtenabsender EDIFACT SG2. NAD MS+MP-ID '
+                  description: 'Nachrichtenabsender EDIFACT SG2. NAD MS '
                 rollencodetyp:
                   type: string
                   description: >-
@@ -1195,7 +812,7 @@ components:
               required:
                 - rollencodenummer
                 - rollencodetyp
-              description: Nachrichtenempfänger EDIFACT SG2. NAD MR
+              description: Nachrichtenempfänger EDIFACT SG11. NAD MR
               x-apidog-ignore-properties: []
           x-apidog-orders:
             - kategorie
@@ -1652,7 +1269,7 @@ components:
               required:
                 - rollencodenummer
                 - rollencodetyp
-              description: Nachrichtenempfänger EDIFACT SG2. NAD MR
+              description: Nachrichtenempfänger EDIFACT SG11. NAD MR
               x-apidog-ignore-properties: []
           x-apidog-orders:
             - kategorie
@@ -16928,10 +16545,6 @@ components:
               description: >-
                 Nummer des Vorgangs / UTILMD UTILTS IDE+24 / INSRPT INVOIC DOC |
                 EDIFACT: SG4.IDE+24
-            geraeteausbaudatum:
-              description: Geräteausbaudatum / DTM+206
-              type: string
-              format: date-time
           x-apidog-orders:
             - vertragsende
             - dokumentennummer
@@ -16945,7 +16558,6 @@ components:
             - pruefidentifikator
             - transaktionsgrund
             - vorgangsnummer
-            - geraeteausbaudatum
           x-apidog-ignore-properties: []
         stammdaten:
           type: object

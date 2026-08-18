@@ -47,10 +47,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Avis'
-                description: Liste der Avis
+                $ref: '#/components/schemas/Avis'
           headers: {}
           x-apidog-name: OK
         '400':

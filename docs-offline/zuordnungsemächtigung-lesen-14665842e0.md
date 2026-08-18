@@ -112,19 +112,12 @@ components:
     Zuordnungsermächtigung:
       type: object
       properties:
-        zusatzdaten:
-          type: object
-          properties: {}
-          x-apidog-orders: []
-          x-apidog-ignore-properties: []
         ermaechtigungVorhanden:
           type: boolean
           description: Wenn die Zuordnungermächtigung vorhanden ist, dann true, sonst false
-      required:
-        - zusatzdaten
-        - ermaechtigungVorhanden
       x-apidog-orders:
-        - zusatzdaten
+        - ermaechtigungVorhanden
+      required:
         - ermaechtigungVorhanden
       x-apidog-ignore-properties: []
       x-apidog-folder: ''

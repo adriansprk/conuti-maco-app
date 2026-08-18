@@ -16250,10 +16250,6 @@ components:
               description: >-
                 Nummer des Vorgangs / UTILMD UTILTS IDE+24 / INSRPT INVOIC DOC |
                 EDIFACT: SG4.IDE+24
-            geraeteausbaudatum:
-              description: Geräteausbaudatum / DTM+206
-              type: string
-              format: date-time
           x-apidog-orders:
             - vertragsende
             - dokumentennummer
@@ -16268,7 +16264,6 @@ components:
             - transaktionsgrund
             - antwortstatus
             - vorgangsnummer
-            - geraeteausbaudatum
           x-apidog-ignore-properties: []
         stammdaten:
           type: object

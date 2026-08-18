@@ -500,10 +500,6 @@ components:
                 SG4.IDE+24.STS+7
             sparte:
               type: string
-            geraeteausbaudatum:
-              description: Geräteausbaudatum / DTM+206
-              type: string
-              format: date-time
           x-apidog-orders:
             - vertragsende
             - kategorie
@@ -513,7 +509,6 @@ components:
             - transaktionsgrundergaenzung
             - transaktionsgrund
             - sparte
-            - geraeteausbaudatum
           required:
             - kategorie
             - absender

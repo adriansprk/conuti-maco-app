@@ -98,16 +98,14 @@
       </Tab>        
       <Tab title="55011 - Bestätigung Beendigung der Zuordnung">
             <Accordion title="PI_55011" defaultOpen={false}>
-               
-<DataSchema id="5242360" />
+                  <DataSchema id="8347978" />
             </Accordion>
           
     
       </Tab>
       <Tab title="55012 - Ablehnung Beendigung der Zuordnung">
         <Accordion title="PI_55012" defaultOpen={false}>
-                
-<DataSchema id="5242361" />
+                     <DataSchema id="8347979" />
          </Accordion>
       </Tab>
     </Tabs>
