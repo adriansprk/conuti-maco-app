@@ -85,13 +85,18 @@ components:
               required:
                 - prozessId
                 - eventname
-              x-apidog-ignore-properties: []
+              x--orders:
+                - prozessId
+                - eventname
+              x--ignore-properties: []
           x-apidog-refs: {}
           x-apidog-orders:
             - zusatzdaten
           required:
             - zusatzdaten
-          x-apidog-ignore-properties: []
+          x--orders:
+            - zusatzdaten
+          x--ignore-properties: []
       x-apidog-folder: ''
     PI_55607:
       type: object
@@ -164,7 +169,12 @@ components:
                         - weiterverpflichtet
                         - messstellenbetreiberEigenschaft
                         - marktrolle
-                      x-apidog-ignore-properties: []
+                      x--orders:
+                        - rollencodenummer
+                        - weiterverpflichtet
+                        - messstellenbetreiberEigenschaft
+                        - marktrolle
+                      x--ignore-properties: []
                   messlokationsId:
                     type: string
                     description: >-
@@ -176,7 +186,10 @@ components:
                 x-apidog-orders:
                   - marktrollen
                   - messlokationsId
-                x-apidog-ignore-properties: []
+                x--orders:
+                  - marktrollen
+                  - messlokationsId
+                x--ignore-properties: []
             MARKTLOKATION:
               type: array
               items:
@@ -240,7 +253,12 @@ components:
                         - marktrolle
                         - messstellenbetreiberEigenschaft
                         - weiterverpflichtet
-                      x-apidog-ignore-properties: []
+                      x--orders:
+                        - rollencodenummer
+                        - marktrolle
+                        - messstellenbetreiberEigenschaft
+                        - weiterverpflichtet
+                      x--ignore-properties: []
                   marktlokationsId:
                     type: string
                     description: >-
@@ -275,7 +293,9 @@ components:
                             - SONSTIGE_ERZEUGUNGSART
                       x-apidog-orders:
                         - erzeugungsart
-                      x-apidog-ignore-properties: []
+                      x--orders:
+                        - erzeugungsart
+                      x--ignore-properties: []
                   statusErzeugendeMalo:
                     type: string
                     title: StatusErzeugendeMarktlokation
@@ -292,7 +312,12 @@ components:
                   - marktlokationsId
                   - energieherkunft
                   - statusErzeugendeMalo
-                x-apidog-ignore-properties: []
+                x--orders:
+                  - marktrollen
+                  - marktlokationsId
+                  - energieherkunft
+                  - statusErzeugendeMalo
+                x--ignore-properties: []
             NETZNUTZUNGSVERTRAG:
               type: array
               items:
@@ -309,7 +334,10 @@ components:
                 x-apidog-orders:
                   - vertragsende
                   - vertragsbeginn
-                x-apidog-ignore-properties: []
+                x--orders:
+                  - vertragsende
+                  - vertragsbeginn
+                x--ignore-properties: []
             NETZLOKATION:
               type: array
               items:
@@ -367,7 +395,11 @@ components:
                         - messstellenbetreiberEigenschaft
                         - marktrolle
                         - rollencodenummer
-                      x-apidog-ignore-properties: []
+                      x--orders:
+                        - messstellenbetreiberEigenschaft
+                        - marktrolle
+                        - rollencodenummer
+                      x--ignore-properties: []
                   netzlokationsId:
                     type: string
                     description: >-
@@ -380,7 +412,10 @@ components:
                 x-apidog-orders:
                   - marktrollen
                   - netzlokationsId
-                x-apidog-ignore-properties: []
+                x--orders:
+                  - marktrollen
+                  - netzlokationsId
+                x--ignore-properties: []
             TRANCHE:
               type: array
               items:
@@ -403,8 +438,9 @@ components:
                         title: Schwellwert
                         description: 'EDIFACT: SG4.IDE+24.SG8.SEQ+Z15.SG9.QTY+11'
                         x-apidog-orders: []
+                        x--orders: []
                         properties: {}
-                        x-apidog-ignore-properties: []
+                        x--ignore-properties: []
                       einheit:
                         type: string
                         title: Mengeneinheit
@@ -437,7 +473,10 @@ components:
                     x-apidog-orders:
                       - wert
                       - einheit
-                    x-apidog-ignore-properties: []
+                    x--orders:
+                      - wert
+                      - einheit
+                    x--ignore-properties: []
                   tranchenId:
                     type: string
                     description: 'tranchenId | EDIFACT: SG4.IDE+24.SG5.LOC+Z21'
@@ -445,7 +484,11 @@ components:
                   - bildungTranchengroesse
                   - aufteilungsmenge
                   - tranchenId
-                x-apidog-ignore-properties: []
+                x--orders:
+                  - bildungTranchengroesse
+                  - aufteilungsmenge
+                  - tranchenId
+                x--ignore-properties: []
             STEUERBARE_RESSOURCE:
               type: array
               items:
@@ -503,7 +546,11 @@ components:
                         - marktrolle
                         - rollencodenummer
                         - messstellenbetreiberEigenschaft
-                      x-apidog-ignore-properties: []
+                      x--orders:
+                        - marktrolle
+                        - rollencodenummer
+                        - messstellenbetreiberEigenschaft
+                      x--ignore-properties: []
                   ressourcenId:
                     type: string
                     description: >-
@@ -512,7 +559,10 @@ components:
                 x-apidog-orders:
                   - marktrollen
                   - ressourcenId
-                x-apidog-ignore-properties: []
+                x--orders:
+                  - marktrollen
+                  - ressourcenId
+                x--ignore-properties: []
             TECHNISCHE_RESSOURCE:
               type: array
               items:
@@ -523,7 +573,9 @@ components:
                     description: 'ressourcenId | EDIFACT: SG4.IDE+24.SG5.LOC+Z20'
                 x-apidog-orders:
                   - ressourcenId
-                x-apidog-ignore-properties: []
+                x--orders:
+                  - ressourcenId
+                x--ignore-properties: []
           x-apidog-orders:
             - MESSLOKATION
             - MARKTLOKATION
@@ -532,7 +584,15 @@ components:
             - TRANCHE
             - STEUERBARE_RESSOURCE
             - TECHNISCHE_RESSOURCE
-          x-apidog-ignore-properties: []
+          x--orders:
+            - MESSLOKATION
+            - MARKTLOKATION
+            - NETZNUTZUNGSVERTRAG
+            - NETZLOKATION
+            - TRANCHE
+            - STEUERBARE_RESSOURCE
+            - TECHNISCHE_RESSOURCE
+          x--ignore-properties: []
         transaktionsdaten:
           type: object
           properties:
@@ -604,8 +664,9 @@ components:
                         title: Rufnummer
                         description: 'EDIFACT: SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]'
                         x-apidog-orders: []
+                        x--orders: []
                         properties: {}
-                        x-apidog-ignore-properties: []
+                        x--ignore-properties: []
                       nummerntyp:
                         type: string
                         title: Rufnummernart
@@ -623,7 +684,10 @@ components:
                     x-apidog-orders:
                       - rufnummer
                       - nummerntyp
-                    x-apidog-ignore-properties: []
+                    x--orders:
+                      - rufnummer
+                      - nummerntyp
+                    x--ignore-properties: []
                 rollencodenummer:
                   type: string
                   description: 'Gibt die Codenummer der Marktrolle an. | EDIFACT: SG2.NAD+MS'
@@ -643,7 +707,10 @@ components:
                   x-apidog-orders:
                     - nachname
                     - eMailAdresse
-                  x-apidog-ignore-properties: []
+                  x--orders:
+                    - nachname
+                    - eMailAdresse
+                  x--ignore-properties: []
                 rollencodetyp:
                   type: string
                   title: Rollencodetyp
@@ -658,7 +725,12 @@ components:
                 - rollencodenummer
                 - ansprechpartner
                 - rollencodetyp
-              x-apidog-ignore-properties: []
+              x--orders:
+                - rufnummern
+                - rollencodenummer
+                - ansprechpartner
+                - rollencodetyp
+              x--ignore-properties: []
             transaktionsgrundergaenzungBefristeteAnmeldung:
               type: string
               description: >-
@@ -695,7 +767,10 @@ components:
               x-apidog-orders:
                 - rollencodetyp
                 - rollencodenummer
-              x-apidog-ignore-properties: []
+              x--orders:
+                - rollencodetyp
+                - rollencodenummer
+              x--ignore-properties: []
             anfragereferenznummer:
               type: string
               description: >-
@@ -738,7 +813,22 @@ components:
             - pruefidentifikator
             - transaktionsgrund
             - vorgangsnummer
-          x-apidog-ignore-properties: []
+          x--orders:
+            - dokumentennummer
+            - vertragsende
+            - kategorie
+            - absender
+            - transaktionsgrundergaenzungBefristeteAnmeldung
+            - nachrichtendatum
+            - nachrichtenreferenznummer
+            - vertragsbeginn
+            - empfaenger
+            - anfragereferenznummer
+            - transaktionsgrundergaenzung
+            - pruefidentifikator
+            - transaktionsgrund
+            - vorgangsnummer
+          x--ignore-properties: []
       required:
         - stammdaten
         - transaktionsdaten
@@ -748,7 +838,10 @@ components:
       x-apidog-orders:
         - stammdaten
         - transaktionsdaten
-      x-apidog-ignore-properties: []
+      x--orders:
+        - stammdaten
+        - transaktionsdaten
+      x--ignore-properties: []
       x-apidog-folder: ''
     EVENT_SUCCESS:
       type: object
@@ -776,7 +869,10 @@ components:
       x-apidog-orders:
         - businessKey
         - message
-      x-apidog-ignore-properties: []
+      x--orders:
+        - businessKey
+        - message
+      x--ignore-properties: []
       x-apidog-folder: ''
     EVENT_FAIL:
       type: object
@@ -795,7 +891,10 @@ components:
       x-apidog-orders:
         - errorCode
         - message
-      x-apidog-ignore-properties: []
+      x--orders:
+        - errorCode
+        - message
+      x--ignore-properties: []
       x-apidog-folder: ''
   securitySchemes:
     bearer:

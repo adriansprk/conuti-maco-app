@@ -151,13 +151,18 @@ components:
               required:
                 - prozessId
                 - eventname
-              x-apidog-ignore-properties: []
+              x--orders:
+                - prozessId
+                - eventname
+              x--ignore-properties: []
           x-apidog-refs: {}
           x-apidog-orders:
             - zusatzdaten
           required:
             - zusatzdaten
-          x-apidog-ignore-properties: []
+          x--orders:
+            - zusatzdaten
+          x--ignore-properties: []
       x-apidog-folder: ''
     PI_55218:
       type: object
@@ -179,7 +184,8 @@ components:
                         description: 'EDIFACT: SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI+++E17.CAV+Z22'
                         x-apidog-orders: []
                         properties: {}
-                        x-apidog-ignore-properties: []
+                        x--orders: []
+                        x--ignore-properties: []
                       einheit:
                         type: string
                         title: Mengeneinheit
@@ -212,38 +218,20 @@ components:
                     x-apidog-orders:
                       - wert
                       - einheit
-                    x-apidog-ignore-properties: []
+                    x--orders:
+                      - wert
+                      - einheit
+                    x--ignore-properties: []
                 x-apidog-orders:
                   - verbrauchsaufteilung
-                x-apidog-ignore-properties: []
+                x--orders:
+                  - verbrauchsaufteilung
+                x--ignore-properties: []
             MARKTLOKATION:
               type: array
               items:
                 type: object
                 properties:
-                  marktlokationsId:
-                    type: string
-                    description: >-
-                      Die ID der Marktlokation der der zu sperrende Zähler
-                      zugeordnet ist. | EDIFACT: SG4.IDE+24.SG5.LOC+Z16
-                  datenqualitaet:
-                    type: string
-                    title: Datenqualitaet
-                    description: >-
-                      Datenqualitaet | EDIFACT:
-                      SG4.IDE+24.SG6.RFF+[Z50|Z51|Z52],
-                      SG4.IDE+24.SG8.SEQ+[Z45|Z84]
-                    enum:
-                      - ERWARTETE_DATEN
-                      - IM_SYSTEM_VORHANDENE_DATEN
-                      - INFORMATIVE_DATEN
-                      - GUELTIGE_DATEN
-                      - KEINE_DATEN
-                      - IM_SYSTEM_KEINE_DATEN_VORHANDEN
-                      - KEINE_DATEN_ERWARTET
-                      - DIFFERENZ_DATEN
-                      - DIFFERENZ_ERWARTETE_DATEN
-                      - DIFFERENZ_IM_SYSTEM_VORHANDENE_DATEN
                   netznutzungsabrechnungsdaten:
                     type: array
                     items:
@@ -271,7 +259,8 @@ components:
                                 SG4.IDE+24.SG8.SEQ+[Z45|Z84].SG10.CCI+Z38
                               x-apidog-orders: []
                               properties: {}
-                              x-apidog-ignore-properties: []
+                              x--orders: []
+                              x--ignore-properties: []
                             zaehlzeitDefinition:
                               type: string
                               title: Zaehlzeitdefinition
@@ -281,7 +270,10 @@ components:
                           x-apidog-orders:
                             - register
                             - zaehlzeitDefinition
-                          x-apidog-ignore-properties: []
+                          x--orders:
+                            - register
+                            - zaehlzeitDefinition
+                          x--ignore-properties: []
                         singulaereBetriebsmittel:
                           type: object
                           properties:
@@ -294,10 +286,13 @@ components:
                                 SG4.IDE+24.SG8.SEQ+[Z45|Z84].SG10.CCI+Z44+ZD8
                               x-apidog-orders: []
                               properties: {}
-                              x-apidog-ignore-properties: []
+                              x--orders: []
+                              x--ignore-properties: []
                           x-apidog-orders:
                             - wert
-                          x-apidog-ignore-properties: []
+                          x--orders:
+                            - wert
+                          x--ignore-properties: []
                         artikelId:
                           type: array
                           description: >-
@@ -313,21 +308,24 @@ components:
                             SG4.IDE+24.SG8.SEQ+[Z45|Z84].SG9.QTY
                           x-apidog-orders: []
                           properties: {}
-                          x-apidog-ignore-properties: []
+                          x--orders: []
+                          x--ignore-properties: []
                         zuschlag:
                           type: object
                           title: Zuschlag
                           description: 'EDIFACT: SG4.IDE+24.SG8.SEQ+[Z45|Z84].SG9.QTY'
                           x-apidog-orders: []
                           properties: {}
-                          x-apidog-ignore-properties: []
+                          x--orders: []
+                          x--ignore-properties: []
                         abschlag:
                           type: object
                           title: Abschlag
                           description: 'EDIFACT: SG4.IDE+24.SG8.SEQ+[Z45|Z84].SG9.QTY'
                           x-apidog-orders: []
                           properties: {}
-                          x-apidog-ignore-properties: []
+                          x--orders: []
+                          x--ignore-properties: []
                         anzahl:
                           type: string
                           title: Registeranzahl
@@ -351,7 +349,39 @@ components:
                         - artikelIdTyp
                         - artikelId
                         - gemeinderabatt
-                      x-apidog-ignore-properties: []
+                      x--orders:
+                        - artikelIdTyp
+                        - zaehlzeiten
+                        - singulaereBetriebsmittel
+                        - artikelId
+                        - gemeinderabatt
+                        - zuschlag
+                        - abschlag
+                        - anzahl
+                      x--ignore-properties: []
+                  marktlokationsId:
+                    type: string
+                    description: >-
+                      Die ID der Marktlokation der der zu sperrende Zähler
+                      zugeordnet ist. | EDIFACT: SG4.IDE+24.SG5.LOC+Z16
+                  datenqualitaet:
+                    type: string
+                    title: Datenqualitaet
+                    description: >-
+                      Datenqualitaet | EDIFACT:
+                      SG4.IDE+24.SG6.RFF+[Z50|Z51|Z52],
+                      SG4.IDE+24.SG8.SEQ+[Z45|Z84]
+                    enum:
+                      - ERWARTETE_DATEN
+                      - IM_SYSTEM_VORHANDENE_DATEN
+                      - INFORMATIVE_DATEN
+                      - GUELTIGE_DATEN
+                      - KEINE_DATEN
+                      - IM_SYSTEM_KEINE_DATEN_VORHANDEN
+                      - KEINE_DATEN_ERWARTET
+                      - DIFFERENZ_DATEN
+                      - DIFFERENZ_ERWARTETE_DATEN
+                      - DIFFERENZ_IM_SYSTEM_VORHANDENE_DATEN
                   gueltigkeitszeitraum:
                     type: object
                     properties:
@@ -363,7 +393,9 @@ components:
                           SG4.IDE+24.SG8.SEQ+[Z45|Z84]
                     x-apidog-orders:
                       - zeitraumId
-                    x-apidog-ignore-properties: []
+                    x--orders:
+                      - zeitraumId
+                    x--ignore-properties: []
                   netzbetreiberCodeNr:
                     type: string
                     description: >-
@@ -379,24 +411,21 @@ components:
                   - gueltigkeitszeitraum
                   - netzbetreiberCodeNr
                 required:
-                  - marktlokationsId
                   - netznutzungsabrechnungsdaten
+                  - marktlokationsId
                   - netzbetreiberCodeNr
-                x-apidog-ignore-properties: []
+                x--orders:
+                  - netznutzungsabrechnungsdaten
+                  - marktlokationsId
+                  - datenqualitaet
+                  - gueltigkeitszeitraum
+                  - netzbetreiberCodeNr
+                x--ignore-properties: []
             NETZNUTZUNGSVERTRAG:
               type: array
               items:
                 type: object
                 properties:
-                  vertragsart:
-                    type: string
-                    enum:
-                      - NETZNUTZUNGSVERTRAG
-                    x-apidog-enum:
-                      - value: NETZNUTZUNGSVERTRAG
-                        name: ''
-                        description: ''
-                    default: NETZNUTZUNGSVERTRAG
                   vertragskonditionen:
                     type: object
                     properties:
@@ -449,7 +478,9 @@ components:
                           - abrechnungsZeitraum
                         required:
                           - abrechnungsZeitraum
-                        x-apidog-ignore-properties: []
+                        x--orders:
+                          - abrechnungsZeitraum
+                        x--ignore-properties: []
                     x-apidog-orders:
                       - naechstenetznutzungsabrechnung
                       - netznutzungsvertrag
@@ -464,23 +495,38 @@ components:
                       - netznutzungszahler
                       - netznutzungsabrechnungsgrundlage
                       - netznutzungsabrechnung
-                    x-apidog-ignore-properties: []
+                    x--orders:
+                      - naechstenetznutzungsabrechnung
+                      - netznutzungsvertrag
+                      - netznutzungsabrechnungIntervall
+                      - netznutzungszahler
+                      - netznutzungsabrechnungsgrundlage
+                      - netznutzungsabrechnung
+                    x--ignore-properties: []
+                  vertragsart:
+                    type: string
+                    enum:
+                      - NETZNUTZUNGSVERTRAG
+                    x-apidog-enum:
+                      - value: NETZNUTZUNGSVERTRAG
+                        name: ''
+                        description: ''
+                    default: NETZNUTZUNGSVERTRAG
                 x-apidog-orders:
                   - vertragsart
                   - vertragskonditionen
                 required:
-                  - vertragsart
                   - vertragskonditionen
-                x-apidog-ignore-properties: []
+                  - vertragsart
+                x--orders:
+                  - vertragskonditionen
+                  - vertragsart
+                x--ignore-properties: []
             VERWENDUNGSZEITRAUM:
               type: array
               items:
                 type: object
                 properties:
-                  boTyp:
-                    type: string
-                  versionStruktur:
-                    type: string
                   verwendungBis:
                     type: string
                     description: >-
@@ -513,6 +559,10 @@ components:
                     description: >-
                       zeitraumId | EDIFACT: SG4.IDE+24.SG6.RFF+[Z49|Z53],
                       SG4.IDE+24.SG8.SEQ+Z01
+                  boTyp:
+                    type: string
+                  versionStruktur:
+                    type: string
                 x-apidog-orders:
                   - boTyp
                   - versionStruktur
@@ -521,12 +571,19 @@ components:
                   - verwendungAb
                   - zeitraumId
                 required:
-                  - boTyp
-                  - versionStruktur
                   - datenqualitaet
                   - verwendungAb
                   - zeitraumId
-                x-apidog-ignore-properties: []
+                  - boTyp
+                  - versionStruktur
+                x--orders:
+                  - verwendungBis
+                  - datenqualitaet
+                  - verwendungAb
+                  - zeitraumId
+                  - boTyp
+                  - versionStruktur
+                x--ignore-properties: []
           x-apidog-orders:
             - BILANZIERUNG
             - MARKTLOKATION
@@ -536,7 +593,12 @@ components:
             - MARKTLOKATION
             - NETZNUTZUNGSVERTRAG
             - VERWENDUNGSZEITRAUM
-          x-apidog-ignore-properties: []
+          x--orders:
+            - BILANZIERUNG
+            - MARKTLOKATION
+            - NETZNUTZUNGSVERTRAG
+            - VERWENDUNGSZEITRAUM
+          x--ignore-properties: []
         transaktionsdaten:
           type: object
           properties:
@@ -589,10 +651,6 @@ components:
             absender:
               type: object
               properties:
-                boTyp:
-                  type: string
-                versionStruktur:
-                  type: string
                 rufnummern:
                   type: array
                   items:
@@ -604,7 +662,8 @@ components:
                         description: 'EDIFACT: SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]'
                         x-apidog-orders: []
                         properties: {}
-                        x-apidog-ignore-properties: []
+                        x--orders: []
+                        x--ignore-properties: []
                       nummerntyp:
                         type: string
                         title: Rufnummernart
@@ -622,7 +681,10 @@ components:
                     x-apidog-orders:
                       - rufnummer
                       - nummerntyp
-                    x-apidog-ignore-properties: []
+                    x--orders:
+                      - rufnummer
+                      - nummerntyp
+                    x--ignore-properties: []
                 rollencodenummer:
                   type: string
                   description: 'Gibt die Codenummer der Marktrolle an. | EDIFACT: SG2.NAD+MS'
@@ -642,7 +704,10 @@ components:
                   x-apidog-orders:
                     - nachname
                     - eMailAdresse
-                  x-apidog-ignore-properties: []
+                  x--orders:
+                    - nachname
+                    - eMailAdresse
+                  x--ignore-properties: []
                 rollencodetyp:
                   type: string
                   title: Rollencodetyp
@@ -654,6 +719,10 @@ components:
                     - DVGW
                 marktrolle:
                   type: string
+                boTyp:
+                  type: string
+                versionStruktur:
+                  type: string
               x-apidog-orders:
                 - boTyp
                 - versionStruktur
@@ -663,12 +732,20 @@ components:
                 - rollencodetyp
                 - marktrolle
               required:
-                - boTyp
-                - versionStruktur
                 - rollencodenummer
                 - rollencodetyp
                 - marktrolle
-              x-apidog-ignore-properties: []
+                - boTyp
+                - versionStruktur
+              x--orders:
+                - rufnummern
+                - rollencodenummer
+                - ansprechpartner
+                - rollencodetyp
+                - marktrolle
+                - boTyp
+                - versionStruktur
+              x--ignore-properties: []
             nachrichtendatum:
               type: string
               description: 'Erstellungdatum der EDIFact / DTM+137 | EDIFACT: DTM+137'
@@ -676,10 +753,6 @@ components:
             empfaenger:
               type: object
               properties:
-                boTyp:
-                  type: string
-                versionStruktur:
-                  type: string
                 rollencodetyp:
                   type: string
                   title: Rollencodetyp
@@ -694,6 +767,10 @@ components:
                   description: 'Gibt die Codenummer der Marktrolle an. | EDIFACT: SG2.NAD+MR'
                 marktrolle:
                   type: string
+                boTyp:
+                  type: string
+                versionStruktur:
+                  type: string
               x-apidog-orders:
                 - boTyp
                 - versionStruktur
@@ -701,12 +778,18 @@ components:
                 - rollencodenummer
                 - marktrolle
               required:
-                - boTyp
-                - versionStruktur
                 - rollencodetyp
                 - rollencodenummer
                 - marktrolle
-              x-apidog-ignore-properties: []
+                - boTyp
+                - versionStruktur
+              x--orders:
+                - rollencodetyp
+                - rollencodenummer
+                - marktrolle
+                - boTyp
+                - versionStruktur
+              x--ignore-properties: []
             transaktionsgrund:
               type: string
               description: >-
@@ -723,14 +806,23 @@ components:
             - kategorie
             - absender
             - empfaenger
-          x-apidog-ignore-properties: []
+          x--orders:
+            - kategorie
+            - absender
+            - nachrichtendatum
+            - empfaenger
+            - transaktionsgrund
+          x--ignore-properties: []
       required:
         - stammdaten
         - transaktionsdaten
       x-apidog-orders:
         - stammdaten
         - transaktionsdaten
-      x-apidog-ignore-properties: []
+      x--orders:
+        - stammdaten
+        - transaktionsdaten
+      x--ignore-properties: []
       x-apidog-folder: ''
     EVENT_SUCCESS:
       type: object
@@ -758,7 +850,10 @@ components:
       x-apidog-orders:
         - businessKey
         - message
-      x-apidog-ignore-properties: []
+      x--orders:
+        - businessKey
+        - message
+      x--ignore-properties: []
       x-apidog-folder: ''
     EVENT_FAIL:
       type: object
@@ -777,7 +872,10 @@ components:
       x-apidog-orders:
         - errorCode
         - message
-      x-apidog-ignore-properties: []
+      x--orders:
+        - errorCode
+        - message
+      x--ignore-properties: []
       x-apidog-folder: ''
   securitySchemes:
     bearer:

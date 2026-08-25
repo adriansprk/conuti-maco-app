@@ -362,7 +362,14 @@ components:
                   - energierichtung
                   - erforderlichesProduktpaket
                 x-apidog-refs: {}
-                x-apidog-ignore-properties: []
+                x--orders:
+                  - marktlokationsId
+                  - energierichtung
+                  - lokationsadresse
+                  - katasterinformation
+                  - geokoordinaten
+                  - erforderlichesProduktpaket
+                x--ignore-properties: []
             TRANCHE:
               type: array
               items:
@@ -379,7 +386,9 @@ components:
                       - '57685676742'
                 x-apidog-orders:
                   - tranchenId
-                x-apidog-ignore-properties: []
+                x--orders:
+                  - tranchenId
+                x--ignore-properties: []
             MESSLOKATION:
               type: array
               items:
@@ -396,7 +405,9 @@ components:
                       - DE00014545768S0000000000000003054
                 x-apidog-orders:
                   - messlokationsId
-                x-apidog-ignore-properties: []
+                x--orders:
+                  - messlokationsId
+                x--ignore-properties: []
             ZAEHLER:
               type: array
               items:
@@ -412,7 +423,9 @@ components:
                       - 1SM-8465929523
                 x-apidog-orders:
                   - zaehlernummer
-                x-apidog-ignore-properties: []
+                x--orders:
+                  - zaehlernummer
+                x--ignore-properties: []
             ENERGIELIEFERVERTRAG:
               type: array
               items:
@@ -507,7 +520,10 @@ components:
                             x-apidog-orders:
                               - exRefName
                               - exRefWert
-                            x-apidog-ignore-properties: []
+                            x--orders:
+                              - exRefName
+                              - exRefWert
+                            x--ignore-properties: []
                       x-apidog-orders:
                         - boTyp
                         - versionStruktur
@@ -517,11 +533,23 @@ components:
                         - gewerbekennzeichnung
                         - geschaeftspartnerrolle
                         - externeReferenzen
-                      x-apidog-ignore-properties: []
+                      x--orders:
+                        - boTyp
+                        - versionStruktur
+                        - anrede
+                        - name1
+                        - name2
+                        - gewerbekennzeichnung
+                        - geschaeftspartnerrolle
+                        - externeReferenzen
+                      x--ignore-properties: []
                 x-apidog-orders:
                   - vertragsart
                   - vertragspartner2
-                x-apidog-ignore-properties: []
+                x--orders:
+                  - vertragsart
+                  - vertragspartner2
+                x--ignore-properties: []
             NETZNUTZUNGSVERTRAG:
               type: array
               items:
@@ -544,7 +572,10 @@ components:
                   - vertragsende
                 required:
                   - vertragsende
-                x-apidog-ignore-properties: []
+                x--orders:
+                  - vertragsart
+                  - vertragsende
+                x--ignore-properties: []
           required:
             - MARKTLOKATION
           x-apidog-orders:
@@ -554,7 +585,14 @@ components:
             - ZAEHLER
             - ENERGIELIEFERVERTRAG
             - NETZNUTZUNGSVERTRAG
-          x-apidog-ignore-properties: []
+          x--orders:
+            - MARKTLOKATION
+            - TRANCHE
+            - MESSLOKATION
+            - ZAEHLER
+            - ENERGIELIEFERVERTRAG
+            - NETZNUTZUNGSVERTRAG
+          x--ignore-properties: []
         transaktionsdaten:
           type: object
           description: >
@@ -589,7 +627,10 @@ components:
               x-apidog-orders:
                 - rollencodenummer
                 - rollencodetyp
-              x-apidog-ignore-properties: []
+              x--orders:
+                - rollencodenummer
+                - rollencodetyp
+              x--ignore-properties: []
             empfaenger:
               type: object
               description: >-
@@ -610,7 +651,10 @@ components:
               x-apidog-orders:
                 - rollencodenummer
                 - rollencodetyp
-              x-apidog-ignore-properties: []
+              x--orders:
+                - rollencodenummer
+                - rollencodetyp
+              x--ignore-properties: []
             beteiligterMarktpartner:
               type: object
               description: >-
@@ -626,7 +670,10 @@ components:
               x-apidog-orders:
                 - rollencodenummer
                 - rollencodetyp
-              x-apidog-ignore-properties: []
+              x--orders:
+                - rollencodenummer
+                - rollencodetyp
+              x--ignore-properties: []
             vertragsbeginn:
               type: string
               pattern: >-
@@ -713,7 +760,20 @@ components:
             - transaktionsgrundergaenzungBefristeteAnmeldung
             - sparte
             - identifikationslogik
-          x-apidog-ignore-properties: []
+          x--orders:
+            - ausfuehrungsdatum
+            - absender
+            - empfaenger
+            - beteiligterMarktpartner
+            - vertragsbeginn
+            - vertragsende
+            - endezumtermin
+            - transaktionsgrund
+            - transaktionsgrundergaenzung
+            - transaktionsgrundergaenzungBefristeteAnmeldung
+            - sparte
+            - identifikationslogik
+          x--ignore-properties: []
         zusatzdaten:
           type: object
           description: |
@@ -736,7 +796,10 @@ components:
           x-apidog-orders:
             - prozessId
             - eventname
-          x-apidog-ignore-properties: []
+          x--orders:
+            - prozessId
+            - eventname
+          x--ignore-properties: []
       required:
         - stammdaten
         - transaktionsdaten
@@ -745,7 +808,11 @@ components:
         - stammdaten
         - transaktionsdaten
         - zusatzdaten
-      x-apidog-ignore-properties: []
+      x--orders:
+        - stammdaten
+        - transaktionsdaten
+        - zusatzdaten
+      x--ignore-properties: []
       x-apidog-folder: ''
     Rollencodetyp:
       type: string
@@ -817,7 +884,12 @@ components:
         - produkt
         - umsetzungsgradvorgabe
         - priorisierung
-      x-apidog-ignore-properties: []
+      x--orders:
+        - produktpaketId
+        - produkt
+        - umsetzungsgradvorgabe
+        - priorisierung
+      x--ignore-properties: []
       x-apidog-folder: ''
     Priorisierung:
       type: string
@@ -891,7 +963,11 @@ components:
         - produktCode
         - codeProdukteigenschaft
         - wertedetails
-      x-apidog-ignore-properties: []
+      x--orders:
+        - produktCode
+        - codeProdukteigenschaft
+        - wertedetails
+      x--ignore-properties: []
       x-apidog-folder: ''
     Geokoordinaten:
       title: Geokoordinaten
@@ -926,7 +1002,15 @@ components:
         - zone
         - hochwert
         - rechtswert
-      x-apidog-ignore-properties: []
+      x--orders:
+        - breitengrad
+        - laengengrad
+        - ostwert
+        - nordwert
+        - zone
+        - hochwert
+        - rechtswert
+      x--ignore-properties: []
       x-apidog-folder: ''
     Zone:
       title: Zone
@@ -954,7 +1038,11 @@ components:
         - gemarkung_flur
         - flurstueck
         - flurstueckNummer
-      x-apidog-ignore-properties: []
+      x--orders:
+        - gemarkung_flur
+        - flurstueck
+        - flurstueckNummer
+      x--ignore-properties: []
       x-apidog-folder: ''
     Adresse:
       title: Adresse
@@ -1001,7 +1089,18 @@ components:
         - landescode
         - ortsteil
         - zusatzInformation
-      x-apidog-ignore-properties: []
+      x--orders:
+        - postleitzahl
+        - ort
+        - strasse
+        - hausnummer
+        - postfach
+        - adresszusatz
+        - coErgaenzung
+        - landescode
+        - ortsteil
+        - zusatzInformation
+      x--ignore-properties: []
       x-apidog-folder: ''
     AdresszusatzInformation:
       title: AdresszusatzInformation
@@ -1028,7 +1127,13 @@ components:
         - zusatz3
         - zusatz4
         - zusatz5
-      x-apidog-ignore-properties: []
+      x--orders:
+        - zusatz1
+        - zusatz2
+        - zusatz3
+        - zusatz4
+        - zusatz5
+      x--ignore-properties: []
       x-apidog-folder: ''
     Landescode:
       title: Landescode
@@ -1344,7 +1449,10 @@ components:
       x-apidog-orders:
         - businessKey
         - message
-      x-apidog-ignore-properties: []
+      x--orders:
+        - businessKey
+        - message
+      x--ignore-properties: []
       x-apidog-folder: ''
     EVENT_FAIL:
       type: object
@@ -1363,7 +1471,10 @@ components:
       x-apidog-orders:
         - errorCode
         - message
-      x-apidog-ignore-properties: []
+      x--orders:
+        - errorCode
+        - message
+      x--ignore-properties: []
       x-apidog-folder: ''
   securitySchemes:
     bearer:
