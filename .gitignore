@@ -7,6 +7,8 @@ api-requests/
 message-downloader/
 workbench/bo4e
 workbench/bo4e-download
+bdew-docs/xml-docs
+
 
 .cursor/skills/conuti-edifact-converter/token.txt
 *.token.txt

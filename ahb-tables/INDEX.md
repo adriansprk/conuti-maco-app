@@ -191,14 +191,14 @@ Downloaded from [ahb-tabellen.hochfrequenz.de](https://ahb-tabellen.hochfrequenz
 | 23009 | Informationsmeldung | MSB → NB (Gas), MSB → MSB (Strom) | 1.1g | 2025-12-11 | 79 |
 | 23011 | Informationsmeldung | MSB → NB, MSB → LF, MSB → ÜNB | 1.1g | 2025-12-11 | 65 |
 | 23012 | Informationsmeldung | MSB → NB, MSB → LF, MSB → ÜNB | 1.1g | 2025-12-11 | 81 |
-| 25001 | Berechnungsformel | NB → MSB, NB → LF, NBA → NBN | 1.0 | 2025-12-11 | 127 |
-| 25004 | Übermittlung Übersicht Zählzeitdefinitionen | NB → LF, NB → MSB, LF → MSB | 1.0 | 2025-12-11 | 110 |
-| 25005 | Übermittlung einer ausgerollten Zählzeitdefinition | NB → LF, NB → MSB, LF → MSB | 1.0 | 2025-12-11 | 78 |
-| 25006 | Übermittlung Übersicht Schaltzeitdefinitionen | NB → LF, NB → MSB, LF → NB, LF → MSB | 1.0 | 2025-12-11 | 79 |
-| 25007 | Übermittlung Übersicht Leistungskurvendefinitionen | NB → LF, NB → MSB, LF → NB, LF → MSB | 1.0 | 2025-12-11 | 79 |
-| 25008 | Übermittlung einer ausgerollten Schaltzeitdefinit… | NB → LF, NB → MSB, LF → NB, LF → MSB | 1.0 | 2025-12-11 | 80 |
-| 25009 | Übermittlung einer ausgerollten Leistungskurvende… | NB → LF, NB → MSB, LF → NB, LF → MSB | 1.0 | 2025-12-11 | 80 |
-| 25010 | Antwort auf Berechnungsformel | MSB → NB | 1.0 | 2025-12-11 | 61 |
+| 25001 | Berechnungsformel | NB → MSB, NB → LF, NBA → NBN | 1.0 | 2026-03-27 | 127 |
+| 25004 | Übermittlung Übersicht Zählzeitdefinitionen | NB → LF, NB → MSB, LF → MSB | 1.0 | 2026-03-27 | 110 |
+| 25005 | Übermittlung einer ausgerollten Zählzeitdefinition | NB → LF, NB → MSB, LF → MSB | 1.0 | 2026-03-27 | 78 |
+| 25006 | Übermittlung Übersicht Schaltzeitdefinitionen | NB → LF, NB → MSB, LF → NB, LF → MSB | 1.0 | 2026-03-27 | 79 |
+| 25007 | Übermittlung Übersicht Leistungskurvendefinitionen | NB → LF, NB → MSB, LF → NB, LF → MSB | 1.0 | 2026-03-27 | 79 |
+| 25008 | Übermittlung einer ausgerollten Schaltzeitdefinit… | NB → LF, NB → MSB, LF → NB, LF → MSB | 1.0 | 2026-03-27 | 80 |
+| 25009 | Übermittlung einer ausgerollten Leistungskurvende… | NB → LF, NB → MSB, LF → NB, LF → MSB | 1.0 | 2026-03-27 | 80 |
+| 25010 | Antwort auf Berechnungsformel | MSB → NB | 1.0 | 2026-03-27 | 61 |
 | 27001 | Übermittlung der Ausgleichsenergiepreise | BIKO → BKV | 2.0f | 2025-12-11 | 74 |
 | 27002 | Preisblätter MSB-Leistungen | MSB → LF, MSB → NB | 2.0f | 2025-12-11 | 113 |
 | 27003 | Preisblätter NB-Leistungen | NB → LF | 2.0f | 2025-12-11 | 96 |
@@ -280,7 +280,7 @@ Downloaded from [ahb-tabellen.hochfrequenz.de](https://ahb-tabellen.hochfrequenz
 | 44104 | Aktualisierte Stammdaten zur Marktlokation | NB → LF | 1.0a | 2024-07-26 | 130 |
 | 44105 | Ablehnung auf Stammdaten zur Marktlokation | LF → NB | 1.0a | 2024-07-26 | 70 |
 | 44109 | Nicht bila.rel. Änderung vom LF | LF → NB [Berechtigter] | 1.0a | 2024-07-26 | 97 |
-| 44110 | #nv# Nicht bila.rel. Änderung vom LF | NB [Verteiler] → MSB | 1.0a | 2024-07-26 | 62 |
+| 44110 | Nicht bila.rel. Änderung vom LF | NB [Verteiler] → MSB | 1.0a | 2024-07-26 | 62 |
 | 44111 |  | NB [Berechtigter] → LF | 1.0a | 2024-07-26 | 63 |
 | 44112 | Nicht bila.rel. Änderung vom NB | NB → LF | 1.0a | 2024-07-26 | 223 |
 | 44113 | Nicht bila.rel. Änderung vom NB | NB → MSB | 1.0a | 2024-07-26 | 132 |
@@ -323,229 +323,229 @@ Downloaded from [ahb-tabellen.hochfrequenz.de](https://ahb-tabellen.hochfrequenz
 | 44168 | Verpflichtungsanfrage / Aufforderung | NB → gMSB | 1.0a | 2024-07-26 | 318 |
 | 44169 | Bestätigung Verpflichtungsanfrage | gMSB → NB | 1.0a | 2024-07-26 | 309 |
 | 44170 | Ablehnung Verpflichtungsanfrage | gMSB → NB | 1.0a | 2024-07-26 | 65 |
-| 44172 | #nv# Anfrage an MSB mit Abhängigkeiten | MSB → NB [Verteiler] | 1.0a | 2024-07-26 | 145 |
+| 44172 | Anfrage an MSB mit Abhängigkeiten | MSB → NB [Verteiler] | 1.0a | 2024-07-26 | 145 |
 | 44175 | Änderung der Marktlokationsstruktur | NB → LF | 1.0a | 2024-07-26 | 63 |
 | 44176 | Antwort auf Änderung der Marktlokationsstruktur | LF → NB | 1.0a | 2024-07-26 | 71 |
 | 44180 | Anfrage der Marktlokationsstruktur | LF → NB | 1.0a | 2024-07-26 | 63 |
 | 44181 | Antwort auf Anfrage der Marktlokationsstruktur | NB → LF | 1.0a | 2024-07-26 | 71 |
 | 44182 | Ablehnung der Anfrage der Marktlokationsstruktur | NB → LF | 1.0a | 2024-07-26 | 63 |
-| 55001 | Anmeldung verb. MaLo | LF → NB | 2.1 | 2025-12-11 | 146 |
-| 55002 | Bestätigung Anmeldung verb. MaLo | NB → LF | 2.1 | 2025-12-11 | 165 |
-| 55003 | Ablehnung Anmeldung verb. MaLo | NB → LF | 2.1 | 2025-12-11 | 83 |
-| 55004 | Abmeldung | LF → NB | 2.1 | 2025-12-11 | 83 |
-| 55005 | Bestätigung Abmeldung | NB → LF | 2.1 | 2025-12-11 | 75 |
-| 55006 | Ablehnung Abmeldung | NB → LF | 2.1 | 2025-12-11 | 70 |
-| 55007 | Abmeldung / Beendigung der Zuordnung | NB → LF | 2.1 | 2025-12-11 | 82 |
-| 55008 | Bestätigung Abmeldung | LF → NB | 2.1 | 2025-12-11 | 69 |
-| 55009 | Ablehnung Abmeldung | LF → NB | 2.1 | 2025-12-11 | 64 |
-| 55010 | Anfrage zur Beendigung der Zuordnung | NB → LF | 2.1 | 2025-12-11 | 88 |
-| 55011 | Bestätigung Beendigung der Zuordnung | LF → NB | 2.1 | 2025-12-11 | 64 |
-| 55012 | Ablehnung Beendigung der Zuordnung | LF → NB | 2.1 | 2025-12-11 | 60 |
-| 55013 | Anmeldung / Zuordnung EOG | NB → LF | 2.1 | 2025-12-11 | 257 |
-| 55014 | Bestätigung EOG Anmeldung | LF → NB | 2.1 | 2025-12-11 | 159 |
-| 55015 | Ablehnung EOG Anmeldung | LF → NB | 2.1 | 2025-12-11 | 74 |
-| 55016 | Kündigung | LFN → LFA | 2.1 | 2025-12-11 | 73 |
-| 55017 | Bestätigung Kündigung | LFA → LFN | 2.1 | 2025-12-11 | 78 |
-| 55018 | Ablehnung Kündigung | LFA → LFN | 2.1 | 2025-12-11 | 80 |
-| 55022 | Anfrage nach Stornierung | MSCONS-Nachrichten können von verschieden… | 2.1 | 2025-12-11 | 60 |
-| 55023 | Bestätigung Anfrage Stornierung | zurück → den Absender | 2.1 | 2025-12-11 | 61 |
-| 55024 | Ablehnung Anfrage Stornierung | zurück → den Absender | 2.1 | 2025-12-11 | 64 |
-| 55035 | Antwort auf GDA verb. MaLo | NB → LF | 2.1 | 2025-12-11 | 531 |
-| 55036 | Existierende Zuordnung | NB → LF | 2.1 | 2025-12-11 | 69 |
-| 55037 | Beendigung der Zuordnung | NB → LF | 2.1 | 2025-12-11 | 67 |
-| 55038 | Aufhebung einer zuk. Zuordnung | NB → LF | 2.1 | 2025-12-11 | 74 |
-| 55039 | Kündigung MSB | MSBN → MSBA | 2.1 | 2025-12-11 | 91 |
-| 55040 | Bestätigung Kündigung MSB | MSBA → MSBN | 2.1 | 2025-12-11 | 104 |
-| 55041 | Ablehnung Kündigung MSB | MSBA → MSBN | 2.1 | 2025-12-11 | 77 |
-| 55042 | Anmeldung MSB | MSB → NB | 2.1 | 2025-12-11 | 116 |
-| 55043 | Bestätigung Anmeldung MSB | NB → MSB | 2.1 | 2025-12-11 | 909 |
-| 55044 | Ablehnung Anmeldung MSB | NB → MSB | 2.1 | 2025-12-11 | 66 |
-| 55051 | Ende MSB | MSB → NB | 2.1 | 2025-12-11 | 68 |
-| 55052 | Bestätigung Ende MSB | NB → MSB | 2.1 | 2025-12-11 | 98 |
-| 55053 | Ablehnung Ende MSB | NB → MSB | 2.1 | 2025-12-11 | 68 |
-| 55060 | Antwort auf GDA | NB → MSB | 2.1 | 2025-12-11 | 608 |
-| 55062 | Aktivierung von ZP | NB → BIKO, NB → LF, NB → NB, NB → ÜNB, ÜN… | 2.1 | 2025-12-11 | 125 |
-| 55063 | Deaktivierung von ZP | NB → BIKO, NB → LF, NB → NB, NB → ÜNB, ÜN… | 2.1 | 2025-12-11 | 56 |
-| 55064 | Antwort | BIKO → NB, BIKO → ÜNB, NB → NB | 2.1 | 2025-12-11 | 79 |
-| 55065 | Lieferantenclearingliste | NB → LF, ÜNB → LF | 2.1 | 2025-12-11 | 192 |
-| 55066 | Korrekturliste zur Lieferantenclearingliste | LF → NB, LF → ÜNB | 2.1 | 2025-12-11 | 210 |
-| 55067 | Bilanzkreiszuordnungsliste | NB → BKV, ÜNB → BKV | 2.1 | 2025-12-11 | 111 |
-| 55069 | Clearingliste DZR | BIKO → NB, BIKO → ÜNB | 2.1 | 2025-12-11 | 116 |
-| 55070 | Clearingliste BAS | BIKO → BKV | 2.1 | 2025-12-11 | 168 |
-| 55071 | Aktivierung der Zuordnungsermächtigung | BKV → NB | 2.1 | 2025-12-11 | 75 |
-| 55072 | Deaktivierung der Zuordnungsermächtigung | BKV → NB | 2.1 | 2025-12-11 | 75 |
-| 55073 | Übermittlung der Profildefinitionen | NB → LF, NB → MSB | 2.1 | 2025-12-11 | 212 |
-| 55074 | Stammdaten auf eine ORDERS | NB → UBA | 2.1 | 2025-12-11 | 269 |
-| 55075 | Stammdaten aufgrund einer Änderung | NB → UBA | 2.1 | 2025-12-11 | 279 |
-| 55076 | Antwort auf Stammdatenänderung | UBA → NB | 2.1 | 2025-12-11 | 287 |
-| 55077 | Anmeldung erz. MaLo | LF → NB | 2.1 | 2025-12-11 | 111 |
-| 55078 | Bestätigung Anmeldung erz. MaLo | NB → LF | 2.1 | 2025-12-11 | 171 |
-| 55080 | Ablehnung Anmeldung erz. MaLo | NB → LF | 2.1 | 2025-12-11 | 89 |
-| 55095 | Antwort auf GDA erz. MaLo | NB → LF | 2.1 | 2025-12-11 | 465 |
-| 55109 | Änderung Daten der MaLo | LF → NB | 2.1 | 2025-12-11 | 129 |
-| 55110 | Änderung Daten der MaLo | LF → MSB | 2.1 | 2025-12-11 | 90 |
-| 55126 | Abr.-Daten BK-Abr. verb. Malo | NB → LF, NBA → NBN | 2.1 | 2025-12-11 | 156 |
-| 55136 | Rückmeldung/Anfrage Daten der MaLo | MSB → LF | 2.1 | 2025-12-11 | 104 |
-| 55137 | Rückmeldung/Anfrage Daten der MaLo | NB → LF | 2.1 | 2025-12-11 | 145 |
-| 55156 | Rückmeldung/Anfrage Abr.-Daten BK-Abr. verb. MaLo | LF → NB | 2.1 | 2025-12-11 | 171 |
-| 55168 | Verpflichtungsanfrage / Aufforderung | NB → gMSB | 2.1 | 2025-12-11 | 927 |
-| 55169 | Bestätigung Verpflichtungsanfrage | gMSB → NB | 2.1 | 2025-12-11 | 908 |
-| 55170 | Ablehnung Verpflichtungsanfrage | gMSB → NB | 2.1 | 2025-12-11 | 65 |
-| 55173 | Änderung der Lokationsbündelstruktur | NB → MSB | 2.1 | 2025-12-11 | 124 |
-| 55175 | Änderung der Lokationsbündelstruktur | NB → LF | 2.1 | 2025-12-11 | 124 |
-| 55177 | Rückmeldung/Anfrage Lokationsbündelstruktur | MSB → NB | 2.1 | 2025-12-11 | 138 |
-| 55180 | Rückmeldung/Anfrage Lokationsbündelstruktur | LF → NB | 2.1 | 2025-12-11 | 138 |
-| 55194 | Antwort auf GDA (Strom an Gas) | NB → MSB | 2.1 | 2025-12-11 | 95 |
-| 55195 | Bilanzierungsgebietsclearingliste | ÜNB → NB | 2.1 | 2025-12-11 | 199 |
-| 55196 | Antwort auf Bilanzierungsgebietsclearingliste | NB → ÜNB | 2.1 | 2025-12-11 | 299 |
-| 55197 | Aktivierung ZP tägliche AAÜZ | NB (ANB) → ÜNB | 2.1 | 2025-12-11 | 84 |
-| 55198 | Deaktivierung tägliche AAÜZ | NB (ANB) → ÜNB | 2.1 | 2025-12-11 | 56 |
-| 55199 | Aktivierung ZP LF-AASZR | NB (ANB) → LF | 2.1 | 2025-12-11 | 84 |
-| 55200 | Deaktivierung ZP LF-AASZR | NB (ANB) → LF | 2.1 | 2025-12-11 | 56 |
-| 55201 | LF-AACL | NB (ANB) → LF | 2.1 | 2025-12-11 | 114 |
-| 55202 | Korrekturliste LF-AACL | LF → NB (ANB) | 2.1 | 2025-12-11 | 128 |
-| 55203 | Aktivierung ZP monatliche AAÜZ | NB (ANB) → BIKO | 2.1 | 2025-12-11 | 88 |
-| 55204 | Antwort auf Aktivierung ZP | BIKO → NB (ANB) | 2.1 | 2025-12-11 | 64 |
-| 55205 | Weiterleitung Aktivierung ZP | BIKO → BKV (des LF) | 2.1 | 2025-12-11 | 88 |
-| 55206 | Deaktivierung ZP monatliche AAÜZ | NB (ANB) → BIKO | 2.1 | 2025-12-11 | 56 |
-| 55207 | Antwort auf Deaktivierung ZP | BIKO → NB (ANB) | 2.1 | 2025-12-11 | 64 |
-| 55208 | Weiterleitung Deaktivierung ZP | BIKO → BKV (des LF) | 2.1 | 2025-12-11 | 56 |
-| 55209 | Aktivierung ZP monatliche AAÜZ | NB (ANB) → BIKO | 2.1 | 2025-12-11 | 88 |
-| 55210 | Antwort auf Aktivierung ZP | BIKO → NB (ANB) | 2.1 | 2025-12-11 | 64 |
-| 55211 | Weiterleitung Aktivierung ZP | BIKO → BKV (des anfNB) | 2.1 | 2025-12-11 | 88 |
-| 55212 | Deaktivierung ZP monatliche AAÜZ | NB (ANB) → BIKO | 2.1 | 2025-12-11 | 56 |
-| 55213 | Antwort auf Deaktivierung ZP | BIKO → NB (ANB) | 2.1 | 2025-12-11 | 64 |
-| 55214 | Weiterleitung Deaktivierung ZP | BIKO → BKV (des anfNB) | 2.1 | 2025-12-11 | 56 |
-| 55218 | Abr.-Daten NNA | NB → LF, NBA → NBN | 2.1 | 2025-12-11 | 160 |
-| 55220 | Rückmeldung/Anfrage Abr.-Daten NNA | LF → NB | 2.1 | 2025-12-11 | 176 |
-| 55223 | DZÜ Liste | ÜNB → NB | 2.1 | 2025-12-11 | 234 |
-| 55224 | Antwort auf DZÜ Liste | NB → ÜNB | 2.1 | 2025-12-11 | 143 |
-| 55225 | Änderung Blindabr.-Daten der NeLo | NB → LF, NBA → NBN | 2.1 | 2025-12-11 | 87 |
-| 55227 | Rückmeldung/Anfrage Blindabr.-Daten der NeLo | LF → NB | 2.1 | 2025-12-11 | 100 |
-| 55230 | Änderung Blindabr.-Daten der NeLo | LF → NB | 2.1 | 2025-12-11 | 77 |
-| 55232 | Rückmeldung/Anfrage Blindabr.-Daten der NeLo | NB → LF | 2.1 | 2025-12-11 | 90 |
-| 55235 | Zuordnung ZP der NGZ zur NZR | NB → NB, NB → ÜNB | 2.1 | 2025-12-11 | 84 |
-| 55236 | Beendigung Zuordnung ZP der NGZ zur NZR | NB → NB, NB → ÜNB | 2.1 | 2025-12-11 | 56 |
-| 55237 | Antwort | NB → NB | 2.1 | 2025-12-11 | 72 |
-| 55238 | Anmeldung in Modell 2 | NB (LPB) → NB (VNB) | 2.1 | 2025-12-11 | 76 |
-| 55239 | Antwort auf Anmeldung | NB (VNB) → NB (LPB) | 2.1 | 2025-12-11 | 104 |
-| 55240 | Beendigung der Zuordnung zur MaLo | NB (VNB) → LF | 2.1 | 2025-12-11 | 67 |
-| 55241 | Antwort auf Beendigung | LF → NB (VNB) | 2.1 | 2025-12-11 | 75 |
-| 55242 | Abmeldung aus dem Modell 2 | NB (LPB) → NB (VNB) | 2.1 | 2025-12-11 | 70 |
-| 55243 | Antwort auf Abmeldung | NB (VNB) → NB (LPB) | 2.1 | 2025-12-11 | 78 |
-| 55553 | Daten auf individuelle Bestellung | MSB → NB, MSB → LF, MSB → MSB | 2.1 | 2025-12-11 | 171 |
-| 55555 | Rückmeldung/Anfrage Daten der individuellen Beste… | NB → MSB, LF → MSB, MSB → MSB | 2.1 | 2025-12-11 | 186 |
-| 55557 | Änderung MSB-Abr.-Daten der MaLo | MSB → NB | 2.1 | 2025-12-11 | 88 |
-| 55559 | Rückmeldung/Anfrage MSB-Abr.-Daten der MaLo | NB → MSB | 2.1 | 2025-12-11 | 101 |
-| 55600 | Anmeldung neue verb. MaLo | LF → NB | 2.1 | 2025-12-11 | 153 |
-| 55601 | Anmeldung neue erz. MaLo | LF → NB | 2.1 | 2025-12-11 | 154 |
-| 55602 | Bestätigung Anmeldung neue verb. MaLo | NB → LF | 2.1 | 2025-12-11 | 159 |
-| 55603 | Bestätigung Anmeldung neue erz. MaLo | NB → LF | 2.1 | 2025-12-11 | 170 |
-| 55604 | Ablehnung Anmeldung neue verb. MaLo | NB → LF | 2.1 | 2025-12-11 | 73 |
-| 55605 | Ablehnung Anmeldung neue erz. MaLo | NB → LF | 2.1 | 2025-12-11 | 73 |
-| 55607 | (Ankündigung) Zuordnung des LF zur erz. MaLo/ Tra… | NB → LF | 2.1 | 2025-12-11 | 186 |
-| 55608 | Bestätigung Zuordnung des LF zur erz. MaLo/ Tranc… | LF → NB | 2.1 | 2025-12-11 | 111 |
-| 55609 | Ablehnung Zuordnung des LF zur erz. MaLo/ Tranche | LF → NB | 2.1 | 2025-12-11 | 69 |
-| 55611 | Beendigung der Zuordnung | NB → MSB, NB → MSBZ | 2.1 | 2025-12-11 | 68 |
-| 55613 | Abr.-Daten BK-Abr. verb. MaLo | NB → ÜNB | 2.1 | 2025-12-11 | 131 |
-| 55614 | Rückmeldung/Anfrage Abr.-Daten BK-Abr. verb. MaLo | ÜNB → NB | 2.1 | 2025-12-11 | 143 |
-| 55615 | Änderung Daten der NeLo | NB → LF, NBA → NBN | 2.1 | 2025-12-11 | 81 |
-| 55616 | Änderung Daten der MaLo | NB → LF, NBA → NBN | 2.1 | 2025-12-11 | 229 |
-| 55617 | Änderung Daten der TR | NB → LF, NBA → NBN | 2.1 | 2025-12-11 | 142 |
-| 55618 | Änderung Daten der SR | NB → LF, NBA → NBN | 2.1 | 2025-12-11 | 81 |
-| 55619 | Änderung Daten der Tranche | NB → LF, NBA → NBN | 2.1 | 2025-12-11 | 78 |
-| 55620 | Änderung Daten der MeLo | NB → LF, NBA → NBN | 2.1 | 2025-12-11 | 89 |
-| 55621 | Rückmeldung/Anfrage Daten zur NeLo | LF → NB | 2.1 | 2025-12-11 | 94 |
-| 55622 | Rückmeldung/Anfrage Daten der MaLo | LF → NB | 2.1 | 2025-12-11 | 249 |
-| 55623 | Rückmeldung/Anfrage Daten der TR | LF → NB | 2.1 | 2025-12-11 | 155 |
-| 55624 | Rückmeldung/Anfrage Daten der SR | LF → NB | 2.1 | 2025-12-11 | 94 |
-| 55625 | Rückmeldung/Anfrage Daten der Tranche | LF → NB | 2.1 | 2025-12-11 | 91 |
-| 55626 | Rückmeldung/Anfrage Daten der MeLo | LF → NB | 2.1 | 2025-12-11 | 102 |
-| 55627 | Änderung Daten der NeLo | NB → MSB | 2.1 | 2025-12-11 | 81 |
-| 55628 | Änderung Daten der MaLo | NB → MSB | 2.1 | 2025-12-11 | 223 |
-| 55629 | Änderung Daten der TR | NB → MSB | 2.1 | 2025-12-11 | 134 |
-| 55630 | Änderung Daten der SR | NB → MSB | 2.1 | 2025-12-11 | 81 |
-| 55632 | Änderung Daten der MeLo | NB → MSB | 2.1 | 2025-12-11 | 92 |
-| 55633 | Rückmeldung/Anfrage Daten zur NeLo | MSB → NB | 2.1 | 2025-12-11 | 94 |
-| 55634 | Rückmeldung/Anfrage Daten der MaLo | MSB → NB | 2.1 | 2025-12-11 | 243 |
-| 55635 | Rückmeldung/Anfrage Daten der TR | MSB → NB | 2.1 | 2025-12-11 | 147 |
-| 55636 | Rückmeldung/Anfrage Daten der SR | MSB → NB | 2.1 | 2025-12-11 | 94 |
-| 55638 | Rückmeldung/Anfrage Daten der MeLo | MSB → NB | 2.1 | 2025-12-11 | 105 |
-| 55639 | Änderung Daten der NeLo | MSB → NB | 2.1 | 2025-12-11 | 116 |
-| 55640 | Änderung Daten der MaLo | MSB → NB | 2.1 | 2025-12-11 | 131 |
-| 55641 | Änderung Daten der SR | MSB → NB | 2.1 | 2025-12-11 | 102 |
-| 55642 | Änderung Daten der Tranche | MSB → NB | 2.1 | 2025-12-11 | 82 |
-| 55643 | Änderung Daten der MeLo | MSB → NB | 2.1 | 2025-12-11 | 301 |
-| 55644 | Rückmeldung/Anfrage Daten der NeLo | NB → MSB | 2.1 | 2025-12-11 | 131 |
-| 55645 | Rückmeldung/Anfrage Daten der MaLo | NB → MSB | 2.1 | 2025-12-11 | 146 |
-| 55646 | Rückmeldung/Anfrage Daten der SR | NB → MSB | 2.1 | 2025-12-11 | 116 |
-| 55647 | Rückmeldung/Anfrage Daten der Tranche | NB → MSB | 2.1 | 2025-12-11 | 95 |
-| 55648 | Rückmeldung/Anfrage Daten der MeLo | NB → MSB | 2.1 | 2025-12-11 | 325 |
-| 55649 | Änderung Daten der NeLo | MSB → LF | 2.1 | 2025-12-11 | 117 |
-| 55650 | Änderung Daten der MaLo | MSB → LF | 2.1 | 2025-12-11 | 131 |
-| 55651 | Änderung Daten der SR | MSB → LF | 2.1 | 2025-12-11 | 102 |
-| 55652 | Änderung Daten der Tranche | MSB → LF | 2.1 | 2025-12-11 | 82 |
-| 55653 | Änderung Daten der MeLo | MSB → LF | 2.1 | 2025-12-11 | 202 |
-| 55654 | Rückmeldung/Anfrage Daten der NeLo | LF → MSB | 2.1 | 2025-12-11 | 132 |
-| 55655 | Rückmeldung/Anfrage Daten der MaLo | LF → MSB | 2.1 | 2025-12-11 | 146 |
-| 55656 | Rückmeldung/Anfrage Daten der SR | LF → MSB | 2.1 | 2025-12-11 | 116 |
-| 55657 | Rückmeldung/Anfrage Daten der Tranche | LF → MSB | 2.1 | 2025-12-11 | 95 |
-| 55658 | Rückmeldung/Anfrage Daten der MeLo | LF → MSB | 2.1 | 2025-12-11 | 220 |
-| 55659 | Änderung Daten der NeLo | MSB → weiteren MSB | 2.1 | 2025-12-11 | 123 |
-| 55660 | Änderung Daten der MaLo | MSB → weiteren MSB | 2.1 | 2025-12-11 | 147 |
-| 55661 | Änderung Daten der SR | MSB → weiteren MSB | 2.1 | 2025-12-11 | 103 |
-| 55662 | Änderung Daten der Tranche | MSB → weiteren MSB | 2.1 | 2025-12-11 | 94 |
-| 55663 | Änderung Daten der MeLo | MSB → weiteren MSB | 2.1 | 2025-12-11 | 301 |
-| 55664 | Rückmeldung/Anfrage Daten der NeLo | weiterer MSB → MSB | 2.1 | 2025-12-11 | 138 |
-| 55665 | Rückmeldung/Anfrage Daten der MaLo | weiteren MSB → MSB | 2.1 | 2025-12-11 | 162 |
-| 55666 | Rückmeldung/Anfrage Daten der SR | weiterer MSB → MSB | 2.1 | 2025-12-11 | 117 |
-| 55667 | Rückmeldung/Anfrage Daten der Tranche | weiteren MSB → MSB | 2.1 | 2025-12-11 | 107 |
-| 55669 | Rückmeldung/Anfrage Daten der MeLo | weiterer MSB → MSB | 2.1 | 2025-12-11 | 329 |
-| 55670 | Stammdaten BK-Treue | NB → ÜNB | 2.1 | 2025-12-11 | 121 |
-| 55671 | Rückmeldung auf Stammdaten BK-Treue | ÜNB → NB | 2.1 | 2025-12-11 | 128 |
-| 55672 | Abr.-Daten BK-Abr. erz. Malo | NB → LF, NBA → NBN | 2.1 | 2025-12-11 | 178 |
-| 55673 | Rückmeldung/Anfrage Abr.-Daten BK-Abr. erz. Malo | LF → NB | 2.1 | 2025-12-11 | 195 |
-| 55674 | Abr.-Daten BK-Abr. erz. Malo | NB → ÜNB | 2.1 | 2025-12-11 | 133 |
-| 55675 | Rückmeldung/Anfrage Abr.-Daten BK-Abr. erz. Malo | ÜNB → NB | 2.1 | 2025-12-11 | 145 |
-| 55684 | Änderung Daten der MaLo | MSB → ÜNB | 2.1 | 2025-12-11 | 82 |
-| 55685 | Rückmeldung/Anfrage Daten der MaLo | ÜNB → MSB | 2.1 | 2025-12-11 | 95 |
-| 55686 | Änderung Daten der Tranche | MSB → ÜNB | 2.1 | 2025-12-11 | 82 |
-| 55687 | Rückmeldung/Anfrage Daten der Tranche | ÜNB → MSB | 2.1 | 2025-12-11 | 95 |
-| 55688 | Änderung Daten der MaLo | NB → ÜNB | 2.1 | 2025-12-11 | 78 |
-| 55689 | Rückmeldung/Anfrage Daten der MaLo | ÜNB → NB | 2.1 | 2025-12-11 | 91 |
-| 55690 | Lokationsbündelstruktur und DB | NBA → NBN | 2.1 | 2025-12-11 | 223 |
-| 55691 | Änderung Paket-ID der Malo | NBA → LF, NBA → MSB, NBA → NBN, NBA → ÜNB | 2.1 | 2025-12-11 | 76 |
-| 55692 | Rückmeldung/Anfrage Paket-ID der Malo | LF → NBA, MSB → NBA, ÜNB → NBA | 2.1 | 2025-12-11 | 90 |
+| 55001 | Anmeldung verb. MaLo | LF → NB | 2.1 | 2026-03-02 | 146 |
+| 55002 | Bestätigung Anmeldung verb. MaLo | NB → LF | 2.1 | 2026-03-02 | 165 |
+| 55003 | Ablehnung Anmeldung verb. MaLo | NB → LF | 2.1 | 2026-03-02 | 83 |
+| 55004 | Abmeldung | LF → NB | 2.1 | 2026-03-02 | 83 |
+| 55005 | Bestätigung Abmeldung | NB → LF | 2.1 | 2026-03-02 | 75 |
+| 55006 | Ablehnung Abmeldung | NB → LF | 2.1 | 2026-03-02 | 70 |
+| 55007 | Abmeldung / Beendigung der Zuordnung | NB → LF | 2.1 | 2026-03-02 | 82 |
+| 55008 | Bestätigung Abmeldung | LF → NB | 2.1 | 2026-03-02 | 69 |
+| 55009 | Ablehnung Abmeldung | LF → NB | 2.1 | 2026-03-02 | 64 |
+| 55010 | Anfrage zur Beendigung der Zuordnung | NB → LF | 2.1 | 2026-03-02 | 88 |
+| 55011 | Bestätigung Beendigung der Zuordnung | LF → NB | 2.1 | 2026-03-02 | 64 |
+| 55012 | Ablehnung Beendigung der Zuordnung | LF → NB | 2.1 | 2026-03-02 | 60 |
+| 55013 | Anmeldung / Zuordnung EOG | NB → LF | 2.1 | 2026-03-02 | 257 |
+| 55014 | Bestätigung EOG Anmeldung | LF → NB | 2.1 | 2026-03-02 | 159 |
+| 55015 | Ablehnung EOG Anmeldung | LF → NB | 2.1 | 2026-03-02 | 74 |
+| 55016 | Kündigung | LFN → LFA | 2.1 | 2026-03-02 | 73 |
+| 55017 | Bestätigung Kündigung | LFA → LFN | 2.1 | 2026-03-02 | 78 |
+| 55018 | Ablehnung Kündigung | LFA → LFN | 2.1 | 2026-03-02 | 80 |
+| 55022 | Anfrage nach Stornierung | MSCONS-Nachrichten können von verschieden… | 2.1 | 2026-03-02 | 60 |
+| 55023 | Bestätigung Anfrage Stornierung | zurück → den Absender | 2.1 | 2026-03-02 | 61 |
+| 55024 | Ablehnung Anfrage Stornierung | zurück → den Absender | 2.1 | 2026-03-02 | 64 |
+| 55035 | Antwort auf GDA verb. MaLo | NB → LF | 2.1 | 2026-03-02 | 531 |
+| 55036 | Existierende Zuordnung | NB → LF | 2.1 | 2026-03-02 | 69 |
+| 55037 | Beendigung der Zuordnung | NB → LF | 2.1 | 2026-03-02 | 67 |
+| 55038 | Aufhebung einer zuk. Zuordnung | NB → LF | 2.1 | 2026-03-02 | 74 |
+| 55039 | Kündigung MSB | MSBN → MSBA | 2.1 | 2026-03-02 | 91 |
+| 55040 | Bestätigung Kündigung MSB | MSBA → MSBN | 2.1 | 2026-03-02 | 104 |
+| 55041 | Ablehnung Kündigung MSB | MSBA → MSBN | 2.1 | 2026-03-02 | 77 |
+| 55042 | Anmeldung MSB | MSB → NB | 2.1 | 2026-03-02 | 116 |
+| 55043 | Bestätigung Anmeldung MSB | NB → MSB | 2.1 | 2026-03-02 | 909 |
+| 55044 | Ablehnung Anmeldung MSB | NB → MSB | 2.1 | 2026-03-02 | 66 |
+| 55051 | Ende MSB | MSB → NB | 2.1 | 2026-03-02 | 68 |
+| 55052 | Bestätigung Ende MSB | NB → MSB | 2.1 | 2026-03-02 | 98 |
+| 55053 | Ablehnung Ende MSB | NB → MSB | 2.1 | 2026-03-02 | 68 |
+| 55060 | Antwort auf GDA | NB → MSB | 2.1 | 2026-03-02 | 608 |
+| 55062 | Aktivierung von ZP | NB → BIKO, NB → LF, NB → NB, NB → ÜNB, ÜN… | 2.1 | 2026-03-02 | 125 |
+| 55063 | Deaktivierung von ZP | NB → BIKO, NB → LF, NB → NB, NB → ÜNB, ÜN… | 2.1 | 2026-03-02 | 56 |
+| 55064 | Antwort | BIKO → NB, BIKO → ÜNB, NB → NB | 2.1 | 2026-03-02 | 79 |
+| 55065 | Lieferantenclearingliste | NB → LF, ÜNB → LF | 2.1 | 2026-03-02 | 192 |
+| 55066 | Korrekturliste zur Lieferantenclearingliste | LF → NB, LF → ÜNB | 2.1 | 2026-03-02 | 210 |
+| 55067 | Bilanzkreiszuordnungsliste | NB → BKV, ÜNB → BKV | 2.1 | 2026-03-02 | 111 |
+| 55069 | Clearingliste DZR | BIKO → NB, BIKO → ÜNB | 2.1 | 2026-03-02 | 116 |
+| 55070 | Clearingliste BAS | BIKO → BKV | 2.1 | 2026-03-02 | 168 |
+| 55071 | Aktivierung der Zuordnungsermächtigung | BKV → NB | 2.1 | 2026-03-02 | 75 |
+| 55072 | Deaktivierung der Zuordnungsermächtigung | BKV → NB | 2.1 | 2026-03-02 | 75 |
+| 55073 | Übermittlung der Profildefinitionen | NB → LF, NB → MSB | 2.1 | 2026-03-02 | 212 |
+| 55074 | Stammdaten auf eine ORDERS | NB → UBA | 2.1 | 2026-03-02 | 269 |
+| 55075 | Stammdaten aufgrund einer Änderung | NB → UBA | 2.1 | 2026-03-02 | 279 |
+| 55076 | Antwort auf Stammdatenänderung | UBA → NB | 2.1 | 2026-03-02 | 287 |
+| 55077 | Anmeldung erz. MaLo | LF → NB | 2.1 | 2026-03-02 | 111 |
+| 55078 | Bestätigung Anmeldung erz. MaLo | NB → LF | 2.1 | 2026-03-02 | 171 |
+| 55080 | Ablehnung Anmeldung erz. MaLo | NB → LF | 2.1 | 2026-03-02 | 89 |
+| 55095 | Antwort auf GDA erz. MaLo | NB → LF | 2.1 | 2026-03-02 | 465 |
+| 55109 | Änderung Daten der MaLo | LF → NB | 2.1 | 2026-03-02 | 129 |
+| 55110 | Änderung Daten der MaLo | LF → MSB | 2.1 | 2026-03-02 | 90 |
+| 55126 | Abr.-Daten BK-Abr. verb. Malo | NB → LF, NBA → NBN | 2.1 | 2026-03-02 | 156 |
+| 55136 | Rückmeldung/Anfrage Daten der MaLo | MSB → LF | 2.1 | 2026-03-02 | 104 |
+| 55137 | Rückmeldung/Anfrage Daten der MaLo | NB → LF | 2.1 | 2026-03-02 | 145 |
+| 55156 | Rückmeldung/Anfrage Abr.-Daten BK-Abr. verb. MaLo | LF → NB | 2.1 | 2026-03-02 | 171 |
+| 55168 | Verpflichtungsanfrage / Aufforderung | NB → gMSB | 2.1 | 2026-03-02 | 927 |
+| 55169 | Bestätigung Verpflichtungsanfrage | gMSB → NB | 2.1 | 2026-03-02 | 908 |
+| 55170 | Ablehnung Verpflichtungsanfrage | gMSB → NB | 2.1 | 2026-03-02 | 65 |
+| 55173 | Änderung der Lokationsbündelstruktur | NB → MSB | 2.1 | 2026-03-02 | 124 |
+| 55175 | Änderung der Lokationsbündelstruktur | NB → LF | 2.1 | 2026-03-02 | 124 |
+| 55177 | Rückmeldung/Anfrage Lokationsbündelstruktur | MSB → NB | 2.1 | 2026-03-02 | 138 |
+| 55180 | Rückmeldung/Anfrage Lokationsbündelstruktur | LF → NB | 2.1 | 2026-03-02 | 138 |
+| 55194 | Antwort auf GDA (Strom an Gas) | NB → MSB | 2.1 | 2026-03-02 | 95 |
+| 55195 | Bilanzierungsgebietsclearingliste | ÜNB → NB | 2.1 | 2026-03-02 | 199 |
+| 55196 | Antwort auf Bilanzierungsgebietsclearingliste | NB → ÜNB | 2.1 | 2026-03-02 | 299 |
+| 55197 | Aktivierung ZP tägliche AAÜZ | NB (ANB) → ÜNB | 2.1 | 2026-03-02 | 84 |
+| 55198 | Deaktivierung tägliche AAÜZ | NB (ANB) → ÜNB | 2.1 | 2026-03-02 | 56 |
+| 55199 | Aktivierung ZP LF-AASZR | NB (ANB) → LF | 2.1 | 2026-03-02 | 84 |
+| 55200 | Deaktivierung ZP LF-AASZR | NB (ANB) → LF | 2.1 | 2026-03-02 | 56 |
+| 55201 | LF-AACL | NB (ANB) → LF | 2.1 | 2026-03-02 | 114 |
+| 55202 | Korrekturliste LF-AACL | LF → NB (ANB) | 2.1 | 2026-03-02 | 128 |
+| 55203 | Aktivierung ZP monatliche AAÜZ | NB (ANB) → BIKO | 2.1 | 2026-03-02 | 88 |
+| 55204 | Antwort auf Aktivierung ZP | BIKO → NB (ANB) | 2.1 | 2026-03-02 | 64 |
+| 55205 | Weiterleitung Aktivierung ZP | BIKO → BKV (des LF) | 2.1 | 2026-03-02 | 88 |
+| 55206 | Deaktivierung ZP monatliche AAÜZ | NB (ANB) → BIKO | 2.1 | 2026-03-02 | 56 |
+| 55207 | Antwort auf Deaktivierung ZP | BIKO → NB (ANB) | 2.1 | 2026-03-02 | 64 |
+| 55208 | Weiterleitung Deaktivierung ZP | BIKO → BKV (des LF) | 2.1 | 2026-03-02 | 56 |
+| 55209 | Aktivierung ZP monatliche AAÜZ | NB (ANB) → BIKO | 2.1 | 2026-03-02 | 88 |
+| 55210 | Antwort auf Aktivierung ZP | BIKO → NB (ANB) | 2.1 | 2026-03-02 | 64 |
+| 55211 | Weiterleitung Aktivierung ZP | BIKO → BKV (des anfNB) | 2.1 | 2026-03-02 | 88 |
+| 55212 | Deaktivierung ZP monatliche AAÜZ | NB (ANB) → BIKO | 2.1 | 2026-03-02 | 56 |
+| 55213 | Antwort auf Deaktivierung ZP | BIKO → NB (ANB) | 2.1 | 2026-03-02 | 64 |
+| 55214 | Weiterleitung Deaktivierung ZP | BIKO → BKV (des anfNB) | 2.1 | 2026-03-02 | 56 |
+| 55218 | Abr.-Daten NNA | NB → LF, NBA → NBN | 2.1 | 2026-03-02 | 160 |
+| 55220 | Rückmeldung/Anfrage Abr.-Daten NNA | LF → NB | 2.1 | 2026-03-02 | 176 |
+| 55223 | DZÜ Liste | ÜNB → NB | 2.1 | 2026-03-02 | 234 |
+| 55224 | Antwort auf DZÜ Liste | NB → ÜNB | 2.1 | 2026-03-02 | 143 |
+| 55225 | Änderung Blindabr.-Daten der NeLo | NB → LF, NBA → NBN | 2.1 | 2026-03-02 | 87 |
+| 55227 | Rückmeldung/Anfrage Blindabr.-Daten der NeLo | LF → NB | 2.1 | 2026-03-02 | 100 |
+| 55230 | Änderung Blindabr.-Daten der NeLo | LF → NB | 2.1 | 2026-03-02 | 77 |
+| 55232 | Rückmeldung/Anfrage Blindabr.-Daten der NeLo | NB → LF | 2.1 | 2026-03-02 | 90 |
+| 55235 | Zuordnung ZP der NGZ zur NZR | NB → NB, NB → ÜNB | 2.1 | 2026-03-02 | 84 |
+| 55236 | Beendigung Zuordnung ZP der NGZ zur NZR | NB → NB, NB → ÜNB | 2.1 | 2026-03-02 | 56 |
+| 55237 | Antwort | NB → NB | 2.1 | 2026-03-02 | 72 |
+| 55238 | Anmeldung in Modell 2 | NB (LPB) → NB (VNB) | 2.1 | 2026-03-02 | 76 |
+| 55239 | Antwort auf Anmeldung | NB (VNB) → NB (LPB) | 2.1 | 2026-03-02 | 104 |
+| 55240 | Beendigung der Zuordnung zur MaLo | NB (VNB) → LF | 2.1 | 2026-03-02 | 67 |
+| 55241 | Antwort auf Beendigung | LF → NB (VNB) | 2.1 | 2026-03-02 | 75 |
+| 55242 | Abmeldung aus dem Modell 2 | NB (LPB) → NB (VNB) | 2.1 | 2026-03-02 | 70 |
+| 55243 | Antwort auf Abmeldung | NB (VNB) → NB (LPB) | 2.1 | 2026-03-02 | 78 |
+| 55553 | Daten auf individuelle Bestellung | MSB → NB, MSB → LF, MSB → MSB | 2.1 | 2026-03-02 | 171 |
+| 55555 | Rückmeldung/Anfrage Daten der individuellen Beste… | NB → MSB, LF → MSB, MSB → MSB | 2.1 | 2026-03-02 | 186 |
+| 55557 | Änderung MSB-Abr.-Daten der MaLo | MSB → NB | 2.1 | 2026-03-02 | 88 |
+| 55559 | Rückmeldung/Anfrage MSB-Abr.-Daten der MaLo | NB → MSB | 2.1 | 2026-03-02 | 101 |
+| 55600 | Anmeldung neue verb. MaLo | LF → NB | 2.1 | 2026-03-02 | 153 |
+| 55601 | Anmeldung neue erz. MaLo | LF → NB | 2.1 | 2026-03-02 | 154 |
+| 55602 | Bestätigung Anmeldung neue verb. MaLo | NB → LF | 2.1 | 2026-03-02 | 159 |
+| 55603 | Bestätigung Anmeldung neue erz. MaLo | NB → LF | 2.1 | 2026-03-02 | 170 |
+| 55604 | Ablehnung Anmeldung neue verb. MaLo | NB → LF | 2.1 | 2026-03-02 | 73 |
+| 55605 | Ablehnung Anmeldung neue erz. MaLo | NB → LF | 2.1 | 2026-03-02 | 73 |
+| 55607 | (Ankündigung) Zuordnung des LF zur erz. MaLo/ Tra… | NB → LF | 2.1 | 2026-03-02 | 186 |
+| 55608 | Bestätigung Zuordnung des LF zur erz. MaLo/ Tranc… | LF → NB | 2.1 | 2026-03-02 | 111 |
+| 55609 | Ablehnung Zuordnung des LF zur erz. MaLo/ Tranche | LF → NB | 2.1 | 2026-03-02 | 69 |
+| 55611 | Beendigung der Zuordnung | NB → MSB, NB → MSBZ | 2.1 | 2026-03-02 | 68 |
+| 55613 | Abr.-Daten BK-Abr. verb. MaLo | NB → ÜNB | 2.1 | 2026-03-02 | 131 |
+| 55614 | Rückmeldung/Anfrage Abr.-Daten BK-Abr. verb. MaLo | ÜNB → NB | 2.1 | 2026-03-02 | 143 |
+| 55615 | Änderung Daten der NeLo | NB → LF, NBA → NBN | 2.1 | 2026-03-02 | 81 |
+| 55616 | Änderung Daten der MaLo | NB → LF, NBA → NBN | 2.1 | 2026-03-02 | 229 |
+| 55617 | Änderung Daten der TR | NB → LF, NBA → NBN | 2.1 | 2026-03-02 | 142 |
+| 55618 | Änderung Daten der SR | NB → LF, NBA → NBN | 2.1 | 2026-03-02 | 81 |
+| 55619 | Änderung Daten der Tranche | NB → LF, NBA → NBN | 2.1 | 2026-03-02 | 78 |
+| 55620 | Änderung Daten der MeLo | NB → LF, NBA → NBN | 2.1 | 2026-03-02 | 89 |
+| 55621 | Rückmeldung/Anfrage Daten zur NeLo | LF → NB | 2.1 | 2026-03-02 | 94 |
+| 55622 | Rückmeldung/Anfrage Daten der MaLo | LF → NB | 2.1 | 2026-03-02 | 249 |
+| 55623 | Rückmeldung/Anfrage Daten der TR | LF → NB | 2.1 | 2026-03-02 | 155 |
+| 55624 | Rückmeldung/Anfrage Daten der SR | LF → NB | 2.1 | 2026-03-02 | 94 |
+| 55625 | Rückmeldung/Anfrage Daten der Tranche | LF → NB | 2.1 | 2026-03-02 | 91 |
+| 55626 | Rückmeldung/Anfrage Daten der MeLo | LF → NB | 2.1 | 2026-03-02 | 102 |
+| 55627 | Änderung Daten der NeLo | NB → MSB | 2.1 | 2026-03-02 | 81 |
+| 55628 | Änderung Daten der MaLo | NB → MSB | 2.1 | 2026-03-02 | 223 |
+| 55629 | Änderung Daten der TR | NB → MSB | 2.1 | 2026-03-02 | 134 |
+| 55630 | Änderung Daten der SR | NB → MSB | 2.1 | 2026-03-02 | 81 |
+| 55632 | Änderung Daten der MeLo | NB → MSB | 2.1 | 2026-03-02 | 92 |
+| 55633 | Rückmeldung/Anfrage Daten zur NeLo | MSB → NB | 2.1 | 2026-03-02 | 94 |
+| 55634 | Rückmeldung/Anfrage Daten der MaLo | MSB → NB | 2.1 | 2026-03-02 | 243 |
+| 55635 | Rückmeldung/Anfrage Daten der TR | MSB → NB | 2.1 | 2026-03-02 | 147 |
+| 55636 | Rückmeldung/Anfrage Daten der SR | MSB → NB | 2.1 | 2026-03-02 | 94 |
+| 55638 | Rückmeldung/Anfrage Daten der MeLo | MSB → NB | 2.1 | 2026-03-02 | 105 |
+| 55639 | Änderung Daten der NeLo | MSB → NB | 2.1 | 2026-03-02 | 116 |
+| 55640 | Änderung Daten der MaLo | MSB → NB | 2.1 | 2026-03-02 | 131 |
+| 55641 | Änderung Daten der SR | MSB → NB | 2.1 | 2026-03-02 | 102 |
+| 55642 | Änderung Daten der Tranche | MSB → NB | 2.1 | 2026-03-02 | 82 |
+| 55643 | Änderung Daten der MeLo | MSB → NB | 2.1 | 2026-03-02 | 301 |
+| 55644 | Rückmeldung/Anfrage Daten der NeLo | NB → MSB | 2.1 | 2026-03-02 | 131 |
+| 55645 | Rückmeldung/Anfrage Daten der MaLo | NB → MSB | 2.1 | 2026-03-02 | 146 |
+| 55646 | Rückmeldung/Anfrage Daten der SR | NB → MSB | 2.1 | 2026-03-02 | 116 |
+| 55647 | Rückmeldung/Anfrage Daten der Tranche | NB → MSB | 2.1 | 2026-03-02 | 95 |
+| 55648 | Rückmeldung/Anfrage Daten der MeLo | NB → MSB | 2.1 | 2026-03-02 | 325 |
+| 55649 | Änderung Daten der NeLo | MSB → LF | 2.1 | 2026-03-02 | 117 |
+| 55650 | Änderung Daten der MaLo | MSB → LF | 2.1 | 2026-03-02 | 131 |
+| 55651 | Änderung Daten der SR | MSB → LF | 2.1 | 2026-03-02 | 102 |
+| 55652 | Änderung Daten der Tranche | MSB → LF | 2.1 | 2026-03-02 | 82 |
+| 55653 | Änderung Daten der MeLo | MSB → LF | 2.1 | 2026-03-02 | 202 |
+| 55654 | Rückmeldung/Anfrage Daten der NeLo | LF → MSB | 2.1 | 2026-03-02 | 132 |
+| 55655 | Rückmeldung/Anfrage Daten der MaLo | LF → MSB | 2.1 | 2026-03-02 | 146 |
+| 55656 | Rückmeldung/Anfrage Daten der SR | LF → MSB | 2.1 | 2026-03-02 | 116 |
+| 55657 | Rückmeldung/Anfrage Daten der Tranche | LF → MSB | 2.1 | 2026-03-02 | 95 |
+| 55658 | Rückmeldung/Anfrage Daten der MeLo | LF → MSB | 2.1 | 2026-03-02 | 220 |
+| 55659 | Änderung Daten der NeLo | MSB → weiteren MSB | 2.1 | 2026-03-02 | 123 |
+| 55660 | Änderung Daten der MaLo | MSB → weiteren MSB | 2.1 | 2026-03-02 | 147 |
+| 55661 | Änderung Daten der SR | MSB → weiteren MSB | 2.1 | 2026-03-02 | 103 |
+| 55662 | Änderung Daten der Tranche | MSB → weiteren MSB | 2.1 | 2026-03-02 | 94 |
+| 55663 | Änderung Daten der MeLo | MSB → weiteren MSB | 2.1 | 2026-03-02 | 301 |
+| 55664 | Rückmeldung/Anfrage Daten der NeLo | weiterer MSB → MSB | 2.1 | 2026-03-02 | 138 |
+| 55665 | Rückmeldung/Anfrage Daten der MaLo | weiteren MSB → MSB | 2.1 | 2026-03-02 | 162 |
+| 55666 | Rückmeldung/Anfrage Daten der SR | weiterer MSB → MSB | 2.1 | 2026-03-02 | 117 |
+| 55667 | Rückmeldung/Anfrage Daten der Tranche | weiteren MSB → MSB | 2.1 | 2026-03-02 | 107 |
+| 55669 | Rückmeldung/Anfrage Daten der MeLo | weiterer MSB → MSB | 2.1 | 2026-03-02 | 329 |
+| 55670 | Stammdaten BK-Treue | NB → ÜNB | 2.1 | 2026-03-02 | 121 |
+| 55671 | Rückmeldung auf Stammdaten BK-Treue | ÜNB → NB | 2.1 | 2026-03-02 | 128 |
+| 55672 | Abr.-Daten BK-Abr. erz. Malo | NB → LF, NBA → NBN | 2.1 | 2026-03-02 | 178 |
+| 55673 | Rückmeldung/Anfrage Abr.-Daten BK-Abr. erz. Malo | LF → NB | 2.1 | 2026-03-02 | 195 |
+| 55674 | Abr.-Daten BK-Abr. erz. Malo | NB → ÜNB | 2.1 | 2026-03-02 | 133 |
+| 55675 | Rückmeldung/Anfrage Abr.-Daten BK-Abr. erz. Malo | ÜNB → NB | 2.1 | 2026-03-02 | 145 |
+| 55684 | Änderung Daten der MaLo | MSB → ÜNB | 2.1 | 2026-03-02 | 82 |
+| 55685 | Rückmeldung/Anfrage Daten der MaLo | ÜNB → MSB | 2.1 | 2026-03-02 | 95 |
+| 55686 | Änderung Daten der Tranche | MSB → ÜNB | 2.1 | 2026-03-02 | 82 |
+| 55687 | Rückmeldung/Anfrage Daten der Tranche | ÜNB → MSB | 2.1 | 2026-03-02 | 95 |
+| 55688 | Änderung Daten der MaLo | NB → ÜNB | 2.1 | 2026-03-02 | 78 |
+| 55689 | Rückmeldung/Anfrage Daten der MaLo | ÜNB → NB | 2.1 | 2026-03-02 | 91 |
+| 55690 | Lokationsbündelstruktur und DB | NBA → NBN | 2.1 | 2026-03-02 | 223 |
+| 55691 | Änderung Paket-ID der Malo | NBA → LF, NBA → MSB, NBA → NBN, NBA → ÜNB | 2.1 | 2026-03-02 | 76 |
+| 55692 | Rückmeldung/Anfrage Paket-ID der Malo | LF → NBA, MSB → NBA, ÜNB → NBA | 2.1 | 2026-03-02 | 90 |
 
 ## FV2604 — All Prüfidentifikatoren
 
 | Prüfi | Description | Direction | Version | Date | Lines |
 |-------|-------------|-----------|---------|------|-------|
-| 13002 | Zählerstand (Gas) | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 191 |
-| 13003 | Summenzeitreihe | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 102 |
-| 13005 | EEG-Überführungs-ZR | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 110 |
-| 13006 | Messwert Storno | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 84 |
-| 13007 | Gasbeschaffenheit | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 167 |
-| 13008 | Lastgang (Gas) | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 181 |
-| 13009 | Energiemenge (Gas) | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 177 |
-| 13010 | normiertes Profil | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 93 |
-| 13011 | Profilschar | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 90 |
-| 13012 | TEP vergh. Werte Referenzmessung | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 93 |
-| 13013 | marktlokations- scharfe Allokationsliste Gas (MMM… | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 101 |
-| 13014 | marktlokations- scharfe bilanzierte Menge Strom /… | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 97 |
-| 13015 | Arbeit Leistungsmax. Kalenderjahr vor Lieferbeginn | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 104 |
-| 13016 | Energiemenge u. Leistungsmax. (Strom) | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 163 |
-| 13017 | Zählerstand (Strom) | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 168 |
-| 13018 | Lastgang Messlokation, Netzkoppelpunkt, Netzlokat… | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 163 |
-| 13019 | Energiemenge (Strom) | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 168 |
-| 13020 | Ausfallarbeitsüberführungszeitreihe | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 107 |
-| 13021 | Übermittlung von meteorologischen Daten | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 103 |
-| 13022 | Redispatch 2.0 Einzelzeitreihe Ausfallarbeit | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 107 |
-| 13023 | Redispatch 2.0 Ausfallarbeitssummenzeitreihe | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 98 |
-| 13025 | Lastgang Marktlokation, Tranche | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 163 |
-| 13026 | EEG-Überführungs-ZR aufgrund Ausfallarbeit | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 111 |
-| 13027 | Werte nach Typ 2 | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 99 |
-| 13028 | Grundlage POG-Ermittlung | MSCONS-Nachrichten können von verschieden… | 3.1g | 2025-10-01 | 89 |
+| 13002 | Zählerstand (Gas) | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 191 |
+| 13003 | Summenzeitreihe | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 102 |
+| 13005 | EEG-Überführungs-ZR | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 110 |
+| 13006 | Messwert Storno | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 84 |
+| 13007 | Gasbeschaffenheit | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 167 |
+| 13008 | Lastgang (Gas) | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 181 |
+| 13009 | Energiemenge (Gas) | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 177 |
+| 13010 | normiertes Profil | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 93 |
+| 13011 | Profilschar | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 90 |
+| 13012 | TEP vergh. Werte Referenzmessung | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 93 |
+| 13013 | marktlokations- scharfe Allokationsliste Gas (MMM… | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 101 |
+| 13014 | marktlokations- scharfe bilanzierte Menge Strom /… | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 97 |
+| 13015 | Arbeit Leistungsmax. Kalenderjahr vor Lieferbeginn | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 104 |
+| 13016 | Energiemenge u. Leistungsmax. (Strom) | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 163 |
+| 13017 | Zählerstand (Strom) | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 168 |
+| 13018 | Lastgang Messlokation, Netzkoppelpunkt, Netzlokat… | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 163 |
+| 13019 | Energiemenge (Strom) | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 168 |
+| 13020 | Ausfallarbeitsüberführungszeitreihe | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 107 |
+| 13021 | Übermittlung von meteorologischen Daten | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 103 |
+| 13022 | Redispatch 2.0 Einzelzeitreihe Ausfallarbeit | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 107 |
+| 13023 | Redispatch 2.0 Ausfallarbeitssummenzeitreihe | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 98 |
+| 13025 | Lastgang Marktlokation, Tranche | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 163 |
+| 13026 | EEG-Überführungs-ZR aufgrund Ausfallarbeit | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 111 |
+| 13027 | Werte nach Typ 2 | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 99 |
+| 13028 | Grundlage POG-Ermittlung | MSCONS-Nachrichten können von verschieden… | 3.1g | 2026-03-02 | 89 |
 | 15001 | Angebot Geräteübernahme | MSBA → MSBN | 1.1 | 2025-04-01 | 221 |
 | 15002 | Angebot Abrechnung Messstellenbetrieb MSB | MSB → LF | 1.1 | 2025-04-01 | 93 |
 | 15003 | Angebot zur Anfrage von Werten | MSB → ESA | 1.1 | 2025-04-01 | 128 |
@@ -601,46 +601,46 @@ Downloaded from [ahb-tabellen.hochfrequenz.de](https://ahb-tabellen.hochfrequenz
 | 17210 | Anforderung Lieferantenausfallarbeitsclearingliste | LF → NB | 1.1a | 2025-10-01 | 69 |
 | 17211 | Reklamation Profile bzw. Profilscharen | LF → NB | 1.1a | 2025-10-01 | 54 |
 | 17301 | Anforderung von Stammdaten bzw. Messwerten | UBA → NB | 1.1a | 2025-10-01 | 62 |
-| 19001 | Bestätigung Bestellung | MSBA → MSBN | 1.1a | 2025-10-01 | 61 |
-| 19002 | Ablehnung Bestellung | MSBA → MSBN | 1.1a | 2025-10-01 | 61 |
-| 19003 | Bestätigung Weiterverpflichtung | MSBA → NB | 1.1a | 2025-10-01 | 61 |
-| 19004 | Ablehnung Weiterverpflichtung | MSBA → NB | 1.1a | 2025-10-01 | 61 |
-| 19005 | Bestätigung Auftrag Änderung Technik | MSB → LF, MSB → NB | 1.1a | 2025-10-01 | 66 |
-| 19006 | Ablehnung Auftrag Änderung Technik | MSB → LF, MSB → NB | 1.1a | 2025-10-01 | 81 |
-| 19007 | Ablehnung Anforderung Werte | MSB → LF, MSB → NB, MSB → MSB (Strom), MS… | 1.1a | 2025-10-01 | 61 |
-| 19009 | Bestätigung Beendigung Rechnungsabwicklung MSB | LF → MSB, MSB → LF | 1.1a | 2025-10-01 | 61 |
-| 19010 | Ablehnung Beendigung Rechnungsabwicklung MSB | LF → MSB, MSB → LF | 1.1a | 2025-10-01 | 61 |
-| 19011 | Bestätigung der Ab-/Bestellung von Werten | MSB → ESA | 1.1a | 2025-10-01 | 69 |
-| 19012 | Ablehnung der Ab-/Bestellung von Werten | MSB → ESA | 1.1a | 2025-10-01 | 59 |
-| 19013 | Bestätigung der Stornierung einer Bestellung | MSB → ESA | 1.1a | 2025-10-01 | 54 |
-| 19014 | Ablehnung der Stornierung einer Bestellung | MSB → ESA | 1.1a | 2025-10-01 | 54 |
-| 19015 | Bestätigung Gerätewechselabsicht | MSBA → MSBN | 1.1a | 2025-10-01 | 68 |
-| 19016 | Ablehnung Gerätewechselabsicht | MSBA → MSBN | 1.1a | 2025-10-01 | 66 |
-| 19101 | Ablehnung der Anfrage Stammdaten | NB → LF, NB → MSB | 1.1a | 2025-10-01 | 59 |
-| 19102 | Ablehnung der Anfrage Werte | MSB → LF (Strom), MSB → , NB → LF (Gas), … | 1.1a | 2025-10-01 | 64 |
-| 19103 | Ablehnung der Anfrage Brennwert / Zustandszahl | NB → LF | 1.1a | 2025-10-01 | 56 |
-| 19104 | Ablehnung der Anfrage vom MSB Gas | NB (Strom) → MSB (Gas) | 1.1a | 2025-10-01 | 54 |
-| 19110 | Ablehnung der Anforderung Allokationsliste | NB → LF | 1.1a | 2025-10-01 | 56 |
-| 19114 | Ablehnung Reklamation | MSB → LF, MSB → NB, MSB → ÜNB, MSB → MSB … | 1.1a | 2025-10-01 | 64 |
-| 19115 | Ablehnung der Anforderung bilanzierte Menge | ÜNB → NB | 1.1a | 2025-10-01 | 54 |
-| 19116 | Bestätigung Sperr-/Entsperrauftrag | NB → LF | 1.1a | 2025-10-01 | 77 |
-| 19117 | Ablehnung Sperr-/Entsperrauftrag | NB → LF | 1.1a | 2025-10-01 | 63 |
-| 19118 | Bestätigung Anfrage Sperrung | MSB → NB | 1.1a | 2025-10-01 | 57 |
-| 19119 | Ablehnung Anfrage Sperrung | MSB → NB | 1.1a | 2025-10-01 | 60 |
-| 19120 | Mitteilung zur Änderung | MSB → NB | 1.1a | 2025-10-01 | 57 |
-| 19121 | Mitteilung zur Änderung Prognosegrundlage | NB → LF | 1.1a | 2025-10-01 | 57 |
-| 19123 | Ablehnung Reklamation einer Definition | NB → LF, NB → MSB, LF → MSB, LF → NB | 1.1a | 2025-10-01 | 72 |
-| 19124 | Mitteilung zur Änderung Zählzeitdefinition | NB → LF, MSB → LF | 1.1a | 2025-10-01 | 58 |
-| 19127 | Mitteilung zur Konfigurationsänderung | MSB → MSB | 1.1a | 2025-10-01 | 58 |
-| 19128 | Bestätigung Stornierung Sperr-/Entsperrauftrag | NB → LF | 1.1a | 2025-10-01 | 58 |
-| 19129 | Ablehnung Stornierung Sperr-/Entsperrauftrag | NB → LF | 1.1a | 2025-10-01 | 58 |
-| 19130 | Bearbeitungsstand Reklamation Konfiguration | MSB → NB, MSB → LF, MSB → MSB | 1.1a | 2025-10-01 | 63 |
-| 19131 | Mitteilung zur Beendigung Konfiguration | MSB → NB, MSB → LF, MSB → MSB | 1.1a | 2025-10-01 | 59 |
-| 19132 | Mitteilung zur Bestellung Konfiguration | MSB → NB, MSB → LF, MSB → MSB | 1.1a | 2025-10-01 | 60 |
-| 19133 | Bearbeitungsstand Bestellung Änderung Abrechnungs… | NB → LF | 1.1a | 2025-10-01 | 57 |
-| 19204 | Ablehnung Ab-/Bestellung Aggregationsebene | ÜNB → BKV | 1.1a | 2025-10-01 | 55 |
-| 19301 | Abl. der Anforderung | NB → UBA | 1.1a | 2025-10-01 | 61 |
-| 19302 | Best. der Anforderung zum Beenden des Abos zur St… | NB → UBA | 1.1a | 2025-10-01 | 60 |
+| 19001 | Bestätigung Bestellung | MSBA → MSBN | 1.1a | 2026-03-27 | 61 |
+| 19002 | Ablehnung Bestellung | MSBA → MSBN | 1.1a | 2026-03-27 | 61 |
+| 19003 | Bestätigung Weiterverpflichtung | MSBA → NB | 1.1a | 2026-03-27 | 61 |
+| 19004 | Ablehnung Weiterverpflichtung | MSBA → NB | 1.1a | 2026-03-27 | 61 |
+| 19005 | Bestätigung Auftrag Änderung Technik | MSB → LF, MSB → NB | 1.1a | 2026-03-27 | 66 |
+| 19006 | Ablehnung Auftrag Änderung Technik | MSB → LF, MSB → NB | 1.1a | 2026-03-27 | 81 |
+| 19007 | Ablehnung Anforderung Werte | MSB → LF, MSB → NB, MSB → MSB (Strom), MS… | 1.1a | 2026-03-27 | 61 |
+| 19009 | Bestätigung Beendigung Rechnungsabwicklung MSB | LF → MSB, MSB → LF | 1.1a | 2026-03-27 | 61 |
+| 19010 | Ablehnung Beendigung Rechnungsabwicklung MSB | LF → MSB, MSB → LF | 1.1a | 2026-03-27 | 61 |
+| 19011 | Bestätigung der Ab-/Bestellung von Werten | MSB → ESA | 1.1a | 2026-03-27 | 69 |
+| 19012 | Ablehnung der Ab-/Bestellung von Werten | MSB → ESA | 1.1a | 2026-03-27 | 59 |
+| 19013 | Bestätigung der Stornierung einer Bestellung | MSB → ESA | 1.1a | 2026-03-27 | 54 |
+| 19014 | Ablehnung der Stornierung einer Bestellung | MSB → ESA | 1.1a | 2026-03-27 | 54 |
+| 19015 | Bestätigung Gerätewechselabsicht | MSBA → MSBN | 1.1a | 2026-03-27 | 68 |
+| 19016 | Ablehnung Gerätewechselabsicht | MSBA → MSBN | 1.1a | 2026-03-27 | 66 |
+| 19101 | Ablehnung der Anfrage Stammdaten | NB → LF, NB → MSB | 1.1a | 2026-03-27 | 59 |
+| 19102 | Ablehnung der Anfrage Werte | MSB → LF (Strom), MSB → , NB → LF (Gas), … | 1.1a | 2026-03-27 | 64 |
+| 19103 | Ablehnung der Anfrage Brennwert / Zustandszahl | NB → LF | 1.1a | 2026-03-27 | 56 |
+| 19104 | Ablehnung der Anfrage vom MSB Gas | NB (Strom) → MSB (Gas) | 1.1a | 2026-03-27 | 54 |
+| 19110 | Ablehnung der Anforderung Allokationsliste | NB → LF | 1.1a | 2026-03-27 | 56 |
+| 19114 | Ablehnung Reklamation | MSB → LF, MSB → NB, MSB → ÜNB, MSB → MSB … | 1.1a | 2026-03-27 | 64 |
+| 19115 | Ablehnung der Anforderung bilanzierte Menge | ÜNB → NB | 1.1a | 2026-03-27 | 54 |
+| 19116 | Bestätigung Sperr-/Entsperrauftrag | NB → LF | 1.1a | 2026-03-27 | 77 |
+| 19117 | Ablehnung Sperr-/Entsperrauftrag | NB → LF | 1.1a | 2026-03-27 | 63 |
+| 19118 | Bestätigung Anfrage Sperrung | MSB → NB | 1.1a | 2026-03-27 | 57 |
+| 19119 | Ablehnung Anfrage Sperrung | MSB → NB | 1.1a | 2026-03-27 | 60 |
+| 19120 | Mitteilung zur Änderung | MSB → NB | 1.1a | 2026-03-27 | 57 |
+| 19121 | Mitteilung zur Änderung Prognosegrundlage | NB → LF | 1.1a | 2026-03-27 | 57 |
+| 19123 | Ablehnung Reklamation einer Definition | NB → LF, NB → MSB, LF → MSB, LF → NB | 1.1a | 2026-03-27 | 72 |
+| 19124 | Mitteilung zur Änderung Zählzeitdefinition | NB → LF, MSB → LF | 1.1a | 2026-03-27 | 58 |
+| 19127 | Mitteilung zur Konfigurationsänderung | MSB → MSB | 1.1a | 2026-03-27 | 58 |
+| 19128 | Bestätigung Stornierung Sperr-/Entsperrauftrag | NB → LF | 1.1a | 2026-03-27 | 58 |
+| 19129 | Ablehnung Stornierung Sperr-/Entsperrauftrag | NB → LF | 1.1a | 2026-03-27 | 58 |
+| 19130 | Bearbeitungsstand Reklamation Konfiguration | MSB → NB, MSB → LF, MSB → MSB | 1.1a | 2026-03-27 | 63 |
+| 19131 | Mitteilung zur Beendigung Konfiguration | MSB → NB, MSB → LF, MSB → MSB | 1.1a | 2026-03-27 | 59 |
+| 19132 | Mitteilung zur Bestellung Konfiguration | MSB → NB, MSB → LF, MSB → MSB | 1.1a | 2026-03-27 | 60 |
+| 19133 | Bearbeitungsstand Bestellung Änderung Abrechnungs… | NB → LF | 1.1a | 2026-03-27 | 57 |
+| 19204 | Ablehnung Ab-/Bestellung Aggregationsebene | ÜNB → BKV | 1.1a | 2026-03-27 | 55 |
+| 19301 | Abl. der Anforderung | NB → UBA | 1.1a | 2026-03-27 | 61 |
+| 19302 | Best. der Anforderung zum Beenden des Abos zur St… | NB → UBA | 1.1a | 2026-03-27 | 60 |
 | 21000 | Statusmeldung | LF → NB, LF → ÜNB | 2.0h | 2025-06-23 | 78 |
 | 21001 | Statusmeldung | NB → NB | 2.0h | 2025-06-23 | 74 |
 | 21002 | Abweisung | BIKO → NB, BIKO → ÜNB | 2.0h | 2025-06-23 | 73 |
@@ -684,14 +684,14 @@ Downloaded from [ahb-tabellen.hochfrequenz.de](https://ahb-tabellen.hochfrequenz
 | 23009 | Informationsmeldung | MSB → NB (Gas), MSB → MSB (Strom) | 1.1g | 2025-12-11 | 79 |
 | 23011 | Informationsmeldung | MSB → NB, MSB → LF, MSB → ÜNB | 1.1g | 2025-12-11 | 65 |
 | 23012 | Informationsmeldung | MSB → NB, MSB → LF, MSB → ÜNB | 1.1g | 2025-12-11 | 81 |
-| 25001 | Berechnungsformel | NB → MSB, NB → LF, NBA → NBN | 1.0 | 2025-12-11 | 127 |
-| 25004 | Übermittlung Übersicht Zählzeitdefinitionen | NB → LF, NB → MSB, LF → MSB | 1.0 | 2025-12-11 | 110 |
-| 25005 | Übermittlung einer ausgerollten Zählzeitdefinition | NB → LF, NB → MSB, LF → MSB | 1.0 | 2025-12-11 | 78 |
-| 25006 | Übermittlung Übersicht Schaltzeitdefinitionen | NB → LF, NB → MSB, LF → NB, LF → MSB | 1.0 | 2025-12-11 | 79 |
-| 25007 | Übermittlung Übersicht Leistungskurvendefinitionen | NB → LF, NB → MSB, LF → NB, LF → MSB | 1.0 | 2025-12-11 | 79 |
-| 25008 | Übermittlung einer ausgerollten Schaltzeitdefinit… | NB → LF, NB → MSB, LF → NB, LF → MSB | 1.0 | 2025-12-11 | 80 |
-| 25009 | Übermittlung einer ausgerollten Leistungskurvende… | NB → LF, NB → MSB, LF → NB, LF → MSB | 1.0 | 2025-12-11 | 80 |
-| 25010 | Antwort auf Berechnungsformel | MSB → NB | 1.0 | 2025-12-11 | 61 |
+| 25001 | Berechnungsformel | NB → MSB, NB → LF, NBA → NBN | 1.0 | 2026-03-27 | 127 |
+| 25004 | Übermittlung Übersicht Zählzeitdefinitionen | NB → LF, NB → MSB, LF → MSB | 1.0 | 2026-03-27 | 110 |
+| 25005 | Übermittlung einer ausgerollten Zählzeitdefinition | NB → LF, NB → MSB, LF → MSB | 1.0 | 2026-03-27 | 78 |
+| 25006 | Übermittlung Übersicht Schaltzeitdefinitionen | NB → LF, NB → MSB, LF → NB, LF → MSB | 1.0 | 2026-03-27 | 79 |
+| 25007 | Übermittlung Übersicht Leistungskurvendefinitionen | NB → LF, NB → MSB, LF → NB, LF → MSB | 1.0 | 2026-03-27 | 79 |
+| 25008 | Übermittlung einer ausgerollten Schaltzeitdefinit… | NB → LF, NB → MSB, LF → NB, LF → MSB | 1.0 | 2026-03-27 | 80 |
+| 25009 | Übermittlung einer ausgerollten Leistungskurvende… | NB → LF, NB → MSB, LF → NB, LF → MSB | 1.0 | 2026-03-27 | 80 |
+| 25010 | Antwort auf Berechnungsformel | MSB → NB | 1.0 | 2026-03-27 | 61 |
 | 27001 | Übermittlung der Ausgleichsenergiepreise | BIKO → BKV | 2.0f | 2025-12-11 | 74 |
 | 27002 | Preisblätter MSB-Leistungen | MSB → LF, MSB → NB | 2.0f | 2025-12-11 | 113 |
 | 27003 | Preisblätter NB-Leistungen | NB → LF | 2.0f | 2025-12-11 | 96 |
@@ -717,305 +717,305 @@ Downloaded from [ahb-tabellen.hochfrequenz.de](https://ahb-tabellen.hochfrequenz
 | 35003 | Anfrage von Werten | ESA → MSB | 1.1 | 2025-04-01 | 91 |
 | 35004 | Anfrage einer Konfiguration | NB → MSB, LF → MSB | 1.1 | 2025-04-01 | 147 |
 | 35005 | Anfrage Angebot Änderung Technik | NB → MSB, LF → MSB | 1.1 | 2025-04-01 | 108 |
-| 37000 | Kommunikationsdaten des LF Strom | LF → LF, LF → NB, LF → MSB, LF → ÜNB | 1.0f | 2025-12-11 | 310 |
-| 37001 | Kommunikationsdaten des NB Strom | NB → LF, NB → MSB, NB → NB, NB → BKV, NB … | 1.0f | 2025-12-11 | 301 |
-| 37002 | Kommunikationsdaten des MSB Strom | MSB → NB, MSB → LF, MSB → ÜNB, MSB → MSB,… | 1.0f | 2025-12-11 | 247 |
-| 37003 | Kommunikationsdaten des BKV Strom | BKV → NB, BKV → BIKO, BKV → ÜNB | 1.0f | 2025-12-11 | 157 |
-| 37004 | Kommunikationsdaten des BIKO Strom | BIKO → NB, BIKO → BKV, BIKO → ÜNB | 1.0f | 2025-12-11 | 139 |
-| 37005 | Kommunikationsdaten des ÜNB Strom | ÜNB → NB, ÜNB → LF, ÜNB → BKV, ÜNB → BIKO… | 1.0f | 2025-12-11 | 229 |
-| 37006 | Kommunikationsdaten des ESA Strom | ESA → MSB | 1.0f | 2025-12-11 | 175 |
-| 37008 | Kommunikationsdaten des LF Gas | LF → NB, LF → MSB, LF → LF | 1.0f | 2025-12-11 | 283 |
-| 37009 | Kommunikationsdaten des NB Gas | NB → NB, NB → MSB, NB → MGV, NB → LF | 1.0f | 2025-12-11 | 283 |
-| 37010 | Kommunikationsdaten des MSB Gas | MSB → NB, MSB → MSB, MSB → LF | 1.0f | 2025-12-11 | 265 |
-| 37011 | Kommunikationsdaten des MGV Gas | MGV → NB | 1.0f | 2025-12-11 | 211 |
-| 37012 | Spartenüb. Kommunikationsdaten des NB Gas | NB Gas → MSB Strom | 1.0f | 2025-12-11 | 139 |
-| 37013 | Spartenüb. Kommunikationsdaten des MSB Gas | MSB Gas → MSB Strom | 1.0f | 2025-12-11 | 139 |
-| 37014 | Spartenüb. Kommunikationsdaten des MSB Strom | MSB Strom → NB Gas, MSB Strom → MSB Gas | 1.0f | 2025-12-11 | 139 |
+| 37000 | Kommunikationsdaten des LF Strom | LF → LF, LF → NB, LF → MSB, LF → ÜNB | 1.0f | 2026-03-02 | 310 |
+| 37001 | Kommunikationsdaten des NB Strom | NB → LF, NB → MSB, NB → NB, NB → BKV, NB … | 1.0f | 2026-03-02 | 301 |
+| 37002 | Kommunikationsdaten des MSB Strom | MSB → NB, MSB → LF, MSB → ÜNB, MSB → MSB,… | 1.0f | 2026-03-02 | 247 |
+| 37003 | Kommunikationsdaten des BKV Strom | BKV → NB, BKV → BIKO, BKV → ÜNB | 1.0f | 2026-03-02 | 157 |
+| 37004 | Kommunikationsdaten des BIKO Strom | BIKO → NB, BIKO → BKV, BIKO → ÜNB | 1.0f | 2026-03-02 | 139 |
+| 37005 | Kommunikationsdaten des ÜNB Strom | ÜNB → NB, ÜNB → LF, ÜNB → BKV, ÜNB → BIKO… | 1.0f | 2026-03-02 | 229 |
+| 37006 | Kommunikationsdaten des ESA Strom | ESA → MSB | 1.0f | 2026-03-02 | 175 |
+| 37008 | Kommunikationsdaten des LF Gas | LF → NB, LF → MSB, LF → LF | 1.0f | 2026-03-02 | 283 |
+| 37009 | Kommunikationsdaten des NB Gas | NB → NB, NB → MSB, NB → MGV, NB → LF | 1.0f | 2026-03-02 | 283 |
+| 37010 | Kommunikationsdaten des MSB Gas | MSB → NB, MSB → MSB, MSB → LF | 1.0f | 2026-03-02 | 265 |
+| 37011 | Kommunikationsdaten des MGV Gas | MGV → NB | 1.0f | 2026-03-02 | 211 |
+| 37012 | Spartenüb. Kommunikationsdaten des NB Gas | NB Gas → MSB Strom | 1.0f | 2026-03-02 | 139 |
+| 37013 | Spartenüb. Kommunikationsdaten des MSB Gas | MSB Gas → MSB Strom | 1.0f | 2026-03-02 | 139 |
+| 37014 | Spartenüb. Kommunikationsdaten des MSB Strom | MSB Strom → NB Gas, MSB Strom → MSB Gas | 1.0f | 2026-03-02 | 139 |
 | 39000 | Stornierung Sperr-/Entsperrauftrag | LF → NB | 1.0a | 2024-10-01 | 54 |
 | 39001 | Weiterleitung der Stornierung | NB → MSB | 1.0a | 2024-10-01 | 58 |
 | 39002 | Stornierung der Bestellung | ESA → MSB | 1.0a | 2024-10-01 | 51 |
-| 44001 | Anmeldung NN | LF → NB | 1.1 | 2025-12-11 | 218 |
-| 44002 | Bestätigung Anmeldung | NB → LF | 1.1 | 2025-12-11 | 435 |
-| 44003 | Ablehnung Anmeldung | NB → LF | 1.1 | 2025-12-11 | 91 |
-| 44004 | Abmeldung NN | LF → NB | 1.1 | 2025-12-11 | 77 |
-| 44005 | Bestätigung Abmeldung | NB → LF | 1.1 | 2025-12-11 | 83 |
-| 44006 | Ablehnung Abmeldung | NB → LF | 1.1 | 2025-12-11 | 74 |
-| 44007 | Abmeldung NN vom NB | NB → LF | 1.1 | 2025-12-11 | 66 |
-| 44008 | Bestätigung Abmeldung vom NB | LF → NB | 1.1 | 2025-12-11 | 71 |
-| 44009 | Ablehnung Abmeldung vom NB | LF → NB | 1.1 | 2025-12-11 | 66 |
-| 44010 | Abmeldeanfrage des NB | NB → LF | 1.1 | 2025-12-11 | 73 |
-| 44011 | Bestätigung Abmeldeanfrage | LF → NB | 1.1 | 2025-12-11 | 69 |
-| 44012 | Ablehnung Abmeldeanfrage | LF → NB | 1.1 | 2025-12-11 | 65 |
-| 44013 | Anmeldung EOG | NB → LF | 1.1 | 2025-12-11 | 467 |
-| 44014 | Bestätigung EOG Anmeldung | LF → NB | 1.1 | 2025-12-11 | 438 |
-| 44015 | Ablehnung EOG Anmeldung | LF → NB | 1.1 | 2025-12-11 | 79 |
-| 44016 | Kündigung beim alten Lieferanten | LFN → LFA | 1.1 | 2025-12-11 | 96 |
-| 44017 | Bestätigung Kündigung | LFA → LFN | 1.1 | 2025-12-11 | 96 |
-| 44018 | Ablehnung Kündigung | LFA → LFN | 1.1 | 2025-12-11 | 84 |
-| 44019 | Bestandsliste zugeordnete Marktlokationenen | NB → LF | 1.1 | 2025-12-11 | 152 |
-| 44020 | Änderungsmeldung zur Bestandsliste | LF → NB | 1.1 | 2025-12-11 | 160 |
+| 44001 | Anmeldung NN | LF → NB | 1.1 | 2026-03-27 | 218 |
+| 44002 | Bestätigung Anmeldung | NB → LF | 1.1 | 2026-03-27 | 435 |
+| 44003 | Ablehnung Anmeldung | NB → LF | 1.1 | 2026-03-27 | 91 |
+| 44004 | Abmeldung NN | LF → NB | 1.1 | 2026-03-27 | 77 |
+| 44005 | Bestätigung Abmeldung | NB → LF | 1.1 | 2026-03-27 | 83 |
+| 44006 | Ablehnung Abmeldung | NB → LF | 1.1 | 2026-03-27 | 74 |
+| 44007 | Abmeldung NN vom NB | NB → LF | 1.1 | 2026-03-27 | 66 |
+| 44008 | Bestätigung Abmeldung vom NB | LF → NB | 1.1 | 2026-03-27 | 71 |
+| 44009 | Ablehnung Abmeldung vom NB | LF → NB | 1.1 | 2026-03-27 | 66 |
+| 44010 | Abmeldeanfrage des NB | NB → LF | 1.1 | 2026-03-27 | 73 |
+| 44011 | Bestätigung Abmeldeanfrage | LF → NB | 1.1 | 2026-03-27 | 69 |
+| 44012 | Ablehnung Abmeldeanfrage | LF → NB | 1.1 | 2026-03-27 | 65 |
+| 44013 | Anmeldung EOG | NB → LF | 1.1 | 2026-03-27 | 467 |
+| 44014 | Bestätigung EOG Anmeldung | LF → NB | 1.1 | 2026-03-27 | 438 |
+| 44015 | Ablehnung EOG Anmeldung | LF → NB | 1.1 | 2026-03-27 | 79 |
+| 44016 | Kündigung beim alten Lieferanten | LFN → LFA | 1.1 | 2026-03-27 | 96 |
+| 44017 | Bestätigung Kündigung | LFA → LFN | 1.1 | 2026-03-27 | 96 |
+| 44018 | Ablehnung Kündigung | LFA → LFN | 1.1 | 2026-03-27 | 84 |
+| 44019 | Bestandsliste zugeordnete Marktlokationenen | NB → LF | 1.1 | 2026-03-27 | 152 |
+| 44020 | Änderungsmeldung zur Bestandsliste | LF → NB | 1.1 | 2026-03-27 | 160 |
 | 44021 | Antwort auf Änderungsmeldung zur Bestandsliste | NB → LF | 1.1 | 2026-03-27 | 155 |
-| 44022 | Anfrage nach Stornierung | MSCONS-Nachrichten können von verschieden… | 1.1 | 2025-12-11 | 60 |
-| 44023 | Bestätigung Anfrage Stornierung | zurück → den Absender | 1.1 | 2025-12-11 | 61 |
-| 44024 | Ablehnung Anfrage Stornierung | zurück → den Absender | 1.1 | 2025-12-11 | 64 |
-| 44035 | Antwort auf die Geschäftsdatenanfrage | NB → LF | 1.1 | 2025-12-11 | 373 |
-| 44036 | Informationsmeldung über existierende Zuordnung | NB → LF | 1.1 | 2025-12-11 | 65 |
-| 44037 | Informationsmeldung zur Beendigung der Zuordnung | NB → LF | 1.1 | 2025-12-11 | 63 |
-| 44038 | Informationsmeldung zur Aufhebung einer zuk. Zuor… | NB → LF | 1.1 | 2025-12-11 | 71 |
-| 44039 | Kündigung MSB | MSBN → MSBA | 1.1 | 2025-12-11 | 87 |
-| 44040 | Bestätigung Kündigung MSB | MSBA → MSBN | 1.1 | 2025-12-11 | 98 |
-| 44041 | Ablehnung Kündigung MSB | MSBA → MSBN | 1.1 | 2025-12-11 | 77 |
-| 44042 | Anmeldung MSB | MSB → NB | 1.1 | 2025-12-11 | 111 |
-| 44043 | Bestätigung Anmeldung MSB | NB → MSB | 1.1 | 2025-12-11 | 305 |
-| 44044 | Ablehnung Anmeldung MSB | NB → MSB | 1.1 | 2025-12-11 | 65 |
-| 44051 | Ende MSB | MSB → NB | 1.1 | 2025-12-11 | 68 |
-| 44052 | Bestätigung Ende MSB | NB → MSB | 1.1 | 2025-12-11 | 76 |
-| 44053 | Ablehnung Ende MSB | NB → MSB | 1.1 | 2025-12-11 | 68 |
-| 44060 | Antwort auf die Geschäftsdatenanfrage | NB → MSB (Strom bzw. Gas) | 1.1 | 2025-12-11 | 262 |
-| 44096 | Deklarationsliste | NB → MGV | 1.1 | 2025-12-11 | 63 |
-| 44097 | Deklarationsliste | MGV → BKV | 1.1 | 2025-12-11 | 69 |
-| 44101 | Stammdaten zur Messlokation | NB → MSB | 1.1 | 2025-12-11 | 77 |
-| 44102 | Aktualisierte Stammdaten zur Messlokation | NB → MSB | 1.1 | 2025-12-11 | 75 |
-| 44103 | Stammdaten zur Marktlokation | NB → LF | 1.1 | 2025-12-11 | 132 |
-| 44104 | Aktualisierte Stammdaten zur Marktlokation | NB → LF | 1.1 | 2025-12-11 | 130 |
-| 44105 | Ablehnung auf Stammdaten zur Marktlokation | LF → NB | 1.1 | 2025-12-11 | 70 |
-| 44109 | Nicht bila.rel. Änderung vom LF | LF → NB [Berechtigter] | 1.1 | 2025-12-11 | 97 |
-| 44110 | #nv# Nicht bila.rel. Änderung vom LF | NB [Verteiler] → MSB | 1.1 | 2025-12-11 | 62 |
-| 44111 |  | NB [Berechtigter] → LF | 1.1 | 2025-12-11 | 63 |
-| 44112 | Nicht bila.rel. Änderung vom NB | NB → LF | 1.1 | 2025-12-11 | 223 |
-| 44113 | Nicht bila.rel. Änderung vom NB | NB → MSB | 1.1 | 2025-12-11 | 132 |
-| 44115 | Antwort auf Änderung vom NB | LF → NB, MSB → NB | 1.1 | 2025-12-11 | 64 |
-| 44116 | Änderung vom MSB mit Abhängig keiten | MSB → NB [Verteiler] | 1.1 | 2025-12-11 | 215 |
-| 44117 | Änderung vom MSB mit Abhängig keiten | NB [Verteiler] → LF | 1.1 | 2025-12-11 | 199 |
-| 44119 | Antwort auf Änderung vom MSB | NB [Verteiler] → MSB, LF → NB [Verteiler] | 1.1 | 2025-12-11 | 64 |
-| 44120 | Bila.rel. Änderung vom LF | LF → NB | 1.1 | 2025-12-11 | 70 |
-| 44121 | Antwort auf Änderung vom LF | NB → LF | 1.1 | 2025-12-11 | 63 |
-| 44123 | Bila.rel. Änderung vom NB mit Abhängigkeiten | NB → LF | 1.1 | 2025-12-11 | 106 |
-| 44124 | Antwort auf Änderung vom NB | LF → NB | 1.1 | 2025-12-11 | 63 |
-| 44129 | Korrektur Meldepunkt vom NB | NB → LF, NB → ÜNB | 1.1 | 2025-12-11 | 65 |
-| 44130 | Korrektur Meldepunkt vom NB | NB → MSB | 1.1 | 2025-12-11 | 65 |
-| 44132 | Antwort auf Änderung vom NB | LF → NB, ÜNB → NB, MSB → NB | 1.1 | 2025-12-11 | 56 |
-| 44137 | Nicht bila.rel. Anfrage an LF | NB [Berechtigt] → LF | 1.1 | 2025-12-11 | 97 |
-| 44138 | Antwort auf Anfrage | LF → NB [Berechtigt] | 1.1 | 2025-12-11 | 105 |
-| 44139 | Nicht bila.rel. Anfrage an NB | LF → NB | 1.1 | 2025-12-11 | 226 |
-| 44140 | Nicht bila.rel. Anfrage an NB | MSB → NB | 1.1 | 2025-12-11 | 131 |
-| 44142 | Antwort auf Anfrage | NB → LF, NB → MSB | 1.1 | 2025-12-11 | 244 |
-| 44143 | Anfrage an MSB mit Abhängigkeiten | LF → NB [Verteiler] | 1.1 | 2025-12-11 | 199 |
-| 44145 | Antwort auf Anfrage | NB [Verteiler] → LF | 1.1 | 2025-12-11 | 207 |
-| 44146 | Ablehnung der Anfrage | NB [Verteiler] → LF | 1.1 | 2025-12-11 | 63 |
-| 44147 | Anfrage an MSB mit Abhängigkeiten | NB [Verteiler] → MSB | 1.1 | 2025-12-11 | 199 |
-| 44148 | Anfrage an MSB mit Abhängigkeiten | NB [Berechtigt] → MSB | 1.1 | 2025-12-11 | 215 |
-| 44149 | Antwort auf Anfrage | MSB → NB [Verteiler], MSB → NB [Berechtig… | 1.1 | 2025-12-11 | 223 |
-| 44150 | Bila.rel. Anfrage an LF | NB → LF | 1.1 | 2025-12-11 | 70 |
-| 44151 | Antwort auf Anfrage | LF → NB | 1.1 | 2025-12-11 | 78 |
-| 44152 | Ablehnung der Anfrage | LF → NB | 1.1 | 2025-12-11 | 63 |
-| 44156 | Bila.rel. Anfrage an NB mit Abhängigkeiten | LF → NB | 1.1 | 2025-12-11 | 106 |
-| 44157 | Antwort auf Anfrage | NB → LF | 1.1 | 2025-12-11 | 114 |
-| 44159 | Änderung vom MSB ohne Abhängigkeiten | MSB → NB [Verteiler] | 1.1 | 2025-12-11 | 100 |
-| 44160 | Änderung vom MSB ohne Abhängigkeiten | NB [Verteiler] → LF [Berechtigt] | 1.1 | 2025-12-11 | 76 |
-| 44161 | Antwort auf Änderung | NB [Verteiler] → MSB, LF [Berechtigt] → N… | 1.1 | 2025-12-11 | 64 |
-| 44162 | Anfrage an MSB ohne Abhängigkeiten | LF [Berechtigt] → NB [Verteiler] | 1.1 | 2025-12-11 | 76 |
-| 44163 | Antwort auf Anfrage | NB [Verteiler] → LF [Berechtigt] | 1.1 | 2025-12-11 | 84 |
-| 44164 | Ablehnung Anfrage | NB [Verteiler] → LF [Berechtigt] | 1.1 | 2025-12-11 | 63 |
-| 44165 | Nicht bila.rel. Anfrage an MSB ohne Abhängigkeiten | NB [Verteiler] → MSB | 1.1 | 2025-12-11 | 76 |
-| 44166 | Nicht bila.rel. Anfrage an MSB ohne Abhängigkeiten | NB [Berechtigt] → MSB | 1.1 | 2025-12-11 | 100 |
-| 44167 | Antwort auf Anfrage | MSB → NB | 1.1 | 2025-12-11 | 108 |
-| 44168 | Verpflichtungsanfrage / Aufforderung | NB → gMSB | 1.1 | 2025-12-11 | 318 |
-| 44169 | Bestätigung Verpflichtungsanfrage | gMSB → NB | 1.1 | 2025-12-11 | 309 |
-| 44170 | Ablehnung Verpflichtungsanfrage | gMSB → NB | 1.1 | 2025-12-11 | 65 |
-| 44172 | #nv# Anfrage an MSB mit Abhängigkeiten | MSB → NB [Verteiler] | 1.1 | 2025-12-11 | 145 |
-| 44175 | Änderung der Marktlokationsstruktur | NB → LF | 1.1 | 2025-12-11 | 63 |
-| 44176 | Antwort auf Änderung der Marktlokationsstruktur | LF → NB | 1.1 | 2025-12-11 | 71 |
-| 44180 | Anfrage der Marktlokationsstruktur | LF → NB | 1.1 | 2025-12-11 | 63 |
-| 44181 | Antwort auf Anfrage der Marktlokationsstruktur | NB → LF | 1.1 | 2025-12-11 | 71 |
-| 44182 | Ablehnung der Anfrage der Marktlokationsstruktur | NB → LF | 1.1 | 2025-12-11 | 63 |
-| 55001 | Anmeldung verb. MaLo | LF → NB | 2.1 | 2025-12-11 | 146 |
-| 55002 | Bestätigung Anmeldung verb. MaLo | NB → LF | 2.1 | 2025-12-11 | 165 |
-| 55003 | Ablehnung Anmeldung verb. MaLo | NB → LF | 2.1 | 2025-12-11 | 83 |
-| 55004 | Abmeldung | LF → NB | 2.1 | 2025-12-11 | 83 |
-| 55005 | Bestätigung Abmeldung | NB → LF | 2.1 | 2025-12-11 | 75 |
-| 55006 | Ablehnung Abmeldung | NB → LF | 2.1 | 2025-12-11 | 70 |
-| 55007 | Abmeldung / Beendigung der Zuordnung | NB → LF | 2.1 | 2025-12-11 | 82 |
-| 55008 | Bestätigung Abmeldung | LF → NB | 2.1 | 2025-12-11 | 69 |
-| 55009 | Ablehnung Abmeldung | LF → NB | 2.1 | 2025-12-11 | 64 |
-| 55010 | Anfrage zur Beendigung der Zuordnung | NB → LF | 2.1 | 2025-12-11 | 88 |
-| 55011 | Bestätigung Beendigung der Zuordnung | LF → NB | 2.1 | 2025-12-11 | 64 |
-| 55012 | Ablehnung Beendigung der Zuordnung | LF → NB | 2.1 | 2025-12-11 | 60 |
-| 55013 | Anmeldung / Zuordnung EOG | NB → LF | 2.1 | 2025-12-11 | 257 |
-| 55014 | Bestätigung EOG Anmeldung | LF → NB | 2.1 | 2025-12-11 | 159 |
-| 55015 | Ablehnung EOG Anmeldung | LF → NB | 2.1 | 2025-12-11 | 74 |
-| 55016 | Kündigung | LFN → LFA | 2.1 | 2025-12-11 | 73 |
-| 55017 | Bestätigung Kündigung | LFA → LFN | 2.1 | 2025-12-11 | 78 |
-| 55018 | Ablehnung Kündigung | LFA → LFN | 2.1 | 2025-12-11 | 80 |
-| 55022 | Anfrage nach Stornierung | MSCONS-Nachrichten können von verschieden… | 2.1 | 2025-12-11 | 60 |
-| 55023 | Bestätigung Anfrage Stornierung | zurück → den Absender | 2.1 | 2025-12-11 | 61 |
-| 55024 | Ablehnung Anfrage Stornierung | zurück → den Absender | 2.1 | 2025-12-11 | 64 |
-| 55035 | Antwort auf GDA verb. MaLo | NB → LF | 2.1 | 2025-12-11 | 531 |
-| 55036 | Existierende Zuordnung | NB → LF | 2.1 | 2025-12-11 | 69 |
-| 55037 | Beendigung der Zuordnung | NB → LF | 2.1 | 2025-12-11 | 67 |
-| 55038 | Aufhebung einer zuk. Zuordnung | NB → LF | 2.1 | 2025-12-11 | 74 |
-| 55039 | Kündigung MSB | MSBN → MSBA | 2.1 | 2025-12-11 | 91 |
-| 55040 | Bestätigung Kündigung MSB | MSBA → MSBN | 2.1 | 2025-12-11 | 104 |
-| 55041 | Ablehnung Kündigung MSB | MSBA → MSBN | 2.1 | 2025-12-11 | 77 |
-| 55042 | Anmeldung MSB | MSB → NB | 2.1 | 2025-12-11 | 116 |
-| 55043 | Bestätigung Anmeldung MSB | NB → MSB | 2.1 | 2025-12-11 | 909 |
-| 55044 | Ablehnung Anmeldung MSB | NB → MSB | 2.1 | 2025-12-11 | 66 |
-| 55051 | Ende MSB | MSB → NB | 2.1 | 2025-12-11 | 68 |
-| 55052 | Bestätigung Ende MSB | NB → MSB | 2.1 | 2025-12-11 | 98 |
-| 55053 | Ablehnung Ende MSB | NB → MSB | 2.1 | 2025-12-11 | 68 |
-| 55060 | Antwort auf GDA | NB → MSB | 2.1 | 2025-12-11 | 608 |
-| 55062 | Aktivierung von ZP | NB → BIKO, NB → LF, NB → NB, NB → ÜNB, ÜN… | 2.1 | 2025-12-11 | 125 |
-| 55063 | Deaktivierung von ZP | NB → BIKO, NB → LF, NB → NB, NB → ÜNB, ÜN… | 2.1 | 2025-12-11 | 56 |
-| 55064 | Antwort | BIKO → NB, BIKO → ÜNB, NB → NB | 2.1 | 2025-12-11 | 79 |
-| 55065 | Lieferantenclearingliste | NB → LF, ÜNB → LF | 2.1 | 2025-12-11 | 192 |
-| 55066 | Korrekturliste zur Lieferantenclearingliste | LF → NB, LF → ÜNB | 2.1 | 2025-12-11 | 210 |
-| 55067 | Bilanzkreiszuordnungsliste | NB → BKV, ÜNB → BKV | 2.1 | 2025-12-11 | 111 |
-| 55069 | Clearingliste DZR | BIKO → NB, BIKO → ÜNB | 2.1 | 2025-12-11 | 116 |
-| 55070 | Clearingliste BAS | BIKO → BKV | 2.1 | 2025-12-11 | 168 |
-| 55071 | Aktivierung der Zuordnungsermächtigung | BKV → NB | 2.1 | 2025-12-11 | 75 |
-| 55072 | Deaktivierung der Zuordnungsermächtigung | BKV → NB | 2.1 | 2025-12-11 | 75 |
-| 55073 | Übermittlung der Profildefinitionen | NB → LF, NB → MSB | 2.1 | 2025-12-11 | 212 |
-| 55074 | Stammdaten auf eine ORDERS | NB → UBA | 2.1 | 2025-12-11 | 269 |
-| 55075 | Stammdaten aufgrund einer Änderung | NB → UBA | 2.1 | 2025-12-11 | 279 |
-| 55076 | Antwort auf Stammdatenänderung | UBA → NB | 2.1 | 2025-12-11 | 287 |
-| 55077 | Anmeldung erz. MaLo | LF → NB | 2.1 | 2025-12-11 | 111 |
-| 55078 | Bestätigung Anmeldung erz. MaLo | NB → LF | 2.1 | 2025-12-11 | 171 |
-| 55080 | Ablehnung Anmeldung erz. MaLo | NB → LF | 2.1 | 2025-12-11 | 89 |
-| 55095 | Antwort auf GDA erz. MaLo | NB → LF | 2.1 | 2025-12-11 | 465 |
-| 55109 | Änderung Daten der MaLo | LF → NB | 2.1 | 2025-12-11 | 129 |
-| 55110 | Änderung Daten der MaLo | LF → MSB | 2.1 | 2025-12-11 | 90 |
-| 55126 | Abr.-Daten BK-Abr. verb. Malo | NB → LF, NBA → NBN | 2.1 | 2025-12-11 | 156 |
-| 55136 | Rückmeldung/Anfrage Daten der MaLo | MSB → LF | 2.1 | 2025-12-11 | 104 |
-| 55137 | Rückmeldung/Anfrage Daten der MaLo | NB → LF | 2.1 | 2025-12-11 | 145 |
-| 55156 | Rückmeldung/Anfrage Abr.-Daten BK-Abr. verb. MaLo | LF → NB | 2.1 | 2025-12-11 | 171 |
-| 55168 | Verpflichtungsanfrage / Aufforderung | NB → gMSB | 2.1 | 2025-12-11 | 927 |
-| 55169 | Bestätigung Verpflichtungsanfrage | gMSB → NB | 2.1 | 2025-12-11 | 908 |
-| 55170 | Ablehnung Verpflichtungsanfrage | gMSB → NB | 2.1 | 2025-12-11 | 65 |
-| 55173 | Änderung der Lokationsbündelstruktur | NB → MSB | 2.1 | 2025-12-11 | 124 |
-| 55175 | Änderung der Lokationsbündelstruktur | NB → LF | 2.1 | 2025-12-11 | 124 |
-| 55177 | Rückmeldung/Anfrage Lokationsbündelstruktur | MSB → NB | 2.1 | 2025-12-11 | 138 |
-| 55180 | Rückmeldung/Anfrage Lokationsbündelstruktur | LF → NB | 2.1 | 2025-12-11 | 138 |
-| 55194 | Antwort auf GDA (Strom an Gas) | NB → MSB | 2.1 | 2025-12-11 | 95 |
-| 55195 | Bilanzierungsgebietsclearingliste | ÜNB → NB | 2.1 | 2025-12-11 | 199 |
-| 55196 | Antwort auf Bilanzierungsgebietsclearingliste | NB → ÜNB | 2.1 | 2025-12-11 | 299 |
-| 55197 | Aktivierung ZP tägliche AAÜZ | NB (ANB) → ÜNB | 2.1 | 2025-12-11 | 84 |
-| 55198 | Deaktivierung tägliche AAÜZ | NB (ANB) → ÜNB | 2.1 | 2025-12-11 | 56 |
-| 55199 | Aktivierung ZP LF-AASZR | NB (ANB) → LF | 2.1 | 2025-12-11 | 84 |
-| 55200 | Deaktivierung ZP LF-AASZR | NB (ANB) → LF | 2.1 | 2025-12-11 | 56 |
-| 55201 | LF-AACL | NB (ANB) → LF | 2.1 | 2025-12-11 | 114 |
-| 55202 | Korrekturliste LF-AACL | LF → NB (ANB) | 2.1 | 2025-12-11 | 128 |
-| 55203 | Aktivierung ZP monatliche AAÜZ | NB (ANB) → BIKO | 2.1 | 2025-12-11 | 88 |
-| 55204 | Antwort auf Aktivierung ZP | BIKO → NB (ANB) | 2.1 | 2025-12-11 | 64 |
-| 55205 | Weiterleitung Aktivierung ZP | BIKO → BKV (des LF) | 2.1 | 2025-12-11 | 88 |
-| 55206 | Deaktivierung ZP monatliche AAÜZ | NB (ANB) → BIKO | 2.1 | 2025-12-11 | 56 |
-| 55207 | Antwort auf Deaktivierung ZP | BIKO → NB (ANB) | 2.1 | 2025-12-11 | 64 |
-| 55208 | Weiterleitung Deaktivierung ZP | BIKO → BKV (des LF) | 2.1 | 2025-12-11 | 56 |
-| 55209 | Aktivierung ZP monatliche AAÜZ | NB (ANB) → BIKO | 2.1 | 2025-12-11 | 88 |
-| 55210 | Antwort auf Aktivierung ZP | BIKO → NB (ANB) | 2.1 | 2025-12-11 | 64 |
-| 55211 | Weiterleitung Aktivierung ZP | BIKO → BKV (des anfNB) | 2.1 | 2025-12-11 | 88 |
-| 55212 | Deaktivierung ZP monatliche AAÜZ | NB (ANB) → BIKO | 2.1 | 2025-12-11 | 56 |
-| 55213 | Antwort auf Deaktivierung ZP | BIKO → NB (ANB) | 2.1 | 2025-12-11 | 64 |
-| 55214 | Weiterleitung Deaktivierung ZP | BIKO → BKV (des anfNB) | 2.1 | 2025-12-11 | 56 |
-| 55218 | Abr.-Daten NNA | NB → LF, NBA → NBN | 2.1 | 2025-12-11 | 160 |
-| 55220 | Rückmeldung/Anfrage Abr.-Daten NNA | LF → NB | 2.1 | 2025-12-11 | 176 |
-| 55223 | DZÜ Liste | ÜNB → NB | 2.1 | 2025-12-11 | 234 |
-| 55224 | Antwort auf DZÜ Liste | NB → ÜNB | 2.1 | 2025-12-11 | 143 |
-| 55225 | Änderung Blindabr.-Daten der NeLo | NB → LF, NBA → NBN | 2.1 | 2025-12-11 | 87 |
-| 55227 | Rückmeldung/Anfrage Blindabr.-Daten der NeLo | LF → NB | 2.1 | 2025-12-11 | 100 |
-| 55230 | Änderung Blindabr.-Daten der NeLo | LF → NB | 2.1 | 2025-12-11 | 77 |
-| 55232 | Rückmeldung/Anfrage Blindabr.-Daten der NeLo | NB → LF | 2.1 | 2025-12-11 | 90 |
-| 55235 | Zuordnung ZP der NGZ zur NZR | NB → NB, NB → ÜNB | 2.1 | 2025-12-11 | 84 |
-| 55236 | Beendigung Zuordnung ZP der NGZ zur NZR | NB → NB, NB → ÜNB | 2.1 | 2025-12-11 | 56 |
-| 55237 | Antwort | NB → NB | 2.1 | 2025-12-11 | 72 |
-| 55238 | Anmeldung in Modell 2 | NB (LPB) → NB (VNB) | 2.1 | 2025-12-11 | 76 |
-| 55239 | Antwort auf Anmeldung | NB (VNB) → NB (LPB) | 2.1 | 2025-12-11 | 104 |
-| 55240 | Beendigung der Zuordnung zur MaLo | NB (VNB) → LF | 2.1 | 2025-12-11 | 67 |
-| 55241 | Antwort auf Beendigung | LF → NB (VNB) | 2.1 | 2025-12-11 | 75 |
-| 55242 | Abmeldung aus dem Modell 2 | NB (LPB) → NB (VNB) | 2.1 | 2025-12-11 | 70 |
-| 55243 | Antwort auf Abmeldung | NB (VNB) → NB (LPB) | 2.1 | 2025-12-11 | 78 |
-| 55553 | Daten auf individuelle Bestellung | MSB → NB, MSB → LF, MSB → MSB | 2.1 | 2025-12-11 | 171 |
-| 55555 | Rückmeldung/Anfrage Daten der individuellen Beste… | NB → MSB, LF → MSB, MSB → MSB | 2.1 | 2025-12-11 | 186 |
-| 55557 | Änderung MSB-Abr.-Daten der MaLo | MSB → NB | 2.1 | 2025-12-11 | 88 |
-| 55559 | Rückmeldung/Anfrage MSB-Abr.-Daten der MaLo | NB → MSB | 2.1 | 2025-12-11 | 101 |
-| 55600 | Anmeldung neue verb. MaLo | LF → NB | 2.1 | 2025-12-11 | 153 |
-| 55601 | Anmeldung neue erz. MaLo | LF → NB | 2.1 | 2025-12-11 | 154 |
-| 55602 | Bestätigung Anmeldung neue verb. MaLo | NB → LF | 2.1 | 2025-12-11 | 159 |
-| 55603 | Bestätigung Anmeldung neue erz. MaLo | NB → LF | 2.1 | 2025-12-11 | 170 |
-| 55604 | Ablehnung Anmeldung neue verb. MaLo | NB → LF | 2.1 | 2025-12-11 | 73 |
-| 55605 | Ablehnung Anmeldung neue erz. MaLo | NB → LF | 2.1 | 2025-12-11 | 73 |
-| 55607 | (Ankündigung) Zuordnung des LF zur erz. MaLo/ Tra… | NB → LF | 2.1 | 2025-12-11 | 186 |
-| 55608 | Bestätigung Zuordnung des LF zur erz. MaLo/ Tranc… | LF → NB | 2.1 | 2025-12-11 | 111 |
-| 55609 | Ablehnung Zuordnung des LF zur erz. MaLo/ Tranche | LF → NB | 2.1 | 2025-12-11 | 69 |
-| 55611 | Beendigung der Zuordnung | NB → MSB, NB → MSBZ | 2.1 | 2025-12-11 | 68 |
-| 55613 | Abr.-Daten BK-Abr. verb. MaLo | NB → ÜNB | 2.1 | 2025-12-11 | 131 |
-| 55614 | Rückmeldung/Anfrage Abr.-Daten BK-Abr. verb. MaLo | ÜNB → NB | 2.1 | 2025-12-11 | 143 |
-| 55615 | Änderung Daten der NeLo | NB → LF, NBA → NBN | 2.1 | 2025-12-11 | 81 |
-| 55616 | Änderung Daten der MaLo | NB → LF, NBA → NBN | 2.1 | 2025-12-11 | 229 |
-| 55617 | Änderung Daten der TR | NB → LF, NBA → NBN | 2.1 | 2025-12-11 | 142 |
-| 55618 | Änderung Daten der SR | NB → LF, NBA → NBN | 2.1 | 2025-12-11 | 81 |
-| 55619 | Änderung Daten der Tranche | NB → LF, NBA → NBN | 2.1 | 2025-12-11 | 78 |
-| 55620 | Änderung Daten der MeLo | NB → LF, NBA → NBN | 2.1 | 2025-12-11 | 89 |
-| 55621 | Rückmeldung/Anfrage Daten zur NeLo | LF → NB | 2.1 | 2025-12-11 | 94 |
-| 55622 | Rückmeldung/Anfrage Daten der MaLo | LF → NB | 2.1 | 2025-12-11 | 249 |
-| 55623 | Rückmeldung/Anfrage Daten der TR | LF → NB | 2.1 | 2025-12-11 | 155 |
-| 55624 | Rückmeldung/Anfrage Daten der SR | LF → NB | 2.1 | 2025-12-11 | 94 |
-| 55625 | Rückmeldung/Anfrage Daten der Tranche | LF → NB | 2.1 | 2025-12-11 | 91 |
-| 55626 | Rückmeldung/Anfrage Daten der MeLo | LF → NB | 2.1 | 2025-12-11 | 102 |
-| 55627 | Änderung Daten der NeLo | NB → MSB | 2.1 | 2025-12-11 | 81 |
-| 55628 | Änderung Daten der MaLo | NB → MSB | 2.1 | 2025-12-11 | 223 |
-| 55629 | Änderung Daten der TR | NB → MSB | 2.1 | 2025-12-11 | 134 |
-| 55630 | Änderung Daten der SR | NB → MSB | 2.1 | 2025-12-11 | 81 |
-| 55632 | Änderung Daten der MeLo | NB → MSB | 2.1 | 2025-12-11 | 92 |
-| 55633 | Rückmeldung/Anfrage Daten zur NeLo | MSB → NB | 2.1 | 2025-12-11 | 94 |
-| 55634 | Rückmeldung/Anfrage Daten der MaLo | MSB → NB | 2.1 | 2025-12-11 | 243 |
-| 55635 | Rückmeldung/Anfrage Daten der TR | MSB → NB | 2.1 | 2025-12-11 | 147 |
-| 55636 | Rückmeldung/Anfrage Daten der SR | MSB → NB | 2.1 | 2025-12-11 | 94 |
-| 55638 | Rückmeldung/Anfrage Daten der MeLo | MSB → NB | 2.1 | 2025-12-11 | 105 |
-| 55639 | Änderung Daten der NeLo | MSB → NB | 2.1 | 2025-12-11 | 116 |
-| 55640 | Änderung Daten der MaLo | MSB → NB | 2.1 | 2025-12-11 | 131 |
-| 55641 | Änderung Daten der SR | MSB → NB | 2.1 | 2025-12-11 | 102 |
-| 55642 | Änderung Daten der Tranche | MSB → NB | 2.1 | 2025-12-11 | 82 |
-| 55643 | Änderung Daten der MeLo | MSB → NB | 2.1 | 2025-12-11 | 301 |
-| 55644 | Rückmeldung/Anfrage Daten der NeLo | NB → MSB | 2.1 | 2025-12-11 | 131 |
-| 55645 | Rückmeldung/Anfrage Daten der MaLo | NB → MSB | 2.1 | 2025-12-11 | 146 |
-| 55646 | Rückmeldung/Anfrage Daten der SR | NB → MSB | 2.1 | 2025-12-11 | 116 |
-| 55647 | Rückmeldung/Anfrage Daten der Tranche | NB → MSB | 2.1 | 2025-12-11 | 95 |
-| 55648 | Rückmeldung/Anfrage Daten der MeLo | NB → MSB | 2.1 | 2025-12-11 | 325 |
-| 55649 | Änderung Daten der NeLo | MSB → LF | 2.1 | 2025-12-11 | 117 |
-| 55650 | Änderung Daten der MaLo | MSB → LF | 2.1 | 2025-12-11 | 131 |
-| 55651 | Änderung Daten der SR | MSB → LF | 2.1 | 2025-12-11 | 102 |
-| 55652 | Änderung Daten der Tranche | MSB → LF | 2.1 | 2025-12-11 | 82 |
-| 55653 | Änderung Daten der MeLo | MSB → LF | 2.1 | 2025-12-11 | 202 |
-| 55654 | Rückmeldung/Anfrage Daten der NeLo | LF → MSB | 2.1 | 2025-12-11 | 132 |
-| 55655 | Rückmeldung/Anfrage Daten der MaLo | LF → MSB | 2.1 | 2025-12-11 | 146 |
-| 55656 | Rückmeldung/Anfrage Daten der SR | LF → MSB | 2.1 | 2025-12-11 | 116 |
-| 55657 | Rückmeldung/Anfrage Daten der Tranche | LF → MSB | 2.1 | 2025-12-11 | 95 |
-| 55658 | Rückmeldung/Anfrage Daten der MeLo | LF → MSB | 2.1 | 2025-12-11 | 220 |
-| 55659 | Änderung Daten der NeLo | MSB → weiteren MSB | 2.1 | 2025-12-11 | 123 |
-| 55660 | Änderung Daten der MaLo | MSB → weiteren MSB | 2.1 | 2025-12-11 | 147 |
-| 55661 | Änderung Daten der SR | MSB → weiteren MSB | 2.1 | 2025-12-11 | 103 |
-| 55662 | Änderung Daten der Tranche | MSB → weiteren MSB | 2.1 | 2025-12-11 | 94 |
-| 55663 | Änderung Daten der MeLo | MSB → weiteren MSB | 2.1 | 2025-12-11 | 301 |
-| 55664 | Rückmeldung/Anfrage Daten der NeLo | weiterer MSB → MSB | 2.1 | 2025-12-11 | 138 |
-| 55665 | Rückmeldung/Anfrage Daten der MaLo | weiteren MSB → MSB | 2.1 | 2025-12-11 | 162 |
-| 55666 | Rückmeldung/Anfrage Daten der SR | weiterer MSB → MSB | 2.1 | 2025-12-11 | 117 |
-| 55667 | Rückmeldung/Anfrage Daten der Tranche | weiteren MSB → MSB | 2.1 | 2025-12-11 | 107 |
-| 55669 | Rückmeldung/Anfrage Daten der MeLo | weiterer MSB → MSB | 2.1 | 2025-12-11 | 329 |
-| 55670 | Stammdaten BK-Treue | NB → ÜNB | 2.1 | 2025-12-11 | 121 |
-| 55671 | Rückmeldung auf Stammdaten BK-Treue | ÜNB → NB | 2.1 | 2025-12-11 | 128 |
-| 55672 | Abr.-Daten BK-Abr. erz. Malo | NB → LF, NBA → NBN | 2.1 | 2025-12-11 | 178 |
-| 55673 | Rückmeldung/Anfrage Abr.-Daten BK-Abr. erz. Malo | LF → NB | 2.1 | 2025-12-11 | 195 |
-| 55674 | Abr.-Daten BK-Abr. erz. Malo | NB → ÜNB | 2.1 | 2025-12-11 | 133 |
-| 55675 | Rückmeldung/Anfrage Abr.-Daten BK-Abr. erz. Malo | ÜNB → NB | 2.1 | 2025-12-11 | 145 |
-| 55684 | Änderung Daten der MaLo | MSB → ÜNB | 2.1 | 2025-12-11 | 82 |
-| 55685 | Rückmeldung/Anfrage Daten der MaLo | ÜNB → MSB | 2.1 | 2025-12-11 | 95 |
-| 55686 | Änderung Daten der Tranche | MSB → ÜNB | 2.1 | 2025-12-11 | 82 |
-| 55687 | Rückmeldung/Anfrage Daten der Tranche | ÜNB → MSB | 2.1 | 2025-12-11 | 95 |
-| 55688 | Änderung Daten der MaLo | NB → ÜNB | 2.1 | 2025-12-11 | 78 |
-| 55689 | Rückmeldung/Anfrage Daten der MaLo | ÜNB → NB | 2.1 | 2025-12-11 | 91 |
-| 55690 | Lokationsbündelstruktur und DB | NBA → NBN | 2.1 | 2025-12-11 | 223 |
-| 55691 | Änderung Paket-ID der Malo | NBA → LF, NBA → MSB, NBA → NBN, NBA → ÜNB | 2.1 | 2025-12-11 | 76 |
-| 55692 | Rückmeldung/Anfrage Paket-ID der Malo | LF → NBA, MSB → NBA, ÜNB → NBA | 2.1 | 2025-12-11 | 90 |
+| 44022 | Anfrage nach Stornierung | MSCONS-Nachrichten können von verschieden… | 1.1 | 2026-03-27 | 60 |
+| 44023 | Bestätigung Anfrage Stornierung | zurück → den Absender | 1.1 | 2026-03-27 | 61 |
+| 44024 | Ablehnung Anfrage Stornierung | zurück → den Absender | 1.1 | 2026-03-27 | 64 |
+| 44035 | Antwort auf die Geschäftsdatenanfrage | NB → LF | 1.1 | 2026-03-27 | 373 |
+| 44036 | Informationsmeldung über existierende Zuordnung | NB → LF | 1.1 | 2026-03-27 | 65 |
+| 44037 | Informationsmeldung zur Beendigung der Zuordnung | NB → LF | 1.1 | 2026-03-27 | 63 |
+| 44038 | Informationsmeldung zur Aufhebung einer zuk. Zuor… | NB → LF | 1.1 | 2026-03-27 | 71 |
+| 44039 | Kündigung MSB | MSBN → MSBA | 1.1 | 2026-03-27 | 87 |
+| 44040 | Bestätigung Kündigung MSB | MSBA → MSBN | 1.1 | 2026-03-27 | 98 |
+| 44041 | Ablehnung Kündigung MSB | MSBA → MSBN | 1.1 | 2026-03-27 | 77 |
+| 44042 | Anmeldung MSB | MSB → NB | 1.1 | 2026-03-27 | 111 |
+| 44043 | Bestätigung Anmeldung MSB | NB → MSB | 1.1 | 2026-03-27 | 305 |
+| 44044 | Ablehnung Anmeldung MSB | NB → MSB | 1.1 | 2026-03-27 | 65 |
+| 44051 | Ende MSB | MSB → NB | 1.1 | 2026-03-27 | 68 |
+| 44052 | Bestätigung Ende MSB | NB → MSB | 1.1 | 2026-03-27 | 76 |
+| 44053 | Ablehnung Ende MSB | NB → MSB | 1.1 | 2026-03-27 | 68 |
+| 44060 | Antwort auf die Geschäftsdatenanfrage | NB → MSB (Strom bzw. Gas) | 1.1 | 2026-03-27 | 262 |
+| 44096 | Deklarationsliste | NB → MGV | 1.1 | 2026-03-27 | 63 |
+| 44097 | Deklarationsliste | MGV → BKV | 1.1 | 2026-03-27 | 69 |
+| 44101 | Stammdaten zur Messlokation | NB → MSB | 1.1 | 2026-03-27 | 77 |
+| 44102 | Aktualisierte Stammdaten zur Messlokation | NB → MSB | 1.1 | 2026-03-27 | 75 |
+| 44103 | Stammdaten zur Marktlokation | NB → LF | 1.1 | 2026-03-27 | 132 |
+| 44104 | Aktualisierte Stammdaten zur Marktlokation | NB → LF | 1.1 | 2026-03-27 | 130 |
+| 44105 | Ablehnung auf Stammdaten zur Marktlokation | LF → NB | 1.1 | 2026-03-27 | 70 |
+| 44109 | Nicht bila.rel. Änderung vom LF | LF → NB [Berechtigter] | 1.1 | 2026-03-27 | 97 |
+| 44110 | Nicht bila.rel. Änderung vom LF | NB [Verteiler] → MSB | 1.1 | 2026-03-27 | 62 |
+| 44111 |  | NB [Berechtigter] → LF | 1.1 | 2026-03-27 | 63 |
+| 44112 | Nicht bila.rel. Änderung vom NB | NB → LF | 1.1 | 2026-03-27 | 223 |
+| 44113 | Nicht bila.rel. Änderung vom NB | NB → MSB | 1.1 | 2026-03-27 | 132 |
+| 44115 | Antwort auf Änderung vom NB | LF → NB, MSB → NB | 1.1 | 2026-03-27 | 64 |
+| 44116 | Änderung vom MSB mit Abhängig keiten | MSB → NB [Verteiler] | 1.1 | 2026-03-27 | 215 |
+| 44117 | Änderung vom MSB mit Abhängig keiten | NB [Verteiler] → LF | 1.1 | 2026-03-27 | 199 |
+| 44119 | Antwort auf Änderung vom MSB | NB [Verteiler] → MSB, LF → NB [Verteiler] | 1.1 | 2026-03-27 | 64 |
+| 44120 | Bila.rel. Änderung vom LF | LF → NB | 1.1 | 2026-03-27 | 70 |
+| 44121 | Antwort auf Änderung vom LF | NB → LF | 1.1 | 2026-03-27 | 63 |
+| 44123 | Bila.rel. Änderung vom NB mit Abhängigkeiten | NB → LF | 1.1 | 2026-03-27 | 106 |
+| 44124 | Antwort auf Änderung vom NB | LF → NB | 1.1 | 2026-03-27 | 63 |
+| 44129 | Korrektur Meldepunkt vom NB | NB → LF, NB → ÜNB | 1.1 | 2026-03-27 | 65 |
+| 44130 | Korrektur Meldepunkt vom NB | NB → MSB | 1.1 | 2026-03-27 | 65 |
+| 44132 | Antwort auf Änderung vom NB | LF → NB, ÜNB → NB, MSB → NB | 1.1 | 2026-03-27 | 56 |
+| 44137 | Nicht bila.rel. Anfrage an LF | NB [Berechtigt] → LF | 1.1 | 2026-03-27 | 97 |
+| 44138 | Antwort auf Anfrage | LF → NB [Berechtigt] | 1.1 | 2026-03-27 | 105 |
+| 44139 | Nicht bila.rel. Anfrage an NB | LF → NB | 1.1 | 2026-03-27 | 226 |
+| 44140 | Nicht bila.rel. Anfrage an NB | MSB → NB | 1.1 | 2026-03-27 | 131 |
+| 44142 | Antwort auf Anfrage | NB → LF, NB → MSB | 1.1 | 2026-03-27 | 244 |
+| 44143 | Anfrage an MSB mit Abhängigkeiten | LF → NB [Verteiler] | 1.1 | 2026-03-27 | 199 |
+| 44145 | Antwort auf Anfrage | NB [Verteiler] → LF | 1.1 | 2026-03-27 | 207 |
+| 44146 | Ablehnung der Anfrage | NB [Verteiler] → LF | 1.1 | 2026-03-27 | 63 |
+| 44147 | Anfrage an MSB mit Abhängigkeiten | NB [Verteiler] → MSB | 1.1 | 2026-03-27 | 199 |
+| 44148 | Anfrage an MSB mit Abhängigkeiten | NB [Berechtigt] → MSB | 1.1 | 2026-03-27 | 215 |
+| 44149 | Antwort auf Anfrage | MSB → NB [Verteiler], MSB → NB [Berechtig… | 1.1 | 2026-03-27 | 223 |
+| 44150 | Bila.rel. Anfrage an LF | NB → LF | 1.1 | 2026-03-27 | 70 |
+| 44151 | Antwort auf Anfrage | LF → NB | 1.1 | 2026-03-27 | 78 |
+| 44152 | Ablehnung der Anfrage | LF → NB | 1.1 | 2026-03-27 | 63 |
+| 44156 | Bila.rel. Anfrage an NB mit Abhängigkeiten | LF → NB | 1.1 | 2026-03-27 | 106 |
+| 44157 | Antwort auf Anfrage | NB → LF | 1.1 | 2026-03-27 | 114 |
+| 44159 | Änderung vom MSB ohne Abhängigkeiten | MSB → NB [Verteiler] | 1.1 | 2026-03-27 | 100 |
+| 44160 | Änderung vom MSB ohne Abhängigkeiten | NB [Verteiler] → LF [Berechtigt] | 1.1 | 2026-03-27 | 76 |
+| 44161 | Antwort auf Änderung | NB [Verteiler] → MSB, LF [Berechtigt] → N… | 1.1 | 2026-03-27 | 64 |
+| 44162 | Anfrage an MSB ohne Abhängigkeiten | LF [Berechtigt] → NB [Verteiler] | 1.1 | 2026-03-27 | 76 |
+| 44163 | Antwort auf Anfrage | NB [Verteiler] → LF [Berechtigt] | 1.1 | 2026-03-27 | 84 |
+| 44164 | Ablehnung Anfrage | NB [Verteiler] → LF [Berechtigt] | 1.1 | 2026-03-27 | 63 |
+| 44165 | Nicht bila.rel. Anfrage an MSB ohne Abhängigkeiten | NB [Verteiler] → MSB | 1.1 | 2026-03-27 | 76 |
+| 44166 | Nicht bila.rel. Anfrage an MSB ohne Abhängigkeiten | NB [Berechtigt] → MSB | 1.1 | 2026-03-27 | 100 |
+| 44167 | Antwort auf Anfrage | MSB → NB | 1.1 | 2026-03-27 | 108 |
+| 44168 | Verpflichtungsanfrage / Aufforderung | NB → gMSB | 1.1 | 2026-03-27 | 318 |
+| 44169 | Bestätigung Verpflichtungsanfrage | gMSB → NB | 1.1 | 2026-03-27 | 309 |
+| 44170 | Ablehnung Verpflichtungsanfrage | gMSB → NB | 1.1 | 2026-03-27 | 65 |
+| 44172 | Anfrage an MSB mit Abhängigkeiten | MSB → NB [Verteiler] | 1.1 | 2026-03-27 | 145 |
+| 44175 | Änderung der Marktlokationsstruktur | NB → LF | 1.1 | 2026-03-27 | 63 |
+| 44176 | Antwort auf Änderung der Marktlokationsstruktur | LF → NB | 1.1 | 2026-03-27 | 71 |
+| 44180 | Anfrage der Marktlokationsstruktur | LF → NB | 1.1 | 2026-03-27 | 63 |
+| 44181 | Antwort auf Anfrage der Marktlokationsstruktur | NB → LF | 1.1 | 2026-03-27 | 71 |
+| 44182 | Ablehnung der Anfrage der Marktlokationsstruktur | NB → LF | 1.1 | 2026-03-27 | 63 |
+| 55001 | Anmeldung verb. MaLo | LF → NB | 2.1 | 2026-06-29 | 146 |
+| 55002 | Bestätigung Anmeldung verb. MaLo | NB → LF | 2.1 | 2026-06-29 | 165 |
+| 55003 | Ablehnung Anmeldung verb. MaLo | NB → LF | 2.1 | 2026-06-29 | 83 |
+| 55004 | Abmeldung | LF → NB | 2.1 | 2026-06-29 | 83 |
+| 55005 | Bestätigung Abmeldung | NB → LF | 2.1 | 2026-06-29 | 75 |
+| 55006 | Ablehnung Abmeldung | NB → LF | 2.1 | 2026-06-29 | 70 |
+| 55007 | Abmeldung / Beendigung der Zuordnung | NB → LF | 2.1 | 2026-06-29 | 82 |
+| 55008 | Bestätigung Abmeldung | LF → NB | 2.1 | 2026-06-29 | 69 |
+| 55009 | Ablehnung Abmeldung | LF → NB | 2.1 | 2026-06-29 | 64 |
+| 55010 | Anfrage zur Beendigung der Zuordnung | NB → LF | 2.1 | 2026-06-29 | 88 |
+| 55011 | Bestätigung Beendigung der Zuordnung | LF → NB | 2.1 | 2026-06-29 | 64 |
+| 55012 | Ablehnung Beendigung der Zuordnung | LF → NB | 2.1 | 2026-06-29 | 60 |
+| 55013 | Anmeldung / Zuordnung EOG | NB → LF | 2.1 | 2026-06-29 | 257 |
+| 55014 | Bestätigung EOG Anmeldung | LF → NB | 2.1 | 2026-06-29 | 159 |
+| 55015 | Ablehnung EOG Anmeldung | LF → NB | 2.1 | 2026-06-29 | 74 |
+| 55016 | Kündigung | LFN → LFA | 2.1 | 2026-06-29 | 73 |
+| 55017 | Bestätigung Kündigung | LFA → LFN | 2.1 | 2026-06-29 | 78 |
+| 55018 | Ablehnung Kündigung | LFA → LFN | 2.1 | 2026-06-29 | 80 |
+| 55022 | Anfrage nach Stornierung | MSCONS-Nachrichten können von verschieden… | 2.1 | 2026-06-29 | 60 |
+| 55023 | Bestätigung Anfrage Stornierung | zurück → den Absender | 2.1 | 2026-06-29 | 61 |
+| 55024 | Ablehnung Anfrage Stornierung | zurück → den Absender | 2.1 | 2026-06-29 | 64 |
+| 55035 | Antwort auf GDA verb. MaLo | NB → LF | 2.1 | 2026-06-29 | 531 |
+| 55036 | Existierende Zuordnung | NB → LF | 2.1 | 2026-06-29 | 69 |
+| 55037 | Beendigung der Zuordnung | NB → LF | 2.1 | 2026-06-29 | 67 |
+| 55038 | Aufhebung einer zuk. Zuordnung | NB → LF | 2.1 | 2026-06-29 | 74 |
+| 55039 | Kündigung MSB | MSBN → MSBA | 2.1 | 2026-06-29 | 91 |
+| 55040 | Bestätigung Kündigung MSB | MSBA → MSBN | 2.1 | 2026-06-29 | 104 |
+| 55041 | Ablehnung Kündigung MSB | MSBA → MSBN | 2.1 | 2026-06-29 | 77 |
+| 55042 | Anmeldung MSB | MSB → NB | 2.1 | 2026-06-29 | 116 |
+| 55043 | Bestätigung Anmeldung MSB | NB → MSB | 2.1 | 2026-06-29 | 909 |
+| 55044 | Ablehnung Anmeldung MSB | NB → MSB | 2.1 | 2026-06-29 | 66 |
+| 55051 | Ende MSB | MSB → NB | 2.1 | 2026-06-29 | 68 |
+| 55052 | Bestätigung Ende MSB | NB → MSB | 2.1 | 2026-06-29 | 98 |
+| 55053 | Ablehnung Ende MSB | NB → MSB | 2.1 | 2026-06-29 | 68 |
+| 55060 | Antwort auf GDA | NB → MSB | 2.1 | 2026-06-29 | 608 |
+| 55062 | Aktivierung von ZP | NB → BIKO, NB → LF, NB → NB, NB → ÜNB, ÜN… | 2.1 | 2026-06-29 | 125 |
+| 55063 | Deaktivierung von ZP | NB → BIKO, NB → LF, NB → NB, NB → ÜNB, ÜN… | 2.1 | 2026-06-29 | 56 |
+| 55064 | Antwort | BIKO → NB, BIKO → ÜNB, NB → NB | 2.1 | 2026-06-29 | 79 |
+| 55065 | Lieferantenclearingliste | NB → LF, ÜNB → LF | 2.1 | 2026-06-29 | 192 |
+| 55066 | Korrekturliste zur Lieferantenclearingliste | LF → NB, LF → ÜNB | 2.1 | 2026-06-29 | 210 |
+| 55067 | Bilanzkreiszuordnungsliste | NB → BKV, ÜNB → BKV | 2.1 | 2026-06-29 | 111 |
+| 55069 | Clearingliste DZR | BIKO → NB, BIKO → ÜNB | 2.1 | 2026-06-29 | 116 |
+| 55070 | Clearingliste BAS | BIKO → BKV | 2.1 | 2026-06-29 | 168 |
+| 55071 | Aktivierung der Zuordnungsermächtigung | BKV → NB | 2.1 | 2026-06-29 | 75 |
+| 55072 | Deaktivierung der Zuordnungsermächtigung | BKV → NB | 2.1 | 2026-06-29 | 75 |
+| 55073 | Übermittlung der Profildefinitionen | NB → LF, NB → MSB | 2.1 | 2026-06-29 | 212 |
+| 55074 | Stammdaten auf eine ORDERS | NB → UBA | 2.1 | 2026-06-29 | 269 |
+| 55075 | Stammdaten aufgrund einer Änderung | NB → UBA | 2.1 | 2026-06-29 | 279 |
+| 55076 | Antwort auf Stammdatenänderung | UBA → NB | 2.1 | 2026-06-29 | 287 |
+| 55077 | Anmeldung erz. MaLo | LF → NB | 2.1 | 2026-06-29 | 111 |
+| 55078 | Bestätigung Anmeldung erz. MaLo | NB → LF | 2.1 | 2026-06-29 | 171 |
+| 55080 | Ablehnung Anmeldung erz. MaLo | NB → LF | 2.1 | 2026-06-29 | 89 |
+| 55095 | Antwort auf GDA erz. MaLo | NB → LF | 2.1 | 2026-06-29 | 465 |
+| 55109 | Änderung Daten der MaLo | LF → NB | 2.1 | 2026-06-29 | 129 |
+| 55110 | Änderung Daten der MaLo | LF → MSB | 2.1 | 2026-06-29 | 91 |
+| 55126 | Abr.-Daten BK-Abr. verb. Malo | NB → LF, NBA → NBN | 2.1 | 2026-06-29 | 156 |
+| 55136 | Rückmeldung/Anfrage Daten der MaLo | MSB → LF | 2.1 | 2026-06-29 | 104 |
+| 55137 | Rückmeldung/Anfrage Daten der MaLo | NB → LF | 2.1 | 2026-06-29 | 145 |
+| 55156 | Rückmeldung/Anfrage Abr.-Daten BK-Abr. verb. MaLo | LF → NB | 2.1 | 2026-06-29 | 171 |
+| 55168 | Verpflichtungsanfrage / Aufforderung | NB → gMSB | 2.1 | 2026-06-29 | 927 |
+| 55169 | Bestätigung Verpflichtungsanfrage | gMSB → NB | 2.1 | 2026-06-29 | 908 |
+| 55170 | Ablehnung Verpflichtungsanfrage | gMSB → NB | 2.1 | 2026-06-29 | 65 |
+| 55173 | Änderung der Lokationsbündelstruktur | NB → MSB | 2.1 | 2026-06-29 | 124 |
+| 55175 | Änderung der Lokationsbündelstruktur | NB → LF | 2.1 | 2026-06-29 | 124 |
+| 55177 | Rückmeldung/Anfrage Lokationsbündelstruktur | MSB → NB | 2.1 | 2026-06-29 | 138 |
+| 55180 | Rückmeldung/Anfrage Lokationsbündelstruktur | LF → NB | 2.1 | 2026-06-29 | 138 |
+| 55194 | Antwort auf GDA (Strom an Gas) | NB → MSB | 2.1 | 2026-06-29 | 95 |
+| 55195 | Bilanzierungsgebietsclearingliste | ÜNB → NB | 2.1 | 2026-06-29 | 199 |
+| 55196 | Antwort auf Bilanzierungsgebietsclearingliste | NB → ÜNB | 2.1 | 2026-06-29 | 299 |
+| 55197 | Aktivierung ZP tägliche AAÜZ | NB (ANB) → ÜNB | 2.1 | 2026-06-29 | 84 |
+| 55198 | Deaktivierung tägliche AAÜZ | NB (ANB) → ÜNB | 2.1 | 2026-06-29 | 56 |
+| 55199 | Aktivierung ZP LF-AASZR | NB (ANB) → LF | 2.1 | 2026-06-29 | 84 |
+| 55200 | Deaktivierung ZP LF-AASZR | NB (ANB) → LF | 2.1 | 2026-06-29 | 56 |
+| 55201 | LF-AACL | NB (ANB) → LF | 2.1 | 2026-06-29 | 114 |
+| 55202 | Korrekturliste LF-AACL | LF → NB (ANB) | 2.1 | 2026-06-29 | 128 |
+| 55203 | Aktivierung ZP monatliche AAÜZ | NB (ANB) → BIKO | 2.1 | 2026-06-29 | 88 |
+| 55204 | Antwort auf Aktivierung ZP | BIKO → NB (ANB) | 2.1 | 2026-06-29 | 64 |
+| 55205 | Weiterleitung Aktivierung ZP | BIKO → BKV (des LF) | 2.1 | 2026-06-29 | 88 |
+| 55206 | Deaktivierung ZP monatliche AAÜZ | NB (ANB) → BIKO | 2.1 | 2026-06-29 | 56 |
+| 55207 | Antwort auf Deaktivierung ZP | BIKO → NB (ANB) | 2.1 | 2026-06-29 | 64 |
+| 55208 | Weiterleitung Deaktivierung ZP | BIKO → BKV (des LF) | 2.1 | 2026-06-29 | 56 |
+| 55209 | Aktivierung ZP monatliche AAÜZ | NB (ANB) → BIKO | 2.1 | 2026-06-29 | 88 |
+| 55210 | Antwort auf Aktivierung ZP | BIKO → NB (ANB) | 2.1 | 2026-06-29 | 64 |
+| 55211 | Weiterleitung Aktivierung ZP | BIKO → BKV (des anfNB) | 2.1 | 2026-06-29 | 88 |
+| 55212 | Deaktivierung ZP monatliche AAÜZ | NB (ANB) → BIKO | 2.1 | 2026-06-29 | 56 |
+| 55213 | Antwort auf Deaktivierung ZP | BIKO → NB (ANB) | 2.1 | 2026-06-29 | 64 |
+| 55214 | Weiterleitung Deaktivierung ZP | BIKO → BKV (des anfNB) | 2.1 | 2026-06-29 | 56 |
+| 55218 | Abr.-Daten NNA | NB → LF, NBA → NBN | 2.1 | 2026-06-29 | 160 |
+| 55220 | Rückmeldung/Anfrage Abr.-Daten NNA | LF → NB | 2.1 | 2026-06-29 | 176 |
+| 55223 | DZÜ Liste | ÜNB → NB | 2.1 | 2026-06-29 | 234 |
+| 55224 | Antwort auf DZÜ Liste | NB → ÜNB | 2.1 | 2026-06-29 | 143 |
+| 55225 | Änderung Blindabr.-Daten der NeLo | NB → LF, NBA → NBN | 2.1 | 2026-06-29 | 87 |
+| 55227 | Rückmeldung/Anfrage Blindabr.-Daten der NeLo | LF → NB | 2.1 | 2026-06-29 | 100 |
+| 55230 | Änderung Blindabr.-Daten der NeLo | LF → NB | 2.1 | 2026-06-29 | 77 |
+| 55232 | Rückmeldung/Anfrage Blindabr.-Daten der NeLo | NB → LF | 2.1 | 2026-06-29 | 90 |
+| 55235 | Zuordnung ZP der NGZ zur NZR | NB → NB, NB → ÜNB | 2.1 | 2026-06-29 | 84 |
+| 55236 | Beendigung Zuordnung ZP der NGZ zur NZR | NB → NB, NB → ÜNB | 2.1 | 2026-06-29 | 56 |
+| 55237 | Antwort | NB → NB | 2.1 | 2026-06-29 | 72 |
+| 55238 | Anmeldung in Modell 2 | NB (LPB) → NB (VNB) | 2.1 | 2026-06-29 | 76 |
+| 55239 | Antwort auf Anmeldung | NB (VNB) → NB (LPB) | 2.1 | 2026-06-29 | 104 |
+| 55240 | Beendigung der Zuordnung zur MaLo | NB (VNB) → LF | 2.1 | 2026-06-29 | 67 |
+| 55241 | Antwort auf Beendigung | LF → NB (VNB) | 2.1 | 2026-06-29 | 75 |
+| 55242 | Abmeldung aus dem Modell 2 | NB (LPB) → NB (VNB) | 2.1 | 2026-06-29 | 70 |
+| 55243 | Antwort auf Abmeldung | NB (VNB) → NB (LPB) | 2.1 | 2026-06-29 | 78 |
+| 55553 | Daten auf individuelle Bestellung | MSB → NB, MSB → LF, MSB → MSB | 2.1 | 2026-06-29 | 171 |
+| 55555 | Rückmeldung/Anfrage Daten der individuellen Beste… | NB → MSB, LF → MSB, MSB → MSB | 2.1 | 2026-06-29 | 186 |
+| 55557 | Änderung MSB-Abr.-Daten der MaLo | MSB → NB | 2.1 | 2026-06-29 | 88 |
+| 55559 | Rückmeldung/Anfrage MSB-Abr.-Daten der MaLo | NB → MSB | 2.1 | 2026-06-29 | 101 |
+| 55600 | Anmeldung neue verb. MaLo | LF → NB | 2.1 | 2026-06-29 | 153 |
+| 55601 | Anmeldung neue erz. MaLo | LF → NB | 2.1 | 2026-06-29 | 154 |
+| 55602 | Bestätigung Anmeldung neue verb. MaLo | NB → LF | 2.1 | 2026-06-29 | 159 |
+| 55603 | Bestätigung Anmeldung neue erz. MaLo | NB → LF | 2.1 | 2026-06-29 | 170 |
+| 55604 | Ablehnung Anmeldung neue verb. MaLo | NB → LF | 2.1 | 2026-06-29 | 73 |
+| 55605 | Ablehnung Anmeldung neue erz. MaLo | NB → LF | 2.1 | 2026-06-29 | 73 |
+| 55607 | (Ankündigung) Zuordnung des LF zur erz. MaLo/ Tra… | NB → LF | 2.1 | 2026-06-29 | 186 |
+| 55608 | Bestätigung Zuordnung des LF zur erz. MaLo/ Tranc… | LF → NB | 2.1 | 2026-06-29 | 111 |
+| 55609 | Ablehnung Zuordnung des LF zur erz. MaLo/ Tranche | LF → NB | 2.1 | 2026-06-29 | 69 |
+| 55611 | Beendigung der Zuordnung | NB → MSB, NB → MSBZ | 2.1 | 2026-06-29 | 68 |
+| 55613 | Abr.-Daten BK-Abr. verb. MaLo | NB → ÜNB | 2.1 | 2026-06-29 | 131 |
+| 55614 | Rückmeldung/Anfrage Abr.-Daten BK-Abr. verb. MaLo | ÜNB → NB | 2.1 | 2026-06-29 | 143 |
+| 55615 | Änderung Daten der NeLo | NB → LF, NBA → NBN | 2.1 | 2026-06-29 | 81 |
+| 55616 | Änderung Daten der MaLo | NB → LF, NBA → NBN | 2.1 | 2026-06-29 | 229 |
+| 55617 | Änderung Daten der TR | NB → LF, NBA → NBN | 2.1 | 2026-06-29 | 142 |
+| 55618 | Änderung Daten der SR | NB → LF, NBA → NBN | 2.1 | 2026-06-29 | 81 |
+| 55619 | Änderung Daten der Tranche | NB → LF, NBA → NBN | 2.1 | 2026-06-29 | 78 |
+| 55620 | Änderung Daten der MeLo | NB → LF, NBA → NBN | 2.1 | 2026-06-29 | 89 |
+| 55621 | Rückmeldung/Anfrage Daten zur NeLo | LF → NB | 2.1 | 2026-06-29 | 94 |
+| 55622 | Rückmeldung/Anfrage Daten der MaLo | LF → NB | 2.1 | 2026-06-29 | 249 |
+| 55623 | Rückmeldung/Anfrage Daten der TR | LF → NB | 2.1 | 2026-06-29 | 155 |
+| 55624 | Rückmeldung/Anfrage Daten der SR | LF → NB | 2.1 | 2026-06-29 | 94 |
+| 55625 | Rückmeldung/Anfrage Daten der Tranche | LF → NB | 2.1 | 2026-06-29 | 91 |
+| 55626 | Rückmeldung/Anfrage Daten der MeLo | LF → NB | 2.1 | 2026-06-29 | 102 |
+| 55627 | Änderung Daten der NeLo | NB → MSB | 2.1 | 2026-06-29 | 81 |
+| 55628 | Änderung Daten der MaLo | NB → MSB | 2.1 | 2026-06-29 | 223 |
+| 55629 | Änderung Daten der TR | NB → MSB | 2.1 | 2026-06-29 | 134 |
+| 55630 | Änderung Daten der SR | NB → MSB | 2.1 | 2026-06-29 | 81 |
+| 55632 | Änderung Daten der MeLo | NB → MSB | 2.1 | 2026-06-29 | 92 |
+| 55633 | Rückmeldung/Anfrage Daten zur NeLo | MSB → NB | 2.1 | 2026-06-29 | 94 |
+| 55634 | Rückmeldung/Anfrage Daten der MaLo | MSB → NB | 2.1 | 2026-06-29 | 243 |
+| 55635 | Rückmeldung/Anfrage Daten der TR | MSB → NB | 2.1 | 2026-06-29 | 147 |
+| 55636 | Rückmeldung/Anfrage Daten der SR | MSB → NB | 2.1 | 2026-06-29 | 94 |
+| 55638 | Rückmeldung/Anfrage Daten der MeLo | MSB → NB | 2.1 | 2026-06-29 | 105 |
+| 55639 | Änderung Daten der NeLo | MSB → NB | 2.1 | 2026-06-29 | 116 |
+| 55640 | Änderung Daten der MaLo | MSB → NB | 2.1 | 2026-06-29 | 131 |
+| 55641 | Änderung Daten der SR | MSB → NB | 2.1 | 2026-06-29 | 102 |
+| 55642 | Änderung Daten der Tranche | MSB → NB | 2.1 | 2026-06-29 | 82 |
+| 55643 | Änderung Daten der MeLo | MSB → NB | 2.1 | 2026-06-29 | 301 |
+| 55644 | Rückmeldung/Anfrage Daten der NeLo | NB → MSB | 2.1 | 2026-06-29 | 131 |
+| 55645 | Rückmeldung/Anfrage Daten der MaLo | NB → MSB | 2.1 | 2026-06-29 | 146 |
+| 55646 | Rückmeldung/Anfrage Daten der SR | NB → MSB | 2.1 | 2026-06-29 | 116 |
+| 55647 | Rückmeldung/Anfrage Daten der Tranche | NB → MSB | 2.1 | 2026-06-29 | 95 |
+| 55648 | Rückmeldung/Anfrage Daten der MeLo | NB → MSB | 2.1 | 2026-06-29 | 325 |
+| 55649 | Änderung Daten der NeLo | MSB → LF | 2.1 | 2026-06-29 | 117 |
+| 55650 | Änderung Daten der MaLo | MSB → LF | 2.1 | 2026-06-29 | 131 |
+| 55651 | Änderung Daten der SR | MSB → LF | 2.1 | 2026-06-29 | 102 |
+| 55652 | Änderung Daten der Tranche | MSB → LF | 2.1 | 2026-06-29 | 82 |
+| 55653 | Änderung Daten der MeLo | MSB → LF | 2.1 | 2026-06-29 | 202 |
+| 55654 | Rückmeldung/Anfrage Daten der NeLo | LF → MSB | 2.1 | 2026-06-29 | 132 |
+| 55655 | Rückmeldung/Anfrage Daten der MaLo | LF → MSB | 2.1 | 2026-06-29 | 146 |
+| 55656 | Rückmeldung/Anfrage Daten der SR | LF → MSB | 2.1 | 2026-06-29 | 116 |
+| 55657 | Rückmeldung/Anfrage Daten der Tranche | LF → MSB | 2.1 | 2026-06-29 | 95 |
+| 55658 | Rückmeldung/Anfrage Daten der MeLo | LF → MSB | 2.1 | 2026-06-29 | 220 |
+| 55659 | Änderung Daten der NeLo | MSB → weiteren MSB | 2.1 | 2026-06-29 | 123 |
+| 55660 | Änderung Daten der MaLo | MSB → weiteren MSB | 2.1 | 2026-06-29 | 147 |
+| 55661 | Änderung Daten der SR | MSB → weiteren MSB | 2.1 | 2026-06-29 | 103 |
+| 55662 | Änderung Daten der Tranche | MSB → weiteren MSB | 2.1 | 2026-06-29 | 94 |
+| 55663 | Änderung Daten der MeLo | MSB → weiteren MSB | 2.1 | 2026-06-29 | 301 |
+| 55664 | Rückmeldung/Anfrage Daten der NeLo | weiterer MSB → MSB | 2.1 | 2026-06-29 | 138 |
+| 55665 | Rückmeldung/Anfrage Daten der MaLo | weiteren MSB → MSB | 2.1 | 2026-06-29 | 162 |
+| 55666 | Rückmeldung/Anfrage Daten der SR | weiterer MSB → MSB | 2.1 | 2026-06-29 | 117 |
+| 55667 | Rückmeldung/Anfrage Daten der Tranche | weiteren MSB → MSB | 2.1 | 2026-06-29 | 107 |
+| 55669 | Rückmeldung/Anfrage Daten der MeLo | weiterer MSB → MSB | 2.1 | 2026-06-29 | 329 |
+| 55670 | Stammdaten BK-Treue | NB → ÜNB | 2.1 | 2026-06-29 | 121 |
+| 55671 | Rückmeldung auf Stammdaten BK-Treue | ÜNB → NB | 2.1 | 2026-06-29 | 128 |
+| 55672 | Abr.-Daten BK-Abr. erz. Malo | NB → LF, NBA → NBN | 2.1 | 2026-06-29 | 178 |
+| 55673 | Rückmeldung/Anfrage Abr.-Daten BK-Abr. erz. Malo | LF → NB | 2.1 | 2026-06-29 | 195 |
+| 55674 | Abr.-Daten BK-Abr. erz. Malo | NB → ÜNB | 2.1 | 2026-06-29 | 133 |
+| 55675 | Rückmeldung/Anfrage Abr.-Daten BK-Abr. erz. Malo | ÜNB → NB | 2.1 | 2026-06-29 | 145 |
+| 55684 | Änderung Daten der MaLo | MSB → ÜNB | 2.1 | 2026-06-29 | 82 |
+| 55685 | Rückmeldung/Anfrage Daten der MaLo | ÜNB → MSB | 2.1 | 2026-06-29 | 95 |
+| 55686 | Änderung Daten der Tranche | MSB → ÜNB | 2.1 | 2026-06-29 | 82 |
+| 55687 | Rückmeldung/Anfrage Daten der Tranche | ÜNB → MSB | 2.1 | 2026-06-29 | 95 |
+| 55688 | Änderung Daten der MaLo | NB → ÜNB | 2.1 | 2026-06-29 | 78 |
+| 55689 | Rückmeldung/Anfrage Daten der MaLo | ÜNB → NB | 2.1 | 2026-06-29 | 91 |
+| 55690 | Lokationsbündelstruktur und DB | NBA → NBN | 2.1 | 2026-06-29 | 223 |
+| 55691 | Änderung Paket-ID der Malo | NBA → LF, NBA → MSB, NBA → NBN, NBA → ÜNB | 2.1 | 2026-06-29 | 76 |
+| 55692 | Rückmeldung/Anfrage Paket-ID der Malo | LF → NBA, MSB → NBA, ÜNB → NBA | 2.1 | 2026-06-29 | 90 |
 
 ## FV2610 — All Prüfidentifikatoren
 
@@ -1228,97 +1228,97 @@ Downloaded from [ahb-tabellen.hochfrequenz.de](https://ahb-tabellen.hochfrequenz
 | 39000 | Stornierung Sperr-/Entsperrauftrag | LF → NB | 1.1 | 2026-04-01 | 43 |
 | 39001 | Weiterleitung der Stornierung | NB → MSB | 1.1 | 2026-04-01 | 47 |
 | 39002 | Stornierung der Bestellung | ESA → MSB | 1.1 | 2026-04-01 | 40 |
-| 44001 | Anmeldung NN | LF → NB | 1.2 | 2026-06-29 | 207 |
-| 44002 | Bestätigung Anmeldung | NB → LF | 1.2 | 2026-06-29 | 420 |
-| 44003 | Ablehnung Anmeldung | NB → LF | 1.2 | 2026-06-29 | 80 |
-| 44004 | Abmeldung NN | LF → NB | 1.2 | 2026-06-29 | 66 |
-| 44005 | Bestätigung Abmeldung | NB → LF | 1.2 | 2026-06-29 | 72 |
-| 44006 | Ablehnung Abmeldung | NB → LF | 1.2 | 2026-06-29 | 63 |
-| 44007 | Abmeldung NN vom NB | NB → LF | 1.2 | 2026-06-29 | 55 |
-| 44008 | Bestätigung Abmeldung vom NB | LF → NB | 1.2 | 2026-06-29 | 60 |
-| 44009 | Ablehnung Abmeldung vom NB | LF → NB | 1.2 | 2026-06-29 | 55 |
-| 44010 | Abmeldeanfrage des NB | NB → LF | 1.2 | 2026-06-29 | 62 |
-| 44011 | Bestätigung Abmeldeanfrage | LF → NB | 1.2 | 2026-06-29 | 58 |
-| 44012 | Ablehnung Abmeldeanfrage | LF → NB | 1.2 | 2026-06-29 | 54 |
-| 44013 | Anmeldung EOG | NB → LF | 1.2 | 2026-06-29 | 452 |
-| 44014 | Bestätigung EOG Anmeldung | LF → NB | 1.2 | 2026-06-29 | 423 |
-| 44015 | Ablehnung EOG Anmeldung | LF → NB | 1.2 | 2026-06-29 | 68 |
-| 44016 | Kündigung beim alten Lieferanten | LFN → LFA | 1.2 | 2026-06-29 | 85 |
-| 44017 | Bestätigung Kündigung | LFA → LFN | 1.2 | 2026-06-29 | 85 |
-| 44018 | Ablehnung Kündigung | LFA → LFN | 1.2 | 2026-06-29 | 73 |
-| 44019 | Bestandsliste zugeordnete Marktlokationenen | NB → LF | 1.2 | 2026-06-29 | 141 |
-| 44020 | Änderungsmeldung zur Bestandsliste | LF → NB | 1.2 | 2026-06-29 | 149 |
-| 44021 | Antwort auf Änderungsmeldung zur Bestandsliste | NB → LF | 1.2 | 2026-06-29 | 144 |
-| 44022 | Anfrage nach Stornierung | MSCONS-Nachrichten können von verschieden… | 1.2 | 2026-06-29 | 49 |
-| 44023 | Bestätigung Anfrage Stornierung | zurück → den Absender | 1.2 | 2026-06-29 | 50 |
-| 44024 | Ablehnung Anfrage Stornierung | zurück → den Absender | 1.2 | 2026-06-29 | 53 |
-| 44035 | Antwort auf die Geschäftsdatenanfrage | NB → LF | 1.2 | 2026-06-29 | 358 |
-| 44036 | Informationsmeldung über existierende Zuordnung | NB → LF | 1.2 | 2026-06-29 | 54 |
-| 44037 | Informationsmeldung zur Beendigung der Zuordnung | NB → LF | 1.2 | 2026-06-29 | 52 |
-| 44038 | Informationsmeldung zur Aufhebung einer zuk. Zuor… | NB → LF | 1.2 | 2026-06-29 | 60 |
-| 44039 | Kündigung MSB | MSBN → MSBA | 1.2 | 2026-06-29 | 76 |
-| 44040 | Bestätigung Kündigung MSB | MSBA → MSBN | 1.2 | 2026-06-29 | 87 |
-| 44041 | Ablehnung Kündigung MSB | MSBA → MSBN | 1.2 | 2026-06-29 | 66 |
-| 44042 | Anmeldung MSB | MSB → NB | 1.2 | 2026-06-29 | 100 |
-| 44043 | Bestätigung Anmeldung MSB | NB → MSB | 1.2 | 2026-06-29 | 294 |
-| 44044 | Ablehnung Anmeldung MSB | NB → MSB | 1.2 | 2026-06-29 | 54 |
-| 44051 | Ende MSB | MSB → NB | 1.2 | 2026-06-29 | 57 |
-| 44052 | Bestätigung Ende MSB | NB → MSB | 1.2 | 2026-06-29 | 65 |
-| 44053 | Ablehnung Ende MSB | NB → MSB | 1.2 | 2026-06-29 | 57 |
-| 44060 | Antwort auf die Geschäftsdatenanfrage | NB → MSB (Strom bzw. Gas) | 1.2 | 2026-06-29 | 251 |
-| 44096 | Deklarationsliste | NB → MGV | 1.2 | 2026-06-29 | 63 |
-| 44097 | Deklarationsliste | MGV → BKV | 1.2 | 2026-06-29 | 69 |
-| 44101 | Stammdaten zur Messlokation | NB → MSB | 1.2 | 2026-06-29 | 66 |
-| 44102 | Aktualisierte Stammdaten zur Messlokation | NB → MSB | 1.2 | 2026-06-29 | 64 |
-| 44103 | Stammdaten zur Marktlokation | NB → LF | 1.2 | 2026-06-29 | 121 |
-| 44104 | Aktualisierte Stammdaten zur Marktlokation | NB → LF | 1.2 | 2026-06-29 | 119 |
-| 44105 | Ablehnung auf Stammdaten zur Marktlokation | LF → NB | 1.2 | 2026-06-29 | 59 |
-| 44109 | Nicht bila.rel. Änderung vom LF | LF → NB [Berechtigter] | 1.2 | 2026-06-29 | 86 |
-| 44111 |  | NB [Berechtigter] → LF | 1.2 | 2026-06-29 | 52 |
-| 44112 | Nicht bila.rel. Änderung vom NB | NB → LF | 1.2 | 2026-06-29 | 208 |
-| 44113 | Nicht bila.rel. Änderung vom NB | NB → MSB | 1.2 | 2026-06-29 | 121 |
-| 44115 | Antwort auf Änderung vom NB | LF → NB, MSB → NB | 1.2 | 2026-06-29 | 53 |
-| 44116 | Änderung vom MSB mit Abhängig keiten | MSB → NB [Verteiler] | 1.2 | 2026-06-29 | 204 |
-| 44117 | Änderung vom MSB mit Abhängig keiten | NB [Verteiler] → LF | 1.2 | 2026-06-29 | 188 |
-| 44119 | Antwort auf Änderung vom MSB | NB [Verteiler] → MSB, LF → NB [Verteiler] | 1.2 | 2026-06-29 | 53 |
-| 44120 | Bila.rel. Änderung vom LF | LF → NB | 1.2 | 2026-06-29 | 59 |
-| 44121 | Antwort auf Änderung vom LF | NB → LF | 1.2 | 2026-06-29 | 52 |
-| 44123 | Bila.rel. Änderung vom NB mit Abhängigkeiten | NB → LF | 1.2 | 2026-06-29 | 95 |
-| 44124 | Antwort auf Änderung vom NB | LF → NB | 1.2 | 2026-06-29 | 52 |
-| 44137 | Nicht bila.rel. Anfrage an LF | NB [Berechtigt] → LF | 1.2 | 2026-06-29 | 86 |
-| 44138 | Antwort auf Anfrage | LF → NB [Berechtigt] | 1.2 | 2026-06-29 | 94 |
-| 44139 | Nicht bila.rel. Anfrage an NB | LF → NB | 1.2 | 2026-06-29 | 211 |
-| 44140 | Nicht bila.rel. Anfrage an NB | MSB → NB | 1.2 | 2026-06-29 | 120 |
-| 44142 | Antwort auf Anfrage | NB → LF, NB → MSB | 1.2 | 2026-06-29 | 229 |
-| 44143 | Anfrage an MSB mit Abhängigkeiten | LF → NB [Verteiler] | 1.2 | 2026-06-29 | 188 |
-| 44145 | Antwort auf Anfrage | NB [Verteiler] → LF | 1.2 | 2026-06-29 | 196 |
-| 44146 | Ablehnung der Anfrage | NB [Verteiler] → LF | 1.2 | 2026-06-29 | 52 |
-| 44147 | Anfrage an MSB mit Abhängigkeiten | NB [Verteiler] → MSB | 1.2 | 2026-06-29 | 188 |
-| 44148 | Anfrage an MSB mit Abhängigkeiten | NB [Berechtigt] → MSB | 1.2 | 2026-06-29 | 204 |
-| 44149 | Antwort auf Anfrage | MSB → NB [Verteiler], MSB → NB [Berechtig… | 1.2 | 2026-06-29 | 212 |
-| 44150 | Bila.rel. Anfrage an LF | NB → LF | 1.2 | 2026-06-29 | 59 |
-| 44151 | Antwort auf Anfrage | LF → NB | 1.2 | 2026-06-29 | 67 |
-| 44152 | Ablehnung der Anfrage | LF → NB | 1.2 | 2026-06-29 | 52 |
-| 44156 | Bila.rel. Anfrage an NB mit Abhängigkeiten | LF → NB | 1.2 | 2026-06-29 | 95 |
-| 44157 | Antwort auf Anfrage | NB → LF | 1.2 | 2026-06-29 | 103 |
-| 44159 | Änderung vom MSB ohne Abhängigkeiten | MSB → NB [Verteiler] | 1.2 | 2026-06-29 | 89 |
-| 44160 | Änderung vom MSB ohne Abhängigkeiten | NB [Verteiler] → LF [Berechtigt] | 1.2 | 2026-06-29 | 65 |
-| 44161 | Antwort auf Änderung | NB [Verteiler] → MSB, LF [Berechtigt] → N… | 1.2 | 2026-06-29 | 53 |
-| 44162 | Anfrage an MSB ohne Abhängigkeiten | LF [Berechtigt] → NB [Verteiler] | 1.2 | 2026-06-29 | 65 |
-| 44163 | Antwort auf Anfrage | NB [Verteiler] → LF [Berechtigt] | 1.2 | 2026-06-29 | 73 |
-| 44164 | Ablehnung Anfrage | NB [Verteiler] → LF [Berechtigt] | 1.2 | 2026-06-29 | 52 |
-| 44165 | Nicht bila.rel. Anfrage an MSB ohne Abhängigkeiten | NB [Verteiler] → MSB | 1.2 | 2026-06-29 | 65 |
-| 44166 | Nicht bila.rel. Anfrage an MSB ohne Abhängigkeiten | NB [Berechtigt] → MSB | 1.2 | 2026-06-29 | 89 |
-| 44167 | Antwort auf Anfrage | MSB → NB | 1.2 | 2026-06-29 | 97 |
-| 44168 | Verpflichtungsanfrage / Aufforderung | NB → gMSB | 1.2 | 2026-06-29 | 307 |
-| 44169 | Bestätigung Verpflichtungsanfrage | gMSB → NB | 1.2 | 2026-06-29 | 298 |
-| 44170 | Ablehnung Verpflichtungsanfrage | gMSB → NB | 1.2 | 2026-06-29 | 54 |
-| 44175 | Änderung der Marktlokationsstruktur | NB → LF | 1.2 | 2026-06-29 | 52 |
-| 44176 | Antwort auf Änderung der Marktlokationsstruktur | LF → NB | 1.2 | 2026-06-29 | 60 |
-| 44180 | Anfrage der Marktlokationsstruktur | LF → NB | 1.2 | 2026-06-29 | 52 |
-| 44181 | Antwort auf Anfrage der Marktlokationsstruktur | NB → LF | 1.2 | 2026-06-29 | 60 |
-| 44182 | Ablehnung der Anfrage der Marktlokationsstruktur | NB → LF | 1.2 | 2026-06-29 | 52 |
-| 44183 | Ende MSB von NB | NB → MSB | 1.2 | 2026-06-29 | 48 |
+| 44001 | Anmeldung NN | LF → NB | 1.2 | 2026-08-06 | 207 |
+| 44002 | Bestätigung Anmeldung | NB → LF | 1.2 | 2026-08-06 | 420 |
+| 44003 | Ablehnung Anmeldung | NB → LF | 1.2 | 2026-08-06 | 80 |
+| 44004 | Abmeldung NN | LF → NB | 1.2 | 2026-08-06 | 66 |
+| 44005 | Bestätigung Abmeldung | NB → LF | 1.2 | 2026-08-06 | 72 |
+| 44006 | Ablehnung Abmeldung | NB → LF | 1.2 | 2026-08-06 | 63 |
+| 44007 | Abmeldung NN vom NB | NB → LF | 1.2 | 2026-08-06 | 55 |
+| 44008 | Bestätigung Abmeldung vom NB | LF → NB | 1.2 | 2026-08-06 | 60 |
+| 44009 | Ablehnung Abmeldung vom NB | LF → NB | 1.2 | 2026-08-06 | 55 |
+| 44010 | Abmeldeanfrage des NB | NB → LF | 1.2 | 2026-08-06 | 62 |
+| 44011 | Bestätigung Abmeldeanfrage | LF → NB | 1.2 | 2026-08-06 | 58 |
+| 44012 | Ablehnung Abmeldeanfrage | LF → NB | 1.2 | 2026-08-06 | 54 |
+| 44013 | Anmeldung EOG | NB → LF | 1.2 | 2026-08-06 | 452 |
+| 44014 | Bestätigung EOG Anmeldung | LF → NB | 1.2 | 2026-08-06 | 423 |
+| 44015 | Ablehnung EOG Anmeldung | LF → NB | 1.2 | 2026-08-06 | 68 |
+| 44016 | Kündigung beim alten Lieferanten | LFN → LFA | 1.2 | 2026-08-06 | 85 |
+| 44017 | Bestätigung Kündigung | LFA → LFN | 1.2 | 2026-08-06 | 85 |
+| 44018 | Ablehnung Kündigung | LFA → LFN | 1.2 | 2026-08-06 | 73 |
+| 44019 | Bestandsliste zugeordnete Marktlokationenen | NB → LF | 1.2 | 2026-08-06 | 141 |
+| 44020 | Änderungsmeldung zur Bestandsliste | LF → NB | 1.2 | 2026-08-06 | 149 |
+| 44021 | Antwort auf Änderungsmeldung zur Bestandsliste | NB → LF | 1.2 | 2026-08-06 | 144 |
+| 44022 | Anfrage nach Stornierung | MSCONS-Nachrichten können von verschieden… | 1.2 | 2026-08-06 | 49 |
+| 44023 | Bestätigung Anfrage Stornierung | zurück → den Absender | 1.2 | 2026-08-06 | 50 |
+| 44024 | Ablehnung Anfrage Stornierung | zurück → den Absender | 1.2 | 2026-08-06 | 53 |
+| 44035 | Antwort auf die Geschäftsdatenanfrage | NB → LF | 1.2 | 2026-08-06 | 358 |
+| 44036 | Informationsmeldung über existierende Zuordnung | NB → LF | 1.2 | 2026-08-06 | 54 |
+| 44037 | Informationsmeldung zur Beendigung der Zuordnung | NB → LF | 1.2 | 2026-08-06 | 52 |
+| 44038 | Informationsmeldung zur Aufhebung einer zuk. Zuor… | NB → LF | 1.2 | 2026-08-06 | 60 |
+| 44039 | Kündigung MSB | MSBN → MSBA | 1.2 | 2026-08-06 | 76 |
+| 44040 | Bestätigung Kündigung MSB | MSBA → MSBN | 1.2 | 2026-08-06 | 87 |
+| 44041 | Ablehnung Kündigung MSB | MSBA → MSBN | 1.2 | 2026-08-06 | 66 |
+| 44042 | Anmeldung MSB | MSB → NB | 1.2 | 2026-08-06 | 100 |
+| 44043 | Bestätigung Anmeldung MSB | NB → MSB | 1.2 | 2026-08-06 | 294 |
+| 44044 | Ablehnung Anmeldung MSB | NB → MSB | 1.2 | 2026-08-06 | 54 |
+| 44051 | Ende MSB | MSB → NB | 1.2 | 2026-08-06 | 57 |
+| 44052 | Bestätigung Ende MSB | NB → MSB | 1.2 | 2026-08-06 | 65 |
+| 44053 | Ablehnung Ende MSB | NB → MSB | 1.2 | 2026-08-06 | 57 |
+| 44060 | Antwort auf die Geschäftsdatenanfrage | NB → MSB (Strom bzw. Gas) | 1.2 | 2026-08-06 | 251 |
+| 44096 | Deklarationsliste | NB → MGV | 1.2 | 2026-08-06 | 63 |
+| 44097 | Deklarationsliste | MGV → BKV | 1.2 | 2026-08-06 | 69 |
+| 44101 | Stammdaten zur Messlokation | NB → MSB | 1.2 | 2026-08-06 | 66 |
+| 44102 | Aktualisierte Stammdaten zur Messlokation | NB → MSB | 1.2 | 2026-08-06 | 64 |
+| 44103 | Stammdaten zur Marktlokation | NB → LF | 1.2 | 2026-08-06 | 121 |
+| 44104 | Aktualisierte Stammdaten zur Marktlokation | NB → LF | 1.2 | 2026-08-06 | 119 |
+| 44105 | Ablehnung auf Stammdaten zur Marktlokation | LF → NB | 1.2 | 2026-08-06 | 59 |
+| 44109 | Nicht bila.rel. Änderung vom LF | LF → NB [Berechtigter] | 1.2 | 2026-08-06 | 86 |
+| 44111 |  | NB [Berechtigter] → LF | 1.2 | 2026-08-06 | 52 |
+| 44112 | Nicht bila.rel. Änderung vom NB | NB → LF | 1.2 | 2026-08-06 | 208 |
+| 44113 | Nicht bila.rel. Änderung vom NB | NB → MSB | 1.2 | 2026-08-06 | 121 |
+| 44115 | Antwort auf Änderung vom NB | LF → NB, MSB → NB | 1.2 | 2026-08-06 | 53 |
+| 44116 | Änderung vom MSB mit Abhängig keiten | MSB → NB [Verteiler] | 1.2 | 2026-08-06 | 204 |
+| 44117 | Änderung vom MSB mit Abhängig keiten | NB [Verteiler] → LF | 1.2 | 2026-08-06 | 188 |
+| 44119 | Antwort auf Änderung vom MSB | NB [Verteiler] → MSB, LF → NB [Verteiler] | 1.2 | 2026-08-06 | 53 |
+| 44120 | Bila.rel. Änderung vom LF | LF → NB | 1.2 | 2026-08-06 | 59 |
+| 44121 | Antwort auf Änderung vom LF | NB → LF | 1.2 | 2026-08-06 | 52 |
+| 44123 | Bila.rel. Änderung vom NB mit Abhängigkeiten | NB → LF | 1.2 | 2026-08-06 | 95 |
+| 44124 | Antwort auf Änderung vom NB | LF → NB | 1.2 | 2026-08-06 | 52 |
+| 44137 | Nicht bila.rel. Anfrage an LF | NB [Berechtigt] → LF | 1.2 | 2026-08-06 | 86 |
+| 44138 | Antwort auf Anfrage | LF → NB [Berechtigt] | 1.2 | 2026-08-06 | 94 |
+| 44139 | Nicht bila.rel. Anfrage an NB | LF → NB | 1.2 | 2026-08-06 | 211 |
+| 44140 | Nicht bila.rel. Anfrage an NB | MSB → NB | 1.2 | 2026-08-06 | 120 |
+| 44142 | Antwort auf Anfrage | NB → LF, NB → MSB | 1.2 | 2026-08-06 | 229 |
+| 44143 | Anfrage an MSB mit Abhängigkeiten | LF → NB [Verteiler] | 1.2 | 2026-08-06 | 188 |
+| 44145 | Antwort auf Anfrage | NB [Verteiler] → LF | 1.2 | 2026-08-06 | 196 |
+| 44146 | Ablehnung der Anfrage | NB [Verteiler] → LF | 1.2 | 2026-08-06 | 52 |
+| 44147 | Anfrage an MSB mit Abhängigkeiten | NB [Verteiler] → MSB | 1.2 | 2026-08-06 | 188 |
+| 44148 | Anfrage an MSB mit Abhängigkeiten | NB [Berechtigt] → MSB | 1.2 | 2026-08-06 | 204 |
+| 44149 | Antwort auf Anfrage | MSB → NB [Verteiler], MSB → NB [Berechtig… | 1.2 | 2026-08-06 | 212 |
+| 44150 | Bila.rel. Anfrage an LF | NB → LF | 1.2 | 2026-08-06 | 59 |
+| 44151 | Antwort auf Anfrage | LF → NB | 1.2 | 2026-08-06 | 67 |
+| 44152 | Ablehnung der Anfrage | LF → NB | 1.2 | 2026-08-06 | 52 |
+| 44156 | Bila.rel. Anfrage an NB mit Abhängigkeiten | LF → NB | 1.2 | 2026-08-06 | 95 |
+| 44157 | Antwort auf Anfrage | NB → LF | 1.2 | 2026-08-06 | 103 |
+| 44159 | Änderung vom MSB ohne Abhängigkeiten | MSB → NB [Verteiler] | 1.2 | 2026-08-06 | 89 |
+| 44160 | Änderung vom MSB ohne Abhängigkeiten | NB [Verteiler] → LF [Berechtigt] | 1.2 | 2026-08-06 | 65 |
+| 44161 | Antwort auf Änderung | NB [Verteiler] → MSB, LF [Berechtigt] → N… | 1.2 | 2026-08-06 | 53 |
+| 44162 | Anfrage an MSB ohne Abhängigkeiten | LF [Berechtigt] → NB [Verteiler] | 1.2 | 2026-08-06 | 65 |
+| 44163 | Antwort auf Anfrage | NB [Verteiler] → LF [Berechtigt] | 1.2 | 2026-08-06 | 73 |
+| 44164 | Ablehnung Anfrage | NB [Verteiler] → LF [Berechtigt] | 1.2 | 2026-08-06 | 52 |
+| 44165 | Nicht bila.rel. Anfrage an MSB ohne Abhängigkeiten | NB [Verteiler] → MSB | 1.2 | 2026-08-06 | 65 |
+| 44166 | Nicht bila.rel. Anfrage an MSB ohne Abhängigkeiten | NB [Berechtigt] → MSB | 1.2 | 2026-08-06 | 89 |
+| 44167 | Antwort auf Anfrage | MSB → NB | 1.2 | 2026-08-06 | 97 |
+| 44168 | Verpflichtungsanfrage / Aufforderung | NB → gMSB | 1.2 | 2026-08-06 | 307 |
+| 44169 | Bestätigung Verpflichtungsanfrage | gMSB → NB | 1.2 | 2026-08-06 | 298 |
+| 44170 | Ablehnung Verpflichtungsanfrage | gMSB → NB | 1.2 | 2026-08-06 | 54 |
+| 44175 | Änderung der Marktlokationsstruktur | NB → LF | 1.2 | 2026-08-06 | 52 |
+| 44176 | Antwort auf Änderung der Marktlokationsstruktur | LF → NB | 1.2 | 2026-08-06 | 60 |
+| 44180 | Anfrage der Marktlokationsstruktur | LF → NB | 1.2 | 2026-08-06 | 52 |
+| 44181 | Antwort auf Anfrage der Marktlokationsstruktur | NB → LF | 1.2 | 2026-08-06 | 60 |
+| 44182 | Ablehnung der Anfrage der Marktlokationsstruktur | NB → LF | 1.2 | 2026-08-06 | 52 |
+| 44183 | Ende MSB von NB | NB → MSB | 1.2 | 2026-08-06 | 48 |
 | 55001 | Anmeldung verb. MaLo | LF → NB | 2.2 | 2026-06-29 | 142 |
 | 55002 | Bestätigung Anmeldung verb. MaLo | NB → LF | 2.2 | 2026-06-29 | 154 |
 | 55003 | Ablehnung Anmeldung verb. MaLo | NB → LF | 2.2 | 2026-06-29 | 80 |

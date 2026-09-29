@@ -15,21 +15,25 @@ This index helps agents choose the right BDEW source document before answering M
 | APERAK/CONTRL handling, syntax vs processing errors, acknowledgement messages, ERC error codes, APERAK deadlines | [`APERAK_AHB_1_1_Konsultationsfassung_20260202.md`](./APERAK_AHB_1_1_Konsultationsfassung_20260202.md) | APERAK Anwendungshandbuch for market communication feedback and error handling. |
 | UTILMD EDIFACT segment structure, segment groups, fields, cardinalities, DTM/LOC/NAD/RFF layout | [`UTILMD_MIG_Strom_S2_1_Fehlerkorrektur_20260302.md`](./UTILMD_MIG_Strom_S2_1_Fehlerkorrektur_20260302.md) | UTILMD Message Implementation Guide for Strom, version S2.1. |
 | MSCONS EDIFACT segment structure and generic MSCONS layout | [`MSCONS_MIG_2_4c_außerordentliche_20240726.md`](./MSCONS_MIG_2_4c_außerordentliche_20240726.md) | MSCONS Message Implementation Guide, version 2.4c. |
-| MSCONS business usage, Prüfi-specific value scenarios, zählerstände, energiemengen, Lastgänge, MaBiS/Redispatch values, corrections | [`MSCONS_AHB_3_1f_Fehlerkorrektur_20250930.md`](./MSCONS_AHB_3_1f_Fehlerkorrektur_20250930.md) | MSCONS Anwendungshandbuch explains when and how MSCONS structures are used. |
+| MSCONS business usage, Prüfi-specific value scenarios, zählerstände, energiemengen, Lastgänge, MaBiS/Redispatch values, corrections | [`MSCONS_AHB_3_1f_Fehlerkorrektur_20250930.md`](./MSCONS_AHB_3_1f_Fehlerkorrektur_20250930.md) | MSCONS Anwendungshandbuch explains when and how MSCONS structures are used. Prose is 3.1f; the newer 3.1g exists only as XML (`xml-docs/`). For Prüfi requiredness use `ahb-tables/`. |
 | Invoice EDIFACT structure, invoice header/positions/taxes/amounts/payment terms | [`INVOIC_MIG_2.8e_20250401.md`](./INVOIC_MIG_2.8e_20250401.md) | INVOIC Message Implementation Guide, version 2.8e. |
 | Order EDIFACT structure, requests/orders, product descriptions, references, locations, participants | [`ORDERS_MIG_1_4b_20250401.md`](./ORDERS_MIG_1_4b_20250401.md) | ORDERS Message Implementation Guide, version 1.4b. |
 | OBIS codes, media codes, allowed OBIS for MSCONS/UTILMD, electricity/gas measuring identifiers | [`Codeliste-OBIS-Kennzahlen_Medien_2_5c_Konsultationsfassung_20250801.md`](./Codeliste-OBIS-Kennzahlen_Medien_2_5c_Konsultationsfassung_20250801.md) | External codelist for OBIS/media syntax and AHB checks. |
+| Prüfi-specific requiredness: which segments/DEs/codes are Muss/Soll/Kann/X for Prüfi N, conditions, packages | [`../ahb-tables/FVxxxx/AHB_FVxxxx_{Prüfi}.json`](../ahb-tables/INDEX.md) | Per-Prüfi, per-format-version AHB rows with inlined condition text. Not in this folder; pick the FV valid for the process date. |
+| IFTSTA or REMADV EDIFACT segment structure | [`xml-docs/IFTSTA_MIG_2_0g_20250401 1.xml`](./xml-docs/IFTSTA_MIG_2_0g_20250401%201.xml), [`xml-docs/REMADV_MIG_2_9e_20251001.xml`](./xml-docs/REMADV_MIG_2_9e_20251001.xml) | Only MIG source for these message types — no Markdown version exists. |
+| An `ahb-tables` row looks wrong, or a Fehlerkorrektur may not be in the Hochfrequenz snapshot yet | Matching `xml-docs/*_AHB_*.xml` | BDEW-published original; tie-breaker, not the default lookup. See [BDEW XML Originals](#bdew-xml-originals-xml-docs). |
 | Messprodukt-/Konfigurationsprodukt-Codes (9991…), Standard-Messprodukte Strom/Gas Typ 1, Typ 2 SMGW/Backend/ESA, Schaltzeit-/Leistungskurven-/Ad-Hoc-Steuerkanal config, Mindestumfang Messprodukte in UTILMD, Bestell-/Änderungsprodukte (UTILMD/ORDERS) | [`Codeliste-Konfigurationen_1_3c_Fehlerkorrektur_20251211.md`](./Codeliste-Konfigurationen_1_3c_Fehlerkorrektur_20251211.md) | Codelist of measurement/configuration products ordered between MSB and NB/LF/MSB/ESA. |
 
 ## How To Choose
 
 1. If the question is about **what market process should happen and in which order**, start with GPKE, WiM, LFW24, or Netzbetreiberwechsel. For **LFW24 go-live cutover, 06.06.2025 migration windows, or transitional async→sync billing corrections**, start with the LFW24 Einführungsszenario before the operational LFW24 AWH.
-2. If the question is about **how an EDIFACT message is physically structured**, start with the matching MIG.
-3. If the question is about **APERAK or CONTRL feedback, syntax errors, processing errors, acknowledgements, or ERC codes**, start with the APERAK AHB.
-4. If the question is about **which MSCONS variant is allowed for a value scenario**, start with the MSCONS AHB, then check the MSCONS MIG for segment placement.
-5. If the question is about **OBIS codes or media identifiers**, start with the OBIS/media codelist.
-6. If the question is about **which Messprodukt-/Konfigurationsprodukt-Code (9991…) to order, what a product code means, or the Mindestumfang of products in a UTILMD/ORDERS message**, start with the Codeliste der Konfigurationen.
-7. If the question is about **BO4E API fields, Conuti schemas, or trigger payloads**, do not rely on this folder alone. Use the repo schema sources in `maco-api-documentation/` after reading the relevant BDEW process context.
+2. If the question is about **how an EDIFACT message is physically structured**, start with the matching MIG. For IFTSTA and REMADV the MIG exists only as XML in `xml-docs/`.
+3. If the question is about **which segments, data elements, or codes are required for a specific Prüfidentifikator**, use `../ahb-tables/FVxxxx/AHB_FVxxxx_{Prüfi}.json` for the format version valid at the process date. Use this folder's AHB Markdown only for the surrounding prose, and `xml-docs/*_AHB_*.xml` only to verify a suspicious row.
+4. If the question is about **APERAK or CONTRL feedback, syntax errors, processing errors, acknowledgements, or ERC codes**, start with the APERAK AHB.
+5. If the question is about **which MSCONS variant is allowed for a value scenario**, start with the MSCONS AHB, then check the MSCONS MIG for segment placement.
+6. If the question is about **OBIS codes or media identifiers**, start with the OBIS/media codelist.
+7. If the question is about **which Messprodukt-/Konfigurationsprodukt-Code (9991…) to order, what a product code means, or the Mindestumfang of products in a UTILMD/ORDERS message**, start with the Codeliste der Konfigurationen.
+8. If the question is about **BO4E API fields, Conuti schemas, or trigger payloads**, do not rely on this folder alone. Use the repo schema sources in `maco-api-documentation/` after reading the relevant BDEW process context.
 
 ## Document Groups
 
@@ -90,7 +94,33 @@ This index helps agents choose the right BDEW source document before answering M
   - Tells you which product codes a given Marktrolle (NB/LF/MSB/ESA) may order against the MSB. Read alongside WiM Teil 2 (value transmission) and the UTILMD/ORDERS/MSCONS MIGs for segment placement; this is a code/value codelist, not a process description.
   - This is a consolidated reading version with error corrections (Stand 11.12.2025).
 
+### BDEW XML Originals (`xml-docs/`)
+
+Machine-readable AHB/MIG files published by BDEW. They contain no prose: no introductions, no change history, and no referenced tables such as the MESZ/MEZ-to-UTC tables. Never start a process question here.
+
+**Source precedence:** process/prose → Markdown in this folder · Prüfi requiredness → `../ahb-tables/` · MIG structure → Markdown, else XML · disputed or recently corrected row → BDEW XML.
+
+| File | Type | Version | Role |
+|---|---|---|---|
+| `IFTSTA_MIG_2_0g_20250401 1.xml` | MIG | 2.0g | **Primary**: no Markdown MIG for IFTSTA |
+| `REMADV_MIG_2_9e_20251001.xml` | MIG | 2.9e | **Primary**: no Markdown MIG for REMADV |
+| `UTILMD_AHB-Strom_2_1_Fehlerkorrektur_20260629.xml` | AHB | 2.1 (Fehlerkorrektur 29.06.2026) | Verification. Same release as `ahb-tables/FV2604` (2.1, 29.06.2026) after the 2026-09-29 refresh; 185 of 187 Prüfis match row-for-row. Does not apply to FV2610 (UTILMD 2.2). |
+| `MSCONS_AHB_3_1g_Fehlerkorrektur_20260302 2.xml` | AHB | 3.1g | Verification; newer than the `MSCONS_AHB_3_1f` Markdown |
+| `ORDERS_AHB_1_1a_20251001.xml` | AHB | 1.1a | Verification |
+| `IFTSTA_AHB_2_0h_Fehlerkorrektur_20250623.xml` | AHB | 2.0h | Verification |
+| `REMADV_AHB_1_0a_20251001.xml` | AHB | 1.0a | Verification |
+| `PRICAT_AHB_2_0f_Fehlerkorrektur_20251211.xml` | AHB | 2.0f | Verification; same version as the Markdown |
+| `UTILMD_MIG_Strom_S2_1_Fehlerkorrektur_20260302.xml` | MIG | S2.1 | Duplicate of the Markdown MIG; tie-breaker only |
+| `MSCONS_MIG_2_4c_außerordentliche_20240726 2.xml` | MIG | 2.4c | Duplicate of the Markdown MIG; tie-breaker only |
+| `ORDERS_MIG_1_4b_20250401 1.xml` | MIG | 1.4b | Duplicate of the Markdown MIG; tie-breaker only |
+| `INVOIC_MIG_2.8e__20250401.xml` | MIG | 2.8e | Duplicate of the Markdown MIG; tie-breaker only |
+| `PRICAT_MIG_2_0e_Fehlerkorrektur_20250930.xml` | MIG | 2.0e | Duplicate of the Markdown MIG; tie-breaker only |
+
+Reading tip: each AHB file holds one `<AWF Pruefidentifikator="…">` block per Prüfi, with `<Bedingungen>`, `<UB_Bedingungen>`, and `<Pakete>` at the end of the file. Pull out only the `AWF` block you need plus the conditions it references. The UTILMD AHB is ~4 MB, so don't read the whole file.
+
 ## Agent Guardrails
+
+- When `ahb-tables/` and a BDEW XML AHB of the same version disagree, the BDEW XML wins. State the discrepancy instead of silently picking one. First compare the XML's `Veroeffentlichungsdatum` with `meta.veroeffentlichungsdatum` in ahb-tables: a different date usually means a Fehlerkorrektur.
 
 - Do not cite this index as the authority for a process or field. Cite the linked source document after reading it.
 - For BDEW process questions, verify the process source here and then cross-check repo sources such as `docs-offline/`, `ebd-diagrams/`, `maco-api-documentation/`, `ahb-tables/`, and `maco-edi-testfiles/` as required by the workspace rules.
