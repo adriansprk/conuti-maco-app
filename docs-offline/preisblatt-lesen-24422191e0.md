@@ -88,7 +88,100 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Preisblatt'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Preisblatt'
+                description: Liste der Preisblätter
+              example:
+                - boTyp: PREISBLATT
+                  versionStruktur: '1'
+                  bezeichnung: <string>
+                  nichtGenutzt: true
+                  gueltigkeit:
+                    einheit: ENUM_Zeiteinheit
+                    dauer: 5
+                    startdatum: '2023-03-10T16:22:38Z'
+                    enddatum: '2023-03-10T16:22:38Z'
+                  preispositionen:
+                    - berechnungsmethode: <Kalkulationsmethode>
+                      leistungstyp: SPERRUNG
+                      leistungsbezeichnung: <string>
+                      preiseinheit: ENUM_Waehrungseinheit
+                      bezugsgroesse: ENUM_Mengeneinheit
+                      zeitbasis: ENUM_Zeiteinheit
+                      tarifzeit: ENUM_Tarifzeit
+                      bdewArtikelnummer: '9991000000721'
+                      zonungsgroesse: ENUM_Bemessungsgroesse
+                      zu_abschlaege:
+                        bezeichnung: <string>
+                        beschreibung: <string>
+                        aufAbschlagstyp: ENUM_AufAbschlagstyp
+                        aufAbschlagswert: 5.2
+                        aufAbschlagswaehrung: ENUM_Waehrungseinheit
+                      preisstaffeln:
+                        - einheitspreis: 5.1
+                          einheit: ENUM
+                          staffelgrenzeVon: 4
+                          staffelgrenzeBis: 9
+                          sigmoidparameter:
+                            A: 1
+                            B: 5
+                            C: 2
+                            D: 8
+                          zeitbasis: JAHR
+                      preisschluesselstamm: <string>
+                      positionsnummer: 1
+                      messebene: ENUM_Netzebene
+                      beschreibung: <string>
+                      verarbeitungszeitraum:
+                        einheit: ENUM_Zeiteinheit
+                        dauer: 5
+                        startdatum: '2023-03-10T16:22:38Z'
+                        enddatum: '2023-03-10T16:22:38Z'
+                        wert: 25.3
+                      artikelId: <string>
+                    - berechnungsmethode: <Kalkulationsmethode>
+                      leistungstyp: SPERRUNG
+                      leistungsbezeichnung: <string>
+                      preiseinheit: ENUM_Waehrungseinheit
+                      bezugsgroesse: ENUM_Mengeneinheit
+                      zeitbasis: ENUM_Zeiteinheit
+                      tarifzeit: ENUM_Tarifzeit
+                      bdewArtikelnummer: '9991000000722'
+                      zonungsgroesse: ENUM_Bemessungsgroesse
+                      zu_abschlaege:
+                        bezeichnung: <string>
+                        beschreibung: <string>
+                        aufAbschlagstyp: ENUM_AufAbschlagstyp
+                        aufAbschlagswert: 5.2
+                        aufAbschlagswaehrung: ENUM_Waehrungseinheit
+                      preisstaffeln:
+                        - einheitspreis: 5.1
+                          einheit: ENUM
+                          staffelgrenzeVon: 4
+                          staffelgrenzeBis: 9
+                          sigmoidparameter:
+                            A: 1
+                            B: 5
+                            C: 2
+                            D: 8
+                          zeitbasis: JAHR
+                      preisschluesselstamm: <string>
+                      positionsnummer: 1
+                      messebene: ENUM_Netzebene
+                      beschreibung: <string>
+                      verarbeitungszeitraum:
+                        einheit: ENUM_Zeiteinheit
+                        dauer: 5
+                        startdatum: '2023-03-10T16:22:38Z'
+                        enddatum: '2023-03-10T16:22:38Z'
+                        wert: 25.3
+                      artikelId: <string>
+                  preisstatus: ENUM_Preisstatus
+                  sparte: ENUM_Sparte
+                  bilanzierungsdatum: '2023-03-01T00:00:00Z'
+                  regelzone: <string>
+                  preisNetzbetreiberCodenummer: <string>
           headers: {}
           x-apidog-name: OK
         '400':
@@ -169,6 +262,9 @@ components:
             PIA 1
 
             PI 27002
+        preisNetzbetreiberCodenummer:
+          type: string
+          description: Preise des Netzbetreibers
       required:
         - boTyp
         - versionStruktur
@@ -184,6 +280,7 @@ components:
         - leistungstyp
         - nichtGenutzt
         - preispositionen
+        - preisNetzbetreiberCodenummer
       examples:
         - $ref: >-
             https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/Preisblatt.json
@@ -251,20 +348,20 @@ components:
             IMD C
 
             PI 27002
-        preiseinheit: &ref_2
+        preiseinheit: &ref_4
           $ref: '#/components/schemas/Waehrungseinheit'
           description: |-
             Währungsangaben für die gesamte Preisliste
             CUX 2 EUR
             PI 27001 27002 27003
-        bezugsgroesse:
+        bezugsgroesse: &ref_3
           $ref: '#/components/schemas/Mengeneinheit'
           description: >-
             Hier wird festgelegt, auf welche Bezugsgröße sich der Preis bezieht,
             z.B. kWh oder Stück. Details
 
             Mengeneinheit
-        zeitbasis: &ref_3
+        zeitbasis: &ref_2
           $ref: '#/components/schemas/Zeiteinheit'
           description: >-
             Die Zeit(dauer) auf die sich der Preis bezieht. Z.B. ein Jahr für
@@ -323,6 +420,9 @@ components:
             Preisangaben Nettopreis für die aktuelle Position
             PRI CAL
             PI 27001 27002 27003
+        beschreibungsformat:
+          $ref: '#/components/schemas/Beschreibungsformat'
+          description: Vgl. PRICAT IMD 7077
       x-apidog-orders:
         - berechnungsmethode
         - leistungstyp
@@ -341,7 +441,17 @@ components:
         - artikelId
         - zu_abschlaege
         - preisstaffeln
+        - beschreibungsformat
       x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    Beschreibungsformat:
+      type: string
+      title: Beschreibungsformat
+      enum:
+        - CODE
+        - FREIER_TEXT
+        - TEILSTRUKTURIERT
+      description: Beschreibungsformat der Produktbeschreibung
       x-apidog-folder: ''
     Preisstaffel:
       title: Preisstaffel
@@ -369,11 +479,15 @@ components:
         sigmoidparameter:
           $ref: '#/components/schemas/Sigmoidparameter'
           description: nicht in Benutzung
+        zeitbasis: *ref_2
+        einheit: *ref_3
       x-apidog-orders:
         - einheitspreis
         - staffelgrenzeVon
         - staffelgrenzeBis
         - sigmoidparameter
+        - zeitbasis
+        - einheit
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Sigmoidparameter:
@@ -420,7 +534,7 @@ components:
           type: number
           format: float
           description: auf Abschlagswert
-        aufAbschlagswaehrung: *ref_2
+        aufAbschlagswaehrung: *ref_4
       x-apidog-orders:
         - bezeichnung
         - beschreibung
@@ -978,7 +1092,7 @@ components:
       title: Zeitraum
       type: object
       properties:
-        zeiteinheit: *ref_3
+        zeiteinheit: *ref_2
         dauer:
           type: integer
           description: Zeitspanne, Wert
@@ -1000,7 +1114,7 @@ components:
             DTM164 Verarbeitung, Endedatum/-zeit
             DTM 156 Rechnungsperiode, Endedatum
             DTM Z43 vorläufiger Abrechnungszeitraum Ende
-        einheit: *ref_3
+        einheit: *ref_2
         ableseZeitraum:
           type: string
           description: |-
@@ -1016,6 +1130,7 @@ components:
         zeitraumText:
           type: string
           description: ZeitraumText
+          x-apidog-mock: "DTM+Z01:03MQ:Z01'\r\nNachfolgend noch einige Beispiele zur Übermittlung der Kündigungsfrist in der\r\nKommunikation von LF zu LF:\r\nBeispiel 1:\r\nDTM+Z01:30TM:Z01'\r\nDies entspricht der Kündigungsfrist von 30 Tagen zum Monatsende.\r\nBeispiel 2:\r\nDTM+Z01:03MJ:Z01'\r\nDies entspricht der Kündigungsfrist von 3 Monaten zum Jahresende. Somit hat die Kündigung\r\n3 Monate vor dem 31.12. zu erfolgen.\r\nBeispiel 3:\r\nDTM+Z01:01MQ:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Quartalsende.\r\nBeispiel 4:\r\nDTM+Z01:01MM:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Monatsende.\r\nBeispiel 5:\r\nDTM+Z01:01MT:Z01'\r\nDTM+Z10:201211152300?+00:303'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum 16.11.2012 00:00 Uhr.\r\nBeispiel 6:\r\nDTM+Z01:02WT:Z01'\r\nDTM+Z10:1120:106'\r\nDies entspricht der Kündigungsfrist von 2 Wochen zum 20. eines Monats 00:00 Uhr ab\r\nNovember.\r\nBeispiel 7:\r\nDTM+Z01:14TR:Z01'\r\nDies entspricht einer rollierenden Kündigungsfrist von 14 Tagen in der Zukunft."
         zeitraumId:
           type: integer
           description: |-
@@ -1032,6 +1147,8 @@ components:
         - abrechnungsZeitraum
         - zeitraumText
         - zeitraumId
+      required:
+        - enddatum
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     BOTyp:

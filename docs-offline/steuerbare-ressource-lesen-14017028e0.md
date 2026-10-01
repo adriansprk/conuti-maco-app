@@ -75,7 +75,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SteuerbareRessource'
+                type: array
+                items:
+                  $ref: '#/components/schemas/SteuerbareRessource'
+                description: Liste der Steuerbaren Ressourcen
+              example: "[\r\n    {\r\n        \"boTyp\": \"STEUERBARE_RESSOURCE\",\r\n        \"versionStruktur\": \"1\",\r\n        \"ressourcenId\": \"C4897654121\",\r\n        \"sparte\": \"ENUM_Sparte\",\r\n        \"gueltigkeitszeitraum\": {\r\n            \"zeitraumId\": 1,\r\n            \"startdatum\": \"2024-12-31T23:00:00Z\",\r\n            \"enddatum\": \"2025-12-31T23:00:00Z\"\r\n        },\r\n        \"datenqualitaet\": \"ENUM_qualitaet\",\r\n        \"lokationszuordnung\": \"<ENUM>\",\r\n        \"steuerkanal\": \"AN_AUS\",\r\n        \"konfigurationsprodukt\": \"<string>\",\r\n        \"produktdatenRelevanteRolle\": \"ENUM_Marktrolle\",\r\n        \"keinKonfigurationsprodukt\": true,\r\n        \"auftraggebenderMarktpartner\": {\r\n            \"boTyp\": \"MARKTTEILNEHMER\",\r\n            \"versionStruktur\": \"1\",\r\n            \"marktrolle\": \"ENUM_Marktrolle\",\r\n            \"rollencodenummer\": \"<string>\"\r\n        },\r\n        \"marktrollen\": [\r\n            {\r\n                \"boTyp\": \"MARKTTEILNEHMER\",\r\n                \"versionStruktur\": \"1\",\r\n                \"zuordnungVon\": \"2024-12-31T23:00:00Z\",\r\n                \"zuordnungBis\": \"2025-12-31T23:00:00Z\",\r\n                \"marktrolle\": \"ENUM_Marktrolle\",\r\n                \"gewerbekennzeichnung\": true,\r\n                \"rollencodenummer\": \"<string>\",\r\n                \"rollencodetyp\": \"<string>\",\r\n                \"weiterverpflichtet\": false,\r\n                \"messstellenbetreiberEigenschaft\": \"<ENUM>\"\r\n                // Z39 -> GRUNDZUSTAENDIGER_MESSSTELLENBETREIBER, Z40 -> WETTBEWERBLICHER_MESSSTELLENBETREIBER, Z41 -> AUFFANGMESSSTELLENBETREIBER\r\n            }\r\n        ],\r\n        \"zugeordneteDefinition\": {\r\n            \"schaltzeitdefinition\": \"9991000000713\",\r\n            \"leistungskurvendefinition\": null\r\n        },\r\n        \"erforderlicheProdukte\": [\r\n            {\r\n                \"produktCode\": null\r\n            }\r\n        ]\r\n    }\r\n]"
           headers: {}
           x-apidog-name: OK
         '400':
@@ -202,6 +206,14 @@ components:
         gueltigkeitszeitraum:
           $ref: '#/components/schemas/Zeitraum'
           description: Referenz auf Zeitraum-ID
+        erforderlicheProdukte:
+          type: array
+          items:
+            $ref: '#/components/schemas/Produkt'
+          description: erforderlicheProdukte
+        keinKonfigurationsprodukt:
+          type: boolean
+          description: keinKonfigurationsprodukt
       required:
         - boTyp
         - versionStruktur
@@ -219,9 +231,43 @@ components:
         - marktrollen
         - datenqualitaet
         - gueltigkeitszeitraum
+        - erforderlicheProdukte
+        - keinKonfigurationsprodukt
       examples:
         - $ref: >-
             https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/SteuerbareRessource.json
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    Produkt:
+      title: Produkt
+      type: object
+      properties:
+        produktCode:
+          type: string
+          description: |-
+            Produkt-Code
+            Erforderliches Produkt Abrechnungsdaten ORDERS
+            PIA 5
+            PI 17133
+        codeProdukteigenschaft:
+          type: string
+          description: |-
+            Code der Produkteigenschaft
+            CAV ZH9
+            PI 55001 55077 55600 55601 55014 55608 
+        wertedetails:
+          type: string
+          description: >-
+            Wertedetails zum Produkt, Wertedetails zum Produkt sind in der
+            Codeliste der Konfigurationen beschrieben
+
+            CAV ZV4
+
+            PI 55001 55077 55600 55601 55014 55608 
+      x-apidog-orders:
+        - produktCode
+        - codeProdukteigenschaft
+        - wertedetails
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Zeitraum:
@@ -268,6 +314,7 @@ components:
         zeitraumText:
           type: string
           description: ZeitraumText
+          x-apidog-mock: "DTM+Z01:03MQ:Z01'\r\nNachfolgend noch einige Beispiele zur Übermittlung der Kündigungsfrist in der\r\nKommunikation von LF zu LF:\r\nBeispiel 1:\r\nDTM+Z01:30TM:Z01'\r\nDies entspricht der Kündigungsfrist von 30 Tagen zum Monatsende.\r\nBeispiel 2:\r\nDTM+Z01:03MJ:Z01'\r\nDies entspricht der Kündigungsfrist von 3 Monaten zum Jahresende. Somit hat die Kündigung\r\n3 Monate vor dem 31.12. zu erfolgen.\r\nBeispiel 3:\r\nDTM+Z01:01MQ:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Quartalsende.\r\nBeispiel 4:\r\nDTM+Z01:01MM:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Monatsende.\r\nBeispiel 5:\r\nDTM+Z01:01MT:Z01'\r\nDTM+Z10:201211152300?+00:303'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum 16.11.2012 00:00 Uhr.\r\nBeispiel 6:\r\nDTM+Z01:02WT:Z01'\r\nDTM+Z10:1120:106'\r\nDies entspricht der Kündigungsfrist von 2 Wochen zum 20. eines Monats 00:00 Uhr ab\r\nNovember.\r\nBeispiel 7:\r\nDTM+Z01:14TR:Z01'\r\nDies entspricht einer rollierenden Kündigungsfrist von 14 Tagen in der Zukunft."
         zeitraumId:
           type: integer
           description: |-
@@ -284,6 +331,8 @@ components:
         - abrechnungsZeitraum
         - zeitraumText
         - zeitraumId
+      required:
+        - enddatum
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Zeiteinheit:
@@ -575,6 +624,12 @@ components:
           type: string
           format: date-time
           description: Enddatum der Zuordnung des Marktteilnehmers
+        bilanzkreis:
+          type: string
+          description: Bilanzkreis
+        verwendungszweckBilanzkreis:
+          $ref: '#/components/schemas/VerwendungszweckBilanzkreis'
+          description: Verwendungszweck des Bilanzkreises
       required:
         - boTyp
         - versionStruktur
@@ -612,10 +667,22 @@ components:
         - ipRange
         - zuordnungVon
         - zuordnungBis
+        - bilanzkreis
+        - verwendungszweckBilanzkreis
       examples:
         - $ref: >-
             https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/Marktteilnehmer.json
       x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    VerwendungszweckBilanzkreis:
+      type: string
+      title: VerwendungszweckBilanzkreis
+      enum:
+        - VERBRAUCHENDE_MARKTLOKATION
+        - ERZEUGENDE_MARKTLOKATION_EEG
+        - ERZEUGENDE_MARKTLOKATION_KWKG
+        - SONSTIGE_ERZEUGENDE_MARKTLOKATION
+      description: VerwendungszweckBilanzkreis
       x-apidog-folder: ''
     IpRange:
       title: IpRange
@@ -1419,7 +1486,6 @@ components:
         - MDL
         - DL
         - BKV
-        - BKO
         - UENB
         - KUNDE-SELBST-NN
         - MGV
@@ -1454,9 +1520,6 @@ components:
           name: ''
           description: ''
         - value: BKV
-          name: ''
-          description: ''
-        - value: BKO
           name: ''
           description: ''
         - value: UENB

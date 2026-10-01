@@ -35,7 +35,8 @@
       </Tab>        
       <Tab title="📄13017 Übermittlung von Zählerständen vom LF (Rolle LF)">
           <Accordion title="13017" defaultOpen={false}>
-                 <DataSchema id="8348183" />   
+                 
+<DataSchema id="12586651" />
           </Accordion>
           
 

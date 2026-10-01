@@ -3,36 +3,75 @@
 Bestellung einer Konfiguration vom LF an MSB ( LF )
 
 
-![LW24h mit Abhängigkeiten - Bestellung einer Konfiguration vom LF an MSB ( LF )(1).png](https://api.apidog.com/api/v1/projects/816353/resources/368834/image-preview)
+![LW24h mit Abhängigkeiten - Bestellung einer Konfiguration vom LF an MSB ( LF )(2).png](https://api.apidog.com/api/v1/projects/816353/resources/374557/image-preview)
 
 <Steps>
   <Step title="Prozessauslöser - Event">
    <Tabs>
       <Tab title="Übersicht">
  
-        <Card title="START_LIEFERENDE"
-              href="https://doc.macoapp.de/lieferende-von-lieferant-an-netzbetreiber-14992421e0.md">
-            Lieferende starten
+        <Card title="START_ANFRAGE_KONFIGURATION 35004"
+         > 
+
+        </Card>
+             <Card title="START_BESTELLUNG_KONFIGURATION 17130"
+             >
+ 
+        </Card>
+                       <Card title="START_BESTELLUNG_ANGEBOT_KONFIGURATION 17131"
+                           >
+ 
+        </Card>
+                                 <Card title="START_BESTELLUNG_ZAEHLZEITDEFINITION"
+        >
+  
         </Card>
 
-      </Tab>        
-      <Tab title="📄START_LIEFERENDE">
-          <Accordion title="PI_35004" defaultOpen={false}>
-               <DataSchema id="10740352" />
-          </Accordion>
+      </Tab> 
+             <Tab title="35004">
+ 
+        <Card title="START_ANFRAGE_KONFIGURATION"
+         >
+     <Accordion title="35004" defaultOpen>
+
+<DataSchema id="13853759" />
+</Accordion>
+        </Card>
           
-          <Accordion title="PI_17130" defaultOpen={false}>
-                  <DataSchema id="5665542" />
-          </Accordion>
+      </Tab> 
+        <Tab title="17130">
+ 
+                    <Card title="START_BESTELLUNG_KONFIGURATION 17123"
+             ><Accordion title="17130" defaultOpen>
+
+<DataSchema id="13853761" />
+
+</Accordion>
+
+        </Card>
           
-          <Accordion title="PI_17131" defaultOpen={false}>
-              <DataSchema id="10710206" />
-          </Accordion>
-          
-          <Accordion title="PI_17123" defaultOpen={false}>
-                  <DataSchema id="10711148" />
-          </Accordion>
-                    
+      </Tab> 
+              <Tab title="17131">
+ 
+                                 <Card title="START_BESTELLUNG_ANGEBOT_KONFIGURATION 17131"
+                           >
+               <Accordion title="17131" defaultOpen>
+
+<DataSchema id="13853762" />
+</Accordion>
+        </Card>
+        
+      </Tab> 
+                     <Tab title="17123">
+ 
+                                 <Card title="START_BESTELLUNG_ZAEHLZEITDEFINITION 17123"
+                           >
+               <Accordion title="17123" defaultOpen>
+
+<DataSchema id="13853763" />
+</Accordion>
+        </Card>
+        
       </Tab>
     </Tabs>
   </Step>

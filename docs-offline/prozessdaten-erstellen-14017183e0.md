@@ -223,6 +223,9 @@ components:
             - $ref: '#/components/schemas/PI_13019'
             - $ref: '#/components/schemas/PI_13025'
             - $ref: '#/components/schemas/PI_13015'
+            - $ref: '#/components/schemas/PI_13006'
+            - $ref: '#/components/schemas/PI_13027'
+            - $ref: '#/components/schemas/55653_%C3%84nderung_vom_MSB_an_LF'
         - $ref: '#/components/schemas/ZUSATZDATEN%20(%20SST%20erstellen)'
       x-apidog-folder: ''
     ZUSATZDATEN ( SST erstellen):
@@ -259,6 +262,2152 @@ components:
         - zusatzdaten
       required:
         - zusatzdaten
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    55653_Änderung_vom_MSB_an_LF:
+      type: object
+      properties:
+        stammdaten:
+          type: object
+          properties:
+            ZAEHLER:
+              type: array
+              items:
+                type: object
+                properties:
+                  zaehlwerke:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        vorkommastelle:
+                          type: integer
+                          description: >-
+                            Angabe der Vorkommastelle des Zählwerks
+
+                            CAV Wert
+
+                            PI 55643 55648 55653 55658 55663 55669 55553 55555
+                            55043 55168 55169 55074 55075 55076 | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z20.SG10.CCI+11++Z33.CAV</TipInfo>
+                        obisKennzahl:
+                          type: string
+                          description: >-
+                            Produktidentifikation bei Austausch von Daten der
+                            Energiemengen werden gewährleistet durch OBIS
+                            Kennzahlen.
+
+                            PIA 5 OBIS-Kennzahl der Netzlokation
+
+                            PI 55639 55644 55649 55654 55659 55664 55060 55043
+                            55168 55169
+
+                            PIA 5 OBIS-Kennzahl der Marktlokation
+
+                            PI 55684 55685 55640 55645 55650 55655 55660 55665
+                            55553 55555 55035 55095 55060 55043 55168 55169
+                            55239 55074 55075 55076 55195 55196 
+
+                            RFF Z10 Referenz auf die OBIS-Kennzahl der
+                            Marktlokation
+
+                            PI 55616 55622 
+
+                            PIA 5 OBIS-Daten der Marktlokation der beteiligten
+                            Marktrolle
+
+                            PI 55196
+
+                            PIA 5 OBIS-Kennzahl der Tranche
+
+                            PI 55686 55687 55642 55647 55652 55657 55662 55667
+                            55095 55074 55075 55076 55195 55196
+
+                            PIA 5 OBIS-Kennzahl der Zähleinrichtung
+                            /Smartmeter-Gateway
+
+                            PI 55643 55648 55653 55658 55663 55669 55553 55555
+                            55035 55095 55060 55043 55168 55169 55074 55075
+                            55076 | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z20.PIA+5</TipInfo>
+                        schwachlastfaehig:
+                          description: >-
+                            Schwachlastfähigkeit, die Beschreibung der
+                            Schwachlastfähigkeit wird für die Konzessionsabgabe
+                            genutzt. 
+
+                            CCI Z10
+
+                            PI 55643 55648 55653 55658 55663 55669 | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z20.SG10.CCI+Z10</TipInfo>
+                          $ref: '#/components/schemas/Schwachlastfaehig'
+                        wertegranularitaet:
+                          description: >-
+                            Mit der Wertegranularität wird angegeben in welchem
+                            Intervall Werte der im PIA+5 genannten OBIS-Kennzahl
+                            im Markt
+
+                            bereitgestellt werden. ZD9 Jährlich ZE8 Halbjährlich
+                            ZE9 Quartalsweise ZB7 Monatlich
+
+                            CCI ZE4
+
+                            PI 55640 55645 55650 55655 55660 55665 55643 55648
+                            55653 55658 55663 55669 55553 55555 55035 55095
+                            55060 55043 55168 55169 55074 55075 55076 | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z20.SG10.CCI+++ZE4.CAV</TipInfo>
+                          $ref: '#/components/schemas/Wertegranularitaet'
+                        bezeichnung:
+                          type: string
+                          description: >-
+                            Bezeichnung der Dienstleistung. | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z20.SG10.CCI+++Z63</TipInfo>
+                        zaehlzeiten:
+                          type: object
+                          properties:
+                            zaehlzeitDefinition:
+                              type: object
+                              title: Zaehlzeitdefinition
+                              description: >-
+
+                                <TipInfo>SG4.IDE+24.SG8.SEQ+Z20.SG10.CCI+Z39</TipInfo>
+                              x-apidog-orders:
+                                - boTyp
+                                - versionStruktur
+                              properties:
+                                boTyp:
+                                  type: string
+                                  title: BOTyp
+                                  description: Typ des BO
+                                  enum:
+                                    - ZAEHLZEITDEFINITION
+                                versionStruktur:
+                                  type: string
+                                  description: versionStruktur
+                                  default: '1'
+                              required:
+                                - boTyp
+                                - versionStruktur
+                              x-apidog-ignore-properties: []
+                            register:
+                              type: string
+                              description: >-
+                                Zählendes Register
+
+                                RFF Z28
+
+                                PI 25005 | 
+
+                                <TipInfo>SG4.IDE+24.SG8.SEQ+Z20.SG10.CCI+Z38</TipInfo>
+                          x-apidog-orders:
+                            - zaehlzeitDefinition
+                            - register
+                          x-apidog-ignore-properties: []
+                        konfiguration:
+                          type: string
+                          description: >-
+                            Angabe der Konfigurations-ID
+
+                            RFF AGK
+
+                            PI 55643 55648 55653 55658 55663 55669 55553 55555
+                            55035 55095 55060 55043 55168 55169 55074 55075
+                            55076 | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z20.RFF+AGK</TipInfo>
+                        nachkommastelle:
+                          type: integer
+                          description: >-
+                            Angabe der Nachkommastelle des Zählwerks
+
+                            CAV Wert
+
+                            PI 55643 55648 55653 55658 55663 55669 55553 55555
+                            55043 55168 55169 55074 55075 55076 | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z20.SG10.CCI+11++Z33.CAV</TipInfo>
+                      x-apidog-orders:
+                        - vorkommastelle
+                        - obisKennzahl
+                        - schwachlastfaehig
+                        - wertegranularitaet
+                        - bezeichnung
+                        - zaehlzeiten
+                        - konfiguration
+                        - nachkommastelle
+                      x-apidog-ignore-properties: []
+                  geraete:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        geraetenummer:
+                          type: string
+                          description: >-
+                            Angabe der Referenz auf die Gerätenummer des Zählers
+                            / Smartmeter-Gateway / Wandler
+
+                            RFF Z14 Smartmeter-Gateway
+
+                            PI 55643 55648 55653 55658 55663 55669 55043 55168
+                            55169 55074 55075 55076 
+
+                            CAV Z30 Gerätenummer
+
+                            55643 55648 55653 55658 55663 55669 55060 55043
+                            55168 55169 55074 55075 55076 
+
+                            ORDERS RFF Z09  
+
+                            PI 17101 17126 17009  | 
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z20.RFF+[MG|Z14],
+                            SG4.IDE+24.SG8.SEQ+Z04.SG10.CCI+++Z25.CAV+Z30,
+                            SG4.IDE+24.SG8.SEQ+Z13.SG10.CCI+++Z75.CAV+Z30</TipInfo>
+                        geraetetyp:
+                          description: >-
+
+                            <TipInfo>SG4.IDE+24.SG8.SEQ+Z20.RFF+[MG|Z14]</TipInfo>
+                          $ref: '#/components/schemas/Geraetetyp'
+                        geraeteeigenschaften:
+                          type: object
+                          properties:
+                            geraetemerkmal:
+                              description: >-
+                                Wandlertyp und Faktor
+
+                                CAV MIW
+
+                                PI 55643 55648 55653 55658 55663 55669 55060
+                                55043 55168 55169 55074 55075 55076 
+
+                                QUOTES PI 15001 | 
+
+                                <TipInfo>SG4.IDE+24.SG8.SEQ+Z04.SG10.CCI+++Z25.CAV</TipInfo>
+                              $ref: '#/components/schemas/Geraetemerkmal'
+                            faktor:
+                              type: number
+                              description: >-
+                                Wandlerfaktor - Angabe der Wandlerkonstante
+
+                                PI 55643 55648 55653 55658 55663 55669 55060
+                                55043 55168 55169 55074 55075 55076 
+
+                                QUOTES PI 15001 | 
+
+                                <TipInfo>SG4.IDE+24.SG8.SEQ+Z04.SG10.CCI+++Z25.CAV</TipInfo>
+                              format: float
+                          x-apidog-orders:
+                            - geraetemerkmal
+                            - faktor
+                          x-apidog-ignore-properties: []
+                      x-apidog-orders:
+                        - geraetenummer
+                        - geraetetyp
+                        - geraeteeigenschaften
+                      x-apidog-ignore-properties: []
+                  zaehlerauspraegung:
+                    description: >-
+                      Energierichtung
+
+                      CAV ERZ
+
+                      PI 55643 55648 55653 55658 55663 55669 55043 55168 55169
+                      55074 55075 55076
+
+                      QUOTES PI 15001 | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z03.SG10.CCI+++E13.CAV+[ERZ|ZRZ]</TipInfo>
+                    $ref: '#/components/schemas/Zaehlerauspraegung'
+                  zaehlernummer:
+                    type: string
+                    description: >-
+                      Die Nummer des zu sperrenden Zählers | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z03.SG10.CCI+++E13.CAV+Z30,
+                      SG4.IDE+24.SG8.SEQ+Z20.RFF+[MG|Z14],
+                      SG4.IDE+24.SG8.SEQ+Z04.RFF+MG</TipInfo>
+                  zaehlertyp:
+                    description: >-
+                      Wertspezifizierung des Zählers - Zähleinrichtung
+
+                      CAV AHZ
+
+                      PI 55643 55648 55653 55658 55663 55669 55035 55095 55060
+                      55043 55168 55169 55074 55075 55076
+
+                      QUOTES
+
+                      PI 15001
+
+                      UTILMD Gas  | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z03.SG10.CCI+++E13.CAV+[AHZ|WSZ|LAZ|MAZ|MME|EHZ|IVA]</TipInfo>
+                    $ref: '#/components/schemas/Zaehlertyp'
+                  zaehlertypspezifikation:
+                    description: >-
+                      Zählertyp
+
+                      PI 55643 55648 55653 55658 55663 55669 55035 55095 55060
+                      55043 55168 55169 
+
+                      QUOTES PI 15001 | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z03.SG10.CCI+++E13.CAV+[AHZ|WSZ|LAZ|MAZ|MME|EHZ|IVA]</TipInfo>
+                    $ref: '#/components/schemas/ZaehlertypSpezifikation'
+                  datenqualitaet: &ref_0
+                    description: >-
+                      Datenqualität | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z03, SG4.IDE+24.SG8.SEQ+Z20,
+                      SG4.IDE+24.SG8.SEQ+Z04, SG4.IDE+24.SG8.SEQ+Z13</TipInfo>
+                    $ref: '#/components/schemas/Datenqualitaet'
+                  gueltigkeitszeitraum:
+                    type: object
+                    properties:
+                      zeitraumId:
+                        type: integer
+                        description: >-
+                          Zeitraum-ID aus der Übermittlung der Berechnungsformel
+                          | 
+
+                          <TipInfo>SG4.IDE+24.SG8.SEQ+Z03,
+                          SG4.IDE+24.SG8.SEQ+Z20, SG4.IDE+24.SG8.SEQ+Z04,
+                          SG4.IDE+24.SG8.SEQ+Z13</TipInfo>
+                    x-apidog-orders:
+                      - zeitraumId
+                    x-apidog-ignore-properties: []
+                  tarifart:
+                    description: >-
+                      Tarifanzahl, Registeranzahl - Es wird die Information des
+                      tatsächlich verbauten Gerätes angegeben.
+
+                      CAV ETZ
+
+                      PI 55643 55648 55653 55658 55663 55669 55043 55168 55169
+                      55074 55075 55076
+
+                      QUOTES PI 15001 | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z03.SG10.CCI+++E13.CAV+[ETZ|ZTZ|NTZ]</TipInfo>
+                    $ref: '#/components/schemas/Tarifart'
+                  gateway:
+                    type: string
+                    description: >-
+                      Zuordnung der Zähleinrichtung zu dem Smartmeter-Gateway
+                      worüber die Kommunikation erfolgt.
+
+                      RFF Z14
+
+                      PI 55643 55648 55653 55658 55663 55669 55553 55555 55035
+                      55095 55060 55043 55168 55169 55074 55075 55076 | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z03.RFF+Z14,
+                      SG4.IDE+24.SG8.SEQ+Z20.RFF+[MG|Z14]</TipInfo>
+                x-apidog-orders:
+                  - zaehlwerke
+                  - geraete
+                  - zaehlerauspraegung
+                  - zaehlernummer
+                  - zaehlertyp
+                  - zaehlertypspezifikation
+                  - datenqualitaet
+                  - gueltigkeitszeitraum
+                  - tarifart
+                  - gateway
+                x-apidog-ignore-properties: []
+            MESSLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  ablesekartenempfaenger:
+                    type: object
+                    properties:
+                      partneradresse:
+                        type: object
+                        properties:
+                          hausnummer:
+                            type: string
+                            description: |-
+                              Hausnummer und Ergänzung | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                          landescode:
+                            description: |-
+                              Landescode | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                            $ref: '#/components/schemas/Landescode'
+                          postfach:
+                            type: string
+                            description: |-
+                              Postfach | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                          postleitzahl:
+                            type: string
+                            description: |-
+                              Postleitzahl | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                          ortsteil:
+                            type: string
+                            description: |-
+                              Ortsteil | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                          strasse:
+                            type: string
+                            description: |-
+                              Strasse | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                          ort:
+                            type: string
+                            description: |-
+                              Ort | 
+                              <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                        x-apidog-orders:
+                          - hausnummer
+                          - landescode
+                          - postfach
+                          - postleitzahl
+                          - ortsteil
+                          - strasse
+                          - ort
+                        x-apidog-ignore-properties: []
+                      anrede:
+                        type: string
+                        description: |-
+                          Die Anrede für den GePa, Z.B. Herr.
+                          Z04 Korrespondenzanschrift des Kunden des Lieferanten
+                          PI 55001 55600 55601 55013 55014 55043 55168 55169 | 
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                      name4:
+                        type: string
+                        description: |-
+                          Name 4 | 
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                      gewerbekennzeichnung:
+                        type: boolean
+                        description: >-
+                          Kennzeichnung ob es sich um einen Gewerbe/Unternehmen
+                          (gewerbeKennzeichnung = true)
+
+                          oder eine Privatperson handelt. (gewerbeKennzeichnung
+                          = false)
+
+                          Z01 Struktur von Personennamen
+
+                          Z02 Struktur der Firmenbezeichnung | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                      name2:
+                        type: string
+                        description: >-
+                          Zweiter Teil des Namens. Hier kann der eine
+                          Erweiterung zum Firmennamen oder bei Privatpersonen
+                          beispielsweise der Vorname dargestellt werden.
+                          Beispiele: Bereich Süd oder Nina | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                      name1:
+                        type: string
+                        description: >-
+                          Erster Teil des Namens. Hier kann der Firmenname oder
+                          bei Privatpersonen beispielsweise der Nachname
+                          dargestellt werden. Beispiele: Yellow Strom GmbH oder
+                          Hagen | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                      name3:
+                        type: string
+                        description: >-
+                          Dritter Teil des Namens. Hier können weitere
+                          Ergänzungen zum Firmennamen oder bei Privatpersonen
+                          Zusätze zum  Namen dargestellt werden. Beispiele: und
+                          Afrika oder Sängerin | 
+
+                          <TipInfo>SG4.IDE+24.SG12.NAD+Z05</TipInfo>
+                    x-apidog-orders:
+                      - partneradresse
+                      - anrede
+                      - name4
+                      - gewerbekennzeichnung
+                      - name2
+                      - name1
+                      - name3
+                    x-apidog-ignore-properties: []
+                  netzebenemessung:
+                    description: >-
+                      Spannungsebene der Messlokation, in welcher Spannungsebene
+                      liegt die Melo. 
+
+                      CAV E03 
+
+                      PI 55643 55648 55653 55658 55663 55669 55060 55043 55168
+                      55169 | 
+
+                      <TipInfo>SG4.IDE+24.SG8.SEQ+Z18.SG10.CCI+++E04.CAV</TipInfo>
+                    $ref: '#/components/schemas/Netzebene'
+                  gueltigkeitszeitraum:
+                    type: object
+                    properties:
+                      zeitraumId:
+                        type: integer
+                        description: >-
+                          Zeitraum-ID aus der Übermittlung der Berechnungsformel
+                          | 
+
+                          <TipInfo>SG4.IDE+24.SG8.SEQ+Z18,
+                          SG4.IDE+24.SG12.NAD+Z05.RFF+Z46</TipInfo>
+                    x-apidog-orders:
+                      - zeitraumId
+                    x-apidog-ignore-properties: []
+                  messlokationsId:
+                    type: string
+                    description: |-
+                      MesslokationsId | 
+                      <TipInfo>SG4.IDE+24.SG5.LOC+Z17</TipInfo>
+                  datenqualitaet: *ref_0
+                x-apidog-orders:
+                  - ablesekartenempfaenger
+                  - netzebenemessung
+                  - gueltigkeitszeitraum
+                  - messlokationsId
+                  - datenqualitaet
+                x-apidog-ignore-properties: []
+            VERWENDUNGSZEITRAUM:
+              type: array
+              items:
+                type: object
+                properties:
+                  verwendungBis:
+                    type: string
+                    description: |-
+                      Ende des Geräte-Status - Verarbeitung, Endedatum/-zeit
+                      DTM 164
+                      PI 23008 23009 23012 | 
+                      <TipInfo>SG4.IDE+24.SG6.RFF+[Z49|Z53].DTM+Z26</TipInfo>
+                    format: date-time
+                  verwendungAb:
+                    type: string
+                    description: |-
+                      Beginn des Geräte-Status - Verarbeitung, Beginndatum/-zeit
+                      DTM 163
+                      PI 23001 23003 23004 23008 23005 23009 23011 23012 | 
+                      <TipInfo>SG4.IDE+24.SG6.RFF+[Z49|Z53].DTM+Z25</TipInfo>
+                    format: date-time
+                  datenqualitaet: *ref_0
+                  zeitraumId:
+                    type: integer
+                    description: |-
+                      Zeitraum-ID aus der Übermittlung der Berechnungsformel | 
+                      <TipInfo>SG4.IDE+24.SG6.RFF+[Z49|Z53]</TipInfo>
+                x-apidog-orders:
+                  - verwendungBis
+                  - verwendungAb
+                  - datenqualitaet
+                  - zeitraumId
+                x-apidog-ignore-properties: []
+          x-apidog-orders:
+            - ZAEHLER
+            - MESSLOKATION
+            - VERWENDUNGSZEITRAUM
+          x-apidog-ignore-properties: []
+        transaktionsdaten:
+          type: object
+          properties:
+            empfaenger:
+              type: object
+              properties:
+                rollencodenummer:
+                  type: string
+                  description: |-
+                    Gibt die Codenummer der Marktrolle an - MP ID
+                    ORDERS NAD Z31 Übertragungsnetzbetreiber 
+                    PI 17134
+                    ORDERS NAD DEB Messstellenbetreiber
+                    PI 17003 17134 17135
+                    IFTSTA NAD DEB Messstellenbetreiber 
+                    PI 21007 21015 21018 | 
+                    <TipInfo>SG2.NAD+MR</TipInfo>
+                rollencodetyp: &ref_1
+                  description: >-
+                    Gibt den Typ des Codes an - Verantwortliche Stelle für die
+                    Codepflege
+
+                    9 GS1
+
+                    293 DE, BDEW (Bundesverband der Energie- und
+                    Wasserwirtschaft e.V.)
+
+                    332 DE, DVGW Service & Consult GmbH  | 
+
+                    <TipInfo>SG2.NAD+MR</TipInfo>
+                  $ref: '#/components/schemas/Rollencodetyp'
+              x-apidog-orders:
+                - rollencodenummer
+                - rollencodetyp
+              x-apidog-ignore-properties: []
+            nachrichtendatum:
+              type: string
+              description: |-
+                Erstellungdatum der EDIFact / DTM+137 | 
+                <TipInfo>DTM+137</TipInfo>
+              format: date-time
+            absender:
+              type: object
+              properties:
+                rufnummern:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      rufnummer:
+                        type: string
+                        description: >-
+                          Rufnummer | 
+
+                          <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                      nummerntyp: &ref_2
+                        description: >-
+                          Art des Kommunikationsmittels
+
+                          COM | 
+
+                          <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                        $ref: '#/components/schemas/Rufnummernart'
+                    x-apidog-orders:
+                      - rufnummer
+                      - nummerntyp
+                    x-apidog-ignore-properties: []
+                ansprechpartner:
+                  type: object
+                  properties:
+                    eMailAdresse:
+                      type: string
+                      description: >-
+                        E-Mail Adresse | 
+
+                        <TipInfo>SG2.NAD+MS.SG3.CTA.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                    nachname:
+                      type: string
+                      description: |-
+                        Nachname (Familienname) des Ansprechpartners | 
+                        <TipInfo>SG2.NAD+MS.SG3.CTA</TipInfo>
+                  x-apidog-orders:
+                    - eMailAdresse
+                    - nachname
+                  x-apidog-ignore-properties: []
+                rollencodenummer:
+                  type: string
+                  description: |-
+                    Gibt die Codenummer der Marktrolle an - MP ID
+                    ORDERS NAD Z31 Übertragungsnetzbetreiber 
+                    PI 17134
+                    ORDERS NAD DEB Messstellenbetreiber
+                    PI 17003 17134 17135
+                    IFTSTA NAD DEB Messstellenbetreiber 
+                    PI 21007 21015 21018 | 
+                    <TipInfo>SG2.NAD+MS</TipInfo>
+                rollencodetyp: *ref_1
+              x-apidog-orders:
+                - rufnummern
+                - ansprechpartner
+                - rollencodenummer
+                - rollencodetyp
+              x-apidog-ignore-properties: []
+            pruefidentifikator:
+              type: string
+              description: >-
+                Enthält den Prüfidentifikator aus der EDIFact Kommunikation /
+                RFF+Z13 | 
+
+                <TipInfo>SG4.IDE+24.SG6.RFF+Z13</TipInfo>
+            transaktionsgrund:
+              type: string
+              description: >-
+                Der Transaktionsgrund beschreibt den Geschäftsvorfall zur
+                Kategorie genauer / UTILMD STS+7++###+ZW4+E03 | 
+
+                <TipInfo>SG4.IDE+24.STS+7</TipInfo>
+            nachrichtenreferenznummer:
+              type: string
+              description: |-
+                EDIFact Referenz aus dem UNT Segment / UTILMD UNT+21 | 
+                <TipInfo>UNH</TipInfo>
+            vorgangsnummer:
+              type: string
+              description: >-
+                Nummer des Vorgangs / UTILMD UTILTS IDE+24 / INSRPT INVOIC DOC
+                | 
+
+                <TipInfo>SG4.IDE+24</TipInfo>
+            kategorie:
+              type: string
+              description: >-
+                Gebührenkategorie der Konzessionsabgabe - Übermittlung von
+                zusätzlichen Informationen | 
+
+                <TipInfo>BGM+E03</TipInfo>
+            dokumentennummer:
+              type: string
+              description: |-
+                EDIFact Referenz aus dem BGM Segment / BGM | 
+                <TipInfo>BGM+E03</TipInfo>
+          x-apidog-orders:
+            - empfaenger
+            - nachrichtendatum
+            - absender
+            - pruefidentifikator
+            - transaktionsgrund
+            - nachrichtenreferenznummer
+            - vorgangsnummer
+            - kategorie
+            - dokumentennummer
+          x-apidog-ignore-properties: []
+      required:
+        - stammdaten
+        - transaktionsdaten
+      description: 55653 - Änderung vom MSB an LF [MSB an LF] UTILMD AHB Strom
+      x-apidog-orders:
+        - stammdaten
+        - transaktionsdaten
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    Rufnummernart:
+      type: string
+      title: Rufnummernart
+      description: Rufnummernart
+      enum:
+        - RUF_ZENTRALE
+        - FAX_ZENTRALE
+        - SAMMELRUF
+        - SAMMELFAX
+        - ABTEILUNGRUF
+        - ABTEILUNGFAX
+        - RUF_DURCHWAHL
+        - FAX_DURCHWAHL
+        - MOBIL_NUMMER
+      x-apidog-enum:
+        - value: RUF_ZENTRALE
+          name: weiteres Telefon
+          description: AJ
+        - value: FAX_ZENTRALE
+          name: ''
+          description: ''
+        - value: SAMMELRUF
+          name: ''
+          description: ''
+        - value: SAMMELFAX
+          name: ''
+          description: ''
+        - value: ABTEILUNGRUF
+          name: ''
+          description: ''
+        - value: ABTEILUNGFAX
+          name: ''
+          description: ''
+        - value: RUF_DURCHWAHL
+          name: Telefon
+          description: TE
+        - value: FAX_DURCHWAHL
+          name: Telefax
+          description: FX
+        - value: MOBIL_NUMMER
+          name: Handy
+          description: AL
+      x-apidog-folder: ''
+    Rollencodetyp:
+      type: string
+      title: Rollencodetyp
+      description: Rollencodetyp
+      enum:
+        - BDEW
+        - GS1
+        - GLN
+        - DVGW
+      x-apidog-enum:
+        - value: BDEW
+          name: DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)
+          description: '293'
+        - value: GS1
+          name: GS1
+          description: '9'
+        - value: GLN
+          name: ''
+          description: ''
+        - value: DVGW
+          name: DE, DVGW Service & Consult GmbH
+          description: '332'
+      x-apidog-folder: ''
+    Netzebene:
+      type: string
+      title: Netzebene
+      description: Netzebene
+      enum:
+        - NSP
+        - MSP
+        - HSP
+        - HSS
+        - MSP_NSP_UMSP
+        - HSP_MSP_UMSP
+        - HSS_HSP_UMSP
+        - HD
+        - MD
+        - ND
+      x-apidog-enum:
+        - value: NSP
+          name: Niederspannung
+          description: E06
+        - value: MSP
+          name: Mittelspannung
+          description: E05
+        - value: HSP
+          name: Hochspannung
+          description: E04
+        - value: HSS
+          name: Höchstspannung
+          description: E03
+        - value: MSP_NSP_UMSP
+          name: MS/NS Umspannung
+          description: E09
+        - value: HSP_MSP_UMSP
+          name: HS/MS Umspannung
+          description: E08
+        - value: HSS_HSP_UMSP
+          name: Hös/HS Umspannung
+          description: E07
+        - value: HD
+          name: Hochdruck
+          description: Y01
+        - value: MD
+          name: Mitteldruck
+          description: Y02
+        - value: ND
+          name: Niederdruck
+          description: Y03
+      x-apidog-folder: ''
+    Landescode:
+      title: Landescode
+      type: string
+      enum:
+        - AC
+        - AD
+        - AE
+        - AF
+        - AG
+        - AI
+        - AL
+        - AM
+        - AN
+        - AO
+        - AQ
+        - AR
+        - AS
+        - AT
+        - AU
+        - AW
+        - AX
+        - AZ
+        - BA
+        - BB
+        - BD
+        - BE
+        - BF
+        - BG
+        - BH
+        - BI
+        - BJ
+        - BL
+        - BM
+        - BN
+        - BO
+        - BQ
+        - BR
+        - BS
+        - BT
+        - BU
+        - BV
+        - BW
+        - BY
+        - BZ
+        - CA
+        - CC
+        - CD
+        - CF
+        - CG
+        - CH
+        - CI
+        - CK
+        - CL
+        - CM
+        - CN
+        - CO
+        - CP
+        - CR
+        - CS
+        - CU
+        - CV
+        - CW
+        - CX
+        - CY
+        - CZ
+        - DE
+        - DG
+        - DJ
+        - DK
+        - DM
+        - DO
+        - DZ
+        - EA
+        - EC
+        - EE
+        - EG
+        - EH
+        - ER
+        - ES
+        - ET
+        - EU
+        - FI
+        - FJ
+        - FK
+        - FM
+        - FO
+        - FR
+        - FX
+        - GA
+        - GB
+        - GD
+        - GE
+        - GF
+        - GG
+        - GH
+        - GI
+        - GL
+        - GM
+        - GN
+        - GP
+        - GQ
+        - GR
+        - GS
+        - GT
+        - GU
+        - GW
+        - GY
+        - HK
+        - HM
+        - HN
+        - HR
+        - HT
+        - HU
+        - IC
+        - ID
+        - IE
+        - IL
+        - IM
+        - IN
+        - IO
+        - IQ
+        - IR
+        - IS
+        - IT
+        - JE
+        - JM
+        - JO
+        - JP
+        - KE
+        - KG
+        - KH
+        - KI
+        - KM
+        - KN
+        - KP
+        - KR
+        - KW
+        - KY
+        - KZ
+        - LA
+        - LB
+        - LC
+        - LI
+        - LK
+        - LR
+        - LS
+        - LT
+        - LU
+        - LV
+        - LY
+        - MA
+        - MC
+        - MD
+        - ME
+        - MF
+        - MG
+        - MH
+        - MK
+        - ML
+        - MM
+        - MN
+        - MO
+        - MP
+        - MQ
+        - MR
+        - MS
+        - MT
+        - MU
+        - MV
+        - MW
+        - MX
+        - MY
+        - MZ
+        - NA
+        - NC
+        - NE
+        - NF
+        - NG
+        - NI
+        - NL
+        - 'NO'
+        - NP
+        - NR
+        - NT
+        - NU
+        - NZ
+        - OM
+        - PA
+        - PE
+        - PF
+        - PG
+        - PH
+        - PK
+        - PL
+        - PM
+        - PN
+        - PR
+        - PS
+        - PT
+        - PW
+        - PY
+        - QA
+        - RE
+        - RO
+        - RS
+        - RU
+        - RW
+        - SA
+        - SB
+        - SC
+        - SD
+        - SE
+        - SF
+        - SG
+        - SH
+        - SI
+        - SJ
+        - SK
+        - SL
+        - SM
+        - SN
+        - SO
+        - SR
+        - SS
+        - ST
+        - SU
+        - SV
+        - SX
+        - SY
+        - SZ
+        - TA
+        - TC
+        - TD
+        - TF
+        - TG
+        - TJ
+        - TK
+        - TL
+        - TM
+        - TN
+        - TO
+        - TP
+        - TR
+        - TT
+        - TV
+        - TW
+        - TZ
+        - UA
+        - UG
+        - UK
+        - UM
+        - US
+        - UY
+        - UZ
+        - VA
+        - VC
+        - VE
+        - VG
+        - VI
+        - VN
+        - VU
+        - WF
+        - WS
+        - XK
+        - YE
+        - YT
+        - YU
+        - ZA
+        - ZM
+        - ZR
+        - ZW
+      description: Der ISO-Landescode als Enumeration
+      x-apidog-folder: ''
+    Tarifart:
+      type: string
+      title: Tarifart
+      description: Tarifart
+      enum:
+        - EINTARIF
+        - ZWEITARIF
+        - MEHRTARIF
+        - SMART_METER
+        - LEISTUNGSGEMESSEN
+      x-apidog-enum:
+        - value: EINTARIF
+          name: Eintarif
+          description: ETZ
+        - value: ZWEITARIF
+          name: Zweitarif
+          description: ZTZ
+        - value: MEHRTARIF
+          name: Mehrtarif
+          description: NTZ
+        - value: SMART_METER
+          name: ''
+          description: ''
+        - value: LEISTUNGSGEMESSEN
+          name: ''
+          description: ''
+      x-apidog-folder: ''
+    Datenqualitaet:
+      type: string
+      title: Datenqualitaet
+      description: Datenqualitaet
+      enum:
+        - ERWARTETE_DATEN
+        - IM_SYSTEM_VORHANDENE_DATEN
+        - INFORMATIVE_DATEN
+        - GUELTIGE_DATEN
+        - KEINE_DATEN
+        - IM_SYSTEM_KEINE_DATEN_VORHANDEN
+        - KEINE_DATEN_ERWARTET
+        - DIFFERENZ_DATEN
+        - DIFFERENZ_ERWARTETE_DATEN
+        - DIFFERENZ_IM_SYSTEM_VORHANDENE_DATEN
+      x-apidog-enum:
+        - value: ERWARTETE_DATEN
+          name: ''
+          description: abhängig vom BO
+        - value: IM_SYSTEM_VORHANDENE_DATEN
+          name: ''
+          description: abhängig vom BO
+        - value: INFORMATIVE_DATEN
+          name: ''
+          description: abhängig vom BO
+        - value: GUELTIGE_DATEN
+          name: ''
+          description: abhängig vom BO
+        - value: KEINE_DATEN
+          name: ''
+          description: abhängig vom BO
+        - value: IM_SYSTEM_KEINE_DATEN_VORHANDEN
+          name: ''
+          description: abhängig vom BO
+        - value: KEINE_DATEN_ERWARTET
+          name: ''
+          description: abhängig vom BO
+        - value: DIFFERENZ_DATEN
+          name: ''
+          description: abhängig vom BO
+        - value: DIFFERENZ_ERWARTETE_DATEN
+          name: ''
+          description: abhängig vom BO
+        - value: DIFFERENZ_IM_SYSTEM_VORHANDENE_DATEN
+          name: ''
+          description: abhängig vom BO
+      x-apidog-folder: ''
+    ZaehlertypSpezifikation:
+      type: string
+      title: ZaehlertypSpezifikation
+      description: ZaehlertypSpezifikation
+      enum:
+        - EDL40
+        - EDL21
+        - SONSTIGER_EHZ
+        - MME_STANDARD
+        - MME_MEDA
+      x-apidog-enum:
+        - value: EDL40
+          name: EDL40
+          description: Z01
+        - value: EDL21
+          name: EDL21
+          description: Z02
+        - value: SONSTIGER_EHZ
+          name: sonstiger EHZ
+          description: Z03
+        - value: MME_STANDARD
+          name: Standard
+          description: Z04
+        - value: MME_MEDA
+          name: MeDa-Zähler
+          description: Z05
+      x-apidog-folder: ''
+    Zaehlertyp:
+      type: string
+      title: Zaehlertyp
+      description: Zaehlertyp
+      enum:
+        - DREHSTROMZAEHLER
+        - BALGENGASZAEHLER
+        - DREHKOLBENZAEHLER
+        - SMARTMETER
+        - LEISTUNGSZAEHLER
+        - MAXIMUMZAEHLER
+        - TURBINENRADGASZAEHLER
+        - ULTRASCHALLGASZAEHLER
+        - WECHSELSTROMZAEHLER
+        - WIRBELGASZAEHLER
+        - MESSDATENREGISTRIERGERAET
+        - ELEKTRONISCHERHAUSHALTSZAEHLER
+        - SONDERAUSSTATTUNG
+        - WASSERZAEHLER
+        - MODERNEMESSEINRICHTUNG
+      x-apidog-enum:
+        - value: DREHSTROMZAEHLER
+          name: analoger Haushaltszähler (Drehstrom)
+          description: AHZ
+        - value: BALGENGASZAEHLER
+          name: Balgengaszähler
+          description: BGZ
+        - value: DREHKOLBENZAEHLER
+          name: Drehkolbengaszähler
+          description: DKZ
+        - value: SMARTMETER
+          name: ''
+          description: ''
+        - value: LEISTUNGSZAEHLER
+          name: Lastgangzähler
+          description: LAZ
+        - value: MAXIMUMZAEHLER
+          name: Maximumzähler
+          description: MAZ
+        - value: TURBINENRADGASZAEHLER
+          name: Turbinenradgaszähler
+          description: TRZ
+        - value: ULTRASCHALLGASZAEHLER
+          name: Ultraschallgaszähler
+          description: UGZ
+        - value: WECHSELSTROMZAEHLER
+          name: analoger Wechselstromzähler
+          description: WSZ
+        - value: WIRBELGASZAEHLER
+          name: Wirbelgaszähler
+          description: WGZ
+        - value: MESSDATENREGISTRIERGERAET
+          name: Messdatenregistriergerät
+          description: MRG
+        - value: ELEKTRONISCHERHAUSHALTSZAEHLER
+          name: elektronischer Haushaltszähler
+          description: EHZ
+        - value: SONDERAUSSTATTUNG
+          name: Individuelle Abstimmung (Sonderausstatung)
+          description: IVA
+        - value: WASSERZAEHLER
+          name: ''
+          description: ''
+        - value: MODERNEMESSEINRICHTUNG
+          name: moderne Messeinrichtung nach MsbG
+          description: MME
+      x-apidog-folder: ''
+    Zaehlerauspraegung:
+      type: string
+      title: Zaehlerauspraegung
+      description: Zaehlerauspraegung
+      enum:
+        - EINRICHTUNGSZAEHLER
+        - ZWEIRICHTUNGSZAEHLER
+      x-apidog-enum:
+        - value: EINRICHTUNGSZAEHLER
+          name: Einrichtungszähler
+          description: ERZ
+        - value: ZWEIRICHTUNGSZAEHLER
+          name: Zweirichtungszähler
+          description: ZRZ
+      x-apidog-folder: ''
+    Geraetemerkmal:
+      type: string
+      title: Geraetemerkmal
+      description: Geraetemerkmal
+      enum:
+        - EINTARIF
+        - ZWEITARIF
+        - MEHRTARIF
+        - GAS_G2P5
+        - GAS_G4
+        - GAS_G6
+        - GAS_G10
+        - GAS_G16
+        - GAS_G25
+        - GAS_G40
+        - GAS_G65
+        - GAS_G100
+        - GAS_G160
+        - GAS_G250
+        - GAS_G350
+        - GAS_G400
+        - GAS_G4000
+        - GAS_G650
+        - GAS_G6500
+        - GAS_G1000
+        - GAS_G10000
+        - GAS_G12500
+        - GAS_G1600
+        - GAS_G16000
+        - GAS_G2500
+        - IMPULSGEBER_G4_G100
+        - IMPULSGEBER_G100
+        - MODEM_GSM
+        - MODEM_GPRS
+        - MODEM_FUNK
+        - MODEM_GSM_O_LG
+        - MODEM_GSM_M_LG
+        - MODEM_FESTNETZ
+        - MODEM_GPRS_M_LG
+        - PLC_COM
+        - ETHERNET_KOM
+        - DSL_KOM
+        - LTE_KOM
+        - RUNDSTEUEREMPFAENGER
+        - TARIFSCHALTGERAET
+        - ZUSTANDS_MU
+        - TEMPERATUR_MU
+        - KOMPAKT_MU
+        - SYSTEM_MU
+        - UNBESTIMMT
+        - WASSER_MWZW
+        - WASSER_WZWW
+        - WASSER_WZ01
+        - WASSER_WZ02
+        - WASSER_WZ03
+        - WASSER_WZ04
+        - WASSER_WZ05
+        - WASSER_WZ06
+        - WASSER_WZ07
+        - WASSER_WZ08
+        - WASSER_WZ09
+        - WASSER_WZ10
+        - WASSER_VWZ04
+        - WASSER_VWZ05
+        - WASSER_VWZ06
+        - WASSER_VWZ07
+        - WASSER_VWZ10
+        - DICHTEMENGENUMWERTER
+        - TEMPERATURMENGENUMWERTER
+        - ZUSTANDSMENGENUMWERTER
+        - BLOCKSTROMWANDLER
+        - MESSWANDLERSATZ_IMS_MME
+        - KOMBIMESSWANDLER
+        - SPANNUNGSWANDLER
+      x-apidog-enum:
+        - value: EINTARIF
+          name: ''
+          description: ''
+        - value: ZWEITARIF
+          name: ''
+          description: ''
+        - value: MEHRTARIF
+          name: ''
+          description: ''
+        - value: GAS_G2P5
+          name: Gaszähler G2.5
+          description: G2.5
+        - value: GAS_G4
+          name: Gaszähler G4
+          description: G4
+        - value: GAS_G6
+          name: Gaszähler G6
+          description: G6
+        - value: GAS_G10
+          name: Gaszähler G10
+          description: G10
+        - value: GAS_G16
+          name: Gaszähler G16
+          description: G16
+        - value: GAS_G25
+          name: Gaszähler G25
+          description: G25
+        - value: GAS_G40
+          name: Gaszähler G40
+          description: G40
+        - value: GAS_G65
+          name: Gaszähler G65
+          description: G65
+        - value: GAS_G100
+          name: Gaszähler G100
+          description: G100
+        - value: GAS_G160
+          name: Gaszähler G160
+          description: G160
+        - value: GAS_G250
+          name: Gaszähler G250
+          description: G250
+        - value: GAS_G350
+          name: Gaszähler G350
+          description: G350
+        - value: GAS_G400
+          name: Gaszähler G400
+          description: G400
+        - value: GAS_G4000
+          name: Gaszähler G4000
+          description: G4000
+        - value: GAS_G650
+          name: Gaszähler G650
+          description: G650
+        - value: GAS_G6500
+          name: Gaszähler G6500
+          description: G6500
+        - value: GAS_G1000
+          name: Gaszähler G1000
+          description: G1000
+        - value: GAS_G10000
+          name: Gaszähler G10000
+          description: G10000
+        - value: GAS_G12500
+          name: Gaszähler G12500
+          description: G12500
+        - value: GAS_G1600
+          name: Gaszähler G1600
+          description: G1600
+        - value: GAS_G16000
+          name: Gaszähler G16000
+          description: G16000
+        - value: GAS_G2500
+          name: Gaszähler G2500
+          description: G2500
+        - value: IMPULSGEBER_G4_G100
+          name: ''
+          description: ''
+        - value: IMPULSGEBER_G100
+          name: ''
+          description: ''
+        - value: MODEM_GSM
+          name: GSM/GPRS/UMTS-Kom.-Einr.
+          description: GSM
+        - value: MODEM_GPRS
+          name: ''
+          description: ''
+        - value: MODEM_FUNK
+          name: ''
+          description: ''
+        - value: MODEM_GSM_O_LG
+          name: ''
+          description: ''
+        - value: MODEM_GSM_M_LG
+          name: ''
+          description: ''
+        - value: MODEM_FESTNETZ
+          name: Festnetz-Kom.-Einricht. TAE
+          description: PST
+        - value: MODEM_GPRS_M_LG
+          name: ''
+          description: ''
+        - value: PLC_COM
+          name: PLC-Kom.-Einrichtung
+          description: PLC
+        - value: ETHERNET_KOM
+          name: Ethernet-Kom.-Einricht. LAN/WLAN
+          description: ETH
+        - value: DSL_KOM
+          name: DSL-Kom.Einr.
+          description: DSL
+        - value: LTE_KOM
+          name: LTE-Kom.-Einr.
+          description: LTE
+        - value: RUNDSTEUEREMPFAENGER
+          name: Rundsteuerempfänger
+          description: RSU
+        - value: TARIFSCHALTGERAET
+          name: Tarifschaltuhr
+          description: TSU
+        - value: ZUSTANDS_MU
+          name: ''
+          description: ''
+        - value: TEMPERATUR_MU
+          name: ''
+          description: ''
+        - value: KOMPAKT_MU
+          name: ''
+          description: ''
+        - value: SYSTEM_MU
+          name: ''
+          description: ''
+        - value: UNBESTIMMT
+          name: ''
+          description: ''
+        - value: WASSER_MWZW
+          name: ''
+          description: ''
+        - value: WASSER_WZWW
+          name: ''
+          description: ''
+        - value: WASSER_WZ01
+          name: ''
+          description: ''
+        - value: WASSER_WZ02
+          name: ''
+          description: ''
+        - value: WASSER_WZ03
+          name: ''
+          description: ''
+        - value: WASSER_WZ04
+          name: ''
+          description: ''
+        - value: WASSER_WZ05
+          name: ''
+          description: ''
+        - value: WASSER_WZ06
+          name: ''
+          description: ''
+        - value: WASSER_WZ07
+          name: ''
+          description: ''
+        - value: WASSER_WZ08
+          name: ''
+          description: ''
+        - value: WASSER_WZ09
+          name: ''
+          description: ''
+        - value: WASSER_WZ10
+          name: ''
+          description: ''
+        - value: WASSER_VWZ04
+          name: ''
+          description: ''
+        - value: WASSER_VWZ05
+          name: ''
+          description: ''
+        - value: WASSER_VWZ06
+          name: ''
+          description: ''
+        - value: WASSER_VWZ07
+          name: ''
+          description: ''
+        - value: WASSER_VWZ10
+          name: ''
+          description: ''
+        - value: DICHTEMENGENUMWERTER
+          name: Dichtemengenumwerter
+          description: DMU
+        - value: TEMPERATURMENGENUMWERTER
+          name: Temperaturmengenumwerter
+          description: TMU
+        - value: ZUSTANDSMENGENUMWERTER
+          name: Zustandsmengenumwerter
+          description: ZMU
+        - value: BLOCKSTROMWANDLER
+          name: Blockstromwandler
+          description: MBW
+        - value: MESSWANDLERSATZ_IMS_MME
+          name: Messwandlersatz Strom
+          description: MIW
+        - value: KOMBIMESSWANDLER
+          name: Kombimesswandlersatz (Strom und Spannung)
+          description: MPW
+        - value: SPANNUNGSWANDLER
+          name: Messwandlersatz Spannung
+          description: MUW
+      x-apidog-folder: ''
+    Geraetetyp:
+      type: string
+      title: Geraetetyp
+      description: Auflistung möglicher abzurechnender Gerätetypen
+      enum:
+        - WECHSELSTROMZAEHLER
+        - DREHSTROMZAEHLER
+        - ZWEIRICHTUNGSZAEHLER
+        - RLM_ZAEHLER
+        - IMS_ZAEHLER
+        - BALGENGASZAEHLER
+        - MAXIMUMZAEHLER
+        - MULTIPLEXANLAGE
+        - PAUSCHALANLAGE
+        - VERSTAERKERANLAGE
+        - SUMMATIONSGERAET
+        - IMPULSGEBER
+        - EDL_21_ZAEHLERAUFSATZ
+        - VIER_QUADRANTEN_LASTGANGZAEHLER
+        - MENGENUMWERTER
+        - STROMWANDLER
+        - SPANNUNGSWANDLER
+        - DATENLOGGER
+        - KOMMUNIKATIONSANSCHLUSS
+        - MODEM
+        - TELEKOMMUNIKATIONSEINRICHTUNG
+        - KOMMUNIKATIONSEINRICHTUNG
+        - DREHKOLBENGASZAEHLER
+        - TURBINENRADGASZAEHLER
+        - ULTRASCHALLZAEHLER
+        - WIRBELGASZAEHLER
+        - MODERNE_MESSEINRICHTUNG
+        - ELEKTRONISCHER_HAUSHALTSZAEHLER
+        - STEUEREINRICHTUNG
+        - TECHNISCHESTEUEREINRICHTUNG
+        - TARIFSCHALTGERAET
+        - RUNDSTEUEREMPFAENGER
+        - OPTIONALE_ZUS_ZAEHLEINRICHTUNG
+        - MESSWANDLERSATZ_IMS_MME
+        - KOMBIMESSWANDLER_IMS_MME
+        - TARIFSCHALTGERAET_IMS_MME
+        - RUNDSTEUEREMPFAENGER_IMS_MME
+        - TEMPERATUR_KOMPENSATION
+        - HOECHSTBELASTUNGS_ANZEIGER
+        - SONSTIGES_GERAET
+        - SMARTMETERGATEWAY
+        - STEUERBOX
+        - BLOCKSTROMWANDLER
+        - KOMBIMESSWANDLER
+        - MODEM_GSM
+        - ETHERNET_KOM
+        - PLC_COM
+        - MODEM_FESTNETZ
+        - DSL_KOM
+        - LTE_KOM
+        - DICHTEMENGENUMWERTER
+        - TEMPERATURMENGENUMWERTER
+        - ZUSTANDSMENGENUMWERTER
+        - MESSDATENREGISTRIERGERAET
+        - WANDLER
+        - BEFESTIGUNGSEINRICHTUNG
+      x-apidog-enum:
+        - value: WECHSELSTROMZAEHLER
+          name: analoger Wechselstromzähler
+          description: WSZ
+        - value: DREHSTROMZAEHLER
+          name: analoger Haushaltszähler (Drehstrom)
+          description: AHZ
+        - value: ZWEIRICHTUNGSZAEHLER
+          name: ''
+          description: ''
+        - value: RLM_ZAEHLER
+          name: Lastgangzähler
+          description: LAZ
+        - value: IMS_ZAEHLER
+          name: ''
+          description: ''
+        - value: BALGENGASZAEHLER
+          name: Balgengaszähler
+          description: BGZ
+        - value: MAXIMUMZAEHLER
+          name: Maximumzähler
+          description: MAZ
+        - value: MULTIPLEXANLAGE
+          name: ''
+          description: ''
+        - value: PAUSCHALANLAGE
+          name: ''
+          description: ''
+        - value: VERSTAERKERANLAGE
+          name: ''
+          description: ''
+        - value: SUMMATIONSGERAET
+          name: ''
+          description: ''
+        - value: IMPULSGEBER
+          name: ''
+          description: ''
+        - value: EDL_21_ZAEHLERAUFSATZ
+          name: ''
+          description: ''
+        - value: VIER_QUADRANTEN_LASTGANGZAEHLER
+          name: ''
+          description: ''
+        - value: MENGENUMWERTER
+          name: Mengenumwerter
+          description: Z64
+        - value: STROMWANDLER
+          name: ''
+          description: ''
+        - value: SPANNUNGSWANDLER
+          name: ''
+          description: ''
+        - value: DATENLOGGER
+          name: ''
+          description: ''
+        - value: KOMMUNIKATIONSANSCHLUSS
+          name: ''
+          description: ''
+        - value: MODEM
+          name: ''
+          description: ''
+        - value: TELEKOMMUNIKATIONSEINRICHTUNG
+          name: ''
+          description: ''
+        - value: KOMMUNIKATIONSEINRICHTUNG
+          name: Kommunikationseinrichtung
+          description: Z26
+        - value: DREHKOLBENGASZAEHLER
+          name: Drehkolbengaszähler
+          description: DKZ
+        - value: TURBINENRADGASZAEHLER
+          name: Turbinenradgaszähler
+          description: TRZ
+        - value: ULTRASCHALLZAEHLER
+          name: Ultraschallgaszähler
+          description: UGZ
+        - value: WIRBELGASZAEHLER
+          name: Wirbelgaszähler
+          description: WGZ
+        - value: MODERNE_MESSEINRICHTUNG
+          name: moderne Messeinrichtung nach MsbG
+          description: MME
+        - value: ELEKTRONISCHER_HAUSHALTSZAEHLER
+          name: elektronischer Haushaltszähler
+          description: EHZ
+        - value: STEUEREINRICHTUNG
+          name: ''
+          description: ''
+        - value: TECHNISCHESTEUEREINRICHTUNG
+          name: Technische Steuereinrichtung
+          description: Z27
+        - value: TARIFSCHALTGERAET
+          name: ''
+          description: ''
+        - value: RUNDSTEUEREMPFAENGER
+          name: ''
+          description: ''
+        - value: OPTIONALE_ZUS_ZAEHLEINRICHTUNG
+          name: Zähleinrichtung
+          description: ZD4
+        - value: MESSWANDLERSATZ_IMS_MME
+          name: ''
+          description: ''
+        - value: KOMBIMESSWANDLER_IMS_MME
+          name: ''
+          description: ''
+        - value: TARIFSCHALTGERAET_IMS_MME
+          name: ''
+          description: ''
+        - value: RUNDSTEUEREMPFAENGER_IMS_MME
+          name: ''
+          description: ''
+        - value: TEMPERATUR_KOMPENSATION
+          name: ''
+          description: ''
+        - value: HOECHSTBELASTUNGS_ANZEIGER
+          name: ''
+          description: ''
+        - value: SONSTIGES_GERAET
+          name: Individuelle Abstimmung (Sonderausstattung)
+          description: IVA
+        - value: SMARTMETERGATEWAY
+          name: Smartmeter-Gateway
+          description: Z75
+        - value: STEUERBOX
+          name: Steuerbox
+          description: Z76
+        - value: BLOCKSTROMWANDLER
+          name: ''
+          description: ''
+        - value: KOMBIMESSWANDLER
+          name: ''
+          description: ''
+        - value: MODEM_GSM
+          name: ''
+          description: ''
+        - value: ETHERNET_KOM
+          name: ''
+          description: ''
+        - value: PLC_COM
+          name: ''
+          description: ''
+        - value: MODEM_FESTNETZ
+          name: ''
+          description: ''
+        - value: DSL_KOM
+          name: ''
+          description: ''
+        - value: LTE_KOM
+          name: ''
+          description: ''
+        - value: DICHTEMENGENUMWERTER
+          name: ''
+          description: ''
+        - value: TEMPERATURMENGENUMWERTER
+          name: ''
+          description: ''
+        - value: ZUSTANDSMENGENUMWERTER
+          name: ''
+          description: ''
+        - value: MESSDATENREGISTRIERGERAET
+          name: Messdatenregistriergerät
+          description: MRG
+        - value: WANDLER
+          name: Wandler
+          description: Z25
+        - value: BEFESTIGUNGSEINRICHTUNG
+          name: ''
+          description: ''
+      x-apidog-folder: ''
+    Wertegranularitaet:
+      type: string
+      title: Wertegranularitaet
+      description: Wertegranularitaet
+      enum:
+        - JAEHRLICH
+        - HALBJAEHRLICH
+        - QUARTALSWEISE
+        - MONATLICH
+      x-apidog-enum:
+        - value: JAEHRLICH
+          name: Jährlich
+          description: ZD9
+        - value: HALBJAEHRLICH
+          name: Halbjährlich
+          description: ZE8
+        - value: QUARTALSWEISE
+          name: Quartalsweise
+          description: ZE9
+        - value: MONATLICH
+          name: Monatlich
+          description: ZB7
+      x-apidog-folder: ''
+    Schwachlastfaehig:
+      type: string
+      title: Schwachlastfaehig
+      description: Schwachlastfaehig
+      enum:
+        - SCHWACHLASTFAEHIG
+        - NICHT_SCHWACHLASTFAEHIG
+      x-apidog-enum:
+        - value: SCHWACHLASTFAEHIG
+          name: Schwachlast fähig
+          description: Z60
+        - value: NICHT_SCHWACHLASTFAEHIG
+          name: Nicht-Schwachlast fähig
+          description: Z59
+      x-apidog-folder: ''
+    PI_13027:
+      type: object
+      properties:
+        transaktionsdaten:
+          type: object
+          properties:
+            anfrageReferenz:
+              type: string
+              description: |-
+                Beantragungsnummer / RFF+AGI | 
+                <TipInfo>SG1.RFF+AGI</TipInfo>
+            absender:
+              type: object
+              properties:
+                ansprechpartner:
+                  type: object
+                  properties:
+                    rufnummern:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          nummerntyp: *ref_2
+                          rufnummer:
+                            type: string
+                            description: >-
+                              Rufnummer | 
+
+                              <TipInfo>SG2.NAD+MS.SG4.CTA+IC.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                        x-apidog-orders:
+                          - nummerntyp
+                          - rufnummer
+                        x-apidog-ignore-properties: []
+                    nachname:
+                      type: string
+                      description: |-
+                        Nachname (Familienname) des Ansprechpartners | 
+                        <TipInfo>SG2.NAD+MS.SG4.CTA+IC</TipInfo>
+                  x-apidog-orders:
+                    - rufnummern
+                    - nachname
+                  x-apidog-ignore-properties: []
+                rollencodenummer:
+                  type: string
+                  description: |-
+                    Gibt die Codenummer der Marktrolle an - MP ID
+                    ORDERS NAD Z31 Übertragungsnetzbetreiber 
+                    PI 17134
+                    ORDERS NAD DEB Messstellenbetreiber
+                    PI 17003 17134 17135
+                    IFTSTA NAD DEB Messstellenbetreiber 
+                    PI 21007 21015 21018 | 
+                    <TipInfo>SG2.NAD+MS</TipInfo>
+                rufnummern:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      ansprechpartner:
+                        type: object
+                        properties:
+                          eMailAdresse:
+                            type: string
+                            description: >-
+                              E-Mail Adresse | 
+
+                              <TipInfo>SG2.NAD+MS.SG4.CTA+IC.COM+[EM|FX|TE|AJ|AL]</TipInfo>
+                        x-apidog-orders:
+                          - eMailAdresse
+                        x-apidog-ignore-properties: []
+                    x-apidog-orders:
+                      - ansprechpartner
+                    x-apidog-ignore-properties: []
+                rollencodetyp: *ref_1
+              x-apidog-orders:
+                - ansprechpartner
+                - rollencodenummer
+                - rufnummern
+                - rollencodetyp
+              x-apidog-ignore-properties: []
+            empfaenger:
+              type: object
+              properties:
+                rollencodetyp: *ref_1
+                rollencodenummer:
+                  type: string
+                  description: |-
+                    Gibt die Codenummer der Marktrolle an - MP ID
+                    ORDERS NAD Z31 Übertragungsnetzbetreiber 
+                    PI 17134
+                    ORDERS NAD DEB Messstellenbetreiber
+                    PI 17003 17134 17135
+                    IFTSTA NAD DEB Messstellenbetreiber 
+                    PI 21007 21015 21018 | 
+                    <TipInfo>SG2.NAD+MR</TipInfo>
+              x-apidog-orders:
+                - rollencodetyp
+                - rollencodenummer
+              x-apidog-ignore-properties: []
+            kategorie:
+              type: string
+              description: >-
+                Gebührenkategorie der Konzessionsabgabe - Übermittlung von
+                zusätzlichen Informationen | 
+
+                <TipInfo>BGM+Z83</TipInfo>
+            nachrichtendatum:
+              type: string
+              description: |-
+                Erstellungdatum der EDIFact / DTM+137 | 
+                <TipInfo>DTM+137</TipInfo>
+              format: date-time
+            pruefidentifikator:
+              type: string
+              description: >-
+                Enthält den Prüfidentifikator aus der EDIFact Kommunikation /
+                RFF+Z13 | 
+
+                <TipInfo>SG1.RFF+Z13</TipInfo>
+            nachrichtenreferenznummer:
+              type: string
+              description: |-
+                EDIFact Referenz aus dem UNT Segment / UTILMD UNT+21 | 
+                <TipInfo>UNH</TipInfo>
+            nachrichtenfunktion:
+              type: string
+              description: |-
+                Nachrichtenfunktionskennzeichen / BGM | 
+                <TipInfo>BGM+Z83</TipInfo>
+            dokumentennummer:
+              type: string
+              description: |-
+                EDIFact Referenz aus dem BGM Segment / BGM | 
+                <TipInfo>BGM+Z83</TipInfo>
+          x-apidog-orders:
+            - anfrageReferenz
+            - absender
+            - empfaenger
+            - kategorie
+            - nachrichtendatum
+            - pruefidentifikator
+            - nachrichtenreferenznummer
+            - nachrichtenfunktion
+            - dokumentennummer
+          x-apidog-ignore-properties: []
+        stammdaten:
+          type: object
+          properties:
+            ENERGIEMENGE:
+              type: array
+              items:
+                type: object
+                properties:
+                  lokationsId:
+                    type: string
+                    description: |-
+                      LokationsId | 
+                      <TipInfo>SG5.NAD+DP.SG6.LOC+172</TipInfo>
+                  konfiguration:
+                    type: string
+                    description: >-
+                      Angabe der Konfigurations-ID
+
+                      RFF AGK
+
+                      PI 55643 55648 55653 55658 55663 55669 55553 55555 55035
+                      55095 55060 55043 55168 55169 55074 55075 55076 | 
+
+                      <TipInfo>SG5.NAD+DP.SG6.LOC+172</TipInfo>
+                x-apidog-orders:
+                  - lokationsId
+                  - konfiguration
+                x-apidog-ignore-properties: []
+          x-apidog-orders:
+            - ENERGIEMENGE
+          x-apidog-ignore-properties: []
+      required:
+        - transaktionsdaten
+        - stammdaten
+      description: 13027 - Werte an NB [MSB an ESA/ MSB an LF/ MSB an NB] MSCONS AHB
+      x-apidog-orders:
+        - transaktionsdaten
+        - stammdaten
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    PI_13006:
+      type: object
+      properties:
+        transaktionsdaten:
+          type: object
+          properties:
+            kategorie:
+              type: string
+              description: Kategorie EDIFACT BGM+7 / 270 / Z27 / Z28 / Z41 / Z42 / Z85
+            dokumentennummer:
+              type: string
+              description: Dokumentennummer EDIFACT BGM+7/ Z41...+xxx
+            nachrichtenfunktion:
+              type: string
+              description: Nachrichtenfunktion Original EDIFACT BGM+7/ Z41+xxx+1
+            nachrichtendatum:
+              type: string
+              description: Nachrichtendatum EDIFACT DTM+137
+              format: date-time
+            vorgangsreferenznummer:
+              type: string
+              description: Referenz auf vorangegangenen Nachricht EDIFACT SG1. RFF+ACW:xxx
+            pruefidentifikator:
+              type: string
+              description: Prüfidentifikator EDIFACT SG1. RFF+Z13
+            absender:
+              type: object
+              properties:
+                rollencodenummer:
+                  type: string
+                  description: Nachrichtenabsender EDIFACT SG2. NAD MS+MP-ID
+                rollencodetyp: *ref_1
+                ansprechpartner:
+                  type: object
+                  properties:
+                    rufnummern:
+                      type: string
+                      description: Kontakt EDIFACT SG4. CTA+IC+Kontaktname
+                    eMailAdresse:
+                      type: string
+                      description: Kommunikationsadresse EDIFACT SG4. COM + eMail EM
+                  x-apidog-orders:
+                    - rufnummern
+                    - eMailAdresse
+                  description: Informationskontakt EDIFACT SG4. CTA+IC
+                  x-apidog-ignore-properties: []
+                rufnummern:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      nummertyp:
+                        type: string
+                        description: >-
+                          Rufnummerntyp - EDIFACT SG4. COM+Rufnummer: FX TE AJ
+                          AL
+                      rufnummer:
+                        type: string
+                        description: Rufnummer EDIFACT SG4. COM+Rufnummer
+                    x-apidog-orders:
+                      - nummertyp
+                      - rufnummer
+                    required:
+                      - rufnummer
+                    x-apidog-ignore-properties: []
+                  description: Rufnummern - EDIFACT SG4. COM + Rufnummer
+              x-apidog-orders:
+                - rollencodenummer
+                - rollencodetyp
+                - ansprechpartner
+                - rufnummern
+              description: 'Nachrichtenabsender EDIFACT SG2. NAD MS '
+              x-apidog-ignore-properties: []
+            empfaenger:
+              type: object
+              properties:
+                rollencodenummer:
+                  type: string
+                  description: MP-ID EDIFACT SG2. NAD+MR+MP-ID
+                rollencodetyp: *ref_1
+              x-apidog-orders:
+                - rollencodenummer
+                - rollencodetyp
+              description: Nachrichtenempfänger EDIFACT SG2. NAD MR
+              x-apidog-ignore-properties: []
+          x-apidog-orders:
+            - kategorie
+            - dokumentennummer
+            - nachrichtenfunktion
+            - nachrichtendatum
+            - vorgangsreferenznummer
+            - pruefidentifikator
+            - absender
+            - empfaenger
+          description: Transaktionsdaten
+          x-apidog-ignore-properties: []
+        stammdaten:
+          type: object
+          properties:
+            ENERGIEMENGE:
+              type: array
+              items:
+                type: object
+                properties:
+                  lokationsId:
+                    type: string
+                    description: Meldepunktangabe EDIFACT SG6. LOC+172
+                x-apidog-orders:
+                  - lokationsId
+                required:
+                  - lokationsId
+                x-apidog-ignore-properties: []
+              description: BO ENERGIEMENGE
+          x-apidog-orders:
+            - ENERGIEMENGE
+          description: Stammdaten
+          required:
+            - ENERGIEMENGE
+          x-apidog-ignore-properties: []
+      required:
+        - transaktionsdaten
+        - stammdaten
+      description: '13006 - Messwert Storno '
+      x-apidog-orders:
+        - transaktionsdaten
+        - stammdaten
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     PI_13015:
@@ -359,7 +2508,7 @@ components:
               x-apidog-orders:
                 - rollencodenummer
                 - rollencodetyp
-              description: Nachrichtenempfänger EDIFACT SG11. NAD MR
+              description: Nachrichtenempfänger EDIFACT SG2. NAD MR
               required:
                 - rollencodenummer
                 - rollencodetyp
@@ -417,28 +2566,11 @@ components:
                         enddatum:
                           type: string
                           description: Ende Messperiode EDIFACT SG10. DTM+164
-                        leistungsperiode:
+                        nutzungszeitpunkt:
                           type: string
-                          description: Leistungsperiode EDIFACT SG10. DTM+306
-                        statuszusatzinformationen:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              art:
-                                type: string
-                                description: Zählerstandshinweise EDIFACT SG10. STS+Z32
-                              status:
-                                type: string
-                                description: Statushinweis EDIFACT SG10. STS+Z32++Z88
-                            x-apidog-orders:
-                              - art
-                              - status
-                            required:
-                              - art
-                              - status
-                            x-apidog-ignore-properties: []
-                          description: Zählerstandshinweise EDIFACT SG10. STS
+                          description: >-
+                            Nutzungszeitpunkt Gültigkeitsdatum EDIFACT SG10.
+                            DTM+7
                       x-apidog-orders:
                         - position
                         - obiskennzahl
@@ -446,14 +2578,13 @@ components:
                         - wert
                         - startdatum
                         - enddatum
-                        - leistungsperiode
-                        - statuszusatzinformationen
+                        - nutzungszeitpunkt
                       required:
                         - position
                         - obiskennzahl
                         - messwertstatus
                         - wert
-                        - statuszusatzinformationen
+                        - nutzungszeitpunkt
                       x-apidog-ignore-properties: []
                     description: Positionsdaten EDIFACT SG9. LIN+x
                 x-apidog-orders:
@@ -739,7 +2870,7 @@ components:
               properties:
                 rollencodenummer:
                   type: string
-                  description: 'Nachrichtenabsender EDIFACT SG2. NAD MS '
+                  description: 'Nachrichtenabsender EDIFACT SG2. NAD MS+MP-ID '
                 rollencodetyp:
                   type: string
                   description: >-
@@ -812,7 +2943,7 @@ components:
               required:
                 - rollencodenummer
                 - rollencodetyp
-              description: Nachrichtenempfänger EDIFACT SG11. NAD MR
+              description: Nachrichtenempfänger EDIFACT SG2. NAD MR
               x-apidog-ignore-properties: []
           x-apidog-orders:
             - kategorie
@@ -1269,7 +3400,7 @@ components:
               required:
                 - rollencodenummer
                 - rollencodetyp
-              description: Nachrichtenempfänger EDIFACT SG11. NAD MR
+              description: Nachrichtenempfänger EDIFACT SG2. NAD MR
               x-apidog-ignore-properties: []
           x-apidog-orders:
             - kategorie
@@ -2113,7 +4244,7 @@ components:
           properties:
             dokumentennummer:
               type: string
-              description: 'Dokumentennummer - EDIFACT BGM '
+              description: 'Dokumentennummer - EDIFACT BGM  '
             kategorie:
               type: string
               description: Änderungskategorie - EDIFACT BGM Z56
@@ -2190,12 +4321,9 @@ components:
                     type: object
                     properties:
                       rufnummer:
-                        type: object
+                        type: string
                         title: Rufnummer
-                        description: Rufnummer
-                        x-apidog-orders: []
-                        properties: {}
-                        x-apidog-ignore-properties: []
+                        description: Rufnummern - EDIFACT SG6. COM+Rufnummer
                       nummerntyp:
                         type: string
                         title: Rufnummernart
@@ -2292,7 +4420,7 @@ components:
               x-apidog-orders:
                 - rollencodenummer
                 - rollencodetyp
-              description: MP-ID - EDIFACT SG3. NAD+MR+MP-ID
+              description: Empfänger - EDIFACT SG3. NAD+MR
               required:
                 - rollencodenummer
                 - rollencodetyp
@@ -7620,7 +9748,7 @@ components:
                       SG4.IDE+24.SG8.SEQ+Z52.SG10.CCI+[Z17|Z50|Z56].CAV+[ZH0|ZH1]
                     enum:
                       - INBETRIEBSETZUNG_NACH_2023
-                      - INBETRIEBSETZUN_VOR_2024
+                      - INBETRIEBSETZUNG_VOR_2024
                 x-apidog-orders:
                   - einordnung
                   - weitereEinrichtung
@@ -16545,6 +18673,10 @@ components:
               description: >-
                 Nummer des Vorgangs / UTILMD UTILTS IDE+24 / INSRPT INVOIC DOC |
                 EDIFACT: SG4.IDE+24
+            geraeteausbaudatum:
+              description: Geräteausbaudatum / DTM+206
+              type: string
+              format: date-time
           x-apidog-orders:
             - vertragsende
             - dokumentennummer
@@ -16558,6 +18690,7 @@ components:
             - pruefidentifikator
             - transaktionsgrund
             - vorgangsnummer
+            - geraeteausbaudatum
           x-apidog-ignore-properties: []
         stammdaten:
           type: object

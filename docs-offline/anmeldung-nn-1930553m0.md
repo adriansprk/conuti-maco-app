@@ -16,7 +16,8 @@
       </Tab>        
       <Tab title="📄START_LIEFERBEGINN">
           <Accordion title="PI_44001" defaultOpen={false}>           
-<DataSchema id="8347890" />
+
+<DataSchema id="13005650" />
           </Accordion>
                     
       </Tab>
@@ -35,25 +36,28 @@
       </Tab>
         <Tab title="📄44001 Anmeldung NN">
             <Accordion title="PI_44001" defaultOpen={false}>
-                <DataSchema id="8347890" />
+                <DataSchema id="13005650" />
             </Accordion>
                      
       </Tab>
         <Tab title="📄44036 Info best. Zuordnung">
             <Accordion title="PI_44036" defaultOpen={false}>
-                <DataSchema id="8347915" />
+             
+<DataSchema id="13005672" />
             </Accordion>
                      
         </Tab>
       <Tab title="📄44003 neg. Rückmeldung"> 
           <Accordion title="PI_44003" defaultOpen={false}>
-                 <DataSchema id="8347892" />
+                 
+<DataSchema id="13005652" />
           </Accordion>
         
         </Tab>
       <Tab title="📄44002 pos. Rückmeldung">
           <Accordion title="PI_44002" defaultOpen={false}>
-                 <DataSchema id="8347891" />
+               
+<DataSchema id="13005651" />
           </Accordion>
       </Tab>
     </Tabs>

@@ -181,7 +181,7 @@ paths:
                         verbrauchsart: EMOB
                         artEMobilitaet: LS
                         enwg: true
-                        inbetriebsetzungsdatum: INBETRIEBSETZUN_VOR_2024
+                        inbetriebsetzungsdatum: INBETRIEBSETZUNG_VOR_2024
                         einordnung: WECHSELMOEGLICHKEIT_EINMALIG_NOCH_MOEGLICH
                         weitereEinrichtung: false
                         art: STROMVERBRAUCH
@@ -200,7 +200,7 @@ paths:
                         verbrauchsart: EMOB
                         artEMobilitaet: LS
                         enwg: true
-                        inbetriebsetzungsdatum: INBETRIEBSETZUN_VOR_2024
+                        inbetriebsetzungsdatum: INBETRIEBSETZUNG_VOR_2024
                         einordnung: WECHSELMOEGLICHKEIT_EINMALIG_NOCH_MOEGLICH
                         weitereEinrichtung: false
                         art: STROMVERBRAUCH
@@ -5240,7 +5240,7 @@ components:
                       SG4.IDE+24.SG8.SEQ+Z52.SG10.CCI+[Z17|Z50|Z56].CAV+[ZH0|ZH1]
                     enum:
                       - INBETRIEBSETZUNG_NACH_2023
-                      - INBETRIEBSETZUN_VOR_2024
+                      - INBETRIEBSETZUNG_VOR_2024
                   artEMobilitaet:
                     type: string
                 x-apidog-orders:

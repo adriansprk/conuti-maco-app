@@ -8607,7 +8607,7 @@ components:
                       SG4.IDE+24.SG8.SEQ+[ZG4|ZG5].SG10.CCI+[Z17|Z50|Z56].CAV+[ZH0|ZH1]
                     enum:
                       - INBETRIEBSETZUNG_NACH_2023
-                      - INBETRIEBSETZUN_VOR_2024
+                      - INBETRIEBSETZUNG_VOR_2024
                 x-apidog-orders:
                   - einordnung
                   - weitereEinrichtung
@@ -16250,6 +16250,10 @@ components:
               description: >-
                 Nummer des Vorgangs / UTILMD UTILTS IDE+24 / INSRPT INVOIC DOC |
                 EDIFACT: SG4.IDE+24
+            geraeteausbaudatum:
+              description: Geräteausbaudatum / DTM+206
+              type: string
+              format: date-time
           x-apidog-orders:
             - vertragsende
             - dokumentennummer
@@ -16264,6 +16268,7 @@ components:
             - transaktionsgrund
             - antwortstatus
             - vorgangsnummer
+            - geraeteausbaudatum
           x-apidog-ignore-properties: []
         stammdaten:
           type: object

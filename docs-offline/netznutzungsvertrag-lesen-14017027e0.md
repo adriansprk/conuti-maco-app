@@ -74,7 +74,301 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Vertrag'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Vertrag'
+                description: Liste der Netznutzungsverträge
+              example:
+                - boTyp: NETZNUTZUNGSVERTRAG
+                  versionStruktur: consectetur in
+                  sparte: ABWASSER
+                  vertragsart: sit enim anim Excepteur
+                  vertragsnummer: '13'
+                  beschreibung: enim ut
+                  lokationsId: '16'
+                  lokationsTyp: TECHNISCHE_RESSOURCE
+                  vertragsstatus: AKTIV
+                  vertragsbeginn: '1985-06-30T00:10:34.364Z'
+                  vertragsende: '1999-03-24T04:45:35.496Z'
+                  gemeinderabatt: -76311260
+                  vertragskonditionen:
+                    netznutzungszahler: LIEFERANT
+                    netznutzungsvertrag: LIEFERANTEN_NB
+                    netznutzungsabrechnung:
+                      zeiteinheit: HALBJAHR
+                      dauer: 9617695
+                      startdatum: '1973-09-12T22:10:02.058Z'
+                      enddatum: '2011-06-08T06:30:54.261Z'
+                      einheit: JAHR
+                      ableseZeitraum: et nulla
+                      abrechnungsZeitraum: esse occaecat qui
+                      zeitraumText: irure cupidatat Duis sed
+                      zeitraumId: 6
+                    beinhaltetSingulaerGenutzteBetriebsmittel: true
+                    netznutzungsabrechnungsgrundlage: LIEFERSCHEIN
+                    netznutzungsabrechnungsvariante: ARBEITSPREIS_LEISTUNGSPREIS
+                    haushaltskunde: true
+                    abrechnungUeberNna: false
+                    gemeinderabatt:
+                      wert: 14350103.493976489
+                      einheit: laboris
+                      typ: ut anim
+                      bemessungsgrundlage: 59402813.07486045
+                    startAbrechnungsjahr: '2012-06-04T19:52:51.467Z'
+                    naechstenetznutzungsabrechnung: ex pariatur Excepteur
+                    abrechnungsintervall: 32756860
+                    netznutzungsabrechnungIntervall: 40789335
+                    geplanteTurnusablesung:
+                      zeiteinheit: STUNDE
+                      dauer: 47159088
+                      startdatum: '2019-07-16T21:41:15.665Z'
+                      enddatum: '2024-07-01T18:14:53.861Z'
+                      einheit: SEKUNDE
+                      ableseZeitraum: proident
+                      abrechnungsZeitraum: id in consectetur
+                      zeitraumText: velit est incididunt
+                      zeitraumId: 81
+                    beauftragungMsb: VERTRAGSBEENDIGUNG_MSB
+                    kuendigungsfrist:
+                      zeiteinheit: TAG
+                      dauer: 49681051
+                      startdatum: '1953-01-26T09:08:07.683Z'
+                      enddatum: '1954-11-23T22:37:05.395Z'
+                      einheit: MONAT
+                      ableseZeitraum: labore
+                      abrechnungsZeitraum: sunt aliquip commodo non
+                      zeitraumText: magna in
+                      zeitraumId: 7
+                    vertragslaufzeit:
+                      zeiteinheit: VIERTEL_STUNDE
+                      dauer: -23039570
+                      startdatum: '1993-11-17T12:18:35.717Z'
+                      enddatum: '1950-12-01T01:50:18.942Z'
+                      einheit: TAG
+                      ableseZeitraum: Duis voluptate cillum
+                      abrechnungsZeitraum: qui Duis culpa
+                      zeitraumText: pariatur magna exercitation aute
+                      zeitraumId: 23
+                    kuendigungstermin: mollit laborum dolore aliquip officia
+                    abschlagszyklus:
+                      zeiteinheit: WOCHE
+                      dauer: -76765312
+                      startdatum: '2008-04-08T22:19:18.527Z'
+                      enddatum: '2014-09-13T18:39:45.791Z'
+                      einheit: HALBJAHR
+                      ableseZeitraum: pariatur velit non consectetur
+                      abrechnungsZeitraum: occaecat sunt veniam deserunt
+                      zeitraumText: Ut anim aliquip
+                      zeitraumId: 32
+                    anzahl_abschlaege: 18077798.179535627
+                    beschreibung: ipsum id cupidatat
+                    vertragsverlaengerung:
+                      zeiteinheit: STUNDE
+                      dauer: 17413946
+                      startdatum: '2001-03-15T00:45:48.174Z'
+                      enddatum: '2010-02-13T17:46:25.348Z'
+                      einheit: MINUTE
+                      ableseZeitraum: nisi et
+                      abrechnungsZeitraum: dolore mollit sit deserunt tempor
+                      zeitraumText: labore dolor cupidatat esse
+                      zeitraumId: 70
+                  korrespondenzpartner:
+                    boTyp: ANSPRECHPARTNER
+                    versionStruktur: in
+                    anrede: Excepteur eu sit est minim
+                    name1: Anabel Szendrei
+                    name2: Keno Ruth
+                    name3: Marlene Lohre
+                    name4: William Saflanis
+                    umsatzsteuerId: '3'
+                    glaeubigerId: '8'
+                    emailAdresse: Lias.Ade@gmail.com
+                    website: https://sagenhaft-adjectiv.name/
+                    gewerbekennzeichnung: false
+                    hrnummer: '23'
+                    amtsgericht: nulla
+                    partneradresse:
+                      postleitzahl: dolore ex cupidatat
+                      ort: ut id voluptate
+                      strasse: quis aute dolor
+                      hausnummer: '35'
+                      postfach: sed
+                      adresszusatz: elit consequat Duis commodo nulla
+                      coErgaenzung: qui id dolore cillum officia
+                      landescode: BY
+                      ortsteil: do consequat ut sit dolor
+                      zusatzInformation:
+                        zusatz1: cupidatat Duis
+                        zusatz2: consequat nostrud Lorem
+                        zusatz3: eu occaecat ad
+                        zusatz4: voluptate officia
+                        zusatz5: enim ex Ut
+                    externeKundenummerLieferant: '62'
+                    externeReferenzen:
+                      - exRefName: Kundennummer beim Altlieferanten
+                        exRefWert: irure in anim laborum
+                      - exRefName: Kundennummer beim Lieferanten
+                        exRefWert: sint nisi
+                    geschaeftspartnerrolle:
+                      - MARKTPARTNER
+                    kontaktweg:
+                      - E_MAIL
+                  abrechnungUeberNna: true
+                  datenqualitaet: DIFFERENZ_IM_SYSTEM_VORHANDENE_DATEN
+                  gueltigkeitszeitraum:
+                    zeiteinheit: STUNDE
+                    dauer: 91688709
+                    startdatum: '1949-10-14T01:23:02.914Z'
+                    enddatum: '1998-03-04T09:30:47.758Z'
+                    einheit: STUNDE
+                    ableseZeitraum: velit
+                    abrechnungsZeitraum: culpa consectetur sunt qui mollit
+                    zeitraumText: dolor
+                    zeitraumId: 50
+                  vertragspartner1:
+                    - boTyp: BERECHNUNGSFORMEL
+                      versionStruktur: anim
+                      anrede: in irure qui aute velit
+                      name1: René Deerberg
+                      name2: Brian Doskoczynski
+                      name3: Jaron Kahlmeyer
+                      name4: Tamia Dietzsch
+                      umsatzsteuerId: '94'
+                      glaeubigerId: '97'
+                      emailAdresse: Taylor13@yahoo.com
+                      website: https://unbestritten-wohnzimmer.org/
+                      gewerbekennzeichnung: false
+                      hrnummer: '28'
+                      amtsgericht: anim deserunt Duis
+                      partneradresse:
+                        postleitzahl: occaecat minim
+                        ort: magna
+                        strasse: quis
+                        hausnummer: '25'
+                        postfach: do esse ut tempor dolor
+                        adresszusatz: in enim labore
+                        coErgaenzung: tempor dolore dolor
+                        landescode: BA
+                        ortsteil: Excepteur occaecat
+                        zusatzInformation:
+                          zusatz1: ullamco elit minim tempor
+                          zusatz2: velit
+                          zusatz3: voluptate eiusmod ad cillum aliquip
+                          zusatz4: sit laborum ut officia
+                          zusatz5: Lorem aute est
+                      externeKundenummerLieferant: '81'
+                      externeReferenzen:
+                        - exRefName: Kundennummer beim Altlieferanten
+                          exRefWert: irure quis officia do ipsum
+                        - exRefName: Kundennummer beim Altlieferanten
+                          exRefWert: culpa Excepteur occaecat quis
+                      geschaeftspartnerrolle:
+                        - KORRESPONDENZEMPFAENGER
+                      kontaktweg:
+                        - TELEFONAT
+                        - ANSCHREIBEN
+                    - boTyp: AD_HOC_STEUERKANAL
+                      versionStruktur: consequat deserunt et commodo
+                      anrede: sed magna Lorem
+                      name1: Dr. Julian Hessek
+                      name2: Mike Koob
+                      name3: William Gutjahr
+                      name4: Kalle Mallmann
+                      umsatzsteuerId: '83'
+                      glaeubigerId: '33'
+                      emailAdresse: Tjark_Schaning@gmail.com
+                      website: https://hochrangig-kirche.ch
+                      gewerbekennzeichnung: true
+                      hrnummer: '49'
+                      amtsgericht: officia ullamco
+                      partneradresse:
+                        postleitzahl: sunt eu
+                        ort: labore
+                        strasse: adipisicing eu Duis Ut
+                        hausnummer: '21'
+                        postfach: irure
+                        adresszusatz: dolore
+                        coErgaenzung: dolor
+                        landescode: PH
+                        ortsteil: do adipisicing
+                        zusatzInformation:
+                          zusatz1: enim officia ullamco aliquip in
+                          zusatz2: aliquip anim consequat
+                          zusatz3: Excepteur ex
+                          zusatz4: tempor in
+                          zusatz5: Lorem aliqua ut pariatur magna
+                      externeKundenummerLieferant: '83'
+                      externeReferenzen:
+                        - exRefName: Kundennummer beim Lieferanten
+                          exRefWert: Lorem ut Excepteur
+                        - exRefName: Kundennummer beim Lieferanten
+                          exRefWert: sunt et
+                        - exRefName: Kundennummer beim Lieferanten
+                          exRefWert: dolore aliqua cupidatat
+                      geschaeftspartnerrolle:
+                        - LIEFERANT
+                        - KUNDE
+                        - LIEFERANT
+                      kontaktweg:
+                        - TELEFONAT
+                        - E_MAIL
+                        - TELEFONAT
+                  vertragspartner2:
+                    - boTyp: ENERGIELIEFERVERTRAG
+                      versionStruktur: dolore dolore adipisicing
+                      anrede: exercitation cillum
+                      name1: Karl Weis
+                      name2: Maximilian Hüttcher
+                      name3: Tobias Mögenburg
+                      name4: Lennox Bringmann
+                      umsatzsteuerId: '74'
+                      glaeubigerId: '41'
+                      emailAdresse: Phoebe.Forkel@gmail.com
+                      website: https://wunderschon-fuball.de
+                      gewerbekennzeichnung: true
+                      hrnummer: '36'
+                      amtsgericht: enim reprehenderit cupidatat id
+                      partneradresse:
+                        postleitzahl: minim sit Duis cupidatat
+                        ort: ex amet in est
+                        strasse: sed Duis eu
+                        hausnummer: '1'
+                        postfach: magna reprehenderit adipisicing
+                        adresszusatz: sint nulla et ut
+                        coErgaenzung: ut cillum
+                        landescode: ZM
+                        ortsteil: cupidatat culpa ullamco qui
+                        zusatzInformation:
+                          zusatz1: veniam incididunt anim ipsum
+                          zusatz2: dolore qui
+                          zusatz3: dolor aliquip et dolore ipsum
+                          zusatz4: ut veniam esse adipisicing do
+                          zusatz5: proident minim quis qui ad
+                      externeKundenummerLieferant: '37'
+                      externeReferenzen:
+                        - exRefName: Kundennummer beim Lieferanten
+                          exRefWert: sint proident
+                        - exRefName: Kundennummer beim Lieferanten
+                          exRefWert: reprehenderit et
+                        - exRefName: Kundennummer beim Altlieferanten
+                          exRefWert: qui dolore in aliqua incididunt
+                      geschaeftspartnerrolle:
+                        - ABLESEKARTENEMPFAENGER
+                        - ABLESEKARTENEMPFAENGER
+                      kontaktweg:
+                        - E_MAIL
+                        - SMS
+                  enFG:
+                    - grundlageVerringerungUmlagen: ERFUELLT_NICHT_VORAUSSETZUNG_NACH_ENFG
+                      grund:
+                        - >-
+                          ENFG_HERSTELLUNG_VON_WASSERSTOFF_IN_STROMKOSTENINTENSIVEN_UNTERNEHMEN
+                        - ENFG_HERSTELLUNG_VON_GRUENEN_WASSERSTOFF
+                        - ENFG_LANDSTROMANLAGEN
+                    - grundlageVerringerungUmlagen: ERFUELLT_NICHT_VORAUSSETZUNG_NACH_ENFG
+                      grund:
+                        - >-
+                          ENFG_HERSTELLUNG_VON_WASSERSTOFF_IN_STROMKOSTENINTENSIVEN_UNTERNEHMEN
           headers: {}
           x-apidog-name: OK
         '400':
@@ -158,15 +452,18 @@ components:
             55608 55004 55005 55051 55052 55238 55239 55235 55237
         vertragsende:
           type: string
-          format: date-time
           description: >-
-            Gibt das Ende der Netznutzung oder einer Zuordnung an. 
+            Gibt das Ende der Netznutzung oder einer Zuordnung an. Wenn noch
+            kein Vertragsende vorliegt wird der default Wert
+            "9999-12-31T23:59:59Z" erwartet.
 
             DTM 93
 
             PI 55016 55017 55001 55002 55600 55602 55013 55014 55607 55608 55010
             55011 55004 55005 55007 55008 55039 55040 55051 55052 55240 55241
             55242 55243 55236 55237
+          format: date-time
+          default: '9999-12-31T23:59:59Z'
         gemeinderabatt:
           type: integer
           description: |-
@@ -394,6 +691,7 @@ components:
         zeitraumText: &ref_9
           type: string
           description: ZeitraumText
+          x-apidog-mock: "DTM+Z01:03MQ:Z01'\r\nNachfolgend noch einige Beispiele zur Übermittlung der Kündigungsfrist in der\r\nKommunikation von LF zu LF:\r\nBeispiel 1:\r\nDTM+Z01:30TM:Z01'\r\nDies entspricht der Kündigungsfrist von 30 Tagen zum Monatsende.\r\nBeispiel 2:\r\nDTM+Z01:03MJ:Z01'\r\nDies entspricht der Kündigungsfrist von 3 Monaten zum Jahresende. Somit hat die Kündigung\r\n3 Monate vor dem 31.12. zu erfolgen.\r\nBeispiel 3:\r\nDTM+Z01:01MQ:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Quartalsende.\r\nBeispiel 4:\r\nDTM+Z01:01MM:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Monatsende.\r\nBeispiel 5:\r\nDTM+Z01:01MT:Z01'\r\nDTM+Z10:201211152300?+00:303'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum 16.11.2012 00:00 Uhr.\r\nBeispiel 6:\r\nDTM+Z01:02WT:Z01'\r\nDTM+Z10:1120:106'\r\nDies entspricht der Kündigungsfrist von 2 Wochen zum 20. eines Monats 00:00 Uhr ab\r\nNovember.\r\nBeispiel 7:\r\nDTM+Z01:14TR:Z01'\r\nDies entspricht einer rollierenden Kündigungsfrist von 14 Tagen in der Zukunft."
         zeitraumId: &ref_10
           type: integer
           description: |-
@@ -410,6 +708,8 @@ components:
         - abrechnungsZeitraum
         - zeitraumText
         - zeitraumId
+      required:
+        - enddatum
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Zeiteinheit:
@@ -603,6 +903,11 @@ components:
           items:
             $ref: '#/components/schemas/Kontaktart'
           description: Bevorzugter Kontaktweg des Geschäftspartners.
+        ansprechpartner:
+          $ref: '#/components/schemas/Ansprechpartner'
+          description: >-
+            Ansprechpartner as in EDIFACT CTA+IC' COM+?+3222271020:TE', that
+            includes e.g. the phone number of customer.
       required:
         - boTyp
         - versionStruktur
@@ -626,10 +931,107 @@ components:
         - externeReferenzen
         - geschaeftspartnerrolle
         - kontaktweg
+        - ansprechpartner
       examples:
         - $ref: >-
             https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/Geschaeftspartner.json
       x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    Ansprechpartner:
+      title: Ansprechpartner
+      type: object
+      properties:
+        boTyp: *ref_2
+        versionStruktur:
+          type: string
+          default: '1'
+          description: versionStruktur
+        nachname:
+          type: string
+          description: Nachname (Familienname) des Ansprechpartners
+        eMailAdresse:
+          type: string
+          description: E-Mail Adresse
+        rufnummern:
+          type: array
+          items:
+            $ref: '#/components/schemas/Rufnummer'
+          description: >-
+            Liste der Telefonnummern, unter denen der Ansprechpartner erreichbar
+            ist.
+      required:
+        - boTyp
+        - versionStruktur
+      x-apidog-orders:
+        - boTyp
+        - versionStruktur
+        - nachname
+        - eMailAdresse
+        - rufnummern
+      examples:
+        - $ref: >-
+            https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/Ansprechpartner.json
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    Rufnummer:
+      title: Rufnummer
+      type: object
+      properties:
+        nummerntyp:
+          $ref: '#/components/schemas/Rufnummernart'
+          description: |-
+            Art des Kommunikationsmittels
+            COM
+        rufnummer:
+          type: string
+          description: Rufnummer
+      x-apidog-orders:
+        - nummerntyp
+        - rufnummer
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    Rufnummernart:
+      type: string
+      title: Rufnummernart
+      description: Rufnummernart
+      enum:
+        - RUF_ZENTRALE
+        - FAX_ZENTRALE
+        - SAMMELRUF
+        - SAMMELFAX
+        - ABTEILUNGRUF
+        - ABTEILUNGFAX
+        - RUF_DURCHWAHL
+        - FAX_DURCHWAHL
+        - MOBIL_NUMMER
+      x-apidog-enum:
+        - value: RUF_ZENTRALE
+          name: weiteres Telefon
+          description: AJ
+        - value: FAX_ZENTRALE
+          name: ''
+          description: ''
+        - value: SAMMELRUF
+          name: ''
+          description: ''
+        - value: SAMMELFAX
+          name: ''
+          description: ''
+        - value: ABTEILUNGRUF
+          name: ''
+          description: ''
+        - value: ABTEILUNGFAX
+          name: ''
+          description: ''
+        - value: RUF_DURCHWAHL
+          name: Telefon
+          description: TE
+        - value: FAX_DURCHWAHL
+          name: Telefax
+          description: FX
+        - value: MOBIL_NUMMER
+          name: Handy
+          description: AL
       x-apidog-folder: ''
     Kontaktart:
       title: Kontaktart
@@ -1202,6 +1604,8 @@ components:
             abrechnungsZeitraum: *ref_8
             zeitraumText: *ref_9
             zeitraumId: *ref_10
+          required:
+            - enddatum
           x-apidog-ignore-properties:
             - zeiteinheit
             - dauer
@@ -1382,6 +1786,8 @@ components:
         - MELO
         - NELO
         - TECHNISCHE_RESSOURCE
+        - STEUERBARE_RESSOURCE
+        - TRANCHE
       x-apidog-enum:
         - value: MALO
           name: Marktlokation
@@ -1395,6 +1801,12 @@ components:
         - value: TECHNISCHE_RESSOURCE
           name: Technische Ressource
           description: Z37
+        - value: STEUERBARE_RESSOURCE
+          name: ''
+          description: ''
+        - value: TRANCHE
+          name: ''
+          description: ''
       x-apidog-folder: ''
     Sparte:
       type: string

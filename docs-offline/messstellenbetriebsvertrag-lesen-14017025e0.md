@@ -87,7 +87,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Vertrag'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Vertrag'
+                description: Liste der Messstellenbetriebsverträge
           headers: {}
           x-apidog-name: OK
         '400':
@@ -171,15 +174,18 @@ components:
             55608 55004 55005 55051 55052 55238 55239 55235 55237
         vertragsende:
           type: string
-          format: date-time
           description: >-
-            Gibt das Ende der Netznutzung oder einer Zuordnung an. 
+            Gibt das Ende der Netznutzung oder einer Zuordnung an. Wenn noch
+            kein Vertragsende vorliegt wird der default Wert
+            "9999-12-31T23:59:59Z" erwartet.
 
             DTM 93
 
             PI 55016 55017 55001 55002 55600 55602 55013 55014 55607 55608 55010
             55011 55004 55005 55007 55008 55039 55040 55051 55052 55240 55241
             55242 55243 55236 55237
+          format: date-time
+          default: '9999-12-31T23:59:59Z'
         gemeinderabatt:
           type: integer
           description: |-
@@ -407,6 +413,7 @@ components:
         zeitraumText: &ref_9
           type: string
           description: ZeitraumText
+          x-apidog-mock: "DTM+Z01:03MQ:Z01'\r\nNachfolgend noch einige Beispiele zur Übermittlung der Kündigungsfrist in der\r\nKommunikation von LF zu LF:\r\nBeispiel 1:\r\nDTM+Z01:30TM:Z01'\r\nDies entspricht der Kündigungsfrist von 30 Tagen zum Monatsende.\r\nBeispiel 2:\r\nDTM+Z01:03MJ:Z01'\r\nDies entspricht der Kündigungsfrist von 3 Monaten zum Jahresende. Somit hat die Kündigung\r\n3 Monate vor dem 31.12. zu erfolgen.\r\nBeispiel 3:\r\nDTM+Z01:01MQ:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Quartalsende.\r\nBeispiel 4:\r\nDTM+Z01:01MM:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Monatsende.\r\nBeispiel 5:\r\nDTM+Z01:01MT:Z01'\r\nDTM+Z10:201211152300?+00:303'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum 16.11.2012 00:00 Uhr.\r\nBeispiel 6:\r\nDTM+Z01:02WT:Z01'\r\nDTM+Z10:1120:106'\r\nDies entspricht der Kündigungsfrist von 2 Wochen zum 20. eines Monats 00:00 Uhr ab\r\nNovember.\r\nBeispiel 7:\r\nDTM+Z01:14TR:Z01'\r\nDies entspricht einer rollierenden Kündigungsfrist von 14 Tagen in der Zukunft."
         zeitraumId: &ref_10
           type: integer
           description: |-
@@ -423,6 +430,8 @@ components:
         - abrechnungsZeitraum
         - zeitraumText
         - zeitraumId
+      required:
+        - enddatum
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Zeiteinheit:
@@ -616,6 +625,11 @@ components:
           items:
             $ref: '#/components/schemas/Kontaktart'
           description: Bevorzugter Kontaktweg des Geschäftspartners.
+        ansprechpartner:
+          $ref: '#/components/schemas/Ansprechpartner'
+          description: >-
+            Ansprechpartner as in EDIFACT CTA+IC' COM+?+3222271020:TE', that
+            includes e.g. the phone number of customer.
       required:
         - boTyp
         - versionStruktur
@@ -639,10 +653,107 @@ components:
         - externeReferenzen
         - geschaeftspartnerrolle
         - kontaktweg
+        - ansprechpartner
       examples:
         - $ref: >-
             https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/Geschaeftspartner.json
       x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    Ansprechpartner:
+      title: Ansprechpartner
+      type: object
+      properties:
+        boTyp: *ref_2
+        versionStruktur:
+          type: string
+          default: '1'
+          description: versionStruktur
+        nachname:
+          type: string
+          description: Nachname (Familienname) des Ansprechpartners
+        eMailAdresse:
+          type: string
+          description: E-Mail Adresse
+        rufnummern:
+          type: array
+          items:
+            $ref: '#/components/schemas/Rufnummer'
+          description: >-
+            Liste der Telefonnummern, unter denen der Ansprechpartner erreichbar
+            ist.
+      required:
+        - boTyp
+        - versionStruktur
+      x-apidog-orders:
+        - boTyp
+        - versionStruktur
+        - nachname
+        - eMailAdresse
+        - rufnummern
+      examples:
+        - $ref: >-
+            https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/Ansprechpartner.json
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    Rufnummer:
+      title: Rufnummer
+      type: object
+      properties:
+        nummerntyp:
+          $ref: '#/components/schemas/Rufnummernart'
+          description: |-
+            Art des Kommunikationsmittels
+            COM
+        rufnummer:
+          type: string
+          description: Rufnummer
+      x-apidog-orders:
+        - nummerntyp
+        - rufnummer
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    Rufnummernart:
+      type: string
+      title: Rufnummernart
+      description: Rufnummernart
+      enum:
+        - RUF_ZENTRALE
+        - FAX_ZENTRALE
+        - SAMMELRUF
+        - SAMMELFAX
+        - ABTEILUNGRUF
+        - ABTEILUNGFAX
+        - RUF_DURCHWAHL
+        - FAX_DURCHWAHL
+        - MOBIL_NUMMER
+      x-apidog-enum:
+        - value: RUF_ZENTRALE
+          name: weiteres Telefon
+          description: AJ
+        - value: FAX_ZENTRALE
+          name: ''
+          description: ''
+        - value: SAMMELRUF
+          name: ''
+          description: ''
+        - value: SAMMELFAX
+          name: ''
+          description: ''
+        - value: ABTEILUNGRUF
+          name: ''
+          description: ''
+        - value: ABTEILUNGFAX
+          name: ''
+          description: ''
+        - value: RUF_DURCHWAHL
+          name: Telefon
+          description: TE
+        - value: FAX_DURCHWAHL
+          name: Telefax
+          description: FX
+        - value: MOBIL_NUMMER
+          name: Handy
+          description: AL
       x-apidog-folder: ''
     Kontaktart:
       title: Kontaktart
@@ -1215,6 +1326,8 @@ components:
             abrechnungsZeitraum: *ref_8
             zeitraumText: *ref_9
             zeitraumId: *ref_10
+          required:
+            - enddatum
           x-apidog-ignore-properties:
             - zeiteinheit
             - dauer
@@ -1395,6 +1508,8 @@ components:
         - MELO
         - NELO
         - TECHNISCHE_RESSOURCE
+        - STEUERBARE_RESSOURCE
+        - TRANCHE
       x-apidog-enum:
         - value: MALO
           name: Marktlokation
@@ -1408,6 +1523,12 @@ components:
         - value: TECHNISCHE_RESSOURCE
           name: Technische Ressource
           description: Z37
+        - value: STEUERBARE_RESSOURCE
+          name: ''
+          description: ''
+        - value: TRANCHE
+          name: ''
+          description: ''
       x-apidog-folder: ''
     Sparte:
       type: string

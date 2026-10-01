@@ -87,316 +87,319 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Messlokation'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Messlokation'
+                description: Liste der Messlokation
               example:
-                boTyp: MESSLOKATION
-                versionStruktur: '1'
-                messlokationsId: '963751583864571444542241001807710'
-                sparte: STROM
-                energierichtung: AUSSP
-                netzebenemessung: ND
-                messgebietNr: '5252540425'
-                grundzustaendigerMSBCodeNr: '0584087935'
-                messadresse:
-                  postleitzahl: '96930'
-                  ort: Siemonburg
-                  strasse: Müritzstr.
-                  hausnummer: '2'
-                  postfach: consectetur do
-                  adresszusatz: ex ullamco nulla consectetur ea
-                  coErgaenzung: ut esse
-                  landescode: TO
-                  ortsteil: Neu Laila
-                  zusatzInformation:
-                    zusatz1: ullamco ut enim commodo
-                    zusatz2: ex
-                    zusatz3: Lorem sit tempor
-                    zusatz4: consequat non officia aliqua
-                    zusatz5: enim esse mollit minim
-                bilanzierungsmethode: TLP_GEMEINSAM
-                abrechnungmessstellenbetriebnna: true
-                gasqualitaet: L_GAS
-                verlustfaktor: 1.25
-                betriebszustand: REGELBETRIEB
-                ablesekartenempfaenger:
-                  boTyp: GESCHAEFTSPARTNER
+                - boTyp: MESSLOKATION
                   versionStruktur: '1'
-                  anrede: Frau
-                  name1: Jess
-                  name2: Rahel
-                  name3: laborum esse
-                  name4: id culpa consequat
-                  umsatzsteuerId: DE111000001
-                  glaeubigerId: '922217'
-                  emailAdresse: Ashley39@gmail.com
-                  website: https://sagenhaft-meteorologie.net/
-                  gewerbekennzeichnung: false
-                  hrnummer: '148223'
-                  amtsgericht: Aignerburg
-                  partneradresse:
-                    postleitzahl: '75930'
-                    ort: Alt Arved
-                    strasse: Steinbücheler Str.
-                    hausnummer: 26c
-                    postfach: veniam
-                    adresszusatz: ut
-                    coErgaenzung: ad qui ex
-                    landescode: DM
-                    ortsteil: Osnabrück
+                  messlokationsId: '963751583864571444542241001807710'
+                  sparte: STROM
+                  energierichtung: AUSSP
+                  netzebenemessung: ND
+                  messgebietNr: '5252540425'
+                  grundzustaendigerMSBCodeNr: '0584087935'
+                  messadresse:
+                    postleitzahl: '96930'
+                    ort: Siemonburg
+                    strasse: Müritzstr.
+                    hausnummer: '2'
+                    postfach: consectetur do
+                    adresszusatz: ex ullamco nulla consectetur ea
+                    coErgaenzung: ut esse
+                    landescode: TO
+                    ortsteil: Neu Laila
                     zusatzInformation:
-                      zusatz1: voluptate
-                      zusatz2: commodo nulla
-                      zusatz3: minim in
-                      zusatz4: commodo et sed ipsum reprehenderit
-                      zusatz5: reprehenderit occaecat sint commodo deserunt
-                  externeKundenummerLieferant: '651247'
-                  externeReferenzen:
-                    - exRefName: Kundennummer beim Lieferanten
-                      exRefWert: '0785635775'
-                  geschaeftspartnerrolle:
-                    - LIEFERANT
-                  kontaktweg:
-                    - SMS
-                referenzMarktlokationsId: '68887262736'
-                verwendungsumfang: MESSLOKATION_PROZESSUAL_BEHANDELT
-                zukuenftigerMeldepunkt: false
-                lokationszuordnung: BEGINNT
-                beteiligterMarktpartner:
-                  boTyp: MARKTTEILNEHMER
-                  versionStruktur: '1'
-                  geschaeftspartnerrolle: MARKTPARTNER
-                  anrede: Dr.
-                  name1: Schmidtchen
-                  name2: Enie
-                  name3: dolor enim dolor anim
-                  name4: veniam non incididunt consectetur esse
-                  partneradresse:
-                    postleitzahl: '75004'
-                    ort: Schäfferburg
-                    strasse: Löfflerstr.
-                    hausnummer: '1'
-                    postfach: laborum
-                    adresszusatz: consequat
-                    coErgaenzung: Excepteur occaecat aliquip veniam nostrud
-                    landescode: TZ
-                    ortsteil: Gollerstadt
-                    zusatzInformation:
-                      zusatz1: proident dolor in ea
-                      zusatz2: enim
-                      zusatz3: ex minim consequat mollit
-                      zusatz4: nulla Lorem
-                      zusatz5: et eiusmod
-                  gewerbekennzeichnung: true
-                  externeKundenummerLieferant: Duis sed ullamco ut
-                  marktrolle: KN
-                  rollencodenummer: '103962598'
-                  rollencodetyp: GLN
-                  umsatzsteuerId: DE110000001
-                  steuernummer: '868805519'
-                  ansprechpartner:
-                    boTyp: ANSPRECHPARTNER
+                      zusatz1: ullamco ut enim commodo
+                      zusatz2: ex
+                      zusatz3: Lorem sit tempor
+                      zusatz4: consequat non officia aliqua
+                      zusatz5: enim esse mollit minim
+                  bilanzierungsmethode: TLP_GEMEINSAM
+                  abrechnungmessstellenbetriebnna: true
+                  gasqualitaet: L_GAS
+                  verlustfaktor: 1.25
+                  betriebszustand: REGELBETRIEB
+                  ablesekartenempfaenger:
+                    boTyp: GESCHAEFTSPARTNER
                     versionStruktur: '1'
-                    nachname: Schulte
-                    eMailAdresse: Delia_Zuber@yahoo.com
-                    rufnummern:
-                      - nummerntyp: RUF_DURCHWAHL
-                        rufnummer: (02074) 0192292
-                  makoadresse: in ut ex nulla
-                  downloadlinkZertifikat: https://unfassbar-fuball.org/
-                  amtsgericht: Rheine
-                  hrnummer: '501520'
-                  website: https://leger-stunde.ch/
-                  faxnummer: +49-946-7543171
-                  kommunikationsrolle: RAHMENVERTRAEGE
-                  weiterverpflichtet: true
-                  kommunikationsparameter:
-                    zieladresse:
-                      zieladresse1: consequat sit dolor labore
-                      zieladresse2: consectetur culpa fugiat
-                      zieladresse3: Excepteur
-                      zieladresse4: irure magna veniam dolor in
-                      zieladresse5: mollit eiusmod sunt ut dolore
-                    zertifikatsAussteller:
-                      zertifikatsAussteller1: veniam laboris nisi
-                      zertifikatsAussteller2: amet non
-                      zertifikatsAussteller3: magna elit
-                      zertifikatsAussteller4: id
-                      zertifikatsAussteller5: in sit Excepteur
-                    zertifikatsNutzer:
-                      zertifikatsNutzer1: ut do ex
-                      zertifikatsNutzer2: incididunt labore tempor
-                      zertifikatsNutzer3: commodo cillum id fugiat
-                      zertifikatsNutzer4: occaecat
-                      zertifikatsNutzer5: dolore velit anim
-                  messstellenbetreiberEigenschaft: GRUNDZUSTAENDIGER_MESSSTELLENBETREIBER
-                  bankverbindung:
-                    - verwendungszweck: BV_ZAHLUNG_MSB_ABRECHNNUNG
-                      iban: TN1374930545328100360885
-                      kontoinhaber: Vitus Knoll
-                      bic: MBMUMZ3Z6IX
-                      kreditinstitut: Schwarz, Koester und Agostini
-                  erreichbarkeit:
-                    - verfuegbarkeit: MITTWOCH
-                      zeit: sint
-                  ipAdresse: dc69:ec6e:4ce2:9efc:c5b3:cad2:4a8c:e4de
-                  ipRange:
-                    untereGrenze: 229.5.34.30
-                    obereGrenze: b6e8:badf:dca6:9aab:f05d:aadb:ee8e:b409
-                  zuordnungVon: '1918-06-14T07:29:55.0Z'
-                  zuordnungBis: '1965-06-25T08:23:10.0Z'
-                  bilanzkreis: est non velit nostrud id
-                  verwendungszweckBilanzkreis: SONSTIGE_ERZEUGENDE_MARKTLOKATION
-                geraete:
-                  - geraetetyp: DREHKOLBENGASZAEHLER
-                    bezeichnung: eu Ut pariatur eiusmod sint
-                    geraetenummer: '56011'
-                    geraetereferenz: REF_100000
-                    geraeteeigenschaften:
-                      geraetetyp: ETHERNET_KOM
-                      geraetemerkmal: WASSER_VWZ07
-                      faktor: 8.25
-                    volumenerfassung: SCHLEICHMENGENUNTERDRUECKUNG
-                    weitereGeraetenummern:
-                      - '65290'
-                messdienstleistung:
-                  - dienstleistungstyp: DATENBEREITSTELLUNG_TAEGLICH
-                    bezeichnung: aute non
-                messlokationszaehler:
-                  - ZAEHLER_110
-                zaehlwerke:
-                  - zaehlwerkId: '727708960'
-                    bezeichnung: labore sed occaecat
-                    richtung: EINSP
-                    obisKennzahl: anim velit mollit ea
-                    wandlerfaktor: 4.5
-                    einheit: ANZAHL
-                    schwachlastfaehig: NICHT_SCHWACHLASTFAEHIG
-                    verbrauchsart:
-                      - WK
-                    unterbrechbarkeit: NUV
-                    waermenutzung: WAERMEPUMPE_KAELTE
-                    konzessionsabgabe:
-                      satz: KAS
-                      kosten: -39688147.66035265
-                      kategorie: labore sed
-                    steuerbefreit: true
-                    vorkommastelle: 3
-                    nachkommastelle: 5
-                    abrechnungsrelevant: true
-                    anzahlAblesungen: 4
-                    zaehlzeiten:
-                      register: Excepteur Ut ullamco
-                      zaehlzeitDefinition: nisi proident
-                      schwachlastfaehig: SCHWACHLASTFAEHIG
-                    konfiguration: ad ex in elit reprehenderit
-                    messprodukt: do culpa aute
-                    wertegranularitaet: QUARTALSWEISE
-                    notwendigkeitZweiteMessung: VORHANDEN
-                    werteuebermittlungVerwendungszweck: VORHANDEN
-                    artEMobilitaet: LS
-                    konfigurationsprodukt: velit laborum commodo
-                    keinKonfigurationsprodukt: false
-                    leistungskurvendefinition: sit amet sunt fugiat
-                    verwendungszwecke:
-                      - marktrolle: EIV
-                        zweck:
-                          - ES_LIEGT_KEIN_VERWENDUNGSZWECK_VOR
-                marktrollen:
-                  - boTyp: MARKTTEILNEHMER
-                    versionStruktur: '1'
-                    geschaeftspartnerrolle: INTERESSENT
-                    anrede: Herr
-                    name1: Cotthardt
-                    name2: Kimberley
-                    name3: sunt aliqua
-                    name4: ut sint
-                    partneradresse:
-                      postleitzahl: '27247'
-                      ort: Bad Johanna
-                      strasse: Langenfelder Str.
-                      hausnummer: 77c
-                      postfach: cupidatat irure
-                      adresszusatz: laborum cillum ea
-                      coErgaenzung: Excepteur proident fugiat
-                      landescode: MO
-                      ortsteil: Ahlen
-                      zusatzInformation:
-                        zusatz1: velit tempor eiusmod quis
-                        zusatz2: cupidatat laborum in velit
-                        zusatz3: esse aliquip deserunt labore
-                        zusatz4: Excepteur et tempor reprehenderit
-                        zusatz5: adipisicing non Excepteur
+                    anrede: Frau
+                    name1: Jess
+                    name2: Rahel
+                    name3: laborum esse
+                    name4: id culpa consequat
+                    umsatzsteuerId: DE111000001
+                    glaeubigerId: '922217'
+                    emailAdresse: Ashley39@gmail.com
+                    website: https://sagenhaft-meteorologie.net/
                     gewerbekennzeichnung: false
-                    externeKundenummerLieferant: irure
-                    marktrolle: KUNDE-SELBST-NN
-                    rollencodenummer: '013547588'
+                    hrnummer: '148223'
+                    amtsgericht: Aignerburg
+                    partneradresse:
+                      postleitzahl: '75930'
+                      ort: Alt Arved
+                      strasse: Steinbücheler Str.
+                      hausnummer: 26c
+                      postfach: veniam
+                      adresszusatz: ut
+                      coErgaenzung: ad qui ex
+                      landescode: DM
+                      ortsteil: Osnabrück
+                      zusatzInformation:
+                        zusatz1: voluptate
+                        zusatz2: commodo nulla
+                        zusatz3: minim in
+                        zusatz4: commodo et sed ipsum reprehenderit
+                        zusatz5: reprehenderit occaecat sint commodo deserunt
+                    externeKundenummerLieferant: '651247'
+                    externeReferenzen:
+                      - exRefName: Kundennummer beim Lieferanten
+                        exRefWert: '0785635775'
+                    geschaeftspartnerrolle:
+                      - LIEFERANT
+                    kontaktweg:
+                      - SMS
+                  referenzMarktlokationsId: '68887262736'
+                  verwendungsumfang: MESSLOKATION_PROZESSUAL_BEHANDELT
+                  zukuenftigerMeldepunkt: false
+                  lokationszuordnung: BEGINNT
+                  beteiligterMarktpartner:
+                    boTyp: MARKTTEILNEHMER
+                    versionStruktur: '1'
+                    geschaeftspartnerrolle: MARKTPARTNER
+                    anrede: Dr.
+                    name1: Schmidtchen
+                    name2: Enie
+                    name3: dolor enim dolor anim
+                    name4: veniam non incididunt consectetur esse
+                    partneradresse:
+                      postleitzahl: '75004'
+                      ort: Schäfferburg
+                      strasse: Löfflerstr.
+                      hausnummer: '1'
+                      postfach: laborum
+                      adresszusatz: consequat
+                      coErgaenzung: Excepteur occaecat aliquip veniam nostrud
+                      landescode: TZ
+                      ortsteil: Gollerstadt
+                      zusatzInformation:
+                        zusatz1: proident dolor in ea
+                        zusatz2: enim
+                        zusatz3: ex minim consequat mollit
+                        zusatz4: nulla Lorem
+                        zusatz5: et eiusmod
+                    gewerbekennzeichnung: true
+                    externeKundenummerLieferant: Duis sed ullamco ut
+                    marktrolle: KN
+                    rollencodenummer: '103962598'
                     rollencodetyp: GLN
-                    umsatzsteuerId: DE101001010
-                    steuernummer: '275301647'
+                    umsatzsteuerId: DE110000001
+                    steuernummer: '868805519'
                     ansprechpartner:
                       boTyp: ANSPRECHPARTNER
                       versionStruktur: '1'
-                      nachname: Slotta
-                      eMailAdresse: Emil_Kowalinski@hotmail.com
+                      nachname: Schulte
+                      eMailAdresse: Delia_Zuber@yahoo.com
                       rufnummern:
                         - nummerntyp: RUF_DURCHWAHL
-                          rufnummer: (0102) 163956160
-                    makoadresse: eiusmod
-                    downloadlinkZertifikat: https://lebendig-nationalismus.ch
-                    amtsgericht: Dennerdorf
-                    hrnummer: '067636'
-                    website: https://verwegen-tempel.com/
-                    faxnummer: (0010) 085330043
-                    kommunikationsrolle: ABRECHNUNGSPROZESSE
+                          rufnummer: (02074) 0192292
+                    makoadresse: in ut ex nulla
+                    downloadlinkZertifikat: https://unfassbar-fuball.org/
+                    amtsgericht: Rheine
+                    hrnummer: '501520'
+                    website: https://leger-stunde.ch/
+                    faxnummer: +49-946-7543171
+                    kommunikationsrolle: RAHMENVERTRAEGE
                     weiterverpflichtet: true
                     kommunikationsparameter:
                       zieladresse:
-                        zieladresse1: sunt laboris eu Excepteur voluptate
-                        zieladresse2: dolore ullamco nulla
-                        zieladresse3: esse
-                        zieladresse4: culpa elit reprehenderit cupidatat
-                        zieladresse5: dolor voluptate velit reprehenderit
+                        zieladresse1: consequat sit dolor labore
+                        zieladresse2: consectetur culpa fugiat
+                        zieladresse3: Excepteur
+                        zieladresse4: irure magna veniam dolor in
+                        zieladresse5: mollit eiusmod sunt ut dolore
                       zertifikatsAussteller:
-                        zertifikatsAussteller1: consequat nostrud veniam ut
-                        zertifikatsAussteller2: ipsum irure anim et ad
-                        zertifikatsAussteller3: ad in
-                        zertifikatsAussteller4: ut
-                        zertifikatsAussteller5: minim
+                        zertifikatsAussteller1: veniam laboris nisi
+                        zertifikatsAussteller2: amet non
+                        zertifikatsAussteller3: magna elit
+                        zertifikatsAussteller4: id
+                        zertifikatsAussteller5: in sit Excepteur
                       zertifikatsNutzer:
-                        zertifikatsNutzer1: dolor fugiat
-                        zertifikatsNutzer2: in occaecat ea
-                        zertifikatsNutzer3: fugiat velit Excepteur do incididunt
-                        zertifikatsNutzer4: Ut
-                        zertifikatsNutzer5: laborum aute in
-                    messstellenbetreiberEigenschaft: WETTBEWERBLICHER_MESSSTELLENBETREIBER
+                        zertifikatsNutzer1: ut do ex
+                        zertifikatsNutzer2: incididunt labore tempor
+                        zertifikatsNutzer3: commodo cillum id fugiat
+                        zertifikatsNutzer4: occaecat
+                        zertifikatsNutzer5: dolore velit anim
+                    messstellenbetreiberEigenschaft: GRUNDZUSTAENDIGER_MESSSTELLENBETREIBER
                     bankverbindung:
-                      - verwendungszweck: BV_ZAHLUNG_NNA
-                        iban: EE345254820641810203
-                        kontoinhaber: Korinna Kastner
-                        bic: QPQCTD29AF8
-                        kreditinstitut: Rossler, Bürklein und Apitz
+                      - verwendungszweck: BV_ZAHLUNG_MSB_ABRECHNNUNG
+                        iban: TN1374930545328100360885
+                        kontoinhaber: Vitus Knoll
+                        bic: MBMUMZ3Z6IX
+                        kreditinstitut: Schwarz, Koester und Agostini
                     erreichbarkeit:
                       - verfuegbarkeit: MITTWOCH
-                        zeit: nisi
-                    ipAdresse: 2eeb:0e4d:bb89:8e8e:97da:63ce:18a0:daab
+                        zeit: sint
+                    ipAdresse: dc69:ec6e:4ce2:9efc:c5b3:cad2:4a8c:e4de
                     ipRange:
-                      untereGrenze: 202.39.151.155
-                      obereGrenze: 197.170.132.17
-                    zuordnungVon: '1919-12-04T03:53:17.0Z'
-                    zuordnungBis: '1899-08-01T15:05:08.0Z'
-                    bilanzkreis: non et sed
-                    verwendungszweckBilanzkreis: ERZEUGENDE_MARKTLOKATION_KWKG
-                datenqualitaet: DIFFERENZ_DATEN
-                gueltigkeitszeitraum:
-                  zeiteinheit: SEKUNDE
-                  dauer: 9
-                  startdatum: '1914-04-25T08:03:11.0Z'
-                  enddatum: '1928-12-20T11:22:22.0Z'
-                  einheit: MONAT
-                  ableseZeitraum: '092526'
-                  abrechnungsZeitraum: '803693'
-                  zeitraumText: reprehenderit Lorem officia ea
-                  zeitraumId: 7
+                      untereGrenze: 229.5.34.30
+                      obereGrenze: b6e8:badf:dca6:9aab:f05d:aadb:ee8e:b409
+                    zuordnungVon: '1918-06-14T07:29:55.0Z'
+                    zuordnungBis: '1965-06-25T08:23:10.0Z'
+                    bilanzkreis: est non velit nostrud id
+                    verwendungszweckBilanzkreis: SONSTIGE_ERZEUGENDE_MARKTLOKATION
+                  geraete:
+                    - geraetetyp: DREHKOLBENGASZAEHLER
+                      bezeichnung: eu Ut pariatur eiusmod sint
+                      geraetenummer: '56011'
+                      geraetereferenz: REF_100000
+                      geraeteeigenschaften:
+                        geraetetyp: ETHERNET_KOM
+                        geraetemerkmal: WASSER_VWZ07
+                        faktor: 8.25
+                      volumenerfassung: SCHLEICHMENGENUNTERDRUECKUNG
+                      weitereGeraetenummern:
+                        - '65290'
+                  messdienstleistung:
+                    - dienstleistungstyp: DATENBEREITSTELLUNG_TAEGLICH
+                      bezeichnung: aute non
+                  messlokationszaehler:
+                    - ZAEHLER_110
+                  zaehlwerke:
+                    - zaehlwerkId: '727708960'
+                      bezeichnung: labore sed occaecat
+                      richtung: EINSP
+                      obisKennzahl: anim velit mollit ea
+                      wandlerfaktor: 4.5
+                      einheit: ANZAHL
+                      schwachlastfaehig: NICHT_SCHWACHLASTFAEHIG
+                      verbrauchsart:
+                        - WK
+                      unterbrechbarkeit: NUV
+                      waermenutzung: WAERMEPUMPE_KAELTE
+                      konzessionsabgabe:
+                        satz: KAS
+                        kosten: -39688147.66035265
+                        kategorie: labore sed
+                      steuerbefreit: true
+                      vorkommastelle: 3
+                      nachkommastelle: 5
+                      abrechnungsrelevant: true
+                      anzahlAblesungen: 4
+                      zaehlzeiten:
+                        register: Excepteur Ut ullamco
+                        zaehlzeitDefinition: nisi proident
+                        schwachlastfaehig: SCHWACHLASTFAEHIG
+                      konfiguration: ad ex in elit reprehenderit
+                      messprodukt: do culpa aute
+                      wertegranularitaet: QUARTALSWEISE
+                      notwendigkeitZweiteMessung: VORHANDEN
+                      werteuebermittlungVerwendungszweck: VORHANDEN
+                      artEMobilitaet: LS
+                      konfigurationsprodukt: velit laborum commodo
+                      keinKonfigurationsprodukt: false
+                      leistungskurvendefinition: sit amet sunt fugiat
+                      verwendungszwecke:
+                        - marktrolle: EIV
+                          zweck:
+                            - ES_LIEGT_KEIN_VERWENDUNGSZWECK_VOR
+                  marktrollen:
+                    - boTyp: MARKTTEILNEHMER
+                      versionStruktur: '1'
+                      geschaeftspartnerrolle: INTERESSENT
+                      anrede: Herr
+                      name1: Cotthardt
+                      name2: Kimberley
+                      name3: sunt aliqua
+                      name4: ut sint
+                      partneradresse:
+                        postleitzahl: '27247'
+                        ort: Bad Johanna
+                        strasse: Langenfelder Str.
+                        hausnummer: 77c
+                        postfach: cupidatat irure
+                        adresszusatz: laborum cillum ea
+                        coErgaenzung: Excepteur proident fugiat
+                        landescode: MO
+                        ortsteil: Ahlen
+                        zusatzInformation:
+                          zusatz1: velit tempor eiusmod quis
+                          zusatz2: cupidatat laborum in velit
+                          zusatz3: esse aliquip deserunt labore
+                          zusatz4: Excepteur et tempor reprehenderit
+                          zusatz5: adipisicing non Excepteur
+                      gewerbekennzeichnung: false
+                      externeKundenummerLieferant: irure
+                      marktrolle: KUNDE-SELBST-NN
+                      rollencodenummer: '013547588'
+                      rollencodetyp: GLN
+                      umsatzsteuerId: DE101001010
+                      steuernummer: '275301647'
+                      ansprechpartner:
+                        boTyp: ANSPRECHPARTNER
+                        versionStruktur: '1'
+                        nachname: Slotta
+                        eMailAdresse: Emil_Kowalinski@hotmail.com
+                        rufnummern:
+                          - nummerntyp: RUF_DURCHWAHL
+                            rufnummer: (0102) 163956160
+                      makoadresse: eiusmod
+                      downloadlinkZertifikat: https://lebendig-nationalismus.ch
+                      amtsgericht: Dennerdorf
+                      hrnummer: '067636'
+                      website: https://verwegen-tempel.com/
+                      faxnummer: (0010) 085330043
+                      kommunikationsrolle: ABRECHNUNGSPROZESSE
+                      weiterverpflichtet: true
+                      kommunikationsparameter:
+                        zieladresse:
+                          zieladresse1: sunt laboris eu Excepteur voluptate
+                          zieladresse2: dolore ullamco nulla
+                          zieladresse3: esse
+                          zieladresse4: culpa elit reprehenderit cupidatat
+                          zieladresse5: dolor voluptate velit reprehenderit
+                        zertifikatsAussteller:
+                          zertifikatsAussteller1: consequat nostrud veniam ut
+                          zertifikatsAussteller2: ipsum irure anim et ad
+                          zertifikatsAussteller3: ad in
+                          zertifikatsAussteller4: ut
+                          zertifikatsAussteller5: minim
+                        zertifikatsNutzer:
+                          zertifikatsNutzer1: dolor fugiat
+                          zertifikatsNutzer2: in occaecat ea
+                          zertifikatsNutzer3: fugiat velit Excepteur do incididunt
+                          zertifikatsNutzer4: Ut
+                          zertifikatsNutzer5: laborum aute in
+                      messstellenbetreiberEigenschaft: WETTBEWERBLICHER_MESSSTELLENBETREIBER
+                      bankverbindung:
+                        - verwendungszweck: BV_ZAHLUNG_NNA
+                          iban: EE345254820641810203
+                          kontoinhaber: Korinna Kastner
+                          bic: QPQCTD29AF8
+                          kreditinstitut: Rossler, Bürklein und Apitz
+                      erreichbarkeit:
+                        - verfuegbarkeit: MITTWOCH
+                          zeit: nisi
+                      ipAdresse: 2eeb:0e4d:bb89:8e8e:97da:63ce:18a0:daab
+                      ipRange:
+                        untereGrenze: 202.39.151.155
+                        obereGrenze: 197.170.132.17
+                      zuordnungVon: '1919-12-04T03:53:17.0Z'
+                      zuordnungBis: '1899-08-01T15:05:08.0Z'
+                      bilanzkreis: non et sed
+                      verwendungszweckBilanzkreis: ERZEUGENDE_MARKTLOKATION_KWKG
+                  datenqualitaet: DIFFERENZ_DATEN
+                  gueltigkeitszeitraum:
+                    zeiteinheit: SEKUNDE
+                    dauer: 9
+                    startdatum: '1914-04-25T08:03:11.0Z'
+                    enddatum: '1928-12-20T11:22:22.0Z'
+                    einheit: MONAT
+                    ableseZeitraum: '092526'
+                    abrechnungsZeitraum: '803693'
+                    zeitraumText: reprehenderit Lorem officia ea
+                    zeitraumId: 7
           headers: {}
           x-apidog-name: OK
         '400':
@@ -421,7 +424,7 @@ components:
       title: Messlokation
       type: object
       properties:
-        boTyp: &ref_5
+        boTyp: &ref_6
           $ref: '#/components/schemas/BOTyp'
           default: MESSLOKATION
         versionStruktur:
@@ -493,7 +496,7 @@ components:
             Messlokation zuständig ist.( Dieser ist immer dann
             Messstellenbetreiber, wenn kein anderer MSB die Einrichtungen an der
             Messlokation betreibt.)
-        messadresse: &ref_6
+        messadresse: &ref_7
           $ref: '#/components/schemas/Adresse'
           description: >-
             Messlokationsadresse
@@ -705,6 +708,7 @@ components:
         zeitraumText:
           type: string
           description: ZeitraumText
+          x-apidog-mock: "DTM+Z01:03MQ:Z01'\r\nNachfolgend noch einige Beispiele zur Übermittlung der Kündigungsfrist in der\r\nKommunikation von LF zu LF:\r\nBeispiel 1:\r\nDTM+Z01:30TM:Z01'\r\nDies entspricht der Kündigungsfrist von 30 Tagen zum Monatsende.\r\nBeispiel 2:\r\nDTM+Z01:03MJ:Z01'\r\nDies entspricht der Kündigungsfrist von 3 Monaten zum Jahresende. Somit hat die Kündigung\r\n3 Monate vor dem 31.12. zu erfolgen.\r\nBeispiel 3:\r\nDTM+Z01:01MQ:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Quartalsende.\r\nBeispiel 4:\r\nDTM+Z01:01MM:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Monatsende.\r\nBeispiel 5:\r\nDTM+Z01:01MT:Z01'\r\nDTM+Z10:201211152300?+00:303'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum 16.11.2012 00:00 Uhr.\r\nBeispiel 6:\r\nDTM+Z01:02WT:Z01'\r\nDTM+Z10:1120:106'\r\nDies entspricht der Kündigungsfrist von 2 Wochen zum 20. eines Monats 00:00 Uhr ab\r\nNovember.\r\nBeispiel 7:\r\nDTM+Z01:14TR:Z01'\r\nDies entspricht einer rollierenden Kündigungsfrist von 14 Tagen in der Zukunft."
         zeitraumId:
           type: integer
           description: |-
@@ -721,6 +725,8 @@ components:
         - abrechnungsZeitraum
         - zeitraumText
         - zeitraumId
+      required:
+        - enddatum
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Zeiteinheit:
@@ -1047,6 +1053,18 @@ components:
           items:
             $ref: '#/components/schemas/Verwendungszweck'
           description: Verwendungungszweck der Werte Marktlokation, Tranche
+        verwendungszweckNB:
+          type: string
+          description: Codes gemäß Codeliste der Verwendungszwecke Verwendungszweck NB
+        verwendungszweckLF:
+          type: string
+          description: Codes gemäß Codeliste der Verwendungszwecke Verwendungszweck LF
+        verwendungszweckUENB:
+          type: string
+          description: Codes gemäß Codeliste der Verwendungszwecke Verwendungszweck ÜNB
+        keinProdukt:
+          type: boolean
+          description: 'CCI+11++ZF6: keinProdukt zugeordnet'
       x-apidog-orders:
         - zaehlwerkId
         - bezeichnung
@@ -1075,13 +1093,17 @@ components:
         - keinKonfigurationsprodukt
         - leistungskurvendefinition
         - verwendungszwecke
+        - verwendungszweckNB
+        - verwendungszweckLF
+        - verwendungszweckUENB
+        - keinProdukt
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Verwendungszweck:
       title: Verwendungszweck
       type: object
       properties:
-        marktrolle: &ref_7
+        marktrolle: &ref_8
           $ref: '#/components/schemas/Marktrolle'
           description: >-
             Identifizierung der Marktrolle
@@ -1171,7 +1193,6 @@ components:
         - MDL
         - DL
         - BKV
-        - BKO
         - UENB
         - KUNDE-SELBST-NN
         - MGV
@@ -1206,9 +1227,6 @@ components:
           name: ''
           description: ''
         - value: BKV
-          name: ''
-          description: ''
-        - value: BKO
           name: ''
           description: ''
         - value: UENB
@@ -1724,7 +1742,7 @@ components:
         geraeteeigenschaften:
           $ref: '#/components/schemas/Geraeteeigenschaften'
           description: Festlegung der Eigenschaften des Gerätes. Z.B. Wandler MS/NS.
-        volumenerfassung:
+        volumenerfassung: &ref_5
           $ref: '#/components/schemas/Volumenerfassung'
           description: Art der Volumenerfassung
         weitereGeraetenummern:
@@ -1795,6 +1813,25 @@ components:
           type: string
         eichungBis:
           type: string
+        volumenerfassung: *ref_5
+        firmwareVersion:
+          type: string
+          description: Firmware-Version
+        herstellerTypbezeichnung:
+          type: string
+          description: Hersteller-Typbezeichnung
+        simKartenNummer:
+          type: string
+          description: SIM-Kartennummer
+        modemKennungIMSI:
+          type: string
+          description: Modem-Kennung (IMSI)
+        tkProvider:
+          type: string
+          description: Telekommunikationsanbieter
+        ipVersion:
+          type: string
+          description: IP-Version
       x-apidog-orders:
         - geraetetyp
         - geraetemerkmal
@@ -1803,6 +1840,13 @@ components:
         - herstellungsdatum
         - baujahr
         - eichungBis
+        - volumenerfassung
+        - firmwareVersion
+        - herstellerTypbezeichnung
+        - simKartenNummer
+        - modemKennungIMSI
+        - tkProvider
+        - ipVersion
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Geraetemerkmal:
@@ -2148,6 +2192,7 @@ components:
         - ZUSTANDSMENGENUMWERTER
         - MESSDATENREGISTRIERGERAET
         - WANDLER
+        - BEFESTIGUNGSEINRICHTUNG
       x-apidog-enum:
         - value: WECHSELSTROMZAEHLER
           name: analoger Wechselstromzähler
@@ -2314,17 +2359,20 @@ components:
         - value: WANDLER
           name: Wandler
           description: Z25
+        - value: BEFESTIGUNGSEINRICHTUNG
+          name: ''
+          description: ''
       x-apidog-folder: ''
     Marktteilnehmer:
       title: Marktteilnehmer
       type: object
       properties:
-        boTyp: *ref_5
+        boTyp: *ref_6
         versionStruktur:
           type: string
           default: '1'
           description: versionStruktur
-        geschaeftspartnerrolle: &ref_8
+        geschaeftspartnerrolle: &ref_9
           $ref: '#/components/schemas/Geschaeftspartnerrolle'
           description: Rolle, die der Geschäftspartner hat (z.B. Interessent, Kunde).
         anrede:
@@ -2342,7 +2390,7 @@ components:
         name4:
           type: string
           description: Vierter Teil des Namens
-        partneradresse: *ref_6
+        partneradresse: *ref_7
         gewerbekennzeichnung:
           type: boolean
           description: >-
@@ -2352,7 +2400,7 @@ components:
         externeKundenummerLieferant:
           type: string
           description: externe Kundenummer Lieferant
-        marktrolle: *ref_7
+        marktrolle: *ref_8
         rollencodenummer:
           type: string
           description: |-
@@ -2386,7 +2434,7 @@ components:
             Steuernummer
             RFF FC
             PI 37000 37001 37002 37005 37004 37003 37006
-        ansprechpartner:
+        ansprechpartner: &ref_10
           $ref: '#/components/schemas/Ansprechpartner'
           description: |-
             Ansprechpartner innerhalb des im vorangegangenen NAD-Segment
@@ -2481,6 +2529,12 @@ components:
           type: string
           format: date-time
           description: Enddatum der Zuordnung des Marktteilnehmers
+        bilanzkreis:
+          type: string
+          description: Bilanzkreis
+        verwendungszweckBilanzkreis:
+          $ref: '#/components/schemas/VerwendungszweckBilanzkreis'
+          description: Verwendungszweck des Bilanzkreises
       required:
         - boTyp
         - versionStruktur
@@ -2518,10 +2572,22 @@ components:
         - ipRange
         - zuordnungVon
         - zuordnungBis
+        - bilanzkreis
+        - verwendungszweckBilanzkreis
       examples:
         - $ref: >-
             https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/Marktteilnehmer.json
       x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    VerwendungszweckBilanzkreis:
+      type: string
+      title: VerwendungszweckBilanzkreis
+      enum:
+        - VERBRAUCHENDE_MARKTLOKATION
+        - ERZEUGENDE_MARKTLOKATION_EEG
+        - ERZEUGENDE_MARKTLOKATION_KWKG
+        - SONSTIGE_ERZEUGENDE_MARKTLOKATION
+      description: VerwendungszweckBilanzkreis
       x-apidog-folder: ''
     IpRange:
       title: IpRange
@@ -2807,7 +2873,7 @@ components:
       title: Ansprechpartner
       type: object
       properties:
-        boTyp: *ref_5
+        boTyp: *ref_6
         versionStruktur:
           type: string
           default: '1'
@@ -2993,7 +3059,7 @@ components:
       title: Geschaeftspartner
       type: object
       properties:
-        boTyp: *ref_5
+        boTyp: *ref_6
         versionStruktur:
           type: string
           default: '1'
@@ -3058,7 +3124,7 @@ components:
           description: >-
             Amtsgericht bzw Handelsregistergericht, das die
             Handelsregisternummer herausgegeben hat
-        partneradresse: *ref_6
+        partneradresse: *ref_7
         externeKundenummerLieferant:
           type: string
           description: externeKundenummerLieferant
@@ -3071,7 +3137,7 @@ components:
             SAP-GP-Nummer) (Details siehe ExterneReferenz)
         geschaeftspartnerrolle:
           type: array
-          items: *ref_8
+          items: *ref_9
           description: |-
             Rolle, die der Geschäftspartner hat (z.B. Interessent, Kunde).
             NAD Z09 ORDERS
@@ -3083,6 +3149,7 @@ components:
           items:
             $ref: '#/components/schemas/Kontaktart'
           description: Bevorzugter Kontaktweg des Geschäftspartners.
+        ansprechpartner: *ref_10
       required:
         - boTyp
         - versionStruktur
@@ -3106,6 +3173,7 @@ components:
         - externeReferenzen
         - geschaeftspartnerrolle
         - kontaktweg
+        - ansprechpartner
       examples:
         - $ref: >-
             https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/Geschaeftspartner.json

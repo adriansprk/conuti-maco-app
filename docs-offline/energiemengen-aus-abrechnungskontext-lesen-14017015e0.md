@@ -95,7 +95,40 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Energiemenge'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Energiemenge'
+                description: Liste der Energiemengen
+              example:
+                - boTyp: ENERGIEMENGE
+                  versionStruktur: '1'
+                  lokationsId: DE36854189874FDVFMOZZNWOTQ2BIGVPP
+                  lokationsTyp: MELO
+                  energieverbrauch:
+                    - startdatum: '2022-10-14T07:52:00Z'
+                      enddatum: '2022-10-14T07:52:00Z'
+                      wertermittlungsverfahren: ' '
+                      messwertstatus: ABGELESEN
+                      statuszusatzinformationen:
+                        - art: PLAUSIBILISIERUNGHINWEIS
+                          status: PLAUSIBEL_WG_KONTROLLABLESUNG
+                      obiskennzahl: 1-1:1.8.2
+                      wert: 5
+                      einheit: KWH
+                      type: VERANSCHLAGTEJAHRESMENGE
+                      tarifstufe: TARIFSTUFE_0
+                      nutzungszeitpunkt: '2022-10-14T07:52:00Z'
+                      ausfuehrungszeitpunkt: '2022-10-14T07:52:00Z'
+                      position: 1
+                      ablesedatum: '2022-10-14T07:52:00Z'
+                      leistungsperiode: '202302'
+                  fertigstellungsdatum: '2022-10-14T07:52:00Z'
+                  startdatum: '2022-10-14T07:52:00Z'
+                  enddatum: '2022-10-14T07:52:00Z'
+                  bilanzierungsdatum: '2022-10-14T07:52:00Z'
+                  beginndatum: '202406'
+                  referenzStammdatenmeldungMsb: 941736BGM
+                  konfiguration: xyz
           headers: {}
           x-apidog-name: OK
         '400':
@@ -885,6 +918,8 @@ components:
         - MELO
         - NELO
         - TECHNISCHE_RESSOURCE
+        - STEUERBARE_RESSOURCE
+        - TRANCHE
       x-apidog-enum:
         - value: MALO
           name: Marktlokation
@@ -898,6 +933,12 @@ components:
         - value: TECHNISCHE_RESSOURCE
           name: Technische Ressource
           description: Z37
+        - value: STEUERBARE_RESSOURCE
+          name: ''
+          description: ''
+        - value: TRANCHE
+          name: ''
+          description: ''
       x-apidog-folder: ''
     BOTyp:
       title: BOTyp

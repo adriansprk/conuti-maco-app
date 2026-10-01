@@ -73,7 +73,123 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Zaehler'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Zaehler'
+                description: Liste der Zähler
+              example:
+                - boTyp: ZAEHLER
+                  versionStruktur: '1'
+                  zaehlernummer: '12345'
+                  messlokationsId: DE0073395252733953513649640716001
+                  marktlokationsId: <string>
+                  sparte: GAS
+                  zaehlerauspraegung: EINRICHTUNGSZAEHLER
+                  zaehlertyp: DREHKOLBENZAEHLER
+                  tarifart: EINTARIF
+                  zaehlerkonstante: 5.4
+                  eichungBis: '2032'
+                  zaehlwerke:
+                    - zaehlwerkId: <string>
+                      bezeichnung: <string>
+                      richtung: AUSSP
+                      obisKennzahl: 1-1:1.8.0
+                      vorkommastellen: 5
+                      nachkommastellen: 3
+                      wandlerfaktor: 6
+                      einheit: KUBIKMETER
+                      schwachlastfaehig: NICHT_SCHWACHLASTFAEHIG
+                      verwendungszwecke:
+                        - marktrolle: NB
+                          zweck:
+                            - NETZNUTZUNGSABRECHNUNG
+                      verbrauchsart:
+                        - KL
+                      unterbrechbarkeit: NUV
+                      waermenutzung: WAERMEPUMPE
+                      konzessionsabgabe:
+                        satz: TA
+                        kosten: 126.47
+                        kategorie: <string>
+                      steuerbefreit: true
+                      vorkommastelle: 8
+                      nachkommastelle: 0
+                      abrechnungsrelevant: false
+                      anzahlAblesungen: 15
+                      zaehlzeiten:
+                        zaehlzeitDefinition: <string>
+                        register: <string>
+                        schwachlastfaehig: NICHT_SCHWACHLASTFAEHIG
+                      konfiguration: 34590456ujdfsdghdlktztwqq-053trg
+                      wertegranularitaet: JAEHRLICH
+                      notwendigkeitZweiteMessung: NICHT_VORHANDEN
+                      werteuebermittlungVerwendungszweck: NICHT_VORHANDEN
+                      artEMobilitaet: WB
+                      verwendungszweckNB: Z87
+                      verwendungszweckLF: Z86
+                      verwendungszweckUENB: Z88
+                      keinProdukt: false
+                  zaehlerhersteller:
+                    boTyp: GESCHAEFTSPARTNER
+                    versionStruktur: '1'
+                    anrede: <string>
+                    name1: <string>
+                    name2: <string>
+                    name3: <string>
+                    name4: <string>
+                    gewerbekennzeichnung: true
+                    hrnummer: <string>
+                    amtsgericht: <string>
+                    kontaktweg:
+                      - TELEFONAT
+                    umsatzsteuerId: <string>
+                    glaeubigerId: <string>
+                    eMailAdresse: <string>
+                    website: <string>
+                    geschaeftspartnerrolle:
+                      - MARKTPARTNER
+                    partneradresse:
+                      postleitzahl: <string>
+                      ort: <string>
+                      strasse: <string>
+                      hausnummer: <string>
+                      postfach: <string>
+                      adresszusatz: <string>
+                      coErgaenzung: <string>
+                      landescode: DE
+                      ortsteil: <string>
+                  gateway: <string>
+                  fernschaltung: NICHT_VORHANDEN
+                  messwerterfassung: MANUELL_AUSGELESENE
+                  zaehlertypspezifikation: SONSTIGER_EHZ
+                  befestigungsart: DREIPUNKT
+                  zaehlergroesse: GAS_G4
+                  geraete:
+                    - geraetenummer: <string>
+                      weitereGeraetenummern:
+                        - <string>
+                        - <string>
+                      geraeteeigenschaften:
+                        geraetetyp: BALGENGASZAEHLER
+                        geraetemerkmal: GAS_G10
+                        faktor: 1
+                        volumenerfassung: HOCHFREQUENZSONDE
+                        eichungBis: '2032'
+                        herstellungsdatum: '2019'
+                        baujahr: <string>
+                        serialnummer: <string>
+                        firmwareVersion: FW_1.4.2
+                        herstellerTypbezeichnung: TYP_MTR400
+                        simKartenNummer: '89490200001234567890'
+                        modemKennungIMSI: '262011234567890'
+                        tkProvider: TK_Telekom
+                        ipVersion: '6'
+                  mengenumwertertyp: DICHTEMENGENUMWERTER
+                  volumenerfassung: SCHLEICHMENGENUNTERDRUECKUNG
+                  serialnummer: <string>
+                  geraetemerkmal: GAS_G10
+                  herstellungsdatum: '2019'
+                  baujahr: <string>
           headers: {}
           x-apidog-name: OK
         '400':
@@ -403,6 +519,7 @@ components:
         zeitraumText:
           type: string
           description: ZeitraumText
+          x-apidog-mock: "DTM+Z01:03MQ:Z01'\r\nNachfolgend noch einige Beispiele zur Übermittlung der Kündigungsfrist in der\r\nKommunikation von LF zu LF:\r\nBeispiel 1:\r\nDTM+Z01:30TM:Z01'\r\nDies entspricht der Kündigungsfrist von 30 Tagen zum Monatsende.\r\nBeispiel 2:\r\nDTM+Z01:03MJ:Z01'\r\nDies entspricht der Kündigungsfrist von 3 Monaten zum Jahresende. Somit hat die Kündigung\r\n3 Monate vor dem 31.12. zu erfolgen.\r\nBeispiel 3:\r\nDTM+Z01:01MQ:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Quartalsende.\r\nBeispiel 4:\r\nDTM+Z01:01MM:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Monatsende.\r\nBeispiel 5:\r\nDTM+Z01:01MT:Z01'\r\nDTM+Z10:201211152300?+00:303'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum 16.11.2012 00:00 Uhr.\r\nBeispiel 6:\r\nDTM+Z01:02WT:Z01'\r\nDTM+Z10:1120:106'\r\nDies entspricht der Kündigungsfrist von 2 Wochen zum 20. eines Monats 00:00 Uhr ab\r\nNovember.\r\nBeispiel 7:\r\nDTM+Z01:14TR:Z01'\r\nDies entspricht einer rollierenden Kündigungsfrist von 14 Tagen in der Zukunft."
         zeitraumId:
           type: integer
           description: |-
@@ -419,6 +536,8 @@ components:
         - abrechnungsZeitraum
         - zeitraumText
         - zeitraumId
+      required:
+        - enddatum
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Zeiteinheit:
@@ -749,6 +868,18 @@ components:
           items:
             $ref: '#/components/schemas/Verwendungszweck'
           description: Verwendungungszweck der Werte Marktlokation, Tranche
+        verwendungszweckNB:
+          type: string
+          description: Codes gemäß Codeliste der Verwendungszwecke Verwendungszweck NB
+        verwendungszweckLF:
+          type: string
+          description: Codes gemäß Codeliste der Verwendungszwecke Verwendungszweck LF
+        verwendungszweckUENB:
+          type: string
+          description: Codes gemäß Codeliste der Verwendungszwecke Verwendungszweck ÜNB
+        keinProdukt:
+          type: boolean
+          description: 'CCI+11++ZF6: keinProdukt zugeordnet'
       x-apidog-orders:
         - zaehlwerkId
         - bezeichnung
@@ -777,6 +908,10 @@ components:
         - keinKonfigurationsprodukt
         - leistungskurvendefinition
         - verwendungszwecke
+        - verwendungszweckNB
+        - verwendungszweckLF
+        - verwendungszweckUENB
+        - keinProdukt
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Verwendungszweck:
@@ -873,7 +1008,6 @@ components:
         - MDL
         - DL
         - BKV
-        - BKO
         - UENB
         - KUNDE-SELBST-NN
         - MGV
@@ -908,9 +1042,6 @@ components:
           name: ''
           description: ''
         - value: BKV
-          name: ''
-          description: ''
-        - value: BKO
           name: ''
           description: ''
         - value: UENB
@@ -1421,6 +1552,25 @@ components:
           type: string
         eichungBis:
           type: string
+        volumenerfassung: *ref_3
+        firmwareVersion:
+          type: string
+          description: Firmware-Version
+        herstellerTypbezeichnung:
+          type: string
+          description: Hersteller-Typbezeichnung
+        simKartenNummer:
+          type: string
+          description: SIM-Kartennummer
+        modemKennungIMSI:
+          type: string
+          description: Modem-Kennung (IMSI)
+        tkProvider:
+          type: string
+          description: Telekommunikationsanbieter
+        ipVersion:
+          type: string
+          description: IP-Version
       x-apidog-orders:
         - geraetetyp
         - geraetemerkmal
@@ -1429,6 +1579,13 @@ components:
         - herstellungsdatum
         - baujahr
         - eichungBis
+        - volumenerfassung
+        - firmwareVersion
+        - herstellerTypbezeichnung
+        - simKartenNummer
+        - modemKennungIMSI
+        - tkProvider
+        - ipVersion
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Geraetetyp:
@@ -1491,6 +1648,7 @@ components:
         - ZUSTANDSMENGENUMWERTER
         - MESSDATENREGISTRIERGERAET
         - WANDLER
+        - BEFESTIGUNGSEINRICHTUNG
       x-apidog-enum:
         - value: WECHSELSTROMZAEHLER
           name: analoger Wechselstromzähler
@@ -1657,6 +1815,9 @@ components:
         - value: WANDLER
           name: Wandler
           description: Z25
+        - value: BEFESTIGUNGSEINRICHTUNG
+          name: ''
+          description: ''
       x-apidog-folder: ''
     Volumenerfassung:
       type: string
@@ -2150,6 +2311,11 @@ components:
           items:
             $ref: '#/components/schemas/Kontaktart'
           description: Bevorzugter Kontaktweg des Geschäftspartners.
+        ansprechpartner:
+          $ref: '#/components/schemas/Ansprechpartner'
+          description: >-
+            Ansprechpartner as in EDIFACT CTA+IC' COM+?+3222271020:TE', that
+            includes e.g. the phone number of customer.
       required:
         - boTyp
         - versionStruktur
@@ -2173,10 +2339,107 @@ components:
         - externeReferenzen
         - geschaeftspartnerrolle
         - kontaktweg
+        - ansprechpartner
       examples:
         - $ref: >-
             https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/Geschaeftspartner.json
       x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    Ansprechpartner:
+      title: Ansprechpartner
+      type: object
+      properties:
+        boTyp: *ref_5
+        versionStruktur:
+          type: string
+          default: '1'
+          description: versionStruktur
+        nachname:
+          type: string
+          description: Nachname (Familienname) des Ansprechpartners
+        eMailAdresse:
+          type: string
+          description: E-Mail Adresse
+        rufnummern:
+          type: array
+          items:
+            $ref: '#/components/schemas/Rufnummer'
+          description: >-
+            Liste der Telefonnummern, unter denen der Ansprechpartner erreichbar
+            ist.
+      required:
+        - boTyp
+        - versionStruktur
+      x-apidog-orders:
+        - boTyp
+        - versionStruktur
+        - nachname
+        - eMailAdresse
+        - rufnummern
+      examples:
+        - $ref: >-
+            https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/Ansprechpartner.json
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    Rufnummer:
+      title: Rufnummer
+      type: object
+      properties:
+        nummerntyp:
+          $ref: '#/components/schemas/Rufnummernart'
+          description: |-
+            Art des Kommunikationsmittels
+            COM
+        rufnummer:
+          type: string
+          description: Rufnummer
+      x-apidog-orders:
+        - nummerntyp
+        - rufnummer
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    Rufnummernart:
+      type: string
+      title: Rufnummernart
+      description: Rufnummernart
+      enum:
+        - RUF_ZENTRALE
+        - FAX_ZENTRALE
+        - SAMMELRUF
+        - SAMMELFAX
+        - ABTEILUNGRUF
+        - ABTEILUNGFAX
+        - RUF_DURCHWAHL
+        - FAX_DURCHWAHL
+        - MOBIL_NUMMER
+      x-apidog-enum:
+        - value: RUF_ZENTRALE
+          name: weiteres Telefon
+          description: AJ
+        - value: FAX_ZENTRALE
+          name: ''
+          description: ''
+        - value: SAMMELRUF
+          name: ''
+          description: ''
+        - value: SAMMELFAX
+          name: ''
+          description: ''
+        - value: ABTEILUNGRUF
+          name: ''
+          description: ''
+        - value: ABTEILUNGFAX
+          name: ''
+          description: ''
+        - value: RUF_DURCHWAHL
+          name: Telefon
+          description: TE
+        - value: FAX_DURCHWAHL
+          name: Telefax
+          description: FX
+        - value: MOBIL_NUMMER
+          name: Handy
+          description: AL
       x-apidog-folder: ''
     Kontaktart:
       title: Kontaktart

@@ -84,7 +84,324 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Bilanzierung'
+                type: array
+                items:
+                  type: object
+                  properties:
+                    boTyp: &ref_3
+                      $ref: '#/components/schemas/BOTyp'
+                      default: BILANZIERUNG
+                    versionStruktur:
+                      type: string
+                      default: '1'
+                      description: versionStruktur
+                    marktlokationsId:
+                      type: string
+                      description: >-
+                        Für welche Marktlokation gelten diese
+                        Bilanzierungsdaten. Referenzierung auf eine ID einer
+                        Marktlokation LOC Z16
+
+                        RFF Z18
+
+                        PI 55690 55060 55043 55168 55169 55238 55239 55074 55075
+                        55076 55065 55066 55195 55196 55201 55202 
+                    aggregationsverantwortung:
+                      $ref: '#/components/schemas/Aggregationsverantwortung'
+                      description: >-
+                        Aggregationsverantwortung, wem die Bilanzierung
+                        zugeordnet ist. 
+
+                        CCI 6 
+
+                        PI 55043 55168 55169 55195 55196 55223 55224 
+                    zeitreihentyp:
+                      type: string
+                      description: |
+                        Zeitreihentyp 
+                        Summenzeitreihentyp Z21
+                        CCI 15 Z21 
+                        PI 55670 55671 55074 55075 55076 55065 55066 55196
+                        MSCONS Zeitreihentyp
+                    prognosegrundlage:
+                      $ref: '#/components/schemas/Prognosegrundlage'
+                      description: >-
+                        Prognosegrundlage, aufgrund dieser Information wird das
+                        Bilanzierungsverfahren, welches in den Prozessen erwähnt
+                        wird, abgeleitet. 
+
+                        PI 55013 55613 55614 55126 55156 55674 55675 55672 55673
+                        55628 55634 55035 55095 55060 55043 55168 55169 55195
+                        55196
+
+                        CAV Z38 
+
+                        ORDERS
+
+                        PI 17120
+
+                        Gas UTILMD Bereits ausgetauschte Prognosegrundlage
+
+                        ZB0 Prognose auf Basis von Werten gültig
+
+                        ZB1 Prognose auf Basis von Profilen gültig
+
+                        CCI ZB0
+
+                        PI 44139 44142
+                    bilanzierungsbeginn:
+                      type: string
+                      format: date-time
+                      description: >-
+                        Beginn der Zuordnung einer MaLo, Tranche zum
+                        Bilanzkreis. 
+
+                        DTM 158
+
+                        55238 55239 55062 55064 55065 55066 55071 55195 55196
+                        55223 55224 55197 55199 55203 55204 55205 55209 55210
+                        55211
+                    bilanzierungsende:
+                      type: string
+                      format: date-time
+                      description: >-
+                        Beendigung der Zuordnung einer MaLo, Tranche zum
+                        Bilanzkreis.
+
+                        DTM 159
+
+                        55240 55241 55242 55243 55063 55064 55065 55066 55072
+                        55195 55196 55223 55224 55198 55200 55206 55207 55208
+                        55212 55213 55214
+                    bilanzkreis:
+                      type: string
+                      description: >-
+                        Bilanzkreis bzw. das Konto, auf dem die Bilanzierung
+                        durchgeführt wird.
+
+                        CCI Z19
+
+                        PI 55613 55614 55126 55156 55674 55675 55672 55673 55670
+                        55671 55074 55075 55076 55065 55066 55195 55196
+                    fallgruppenzuordnung:
+                      $ref: '#/components/schemas/Fallgruppenzuordnung'
+                      description: >-
+                        Fallgruppenzuordnung nach GABi Gas
+
+                        GABi- SLP-Kunden analytisches Verfahren - Exit SLPana
+
+                        GABi- SLP-Kunden synthetisches Verfahren - Exit SLPsyn
+
+                        CCI Z17
+
+                        PI 44123 44156 44157 44001 44002 44013 44014 44019 44020
+                        44021 44035 44103 44104
+                    temperaturarbeit: &ref_0
+                      $ref: '#/components/schemas/Menge'
+                      description: >-
+                        Kundenwert TLP, Angabe der spezifischen Arbeit für eine
+                        tagesparameterabhängige Marktlokation als Zahlenwert,
+                        angepassten elektrischen Arbeit einer
+                        tagesparameterabhängigen Marktlokationon. Schließt auch
+                        gemeinsame Messung ein - SLP und TLP-.
+
+                        QTY Z10
+
+                        PI 55672 55673 55628 55634 55035 55095 55060 55065 55066
+
+                        QTY 265
+
+                        PI 55013 55126 55156 55672 55673 55628 55634 55035 55095
+                        55060 55043 55168 55169 55065 55066
+
+                        QTY Z08
+
+                        PI 55013 55126 55156 55628 55634 55035 55095 55060 55043
+                        55168 55169 55065 55066
+                    jahresverbrauchsprognose: *ref_0
+                    kundenwert: *ref_0
+                    verbrauchsaufteilung: *ref_0
+                    wahlrechtPrognosegrundlage: &ref_1
+                      $ref: '#/components/schemas/WahlrechtPrognosegrundlage'
+                      description: >-
+                        Wahlrecht der Prognosegrundlage (true = Wahlrecht beim
+                        Lieferanten vorhanden)
+                    grundWahlrechtPrognosegrundlage: *ref_1
+                    abwicklungsmodell:
+                      $ref: '#/components/schemas/Abwicklungsmodell'
+                      description: >-
+                        Abwicklungsmodell, aufgrund dieser Information wird für
+                        die Bilanzierung abgeleitet, ob die Malo mit dem
+                        zugeordneten Bilanzkreis im Modell 1 ZE9 bilanziert wird
+                        oder die Energiemenge der Malo als NGZ im Modell 2 ZF0
+                        in ein benachbartes Bilanzierungsgebiet übergeben wird.
+
+                        CAV ZA2
+
+                        PI 55628 55634 55043 55168 55169 
+                    vorjahresverbrauch: *ref_0
+                    datenqualitaet:
+                      $ref: '#/components/schemas/Datenqualitaet'
+                      description: Datenqualität
+                    gueltigkeitszeitraum:
+                      $ref: '#/components/schemas/Zeitraum'
+                      description: Gültigkeitszeitraum
+                    lastprofile:
+                      type: array
+                      items: &ref_2
+                        $ref: '#/components/schemas/Lastprofil'
+                      description: |-
+                        Normiertes Profil  - Profilbezeichnung
+                        CCI Z02 
+                    lastprofileBilanzierungsbeteiligter:
+                      type: array
+                      items: *ref_2
+                      description: Lastprofile des Bilanzierungsbeteiligten
+                    detailsPrognosegrundlage:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/Profiltyp'
+                      description: >-
+                        Prognosegrundlage - dient zur genaueren
+                        Wertspezifizierung des Merkmals im vorangegangenen
+                        Segments Prognosegrundlage. 
+
+                        CAV E02 
+
+                        PI 55013 55613 55614 55126 55156 55672 55673 55628 55634
+                        55035 55095 55060 55043 55168 55169 55195 55196
+                    bilanzkreise:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/Bilanzkreis'
+                      description: Bilanzkreis
+                  x-apidog-refs: {}
+                  x-apidog-orders:
+                    - boTyp
+                    - versionStruktur
+                    - marktlokationsId
+                    - aggregationsverantwortung
+                    - zeitreihentyp
+                    - prognosegrundlage
+                    - bilanzierungsbeginn
+                    - bilanzierungsende
+                    - bilanzkreis
+                    - fallgruppenzuordnung
+                    - temperaturarbeit
+                    - jahresverbrauchsprognose
+                    - kundenwert
+                    - verbrauchsaufteilung
+                    - wahlrechtPrognosegrundlage
+                    - grundWahlrechtPrognosegrundlage
+                    - abwicklungsmodell
+                    - vorjahresverbrauch
+                    - datenqualitaet
+                    - gueltigkeitszeitraum
+                    - lastprofile
+                    - lastprofileBilanzierungsbeteiligter
+                    - detailsPrognosegrundlage
+                    - bilanzkreise
+                  required:
+                    - boTyp
+                    - versionStruktur
+                    - vorjahresverbrauch
+                  x-apidog-ignore-properties: []
+                description: Liste der Bilanzierung
+              example:
+                - boTyp: BILANZIERUNG
+                  versionStruktur: '1'
+                  marktlokationsId: '50754496000'
+                  gueltigkeitszeitraum:
+                    zeitraumId: null
+                    startdatum: null
+                    enddatum: null
+                  datenqualitaet: null
+                  lastprofile:
+                    - bezeichnung: XYZ
+                      profilschar: null
+                      verfahren: SYNTHETISCH
+                      einspeisung: false
+                      tagesparameter:
+                        klimazone: null
+                        temperaturmessstelle: null
+                        dienstanbieter: null
+                        herausgeber: null
+                      profilart: ART_STANDARDLASTPROFIL
+                      herausgeber: NB
+                      referenzprofilbezeichnung: XYZ
+                  lastprofileBilanzierungsbeteiligter:
+                    - bezeichnung: ZYX
+                      profilschar: null
+                      verfahren: SYNTHETISCH
+                      einspeisung: false
+                      tagesparameter:
+                        klimazone: null
+                        temperaturmessstelle: null
+                        dienstanbieter: null
+                        herausgeber: null
+                      profilart: ART_STANDARDLASTPROFIL
+                      herausgeber: NB
+                  bilanzierungsbeginn: '0001-01-01T00:00:00Z'
+                  bilanzierungsende: '2025-10-31T23:00:00Z'
+                  bilanzkreis: 11Y0-0000-0076-N
+                  jahresverbrauchsprognose:
+                    wert: 2300
+                    einheit: KWH
+                  vorjahresverbrauch:
+                    wert: 2500
+                    einheit: KWH
+                  temperaturarbeit:
+                    wert: null
+                    einheit: null
+                  kundenwert:
+                    wert: 2550
+                    einheit: KWH
+                  verbrauchsaufteilung:
+                    wert: null
+                    einheit: null
+                  zeitreihentyp: SLS
+                  aggregationsverantwortung: VNB
+                  prognosegrundlage: PROFILE
+                  detailsPrognosegrundlage:
+                    - SLP_SEP
+                  wahlrechtPrognosegrundlage: DURCH_LF
+                  fallgruppenzuordnung: null
+                  prioritaet: '1'
+                  grundWahlrechtPrognosegrundlage: DURCH_LF
+                  abwicklungsmodell: MODELL_1_BILANZIERUNG_AN_MARKTLOKATION
+                  datenDerBeteiligtenMarktrolle:
+                    - marktlokationsId: '50754496000'
+                      lastprofile:
+                        - bezeichnung: H0
+                          profilschar: null
+                          verfahren: SYNTHETISCH
+                          tagesparameter:
+                            klimazone: null
+                            temperaturmessstelle: null
+                            dienstanbieter: null
+                            herausgeber: null
+                          einspeisung: false
+                          profilart: ART_STANDARDLASTPROFIL
+                          herausgeber: NB
+                      jahresverbrauchsprognose:
+                        wert: 2300
+                        einheit: KWH
+                      temperaturarbeit:
+                        wert: null
+                        einheit: null
+                      bilanzkreis: 11Y0-0000-0076-N
+                      bilanzkreisAn: 11Y0-0000-0076-N
+                      bilanzkreisVon: 11Y0-0000-0077-N
+                      zeitreihentyp: SLS
+                      aggregationsverantwortung: VNB
+                      prognosegrundlage: PROFILE
+                      detailsPrognosegrundlage:
+                        - SLP_SEP
+                  bilanzkreise:
+                    - boTyp: BILANZKREIS
+                      versionStruktur: '1'
+                      bezeichnung: 11XVNBSOLS-----9
+                      prioritaet: 1
           headers: {}
           x-apidog-name: OK
         '400':
@@ -105,208 +422,29 @@ paths:
       x-run-in-apidog: https://app.apidog.com/web/project/816353/apis/api-14017013-run
 components:
   schemas:
-    Bilanzierung:
-      title: Bilanzierung
+    Bilanzkreis:
+      title: Bilanzkreis
       type: object
       properties:
-        boTyp:
-          $ref: '#/components/schemas/BOTyp'
-          default: BILANZIERUNG
+        boTyp: *ref_3
         versionStruktur:
           type: string
           default: '1'
           description: versionStruktur
-        marktlokationsId:
+        bezeichnung:
           type: string
-          description: >-
-            Für welche Marktlokation gelten diese Bilanzierungsdaten.
-            Referenzierung auf eine ID einer Marktlokation LOC Z16
-
-            RFF Z18
-
-            PI 55690 55060 55043 55168 55169 55238 55239 55074 55075 55076 55065
-            55066 55195 55196 55201 55202 
-        aggregationsverantwortung:
-          $ref: '#/components/schemas/Aggregationsverantwortung'
-          description: |-
-            Aggregationsverantwortung, wem die Bilanzierung zugeordnet ist. 
-            CCI 6 
-            PI 55043 55168 55169 55195 55196 55223 55224 
-        zeitreihentyp:
-          type: string
-          description: |
-            Zeitreihentyp 
-            Summenzeitreihentyp Z21
-            CCI 15 Z21 
-            PI 55670 55671 55074 55075 55076 55065 55066 55196
-            MSCONS Zeitreihentyp
-        prognosegrundlage:
-          $ref: '#/components/schemas/Prognosegrundlage'
-          description: >-
-            Prognosegrundlage, aufgrund dieser Information wird das
-            Bilanzierungsverfahren, welches in den Prozessen erwähnt wird,
-            abgeleitet. 
-
-            PI 55013 55613 55614 55126 55156 55674 55675 55672 55673 55628 55634
-            55035 55095 55060 55043 55168 55169 55195 55196
-
-            CAV Z38 
-
-            ORDERS
-
-            PI 17120
-
-            Gas UTILMD Bereits ausgetauschte Prognosegrundlage
-
-            ZB0 Prognose auf Basis von Werten gültig
-
-            ZB1 Prognose auf Basis von Profilen gültig
-
-            CCI ZB0
-
-            PI 44139 44142
-        bilanzierungsbeginn:
-          type: string
-          format: date-time
-          description: >-
-            Beginn der Zuordnung einer MaLo, Tranche zum Bilanzkreis. 
-
-            DTM 158
-
-            55238 55239 55062 55064 55065 55066 55071 55195 55196 55223 55224
-            55197 55199 55203 55204 55205 55209 55210 55211
-        bilanzierungsende:
-          type: string
-          format: date-time
-          description: >-
-            Beendigung der Zuordnung einer MaLo, Tranche zum Bilanzkreis.
-
-            DTM 159
-
-            55240 55241 55242 55243 55063 55064 55065 55066 55072 55195 55196
-            55223 55224 55198 55200 55206 55207 55208 55212 55213 55214
-        bilanzkreis:
-          type: string
-          description: >-
-            Bilanzkreis bzw. das Konto, auf dem die Bilanzierung durchgeführt
-            wird.
-
-            CCI Z19
-
-            PI 55613 55614 55126 55156 55674 55675 55672 55673 55670 55671 55074
-            55075 55076 55065 55066 55195 55196
-        fallgruppenzuordnung:
-          $ref: '#/components/schemas/Fallgruppenzuordnung'
-          description: >-
-            Fallgruppenzuordnung nach GABi Gas
-
-            GABi- SLP-Kunden analytisches Verfahren - Exit SLPana
-
-            GABi- SLP-Kunden synthetisches Verfahren - Exit SLPsyn
-
-            CCI Z17
-
-            PI 44123 44156 44157 44001 44002 44013 44014 44019 44020 44021 44035
-            44103 44104
-        temperaturarbeit: &ref_0
-          $ref: '#/components/schemas/Menge'
-          description: >-
-            Kundenwert TLP, Angabe der spezifischen Arbeit für eine
-            tagesparameterabhängige Marktlokation als Zahlenwert, angepassten
-            elektrischen Arbeit einer tagesparameterabhängigen Marktlokationon.
-            Schließt auch gemeinsame Messung ein - SLP und TLP-.
-
-            QTY Z10
-
-            PI 55672 55673 55628 55634 55035 55095 55060 55065 55066
-
-            QTY 265
-
-            PI 55013 55126 55156 55672 55673 55628 55634 55035 55095 55060 55043
-            55168 55169 55065 55066
-
-            QTY Z08
-
-            PI 55013 55126 55156 55628 55634 55035 55095 55060 55043 55168 55169
-            55065 55066
-        jahresverbrauchsprognose: *ref_0
-        kundenwert: *ref_0
-        verbrauchsaufteilung: *ref_0
-        wahlrechtPrognosegrundlage: &ref_1
-          $ref: '#/components/schemas/WahlrechtPrognosegrundlage'
-          description: >-
-            Wahlrecht der Prognosegrundlage (true = Wahlrecht beim Lieferanten
-            vorhanden)
-        grundWahlrechtPrognosegrundlage: *ref_1
-        abwicklungsmodell:
-          $ref: '#/components/schemas/Abwicklungsmodell'
-          description: >-
-            Abwicklungsmodell, aufgrund dieser Information wird für die
-            Bilanzierung abgeleitet, ob die Malo mit dem zugeordneten
-            Bilanzkreis im Modell 1 ZE9 bilanziert wird oder die Energiemenge
-            der Malo als NGZ im Modell 2 ZF0 in ein benachbartes
-            Bilanzierungsgebiet übergeben wird.
-
-            CAV ZA2
-
-            PI 55628 55634 55043 55168 55169 
-        vorjahresverbrauch: *ref_0
-        datenqualitaet:
-          $ref: '#/components/schemas/Datenqualitaet'
-          description: Datenqualität
-        gueltigkeitszeitraum:
-          $ref: '#/components/schemas/Zeitraum'
-          description: Gültigkeitszeitraum
-        lastprofile:
-          type: array
-          items: &ref_2
-            $ref: '#/components/schemas/Lastprofil'
-          description: |-
-            Normiertes Profil  - Profilbezeichnung
-            CCI Z02 
-        lastprofileBilanzierungsbeteiligter:
-          type: array
-          items: *ref_2
-          description: Lastprofile des Bilanzierungsbeteiligten
-        detailsPrognosegrundlage:
-          type: array
-          items:
-            $ref: '#/components/schemas/Profiltyp'
-          description: >-
-            Prognosegrundlage - dient zur genaueren Wertspezifizierung des
-            Merkmals im vorangegangenen Segments Prognosegrundlage. 
-
-            CAV E02 
-
-            PI 55013 55613 55614 55126 55156 55672 55673 55628 55634 55035 55095
-            55060 55043 55168 55169 55195 55196
-      required:
-        - boTyp
-        - versionStruktur
+          description: Externe Bezeichnung
+        prioritaet:
+          type: integer
+          description: Prioritaet
       x-apidog-orders:
         - boTyp
         - versionStruktur
-        - marktlokationsId
-        - aggregationsverantwortung
-        - zeitreihentyp
-        - prognosegrundlage
-        - bilanzierungsbeginn
-        - bilanzierungsende
-        - bilanzkreis
-        - fallgruppenzuordnung
-        - temperaturarbeit
-        - jahresverbrauchsprognose
-        - kundenwert
-        - verbrauchsaufteilung
-        - wahlrechtPrognosegrundlage
-        - grundWahlrechtPrognosegrundlage
-        - abwicklungsmodell
-        - vorjahresverbrauch
-        - datenqualitaet
-        - gueltigkeitszeitraum
-        - lastprofile
-        - lastprofileBilanzierungsbeteiligter
-        - detailsPrognosegrundlage
+        - bezeichnung
+        - prioritaet
+      examples:
+        - $ref: >-
+            https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/Bilanzkreis.json
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Profiltyp:
@@ -507,7 +645,7 @@ components:
       title: Zeitraum
       type: object
       properties:
-        zeiteinheit: &ref_3
+        zeiteinheit: &ref_4
           $ref: '#/components/schemas/Zeiteinheit'
           description: nicht in Benutzung
         dauer:
@@ -531,7 +669,7 @@ components:
             DTM164 Verarbeitung, Endedatum/-zeit
             DTM 156 Rechnungsperiode, Endedatum
             DTM Z43 vorläufiger Abrechnungszeitraum Ende
-        einheit: *ref_3
+        einheit: *ref_4
         ableseZeitraum:
           type: string
           description: |-
@@ -547,6 +685,7 @@ components:
         zeitraumText:
           type: string
           description: ZeitraumText
+          x-apidog-mock: "DTM+Z01:03MQ:Z01'\r\nNachfolgend noch einige Beispiele zur Übermittlung der Kündigungsfrist in der\r\nKommunikation von LF zu LF:\r\nBeispiel 1:\r\nDTM+Z01:30TM:Z01'\r\nDies entspricht der Kündigungsfrist von 30 Tagen zum Monatsende.\r\nBeispiel 2:\r\nDTM+Z01:03MJ:Z01'\r\nDies entspricht der Kündigungsfrist von 3 Monaten zum Jahresende. Somit hat die Kündigung\r\n3 Monate vor dem 31.12. zu erfolgen.\r\nBeispiel 3:\r\nDTM+Z01:01MQ:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Quartalsende.\r\nBeispiel 4:\r\nDTM+Z01:01MM:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Monatsende.\r\nBeispiel 5:\r\nDTM+Z01:01MT:Z01'\r\nDTM+Z10:201211152300?+00:303'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum 16.11.2012 00:00 Uhr.\r\nBeispiel 6:\r\nDTM+Z01:02WT:Z01'\r\nDTM+Z10:1120:106'\r\nDies entspricht der Kündigungsfrist von 2 Wochen zum 20. eines Monats 00:00 Uhr ab\r\nNovember.\r\nBeispiel 7:\r\nDTM+Z01:14TR:Z01'\r\nDies entspricht einer rollierenden Kündigungsfrist von 14 Tagen in der Zukunft."
         zeitraumId:
           type: integer
           description: |-
@@ -563,6 +702,8 @@ components:
         - abrechnungsZeitraum
         - zeitraumText
         - zeitraumId
+      required:
+        - enddatum
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Zeiteinheit:

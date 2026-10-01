@@ -73,7 +73,210 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Tranche'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tranche'
+                description: Liste der Tranchen
+              example:
+                boTyp: TRANCHE
+                versionStruktur: '1'
+                tranchenId: <string>
+                zukuenftigerMeldepunkt: true
+                sparte: ENUM_Sparte
+                gueltigkeitszeitraum:
+                  zeitraumId: 1
+                  startdatum: '2024-12-31T23:00:00Z'
+                  enddatum: '2025-12-31T23:00:00Z'
+                datenqualitaet: ENUM_qualitaet
+                energierichtung: ENUM_Energierichtung
+                bilanzierungsmethode: ENUM_Bilanzierungsmethode
+                verbrauchsart:
+                  - ENUM_Verbrauchsart
+                unterbrechbar: true
+                netzebene: ENUM_Netzebene
+                netzbetreiberCodeNr: <string>
+                gebietTyp: ENUM_Gebiettyp
+                netzgebietNr: <string>
+                bilanzierungsgebiet: <string>
+                grundversorgerCodeNr: <string>
+                gasqualitaet: ENUM_Gasqualitaet
+                endkunde:
+                  boTyp: GESCHAEFTSPARTNER
+                  versionStruktur: '1'
+                  anrede: <string>
+                  name1: <string>
+                  name2: <string>
+                  name3: <string>
+                  gewerbekennzeichnung: true
+                  hrnummer: <string>
+                  amtsgericht: <string>
+                  kontaktweg:
+                    - Kontaktart1
+                    - Kontaktart2
+                  umsatzsteuerId: <string>
+                  glaeubigerId: <string>
+                  eMailAdresse: <string>
+                  website: <string>
+                  partneradresse:
+                    postleitzahl: <string>
+                    ort: <string>
+                    strasse: <string>
+                    hausnummer: <string>
+                    postfach: <string>
+                    adresszusatz: <string>
+                    coErgaenzung: <string>
+                    landescode: ENUM_Landescode
+                    ortsteil: <string>
+                lokationsadresse:
+                  postleitzahl: <string>
+                  ort: <string>
+                  strasse: <string>
+                  hausnummer: <string>
+                  postfach: <string>
+                  adresszusatz: <string>
+                  coErgaenzung: <string>
+                  landescode: ENUM_Landescode
+                  ortsteil: <string>
+                  zusatzInformation:
+                    zusatz1: <string>
+                    zusatz2: <string>
+                    zusatz3: <string>
+                    zusatz4: <string>
+                    zusatz5: <string>
+                katasterinformation:
+                  gemarkung_flur: <string>
+                  flurstueck: <string>
+                marktrollen:
+                  - boTyp: MARKTTEILNEHMER
+                    versionStruktur: '1'
+                    zuordnungVon: '2024-12-31T23:00:00Z'
+                    zuordnungBis: '2025-12-31T23:00:00Z'
+                    marktrolle: ENUM_Marktrolle
+                    gewerbekennzeichnung: true
+                    rollencodenummer: <string>
+                    rollencodetyp: <string>
+                    weiterverpflichtet: false
+                  - boTyp: MARKTTEILNEHMER
+                    versionStruktur: '1'
+                    zuordnungVon: '2024-12-31T23:00:00Z'
+                    zuordnungBis: '2025-12-31T23:00:00Z'
+                    marktrolle: ENUM_Marktrolle
+                    gewerbekennzeichnung: true
+                    rollencodenummer: <string>
+                    rollencodetyp: <string>
+                    weiterverpflichtet: false
+                regelzone: <string>
+                marktgebiet: <string>
+                zeitreihentyp: ENUM_Zeitreihentyp
+                zaehlwerke:
+                  - zaehlwerkId: <string>
+                    bezeichnung: <string>
+                    richtung: ENUM_Energierichtung
+                    obisKennzahl: <string>
+                    wandlerfaktor: 5
+                    einheit: ENUM_Mengeneinheit
+                    schwachlastfaehig: ENUM_Schwachlastfaehig
+                    verwendungszwecke:
+                      - marktrolle: ENUM_Marktrolle
+                        zweck:
+                          - zweck1
+                          - zweck2
+                          - ...
+                    verbrauchsart: ENUM_Verbrauchsart
+                    unterbrechbarkeit: ENUM_Unterbrechbarkeit
+                    waermenutzung: ENUM_Waermenutzung
+                    konzessionsabgabe:
+                      satz: ENUM_AbgabeArt
+                      kosten: 45.73
+                      kategorie: <string>
+                    steuerbefreit: true
+                    vorkommastelle: '5'
+                    nachkommastelle: '0'
+                    abrechnungsrelevant: true
+                    anzahlAblesungen: '12'
+                    zaehlzeiten:
+                      zaehlzeitDefinition: <string>
+                      register: <string>
+                      schwachlastfaehig: ENUM_Schwachlastfaehig
+                    konfiguration: <string>
+                    messprodukt: <string>
+                    wertegranularitaet: ENUM_siehe.Liste.Kommentar
+                    notwendigkeitZweiteMessung: ENUM_siehe.Liste
+                    werteuebermittlungVerwendungszweck: ENUM
+                    artEMobilitaet: ENUM_siehe.Liste.Kommentar
+                zaehlwerkeBeteiligteMarktrolle:
+                  - rolle1
+                  - rolle2
+                verbrauchsmenge:
+                  - startdatum: '2022-10-14T07:52:00Z'
+                    enddatum: '2022-10-14T07:52:00Z'
+                    wertermittlungsverfahren: ENUM_Wertermittlungsverfahren
+                    messwertstatus: ENUM_Messwertstatus
+                    statuszusatzinformationen:
+                      - art: ENUM_StatusArt
+                        status: ENUM_Status
+                    obiskennzahl: <string>
+                    wert: <string>
+                    einheit: ENUM_Mengeneinheit
+                zugehoerigeMesslokationen:
+                  - messlokationsId: <string>
+                    arithmetik: <string>
+                    gueltigSeit: '2022-10-14T07:52:00Z'
+                    gueltigBis: '2022-10-14T07:52:00Z'
+                messtechnischeEinordnung: ENUM_MesstechnischeEinordnung
+                netznutzungsabrechnungsdaten:
+                  - artikelId: <string>
+                    artikelIdTyp: ENUM_ArtikelIdTyp
+                    anzahl: 5
+                    gemeinderabatt: 5.45
+                    zuschlag: 5.78
+                    abschlag: 5.87
+                    singulaereBetriebsmittel:
+                      wert: 5
+                      einheit: ENUM_Mengeneinheit
+                    preisSingulaereBetriebsmittel:
+                      wert: 5.7
+                      einheit: ENUM_Waehrungseinheit
+                      bezugswert: ENUM_Mengeneinheit
+                      status: ENUM_Preisstatus
+                    abrechnungBlindarbeit: true
+                    zahlerBlindarbeit: ENUM_siehe.Liste.Kommentar
+                    zahlerBlindarbeitLf: true
+                sperrstatus: ENUM_Sperrstatus
+                referenzMarktlokationsId: <string>
+                energieherkunft:
+                  - erzeugungsart: ENUM_Erzeugungsart
+                    anteilProzent: 5.2
+                versorgungsart: ENUM_siehe.Liste.Kommentar
+                fernsteuerbarkeit: ENUM.siehe.Liste.Kommentar
+                verguetungEmpfaenger: ENUM.siehe.Liste.Kommentar
+                foerderungsLand: <string>
+                statusErzeugendeMalo: ENUM.siehe.Liste.Kommentar
+                referenzTranche: <string>
+                aufteilungsmenge:
+                  wert: 5.3
+                  einheit: ENUM_Mengeneinheit
+                bilanzkreis: <string>
+                bildungTranchengroesse: ENUM
+                lokationszuordnung: <ENUM>
+                beteiligterMarktpartner:
+                  boTyp: MARKTTEILNEHMER
+                  versionStruktur: '1'
+                  marktrolle: NB
+                  gewerbekennzeichnung: true
+                  rollencodenummer: '9900259000002'
+                  rollencodetyp: BDEW
+                datenDerBeteiligtenMarktrolle:
+                  - bilanzkreis: 11Y0-0000-0076-N
+                    zaehlwerke:
+                      - obisKennzahl: 1-1:2.29.0
+                        verwendungszwecke:
+                          - marktrolle: ENUM_Marktrolle
+                            zweck:
+                              - zweck1
+                              - zweck2
+                              - ...
+                    betriebsstatus: REGELBETRIEB
           headers: {}
           x-apidog-name: OK
         '400':
@@ -417,6 +620,7 @@ components:
         zeitraumText:
           type: string
           description: ZeitraumText
+          x-apidog-mock: "DTM+Z01:03MQ:Z01'\r\nNachfolgend noch einige Beispiele zur Übermittlung der Kündigungsfrist in der\r\nKommunikation von LF zu LF:\r\nBeispiel 1:\r\nDTM+Z01:30TM:Z01'\r\nDies entspricht der Kündigungsfrist von 30 Tagen zum Monatsende.\r\nBeispiel 2:\r\nDTM+Z01:03MJ:Z01'\r\nDies entspricht der Kündigungsfrist von 3 Monaten zum Jahresende. Somit hat die Kündigung\r\n3 Monate vor dem 31.12. zu erfolgen.\r\nBeispiel 3:\r\nDTM+Z01:01MQ:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Quartalsende.\r\nBeispiel 4:\r\nDTM+Z01:01MM:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Monatsende.\r\nBeispiel 5:\r\nDTM+Z01:01MT:Z01'\r\nDTM+Z10:201211152300?+00:303'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum 16.11.2012 00:00 Uhr.\r\nBeispiel 6:\r\nDTM+Z01:02WT:Z01'\r\nDTM+Z10:1120:106'\r\nDies entspricht der Kündigungsfrist von 2 Wochen zum 20. eines Monats 00:00 Uhr ab\r\nNovember.\r\nBeispiel 7:\r\nDTM+Z01:14TR:Z01'\r\nDies entspricht einer rollierenden Kündigungsfrist von 14 Tagen in der Zukunft."
         zeitraumId:
           type: integer
           description: |-
@@ -433,6 +637,8 @@ components:
         - abrechnungsZeitraum
         - zeitraumText
         - zeitraumId
+      required:
+        - enddatum
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Zeiteinheit:
@@ -846,12 +1052,36 @@ components:
         status:
           $ref: '#/components/schemas/Preisstatus'
           description: nicht in Benutzung
+        menge:
+          type: integer
+          description: menge
+        minimaleMenge:
+          type: integer
+          description: minimale Menge
+        maximaleMenge:
+          type: integer
+          description: maximale Menge
+        preisart:
+          $ref: '#/components/schemas/Preisart'
       x-apidog-orders:
         - wert
         - einheit
         - bezugswert
         - status
+        - menge
+        - minimaleMenge
+        - maximaleMenge
+        - preisart
       x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    Preisart:
+      type: string
+      title: Preisart
+      enum:
+        - EINRICHTUNGSPREIS
+        - TRANSAKTIONSPREIS
+        - BETRIEBSPREIS
+      description: Preisart Code
       x-apidog-folder: ''
     Preisstatus:
       title: Preisstatus
@@ -1606,7 +1836,6 @@ components:
         - MDL
         - DL
         - BKV
-        - BKO
         - UENB
         - KUNDE-SELBST-NN
         - MGV
@@ -1641,9 +1870,6 @@ components:
           name: ''
           description: ''
         - value: BKV
-          name: ''
-          description: ''
-        - value: BKO
           name: ''
           description: ''
         - value: UENB
@@ -1897,6 +2123,18 @@ components:
           items:
             $ref: '#/components/schemas/Verwendungszweck'
           description: Verwendungungszweck der Werte Marktlokation, Tranche
+        verwendungszweckNB:
+          type: string
+          description: Codes gemäß Codeliste der Verwendungszwecke Verwendungszweck NB
+        verwendungszweckLF:
+          type: string
+          description: Codes gemäß Codeliste der Verwendungszwecke Verwendungszweck LF
+        verwendungszweckUENB:
+          type: string
+          description: Codes gemäß Codeliste der Verwendungszwecke Verwendungszweck ÜNB
+        keinProdukt:
+          type: boolean
+          description: 'CCI+11++ZF6: keinProdukt zugeordnet'
       x-apidog-orders:
         - zaehlwerkId
         - bezeichnung
@@ -1925,6 +2163,10 @@ components:
         - keinKonfigurationsprodukt
         - leistungskurvendefinition
         - verwendungszwecke
+        - verwendungszweckNB
+        - verwendungszweckLF
+        - verwendungszweckUENB
+        - keinProdukt
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Verwendungszweck:
@@ -2266,7 +2508,7 @@ components:
             Steuernummer
             RFF FC
             PI 37000 37001 37002 37005 37004 37003 37006
-        ansprechpartner:
+        ansprechpartner: &ref_12
           $ref: '#/components/schemas/Ansprechpartner'
           description: |-
             Ansprechpartner innerhalb des im vorangegangenen NAD-Segment
@@ -2361,6 +2603,12 @@ components:
           type: string
           format: date-time
           description: Enddatum der Zuordnung des Marktteilnehmers
+        bilanzkreis:
+          type: string
+          description: Bilanzkreis
+        verwendungszweckBilanzkreis:
+          $ref: '#/components/schemas/VerwendungszweckBilanzkreis'
+          description: Verwendungszweck des Bilanzkreises
       required:
         - boTyp
         - versionStruktur
@@ -2398,10 +2646,22 @@ components:
         - ipRange
         - zuordnungVon
         - zuordnungBis
+        - bilanzkreis
+        - verwendungszweckBilanzkreis
       examples:
         - $ref: >-
             https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/Marktteilnehmer.json
       x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    VerwendungszweckBilanzkreis:
+      type: string
+      title: VerwendungszweckBilanzkreis
+      enum:
+        - VERBRAUCHENDE_MARKTLOKATION
+        - ERZEUGENDE_MARKTLOKATION_EEG
+        - ERZEUGENDE_MARKTLOKATION_KWKG
+        - SONSTIGE_ERZEUGENDE_MARKTLOKATION
+      description: VerwendungszweckBilanzkreis
       x-apidog-folder: ''
     IpRange:
       title: IpRange
@@ -2861,6 +3121,8 @@ components:
       enum:
         - PROZENTUAL
         - AUFTEILUNGSFAKTOR
+        - AUFTEILUNG_TECHNISCHE_RESSOURCEN
+        - BERECHNUNGSFORMEL
       x-apidog-enum:
         - value: PROZENTUAL
           name: Prozentual
@@ -2870,6 +3132,12 @@ components:
             Aufteilungsfaktor auf Basis von Referenzenträger/installierter
             Leistung
           description: ZD2
+        - value: AUFTEILUNG_TECHNISCHE_RESSOURCEN
+          name: ''
+          description: ''
+        - value: BERECHNUNGSFORMEL
+          name: ''
+          description: ''
       x-apidog-folder: ''
     Menge:
       title: Menge
@@ -3016,6 +3284,58 @@ components:
         - TLS
         - SLS_TLS
         - SES_TES
+        - AUS
+        - BAS
+        - DBA
+        - DZR
+        - DZÜ
+        - FPE
+        - FPI
+        - SRE
+        - SRI
+        - VZR
+        - BIL
+        - BIP
+        - BIT
+        - GAL
+        - GAP
+        - GAT
+        - GEL
+        - GEP
+        - GET
+        - SOL
+        - SOP
+        - SOT
+        - WFL
+        - WFP
+        - WNL
+        - WNP
+        - WNT
+        - WAL
+        - WAP
+        - WAT
+        - AU1
+        - BI1
+        - BI2
+        - BI3
+        - GAA
+        - GAB
+        - GAC
+        - GE1
+        - GE2
+        - GE3
+        - SO1
+        - SO2
+        - SO3
+        - WF1
+        - WF2
+        - WF3
+        - WN1
+        - WN2
+        - WN3
+        - WAA
+        - WAB
+        - WAC
       description: Zeitreihentyp
       x-apidog-folder: ''
     Katasteradresse:
@@ -3478,6 +3798,7 @@ components:
           items:
             $ref: '#/components/schemas/Kontaktart'
           description: Bevorzugter Kontaktweg des Geschäftspartners.
+        ansprechpartner: *ref_12
       required:
         - boTyp
         - versionStruktur
@@ -3501,6 +3822,7 @@ components:
         - externeReferenzen
         - geschaeftspartnerrolle
         - kontaktweg
+        - ansprechpartner
       examples:
         - $ref: >-
             https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/Geschaeftspartner.json

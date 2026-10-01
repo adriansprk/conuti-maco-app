@@ -741,7 +741,6 @@ components:
         - MDL
         - DL
         - BKV
-        - BKO
         - UENB
         - KUNDE-SELBST-NN
         - MGV
@@ -776,9 +775,6 @@ components:
           name: ''
           description: ''
         - value: BKV
-          name: ''
-          description: ''
-        - value: BKO
           name: ''
           description: ''
         - value: UENB

@@ -1,32 +1,32 @@
 # Änderungsprotokoll Schnittstellen
 
 
-
 Alle wesentlichen Änderungen an den MACO APP Schnittstellen werden in dieser Datei dokumentiert.
 
-Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/),
-und dieses Projekt folgt der [Semantischen Versionierung](https://semver.org/lang/de/).
+:::info[]
+*Hinweis: Schnittstellen und Datenobjekte werden getrennt dokumentiert. Dieses Protokoll beschreibt ausschließlich Änderungen an den Schnittstellen (Endpunkte, Parameter, Verhalten).
+Änderungen an den BO4E-Geschäftsobjekten und Komponenten – neue oder umbenannte Felder, erweiterte Enums – sind im [Änderungsprotokoll BO4E Objekte](https://doc.macoapp.de/%C3%A4nderungsprotokoll-bo4e-objekte-1259115m0.md) dokumentiert.*
+:::
 
-## [Unveröffentlicht]
-- ...
+## [1.3.5] - 02. September 2026
+### Hinzugefügt
+- [Lokation identifizieren](https://doc.macoapp.de/lokation-identifizieren-40403306e0.md) (`POST /identifyLocation`): 
+Identifiziert zu einem definierten Stichtag alle zugehörigen Marktlokationen (MaLo) bzw. Messlokationen (MeLo) anhand übergebener Identifikationsmerkmale.
+
 
 ## [1.3.4] - 11. November 2025
-
 ### Hinzugefügt
 - Lesen der Netzlokation 
 
 ## [1.3.3] - 02. Juni 2025
-
 ### Geändert
 - Fehlerkorrektur in Prozessdaten aktualisieren im Maloident (Lieferant) : Unter Zusatzdaten wird die prozessId übergeben, nicht refrenzProzessId
 
 ## [1.3.2] - 14. Mai 2025
-
 ### Geändert
 - MCS Eingang: Beispiele und Beschreibungen erweitert
 
 ## [1.3.1] - 10. April 2025
-
 ### Hinzugefügt
 - MCS Eingang: Empfang einer Marktnachricht
 
@@ -134,4 +134,5 @@ und dieses Projekt folgt der [Semantischen Versionierung](https://semver.org/lan
 - Initiale Version der API-Dokumentation.
 
 
-
+Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/),
+und dieses Projekt folgt der [Semantischen Versionierung](https://semver.org/lang/de/).

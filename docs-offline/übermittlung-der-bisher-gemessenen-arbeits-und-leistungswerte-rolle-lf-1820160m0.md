@@ -175,7 +175,8 @@ UNZ+1+24100204533914'
 
        <Tab title="📄13016 Energiemengen und Leistungsmaximum">
           <Accordion title="PI_13016" defaultOpen={false}>
-                 <DataSchema id="8348182" />
+                 
+<DataSchema id="12584850" />
           </Accordion>
        </Tab>
         <Tab title="📄13016 Edi">

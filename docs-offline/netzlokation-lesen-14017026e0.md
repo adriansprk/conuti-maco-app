@@ -90,19 +90,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Netzlokation'
-              example:
-                - boTyp: NETZLOKATION
-                  versionStruktur: '1'
-                  netzlokationsId: E1688110018
-                  sparte: STROM
-                  gueltigkeitszeitraum:
-                    zeitraumId: 1
-                    startdatum: '2024-10-20T22:00:00Z'
-                    enddatum: '2024-12-24T23:00:00Z'
-                  datenqualitaet: IM_SYSTEM_VORHANDENE_DATEN
-                  abrechnungsdaten:
-                    - zahlerBlindarbeitLf: true
+                type: array
+                items:
+                  $ref: '#/components/schemas/Netzlokation'
+                description: Liste der Netzlokationen
           headers: {}
           x-apidog-name: OK
         '400':
@@ -368,6 +359,7 @@ components:
         zeitraumText:
           type: string
           description: ZeitraumText
+          x-apidog-mock: "DTM+Z01:03MQ:Z01'\r\nNachfolgend noch einige Beispiele zur Übermittlung der Kündigungsfrist in der\r\nKommunikation von LF zu LF:\r\nBeispiel 1:\r\nDTM+Z01:30TM:Z01'\r\nDies entspricht der Kündigungsfrist von 30 Tagen zum Monatsende.\r\nBeispiel 2:\r\nDTM+Z01:03MJ:Z01'\r\nDies entspricht der Kündigungsfrist von 3 Monaten zum Jahresende. Somit hat die Kündigung\r\n3 Monate vor dem 31.12. zu erfolgen.\r\nBeispiel 3:\r\nDTM+Z01:01MQ:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Quartalsende.\r\nBeispiel 4:\r\nDTM+Z01:01MM:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Monatsende.\r\nBeispiel 5:\r\nDTM+Z01:01MT:Z01'\r\nDTM+Z10:201211152300?+00:303'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum 16.11.2012 00:00 Uhr.\r\nBeispiel 6:\r\nDTM+Z01:02WT:Z01'\r\nDTM+Z10:1120:106'\r\nDies entspricht der Kündigungsfrist von 2 Wochen zum 20. eines Monats 00:00 Uhr ab\r\nNovember.\r\nBeispiel 7:\r\nDTM+Z01:14TR:Z01'\r\nDies entspricht einer rollierenden Kündigungsfrist von 14 Tagen in der Zukunft."
         zeitraumId:
           type: integer
           description: |-
@@ -384,6 +376,8 @@ components:
         - abrechnungsZeitraum
         - zeitraumText
         - zeitraumId
+      required:
+        - enddatum
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Zeiteinheit:
@@ -712,12 +706,36 @@ components:
         status:
           $ref: '#/components/schemas/Preisstatus'
           description: nicht in Benutzung
+        menge:
+          type: integer
+          description: menge
+        minimaleMenge:
+          type: integer
+          description: minimale Menge
+        maximaleMenge:
+          type: integer
+          description: maximale Menge
+        preisart:
+          $ref: '#/components/schemas/Preisart'
       x-apidog-orders:
         - wert
         - einheit
         - bezugswert
         - status
+        - menge
+        - minimaleMenge
+        - maximaleMenge
+        - preisart
       x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    Preisart:
+      type: string
+      title: Preisart
+      enum:
+        - EINRICHTUNGSPREIS
+        - TRANSAKTIONSPREIS
+        - BETRIEBSPREIS
+      description: Preisart Code
       x-apidog-folder: ''
     Preisstatus:
       title: Preisstatus
@@ -1081,6 +1099,18 @@ components:
           items:
             $ref: '#/components/schemas/Verwendungszweck'
           description: Verwendungungszweck der Werte Marktlokation, Tranche
+        verwendungszweckNB:
+          type: string
+          description: Codes gemäß Codeliste der Verwendungszwecke Verwendungszweck NB
+        verwendungszweckLF:
+          type: string
+          description: Codes gemäß Codeliste der Verwendungszwecke Verwendungszweck LF
+        verwendungszweckUENB:
+          type: string
+          description: Codes gemäß Codeliste der Verwendungszwecke Verwendungszweck ÜNB
+        keinProdukt:
+          type: boolean
+          description: 'CCI+11++ZF6: keinProdukt zugeordnet'
       x-apidog-orders:
         - zaehlwerkId
         - bezeichnung
@@ -1109,6 +1139,10 @@ components:
         - keinKonfigurationsprodukt
         - leistungskurvendefinition
         - verwendungszwecke
+        - verwendungszweckNB
+        - verwendungszweckLF
+        - verwendungszweckUENB
+        - keinProdukt
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Verwendungszweck:
@@ -1593,6 +1627,12 @@ components:
           type: string
           format: date-time
           description: Enddatum der Zuordnung des Marktteilnehmers
+        bilanzkreis:
+          type: string
+          description: Bilanzkreis
+        verwendungszweckBilanzkreis:
+          $ref: '#/components/schemas/VerwendungszweckBilanzkreis'
+          description: Verwendungszweck des Bilanzkreises
       required:
         - boTyp
         - versionStruktur
@@ -1630,10 +1670,22 @@ components:
         - ipRange
         - zuordnungVon
         - zuordnungBis
+        - bilanzkreis
+        - verwendungszweckBilanzkreis
       examples:
         - $ref: >-
             https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/Marktteilnehmer.json
       x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    VerwendungszweckBilanzkreis:
+      type: string
+      title: VerwendungszweckBilanzkreis
+      enum:
+        - VERBRAUCHENDE_MARKTLOKATION
+        - ERZEUGENDE_MARKTLOKATION_EEG
+        - ERZEUGENDE_MARKTLOKATION_KWKG
+        - SONSTIGE_ERZEUGENDE_MARKTLOKATION
+      description: VerwendungszweckBilanzkreis
       x-apidog-folder: ''
     IpRange:
       title: IpRange
@@ -2437,7 +2489,6 @@ components:
         - MDL
         - DL
         - BKV
-        - BKO
         - UENB
         - KUNDE-SELBST-NN
         - MGV
@@ -2472,9 +2523,6 @@ components:
           name: ''
           description: ''
         - value: BKV
-          name: ''
-          description: ''
-        - value: BKO
           name: ''
           description: ''
         - value: UENB

@@ -86,7 +86,41 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Berechnungsformel'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Berechnungsformel'
+                description: Liste der Berechnungsformeln
+              example:
+                - boTyp: BERECHNUNGSFORMEL
+                  versionStruktur: '1'
+                  gueltigkeitszeitraum:
+                    zeitraumId: 1
+                    startdatum: '2025-02-28T23:00:00Z'
+                  notwendigkeit: BERECHNUNGSFORMEL_NOTWENDIG
+                  rechenschrittId: 1
+                  rechenschritte:
+                    - rechenschrittBestandteilId: 1
+                      operation: ADDITION
+                      messlokationsId: DE0009697056900614312080040415222
+                      energieflussrichtung: AUSSP
+                      marktlokationsId: '51238696781'
+                      bezeichnungOperanden: MeLo1
+                    - rechenschrittBestandteilId: 1
+                      operation: ADDITION
+                      messlokationsId: DE0009697056900614312080040415333
+                      energieflussrichtung: AUSSP
+                      marktlokationsId: '51238696781'
+                      bezeichnungOperanden: MeLo2
+                  lokationsId: '51238696781'
+                  lokationsTyp: MALO
+                  berechnungsformel: MaLo1 = MeLo1 + MeLo2
+                  datenqualitaet: GUELTIGE_DATEN
+                  parameterIDs:
+                    - P1
+                    - P2
+                  aufteilungsfaktoren:
+                    - bezeichnungAufteilungsfaktor: Aufteilung Erzeugung
+                      faktor: 0.75
           headers: {}
           x-apidog-name: OK
         '400':
@@ -171,6 +205,31 @@ components:
         gueltigkeitszeitraum:
           $ref: '#/components/schemas/Zeitraum'
           description: Gültigkeitszeitraum der Werte
+        lokationsId:
+          type: string
+          description: >-
+            Eindeutige Nummer der Lokation, zu der die Berechnungsformel gehört.
+            Verwendung für notwendige interne Zuordnungen.
+        lokationsTyp:
+          $ref: '#/components/schemas/Lokationstyp'
+          description: >-
+            Gibt an,um welchen Lokationstyp es sich handelt. Verwendung für
+            notwendige interne Zuordnungen.
+        berechnungsformel:
+          type: string
+          description: Berechnungsformel
+        datenqualitaet:
+          $ref: '#/components/schemas/Datenqualitaet'
+        parameterIDs:
+          type: array
+          items:
+            type: string
+          description: Parameter IDs
+        aufteilungsfaktoren:
+          type: array
+          items:
+            $ref: '#/components/schemas/Aufteilungsfaktor'
+          description: Aufteilungsfaktor
       required:
         - boTyp
         - versionStruktur
@@ -185,7 +244,107 @@ components:
         - rechenschritte
         - verwendungszweck
         - gueltigkeitszeitraum
+        - lokationsId
+        - lokationsTyp
+        - berechnungsformel
+        - datenqualitaet
+        - parameterIDs
+        - aufteilungsfaktoren
       x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    Aufteilungsfaktor:
+      type: object
+      title: Aufteilungsfaktor
+      properties:
+        bezeichnungAufteilungsfaktor:
+          type: string
+          description: Bezeichnung des Aufteilungsfaktors
+        faktor:
+          type: number
+          format: float
+          description: Faktor
+      x-apidog-orders:
+        - bezeichnungAufteilungsfaktor
+        - faktor
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    Datenqualitaet:
+      type: string
+      title: Datenqualitaet
+      description: Datenqualitaet
+      enum:
+        - ERWARTETE_DATEN
+        - IM_SYSTEM_VORHANDENE_DATEN
+        - INFORMATIVE_DATEN
+        - GUELTIGE_DATEN
+        - KEINE_DATEN
+        - IM_SYSTEM_KEINE_DATEN_VORHANDEN
+        - KEINE_DATEN_ERWARTET
+        - DIFFERENZ_DATEN
+        - DIFFERENZ_ERWARTETE_DATEN
+        - DIFFERENZ_IM_SYSTEM_VORHANDENE_DATEN
+      x-apidog-enum:
+        - value: ERWARTETE_DATEN
+          name: ''
+          description: abhängig vom BO
+        - value: IM_SYSTEM_VORHANDENE_DATEN
+          name: ''
+          description: abhängig vom BO
+        - value: INFORMATIVE_DATEN
+          name: ''
+          description: abhängig vom BO
+        - value: GUELTIGE_DATEN
+          name: ''
+          description: abhängig vom BO
+        - value: KEINE_DATEN
+          name: ''
+          description: abhängig vom BO
+        - value: IM_SYSTEM_KEINE_DATEN_VORHANDEN
+          name: ''
+          description: abhängig vom BO
+        - value: KEINE_DATEN_ERWARTET
+          name: ''
+          description: abhängig vom BO
+        - value: DIFFERENZ_DATEN
+          name: ''
+          description: abhängig vom BO
+        - value: DIFFERENZ_ERWARTETE_DATEN
+          name: ''
+          description: abhängig vom BO
+        - value: DIFFERENZ_IM_SYSTEM_VORHANDENE_DATEN
+          name: ''
+          description: abhängig vom BO
+      x-apidog-folder: ''
+    Lokationstyp:
+      type: string
+      title: Lokationstyp
+      description: Gibt an, ob es sich um eine Markt- oder Messlokation handelt
+      enum:
+        - MALO
+        - MELO
+        - NELO
+        - TECHNISCHE_RESSOURCE
+        - STEUERBARE_RESSOURCE
+        - TRANCHE
+      x-apidog-enum:
+        - value: MALO
+          name: Marktlokation
+          description: Z18
+        - value: MELO
+          name: Messlokation
+          description: Z19
+        - value: NELO
+          name: Netzlokation
+          description: Z32
+        - value: TECHNISCHE_RESSOURCE
+          name: Technische Ressource
+          description: Z37
+        - value: STEUERBARE_RESSOURCE
+          name: ''
+          description: ''
+        - value: TRANCHE
+          name: ''
+          description: ''
       x-apidog-folder: ''
     Zeitraum:
       title: Zeitraum
@@ -231,6 +390,7 @@ components:
         zeitraumText:
           type: string
           description: ZeitraumText
+          x-apidog-mock: "DTM+Z01:03MQ:Z01'\r\nNachfolgend noch einige Beispiele zur Übermittlung der Kündigungsfrist in der\r\nKommunikation von LF zu LF:\r\nBeispiel 1:\r\nDTM+Z01:30TM:Z01'\r\nDies entspricht der Kündigungsfrist von 30 Tagen zum Monatsende.\r\nBeispiel 2:\r\nDTM+Z01:03MJ:Z01'\r\nDies entspricht der Kündigungsfrist von 3 Monaten zum Jahresende. Somit hat die Kündigung\r\n3 Monate vor dem 31.12. zu erfolgen.\r\nBeispiel 3:\r\nDTM+Z01:01MQ:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Quartalsende.\r\nBeispiel 4:\r\nDTM+Z01:01MM:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Monatsende.\r\nBeispiel 5:\r\nDTM+Z01:01MT:Z01'\r\nDTM+Z10:201211152300?+00:303'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum 16.11.2012 00:00 Uhr.\r\nBeispiel 6:\r\nDTM+Z01:02WT:Z01'\r\nDTM+Z10:1120:106'\r\nDies entspricht der Kündigungsfrist von 2 Wochen zum 20. eines Monats 00:00 Uhr ab\r\nNovember.\r\nBeispiel 7:\r\nDTM+Z01:14TR:Z01'\r\nDies entspricht einer rollierenden Kündigungsfrist von 14 Tagen in der Zukunft."
         zeitraumId:
           type: integer
           description: |-
@@ -247,6 +407,8 @@ components:
         - abrechnungsZeitraum
         - zeitraumText
         - zeitraumId
+      required:
+        - enddatum
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Zeiteinheit:
@@ -390,7 +552,6 @@ components:
         - MDL
         - DL
         - BKV
-        - BKO
         - UENB
         - KUNDE-SELBST-NN
         - MGV
@@ -425,9 +586,6 @@ components:
           name: ''
           description: ''
         - value: BKV
-          name: ''
-          description: ''
-        - value: BKO
           name: ''
           description: ''
         - value: UENB
@@ -511,6 +669,12 @@ components:
             RFF Z19
             PI 25001 
         energieflussrichtung: *ref_2
+        marktlokationsId:
+          type: string
+          description: marktlokationsId
+        bezeichnungOperanden:
+          type: string
+          description: Bezeichnung der Operanden
       x-apidog-orders:
         - rechenschrittBestandteilId
         - referenzRechenschrittId
@@ -520,6 +684,8 @@ components:
         - aufteilungsfaktorEnergiemenge
         - messlokationsId
         - energieflussrichtung
+        - marktlokationsId
+        - bezeichnungOperanden
       description: .
       x-apidog-ignore-properties: []
       x-apidog-folder: ''

@@ -98,11 +98,37 @@
           <Tabs>
                 <Tab title="Übersicht">
           <Card title="Entscheidungsbaumdiagramm E_0614"
-                href="https://doc.macoapp.de/ebd-e-0614-860896m0.md">
+                href="https://doc.macoapp.de/lf_0614.md">
           </Card>    
       </Tab> 
       </Tabs>
     </Step>
+     <Step title="Schnittstellen lesend für ausgehende Nachrichten">
+    <Tabs>
+      <Tab title="Übersicht">
+                    <Card title="Energieliefervertrag lesen" 
+                href="https://doc.macoapp.de/energieliefervertrag-lesen-14017014e0.md">
+              Lesen der Bilanzierungsdaten einer Lokation zu einem bestimmten Zeitpunkt
+          </Card>
+          <Card title="Bilanzierung lesen" 
+                href="https://doc.macoapp.de/bilanzierung-lesen-14017013e0.md">
+              Lesen des Energieliefervertrages einer Lokation zu einem bestimmten Zeitpunkt
+          </Card>
+      </Tab>        
+
+      <Tab title="📄Energieliefervertrag lesen">
+            <Accordion title="Vertrag" defaultOpen={false}>
+                 <DataSchema id="5241988" />    
+            </Accordion>
+      </Tab>   
+         <Tab title="📄Bilanzierung lesen">
+            <Accordion title="Vertrag" defaultOpen={false}>
+                 
+<DataSchema id="5241965" />
+            </Accordion>
+      </Tab>  
+    </Tabs>
+  </Step>
   <Step title="Schnittstelle aktualisieren der Prozessdaten">
     <Tabs>
       <Tab title="Übersicht">

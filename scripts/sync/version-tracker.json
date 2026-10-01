@@ -6,8 +6,8 @@
     "maco-api-documentation": {
       "source": "git submodule or external repo",
       "path": "maco-api-documentation",
-      "last_synced": "2026-07-10T12:08:08Z",
-      "last_commit_hash": "e6725f643d9a3d57e1e06ec60d03e9fd09e10dbd",
+      "last_synced": "2026-10-01T07:09:23Z",
+      "last_commit_hash": "247189b9d457c202dfed10a6c13a0d9c75f1f4c5",
       "tracked_files": {
         "build_script": {
           "path": "scripts/build-openapi-json.sh",
@@ -104,7 +104,7 @@
     "docs-offline": {
       "source": "Downloaded from doc.macoapp.de",
       "path": "docs-offline",
-      "last_synced": "2026-07-10T12:08:08Z",
+      "last_synced": "2026-10-01T07:09:23Z",
       "last_download_date": null,
       "tracked_files": {
         "prozessuebersicht": {
@@ -131,13 +131,13 @@
           "Update llm.txt index if new processes added"
         ]
       },
-      "file_count": 315
+      "file_count": 364
     },
     "maco-edi-testfiles": {
       "source": "git submodule or external repo",
       "path": "maco-edi-testfiles",
-      "last_synced": "2026-07-10T12:08:08Z",
-      "last_commit_hash": "622f8db252d69a3db42476f21a76a717f633f61a",
+      "last_synced": "2026-10-01T07:09:23Z",
+      "last_commit_hash": "097af7c191883dcf26b6655dfba5cb744e139a81",
       "tracked_files": {
         "edi_test_files": {
           "path": "**/*.edi",
@@ -187,8 +187,8 @@
     "ebd-diagrams": {
       "source": "git submodule (Hochfrequenz/machine-readable_entscheidungsbaumdiagramme)",
       "path": "ebd-diagrams",
-      "last_synced": "2026-07-10T12:08:08Z",
-      "last_commit_hash": "834fd748cca1b51c37e883d8beb67001247bd552",
+      "last_synced": "2026-10-01T07:09:23Z",
+      "last_commit_hash": "6ddb13834ce061c2b3b2548751e7d0e907b9d67a",
       "latest_format_version": "FV2610",
       "format_versions": [
         "FV2304",
@@ -212,8 +212,8 @@
     "bo4e-schema": {
       "source": "git submodule (conuti-gmbh/bo4e-schema)",
       "path": "bo4e-schema",
-      "last_synced": "2026-07-10T12:08:08Z",
-      "last_commit_hash": "2cd72112f7068f7eaee4579401faf248632de33c",
+      "last_synced": "2026-10-01T07:09:23Z",
+      "last_commit_hash": "92af9e616a6ba3a61ad645f097dc3e6f86699289",
       "sync_actions": {
         "on_schema_change": [
           "Pull submodule: ./scripts/sync/update-submodules.sh",
@@ -224,7 +224,7 @@
     "cdoc-schema": {
       "source": "git submodule (conuti-gmbh/cdoc-schema)",
       "path": "cdoc-schema",
-      "last_synced": "2026-07-10T12:08:08Z",
+      "last_synced": "2026-10-01T07:09:23Z",
       "last_commit_hash": "2874c38bc067ab7ef9a94e9e9c094e88123339a1",
       "sync_actions": {
         "on_schema_change": [
@@ -236,7 +236,7 @@
     "ahb-tables": {
       "source": "Downloaded from ahb-tabellen.hochfrequenz.de (public API)",
       "path": "ahb-tables",
-      "last_synced": "2026-07-10T12:08:08Z",
+      "last_synced": "2026-10-01T07:09:23Z",
       "versions": [
         "FV2510",
         "FV2604",

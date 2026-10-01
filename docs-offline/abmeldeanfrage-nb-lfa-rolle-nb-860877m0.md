@@ -1,25 +1,22 @@
 # Abmeldeanfrage NB -> LFA (Rolle NB)
 
 # Prozessübersicht
-![LW24h mit Abhängigkeiten - Abmeldeanfrage (NB).png](https://api.apidog.com/api/v1/projects/816353/resources/352490/image-preview)
+
+
+![LW24h mit Abhängigkeiten - Abmeldeanfrage (NB).png](https://api.apidog.com/api/v1/projects/816353/resources/372780/image-preview)
 
 <Steps>
-  <Step title="Prozessauslöser - Event" defaultOpen={false}>
+  <Step title="Prozessauslöser - Trigger 55001" defaultOpen={false}>
     <Tabs>
       <Tab title="Übersicht">
  
-        <Card title="START_ABMELDEANFRAGE"
-              href="https://doc.macoapp.de/anfrage-zur-beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-14992646e0.md">
-            Anfrage zur Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche
+        <Card title="55010"
+             >
+            Anfrage zur Beendigung der Zuordnung
         </Card>
 
       </Tab>        
-      <Tab title="📄START_ABMELDEANFRAGE">
-          <Accordion title="ABMELDEANFRAGE" defaultOpen={false}>
-                    <DataSchema id="5757038" />
-          </Accordion>
-          
-      </Tab>
+     
         <Tab title="📄55010 Anfrage zur Beendigung der Zuordnung">
           <Accordion title="PI_55010" defaultOpen={false}>
                     <DataSchema id="5242359" />
@@ -86,12 +83,18 @@
                    <DataSchema id="5242361" />
           </Accordion>
       </Tab>
-      <Tab title="55011 - Bestätigung Beendigung der Zuordnung">
+      <Tab title="55011 - Bestätigung Beendigung der Zuordnung ">
           <Accordion title="PI_55011" defaultOpen={false}>
                  <DataSchema id="5242360" />
           </Accordion>
         
-      </Tab>        
+      </Tab>    
+      <Tab title="55037 - Beendigung der Zuordnung">
+          <Accordion title="PI_55037" defaultOpen={false}>
+                 <DataSchema id="5562221" />
+          </Accordion>
+        
+      </Tab>      
     </Tabs>
   </Step>  
 </Steps>

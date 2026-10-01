@@ -22049,7 +22049,7 @@ components:
                       SG4.IDE+24.SG8.SEQ+Z52.SG10.CCI+[Z17|Z50|Z56].CAV+[ZH0|ZH1]
                     enum:
                       - INBETRIEBSETZUNG_NACH_2023
-                      - INBETRIEBSETZUN_VOR_2024
+                      - INBETRIEBSETZUNG_VOR_2024
                   artEMobilitaet:
                     type: string
                 x-apidog-orders:
@@ -26785,7 +26785,6 @@ components:
         - MDL
         - DL
         - BKV
-        - BKO
         - UENB
         - KUNDE-SELBST-NN
         - MGV
@@ -26820,9 +26819,6 @@ components:
           name: ''
           description: ''
         - value: BKV
-          name: ''
-          description: ''
-        - value: BKO
           name: ''
           description: ''
         - value: UENB

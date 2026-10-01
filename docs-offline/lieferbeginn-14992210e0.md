@@ -2740,6 +2740,7 @@ components:
                       SG4.IDE+24.SG8.SEQ+Z01.SG10.CCI+Z23
                   energierichtung: &ref_0
                     $ref: '#/components/schemas/Energierichtung'
+                    description: EINSP
                 x-apidog-orders:
                   - marktlokationsId
                   - erforderlichesProduktpaket
@@ -4021,10 +4022,10 @@ components:
       type: object
       properties:
         typ:
-          $ref: '#/components/schemas/MarktlokationsTyp'
           description: >-
             Typisierung der Marktlokation als standard Marktlokation, ruhende
             Marktlokation oder Kundenanlage
+          $ref: '#/components/schemas/MarktlokationsTyp'
         gueltigAb:
           type: string
           format: date-time
@@ -4040,13 +4041,15 @@ components:
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     MarktlokationsTyp:
-      title: AbgabeArt
+      $id: >-
+        https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/schemas/v1/enum/MarktlokationsTyp.schema.json
+      title: MarktlokationsTyp
       type: string
       enum:
         - STANDARD_MARKTLOKATION
         - RUHENDE_MARKTLOKATION
         - KUNDENANLAGE
-      description: AbgabeArt
+      description: MarktlokationsTyp
       x-apidog-folder: ''
     EVENT_SUCCESS:
       type: object

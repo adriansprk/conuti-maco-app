@@ -16,11 +16,11 @@ START_BESTELLUNG_AEND_PROGNOSEGRUNDLAGE"
 
       </Tab>        
       <Tab title="📄START_BESTELLUNG_AEND_PROGNOSEGRUNDLAGE">
-          <Accordion title="PI_17120" defaultOpen={false}>              <DataSchema id="8348162" />
+          <Accordion title="PI_17120" defaultOpen={false}>            <DataSchema id="13005905" /> 
           </Accordion>   
       </Tab>
              <Tab title="📄START_BESTELLUNG_ZAEHLZEITDEFINITION">
-          <Accordion title="PI_17123" defaultOpen={false}>             
+          <Accordion title="PI_17123" defaultOpen={false}>            <DataSchema id="13005908" />
           </Accordion>   
       </Tab>
     </Tabs>
@@ -36,13 +36,16 @@ START_BESTELLUNG_AEND_PROGNOSEGRUNDLAGE"
         <Tab title="📄19121 Mitteilung zur Änderung
 Prognosegrundlage">
             <Accordion title="PI_19121" defaultOpen={false}>
-               <DataSchema id="8348138" />
+             
+
+<DataSchema id="13005881" />
             </Accordion>
         </Tab>
        <Tab title="📄19124 Mitteilung zur Änderung
 Zählzeitdefinition">
             <Accordion title="PI_19124" defaultOpen={false}>
-                <DataSchema id="8348140" />
+                
+<DataSchema id="10709668" />
             </Accordion>
        </Tab>
        <Tab title="📄21043 Bestellungsantwort / -mitteilung ">
@@ -53,3 +56,6 @@ Zählzeitdefinition">
     </Tabs>
   </Step>
 </Steps>
+
+
+

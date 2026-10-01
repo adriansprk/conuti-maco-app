@@ -9,7 +9,7 @@ info:
   description: ''
   version: 1.0.0
 paths:
-  /identifyMarketlocation:
+  /identifyMarketlocation__:
     post:
       summary: Identifizierung der MaLo
       deprecated: false
@@ -29,7 +29,427 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/LESEN_MALOIDENT_BASIS'
+              type: object
+              x-apidog-refs:
+                01KZR1NQSF2RW53VQV2YEFSWZG:
+                  $ref: '#/components/schemas/LESEN_MALOIDENT_BASIS'
+                  x-apidog-overrides:
+                    transaktionsdaten: &ref_0
+                      type: object
+                      description: >
+                        Informationscontainer für Daten zum Vorgang und
+                        beteiligten Marktpartnern
+                      properties:
+                        vorgangsnummer:
+                          type: string
+                          description: >
+                            Externe Transaktions-Id zur eindeutigen
+                            Identifikation der Anfrage der MaLo-ID der
+                            Marktlokation des sendenden Marktpartners. | Format
+                            $UUID RFC4122 | Mapping auf [header] transactionId
+                          examples:
+                            - f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+                        nachrichtendatum:
+                          type: string
+                          pattern: >-
+                            20(\\d{2}(\\-(0[13578]|1[02])\\-(0[1-9]|[12]\\d|3[01])|\\-02\\-(0[1-9]|1\\d|2[0-8])|\\-(0[469]|11)\\-(0[1-9]|[12]\\d|30))|([02468][048]|[13579][26])\\-02\\-(29))T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\dZ
+                          description: >
+                            Zeitpunkt an dem der Aufruf erstellt wurde in
+                            Zeitzone UTC - falls der Wert aus dem Backend nicht
+                            befüllt ist, wird die MaloIdent Lösung das Datum zum
+                            Zeitpunkt des Empfang befüllen. | Format
+                            YYYY-MM-DD'T'HH:mm:ss'Z' | Mapping auf [header]
+                            creationDateTime
+                          examples:
+                            - '2023-08-01T12:30:00Z'
+                        ausfuehrungsdatum:
+                          type: string
+                          pattern: >-
+                            20(\\d{2}(\\-(0[13578]|1[02])\\-(0[1-9]|[12]\\d|3[01])|\\-02\\-(0[1-9]|1\\d|2[0-8])|\\-(0[469]|11)\\-(0[1-9]|[12]\\d|30))|([02468][048]|[13579][26])\\-02\\-(29))T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\dZ
+                          description: >
+                            Zeitpunkt zu dem die Identifikation stattfinden soll
+                            in angegeben in Zeitzone UTC. (umgerechnet muss
+                            dieser Zeitpunkt ein Tagesbeginn 00:00 Uhr
+                            gesetzlicher deutscher Zeit sein) | Format
+                            YYYY-MM-DD'T'HH:mm:ss'Z' | Mapping auf
+                            identificationDateTime
+                          examples:
+                            - '2023-08-02T22:00:00Z'
+                        idempodenzschluessel:
+                          type: string
+                          description: >
+                            Initiale Vorgangsnummer (Format $UUID RFC4122) zur
+                            Angabe des Idempodenzschlüssel im Falle eines Retry
+                            aus dem Backend | Format $UUID RFC4122 | Mapping auf
+                            [header] initialTransactionId
+                          examples:
+                            - f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+                        absender:
+                          type: object
+                          description: Eigene ILN und Rollencodetyp
+                          properties:
+                            rollencodenummer:
+                              type: string
+                              description: Eigene ILN
+                              examples:
+                                - '9904000000005'
+                          required:
+                            - rollencodenummer
+                          x-apidog-orders:
+                            - rollencodenummer
+                          x-apidog-ignore-properties: []
+                        empfaenger:
+                          type: object
+                          description: >-
+                            ILN und Rollencodetyp des Netzbetreibers, an den die
+                            Identanfrage gestellt werden soll
+                          properties:
+                            rollencodenummer:
+                              type: string
+                              description: >-
+                                ILN des Netzbetreibers, an den die Identanfrage
+                                gestellt werden soll
+                              examples:
+                                - '9900936000002'
+                          required:
+                            - rollencodenummer
+                          x-apidog-orders:
+                            - rollencodenummer
+                          x-apidog-ignore-properties: []
+                      required:
+                        - vorgangsnummer
+                        - ausfuehrungsdatum
+                        - absender
+                        - empfaenger
+                      x-apidog-orders:
+                        - vorgangsnummer
+                        - nachrichtendatum
+                        - ausfuehrungsdatum
+                        - idempodenzschluessel
+                        - absender
+                        - empfaenger
+                      x-apidog-ignore-properties: []
+                  required:
+                    - transaktionsdaten
+              x-apidog-orders:
+                - 01KZR1NQSF2RW53VQV2YEFSWZG
+              properties:
+                stammdaten:
+                  type: object
+                  description: >
+                    Informationscontainer für Stammdaten, die zur
+                    Identifizierung genutzt werden
+                  properties:
+                    MARKTLOKATION:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          boTyp:
+                            type: string
+                            enum:
+                              - MARKTLOKATION
+                            examples:
+                              - MARKTLOKATION
+                          versionStruktur:
+                            type: string
+                            enum:
+                              - '1'
+                            examples:
+                              - '1'
+                          marktlokationsId:
+                            type: string
+                            pattern: \d{11}
+                            description: >
+                              Identifiziert die Marktlokation mittels einer
+                              eindeutigen ID | Mapping auf
+                              identificationParameterId.maloId                   
+                            examples:
+                              - '57685676748'
+                          energierichtung: &ref_1
+                            $ref: '#/components/schemas/Energierichtung'
+                            description: >
+                              Energieflussrichtung der Marktlokation | Mapping
+                              auf energyDirection                    
+                          lokationsadresse: &ref_2
+                            $ref: '#/components/schemas/Adresse'
+                            description: >
+                              Angabe des Ortes, Postleitzahl, Ländercode,
+                              Straße, Hausnummer, Hausnummernergänzung der
+                              Marktlokationsadresse | Mapping auf
+                              identificationParameterAddress                    
+                          katasterinformation: &ref_3
+                            $ref: '#/components/schemas/Katasteradresse'
+                            description: >
+                              Angabe des Gemarkungsnamens, Flurnummer,
+                              Flurstücksnummer (des Flurstücks) der
+                              Marktlokationsadresse | Mapping auf
+                              identificationParameterAddress.landParcels                    
+                          geokoordinaten: &ref_4
+                            $ref: '#/components/schemas/Geokoordinaten'
+                            description: >
+                              Angabe der Breite (Breitengrad), Angabe der Breite
+                              (Breitengrad), UTM Ostwert, UTM Nordwert,
+                              Gauß-Krüger Hochwert, Gauß-Krüger Rechtswert  |
+                              Mapping auf
+                              identificationParameterAddress.geographicCoordinates                    
+                        required:
+                          - boTyp
+                          - versionStruktur
+                          - energierichtung
+                        x-apidog-orders:
+                          - boTyp
+                          - versionStruktur
+                          - marktlokationsId
+                          - energierichtung
+                          - lokationsadresse
+                          - katasterinformation
+                          - geokoordinaten
+                        x-apidog-ignore-properties: []
+                    TRANCHE:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          boTyp:
+                            type: string
+                            enum:
+                              - TRANCHE
+                            examples:
+                              - TRANCHE
+                          versionStruktur:
+                            type: string
+                            enum:
+                              - '1'
+                            examples:
+                              - '1'
+                          tranchenId:
+                            type: string
+                            pattern: \d{11}
+                            description: >
+                              Identifiziert die Tranche mittels einer
+                              eindeutigen ID | Mapping auf
+                              identificationParameterId.tranchenIds                    
+                            examples:
+                              - '57685676742'
+                        required:
+                          - boTyp
+                          - versionStruktur
+                        x-apidog-orders:
+                          - boTyp
+                          - versionStruktur
+                          - tranchenId
+                        x-apidog-ignore-properties: []
+                    MESSLOKATION:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          boTyp:
+                            type: string
+                            enum:
+                              - MESSLOKATION
+                            examples:
+                              - MESSLOKATION
+                          versionStruktur:
+                            type: string
+                            enum:
+                              - '1'
+                            examples:
+                              - '1'
+                          messlokationsId:
+                            type: string
+                            pattern: DE\d{11}[A-Z,\d]{20}
+                            description: >
+                              Identifiziert die Messlokation mittels einer
+                              eindeutigen ID | Mapping auf
+                              identificationParameterId.meloIds                     
+                            examples:
+                              - DE00014545768S0000000000000003054
+                        required:
+                          - boTyp
+                          - versionStruktur
+                        x-apidog-orders:
+                          - boTyp
+                          - versionStruktur
+                          - messlokationsId
+                        x-apidog-ignore-properties: []
+                    ZAEHLER:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          boTyp:
+                            type: string
+                            enum:
+                              - ZAEHLER
+                            examples:
+                              - ZAEHLER
+                          versionStruktur:
+                            type: string
+                            enum:
+                              - '1'
+                            examples:
+                              - '1'
+                          zaehlernummer:
+                            type: string
+                            description: >
+                              Identifiziert das Gerät der Messlokation mittels
+                              Gerätenummer | Mapping auf
+                              identificationParameterId.meterNumbers                  
+                            examples:
+                              - 1SM-8465929523
+                        required:
+                          - boTyp
+                          - versionStruktur
+                        x-apidog-orders:
+                          - boTyp
+                          - versionStruktur
+                          - zaehlernummer
+                        x-apidog-ignore-properties: []
+                    ENERGIELIEFERVERTRAG:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          boTyp:
+                            type: string
+                            enum:
+                              - VERTRAG
+                            examples:
+                              - VERTRAG
+                          versionStruktur:
+                            type: string
+                            enum:
+                              - '1'
+                            examples:
+                              - '1'
+                          vertragsart:
+                            type: string
+                            enum:
+                              - ENERGIELIEFERVERTRAG
+                            examples:
+                              - ENERGIELIEFERVERTRAG
+                          vertragspartner2:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                boTyp:
+                                  type: string
+                                  enum:
+                                    - GESCHAEFTSPARTNER
+                                  examples:
+                                    - GESCHAEFTSPARTNER
+                                versionStruktur:
+                                  type: string
+                                  enum:
+                                    - '1'
+                                  examples:
+                                    - '1'
+                                anrede:
+                                  type: string
+                                  description: >
+                                    Angabe des Titels der natürlichen Person |
+                                    Mapping auf
+                                    identificationParameterAddress.name.title                        
+                                  examples:
+                                    - Prof.Dr.
+                                name1:
+                                  type: string
+                                  description: >
+                                    Angabe des Namen des Kunden | Mapping auf
+                                    identificationParameterAddress.name.surnames
+                                    oder
+                                    identificationParameterAddress.name.company,
+                                    wenn gewerbekennzeichnung =
+                                    true                          
+                                  examples:
+                                    - Becker
+                                name2:
+                                  type: string
+                                  description: >
+                                    Angabe des Vornamen des Kunden | Mapping auf
+                                    identificationParameterAddress.name.firstnames                               
+                                  examples:
+                                    - Michael
+                                gewerbekennzeichnung:
+                                  type: boolean
+                                  description: >
+                                    Angabe ob gewerblicher oder private
+                                    Kunde                    
+                                  examples:
+                                    - false
+                                geschaeftspartnerrolle:
+                                  type: array
+                                  items:
+                                    type: string
+                                    enum:
+                                      - KUNDE
+                                    examples:
+                                      - KUNDE
+                                externeReferenzen:
+                                  type: array
+                                  description: >
+                                    Zur Angabe der Kundennummer des Kunden beim
+                                    bisherigen Lieferanten
+                                    (LFA)                        
+                                  items:
+                                    type: object
+                                    properties:
+                                      exRefName:
+                                        type: string
+                                        enum:
+                                          - Kundennummer beim Altlieferanten
+                                        examples:
+                                          - Kundennummer beim Altlieferanten
+                                      exRefWert:
+                                        type: string
+                                        description: >
+                                          Kundennummer des Kunden beim bisherigen
+                                          Lieferanten
+                                          (LFA)                              
+                                        examples:
+                                          - V567345345
+                                    x-apidog-orders:
+                                      - exRefName
+                                      - exRefWert
+                                    x-apidog-ignore-properties: []
+                              x-apidog-orders:
+                                - boTyp
+                                - versionStruktur
+                                - anrede
+                                - name1
+                                - name2
+                                - gewerbekennzeichnung
+                                - geschaeftspartnerrolle
+                                - externeReferenzen
+                              x-apidog-ignore-properties: []
+                        required:
+                          - boTyp
+                          - versionStruktur
+                        x-apidog-orders:
+                          - boTyp
+                          - versionStruktur
+                          - vertragsart
+                          - vertragspartner2
+                        x-apidog-ignore-properties: []
+                  required:
+                    - MARKTLOKATION
+                  x-apidog-orders:
+                    - MARKTLOKATION
+                    - TRANCHE
+                    - MESSLOKATION
+                    - ZAEHLER
+                    - ENERGIELIEFERVERTRAG
+                  x-apidog-ignore-properties: []
+                transaktionsdaten: *ref_0
+              required:
+                - stammdaten
+                - transaktionsdaten
+              x-apidog-ignore-properties:
+                - stammdaten
+                - transaktionsdaten
             example:
               stammdaten:
                 MARKTLOKATION:
@@ -69,418 +489,10 @@ paths:
       security:
         - bearer: []
       x-apidog-folder: Schnittstellen/MaLo-Ident
-      x-apidog-status: released
+      x-apidog-status: developing
       x-run-in-apidog: https://app.apidog.com/web/project/816353/apis/api-15144292-run
 components:
   schemas:
-    LESEN_MALOIDENT_BASIS:
-      type: object
-      properties:
-        stammdaten:
-          type: object
-          description: >
-            Informationscontainer für Stammdaten, die zur Identifizierung
-            genutzt werden
-          properties:
-            MARKTLOKATION:
-              type: array
-              items:
-                type: object
-                properties:
-                  boTyp:
-                    type: string
-                    enum:
-                      - MARKTLOKATION
-                    examples:
-                      - MARKTLOKATION
-                  versionStruktur:
-                    type: string
-                    enum:
-                      - '1'
-                    examples:
-                      - '1'
-                  marktlokationsId:
-                    type: string
-                    pattern: \d{11}
-                    description: >
-                      Identifiziert die Marktlokation mittels einer eindeutigen
-                      ID | Mapping auf
-                      identificationParameterId.maloId                   
-                    examples:
-                      - '57685676748'
-                  energierichtung:
-                    $ref: '#/components/schemas/Energierichtung'
-                    description: >
-                      Energieflussrichtung der Marktlokation | Mapping auf
-                      energyDirection                    
-                  lokationsadresse:
-                    $ref: '#/components/schemas/Adresse'
-                    description: >
-                      Angabe des Ortes, Postleitzahl, Ländercode, Straße,
-                      Hausnummer, Hausnummernergänzung der Marktlokationsadresse
-                      | Mapping auf
-                      identificationParameterAddress                    
-                  katasterinformation:
-                    $ref: '#/components/schemas/Katasteradresse'
-                    description: >
-                      Angabe des Gemarkungsnamens, Flurnummer, Flurstücksnummer
-                      (des Flurstücks) der Marktlokationsadresse | Mapping auf
-                      identificationParameterAddress.landParcels                    
-                  geokoordinaten:
-                    $ref: '#/components/schemas/Geokoordinaten'
-                    description: >
-                      Angabe der Breite (Breitengrad), Angabe der Breite
-                      (Breitengrad), UTM Ostwert, UTM Nordwert, Gauß-Krüger
-                      Hochwert, Gauß-Krüger Rechtswert  | Mapping auf
-                      identificationParameterAddress.geographicCoordinates                    
-                required:
-                  - boTyp
-                  - versionStruktur
-                  - energierichtung
-                x-apidog-orders:
-                  - boTyp
-                  - versionStruktur
-                  - marktlokationsId
-                  - energierichtung
-                  - lokationsadresse
-                  - katasterinformation
-                  - geokoordinaten
-                x-apidog-ignore-properties: []
-            TRANCHE:
-              type: array
-              items:
-                type: object
-                properties:
-                  boTyp:
-                    type: string
-                    enum:
-                      - TRANCHE
-                    examples:
-                      - TRANCHE
-                  versionStruktur:
-                    type: string
-                    enum:
-                      - '1'
-                    examples:
-                      - '1'
-                  tranchenId:
-                    type: string
-                    pattern: \d{11}
-                    description: >
-                      Identifiziert die Tranche mittels einer eindeutigen ID |
-                      Mapping auf
-                      identificationParameterId.tranchenIds                    
-                    examples:
-                      - '57685676742'
-                required:
-                  - boTyp
-                  - versionStruktur
-                x-apidog-orders:
-                  - boTyp
-                  - versionStruktur
-                  - tranchenId
-                x-apidog-ignore-properties: []
-            MESSLOKATION:
-              type: array
-              items:
-                type: object
-                properties:
-                  boTyp:
-                    type: string
-                    enum:
-                      - MESSLOKATION
-                    examples:
-                      - MESSLOKATION
-                  versionStruktur:
-                    type: string
-                    enum:
-                      - '1'
-                    examples:
-                      - '1'
-                  messlokationsId:
-                    type: string
-                    pattern: DE\d{11}[A-Z,\d]{20}
-                    description: >
-                      Identifiziert die Messlokation mittels einer eindeutigen
-                      ID | Mapping auf
-                      identificationParameterId.meloIds                     
-                    examples:
-                      - DE00014545768S0000000000000003054
-                required:
-                  - boTyp
-                  - versionStruktur
-                x-apidog-orders:
-                  - boTyp
-                  - versionStruktur
-                  - messlokationsId
-                x-apidog-ignore-properties: []
-            ZAEHLER:
-              type: array
-              items:
-                type: object
-                properties:
-                  boTyp:
-                    type: string
-                    enum:
-                      - ZAEHLER
-                    examples:
-                      - ZAEHLER
-                  versionStruktur:
-                    type: string
-                    enum:
-                      - '1'
-                    examples:
-                      - '1'
-                  zaehlernummer:
-                    type: string
-                    description: >
-                      Identifiziert das Gerät der Messlokation mittels
-                      Gerätenummer | Mapping auf
-                      identificationParameterId.meterNumbers                  
-                    examples:
-                      - 1SM-8465929523
-                required:
-                  - boTyp
-                  - versionStruktur
-                x-apidog-orders:
-                  - boTyp
-                  - versionStruktur
-                  - zaehlernummer
-                x-apidog-ignore-properties: []
-            ENERGIELIEFERVERTRAG:
-              type: array
-              items:
-                type: object
-                properties:
-                  boTyp:
-                    type: string
-                    enum:
-                      - VERTRAG
-                    examples:
-                      - VERTRAG
-                  versionStruktur:
-                    type: string
-                    enum:
-                      - '1'
-                    examples:
-                      - '1'
-                  vertragsart:
-                    type: string
-                    enum:
-                      - ENERGIELIEFERVERTRAG
-                    examples:
-                      - ENERGIELIEFERVERTRAG
-                  vertragspartner2:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        boTyp:
-                          type: string
-                          enum:
-                            - GESCHAEFTSPARTNER
-                          examples:
-                            - GESCHAEFTSPARTNER
-                        versionStruktur:
-                          type: string
-                          enum:
-                            - '1'
-                          examples:
-                            - '1'
-                        anrede:
-                          type: string
-                          description: >
-                            Angabe des Titels der natürlichen Person | Mapping
-                            auf
-                            identificationParameterAddress.name.title                        
-                          examples:
-                            - Prof.Dr.
-                        name1:
-                          type: string
-                          description: >
-                            Angabe des Namen des Kunden | Mapping auf
-                            identificationParameterAddress.name.surnames oder
-                            identificationParameterAddress.name.company, wenn
-                            gewerbekennzeichnung =
-                            true                          
-                          examples:
-                            - Becker
-                        name2:
-                          type: string
-                          description: >
-                            Angabe des Vornamen des Kunden | Mapping auf
-                            identificationParameterAddress.name.firstnames                               
-                          examples:
-                            - Michael
-                        gewerbekennzeichnung:
-                          type: boolean
-                          description: >
-                            Angabe ob gewerblicher oder private
-                            Kunde                    
-                          examples:
-                            - false
-                        geschaeftspartnerrolle:
-                          type: array
-                          items:
-                            type: string
-                            enum:
-                              - KUNDE
-                            examples:
-                              - KUNDE
-                        externeReferenzen:
-                          type: array
-                          description: >
-                            Zur Angabe der Kundennummer des Kunden beim
-                            bisherigen Lieferanten (LFA)                        
-                          items:
-                            type: object
-                            properties:
-                              exRefName:
-                                type: string
-                                enum:
-                                  - Kundennummer beim Altlieferanten
-                                examples:
-                                  - Kundennummer beim Altlieferanten
-                              exRefWert:
-                                type: string
-                                description: >
-                                  Kundennummer des Kunden beim bisherigen
-                                  Lieferanten
-                                  (LFA)                              
-                                examples:
-                                  - V567345345
-                            x-apidog-orders:
-                              - exRefName
-                              - exRefWert
-                            x-apidog-ignore-properties: []
-                      x-apidog-orders:
-                        - boTyp
-                        - versionStruktur
-                        - anrede
-                        - name1
-                        - name2
-                        - gewerbekennzeichnung
-                        - geschaeftspartnerrolle
-                        - externeReferenzen
-                      x-apidog-ignore-properties: []
-                required:
-                  - boTyp
-                  - versionStruktur
-                x-apidog-orders:
-                  - boTyp
-                  - versionStruktur
-                  - vertragsart
-                  - vertragspartner2
-                x-apidog-ignore-properties: []
-          required:
-            - MARKTLOKATION
-          x-apidog-orders:
-            - MARKTLOKATION
-            - TRANCHE
-            - MESSLOKATION
-            - ZAEHLER
-            - ENERGIELIEFERVERTRAG
-          x-apidog-ignore-properties: []
-        transaktionsdaten:
-          type: object
-          description: >
-            Informationscontainer für Daten zum Vorgang und beteiligten
-            Marktpartnern
-          properties:
-            vorgangsnummer:
-              type: string
-              description: >
-                Externe Transaktions-Id zur eindeutigen Identifikation der
-                Anfrage der MaLo-ID der Marktlokation des sendenden
-                Marktpartners. | Format $UUID RFC4122 | Mapping auf [header]
-                transactionId
-              examples:
-                - f81d4fae-7dec-11d0-a765-00a0c91e6bf6
-            nachrichtendatum:
-              type: string
-              pattern: >-
-                20(\\d{2}(\\-(0[13578]|1[02])\\-(0[1-9]|[12]\\d|3[01])|\\-02\\-(0[1-9]|1\\d|2[0-8])|\\-(0[469]|11)\\-(0[1-9]|[12]\\d|30))|([02468][048]|[13579][26])\\-02\\-(29))T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\dZ
-              description: >
-                Zeitpunkt an dem der Aufruf erstellt wurde in Zeitzone UTC -
-                falls der Wert aus dem Backend nicht befüllt ist, wird die
-                MaloIdent Lösung das Datum zum Zeitpunkt des Empfang befüllen. |
-                Format YYYY-MM-DD'T'HH:mm:ss'Z' | Mapping auf [header]
-                creationDateTime
-              examples:
-                - '2023-08-01T12:30:00Z'
-            ausfuehrungsdatum:
-              type: string
-              pattern: >-
-                20(\\d{2}(\\-(0[13578]|1[02])\\-(0[1-9]|[12]\\d|3[01])|\\-02\\-(0[1-9]|1\\d|2[0-8])|\\-(0[469]|11)\\-(0[1-9]|[12]\\d|30))|([02468][048]|[13579][26])\\-02\\-(29))T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\dZ
-              description: >
-                Zeitpunkt zu dem die Identifikation stattfinden soll in
-                angegeben in Zeitzone UTC. (umgerechnet muss dieser Zeitpunkt
-                ein Tagesbeginn 00:00 Uhr gesetzlicher deutscher Zeit sein) |
-                Format YYYY-MM-DD'T'HH:mm:ss'Z' | Mapping auf
-                identificationDateTime
-              examples:
-                - '2023-08-02T22:00:00Z'
-            idempodenzschluessel:
-              type: string
-              description: >
-                Initiale Vorgangsnummer (Format $UUID RFC4122) zur Angabe des
-                Idempodenzschlüssel im Falle eines Retry aus dem Backend |
-                Format $UUID RFC4122 | Mapping auf [header] initialTransactionId
-              examples:
-                - f81d4fae-7dec-11d0-a765-00a0c91e6bf6
-            absender:
-              type: object
-              description: Eigene ILN und Rollencodetyp
-              properties:
-                rollencodenummer:
-                  type: string
-                  description: Eigene ILN
-                  examples:
-                    - '9904000000005'
-              required:
-                - rollencodenummer
-              x-apidog-orders:
-                - rollencodenummer
-              x-apidog-ignore-properties: []
-            empfaenger:
-              type: object
-              description: >-
-                ILN und Rollencodetyp des Netzbetreibers, an den die
-                Identanfrage gestellt werden soll
-              properties:
-                rollencodenummer:
-                  type: string
-                  description: >-
-                    ILN des Netzbetreibers, an den die Identanfrage gestellt
-                    werden soll
-                  examples:
-                    - '9900936000002'
-              required:
-                - rollencodenummer
-              x-apidog-orders:
-                - rollencodenummer
-              x-apidog-ignore-properties: []
-          required:
-            - vorgangsnummer
-            - ausfuehrungsdatum
-            - absender
-            - empfaenger
-          x-apidog-orders:
-            - vorgangsnummer
-            - nachrichtendatum
-            - ausfuehrungsdatum
-            - idempodenzschluessel
-            - absender
-            - empfaenger
-          x-apidog-ignore-properties: []
-      required:
-        - stammdaten
-        - transaktionsdaten
-      x-apidog-orders:
-        - stammdaten
-        - transaktionsdaten
-      x-apidog-ignore-properties: []
-      x-apidog-folder: ''
     Geokoordinaten:
       title: Geokoordinaten
       type: object
@@ -905,6 +917,393 @@ components:
         - value: EINSP
           name: Erzeugung
           description: 'Z06 / Z72 '
+      x-apidog-folder: ''
+    LESEN_MALOIDENT_BASIS:
+      type: object
+      properties:
+        stammdaten:
+          type: object
+          description: >
+            Informationscontainer für Stammdaten, die zur Identifizierung
+            genutzt werden
+          properties:
+            MARKTLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  boTyp:
+                    type: string
+                    enum:
+                      - MARKTLOKATION
+                    examples:
+                      - MARKTLOKATION
+                  versionStruktur:
+                    type: string
+                    enum:
+                      - '1'
+                    examples:
+                      - '1'
+                  marktlokationsId:
+                    type: string
+                    pattern: \d{11}
+                    description: >
+                      Identifiziert die Marktlokation mittels einer eindeutigen
+                      ID | Mapping auf
+                      identificationParameterId.maloId                   
+                    examples:
+                      - '57685676748'
+                  energierichtung: *ref_1
+                  lokationsadresse: *ref_2
+                  katasterinformation: *ref_3
+                  geokoordinaten: *ref_4
+                required:
+                  - boTyp
+                  - versionStruktur
+                  - energierichtung
+                x-apidog-orders:
+                  - boTyp
+                  - versionStruktur
+                  - marktlokationsId
+                  - energierichtung
+                  - lokationsadresse
+                  - katasterinformation
+                  - geokoordinaten
+                x-apidog-ignore-properties: []
+            TRANCHE:
+              type: array
+              items:
+                type: object
+                properties:
+                  boTyp:
+                    type: string
+                    enum:
+                      - TRANCHE
+                    examples:
+                      - TRANCHE
+                  versionStruktur:
+                    type: string
+                    enum:
+                      - '1'
+                    examples:
+                      - '1'
+                  tranchenId:
+                    type: string
+                    pattern: \d{11}
+                    description: >
+                      Identifiziert die Tranche mittels einer eindeutigen ID |
+                      Mapping auf
+                      identificationParameterId.tranchenIds                    
+                    examples:
+                      - '57685676742'
+                required:
+                  - boTyp
+                  - versionStruktur
+                x-apidog-orders:
+                  - boTyp
+                  - versionStruktur
+                  - tranchenId
+                x-apidog-ignore-properties: []
+            MESSLOKATION:
+              type: array
+              items:
+                type: object
+                properties:
+                  boTyp:
+                    type: string
+                    enum:
+                      - MESSLOKATION
+                    examples:
+                      - MESSLOKATION
+                  versionStruktur:
+                    type: string
+                    enum:
+                      - '1'
+                    examples:
+                      - '1'
+                  messlokationsId:
+                    type: string
+                    pattern: DE\d{11}[A-Z,\d]{20}
+                    description: >
+                      Identifiziert die Messlokation mittels einer eindeutigen
+                      ID | Mapping auf
+                      identificationParameterId.meloIds                     
+                    examples:
+                      - DE00014545768S0000000000000003054
+                required:
+                  - boTyp
+                  - versionStruktur
+                x-apidog-orders:
+                  - boTyp
+                  - versionStruktur
+                  - messlokationsId
+                x-apidog-ignore-properties: []
+            ZAEHLER:
+              type: array
+              items:
+                type: object
+                properties:
+                  boTyp:
+                    type: string
+                    enum:
+                      - ZAEHLER
+                    examples:
+                      - ZAEHLER
+                  versionStruktur:
+                    type: string
+                    enum:
+                      - '1'
+                    examples:
+                      - '1'
+                  zaehlernummer:
+                    type: string
+                    description: >
+                      Identifiziert das Gerät der Messlokation mittels
+                      Gerätenummer | Mapping auf
+                      identificationParameterId.meterNumbers                  
+                    examples:
+                      - 1SM-8465929523
+                required:
+                  - boTyp
+                  - versionStruktur
+                x-apidog-orders:
+                  - boTyp
+                  - versionStruktur
+                  - zaehlernummer
+                x-apidog-ignore-properties: []
+            ENERGIELIEFERVERTRAG:
+              type: array
+              items:
+                type: object
+                properties:
+                  boTyp:
+                    type: string
+                    enum:
+                      - VERTRAG
+                    examples:
+                      - VERTRAG
+                  versionStruktur:
+                    type: string
+                    enum:
+                      - '1'
+                    examples:
+                      - '1'
+                  vertragsart:
+                    type: string
+                    enum:
+                      - ENERGIELIEFERVERTRAG
+                    examples:
+                      - ENERGIELIEFERVERTRAG
+                  vertragspartner2:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        boTyp:
+                          type: string
+                          enum:
+                            - GESCHAEFTSPARTNER
+                          examples:
+                            - GESCHAEFTSPARTNER
+                        versionStruktur:
+                          type: string
+                          enum:
+                            - '1'
+                          examples:
+                            - '1'
+                        anrede:
+                          type: string
+                          description: >
+                            Angabe des Titels der natürlichen Person | Mapping
+                            auf
+                            identificationParameterAddress.name.title                        
+                          examples:
+                            - Prof.Dr.
+                        name1:
+                          type: string
+                          description: >
+                            Angabe des Namen des Kunden | Mapping auf
+                            identificationParameterAddress.name.surnames oder
+                            identificationParameterAddress.name.company, wenn
+                            gewerbekennzeichnung =
+                            true                          
+                          examples:
+                            - Becker
+                        name2:
+                          type: string
+                          description: >
+                            Angabe des Vornamen des Kunden | Mapping auf
+                            identificationParameterAddress.name.firstnames                               
+                          examples:
+                            - Michael
+                        gewerbekennzeichnung:
+                          type: boolean
+                          description: >
+                            Angabe ob gewerblicher oder private
+                            Kunde                    
+                          examples:
+                            - false
+                        geschaeftspartnerrolle:
+                          type: array
+                          items:
+                            type: string
+                            enum:
+                              - KUNDE
+                            examples:
+                              - KUNDE
+                        externeReferenzen:
+                          type: array
+                          description: >
+                            Zur Angabe der Kundennummer des Kunden beim
+                            bisherigen Lieferanten (LFA)                        
+                          items:
+                            type: object
+                            properties:
+                              exRefName:
+                                type: string
+                                enum:
+                                  - Kundennummer beim Altlieferanten
+                                examples:
+                                  - Kundennummer beim Altlieferanten
+                              exRefWert:
+                                type: string
+                                description: >
+                                  Kundennummer des Kunden beim bisherigen
+                                  Lieferanten
+                                  (LFA)                              
+                                examples:
+                                  - V567345345
+                            x-apidog-orders:
+                              - exRefName
+                              - exRefWert
+                            x-apidog-ignore-properties: []
+                      x-apidog-orders:
+                        - boTyp
+                        - versionStruktur
+                        - anrede
+                        - name1
+                        - name2
+                        - gewerbekennzeichnung
+                        - geschaeftspartnerrolle
+                        - externeReferenzen
+                      x-apidog-ignore-properties: []
+                required:
+                  - boTyp
+                  - versionStruktur
+                x-apidog-orders:
+                  - boTyp
+                  - versionStruktur
+                  - vertragsart
+                  - vertragspartner2
+                x-apidog-ignore-properties: []
+          required:
+            - MARKTLOKATION
+          x-apidog-orders:
+            - MARKTLOKATION
+            - TRANCHE
+            - MESSLOKATION
+            - ZAEHLER
+            - ENERGIELIEFERVERTRAG
+          x-apidog-ignore-properties: []
+        transaktionsdaten:
+          type: object
+          description: >
+            Informationscontainer für Daten zum Vorgang und beteiligten
+            Marktpartnern
+          properties:
+            vorgangsnummer:
+              type: string
+              description: >
+                Externe Transaktions-Id zur eindeutigen Identifikation der
+                Anfrage der MaLo-ID der Marktlokation des sendenden
+                Marktpartners. | Format $UUID RFC4122 | Mapping auf [header]
+                transactionId
+              examples:
+                - f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+            nachrichtendatum:
+              type: string
+              pattern: >-
+                20(\\d{2}(\\-(0[13578]|1[02])\\-(0[1-9]|[12]\\d|3[01])|\\-02\\-(0[1-9]|1\\d|2[0-8])|\\-(0[469]|11)\\-(0[1-9]|[12]\\d|30))|([02468][048]|[13579][26])\\-02\\-(29))T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\dZ
+              description: >
+                Zeitpunkt an dem der Aufruf erstellt wurde in Zeitzone UTC -
+                falls der Wert aus dem Backend nicht befüllt ist, wird die
+                MaloIdent Lösung das Datum zum Zeitpunkt des Empfang befüllen. |
+                Format YYYY-MM-DD'T'HH:mm:ss'Z' | Mapping auf [header]
+                creationDateTime
+              examples:
+                - '2023-08-01T12:30:00Z'
+            ausfuehrungsdatum:
+              type: string
+              pattern: >-
+                20(\\d{2}(\\-(0[13578]|1[02])\\-(0[1-9]|[12]\\d|3[01])|\\-02\\-(0[1-9]|1\\d|2[0-8])|\\-(0[469]|11)\\-(0[1-9]|[12]\\d|30))|([02468][048]|[13579][26])\\-02\\-(29))T([01]\\d|2[0-3]):[0-5]\\d:[0-5]\\dZ
+              description: >
+                Zeitpunkt zu dem die Identifikation stattfinden soll in
+                angegeben in Zeitzone UTC. (umgerechnet muss dieser Zeitpunkt
+                ein Tagesbeginn 00:00 Uhr gesetzlicher deutscher Zeit sein) |
+                Format YYYY-MM-DD'T'HH:mm:ss'Z' | Mapping auf
+                identificationDateTime
+              examples:
+                - '2023-08-02T22:00:00Z'
+            idempodenzschluessel:
+              type: string
+              description: >
+                Initiale Vorgangsnummer (Format $UUID RFC4122) zur Angabe des
+                Idempodenzschlüssel im Falle eines Retry aus dem Backend |
+                Format $UUID RFC4122 | Mapping auf [header] initialTransactionId
+              examples:
+                - f81d4fae-7dec-11d0-a765-00a0c91e6bf6
+            absender:
+              type: object
+              description: Eigene ILN und Rollencodetyp
+              properties:
+                rollencodenummer:
+                  type: string
+                  description: Eigene ILN
+                  examples:
+                    - '9904000000005'
+              required:
+                - rollencodenummer
+              x-apidog-orders:
+                - rollencodenummer
+              x-apidog-ignore-properties: []
+            empfaenger:
+              type: object
+              description: >-
+                ILN und Rollencodetyp des Netzbetreibers, an den die
+                Identanfrage gestellt werden soll
+              properties:
+                rollencodenummer:
+                  type: string
+                  description: >-
+                    ILN des Netzbetreibers, an den die Identanfrage gestellt
+                    werden soll
+                  examples:
+                    - '9900936000002'
+              required:
+                - rollencodenummer
+              x-apidog-orders:
+                - rollencodenummer
+              x-apidog-ignore-properties: []
+          required:
+            - vorgangsnummer
+            - ausfuehrungsdatum
+            - absender
+            - empfaenger
+          x-apidog-orders:
+            - vorgangsnummer
+            - nachrichtendatum
+            - ausfuehrungsdatum
+            - idempodenzschluessel
+            - absender
+            - empfaenger
+          x-apidog-ignore-properties: []
+      required:
+        - stammdaten
+        - transaktionsdaten
+      x-apidog-orders:
+        - stammdaten
+        - transaktionsdaten
+      x-apidog-ignore-properties: []
       x-apidog-folder: ''
     LESEN_MALOIDENT_BASIS_RESP:
       description: >-

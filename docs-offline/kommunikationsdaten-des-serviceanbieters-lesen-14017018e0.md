@@ -57,253 +57,256 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Kommunikationsdaten'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Kommunikationsdaten'
+                description: Liste der Kommunikationsdaten
               example:
-                boTyp: KOMMUNIKATIONSDATEN
-                versionStruktur: '1'
-                gueltigkeit: '2024-06-30T22:00:00Z'
-                marktteilnehmer:
-                  boTyp: MARKTTEILNEHMER
+                - boTyp: KOMMUNIKATIONSDATEN
                   versionStruktur: '1'
-                  marktrolle: LF
-                  bankverbindung:
-                    - iban: DE00000000000000000000
-                      kontoinhaber: Unternehmens GmbH
-                      bic: BICXXXXXXXX
-                      kreditinstitut: Bankname
-                  erreichbarkeit:
-                    - verfuegbarkeit: MONTAG
-                      zeit: 08:00-17:00
-                    - verfuegbarkeit: DIENSTAG
-                      zeit: 08:00-17:00
-                    - verfuegbarkeit: MITTWOCH
-                      zeit: 08:00-17:00
-                    - verfuegbarkeit: DONNERSTAG
-                      zeit: 08:00-17:00
-                    - verfuegbarkeit: FREITAG
-                      zeit: 08:00-17:00
-                    - verfuegbarkeit: PAUSE
-                      zeit: 12:00-13:00
-                  name1: Lieferant
-                  gewerbekennzeichnung: true
-                  hrnummer: '331079'
-                  amtsgericht: 'Amtsgericht Mannheim:'
-                  umsatzsteuerId: DE814905955
-                  website: www.lieferant.de
-                  faxnummer: '+012345678910'
-                  partneradresse:
-                    postleitzahl: '56789'
-                    ort: Lieferantenort
-                    strasse: Lieferantenstr
-                    hausnummer: '1'
-                    landescode: DE
-                kommunikationsangaben:
-                  - boTyp: MARKTTEILNEHMER
+                  gueltigkeit: '2024-06-30T22:00:00Z'
+                  marktteilnehmer:
+                    boTyp: MARKTTEILNEHMER
                     versionStruktur: '1'
+                    marktrolle: LF
+                    bankverbindung:
+                      - iban: DE00000000000000000000
+                        kontoinhaber: Unternehmens GmbH
+                        bic: BICXXXXXXXX
+                        kreditinstitut: Bankname
+                    erreichbarkeit:
+                      - verfuegbarkeit: MONTAG
+                        zeit: 08:00-17:00
+                      - verfuegbarkeit: DIENSTAG
+                        zeit: 08:00-17:00
+                      - verfuegbarkeit: MITTWOCH
+                        zeit: 08:00-17:00
+                      - verfuegbarkeit: DONNERSTAG
+                        zeit: 08:00-17:00
+                      - verfuegbarkeit: FREITAG
+                        zeit: 08:00-17:00
+                      - verfuegbarkeit: PAUSE
+                        zeit: 12:00-13:00
                     name1: Lieferant
                     gewerbekennzeichnung: true
+                    hrnummer: '331079'
+                    amtsgericht: 'Amtsgericht Mannheim:'
+                    umsatzsteuerId: DE814905955
+                    website: www.lieferant.de
+                    faxnummer: '+012345678910'
                     partneradresse:
                       postleitzahl: '56789'
                       ort: Lieferantenort
                       strasse: Lieferantenstr
                       hausnummer: '1'
                       landescode: DE
-                    kommunikationsrolle: DATENAUSTAUSCH
-                    ansprechpartner:
-                      boTyp: ANSPRECHPARTNER
+                  kommunikationsangaben:
+                    - boTyp: MARKTTEILNEHMER
                       versionStruktur: '1'
-                      nachname: Mustermann
-                      eMailAdresse: mustermann@max.de
-                      rufnummern:
-                        - nummerntyp: RUF_DURCHWAHL
-                          rufnummer: '+01234567890'
-                  - boTyp: MARKTTEILNEHMER
-                    versionStruktur: '1'
-                    name1: Lieferant
-                    gewerbekennzeichnung: true
-                    partneradresse:
-                      postleitzahl: '12345'
-                      ort: Lieferantenort
-                      strasse: Lieferantenstr
-                      landescode: DE
-                    kommunikationsrolle: RAHMENVERTRAEGE
-                    ansprechpartner:
-                      boTyp: ANSPRECHPARTNER
+                      name1: Lieferant
+                      gewerbekennzeichnung: true
+                      partneradresse:
+                        postleitzahl: '56789'
+                        ort: Lieferantenort
+                        strasse: Lieferantenstr
+                        hausnummer: '1'
+                        landescode: DE
+                      kommunikationsrolle: DATENAUSTAUSCH
+                      ansprechpartner:
+                        boTyp: ANSPRECHPARTNER
+                        versionStruktur: '1'
+                        nachname: Mustermann
+                        eMailAdresse: mustermann@max.de
+                        rufnummern:
+                          - nummerntyp: RUF_DURCHWAHL
+                            rufnummer: '+01234567890'
+                    - boTyp: MARKTTEILNEHMER
                       versionStruktur: '1'
-                      nachname: Mustermann
-                      eMailAdresse: mustermann@max.de
-                      rufnummern:
-                        - nummerntyp: RUF_DURCHWAHL
-                          rufnummer: '+012345678910'
-                  - boTyp: MARKTTEILNEHMER
-                    versionStruktur: '1'
-                    name1: Lieferant
-                    gewerbekennzeichnung: true
-                    partneradresse:
-                      postleitzahl: '12345'
-                      ort: Lieferantenort
-                      strasse: Lieferantenstr
-                      hausnummer: '1'
-                      landescode: DE
-                    kommunikationsrolle: WECHSELPROZESSE
-                    ansprechpartner:
-                      boTyp: ANSPRECHPARTNER
+                      name1: Lieferant
+                      gewerbekennzeichnung: true
+                      partneradresse:
+                        postleitzahl: '12345'
+                        ort: Lieferantenort
+                        strasse: Lieferantenstr
+                        landescode: DE
+                      kommunikationsrolle: RAHMENVERTRAEGE
+                      ansprechpartner:
+                        boTyp: ANSPRECHPARTNER
+                        versionStruktur: '1'
+                        nachname: Mustermann
+                        eMailAdresse: mustermann@max.de
+                        rufnummern:
+                          - nummerntyp: RUF_DURCHWAHL
+                            rufnummer: '+012345678910'
+                    - boTyp: MARKTTEILNEHMER
                       versionStruktur: '1'
-                      nachname: Mustermann
-                      eMailAdresse: mustermann@max.de
-                      rufnummern:
-                        - nummerntyp: RUF_DURCHWAHL
-                          rufnummer: '+012345678910'
-                  - boTyp: MARKTTEILNEHMER
-                    versionStruktur: '1'
-                    name1: Lieferant
-                    gewerbekennzeichnung: true
-                    partneradresse:
-                      postleitzahl: '12345'
-                      ort: Lieferantenort
-                      strasse: Lieferantenstr
-                      hausnummer: '1'
-                      landescode: DE
-                    kommunikationsrolle: STAMMDATENPROZESSE
-                    ansprechpartner:
-                      boTyp: ANSPRECHPARTNER
+                      name1: Lieferant
+                      gewerbekennzeichnung: true
+                      partneradresse:
+                        postleitzahl: '12345'
+                        ort: Lieferantenort
+                        strasse: Lieferantenstr
+                        hausnummer: '1'
+                        landescode: DE
+                      kommunikationsrolle: WECHSELPROZESSE
+                      ansprechpartner:
+                        boTyp: ANSPRECHPARTNER
+                        versionStruktur: '1'
+                        nachname: Mustermann
+                        eMailAdresse: mustermann@max.de
+                        rufnummern:
+                          - nummerntyp: RUF_DURCHWAHL
+                            rufnummer: '+012345678910'
+                    - boTyp: MARKTTEILNEHMER
                       versionStruktur: '1'
-                      nachname: Mustermann
-                      eMailAdresse: mustermann@max.de
-                      rufnummern:
-                        - nummerntyp: RUF_DURCHWAHL
-                          rufnummer: '+012345678910'
-                  - boTyp: MARKTTEILNEHMER
-                    versionStruktur: '1'
-                    name1: Lieferant
-                    gewerbekennzeichnung: true
-                    partneradresse:
-                      postleitzahl: '12345'
-                      ort: Lieferantenort
-                      strasse: Lieferantenstr
-                      hausnummer: '1'
-                      landescode: DE
-                    kommunikationsrolle: EINSPEISEPROZESSE
-                    ansprechpartner:
-                      boTyp: ANSPRECHPARTNER
+                      name1: Lieferant
+                      gewerbekennzeichnung: true
+                      partneradresse:
+                        postleitzahl: '12345'
+                        ort: Lieferantenort
+                        strasse: Lieferantenstr
+                        hausnummer: '1'
+                        landescode: DE
+                      kommunikationsrolle: STAMMDATENPROZESSE
+                      ansprechpartner:
+                        boTyp: ANSPRECHPARTNER
+                        versionStruktur: '1'
+                        nachname: Mustermann
+                        eMailAdresse: mustermann@max.de
+                        rufnummern:
+                          - nummerntyp: RUF_DURCHWAHL
+                            rufnummer: '+012345678910'
+                    - boTyp: MARKTTEILNEHMER
                       versionStruktur: '1'
-                      nachname: Mustermann
-                      eMailAdresse: mustermann@max.de
-                      rufnummern:
-                        - nummerntyp: RUF_DURCHWAHL
-                          rufnummer: '+012345678910'
-                  - boTyp: MARKTTEILNEHMER
-                    versionStruktur: '1'
-                    name1: Lieferant
-                    gewerbekennzeichnung: true
-                    partneradresse:
-                      postleitzahl: '12345'
-                      ort: Lieferantenort
-                      strasse: Lieferantenstr
-                      hausnummer: '1'
-                      landescode: DE
-                    kommunikationsrolle: ABRECHNUNGSPROZESSE
-                    ansprechpartner:
-                      boTyp: ANSPRECHPARTNER
+                      name1: Lieferant
+                      gewerbekennzeichnung: true
+                      partneradresse:
+                        postleitzahl: '12345'
+                        ort: Lieferantenort
+                        strasse: Lieferantenstr
+                        hausnummer: '1'
+                        landescode: DE
+                      kommunikationsrolle: EINSPEISEPROZESSE
+                      ansprechpartner:
+                        boTyp: ANSPRECHPARTNER
+                        versionStruktur: '1'
+                        nachname: Mustermann
+                        eMailAdresse: mustermann@max.de
+                        rufnummern:
+                          - nummerntyp: RUF_DURCHWAHL
+                            rufnummer: '+012345678910'
+                    - boTyp: MARKTTEILNEHMER
                       versionStruktur: '1'
-                      nachname: Mustermann
-                      eMailAdresse: mustermann@max.de
-                      rufnummern:
-                        - nummerntyp: RUF_DURCHWAHL
-                          rufnummer: '+012345678910'
-                  - boTyp: MARKTTEILNEHMER
-                    versionStruktur: '1'
-                    name1: Lieferant
-                    gewerbekennzeichnung: true
-                    partneradresse:
-                      postleitzahl: '12345'
-                      ort: Lieferantenort
-                      strasse: Lieferantenstr
-                      hausnummer: '1'
-                      landescode: DE
-                    kommunikationsrolle: MMMA_PROZESSE
-                    ansprechpartner:
-                      boTyp: ANSPRECHPARTNER
+                      name1: Lieferant
+                      gewerbekennzeichnung: true
+                      partneradresse:
+                        postleitzahl: '12345'
+                        ort: Lieferantenort
+                        strasse: Lieferantenstr
+                        hausnummer: '1'
+                        landescode: DE
+                      kommunikationsrolle: ABRECHNUNGSPROZESSE
+                      ansprechpartner:
+                        boTyp: ANSPRECHPARTNER
+                        versionStruktur: '1'
+                        nachname: Mustermann
+                        eMailAdresse: mustermann@max.de
+                        rufnummern:
+                          - nummerntyp: RUF_DURCHWAHL
+                            rufnummer: '+012345678910'
+                    - boTyp: MARKTTEILNEHMER
                       versionStruktur: '1'
-                      nachname: Mustermann
-                      eMailAdresse: mustermann@max.de
-                      rufnummern:
-                        - nummerntyp: RUF_DURCHWAHL
-                          rufnummer: '+012345678910'
-                  - boTyp: MARKTTEILNEHMER
-                    versionStruktur: '1'
-                    name1: Lieferant
-                    gewerbekennzeichnung: true
-                    partneradresse:
-                      postleitzahl: '12345'
-                      ort: Lieferantenort
-                      strasse: Lieferantenstr
-                      hausnummer: '1'
-                      landescode: DE
-                    kommunikationsrolle: BEWEGUNGSDATEN
-                    ansprechpartner:
-                      boTyp: ANSPRECHPARTNER
+                      name1: Lieferant
+                      gewerbekennzeichnung: true
+                      partneradresse:
+                        postleitzahl: '12345'
+                        ort: Lieferantenort
+                        strasse: Lieferantenstr
+                        hausnummer: '1'
+                        landescode: DE
+                      kommunikationsrolle: MMMA_PROZESSE
+                      ansprechpartner:
+                        boTyp: ANSPRECHPARTNER
+                        versionStruktur: '1'
+                        nachname: Mustermann
+                        eMailAdresse: mustermann@max.de
+                        rufnummern:
+                          - nummerntyp: RUF_DURCHWAHL
+                            rufnummer: '+012345678910'
+                    - boTyp: MARKTTEILNEHMER
                       versionStruktur: '1'
-                      nachname: Mustermann
-                      eMailAdresse: mustermann@max.de
-                      rufnummern:
-                        - nummerntyp: RUF_DURCHWAHL
-                          rufnummer: '+012345678910'
-                  - boTyp: MARKTTEILNEHMER
-                    versionStruktur: '1'
-                    name1: Lieferant
-                    gewerbekennzeichnung: true
-                    partneradresse:
-                      postleitzahl: '12345'
-                      ort: Lieferantenort
-                      strasse: Lieferantenstr
-                      hausnummer: '1'
-                      landescode: DE
-                    kommunikationsrolle: ENT_SPERR_PROZESSE
-                    ansprechpartner:
-                      boTyp: ANSPRECHPARTNER
+                      name1: Lieferant
+                      gewerbekennzeichnung: true
+                      partneradresse:
+                        postleitzahl: '12345'
+                        ort: Lieferantenort
+                        strasse: Lieferantenstr
+                        hausnummer: '1'
+                        landescode: DE
+                      kommunikationsrolle: BEWEGUNGSDATEN
+                      ansprechpartner:
+                        boTyp: ANSPRECHPARTNER
+                        versionStruktur: '1'
+                        nachname: Mustermann
+                        eMailAdresse: mustermann@max.de
+                        rufnummern:
+                          - nummerntyp: RUF_DURCHWAHL
+                            rufnummer: '+012345678910'
+                    - boTyp: MARKTTEILNEHMER
                       versionStruktur: '1'
-                      nachname: Mustermann
-                      eMailAdresse: mustermann@max.de
-                      rufnummern:
-                        - nummerntyp: RUF_DURCHWAHL
-                          rufnummer: '+012345678910'
-                  - boTyp: MARKTTEILNEHMER
-                    versionStruktur: '1'
-                    name1: Lieferant
-                    gewerbekennzeichnung: true
-                    partneradresse:
-                      postleitzahl: '12345'
-                      ort: Lieferantenort
-                      strasse: Lieferantenstr
-                      landescode: DE
-                    kommunikationsrolle: BILANZIERUNGSPROZESSE
-                    ansprechpartner:
-                      boTyp: ANSPRECHPARTNER
+                      name1: Lieferant
+                      gewerbekennzeichnung: true
+                      partneradresse:
+                        postleitzahl: '12345'
+                        ort: Lieferantenort
+                        strasse: Lieferantenstr
+                        hausnummer: '1'
+                        landescode: DE
+                      kommunikationsrolle: ENT_SPERR_PROZESSE
+                      ansprechpartner:
+                        boTyp: ANSPRECHPARTNER
+                        versionStruktur: '1'
+                        nachname: Mustermann
+                        eMailAdresse: mustermann@max.de
+                        rufnummern:
+                          - nummerntyp: RUF_DURCHWAHL
+                            rufnummer: '+012345678910'
+                    - boTyp: MARKTTEILNEHMER
                       versionStruktur: '1'
-                      nachname: Mustermann
-                      eMailAdresse: mustermann@max.de
-                      rufnummern:
-                        - nummerntyp: RUF_DURCHWAHL
-                          rufnummer: '+012345678910'
-                  - boTyp: MARKTTEILNEHMER
-                    versionStruktur: '1'
-                    name1: Lieferant
-                    gewerbekennzeichnung: true
-                    partneradresse:
-                      postleitzahl: '12345'
-                      ort: Lieferantenort
-                      strasse: Lieferantenstr
-                      landescode: DE
-                    kommunikationsrolle: KUENDIGUNGSPROZESSE
-                    ansprechpartner:
-                      boTyp: ANSPRECHPARTNER
+                      name1: Lieferant
+                      gewerbekennzeichnung: true
+                      partneradresse:
+                        postleitzahl: '12345'
+                        ort: Lieferantenort
+                        strasse: Lieferantenstr
+                        landescode: DE
+                      kommunikationsrolle: BILANZIERUNGSPROZESSE
+                      ansprechpartner:
+                        boTyp: ANSPRECHPARTNER
+                        versionStruktur: '1'
+                        nachname: Mustermann
+                        eMailAdresse: mustermann@max.de
+                        rufnummern:
+                          - nummerntyp: RUF_DURCHWAHL
+                            rufnummer: '+012345678910'
+                    - boTyp: MARKTTEILNEHMER
                       versionStruktur: '1'
-                      nachname: Mustermann
-                      eMailAdresse: mustermann@max.de
-                      rufnummern:
-                        - nummerntyp: RUF_DURCHWAHL
-                          rufnummer: '+012345678910'
+                      name1: Lieferant
+                      gewerbekennzeichnung: true
+                      partneradresse:
+                        postleitzahl: '12345'
+                        ort: Lieferantenort
+                        strasse: Lieferantenstr
+                        landescode: DE
+                      kommunikationsrolle: KUENDIGUNGSPROZESSE
+                      ansprechpartner:
+                        boTyp: ANSPRECHPARTNER
+                        versionStruktur: '1'
+                        nachname: Mustermann
+                        eMailAdresse: mustermann@max.de
+                        rufnummern:
+                          - nummerntyp: RUF_DURCHWAHL
+                            rufnummer: '+012345678910'
           headers: {}
           x-apidog-name: OK
         '400':
@@ -590,6 +593,12 @@ components:
           type: string
           format: date-time
           description: Enddatum der Zuordnung des Marktteilnehmers
+        bilanzkreis:
+          type: string
+          description: Bilanzkreis
+        verwendungszweckBilanzkreis:
+          $ref: '#/components/schemas/VerwendungszweckBilanzkreis'
+          description: Verwendungszweck des Bilanzkreises
       required:
         - boTyp
         - versionStruktur
@@ -627,10 +636,22 @@ components:
         - ipRange
         - zuordnungVon
         - zuordnungBis
+        - bilanzkreis
+        - verwendungszweckBilanzkreis
       examples:
         - $ref: >-
             https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/Marktteilnehmer.json
       x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    VerwendungszweckBilanzkreis:
+      type: string
+      title: VerwendungszweckBilanzkreis
+      enum:
+        - VERBRAUCHENDE_MARKTLOKATION
+        - ERZEUGENDE_MARKTLOKATION_EEG
+        - ERZEUGENDE_MARKTLOKATION_KWKG
+        - SONSTIGE_ERZEUGENDE_MARKTLOKATION
+      description: VerwendungszweckBilanzkreis
       x-apidog-folder: ''
     IpRange:
       title: IpRange
@@ -1044,7 +1065,6 @@ components:
         - MDL
         - DL
         - BKV
-        - BKO
         - UENB
         - KUNDE-SELBST-NN
         - MGV
@@ -1079,9 +1099,6 @@ components:
           name: ''
           description: ''
         - value: BKV
-          name: ''
-          description: ''
-        - value: BKO
           name: ''
           description: ''
         - value: UENB

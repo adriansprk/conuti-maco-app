@@ -70,7 +70,7 @@ paths:
         - name: parameter5
           in: query
           description: OBIS Kennzahl
-          required: true
+          required: false
           schema:
             type: string
             examples:
@@ -130,7 +130,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Energiemenge'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Energiemenge'
+                description: Liste der Lastgänge
           headers: {}
           x-apidog-name: OK
         '400':
@@ -920,6 +923,8 @@ components:
         - MELO
         - NELO
         - TECHNISCHE_RESSOURCE
+        - STEUERBARE_RESSOURCE
+        - TRANCHE
       x-apidog-enum:
         - value: MALO
           name: Marktlokation
@@ -933,6 +938,12 @@ components:
         - value: TECHNISCHE_RESSOURCE
           name: Technische Ressource
           description: Z37
+        - value: STEUERBARE_RESSOURCE
+          name: ''
+          description: ''
+        - value: TRANCHE
+          name: ''
+          description: ''
       x-apidog-folder: ''
     BOTyp:
       title: BOTyp

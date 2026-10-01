@@ -75,7 +75,23 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TechnischeRessource'
+                type: array
+                items:
+                  $ref: '#/components/schemas/TechnischeRessource'
+                description: Liste der Technischen Ressourcen
+              example:
+                - boTyp: TECHNISCHE_RESSOURCE
+                  versionStruktur: '1'
+                  ressourcenId: D417MLM8164
+                  sparte: STROM
+                  gueltigkeitszeitraum:
+                    zeitraumId: 1
+                    startdatum: '2025-06-23T22:00:00Z'
+                    enddatum: '2025-07-23T22:00:00Z'
+                  datenqualitaet: GUELTIGE_DATEN
+                  fernsteuerbarkeit: true
+                  verguetungsverpflichtung: false
+                  referenzTranche: '51238696781'
           headers: {}
           x-apidog-name: OK
         '400':
@@ -165,6 +181,11 @@ components:
             RFF Z38
 
             PI 55617 55623 55629 55635 55035 55095 55060 55043 55168 55169
+        referenzTranche:
+          type: string
+          description: |-
+            Referenzierung auf eine ID der zugeordneten Tranche.
+            EDIFACT-Mapping und PI-Zuordnung noch fachlich zu ergänzen.
         nennleistung:
           $ref: '#/components/schemas/Nennleistung'
           description: >-
@@ -189,6 +210,7 @@ components:
             Verbrauchsart der Technischen Ressource
             CAV Z64
             PI 55617 55623 55629 55635 55035 55060 55043 55168 55169
+          nullable: true
         waermenutzung:
           $ref: '#/components/schemas/Waermenutzung'
           description: >-
@@ -277,6 +299,19 @@ components:
           items:
             $ref: '#/components/schemas/Produkt'
           description: erforderliche Produkte
+          nullable: true
+        fernsteuerbarkeit:
+          type: boolean
+          description: |-
+            Kennzeichen, ob die Technische Ressource fernsteuerbar ist.
+            EDIFACT-Mapping und PI-Zuordnung noch fachlich zu ergänzen.
+        verguetungsverpflichtung:
+          type: boolean
+          description: >-
+            Kennzeichen, ob für die Technische Ressource eine
+            Vergütungsverpflichtung besteht.
+
+            EDIFACT-Mapping und PI-Zuordnung noch fachlich zu ergänzen.
       required:
         - boTyp
         - versionStruktur
@@ -290,6 +325,7 @@ components:
         - referenzMarktlokation
         - referenzNetzlokation
         - referenzSteuerbareRessource
+        - referenzTranche
         - nennleistung
         - speicherkapazitaet
         - verbrauchsart
@@ -305,6 +341,8 @@ components:
         - datenqualitaet
         - gueltigkeitszeitraum
         - erforderlicheProdukte
+        - fernsteuerbarkeit
+        - verguetungsverpflichtung
       examples:
         - $ref: >-
             https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/TechnischeRessource.json
@@ -386,6 +424,7 @@ components:
         zeitraumText:
           type: string
           description: ZeitraumText
+          x-apidog-mock: "DTM+Z01:03MQ:Z01'\r\nNachfolgend noch einige Beispiele zur Übermittlung der Kündigungsfrist in der\r\nKommunikation von LF zu LF:\r\nBeispiel 1:\r\nDTM+Z01:30TM:Z01'\r\nDies entspricht der Kündigungsfrist von 30 Tagen zum Monatsende.\r\nBeispiel 2:\r\nDTM+Z01:03MJ:Z01'\r\nDies entspricht der Kündigungsfrist von 3 Monaten zum Jahresende. Somit hat die Kündigung\r\n3 Monate vor dem 31.12. zu erfolgen.\r\nBeispiel 3:\r\nDTM+Z01:01MQ:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Quartalsende.\r\nBeispiel 4:\r\nDTM+Z01:01MM:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Monatsende.\r\nBeispiel 5:\r\nDTM+Z01:01MT:Z01'\r\nDTM+Z10:201211152300?+00:303'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum 16.11.2012 00:00 Uhr.\r\nBeispiel 6:\r\nDTM+Z01:02WT:Z01'\r\nDTM+Z10:1120:106'\r\nDies entspricht der Kündigungsfrist von 2 Wochen zum 20. eines Monats 00:00 Uhr ab\r\nNovember.\r\nBeispiel 7:\r\nDTM+Z01:14TR:Z01'\r\nDies entspricht einer rollierenden Kündigungsfrist von 14 Tagen in der Zukunft."
         zeitraumId:
           type: integer
           description: |-
@@ -402,6 +441,8 @@ components:
         - abrechnungsZeitraum
         - zeitraumText
         - zeitraumId
+      required:
+        - enddatum
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Zeiteinheit:
@@ -554,12 +595,12 @@ components:
       description: Inbetriebsetzung
       enum:
         - INBETRIEBSETZUNG_NACH_2023
-        - INBETRIEBSETZUN_VOR_2024
+        - INBETRIEBSETZUNG_VOR_2024
       x-apidog-enum:
         - value: INBETRIEBSETZUNG_NACH_2023
           name: Inbetriebsetzung der TR nach 2023
           description: ZH0
-        - value: INBETRIEBSETZUN_VOR_2024
+        - value: INBETRIEBSETZUNG_VOR_2024
           name: Inbetriebsetzung der TR vor 2024
           description: ZH1
       x-apidog-folder: ''

@@ -13,3 +13,5 @@
 - [Bestellung zur Stammdatenänderung an NB / MSB (Lieferant)](https://doc.macoapp.de/bestellung-zur-stammdaten%C3%A4nderung-an-nb-msb-lieferant-26910595e0.md): Triggert den Versand von Stammdatenänderungen vom verantwortlichen Lieferanten an Marktpartner durch die MACO APP. Die Anfrage wird identifiziert durch den Eventnamen START_VERSAND_SDAE. Zusätzlich ist eine eindeutige ID prozessId aus dem Backend mit zu übergeben, mit der die spätere Antwort vom Marktpartner wieder an das Backend übergeben werden kann.
 - [Reklamation von Werten](https://doc.macoapp.de/reklamation-von-werten-27333474e0.md): Prozess zur Anfrage nach Stornierung im Auftrag des Endkunden anstoßen
 - [Bestellung Abrechnungsdaten](https://doc.macoapp.de/bestellung-abrechnungsdaten-32958376e0.md): Prozess zur Bestellung einer Änderung von Abrechnungsdaten
+- [Kommunikationsdatenblatt PARTIN](https://doc.macoapp.de/kommunikationsdatenblatt-partin-39080749e0.md): Prozess zum Versand des Kommunikationsdatenblattes
+- [Geschäftsdatenanfrage](https://doc.macoapp.de/gesch%C3%A4ftsdatenanfrage-42308588e0.md): 

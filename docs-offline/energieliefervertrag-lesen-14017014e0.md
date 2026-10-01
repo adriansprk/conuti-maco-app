@@ -9,7 +9,7 @@ info:
   description: ''
   version: 1.0.0
 paths:
-  /getEnerySupplyContractBasic:
+  /getEnergySupplyContractBasic:
     get:
       summary: Energieliefervertrag lesen
       deprecated: false
@@ -84,177 +84,102 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  boTyp: &ref_2
-                    $ref: '#/components/schemas/BOTyp'
-                    default: VERTRAG
-                  versionStruktur:
-                    type: string
-                    default: '1'
-                  sparte: &ref_11
-                    $ref: '#/components/schemas/Sparte'
-                    description: 'Unterscheidungsmöglichkeiten für die Sparte. '
-                  vertragsart:
-                    type: string
-                    description: >-
-                      Hier ist festgelegt, um welche Art von Vertrag es sich
-                      handelt. Z.B. Netznutzungvertrag
-                  vertragsnummer:
-                    type: string
-                    description: >-
-                      Eine im Verwendungskontext eindeutige Nummer für den
-                      Vertrag
-                  beschreibung:
-                    type: string
-                    description: >-
-                      Freitext zur Beschreibung der Konditionen, z.B.
-                      "Standardkonditionen Gas"
-                  lokationsId:
-                    type: string
-                    description: >-
-                      Referenz auf die ID der Marktlokation / Messlokation
-
-                      RFF Z18 Kunde des LF
-
-                      PI 55043 55168 55169
-
-                      RFF Z46 Malo
-
-                      55616 55622 55628 55634 55109 55137 55110 55136 55643
-                      55648 55663 55669 55653 55658
-
-                      RFF Z19
-
-                      PI 55040 55043 55168 55169  
-                  lokationsTyp: &ref_12
-                    $ref: '#/components/schemas/Lokationstyp'
-                    description: |-
-                      Referenz auf die ID der Messlokation
-                      RFF Z19
-                  vertragsstatus: &ref_13
-                    $ref: '#/components/schemas/Vertragstatus'
-                    description: nicht in Benutzung
-                  vertragsbeginn:
-                    type: string
-                    format: date-time
-                    description: >-
-                      Gibt an, wann der Vertrag oder die Zuordnung beginnt.
-
-                      DTM 92
-
-                      PI 55001 55002 55077 55078 55600 55602 55601 55603 55013
-                      55014 55607 55608 55004 55005 55051 55052 55238 55239
-                      55235 55237
-                  vertragsende:
-                    type: string
-                    format: date-time
-                    description: >-
-                      Gibt das Ende der Netznutzung oder einer Zuordnung an. 
-
-                      DTM 93
-
-                      PI 55016 55017 55001 55002 55600 55602 55013 55014 55607
-                      55608 55010 55011 55004 55005 55007 55008 55039 55040
-                      55051 55052 55240 55241 55242 55243 55236 55237
-                  gemeinderabatt:
-                    type: integer
-                    description: >-
-                      Gemeinderabatt - Angabe zum Preisnachlass der
-                      Netznutzungsentgelte
-
-                      QTY Z16
-
-                      PI 44112 44139 44142 44001 44002 44013 44014 44035
-                  vertragskonditionen: &ref_14
-                    $ref: '#/components/schemas/Vertragskonditionen'
-                    description: Festlegungen zu Laufzeiten und Kündigungsfristen.
-                  korrespondenzpartner: &ref_0
-                    $ref: '#/components/schemas/Geschaeftspartner'
-                    description: |-
-                      Korrespondenzanschrift des Kunden des Lieferanten
-                      NAD Z04
-                      PI 44109 44112 44113 44137 44138 44001 44002 44013 44014 
-                  abrechnungUeberNna:
-                    type: boolean
-                    description: >-
-                      Abrechnung des Messstellenbetriebs über NNE - ob die
-                      Abrechnung der Entgelte für Messstellenbetrieb über die 
-
-                      Netznutzungsabrechnung erfolgt - wird mit JA oder NEIN
-                      beantwortet
-
-                      RFF Z05
-
-                      PI 55620 55626 
-                  datenqualitaet: &ref_15
-                    $ref: '#/components/schemas/Datenqualitaet'
-                    description: |-
-                      Referenzierung auf eine ID einer Marktlokation aus LOC+Z16
-                      RFF Z50
-                      PI 55218 55640 55650 55660 55043 55168 55169 
-                      RFF Z51 Z52
-                      PI 55220 55645 55655 55665
-                  gueltigkeitszeitraum: &ref_3
-                    $ref: '#/components/schemas/Zeitraum'
-                    description: Referenz auf die Zeitraum-ID
-                  vertragspartner1:
-                    type: array
-                    items: *ref_0
-                    description: >-
-                      Der "erstgenannte" Vertragspartner. In der Regel der
-                      Aussteller des Vertrags. Beispiel: "Vertrag zwischen
-
-                      Vertagspartner 1 ..." Siehe BO Geschaeftspartner
+                type: array
+                items:
+                  $ref: '#/components/schemas/Vertrag'
+                description: Liste der Energielieferverträge
+              example:
+                - boTyp: VERTRAG
+                  versionStruktur: '1'
+                  gueltigkeitszeitraum:
+                    zeitraumId: null
+                    startdatum: null
+                    enddatum: null
+                  datenqualitaet: null
+                  vertragsnummer: '12345'
+                  beschreibung: XYZ
+                  vertragsart: ENERGIELIEFERVERTRAG
+                  vertragstatus: GEKUENDIGT
+                  sparte: STROM
+                  vertragsbeginn: '0001-01-01T00:00:00Z'
+                  vertragsende: '9999-12-31T23:59:59Z'
                   vertragspartner2:
-                    type: array
-                    items: *ref_0
-                    description: >-
-                      Der "zweitgenannte" Vertragspartner. In der Regel der
-                      Empfänger des Vertrags. Beispiel "Vertrag zwischen
-
-                      Vertagspartner 1 und Vertragspartner 2". Siehe BO
-                      Geschaeftspartner
-
-                      IFTSTA Name und Anschrift Kunde des LF 
-
-                      NAD Z09
-
-                      PI 21045
+                    - boTyp: GESCHAEFTSPARTNER
+                      versionStruktur: '1'
+                      gewerbekennzeichnung: false
+                      anrede: Herr
+                      name1: Haiko
+                      name2: Fisch
+                      name3: null
+                      geschaeftspartnerrolle:
+                        - KUNDE
+                      partneradresse:
+                        postleitzahl: '65189'
+                        ort: Wiesbaden
+                        strasse: Korallenweg
+                        hausnummer: '10'
+                        postfach: null
+                        adresszusatz: null
+                        coErgaenzung: null
+                        landescode: DE
+                        ortsteil: Riff
+                      externeReferenzen:
+                        - exRefName: Kundennummer beim Altlieferanten
+                          exRefWert: NummerLFA123456_Z01
+                  vertragskonditionen:
+                    netznutzungszahler: LIEFERANT
+                    netznutzungsvertrag: LIEFERANTEN_NB
+                    netznutzungsabrechnung:
+                      dauer: 366
+                      startdatum: '2027-03-27T23:00:00Z'
+                      enddatum: '2028-03-28T21:59:59Z'
+                      abrechnungsZeitraum: '0328'
+                    beinhaltetSingulaerGenutzteBetriebsmittel: false
+                    netznutzungsabrechnungsgrundlage: LIEFERSCHEIN
+                    haushaltskunde: true
+                    abrechnungUeberNna: true
+                    startAbrechnungsjahr: '20260523'
+                    abrechnungsintervall: 12
+                    netznutzungsabrechnungIntervall: 12
+                    kuendigungsfrist:
+                      startdatum: '2026-05-22T22:00:00Z'
+                      enddatum: '9999-12-31T23:59:59Z'
+                      zeitraumText: 01MT
+                    vertragslaufzeit:
+                      startdatum: '2026-05-22T22:00:00Z'
+                      enddatum: '2027-05-22T22:00:00Z'
+                    kuendigungstermin: '2027-04-22T22:00:00Z'
+                    abschlagszyklus:
+                      zeiteinheit: MONAT
+                      dauer: 1
+                    anzahlAbschlaege: 12
+                    vertragsverlaengerung:
+                      startdatum: '2026-05-22T22:00:00Z'
+                      enddatum: '9999-12-31T23:59:59Z'
+                  korrespondenzpartner:
+                    boTyp: GESCHAEFTSPARTNER
+                    versionStruktur: '1'
+                    anrede: Herr
+                    name1: Hai
+                    name2: Fisch
+                    name3: null
+                    gewerbekennzeichnung: false
+                    partneradresse:
+                      postleitzahl: '65189'
+                      ort: Wiesbaden
+                      strasse: Körallenweg
+                      hausnummer: '10'
+                      postfach: null
+                      adresszusatz: null
+                      coErgaenzung: null
+                      landescode: DE
+                      ortsteil: Riff
+                  lokationsId: '50754496000'
+                  lokationsTyp: MALO
                   enFG:
-                    type: array
-                    items: &ref_16
-                      $ref: '#/components/schemas/EnFG'
-                    description: enFG
-                x-apidog-orders:
-                  - 01JM7ZPH5C82BRAZXCGYEWZYZB
-                required:
-                  - boTyp
-                  - versionStruktur
-                x-apidog-refs:
-                  01JM7ZPH5C82BRAZXCGYEWZYZB:
-                    $ref: '#/components/schemas/Vertrag'
-                x-apidog-ignore-properties:
-                  - boTyp
-                  - versionStruktur
-                  - sparte
-                  - vertragsart
-                  - vertragsnummer
-                  - beschreibung
-                  - lokationsId
-                  - lokationsTyp
-                  - vertragsstatus
-                  - vertragsbeginn
-                  - vertragsende
-                  - gemeinderabatt
-                  - vertragskonditionen
-                  - korrespondenzpartner
-                  - abrechnungUeberNna
-                  - datenqualitaet
-                  - gueltigkeitszeitraum
-                  - vertragspartner1
-                  - vertragspartner2
-                  - enFG
+                    - grundlageVerringerungUmlagen: KEINE_ANGABE
+                      grund:
+                        - null
           headers: {}
           x-apidog-name: OK
         '400':
@@ -275,6 +200,174 @@ paths:
       x-run-in-apidog: https://app.apidog.com/web/project/816353/apis/api-14017014-run
 components:
   schemas:
+    Vertrag:
+      title: Vertrag
+      type: object
+      properties:
+        boTyp: &ref_2
+          $ref: '#/components/schemas/BOTyp'
+          default: VERTRAG
+        versionStruktur:
+          type: string
+          default: '1'
+        sparte:
+          $ref: '#/components/schemas/Sparte'
+          description: 'Unterscheidungsmöglichkeiten für die Sparte. '
+        vertragsart:
+          type: string
+          description: >-
+            Hier ist festgelegt, um welche Art von Vertrag es sich handelt. Z.B.
+            Netznutzungvertrag
+        vertragsnummer:
+          type: string
+          description: Eine im Verwendungskontext eindeutige Nummer für den Vertrag
+        beschreibung:
+          type: string
+          description: >-
+            Freitext zur Beschreibung der Konditionen, z.B. "Standardkonditionen
+            Gas"
+        lokationsId:
+          type: string
+          description: >-
+            Referenz auf die ID der Marktlokation / Messlokation
+
+            RFF Z18 Kunde des LF
+
+            PI 55043 55168 55169
+
+            RFF Z46 Malo
+
+            55616 55622 55628 55634 55109 55137 55110 55136 55643 55648 55663
+            55669 55653 55658
+
+            RFF Z19
+
+            PI 55040 55043 55168 55169  
+        lokationsTyp:
+          $ref: '#/components/schemas/Lokationstyp'
+          description: |-
+            Referenz auf die ID der Messlokation
+            RFF Z19
+        vertragsstatus:
+          $ref: '#/components/schemas/Vertragstatus'
+          description: nicht in Benutzung
+        vertragsbeginn:
+          type: string
+          format: date-time
+          description: >-
+            Gibt an, wann der Vertrag oder die Zuordnung beginnt.
+
+            DTM 92
+
+            PI 55001 55002 55077 55078 55600 55602 55601 55603 55013 55014 55607
+            55608 55004 55005 55051 55052 55238 55239 55235 55237
+        vertragsende:
+          type: string
+          description: >-
+            Gibt das Ende der Netznutzung oder einer Zuordnung an. Wenn noch
+            kein Vertragsende vorliegt wird der default Wert
+            "9999-12-31T23:59:59Z" erwartet.
+
+            DTM 93
+
+            PI 55016 55017 55001 55002 55600 55602 55013 55014 55607 55608 55010
+            55011 55004 55005 55007 55008 55039 55040 55051 55052 55240 55241
+            55242 55243 55236 55237
+          format: date-time
+          default: '9999-12-31T23:59:59Z'
+        gemeinderabatt:
+          type: integer
+          description: |-
+            Gemeinderabatt - Angabe zum Preisnachlass der Netznutzungsentgelte
+            QTY Z16
+            PI 44112 44139 44142 44001 44002 44013 44014 44035
+        vertragskonditionen:
+          $ref: '#/components/schemas/Vertragskonditionen'
+          description: Festlegungen zu Laufzeiten und Kündigungsfristen.
+        korrespondenzpartner: &ref_0
+          $ref: '#/components/schemas/Geschaeftspartner'
+          description: |-
+            Korrespondenzanschrift des Kunden des Lieferanten
+            NAD Z04
+            PI 44109 44112 44113 44137 44138 44001 44002 44013 44014 
+        abrechnungUeberNna:
+          type: boolean
+          description: >-
+            Abrechnung des Messstellenbetriebs über NNE - ob die Abrechnung der
+            Entgelte für Messstellenbetrieb über die 
+
+            Netznutzungsabrechnung erfolgt - wird mit JA oder NEIN beantwortet
+
+            RFF Z05
+
+            PI 55620 55626 
+        datenqualitaet:
+          $ref: '#/components/schemas/Datenqualitaet'
+          description: |-
+            Referenzierung auf eine ID einer Marktlokation aus LOC+Z16
+            RFF Z50
+            PI 55218 55640 55650 55660 55043 55168 55169 
+            RFF Z51 Z52
+            PI 55220 55645 55655 55665
+        gueltigkeitszeitraum: &ref_3
+          $ref: '#/components/schemas/Zeitraum'
+          description: Referenz auf die Zeitraum-ID
+        vertragspartner1:
+          type: array
+          items: *ref_0
+          description: >-
+            Der "erstgenannte" Vertragspartner. In der Regel der Aussteller des
+            Vertrags. Beispiel: "Vertrag zwischen
+
+            Vertagspartner 1 ..." Siehe BO Geschaeftspartner
+        vertragspartner2:
+          type: array
+          items: *ref_0
+          description: >-
+            Der "zweitgenannte" Vertragspartner. In der Regel der Empfänger des
+            Vertrags. Beispiel "Vertrag zwischen
+
+            Vertagspartner 1 und Vertragspartner 2". Siehe BO Geschaeftspartner
+
+            IFTSTA Name und Anschrift Kunde des LF 
+
+            NAD Z09
+
+            PI 21045
+        enFG:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnFG'
+          description: enFG
+      required:
+        - boTyp
+        - versionStruktur
+      x-apidog-orders:
+        - boTyp
+        - versionStruktur
+        - sparte
+        - vertragsart
+        - vertragsnummer
+        - beschreibung
+        - lokationsId
+        - lokationsTyp
+        - vertragsstatus
+        - vertragsbeginn
+        - vertragsende
+        - gemeinderabatt
+        - vertragskonditionen
+        - korrespondenzpartner
+        - abrechnungUeberNna
+        - datenqualitaet
+        - gueltigkeitszeitraum
+        - vertragspartner1
+        - vertragspartner2
+        - enFG
+      examples:
+        - $ref: >-
+            https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/Vertrag.json
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
     EnFG:
       title: EnFG
       type: object
@@ -409,6 +502,7 @@ components:
         zeitraumText: &ref_9
           type: string
           description: ZeitraumText
+          x-apidog-mock: "DTM+Z01:03MQ:Z01'\r\nNachfolgend noch einige Beispiele zur Übermittlung der Kündigungsfrist in der\r\nKommunikation von LF zu LF:\r\nBeispiel 1:\r\nDTM+Z01:30TM:Z01'\r\nDies entspricht der Kündigungsfrist von 30 Tagen zum Monatsende.\r\nBeispiel 2:\r\nDTM+Z01:03MJ:Z01'\r\nDies entspricht der Kündigungsfrist von 3 Monaten zum Jahresende. Somit hat die Kündigung\r\n3 Monate vor dem 31.12. zu erfolgen.\r\nBeispiel 3:\r\nDTM+Z01:01MQ:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Quartalsende.\r\nBeispiel 4:\r\nDTM+Z01:01MM:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Monatsende.\r\nBeispiel 5:\r\nDTM+Z01:01MT:Z01'\r\nDTM+Z10:201211152300?+00:303'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum 16.11.2012 00:00 Uhr.\r\nBeispiel 6:\r\nDTM+Z01:02WT:Z01'\r\nDTM+Z10:1120:106'\r\nDies entspricht der Kündigungsfrist von 2 Wochen zum 20. eines Monats 00:00 Uhr ab\r\nNovember.\r\nBeispiel 7:\r\nDTM+Z01:14TR:Z01'\r\nDies entspricht einer rollierenden Kündigungsfrist von 14 Tagen in der Zukunft."
         zeitraumId: &ref_10
           type: integer
           description: |-
@@ -425,6 +519,8 @@ components:
         - abrechnungsZeitraum
         - zeitraumText
         - zeitraumId
+      required:
+        - enddatum
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Zeiteinheit:
@@ -618,6 +714,11 @@ components:
           items:
             $ref: '#/components/schemas/Kontaktart'
           description: Bevorzugter Kontaktweg des Geschäftspartners.
+        ansprechpartner:
+          $ref: '#/components/schemas/Ansprechpartner'
+          description: >-
+            Ansprechpartner as in EDIFACT CTA+IC' COM+?+3222271020:TE', that
+            includes e.g. the phone number of customer.
       required:
         - boTyp
         - versionStruktur
@@ -641,10 +742,107 @@ components:
         - externeReferenzen
         - geschaeftspartnerrolle
         - kontaktweg
+        - ansprechpartner
       examples:
         - $ref: >-
             https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/Geschaeftspartner.json
       x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    Ansprechpartner:
+      title: Ansprechpartner
+      type: object
+      properties:
+        boTyp: *ref_2
+        versionStruktur:
+          type: string
+          default: '1'
+          description: versionStruktur
+        nachname:
+          type: string
+          description: Nachname (Familienname) des Ansprechpartners
+        eMailAdresse:
+          type: string
+          description: E-Mail Adresse
+        rufnummern:
+          type: array
+          items:
+            $ref: '#/components/schemas/Rufnummer'
+          description: >-
+            Liste der Telefonnummern, unter denen der Ansprechpartner erreichbar
+            ist.
+      required:
+        - boTyp
+        - versionStruktur
+      x-apidog-orders:
+        - boTyp
+        - versionStruktur
+        - nachname
+        - eMailAdresse
+        - rufnummern
+      examples:
+        - $ref: >-
+            https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/Ansprechpartner.json
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    Rufnummer:
+      title: Rufnummer
+      type: object
+      properties:
+        nummerntyp:
+          $ref: '#/components/schemas/Rufnummernart'
+          description: |-
+            Art des Kommunikationsmittels
+            COM
+        rufnummer:
+          type: string
+          description: Rufnummer
+      x-apidog-orders:
+        - nummerntyp
+        - rufnummer
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
+    Rufnummernart:
+      type: string
+      title: Rufnummernart
+      description: Rufnummernart
+      enum:
+        - RUF_ZENTRALE
+        - FAX_ZENTRALE
+        - SAMMELRUF
+        - SAMMELFAX
+        - ABTEILUNGRUF
+        - ABTEILUNGFAX
+        - RUF_DURCHWAHL
+        - FAX_DURCHWAHL
+        - MOBIL_NUMMER
+      x-apidog-enum:
+        - value: RUF_ZENTRALE
+          name: weiteres Telefon
+          description: AJ
+        - value: FAX_ZENTRALE
+          name: ''
+          description: ''
+        - value: SAMMELRUF
+          name: ''
+          description: ''
+        - value: SAMMELFAX
+          name: ''
+          description: ''
+        - value: ABTEILUNGRUF
+          name: ''
+          description: ''
+        - value: ABTEILUNGFAX
+          name: ''
+          description: ''
+        - value: RUF_DURCHWAHL
+          name: Telefon
+          description: TE
+        - value: FAX_DURCHWAHL
+          name: Telefax
+          description: FX
+        - value: MOBIL_NUMMER
+          name: Handy
+          description: AL
       x-apidog-folder: ''
     Kontaktart:
       title: Kontaktart
@@ -1217,6 +1415,8 @@ components:
             abrechnungsZeitraum: *ref_8
             zeitraumText: *ref_9
             zeitraumId: *ref_10
+          required:
+            - enddatum
           x-apidog-ignore-properties:
             - zeiteinheit
             - dauer
@@ -1397,6 +1597,8 @@ components:
         - MELO
         - NELO
         - TECHNISCHE_RESSOURCE
+        - STEUERBARE_RESSOURCE
+        - TRANCHE
       x-apidog-enum:
         - value: MALO
           name: Marktlokation
@@ -1410,6 +1612,12 @@ components:
         - value: TECHNISCHE_RESSOURCE
           name: Technische Ressource
           description: Z37
+        - value: STEUERBARE_RESSOURCE
+          name: ''
+          description: ''
+        - value: TRANCHE
+          name: ''
+          description: ''
       x-apidog-folder: ''
     Sparte:
       type: string
@@ -1497,144 +1705,6 @@ components:
         - BILANZKREIS
         - VERWENDUNGSZEITRAUM
         - TARIFINFO
-      x-apidog-folder: ''
-    Vertrag:
-      title: Vertrag
-      type: object
-      properties:
-        boTyp: *ref_2
-        versionStruktur:
-          type: string
-          default: '1'
-        sparte: *ref_11
-        vertragsart:
-          type: string
-          description: >-
-            Hier ist festgelegt, um welche Art von Vertrag es sich handelt. Z.B.
-            Netznutzungvertrag
-        vertragsnummer:
-          type: string
-          description: Eine im Verwendungskontext eindeutige Nummer für den Vertrag
-        beschreibung:
-          type: string
-          description: >-
-            Freitext zur Beschreibung der Konditionen, z.B. "Standardkonditionen
-            Gas"
-        lokationsId:
-          type: string
-          description: >-
-            Referenz auf die ID der Marktlokation / Messlokation
-
-            RFF Z18 Kunde des LF
-
-            PI 55043 55168 55169
-
-            RFF Z46 Malo
-
-            55616 55622 55628 55634 55109 55137 55110 55136 55643 55648 55663
-            55669 55653 55658
-
-            RFF Z19
-
-            PI 55040 55043 55168 55169  
-        lokationsTyp: *ref_12
-        vertragsstatus: *ref_13
-        vertragsbeginn:
-          type: string
-          format: date-time
-          description: >-
-            Gibt an, wann der Vertrag oder die Zuordnung beginnt.
-
-            DTM 92
-
-            PI 55001 55002 55077 55078 55600 55602 55601 55603 55013 55014 55607
-            55608 55004 55005 55051 55052 55238 55239 55235 55237
-        vertragsende:
-          type: string
-          format: date-time
-          description: >-
-            Gibt das Ende der Netznutzung oder einer Zuordnung an. 
-
-            DTM 93
-
-            PI 55016 55017 55001 55002 55600 55602 55013 55014 55607 55608 55010
-            55011 55004 55005 55007 55008 55039 55040 55051 55052 55240 55241
-            55242 55243 55236 55237
-        gemeinderabatt:
-          type: integer
-          description: |-
-            Gemeinderabatt - Angabe zum Preisnachlass der Netznutzungsentgelte
-            QTY Z16
-            PI 44112 44139 44142 44001 44002 44013 44014 44035
-        vertragskonditionen: *ref_14
-        korrespondenzpartner: *ref_0
-        abrechnungUeberNna:
-          type: boolean
-          description: >-
-            Abrechnung des Messstellenbetriebs über NNE - ob die Abrechnung der
-            Entgelte für Messstellenbetrieb über die 
-
-            Netznutzungsabrechnung erfolgt - wird mit JA oder NEIN beantwortet
-
-            RFF Z05
-
-            PI 55620 55626 
-        datenqualitaet: *ref_15
-        gueltigkeitszeitraum: *ref_3
-        vertragspartner1:
-          type: array
-          items: *ref_0
-          description: >-
-            Der "erstgenannte" Vertragspartner. In der Regel der Aussteller des
-            Vertrags. Beispiel: "Vertrag zwischen
-
-            Vertagspartner 1 ..." Siehe BO Geschaeftspartner
-        vertragspartner2:
-          type: array
-          items: *ref_0
-          description: >-
-            Der "zweitgenannte" Vertragspartner. In der Regel der Empfänger des
-            Vertrags. Beispiel "Vertrag zwischen
-
-            Vertagspartner 1 und Vertragspartner 2". Siehe BO Geschaeftspartner
-
-            IFTSTA Name und Anschrift Kunde des LF 
-
-            NAD Z09
-
-            PI 21045
-        enFG:
-          type: array
-          items: *ref_16
-          description: enFG
-      required:
-        - boTyp
-        - versionStruktur
-      x-apidog-orders:
-        - boTyp
-        - versionStruktur
-        - sparte
-        - vertragsart
-        - vertragsnummer
-        - beschreibung
-        - lokationsId
-        - lokationsTyp
-        - vertragsstatus
-        - vertragsbeginn
-        - vertragsende
-        - gemeinderabatt
-        - vertragskonditionen
-        - korrespondenzpartner
-        - abrechnungUeberNna
-        - datenqualitaet
-        - gueltigkeitszeitraum
-        - vertragspartner1
-        - vertragspartner2
-        - enFG
-      examples:
-        - $ref: >-
-            https://raw.githubusercontent.com/conuti-gmbh/bo4e-schema/master/docs/examples/bo/Vertrag.json
-      x-apidog-ignore-properties: []
       x-apidog-folder: ''
   securitySchemes:
     bearer:

@@ -86,29 +86,32 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Lokationsbuendel'
+                type: array
+                items:
+                  $ref: '#/components/schemas/Lokationsbuendel'
+                description: Liste der Lokationsbündel
               example:
-                boTyp: LOKATIONSBUENDEL
-                versionStruktur: '1'
-                gueltigkeitszeitraum:
-                  zeitraumId: null
-                  startdatum: null
-                  enddatum: null
-                datenqualitaet: null
-                lokationsbuendelstrukturId: '56143614'
-                lokationsbuendelNummer: 1
-                standardisierteLokationsbuendelstruktur: true
-                zuordnungObjectcode:
-                  - referenzLokationsTyp: MALO
-                    referenzLokationsId: '50754496001'
-                    objectcode:
-                      - objectcode: '1463515'
-                        lokationsbuendelNummer: 1
-                    vorgelagerteLokationTyp: NELO
-                    vorgelagerteLokationId: '12754496001'
-                    referenzMarktlokationTechnischeRessource:
-                      - Marktlokation1
-                      - Marktlokation2
+                - boTyp: LOKATIONSBUENDEL
+                  versionStruktur: '1'
+                  gueltigkeitszeitraum:
+                    zeitraumId: null
+                    startdatum: null
+                    enddatum: null
+                  datenqualitaet: null
+                  lokationsbuendelstrukturId: '56143614'
+                  lokationsbuendelNummer: 1
+                  standardisierteLokationsbuendelstruktur: true
+                  zuordnungObjectcode:
+                    - referenzLokationsTyp: MALO
+                      referenzLokationsId: '50754496001'
+                      objectcode:
+                        - objectcode: '1463515'
+                          lokationsbuendelNummer: 1
+                      vorgelagerteLokationTyp: NELO
+                      vorgelagerteLokationId: '12754496001'
+                      referenzMarktlokationTechnischeRessource:
+                        - Marktlokation1
+                        - Marktlokation2
           headers: {}
           x-apidog-name: OK
         '400':
@@ -295,6 +298,8 @@ components:
         - MELO
         - NELO
         - TECHNISCHE_RESSOURCE
+        - STEUERBARE_RESSOURCE
+        - TRANCHE
       x-apidog-enum:
         - value: MALO
           name: Marktlokation
@@ -308,6 +313,12 @@ components:
         - value: TECHNISCHE_RESSOURCE
           name: Technische Ressource
           description: Z37
+        - value: STEUERBARE_RESSOURCE
+          name: ''
+          description: ''
+        - value: TRANCHE
+          name: ''
+          description: ''
       x-apidog-folder: ''
     Zeitraum:
       title: Zeitraum
@@ -353,6 +364,7 @@ components:
         zeitraumText:
           type: string
           description: ZeitraumText
+          x-apidog-mock: "DTM+Z01:03MQ:Z01'\r\nNachfolgend noch einige Beispiele zur Übermittlung der Kündigungsfrist in der\r\nKommunikation von LF zu LF:\r\nBeispiel 1:\r\nDTM+Z01:30TM:Z01'\r\nDies entspricht der Kündigungsfrist von 30 Tagen zum Monatsende.\r\nBeispiel 2:\r\nDTM+Z01:03MJ:Z01'\r\nDies entspricht der Kündigungsfrist von 3 Monaten zum Jahresende. Somit hat die Kündigung\r\n3 Monate vor dem 31.12. zu erfolgen.\r\nBeispiel 3:\r\nDTM+Z01:01MQ:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Quartalsende.\r\nBeispiel 4:\r\nDTM+Z01:01MM:Z01'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum Monatsende.\r\nBeispiel 5:\r\nDTM+Z01:01MT:Z01'\r\nDTM+Z10:201211152300?+00:303'\r\nDies entspricht der Kündigungsfrist von 1 Monat zum 16.11.2012 00:00 Uhr.\r\nBeispiel 6:\r\nDTM+Z01:02WT:Z01'\r\nDTM+Z10:1120:106'\r\nDies entspricht der Kündigungsfrist von 2 Wochen zum 20. eines Monats 00:00 Uhr ab\r\nNovember.\r\nBeispiel 7:\r\nDTM+Z01:14TR:Z01'\r\nDies entspricht einer rollierenden Kündigungsfrist von 14 Tagen in der Zukunft."
         zeitraumId:
           type: integer
           description: |-
@@ -369,6 +381,8 @@ components:
         - abrechnungsZeitraum
         - zeitraumText
         - zeitraumId
+      required:
+        - enddatum
       x-apidog-ignore-properties: []
       x-apidog-folder: ''
     Zeiteinheit:
