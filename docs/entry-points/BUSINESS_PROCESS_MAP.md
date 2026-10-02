@@ -2,6 +2,8 @@
 
 This guide helps you discover which market processes and APIs you need based on **business goals** rather than technical process IDs.
 
+Use the new versioned process views in `docs-offline/prozessdoku/` as the primary reference. Use `docs-supplemental/` for Mermaid branch logic, architecture PNGs, and older operational context. `PROCESS_GRAPH.json` points to both sources.
+
 **Entry Point**: Use this guide when you start with a **business goal** (e.g., "register customer", "cancel contract").
 **Alternative Entry Point**: If you have a specific MaKo message/BDEW ID, start with [`AI_AGENT_SETUP.md`](./AI_AGENT_SETUP.md) instead.
 
@@ -159,16 +161,16 @@ Search for business terms:
 ### Step 4b: Understand Validation Logic (WHAT can be rejected)
 
 If the process docs reference an Entscheidungsbaum:
-- Find `Entscheidungsbaum E_{code}` in `docs-offline/{process}.md`
+- Find `Entscheidungsbaum E_{code}` in `docs-supplemental/{process}.md`
 - Use newest EBD version under `ebd-diagrams/` → `FV{YYMM}/`
 - Read `ebd-diagrams/FV{YYMM}/E_{code}.json` to see validation steps + rejection codes
 
 ### Step 4c: Understand Technical Flow (HOW it’s implemented)
 
 If a PNG diagram exists for the process:
-- Use `docs-offline/prozessdiagramme-png/INDEX.md` to find the right PNG
+- Use `docs-supplemental/prozessdiagramme-png/INDEX.md` to find the right PNG
 - View the PNG to see system swimlanes, format transformations (BO4E↔EDI), and APERAK flow
-  - Fallback (legacy path): `docs-offline/Prozessdiagramme PNG/`
+  - Fallback (legacy path): `docs-supplemental/Prozessdiagramme PNG/`
 
 ### Step 5: Map to Backend Services
 - **What data do you need to collect?**
@@ -232,10 +234,10 @@ Help me discover:
 5. What backend services do I need to build?
 
 Use the following resources:
-- PROCESS_GRAPH.json: Use `indexes.*` to find the right `docs-offline/...` sources quickly (discovery-only in this repo)
+- PROCESS_GRAPH.json: Use `indexes.*` to find the right `docs-supplemental/...` sources quickly (discovery-only in this repo)
 - BUSINESS_PROCESS_MAP.md: Find business scenarios matching your goal
 - llm.txt: Find processes related to [business goal] (index to find docs)
-- docs-offline/: Read workflow documentation (Prozessübersicht) and process descriptions
+- docs-supplemental/: Read workflow documentation (Prozessübersicht) and process descriptions
 - yaml_output/: Check mandatory fields for each process
 - PIs/: Understand API structure
 - _build/bo4e-openapi.min.json: Understand data types
@@ -249,7 +251,7 @@ Use the following resources:
 ## 💡 Tips
 
 1. **Start with `BUSINESS_PROCESS_MAP.md`** - Use the curated scenarios for narrative workflows
-2. **Use `PROCESS_GRAPH.json` (`indexes.*`)** - Jump to the right `docs-offline/...` sources fast (then read them)
+2. **Use `PROCESS_GRAPH.json` (`indexes.*`)** - Jump to the right `docs-supplemental/...` sources fast (then read them)
 3. **Use `llm.txt`** - It's organized by business processes for finding documentation
 4. **Follow the workflow** - Processes often have dependencies (e.g., MaloIdent before Lieferbeginn)
 5. **Check your role** - You're "Lieferant" (LF). Prefer LF-facing docs and verify direction via schemas/examples.
@@ -267,4 +269,3 @@ Use the following resources:
 | Identify location | MaloIdent | START_MALOIDENT | Lieferant > Malo-Ident |
 | Update customer data | Stammdatenänderung | START_VERSAND_SDAE | Lieferant > Stammdatenänderung |
 | Handle billing | Abrechnungsdaten | START_ABR_NN | Lieferant > Abrechnungsdaten |
-

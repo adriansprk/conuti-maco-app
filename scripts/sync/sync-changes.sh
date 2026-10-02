@@ -78,7 +78,7 @@ if [ -d "$WORKSPACE_ROOT/maco-api-documentation" ]; then
             echo "  📋 Found $YAML_COUNT business rule files"
         fi
         
-        # Note: docs/llm.txt is refreshed from doc.macoapp.de/llms.txt via fetch-llm-index.sh (see download-docs.sh); not part of maco-api-documentation
+        # Note: the older portal index is in docs-supplemental/llm.txt; the new indexes are in docs/dokumentation/.
     fi
 fi
 
@@ -125,6 +125,16 @@ if [ -d "$WORKSPACE_ROOT/docs-offline" ]; then
     
     echo "  ✅ Updated version tracker"
     echo "  📝 File count: $FILE_COUNT"
+fi
+
+echo ""
+
+if [ -d "$WORKSPACE_ROOT/docs-supplemental" ]; then
+    echo "📚 Processing docs-supplemental..."
+    FILE_COUNT=$(find "$WORKSPACE_ROOT/docs-supplemental" -maxdepth 1 -name "*.md" | wc -l | tr -d ' ')
+    jq ".\"external_repos\".\"docs-supplemental\".last_synced = \"$TIMESTAMP\" | .\"external_repos\".\"docs-supplemental\".file_count = $FILE_COUNT" \
+       "$VERSION_TRACKER" > "$VERSION_TRACKER.tmp" && mv "$VERSION_TRACKER.tmp" "$VERSION_TRACKER"
+    echo "  ✅ Updated supplemental tracker: $FILE_COUNT files"
 fi
 
 echo ""

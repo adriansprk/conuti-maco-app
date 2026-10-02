@@ -36,7 +36,12 @@ echo ""
 # Step 3: Download documentation files
 echo "📚 Step 3: Downloading documentation files..."
 if [ "${SKIP_LLM_FETCH:-}" = "1" ]; then
-    echo "  (SKIP_LLM_FETCH=1 — docs download will use committed docs/llm.txt without fetching llms.txt)"
+    echo "  (SKIP_LLM_FETCH=1 — supplemental download uses committed docs-supplemental/llm.txt)"
+fi
+if [ -f "$WORKSPACE_ROOT/scripts/download-dokumentation.sh" ]; then
+    "$WORKSPACE_ROOT/scripts/download-dokumentation.sh" || {
+        echo "  ⚠️  New documentation mirror failed"
+    }
 fi
 if [ -f "$WORKSPACE_ROOT/scripts/download-docs.sh" ]; then
     echo "  Downloading from doc.macoapp.de..."
@@ -62,8 +67,8 @@ echo ""
 # Step 5: Generate PROCESS_GRAPH.json index
 echo "📊 Step 5: Generating PROCESS_GRAPH.json index..."
 if command -v python3 &> /dev/null; then
-    if [ -f "$WORKSPACE_ROOT/scripts/sync/update-process-graph-minimal.py" ]; then
-        python3 "$WORKSPACE_ROOT/scripts/sync/update-process-graph-minimal.py"
+    if [ -f "$WORKSPACE_ROOT/scripts/rebuild-documentation-indexes.py" ]; then
+        python3 "$WORKSPACE_ROOT/scripts/rebuild-documentation-indexes.py"
     else
         echo "  ⚠️  update-process-graph-minimal.py not found - skipping"
     fi

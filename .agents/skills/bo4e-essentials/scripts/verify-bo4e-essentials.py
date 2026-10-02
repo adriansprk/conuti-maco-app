@@ -9,6 +9,7 @@ It is intentionally stdlib-only so it can run in every local agent setup.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import sys
@@ -335,14 +336,14 @@ def repo_path(path: str) -> Path:
     return ROOT / candidate
 
 
-def load_ahb_index() -> dict[str, dict[str, Any]]:
+def load_ahb_index(fv: str | None = None) -> dict[str, dict[str, Any]]:
     index_path = ROOT / "ahb-tables" / "INDEX.json"
     if not index_path.exists():
         return {}
     data = json.loads(index_path.read_text(encoding="utf-8"))
     by_version = data.get("by_version", {})
-    latest = "FV2604" if "FV2604" in by_version else (data.get("versions") or [""])[-1]
-    rows = by_version.get(latest, [])
+    selected = fv if fv in by_version else max(by_version, default="")
+    rows = by_version.get(selected, [])
     return {str(row.get("pruefidentifikator")): row for row in rows}
 
 
@@ -406,6 +407,103 @@ def value_is_non_empty(value: Any) -> bool:
     if isinstance(value, (list, tuple, set, dict)):
         return bool(value)
     return True
+
+
+def source_version(path: str) -> str | None:
+    if path.startswith("bo4e-mapping/"):
+        match = re.search(r"^bo4e-mapping/(\d{4})/", path)
+        if match:
+            return "20" + match.group(1)
+    for pattern in (r"/(?:FV|fv)(\d{4})/", r"/(2026\d{2})/", r"/(?:v|V)(2026\d{2})/"):
+        match = re.search(pattern, path)
+        if match:
+            return "20" + match.group(1) if len(match.group(1)) == 4 else match.group(1)
+    return None
+
+
+def check_source_proof(item: dict[str, Any], path: str, label: str, reporter: Reporter) -> None:
+    if path.startswith(("https://", "http://")):
+        reporter.fail(f"{label} needs a local source snapshot for strict evidence")
+        return
+    source = repo_path(path)
+    if not source.is_file():
+        reporter.fail(f"{label} source missing: {path}")
+        return
+    expected_hash = item.get("source_sha256")
+    actual_hash = hashlib.sha256(source.read_bytes()).hexdigest()
+    if not expected_hash:
+        reporter.fail(f"{label} missing source_sha256: {path}")
+    elif expected_hash != actual_hash:
+        reporter.fail(f"{label} source hash changed: {path}")
+    else:
+        reporter.pass_(f"{label} source hash matches: {path}")
+    if source.suffix.lower() in {".md", ".json", ".yml", ".yaml", ".csv", ".txt"}:
+        excerpt = item.get("source_excerpt")
+        if not isinstance(excerpt, str) or len(excerpt.strip()) < 12:
+            reporter.fail(f"{label} needs a source_excerpt of at least 12 characters: {path}")
+        elif excerpt not in source.read_text(encoding="utf-8", errors="replace"):
+            reporter.fail(f"{label} excerpt does not occur in source: {path}")
+        else:
+            reporter.pass_(f"{label} excerpt exists: {path}")
+
+
+def validate_strict_evidence(classification: dict[str, Any], related: dict[str, Any],
+                             manifest: dict[str, Any], claims: dict[str, Any], reporter: Reporter) -> None:
+    fv = str(classification.get("fv", ""))
+    selected = "20" + fv[2:] if re.fullmatch(r"FV\d{4}", fv) else None
+    if selected is None:
+        reporter.fail("strict evidence requires classification.fv such as FV2610")
+        return
+    layers = collect_source_entries(manifest)
+    process_paths = concrete_paths(layers.get("process", []))
+    if not any(path.startswith(f"docs-offline/prozessdoku/{selected}/") for path in process_paths):
+        reporter.fail(f"process evidence needs a current Strom page for {selected}")
+    for layer, entries in layers.items():
+        if layer == "examples":
+            continue  # Fixtures are examples, and their own version is reported in the brief.
+        for path in concrete_paths(entries):
+            version = source_version(path)
+            if version and version != selected:
+                reporter.fail(f"{layer} source version {version} differs from selected {selected}: {path}")
+            if re.search(r"(?:^|[/_-])gas(?:[/_.-]|$)|geli.gas|wim.gas", path, re.I):
+                reporter.fail(f"Gas source is outside this workspace scope: {path}")
+    for index, claim in enumerate(claims.get("claims", []), 1):
+        if isinstance(claim, dict) and (path := claim_path(claim)):
+            check_source_proof(claim, path, f"claim {index}", reporter)
+            values = claim.get("extracted_values", {})
+            excerpt = str(claim.get("source_excerpt", ""))
+            if isinstance(values, dict):
+                terms = []
+                for value in values.values():
+                    for item in as_list(value):
+                        if isinstance(item, (str, int, float)) and len(str(item)) >= 4:
+                            terms.append(str(item))
+                if terms and not any(term in excerpt for term in terms):
+                    reporter.fail(f"claim {index} excerpt does not contain any extracted value")
+    related_ids = set()
+    for category in ("success_responses", "rejection_responses", "follow_ups"):
+        related_ids.update(flatten_related(related).get(category, []))
+    proofs = related.get("relationship_evidence", [])
+    proven = set()
+    for index, proof in enumerate(proofs, 1):
+        if not isinstance(proof, dict):
+            reporter.fail(f"relationship proof {index} must be an object")
+            continue
+        response = str(proof.get("response_pi", ""))
+        request = str(proof.get("request_pi", ""))
+        path = str(proof.get("source_path", ""))
+        excerpt = str(proof.get("source_excerpt", ""))
+        if request != str(classification.get("pi")) or response not in related_ids:
+            reporter.fail(f"relationship proof {index} does not match request and related Prüfis")
+        if request not in excerpt or response not in excerpt:
+            reporter.fail(f"relationship proof {index} excerpt must contain both Prüfis")
+        if path:
+            check_source_proof(proof, path, f"relationship {index}", reporter)
+            proven.add(response)
+        else:
+            reporter.fail(f"relationship proof {index} missing source_path")
+    for response in sorted(related_ids - proven):
+        reporter.fail(f"missing source-backed relationship proof for response/follow-up {response}")
 
 
 def validate_tool_trace(
@@ -496,8 +594,9 @@ def validate_classification(
             reporter.fail(f"classification missing {field}")
 
     fv = str(classification.get("fv", ""))
-    if fv != "FV2604":
-        reporter.warn(f"classification uses {fv or 'no FV'}; FV2604 is preferred when present")
+    latest = max(json.loads((ROOT / "ahb-tables/INDEX.json").read_text(encoding="utf-8")).get("by_version", {}), default="")
+    if fv != latest:
+        reporter.warn(f"classification uses {fv or 'no FV'}; latest local AHB is {latest}")
 
     if pi in ahb_rows:
         row = ahb_rows[pi]
@@ -531,7 +630,7 @@ def validate_related(
             if expected_pi in actual:
                 reporter.pass_(f"related {category} includes {expected_pi}")
             else:
-                reporter.fail(f"related {category} missing expected PI {expected_pi}")
+                reporter.warn(f"numbering hint for {pi} suggests {category} PI {expected_pi}; verify against selected-version source")
 
     all_related = sorted({value for values in flattened.values() for value in values})
     if not all_related:
@@ -1027,6 +1126,8 @@ def main() -> int:
         "--primary-pi",
         help="Primary request Prüfi for composite flow ids. Optional for numeric targets.",
     )
+    parser.add_argument("--strict-evidence", action="store_true",
+                        help="Require source hashes, exact excerpts, version agreement and relationship proofs")
     parser.add_argument(
         "--repo-root",
         type=Path,
@@ -1076,7 +1177,8 @@ def main() -> int:
     validate_event_log(run_dir / "events.jsonl", reporter)
     validate_tool_trace(run_dir / "tool_trace.jsonl", manifest if isinstance(manifest, dict) else None, reporter)
 
-    ahb_rows = load_ahb_index()
+    selected_fv = str(classification.get("fv")) if isinstance(classification, dict) else None
+    ahb_rows = load_ahb_index(selected_fv)
 
     if isinstance(classification, dict):
         validate_classification(pi, classification, ahb_rows, reporter)
@@ -1105,6 +1207,11 @@ def main() -> int:
             final_stage,
             reporter,
         )
+    if args.strict_evidence:
+        if all(isinstance(data, dict) for data in (classification, related, manifest, claims)):
+            validate_strict_evidence(classification, related, manifest, claims, reporter)
+        else:
+            reporter.fail("strict evidence requires classification, related Prüfis, sources manifest and layer claims")
     if final_stage and isinstance(coverage, dict):
         validate_coverage(coverage, doc_text, reporter)
 

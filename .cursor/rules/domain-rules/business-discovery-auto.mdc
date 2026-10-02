@@ -13,4 +13,4 @@ priority: 2
 version: 1.1.0
 ---
 
-Follow the workflow defined in @.claude/skills/mako-discover/SKILL.md
+Follow `AGENTS.md`. Start from `docs/entry-points/BUSINESS_PROCESS_MAP.md` for candidate Strom processes, then select the format version and inspect the matching new process pages with `scripts/find-documentation.py`. Treat the business map as navigation, not proof of message order.

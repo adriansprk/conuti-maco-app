@@ -1,63 +1,23 @@
-# Documentation Directory
+# Documentation sources
 
-This directory contains all documentation and entry point files for the MaCo API workspace.
+The Strom-scoped Conuti documentation mirror is the primary process and interface reference. Gas-specific pages are excluded from the new mirror, both local indexes, and the older supplemental snapshot. The older `doc.macoapp.de` export is retained separately for applicable diagrams, historical material, and comparison.
 
-## Structure
+| Source | Index | Offline pages | Use |
+|---|---|---|---|
+| New site | `docs/dokumentation/llms.txt` (curated) and `llms-index.txt` (Strom/shared pages) | `docs-offline/<site-path>.md` | Versioned process views, Prüfis, EBDs, trigger events, BO4E reference |
+| Older site | `docs-supplemental/llm.txt` | `docs-supplemental/*.md` | Mermaid branches, PNG architecture diagrams, operational and historical pages |
 
+For a process, use `python3 scripts/find-documentation.py --process lieferbeginn --version 202610 --role LF` (or `--pi` / `--trigger`). Use `--perspective LFN` or `LFA` to narrow supplier views and `--include-supplemental` when older branch detail is needed. The graph's indexes contain paths to both sources; each `by_path` entry records source, format version, industry, role, participant view, and document type. Read the source page before describing a process.
+
+The new site's system diagrams are embedded SVGs. They show actors and operations but do not reliably encode all regulatory `opt`, `alt`, or `par` conditions. Keep the legacy Mermaid sequence diagrams available for those conditions and check the BDEW source when interpreting them. SVG-to-Mermaid conversion is a separate, source-verified job.
+
+Refresh and rebuild:
+
+```bash
+./scripts/download-dokumentation.sh
+python3 scripts/rebuild-documentation-indexes.py
+python3 scripts/rebuild-documentation-indexes.py --check
+python3 scripts/test-documentation-discovery.py
 ```
-docs/
-├── entry-points/          # Main entry point files
-│   ├── AI_AGENT_SETUP.md          # Entry Point 2: Technical implementation
-│   ├── BUSINESS_PROCESS_MAP.md    # Entry Point 1: Business discovery
-│   ├── PROCESS_GRAPH.json         # Machine-readable process graph
-│   └── README.md                  # Entry points documentation
-└── llm.txt                # Documentation index (237 entries)
-```
 
-## Entry Points
-
-### Entry Point 1: Business Goal Discovery
-
-**File**: `entry-points/BUSINESS_PROCESS_MAP.md`
-
-Use when you have a business goal (e.g., "register new customer", "cancel contract").
-
-### Entry Point 2: Technical Implementation
-
-**File**: `entry-points/AI_AGENT_SETUP.md`
-
-Use when you have a specific BDEW process ID or MaKo message (e.g., "55077", "START_LIEFERBEGINN").
-
-### Process Dependency Graph
-
-**File**: `entry-points/PROCESS_GRAPH.json`
-
-Machine-readable JSON file for fast lookups:
-- Process by BDEW ID: `indexes.by_bdew_id["55077"]`
-- Process by trigger: `indexes.by_trigger["START_LIEFERBEGINN"]`
-- Process docs by name: `indexes.by_process_name["lieferbeginn"]`
-
-⚠️ Note: In this repo `PROCESS_GRAPH.json` is generated as a **minimal discovery index** (`version: 2.0.0-minimal`).
-The sections `processes`, `business_scenarios`, `ebd_reference` exist but are currently **empty**. Derive dependencies by reading the referenced `docs-offline/*.md` sources (Mermaid + prose).
-
-## Documentation Index
-
-**File**: `llm.txt`
-
-Index of 237 documentation entries. Use to find which documentation files you need for a specific process.
-
-## Maintenance
-
-### Updating After External Repo Changes
-
-When external repositories (`maco-api-documentation`, `docs-offline`) are updated:
-
-1. **Check for changes**: `./scripts/sync/check-changes.sh`
-2. **Sync changes**: `./scripts/sync/sync-changes.sh`
-3. **Regenerate PROCESS_GRAPH.json**: `./scripts/sync/update-process-graph.py` (when implemented)
-
-See `scripts/sync/README.md` for detailed workflow.
-
-### File Locations
-
-All entry point files have been moved to `docs/entry-points/` for better organization. The AI agent rules have been updated to reference these new paths.
+The older portal can still be refreshed with `./scripts/download-docs.sh`; it writes only to `docs-supplemental/`. Its index remains separate from the new site's indexes.

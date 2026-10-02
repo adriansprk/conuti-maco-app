@@ -101,38 +101,6 @@
         ]
       }
     },
-    "docs-offline": {
-      "source": "Downloaded from doc.macoapp.de",
-      "path": "docs-offline",
-      "last_synced": "2026-10-01T07:09:23Z",
-      "last_download_date": null,
-      "tracked_files": {
-        "prozessuebersicht": {
-          "path": "prozessübersicht-*.md",
-          "purpose": "Process workflow documentation",
-          "affects": [
-            "PROCESS_GRAPH.json",
-            "workflow_sequences"
-          ]
-        },
-        "process_docs": {
-          "path": "*-[process-name]-*.md",
-          "purpose": "Process descriptions and EBD diagrams",
-          "affects": [
-            "PROCESS_GRAPH.json",
-            "process_descriptions"
-          ]
-        }
-      },
-      "sync_actions": {
-        "on_doc_change": [
-          "Update PROCESS_GRAPH.json documentation references",
-          "Regenerate process sequences if workflow changed",
-          "Update llm.txt index if new processes added"
-        ]
-      },
-      "file_count": 364
-    },
     "maco-edi-testfiles": {
       "source": "git submodule or external repo",
       "path": "maco-edi-testfiles",
@@ -254,6 +222,53 @@
           "Run ./scripts/sync/sync-changes.sh to update tracking"
         ]
       }
+    },
+    "docs-supplemental": {
+      "source": "Preserved offline snapshot of doc.macoapp.de",
+      "path": "docs-supplemental",
+      "last_synced": "2026-10-01T07:09:23Z",
+      "last_download_date": null,
+      "tracked_files": {
+        "prozessuebersicht": {
+          "path": "prozessübersicht-*.md",
+          "purpose": "Process workflow documentation",
+          "affects": [
+            "PROCESS_GRAPH.json",
+            "workflow_sequences"
+          ]
+        },
+        "process_docs": {
+          "path": "*-[process-name]-*.md",
+          "purpose": "Process descriptions and EBD diagrams",
+          "affects": [
+            "PROCESS_GRAPH.json",
+            "process_descriptions"
+          ]
+        }
+      },
+      "sync_actions": {
+        "on_doc_change": [
+          "Update PROCESS_GRAPH.json documentation references",
+          "Regenerate process sequences if workflow changed",
+          "Update llm.txt index if new processes added"
+        ]
+      },
+      "file_count": 346,
+      "index": "docs-supplemental/llm.txt"
+    },
+    "docs-offline": {
+      "source": "https://dokumentation.macoapp.de/llms-index.txt",
+      "path": "docs-offline",
+      "last_synced": "2026-10-01T21:22:46+00:00",
+      "page_count": 3447,
+      "file_count": 3448,
+      "indexes": [
+        "docs/dokumentation/llms.txt",
+        "docs/dokumentation/llms-index.txt",
+        "docs-offline/index.json",
+        "docs-offline/enhanced-index.json",
+        "docs/entry-points/PROCESS_GRAPH.json"
+      ]
     }
   },
   "generated_files": {

@@ -1,0 +1,17 @@
+# SonderrechnungsArt
+<span hidden data-pagefind-meta={"title:SonderrechnungsArt — BO4E-Enumeration (FV 202604)"} />
+
+SonderrechnungsArt
+
+| Wert |
+|---|
+| `KONZESSIONSABGABE_TESTAT` |
+| `INDIVIDUELL_ATYPISCH` |
+| `INDIVIDUELL_SINGULAER` |
+| `KWKG_UMLAGE` |
+| `OFFSHORE_UMLAGE` |
+| `P19_STROM_NEV_UMLAGE` |
+| `P18_ABLAV` |
+| `KONZESSIONSABGABE_WECHSEL_RLM` |
+| `PRIVILEGIERUNG_NACH_ENFG` |
+| `KONZESSIONSABGABE_WEITERGELEITETE_MENGEN` |

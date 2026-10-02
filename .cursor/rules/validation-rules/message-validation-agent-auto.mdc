@@ -15,4 +15,4 @@ priority: 3
 version: 1.1.0
 ---
 
-Follow the workflow defined in @.claude/skills/mako-validate-message/SKILL.md
+Follow `AGENTS.md`. Validate the selected-version request against its schema, AHB conditions and EBD decision tree where applicable. Report each failure with its source path and distinguish schema failures from process rejections.

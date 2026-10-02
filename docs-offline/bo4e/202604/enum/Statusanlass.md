@@ -1,0 +1,13 @@
+# Statusanlass
+<span hidden data-pagefind-meta={"title:Statusanlass — BO4E-Enumeration (FV 202604)"} />
+
+Statusanlass
+
+| Wert |
+|---|
+| `KOMMUNIKATIONSSTOERUNG` |
+| `STATUS_GERAETEWECHSEL` |
+| `MESSEINRICHTUNG_GESTOERT_DEFEKT` |
+| `KEINE_STOERUNG_FESTSTELLBAR` |
+| `STOERUNGSBEHEBUNG_NICHT_MOEGLICH` |
+| `REPARATUR_OHNE_GERAETEWECHSEL` |

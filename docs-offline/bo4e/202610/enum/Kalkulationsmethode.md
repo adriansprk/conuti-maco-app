@@ -1,0 +1,23 @@
+# Kalkulationsmethode
+<span hidden data-pagefind-meta={"title:Kalkulationsmethode — BO4E-Enumeration (FV 202610)"} />
+
+Auflistung der verschiedenen Berechnungsmethoden für ein Preisblatt
+
+| Wert |
+|---|
+| `KEINE` |
+| `STAFFELN` |
+| `ZONEN` |
+| `VORZONEN_GP` |
+| `SIGMOID` |
+| `BLINDARBEIT_GT_50_PROZENT` |
+| `BLINDARBEIT_GT_40_PROZENT` |
+| `AP_GP_ZONEN` |
+| `LP_INSTALL_LEISTUNG` |
+| `AP_TRANSPORT_ODER_VERTEILNETZ` |
+| `AP_TRANSPORT_ODER_VERTEILNETZ_ORTSVERTEILNETZ_SIGMOID` |
+| `LP_JAHRESVERBRAUCH` |
+| `LP_TRANSPORT_ODER_VERTEILNETZ` |
+| `LP_TRANSPORT_ODER_VERTEILNETZ_ORTSVERTEILNETZ_SIGMOID` |
+| `FUNKTIONEN` |
+| `VERBRAUCH_UEBER_SLP_GRENZE_FUNKTIONSBEZOGEN_WEITERE_BERECHNUNG_ALS_LGK` |

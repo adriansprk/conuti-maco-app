@@ -90,7 +90,7 @@ the discrepancy in the final markdown.
       {"path": "bdew-docs/bk620160_gpke.md", "purpose": "deadlines"}
     ],
     "process": [
-      {"path": "docs-offline/lieferende-nb-lf-rolle-lf-3129676f0.md", "purpose": "role flow"}
+      {"path": "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md", "purpose": "role flow"}
     ],
     "architecture": [
       {"status": "missing", "reason": "no PI-specific PNG found"}
@@ -140,9 +140,10 @@ Rules:
 ### `layer_claims.json`
 
 This is the key intermediate-check artifact. Each claim says what a source layer
-contributed to the unified process picture. The verifier checks that claims point
-to files in `sources_manifest.json`, that those files exist, and, during the
-final stage, that important `doc_terms` appear in the markdown.
+contributed. New runs use `--strict-evidence`: every claim needs `source_sha256`
+and an exact `source_excerpt` copied from the local source (at least 12 characters
+for text files). The verifier checks the file revision and occurrence of that
+excerpt. This proves the cited text exists, not that the interpretation is correct.
 
 ```json
 {
@@ -152,6 +153,8 @@ final stage, that important `doc_terms` appear in the markdown.
       "layer": "edifact",
       "claim_type": "ahb_requiredness",
       "path": "ahb-tables/FV2604/AHB_FV2604_55004.json",
+      "source_sha256": "<sha256 of the local source bytes>",
+      "source_excerpt": "<exact substring copied from the source file>",
       "evidence": "DTM+93 is Muss [11] unless STS+7 uses ZG9/ZH1/ZH2.",
       "claim": "The AHB is authoritative for EDIFACT segment requiredness and conditional rules.",
       "extracted_values": {
@@ -216,6 +219,15 @@ Optional layers become expected when a concrete source exists in
 
 Every concrete source path in `sources_manifest.json` must have at least one
 claim. This prevents source-touching without extraction.
+
+For every `success_responses`, `rejection_responses`, or `follow_ups` PI in
+`related_pis.json`, add a `relationship_evidence` entry with `request_pi`,
+`response_pi`, `source_path`, `source_sha256`, and `source_excerpt`. The excerpt
+must contain both Prüfis. Select a versioned Strom process page when possible.
+Use `shasum -a 256 <source-path>` to capture the source hash. The strict gate
+also checks that versioned process, AHB, EBD and mapping paths agree with
+`classification.fv`; fixtures are explicitly exempt and must be labelled as
+examples from their own version.
 
 Use these claim types so the verifier can catch wrong layer usage:
 

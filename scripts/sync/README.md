@@ -1,19 +1,19 @@
 # Sync Scripts - Quick Guide
 
-This workspace tracks external repositories (`maco-api-documentation`, `maco-edi-testfiles`, `ebd-diagrams`), reference data (`ahb-tables`, `ebd-diagrams`), and `docs-offline`, then regenerates `PROCESS_GRAPH.json` when process docs or schemas change.
+This workspace tracks external repositories (`maco-api-documentation`, `maco-edi-testfiles`, `ebd-diagrams`), reference data (`ahb-tables`, `ebd-diagrams`), the new `docs-offline` mirror, and the older `docs-supplemental` snapshot. The two documentation indexes are separate; `PROCESS_GRAPH.json` points to both sources.
 
 ## How It Works
 
 1. **External repos / reference data change** → Pull submodules or download AHB tables
 2. **Check what changed** → `check-changes.sh` or `check-maco-sync` reports updates
 3. **Sync tracking** → `sync-changes.sh` updates metadata
-4. **Regenerate index** → `update-process-graph-minimal.py` rebuilds `PROCESS_GRAPH.json` (process docs only)
+4. **Regenerate indexes** → `rebuild-documentation-indexes.py` rebuilds both source indexes and `PROCESS_GRAPH.json`; the older entry point delegates to it.
 
 ## Quick Start
 
 ### Full update check (recommended)
 
-Includes remote `git fetch`, `docs/llm.txt` vs `doc.macoapp.de/llms.txt`, and version-tracker drift:
+Includes remote `git fetch`, both documentation indexes against their portals, and version-tracker drift:
 
 ```bash
 .agents/skills/check-maco-sync/scripts/check-updates.sh
@@ -31,7 +31,7 @@ See skill: `.agents/skills/check-maco-sync/SKILL.md`
 ./scripts/sync/rebuild-schemas.sh
 
 # 3. If docs changed (new markdown files)
-./scripts/download-docs.sh
+./scripts/download-dokumentation.sh
 python3 scripts/sync/update-process-graph-minimal.py
 
 # 4. Update tracking metadata
@@ -82,7 +82,8 @@ python3 scripts/sync/update-process-graph-minimal.py
 
 - **`ebd-diagrams`** is a git submodule (Hochfrequenz EBD JSON/SVG). Update with `cd ebd-diagrams && git pull`. Latest format version is in `format_versions.json` when present.
 - **`ahb-tables`** are downloaded from the Hochfrequenz API via `scripts/download-ahb-tables.py`; regenerate `INDEX.json` with `scripts/generate-ahb-index.py`.
-- **`llm.txt`** is fetched from `https://doc.macoapp.de/llms.txt` by `scripts/fetch-llm-index.sh` (also run automatically before `download-docs.sh` unless `SKIP_LLM_FETCH=1`)
+- **New indexes** live in `docs/dokumentation/` and are fetched by `scripts/download-dokumentation.sh`.
+- **Older `llm.txt`** lives in `docs-supplemental/` and is fetched by `scripts/fetch-llm-index.sh` when refreshing the supplement.
 - **Build script changes** are critical - always rebuild schemas if `maco-api-documentation/scripts/build-openapi-json.sh` changes
 - **Submodule patching**: Submodules are imported as-is, then automatically patched during build/index generation
   - Patches are version-controlled in this workspace (not in submodules)

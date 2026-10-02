@@ -2,7 +2,7 @@
 description: Error resolution taxonomy - converts EBD rejection logic into retryability, ops actions, and escalation guidance (source-grounded)
 globs:
   - "**/ebd-diagrams/**/*"
-  - "**/docs-offline/**/*"
+  - "**/docs-supplemental/**/*"
   - "**/maco-api-documentation/**/*"
   - "**/maco-edi-testfiles/**/*"
 alwaysApply: false
@@ -11,4 +11,4 @@ priority: 3
 version: 1.0.0
 ---
 
-Follow the workflow defined in @.claude/skills/mako-error-resolve/SKILL.md
+Follow `AGENTS.md`. Derive rejection meaning from the selected-version EBD and process pages. State the sender, code, terminal outcome, and supported retry or escalation action. Mark operational behavior unknown when no source defines it.

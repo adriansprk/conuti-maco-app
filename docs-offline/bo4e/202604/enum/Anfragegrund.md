@@ -1,0 +1,16 @@
+# Anfragegrund
+<span hidden data-pagefind-meta={"title:Anfragegrund — BO4E-Enumeration (FV 202604)"} />
+
+Anfragegrund
+
+| Wert |
+|---|
+| `ABGRENZUNG_VON_ENERGIEMENGEN` |
+| `ABGRENZUNG` |
+| `WECHSELEREIGNIS` |
+| `ZWISCHENABLESUNG` |
+| `DIREKTER_VERTRAG_MSB_AN` |
+| `DIREKTER_VERTRAG_MSB_ANN` |
+| `AENDERUNG_IM_LOKATIONSBUENDEL` |
+| `NEUKONFIGURATION` |
+| `KONFIGURATION_UNVERAENDERT` |

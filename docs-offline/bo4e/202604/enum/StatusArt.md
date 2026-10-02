@@ -1,0 +1,13 @@
+# StatusArt
+<span hidden data-pagefind-meta={"title:StatusArt — BO4E-Enumeration (FV 202604)"} />
+
+StatusArt
+
+| Wert |
+|---|
+| `PLAUSIBILISIERUNGSHINWEIS` |
+| `ERSATZWERTBILDUNGSVERFAHREN` |
+| `KORREKTURGRUND` |
+| `GRUND_ERSATZWERTBILDUNGSVERFAHREN` |
+| `GASQUALITAET` |
+| `MESSKLASSIFIZIERUNG` |

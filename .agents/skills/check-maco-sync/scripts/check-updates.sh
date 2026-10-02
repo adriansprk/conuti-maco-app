@@ -9,8 +9,8 @@ SKILL_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 WORKSPACE_ROOT="$(cd "$SKILL_DIR/../../.." && pwd)"
 SYNC_DIR="$WORKSPACE_ROOT/scripts/sync"
 VERSION_TRACKER="$SYNC_DIR/version-tracker.json"
-LLM_LOCAL="$WORKSPACE_ROOT/docs/llm.txt"
-LLM_URL="${MACO_DOC_INDEX_URL:-https://doc.macoapp.de/llms.txt}"
+LLM_LOCAL="$WORKSPACE_ROOT/docs/dokumentation/llms.txt"
+LLM_URL="${MACO_DOC_INDEX_URL:-https://dokumentation.macoapp.de/llms.txt}"
 
 UPDATES_AVAILABLE=0
 WARNINGS=0
@@ -127,7 +127,7 @@ check_docs_offline() {
     echo "  Tracker last synced: $last_synced"
 
     if [ "$file_count" != "$last_count" ]; then
-        status_warn "docs-offline file count changed — re-run download-docs + sync-changes"
+        status_warn "docs-offline file count changed — re-run download-dokumentation + rebuild-documentation-indexes"
     else
         status_ok "docs-offline file count matches tracker"
     fi
@@ -142,7 +142,7 @@ check_llm_txt() {
     echo "  Local file: $LLM_LOCAL"
 
     if [ ! -f "$LLM_LOCAL" ]; then
-        status_warn "docs/llm.txt missing — run ./scripts/fetch-llm-index.sh"
+        status_warn "$LLM_LOCAL missing — run ./scripts/download-dokumentation.sh"
         return
     fi
 
@@ -150,6 +150,12 @@ check_llm_txt() {
         status_warn "could not fetch remote llms.txt"
         WARNINGS=1
         return
+    fi
+
+    if [[ "$LLM_URL" == *"dokumentation.macoapp.de"* ]]; then
+        python3 "$WORKSPACE_ROOT/scripts/documentation_scope.py" --index-file "$tmp"
+    else
+        python3 "$WORKSPACE_ROOT/scripts/documentation_scope.py" --legacy-index "$tmp"
     fi
 
     local local_lines remote_lines local_hash remote_hash
@@ -163,9 +169,9 @@ check_llm_txt() {
     echo "  SHA-256 remote: $remote_hash"
 
     if cmp -s "$LLM_LOCAL" "$tmp"; then
-        status_ok "docs/llm.txt matches remote llms.txt"
+        status_ok "$LLM_LOCAL matches the Strom-scoped remote index"
     else
-        status_warn "docs/llm.txt differs from remote — run ./scripts/fetch-llm-index.sh"
+        status_warn "$LLM_LOCAL differs from the Strom-scoped remote index — refresh its documentation source"
         echo "  Diff preview (first 20 lines):"
         diff "$LLM_LOCAL" "$tmp" | head -20 | sed 's/^/    /' || true
     fi
@@ -202,7 +208,12 @@ fi
 section "docs-offline"
 check_docs_offline
 
-section "docs/llm.txt (portal index)"
+section "New documentation index"
+check_llm_txt
+
+LLM_LOCAL="$WORKSPACE_ROOT/docs-supplemental/llm.txt"
+LLM_URL="https://doc.macoapp.de/llms.txt"
+section "Older portal index"
 check_llm_txt
 
 section "Summary"
@@ -225,8 +236,9 @@ echo ""
 echo "Typical apply sequence:"
 echo "  ./scripts/sync/update-submodules.sh"
 echo "  python3 scripts/download-ahb-tables.py && python3 scripts/generate-ahb-index.py  # if AHB drift"
-echo "  ./scripts/fetch-llm-index.sh          # if llm.txt differed"
-echo "  ./scripts/download-docs.sh            # if llm.txt or docs-offline need refresh"
+echo "  ./scripts/download-dokumentation.sh   # if new index or mirror differs"
+ echo "  ./scripts/fetch-llm-index.sh          # if older index differs"
+echo "  ./scripts/download-docs.sh            # if older supplement needs refresh"
 echo "  ./scripts/sync/rebuild-schemas.sh     # if maco-api build script changed"
 echo "  python3 scripts/sync/update-process-graph-minimal.py"
 echo "  ./scripts/sync/sync-changes.sh"

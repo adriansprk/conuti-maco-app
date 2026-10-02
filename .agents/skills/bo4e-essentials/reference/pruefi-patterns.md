@@ -28,21 +28,21 @@ Request XX601 → Success XX604 (even)  + Rejection XX605 (odd)
 
 1. Read the row in `ahb-tables/INDEX.md` for the given PI — note its **description** and **direction**.
 2. If the PI is in the **Known flows** table above, use the listed pairing and still verify every related PI in `INDEX.md`.
-3. If the PI is not in the Known flows table, derive relationships from sources only: `maco-api-documentation/pythons/processinfo.json`, `docs-offline/*`, AHB metadata, and fixtures. Do **not** compute `PI+1` / `PI+2` from the number.
+3. If the PI is not in the Known flows table, derive relationships from sources only: `maco-api-documentation/pythons/processinfo.json`, `docs-supplemental/*`, AHB metadata, and fixtures. Do **not** compute `PI+1` / `PI+2` from the number.
 4. ORDERS/ORDRSP/IFTSTA flows are especially not numeric-pairing flows. For example, `17123` relates to `19124`, `21043`, and `21033`; `17133` relates to `19133`.
 5. Check the trigger schema (`maco-api-documentation/macoapp-trigger/components/schemas/START_*.yml`) for `oneOf` / `allOf` — find sibling request PIs sharing the same trigger.
-6. Cross-verify on the NB side: `grep -r "Übergabe der erzeugten Rückmeldung" docs-offline/` — those lines explicitly list which PIs the NB generates.
-7. If a process diagram exists (`docs-offline/prozessdiagramme-png/INDEX.md`), view the MCS-layer swimlane — success path and rejection path are drawn with their PI numbers.
+6. Cross-verify on the NB side: `grep -r "Übergabe der erzeugten Rückmeldung" docs-supplemental/` — those lines explicitly list which PIs the NB generates.
+7. If a process diagram exists (`docs-supplemental/prozessdiagramme-png/INDEX.md`), view the MCS-layer swimlane — success path and rejection path are drawn with their PI numbers.
 
 ## Trigger ↔ Prüfi mapping (mandatory verification)
 
 A trigger event name is **not** evidence of which Prüfi it generates. Always prove the mapping before listing a trigger in the doc.
 
-The authoritative source for trigger ↔ Prüfi mapping is **`docs-offline/trigger-events-14016919e0.md`**: each trigger declares its OpenAPI schema as `[LF] START_X` / `[NB] START_X` with an `allOf $ref: PI_NNNNN`. The `$ref` points at the actual generated Prüfi.
+The authoritative source for trigger ↔ Prüfi mapping is **`docs-supplemental/trigger-events-14016919e0.md`**: each trigger declares its OpenAPI schema as `[LF] START_X` / `[NB] START_X` with an `allOf $ref: PI_NNNNN`. The `$ref` points at the actual generated Prüfi.
 
 To verify trigger `START_X`:
 
-1. `grep -A 20 "'\\[LF\\] START_X '" docs-offline/trigger-events-14016919e0.md` — read the `allOf $ref: PI_NNNNN`. That `NNNNN` is what the LF-side trigger generates.
+1. `grep -A 20 "'\\[LF\\] START_X '" docs-supplemental/trigger-events-14016919e0.md` — read the `allOf $ref: PI_NNNNN`. That `NNNNN` is what the LF-side trigger generates.
 2. Same for the NB-side arm: `grep -A 20 "'\\[NB\\] START_X'"`. Often the same trigger name carries different Prüfis on the two sides (e.g. `[LF] START_LIEFERENDE` → 55004, `[NB] START_LIEFERENDE` → 55007).
 3. Or open the trigger schema directly (`macoapp-trigger/components/schemas/START_X.yml`) and follow the `allOf $ref`.
 

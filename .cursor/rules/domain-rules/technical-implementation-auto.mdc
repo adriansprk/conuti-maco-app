@@ -16,4 +16,4 @@ priority: 2
 version: 1.2.1
 ---
 
-Follow the workflow defined in @.claude/skills/mako-implement/SKILL.md
+Follow `AGENTS.md`. Select the Strom format version, read the corresponding new Prüfi and process pages, and validate payload claims against the matching AHB, mapping, trigger and request schema. For a ticket-ready brief, use `.agents/skills/bo4e-essentials/SKILL.md`.

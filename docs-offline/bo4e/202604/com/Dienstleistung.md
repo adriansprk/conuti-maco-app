@@ -1,0 +1,52 @@
+# Dienstleistung
+<span hidden data-pagefind-meta={"title:Dienstleistung — BO4E-Komponente (FV 202604)"} />
+
+BO4E-Komponente · 2 Felder · 0 Verwendungen in Prüfis und Events
+
+## Felder
+
+<Feldansicht>
+
+<div data-ansicht-teil="tabelle">
+
+<div className="maco-tabellenrahmen maco-bo4e-felder" data-maco="bo4e-tabelle">
+
+| Feld | Typ | Beschreibung |
+|---|---|---|
+| <a id="dienstleistungstyp"></a>`dienstleistungstyp` | [Enum Dienstleistungstyp](/bo4e/202604/enum/Dienstleistungstyp)<br/><Werte>`DATENBEREITSTELLUNG_TAEGLICH`, `DATENBEREITSTELLUNG_WOECHENTLICH`, `DATENBEREITSTELLUNG_MONATLICH`, `DATENBEREITSTELLUNG_JAEHRLICH`, `DATENBEREITSTELLUNG_HISTORISCHE_LG`, `DATENBEREITSTELLUNG_STUENDLICH`, `DATENBEREITSTELLUNG_VIERTELJAEHRLICH`, `DATENBEREITSTELLUNG_HALBJAEHRLICH`, `DATENBEREITSTELLUNG_MONATLICH_ZUSAETZLICH`, `DATENBEREITSTELLUNG_EINMALIG`, `AUSLESUNG_2X_TAEGLICH_FERNAUSLESUNG`, `AUSLESUNG_TAEGLICH_FERNAUSLESUNG`, `AUSLESUNG_LGK_MANUELL_MSB`, `AUSLESUNG_MONATLICH_SLP_FERNAUSLESUNG`, `AUSLESUNG_JAEHRLICH_SLP_FERNAUSLESUNG`, `AUSLESUNG_MDE_SLP`, `ABLESUNG_MONATLICH_SLP`, `ABLESUNG_VIERTELJAEHRLICH_SLP`, `ABLESUNG_HALBJAEHRLICH_SLP`, `ABLESUNG_JAEHRLICH_SLP`, `AUSLESUNG_SLP_FERNAUSLESUNG`, `ABLESUNG_SLP_ZUSAETZLICH_MSB`, `ABLESUNG_SLP_ZUSAETZLICH_KUNDE`, `AUSLESUNG_LGK_FERNAUSLESUNG_ZUSAETZLICH_MSB`, `AUSLESUNG_MOATLICH_FERNAUSLESUNG`, `AUSLESUNG_STUENDLICH_FERNAUSLESUNG`, `ABLESUNG_MONATLICH_LGK`, `AUSLESUNG_TEMERATURMENGENUMWERTER`, `AUSLESUNG_ZUSTANDSMENGENUMWERTER`, `AUSLESUNG_SYSTEMMENGENUMWERTER`, `AUSLESUNG_VORGANG_SLP`, `AUSLESUUNG_KOMPAKTMENGENUMWERTER`, `AUSLESUNG_MDE_LGK`, `SPERRUNG_SLP`, `ENTSPERRUNG_SLP`, `SPERRUNG_RLM`, `ENTSPERRUNG_RLM`, `MAHNKOSTEN`, `INKASSOKOSTEN`</Werte> | Eindeutige Nummer der Dienstleistung. Details Dienstleistungstyp |
+| <a id="bezeichnung"></a>`bezeichnung` | string | Bezeichnung der Dienstleistung. |
+
+</div>
+
+</div>
+
+<div data-ansicht-teil="baum" data-pagefind-ignore="all">
+
+<Handbuchsatz art="struktur" start="zu">
+
+<div className="maco-tabellenrahmen" data-maco="bo4e-baum">
+
+| Struktur (BO4E) | Beschreibung | Format |
+|---|---|---|
+| <span className="hbs-f hbs-e0">[dienstleistungstyp](/bo4e/202604/com/Dienstleistung#dienstleistungstyp)</span> | Eindeutige Nummer der Dienstleistung. Details Dienstleistungstyp | [Enum Dienstleistungstyp](/bo4e/202604/enum/Dienstleistungstyp)<br/><Werte>`DATENBEREITSTELLUNG_TAEGLICH`, `DATENBEREITSTELLUNG_WOECHENTLICH`, `DATENBEREITSTELLUNG_MONATLICH`, `DATENBEREITSTELLUNG_JAEHRLICH`, `DATENBEREITSTELLUNG_HISTORISCHE_LG`, `DATENBEREITSTELLUNG_STUENDLICH`, `DATENBEREITSTELLUNG_VIERTELJAEHRLICH`, `DATENBEREITSTELLUNG_HALBJAEHRLICH`, `DATENBEREITSTELLUNG_MONATLICH_ZUSAETZLICH`, `DATENBEREITSTELLUNG_EINMALIG`, `AUSLESUNG_2X_TAEGLICH_FERNAUSLESUNG`, `AUSLESUNG_TAEGLICH_FERNAUSLESUNG`, `AUSLESUNG_LGK_MANUELL_MSB`, `AUSLESUNG_MONATLICH_SLP_FERNAUSLESUNG`, `AUSLESUNG_JAEHRLICH_SLP_FERNAUSLESUNG`, `AUSLESUNG_MDE_SLP`, `ABLESUNG_MONATLICH_SLP`, `ABLESUNG_VIERTELJAEHRLICH_SLP`, `ABLESUNG_HALBJAEHRLICH_SLP`, `ABLESUNG_JAEHRLICH_SLP`, `AUSLESUNG_SLP_FERNAUSLESUNG`, `ABLESUNG_SLP_ZUSAETZLICH_MSB`, `ABLESUNG_SLP_ZUSAETZLICH_KUNDE`, `AUSLESUNG_LGK_FERNAUSLESUNG_ZUSAETZLICH_MSB`, `AUSLESUNG_MOATLICH_FERNAUSLESUNG`, `AUSLESUNG_STUENDLICH_FERNAUSLESUNG`, `ABLESUNG_MONATLICH_LGK`, `AUSLESUNG_TEMERATURMENGENUMWERTER`, `AUSLESUNG_ZUSTANDSMENGENUMWERTER`, `AUSLESUNG_SYSTEMMENGENUMWERTER`, `AUSLESUNG_VORGANG_SLP`, `AUSLESUUNG_KOMPAKTMENGENUMWERTER`, `AUSLESUNG_MDE_LGK`, `SPERRUNG_SLP`, `ENTSPERRUNG_SLP`, `SPERRUNG_RLM`, `ENTSPERRUNG_RLM`, `MAHNKOSTEN`, `INKASSOKOSTEN`</Werte> |
+| <span className="hbs-f hbs-e0">[bezeichnung](/bo4e/202604/com/Dienstleistung#bezeichnung)</span> | Bezeichnung der Dienstleistung. | string |
+
+</div>
+
+</Handbuchsatz>
+
+</div>
+
+</Feldansicht>
+
+:::note{title="Keine Verwendung gefunden"}
+
+Kein Feld dieses Objekts wird in den Prüfi- oder Event-Spezifikationen dieser Formatversion referenziert. Das Objekt gehört zum BO4E-Schema, ist in der Marktkommunikation dieser Formatversion aber nicht im Einsatz.
+
+:::
+
+<Hinweisbereich>
+
+Ein **\*** hinter einem Feldnamen kennzeichnet ein **Pflichtfeld**; das BO4E-Schema führt es unter `required`.
+
+</Hinweisbereich>

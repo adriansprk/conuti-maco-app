@@ -1,0 +1,196 @@
+# Anforderung und Übermittlung Bilanzkreiszuordnungsliste zwischen ÜNB und BKV — Sicht ÜNB
+
+<Kopf rolle="UENB" beteiligter="ÜNB" festlegung="MaBiS" dokument="MaBiS" kapitel="11.4.2" sparte="Strom" schritte={2} suchtitel="Anforderung und Übermittlung Bilanzkreiszuordnungsliste zwischen ÜNB und BKV — Sicht ÜNB (Marktrolle UENB) · MaBiS · Formatversion 202610" abschnitte={[{"id": "abschnitt-ablauf", "label": "Prozessablauf"}, {"id": "abschnitt-schritte", "label": "Prozessschritte"}, {"id": "abschnitt-informationen", "label": "Prozess-Informationen"}, {"id": "abschnitt-sichten", "label": "Andere Sichten des Prozesses"}]} />
+
+<Kurzfassung>
+
+Der BKV fordert bei Bedarf die Bilanzkreiszuordnungsliste an. Der ÜNB versendet die angeforderte Bilanzkreiszuordnungsliste an den BKV. Alternativ kann der BKV eine regelmäßige Zusendung der Liste auf Ebene des BK anfordern (Abonnement). Bei einem Abonnement wird die Bilanzkreiszuordnungsliste vom ÜNB an den BKV nur bei einer Veränderung der Liste versendet. Der ÜNB listet dabei die aktiven MaBiS-Zählpunkte eines BK auf. Das heißt, für alle BG in einer RZ sind alle aktiven MaBiS-Zählpunkte der Aggregationsebene BG eines BK aufzulisten. Zusätzlich sind, wenn die Aggregationsebene RZ für diesen BK bestellt ist, alle aktiven MaBiS-Zählpunkte auf Aggregationsebene RZ aufzulisten. Eine Veränderung der Liste liegt dabei auch dann vor, wenn der BKV die Aggregationsebene der BK-SZR (Kategorie B) auf Ebene der RZ für einen BK abbestellt oder wieder bestellt.
+
+</Kurzfassung>
+
+<a id="abschnitt-ablauf"></a>
+
+## Prozessablauf aus Sicht des ÜNB
+
+<Systembild svg={"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1004 398\" width=\"1004\" height=\"398\" role=\"img\" aria-labelledby=\"sb-title\" class=\"maco-systembild\">\n<title id=\"sb-title\">Systembild: Anforderung und Übermittlung Bilanzkreiszuordnungsliste zwischen ÜNB und BKV aus Sicht ÜNB</title>\n<defs><marker id=\"sb-arrow\" viewBox=\"0 0 14 14\" refX=\"13\" refY=\"7\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0 0 L14 7 L0 14 z\" fill=\"var(--prn-label-2, #424245)\"/></marker></defs>\n<rect class=\"sb-lane-kopf\" x=\"16\" y=\"12\" width=\"232\" height=\"46\" rx=\"10\" fill=\"var(--prn-bg-elevated, #f5f5f7)\" stroke=\"var(--prn-separator, #d2d2d7)\"/>\n<text x=\"132\" y=\"40\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"500\" fill=\"var(--prn-label, #1d1d1f)\">Backend-System des Kunden</text>\n<rect class=\"sb-lane-kopf\" x=\"398\" y=\"12\" width=\"264\" height=\"46\" rx=\"10\" fill=\"var(--prn-accent-soft, #e4f2eb)\" stroke=\"var(--prn-separator, #d2d2d7)\"/>\n<text x=\"530\" y=\"40\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"var(--prn-label, #1d1d1f)\">MACO APP · ÜNB</text>\n<rect class=\"sb-lane-kopf\" x=\"812\" y=\"12\" width=\"176\" height=\"46\" rx=\"10\" fill=\"var(--prn-bg-elevated, #f5f5f7)\" stroke=\"var(--prn-separator, #d2d2d7)\"/>\n<text x=\"900\" y=\"40\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"500\" fill=\"var(--prn-label, #1d1d1f)\">Marktpartner</text>\n<line x1=\"323\" y1=\"58\" x2=\"323\" y2=\"386\" stroke=\"var(--prn-label-3, #6e6e73)\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/>\n<line x1=\"737\" y1=\"58\" x2=\"737\" y2=\"386\" stroke=\"var(--prn-label-3, #6e6e73)\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/>\n<rect class=\"sb-kasten sb-eingehend\" x=\"432\" y=\"80\" width=\"196\" height=\"48\" rx=\"8\" fill=\"var(--prn-accent-soft, #e4f2eb)\" stroke=\"var(--prn-separator, #d2d2d7)\"/>\n<text x=\"530\" y=\"100\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--prn-label, #1d1d1f)\">1. Anforderung</text>\n<text x=\"530\" y=\"115\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--prn-label, #1d1d1f)\">Bilanzkreiszuordnungsliste</text>\n<g class=\"sb-akteur\" stroke=\"var(--prn-label-2, #424245)\" stroke-width=\"1.4\" fill=\"none\"><circle cx=\"900\" cy=\"86\" r=\"5\"/><line x1=\"900\" y1=\"91\" x2=\"900\" y2=\"103\"/><line x1=\"893\" y1=\"95\" x2=\"907\" y2=\"95\"/><line x1=\"900\" y1=\"103\" x2=\"894\" y2=\"113\"/><line x1=\"900\" y1=\"103\" x2=\"906\" y2=\"113\"/></g>\n<text x=\"900\" y=\"135\" text-anchor=\"middle\" font-size=\"11.5\" fill=\"var(--prn-label, #1d1d1f)\">BKV</text>\n<line x1=\"878\" y1=\"104\" x2=\"628\" y2=\"104\" stroke=\"var(--prn-label-2, #424245)\" stroke-width=\"1.6\" stroke-dasharray=\"6 3\" marker-end=\"url(#sb-arrow)\"/>\n<text x=\"753\" y=\"96\" text-anchor=\"middle\" font-size=\"11.5\" fill=\"var(--prn-label, #1d1d1f)\">AS4</text>\n<text x=\"753\" y=\"120\" text-anchor=\"middle\" font-size=\"10.5\" fill=\"var(--prn-label-2, #424245)\">17203</text>\n<rect class=\"sb-kasten sb-schreiben\" x=\"432\" y=\"163\" width=\"196\" height=\"33\" rx=\"8\" fill=\"var(--prn-accent-soft, #e4f2eb)\" stroke=\"var(--prn-separator, #d2d2d7)\"/>\n<text x=\"530\" y=\"183\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--prn-label, #1d1d1f)\">Vorgang anlegen</text>\n<line class=\"sb-fluss\" x1=\"530\" y1=\"128\" x2=\"530\" y2=\"163\" stroke=\"var(--prn-label-3, #6e6e73)\" stroke-width=\"1.4\" marker-end=\"url(#sb-arrow)\"/>\n<rect class=\"sb-kasten sb-backend sb-schreiben sb-abgeleitet\" x=\"34\" y=\"163\" width=\"196\" height=\"33\" rx=\"8\" fill=\"var(--prn-bg-elevated, #f5f5f7)\" stroke=\"var(--prn-separator, #d2d2d7)\"/>\n<text x=\"132\" y=\"183\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--prn-label, #1d1d1f)\">Prozessdaten erstellen</text>\n<line x1=\"432\" y1=\"179\" x2=\"230\" y2=\"179\" stroke=\"var(--prn-blue, #0071e3)\" stroke-width=\"1.6\" stroke-dasharray=\"6 3\" marker-end=\"url(#sb-arrow)\"/>\n<text x=\"331\" y=\"171\" text-anchor=\"middle\" font-size=\"11.5\" fill=\"var(--prn-label, #1d1d1f)\">API</text>\n<rect class=\"sb-kasten sb-ausgehend\" x=\"432\" y=\"227\" width=\"196\" height=\"48\" rx=\"8\" fill=\"var(--prn-accent-soft, #e4f2eb)\" stroke=\"var(--prn-separator, #d2d2d7)\"/>\n<text x=\"530\" y=\"247\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--prn-label, #1d1d1f)\">2.</text>\n<text x=\"530\" y=\"262\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--prn-label, #1d1d1f)\">Bilanzkreiszuordnungsliste</text>\n<line class=\"sb-fluss\" x1=\"530\" y1=\"196\" x2=\"530\" y2=\"227\" stroke=\"var(--prn-label-3, #6e6e73)\" stroke-width=\"1.4\" marker-end=\"url(#sb-arrow)\"/>\n<g class=\"sb-akteur\" stroke=\"var(--prn-label-2, #424245)\" stroke-width=\"1.4\" fill=\"none\"><circle cx=\"900\" cy=\"233\" r=\"5\"/><line x1=\"900\" y1=\"238\" x2=\"900\" y2=\"250\"/><line x1=\"893\" y1=\"242\" x2=\"907\" y2=\"242\"/><line x1=\"900\" y1=\"250\" x2=\"894\" y2=\"260\"/><line x1=\"900\" y1=\"250\" x2=\"906\" y2=\"260\"/></g>\n<text x=\"900\" y=\"282\" text-anchor=\"middle\" font-size=\"11.5\" fill=\"var(--prn-label, #1d1d1f)\">BKV</text>\n<line x1=\"628\" y1=\"251\" x2=\"878\" y2=\"251\" stroke=\"var(--prn-accent, #2f7d5c)\" stroke-width=\"1.6\" stroke-dasharray=\"6 3\" marker-end=\"url(#sb-arrow)\"/>\n<text x=\"753\" y=\"243\" text-anchor=\"middle\" font-size=\"11.5\" fill=\"var(--prn-label, #1d1d1f)\">AS4</text>\n<text x=\"753\" y=\"267\" text-anchor=\"middle\" font-size=\"10.5\" fill=\"var(--prn-label-2, #424245)\">55067</text>\n<rect class=\"sb-kasten sb-fortschreiben\" x=\"432\" y=\"310\" width=\"196\" height=\"33\" rx=\"8\" fill=\"var(--prn-accent-soft, #e4f2eb)\" stroke=\"var(--prn-separator, #d2d2d7)\"/>\n<text x=\"530\" y=\"330\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--prn-label, #1d1d1f)\">Vorgang fortschreiben</text>\n<line class=\"sb-fluss\" x1=\"530\" y1=\"275\" x2=\"530\" y2=\"310\" stroke=\"var(--prn-label-3, #6e6e73)\" stroke-width=\"1.4\" marker-end=\"url(#sb-arrow)\"/>\n<rect class=\"sb-kasten sb-backend sb-fortschreiben\" x=\"34\" y=\"310\" width=\"196\" height=\"33\" rx=\"8\" fill=\"var(--prn-bg-elevated, #f5f5f7)\" stroke=\"var(--prn-separator, #d2d2d7)\"/>\n<text x=\"132\" y=\"330\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--prn-label, #1d1d1f)\">Prozessdaten aktualisieren</text>\n<line x1=\"432\" y1=\"326\" x2=\"230\" y2=\"326\" stroke=\"var(--prn-blue, #0071e3)\" stroke-width=\"1.6\" stroke-dasharray=\"6 3\" marker-end=\"url(#sb-arrow)\"/>\n<text x=\"331\" y=\"318\" text-anchor=\"middle\" font-size=\"11.5\" fill=\"var(--prn-label, #1d1d1f)\">API</text>\n</svg>"} gesamt={"<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 730 375\" width=\"730\" height=\"375\" role=\"img\" aria-labelledby=\"sd-title\" class=\"maco-sequence\">\n<title id=\"sd-title\">Sequenzdiagramm: Anforderung und Übermittlung Bilanzkreiszuordnungsliste zwischen ÜNB und BKV aus Sicht ÜNB</title>\n<defs><marker id=\"sd-arrow\" viewBox=\"0 0 14 14\" refX=\"13\" refY=\"7\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0 0 L14 7 L0 14 z\" fill=\"var(--prn-label-2, #424245)\"/></marker></defs>\n<rect x=\"16\" y=\"12\" width=\"210\" height=\"52\" rx=\"10\" fill=\"var(--prn-bg-elevated, #f5f5f7)\" stroke=\"var(--prn-separator, #d2d2d7)\"/>\n<text x=\"121\" y=\"43\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"500\" fill=\"var(--prn-label, #1d1d1f)\">Backend (Kunde)</text>\n<line x1=\"121\" y1=\"64\" x2=\"121\" y2=\"363\" stroke=\"var(--prn-label-3, #6e6e73)\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/>\n<rect x=\"260\" y=\"12\" width=\"210\" height=\"52\" rx=\"10\" fill=\"var(--prn-accent-soft, #e4f2eb)\" stroke=\"var(--prn-separator, #d2d2d7)\"/>\n<text x=\"365\" y=\"43\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"600\" fill=\"var(--prn-label, #1d1d1f)\">MACO APP · ÜNB</text>\n<line x1=\"365\" y1=\"64\" x2=\"365\" y2=\"363\" stroke=\"var(--prn-label-3, #6e6e73)\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/>\n<rect x=\"504\" y=\"12\" width=\"210\" height=\"52\" rx=\"10\" fill=\"var(--prn-bg-elevated, #f5f5f7)\" stroke=\"var(--prn-separator, #d2d2d7)\"/>\n<text x=\"609\" y=\"43\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"500\" fill=\"var(--prn-label, #1d1d1f)\">BKV</text>\n<line x1=\"609\" y1=\"64\" x2=\"609\" y2=\"363\" stroke=\"var(--prn-label-3, #6e6e73)\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/>\n<line x1=\"609\" y1=\"90\" x2=\"365\" y2=\"90\" stroke=\"var(--prn-label-2, #424245)\" stroke-width=\"1.6\" marker-end=\"url(#sd-arrow)\"/>\n<text x=\"487\" y=\"81\" text-anchor=\"middle\" font-size=\"12.5\" fill=\"var(--prn-label, #1d1d1f)\">1. Anforderung Bilanzkreiszuordnungsliste</text>\n<text x=\"487\" y=\"105\" text-anchor=\"middle\" font-size=\"11\" fill=\"var(--prn-label-2, #424245)\">AS4 · PI 17203</text>\n<line x1=\"365\" y1=\"152\" x2=\"121\" y2=\"152\" stroke=\"var(--prn-blue, #0071e3)\" stroke-width=\"1.6\" marker-end=\"url(#sd-arrow)\" stroke-dasharray=\"6 3\"/>\n<text x=\"243\" y=\"143\" text-anchor=\"middle\" font-size=\"12.5\" fill=\"var(--prn-label, #1d1d1f)\">Vorgang anlegen</text>\n<text x=\"243\" y=\"167\" text-anchor=\"middle\" font-size=\"11\" fill=\"var(--prn-label-2, #424245)\">Prozessdaten erstellen</text>\n<line x1=\"365\" y1=\"214\" x2=\"609\" y2=\"214\" stroke=\"var(--prn-accent, #2f7d5c)\" stroke-width=\"1.6\" marker-end=\"url(#sd-arrow)\"/>\n<text x=\"487\" y=\"205\" text-anchor=\"middle\" font-size=\"12.5\" fill=\"var(--prn-label, #1d1d1f)\">2. Bilanzkreiszuordnungsliste</text>\n<text x=\"487\" y=\"229\" text-anchor=\"middle\" font-size=\"11\" fill=\"var(--prn-label-2, #424245)\">AS4 · PI 55067 · E_0039, E_0105</text>\n<text x=\"487\" y=\"242\" text-anchor=\"middle\" font-size=\"11\" fill=\"var(--prn-label-2, #424245)\">E_0039 — Einzelanforderung prüfen</text>\n<text x=\"487\" y=\"255\" text-anchor=\"middle\" font-size=\"11\" fill=\"var(--prn-label-2, #424245)\">E_0105 — Listeninhalt prüfen</text>\n<line x1=\"365\" y1=\"289\" x2=\"121\" y2=\"289\" stroke=\"var(--prn-blue, #0071e3)\" stroke-width=\"1.6\" marker-end=\"url(#sd-arrow)\" stroke-dasharray=\"6 3\"/>\n<text x=\"243\" y=\"280\" text-anchor=\"middle\" font-size=\"12.5\" fill=\"var(--prn-label, #1d1d1f)\">Vorgang fortschreiben</text>\n<text x=\"243\" y=\"304\" text-anchor=\"middle\" font-size=\"11\" fill=\"var(--prn-label-2, #424245)\">Prozessdaten aktualisieren</text>\n</svg>"} titel="ÜNB" />
+
+<a id="abschnitt-schritte"></a>
+
+## Prozessschritte
+
+<Schritt nr="1" anker="schritt-1" richtung="eingehend" kopf={{"links": {"label": "ÜNB", "eigen": true}, "rechts": {"label": "BKV"}}}>
+
+### Anforderung  Bilanzkreiszuordnungsliste
+
+<Schrittskizze sicht={{"label": "ÜNB"}} zeilen={[{"art": "empfangen", "label": "BKV", "weg": "AS4", "nachrichten": [{"nr": "17203", "titel": "Anforder. Bilanzkreiszuordnungsliste"}]}, {"art": "erstellen"}]} />
+
+<div data-teil="pruefis">
+
+**Prüfidentifikatoren**
+- [17203](/schnittstellen/202610/pruefi/ORDERS/PI_17203) — Anforder. Bilanzkreiszuordnungsliste · AS4
+
+</div>
+
+**Ablauf**
+
+<div data-ablauf>
+
+<Stepper>
+<ol>
+
+<li data-teil="nachricht">
+
+Nachricht von **BKV** · AS4
+
+</li>
+
+<li data-teil="schnittstelle" data-art="schreiben" data-abgeleitet="ja">
+
+**Schreibende Schnittstelle**
+- Vorgang angelegt — `ERSTELLEN_PROZESSDATEN`
+
+Legt im Backend einen neuen Vorgang mit den Daten der eingegangenen Nachricht an.
+
+</li>
+
+</ol>
+</Stepper>
+
+</div>
+
+</Schritt>
+
+<Schritt nr="2" anker="schritt-2" richtung="ausgehend" kopf={{"links": {"label": "ÜNB", "eigen": true}, "rechts": {"label": "BKV"}}}>
+
+### Bilanzkreiszuordnungsliste
+
+<Schrittskizze sicht={{"label": "ÜNB"}} zeilen={[{"art": "senden", "label": "BKV", "weg": "AS4", "nachrichten": [{"nr": "55067", "titel": "Bilanzkreiszuordnungsliste"}]}, {"art": "fortschreiben"}]} />
+
+<div data-teil="pruefis">
+
+**Prüfidentifikatoren**
+- [55067](/schnittstellen/202610/pruefi/UTILMD/PI_55067) — Bilanzkreiszuordnungsliste · AS4
+
+</div>
+
+**Ablauf**
+
+<div data-ablauf>
+
+<Stepper>
+<ol>
+
+<li data-teil="nachricht">
+
+Nachricht an **BKV** · AS4
+
+<div data-teil="antwortbaum">
+
+**Antwort nach Entscheidungsbaum**
+- `55067` → [E_0039](/referenz/202610/ebd/E_0039) · ÜNB · Einzelanforderung prüfen
+- `55067` → [E_0105](/referenz/202610/ebd/E_0105) · ÜNB · Listeninhalt prüfen
+
+</div>
+
+</li>
+
+<li data-teil="schnittstelle" data-art="fortschreiben">
+
+**Schreibende Schnittstelle**
+- Vorgang fortgeschrieben — `AKTUALISIEREN_PROZESSDATEN`
+
+Schreibt den bestehenden Vorgang im Backend fort, nachdem die Nachricht erstellt ist.
+
+</li>
+
+</ol>
+</Stepper>
+
+</div>
+
+</Schritt>
+
+<details>
+<summary>Entscheidungsbäume dieses Prozesses</summary>
+
+| EBD | Name |
+|---|---|
+| [E_0039](/referenz/202610/ebd/E_0039) | Einzelanforderung prüfen |
+| [E_0105](/referenz/202610/ebd/E_0105) | Listeninhalt prüfen |
+
+</details>
+
+<a id="abschnitt-informationen"></a>
+
+## Prozess-Informationen
+
+Wortlaut der Lesefassung, Steckbrief Kap. 11.4.1, S. 147–148.
+
+<Stepper>
+<ol>
+
+<li data-blatt="vorbedingungen">
+
+### Vorbedingungen
+
+Der BKV entscheidet sich dazu, eine Bilanzkreiszuordnungsliste für ein BG bzw. eine RZ anzufordern oder ein Abonnement ist bestellt.
+
+</li>
+
+<li data-blatt="ergebnisse">
+
+### Ergebnisse
+
+Der BKV kann die Zuordnung der LF-SZR (Kategorie B) zur BK-SZR (Kategorie B) in einem BG bzw. in einer RZ zum entsprechenden BK prüfen und bewerten.
+
+</li>
+
+<li data-blatt="anforderungen">
+
+### Weitere Anforderungen
+
+- Wird bei einem bestehenden Abonnement ein Abonnement erneut angefordert, bezieht sich der Empfänger des Abonnements ab dem Zeitpunkt des Eingangs in allen daraus resultierenden Bilanzkreiszuordnungslisten auf das neue Abonnement. Hinweis: Eine negative Prüfmitteilung auf eine BK-SZR (Kategorie B) auf Ebene der RZ hat keine Auswirkung auf den Versand und die Zusammenstellung einer abonnierten Bilanzkreiszuordnungsliste durch den ÜNB.
+
+</li>
+
+<li data-blatt="erste-nachricht">
+
+### Erste Nachricht
+
+**BKV** sendet „Anforderung 
+Bilanzkreiszuordnungsliste“ (Schritt 1). Ab hier ist der Beteiligte dieser Seite am Zug.
+
+</li>
+
+<li data-blatt="ziel">
+
+### Ziel
+
+Der BKV kennt die Zuordnung des MaBiS-ZP der LF-SZR (Kategorie B) zu seinem BK und des entsprechenden MaBiS-ZP der BK-SZR (Kategorie B).
+
+</li>
+
+</ol>
+</Stepper>
+
+<a id="abschnitt-sichten"></a>
+
+## Andere Sichten des Prozesses
+
+Derselbe Prozess, aus den Augen der anderen Beteiligten: dieselben Schritte, jeweils aus deren Sicht gelesen.
+
+- [Sicht BKV](/prozessdoku/202610/BKV/MaBiS-anforderung-und-uebermittlung-bilanzkreiszuordnungsliste-zwischen-uenb-und-bkv) — BKV
+
+<Hinweisbereich>
+
+*Die Schritte sind die **möglichen** Nachrichten dieses Prozesses, keine Abfolge — die Quelle führt weder Bedingungen noch Alternativen. Das Kästchen am Schritt nennt links die eigene Sicht: **←** empfängt sie, **→** sendet sie. Zugeklappte Schritte laufen zwischen anderen Marktpartnern.*
+
+Die Konnektortabelle führt für diese Schritte keinen Schreibaufruf. Abgeleitet aus dem Prozessverlauf: Mit ihrer Nachricht beginnt der Prozess für die eigene Rolle, der Vorgang entsteht also neu.
+
+Betrifft: [1](#schritt-1)
+
+Für diese Marktrolle liegt kein Schreibkatalog vor; am Schritt steht deshalb nur das Kommando des Schreibaufrufs, ohne Adresse und ohne Knopf.
+
+Betrifft: [1](#schritt-1), [2](#schritt-2)
+
+</Hinweisbereich>

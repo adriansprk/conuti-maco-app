@@ -2,9 +2,9 @@
 name: check-maco-sync
 description: >
   Check whether the MaCo workspace has upstream updates to pull or sync — git submodules
-  (maco-api-documentation, maco-edi-testfiles), docs-offline drift, and docs/llm.txt against
-  https://doc.macoapp.de/llms.txt. Use when the user asks to check sync status, whether there
-  are updates to get, if external repos are current, or if llm.txt is stale. Runs the bundled
+  (maco-api-documentation, maco-edi-testfiles), docs-offline drift, and docs/dokumentation/llms.txt against
+  https://dokumentation.macoapp.de/llms.txt. Use when the user asks to check sync status, whether there
+  are updates to get, if external repos are current, or if either documentation index is stale. Runs the bundled
   check script and reports a structured verdict with apply steps. Do NOT use for applying updates
   unless the user explicitly asks to pull/sync.
 triggers:
@@ -20,7 +20,7 @@ triggers:
 
 Read-only health check for the MaCo workspace's external inputs. Answers: **can I pull anything new, and is local tracking stale?**
 
-Run from the workspace root (directory containing `maco-api-documentation/`, `docs/llm.txt`, `scripts/sync/`).
+Run from the workspace root (directory containing `maco-api-documentation/`, `docs/dokumentation/llms.txt`, `scripts/sync/`).
 
 ```bash
 SKILL_DIR="${SKILL_DIR:-.agents/skills/check-maco-sync}"
@@ -39,8 +39,9 @@ Exit code: **0** = all checks pass; **1** = updates or drift detected.
 | `maco-edi-testfiles` | Same as above | Remote behind count |
 | `ebd-diagrams` | Same as above (EBD submodule) | Remote behind count |
 | `ahb-tables` | Local file counts vs Hochfrequenz API; probe for newer FV | **Yes — network fetch** |
-| `docs-offline/` | `.md` file count vs tracker | — |
-| `docs/llm.txt` | Fetch `llms.txt`, SHA-256 + byte compare | **Yes — always network-fetch** |
+| `docs-offline/` | New mirror `.md` file count vs tracker | — |
+| `docs-supplemental/llm.txt` | Fetch older portal index, apply Strom filter, then compare hashes and bytes | **Yes — always network-fetch** |
+| `docs/dokumentation/llms.txt` | Fetch new portal index, apply Strom filter, then compare hashes and bytes | **Yes — always network-fetch** |
 
 `scripts/sync/check-changes.sh` only compares **already-local** git state to the tracker. This skill's script also probes **remote** git and **live** `llms.txt`.
 
@@ -52,11 +53,11 @@ Exit code: **0** = all checks pass; **1** = updates or drift detected.
 .agents/skills/check-maco-sync/scripts/check-updates.sh
 ```
 
-Requires: `curl`, `jq`, `git`, network access to `origin` and `doc.macoapp.de`.
+Requires: `curl`, `jq`, `git`, network access to `origin`, `dokumentation.macoapp.de`, and `doc.macoapp.de`.
 
 ### Step 2 — Interpret the report
 
-Report sections appear in this order: version tracker → git repos → docs-offline → llm.txt → summary.
+Report sections appear in this order: version tracker → git repos → docs-offline → new index → older index → summary.
 
 | Signal | Meaning | User action |
 |--------|---------|-------------|
@@ -64,8 +65,8 @@ Report sections appear in this order: version tracker → git repos → docs-off
 | `local HEAD differs from version-tracker` | Pulled but `sync-changes.sh` not run | Run sync + regenerate index |
 | `build script changed` | Critical — schema build may differ | `./scripts/sync/rebuild-schemas.sh` |
 | `local modifications present` | Workspace patches (expected on `maco-api-documentation`) | Informational — not an upstream update |
-| `docs-offline file count changed` | Offline docs out of sync with tracker | `./scripts/download-docs.sh` then sync |
-| `docs/llm.txt differs from remote` | Portal index updated online | `./scripts/fetch-llm-index.sh` |
+| `docs-offline file count changed` | Offline docs out of sync with tracker | `./scripts/download-dokumentation.sh` then rebuild indexes |
+| `docs/dokumentation/llms.txt differs from remote` | Portal index updated online | `./scripts/download-dokumentation.sh` |
 
 ### Step 3 — Respond to the user
 
@@ -84,6 +85,7 @@ Full refresh sequence after pulls:
 ./scripts/sync/update-submodules.sh
 python3 scripts/download-ahb-tables.py
 python3 scripts/generate-ahb-index.py
+./scripts/download-dokumentation.sh
 ./scripts/fetch-llm-index.sh
 ./scripts/download-docs.sh
 ./scripts/sync/rebuild-schemas.sh    # only if build script changed

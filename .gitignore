@@ -14,5 +14,11 @@ bdew-docs/xml-docs
 *.token.txt
 .mcp.json
 claude.md
+!CLAUDE.md
 .claude
 .cursor/skills/*
+
+# Regenerated download reports; the scoped documentation indexes are committed.
+docs/dokumentation/download-manifest.tsv
+docs/dokumentation/download-changes.tsv
+docs/dokumentation/download-failures.txt

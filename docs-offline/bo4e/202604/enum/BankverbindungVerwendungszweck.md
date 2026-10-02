@@ -1,0 +1,12 @@
+# BankverbindungVerwendungszweck
+<span hidden data-pagefind-meta={"title:BankverbindungVerwendungszweck — BO4E-Enumeration (FV 202604)"} />
+
+BankverbindungVerwendungszweck
+
+| Wert |
+|---|
+| `BV_ZAHLUNG_NNA` |
+| `BV_ZAHLUNG_MMMA` |
+| `BV_ZAHLUNG_MSB_ABRECHNNUNG` |
+| `BV_ZAHLUNG_ENT_SPERREN_ABRECHNUNG` |
+| `BV_SONSTIGE` |

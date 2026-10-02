@@ -72,7 +72,7 @@ check "Source: schema (PI_xxx.yml) OR yaml_output" "(PI_[0-9]+\.yml|yaml_output/
 
 # --- Never-use: v202404 ---
 if grep -qE "v202404" "$f"; then
-  echo "FORBIDDEN: references v202404 (must use v202510 per maco-workspace-context rule)"
+  echo "FORBIDDEN: references obsolete v202404 fixtures; select or label fixtures by version"
   fail=1
 fi
 

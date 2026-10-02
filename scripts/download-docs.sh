@@ -6,7 +6,7 @@
 set +e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-OUTPUT_DIR="docs-offline"
+OUTPUT_DIR="docs-supplemental"
 INDEX_FILE="$OUTPUT_DIR/index.json"
 LOG_FILE="$OUTPUT_DIR/download.log"
 PARALLEL_JOBS="${PARALLEL_JOBS:-3}"
@@ -20,24 +20,24 @@ echo "Max retries per URL: $MAX_RETRIES"
 mkdir -p "$OUTPUT_DIR"
 : > "$LOG_FILE"
 
-# By default, refresh docs/llm.txt from https://doc.macoapp.de/llms.txt before crawling links.
-# Set SKIP_LLM_FETCH=1 to use the committed/local docs/llm.txt only (offline / reproducible).
+# By default, refresh docs-supplemental/llm.txt from the old portal.
+# Set SKIP_LLM_FETCH=1 to use the committed supplemental index (offline / reproducible).
 if [ "${SKIP_LLM_FETCH:-}" != "1" ]; then
-    echo "📄 Refreshing docs/llm.txt from doc.macoapp.de (llms.txt) ..."
+    echo "📄 Refreshing docs-supplemental/llm.txt from doc.macoapp.de ..."
     if "$SCRIPT_DIR/fetch-llm-index.sh"; then
         echo ""
     else
-        echo "  ⚠️  fetch-llm-index.sh failed — continuing with existing docs/llm.txt"
+        echo "  ⚠️  fetch-llm-index.sh failed — continuing with existing docs-supplemental/llm.txt"
         echo ""
     fi
 else
-    echo "📄 SKIP_LLM_FETCH=1 — using existing docs/llm.txt (no network fetch)"
+    echo "📄 SKIP_LLM_FETCH=1 — using existing docs-supplemental/llm.txt"
     echo ""
 fi
 
-# Extract all doc.macoapp.de URLs from llm.txt
-echo "Extracting URLs from docs/llm.txt..."
-URLS=$(grep -o 'https://doc\.macoapp\.de/[^)]*' docs/llm.txt | sort -u)
+# Extract old portal URLs from its separate index.
+echo "Extracting URLs from docs-supplemental/llm.txt..."
+URLS=$(grep -o 'https://doc\.macoapp\.de/[^)]*' docs-supplemental/llm.txt | sort -u)
 
 URL_COUNT=$(echo "$URLS" | grep -c . || true)
 echo "Found $URL_COUNT unique documentation URLs"
@@ -120,11 +120,12 @@ if command -v rg >/dev/null 2>&1; then
     INVALID_COUNT=$(rg -l '^<!DOCTYPE html>' "$OUTPUT_DIR"/*.md 2>/dev/null | wc -l | tr -d ' ')
 fi
 
-# Merge llm.txt ↔ disk so index lists every offline file (curl may 404 while an older copy exists)
-if [ -f "$SCRIPT_DIR/rebuild-docs-offline-index.py" ]; then
+# Rebuild both source indexes after refreshing the older portal.
+python3 "$SCRIPT_DIR/documentation_scope.py" --legacy-index "$OUTPUT_DIR/llm.txt" --legacy-dir "$OUTPUT_DIR"
+if [ -f "$SCRIPT_DIR/rebuild-documentation-indexes.py" ]; then
     echo ""
-    echo "📋 Reconciling index.json with docs/llm.txt and files on disk..."
-    python3 "$SCRIPT_DIR/rebuild-docs-offline-index.py" || echo "  ⚠️  rebuild-docs-offline-index.py failed - index may be stale"
+    echo "📋 Rebuilding documentation indexes..."
+    python3 "$SCRIPT_DIR/rebuild-documentation-indexes.py" || echo "  ⚠️  Index rebuild failed"
 fi
 
 echo ""

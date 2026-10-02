@@ -1,9 +1,11 @@
 # MaCo API Documentation Workspace
 
+> **Documentation scope:** The offline mirror contains 3,447 Strom and shared Markdown pages from `dokumentation.macoapp.de` for format versions 202604 and 202610. Gas-specific pages are excluded. The previous `doc.macoapp.de` snapshot lives in `docs-supplemental/` for applicable Mermaid branches, architecture PNGs, and operational history. `docs/entry-points/PROCESS_GRAPH.json` indexes both. See [documentation sources](docs/README.md).
+
 > **Your complete toolkit for German electricity market communication via the Conuti MaCo API**
 
 [![Cursor Compatible](https://img.shields.io/badge/Cursor-0.45+-blue?logo=cursor&logoColor=white)](#-ai-powered-development)
-[![Documentation](https://img.shields.io/badge/Docs-313%20files-green)](#-documentation)
+[![Documentation](https://img.shields.io/badge/Docs-3447%20Strom%20pages-green)](#-documentation)
 [![Test Files](https://img.shields.io/badge/Test%20Files-4055+-orange)](#-file-reference)
 
 ---
@@ -239,7 +241,7 @@ sequenceDiagram
 | **Inbound** | EDIFACT | `maco-edi-testfiles/inbound/v202510/*.edi` |
 | **Mapping** | CSV | `bo4e-mapping/2510/*.csv`, `bo4e-mapping/2604/*.csv` |
 
-> ⚠️ **Always use `v202510`** — the `v202404` directory is outdated.
+> Fixtures are examples for their own version. Select a version matching the process when available; label older fixtures when used for illustration.
 
 ---
 
@@ -249,9 +251,10 @@ sequenceDiagram
 
 | Type | Purpose | Location |
 |------|---------|----------|
-| **Markdown** | Business context (WHY) | `docs-offline/*.md` |
+| **New documentation** | Versioned process and interface reference | `docs-offline/<site-path>.md` |
+| **Older supplement** | Mermaid branches and operational history | `docs-supplemental/*.md` |
 | **BDEW Markdown** | Parsed source documents and MIG/AHB context | `bdew-docs/*.md` |
-| **PNG diagrams** | Technical flow (HOW) | `docs-offline/prozessdiagramme-png/` |
+| **PNG diagrams** | Technical flow (HOW) | `docs-supplemental/prozessdiagramme-png/` |
 | **EBD files** | Validation logic (WHAT to validate) | `ebd-diagrams/FV{YYMM}/` |
 | **YAML schemas** | Required fields | `maco-api-documentation/...yaml_output/` |
 | **BO4E mappings** | EDIFACT segment/field ↔ BO4E field mapping | `bo4e-mapping/{2510,2604}/*.csv` |
@@ -259,9 +262,9 @@ sequenceDiagram
 
 ### Finding Documentation
 
-1. **Start with the index**: `docs/llm.txt` (302 entries)
+1. **Start with the new index**: `docs/dokumentation/llms.txt` (curated) or `llms-index.txt` (complete)
 2. **Use process lookup**: `docs/entry-points/PROCESS_GRAPH.json`
-3. **Read source docs**: `docs-offline/{process-name}.md`
+3. **Read the applicable versioned page** in `docs-offline/`; use `docs-supplemental/` for Mermaid conditions or older operational details
 4. **For BDEW source context**: `bdew-docs/INDEX.md`
 5. **For EDIFACT ↔ BO4E fields**: `bo4e-mapping/{2510,2604}/{message-type}.csv`
 
@@ -305,7 +308,9 @@ Use these CSVs after identifying the message type and Prüfidentifikator. The co
 | [`BUSINESS_PROCESS_MAP.md`](docs/entry-points/BUSINESS_PROCESS_MAP.md) | Business goal → Process mapping |
 | [`AI_AGENT_SETUP.md`](docs/entry-points/AI_AGENT_SETUP.md) | Technical implementation guide |
 | [`PROCESS_GRAPH.json`](docs/entry-points/PROCESS_GRAPH.json) | Process dependency graph |
-| [`llm.txt`](docs/llm.txt) | Documentation index (302 entries) |
+| [`llms.txt`](docs/dokumentation/llms.txt) | New site's curated documentation index |
+| [`llms-index.txt`](docs/dokumentation/llms-index.txt) | 3,447 Strom and shared documentation pages |
+| [`llm.txt`](docs-supplemental/llm.txt) | Older site's separate index |
 
 ### Directory Structure
 
@@ -319,7 +324,7 @@ maco_agent_workspace/
 │   │   ├── BUSINESS_PROCESS_MAP.md #    Business discovery
 │   │   ├── AI_AGENT_SETUP.md       #    Technical implementation
 │   │   └── PROCESS_GRAPH.json      #    Process dependencies
-│   └── llm.txt                     # Documentation index
+│   └── dokumentation/              # New site's llms.txt and full index
 │
 ├── 📁 bdew-docs/                   # Parsed BDEW/BNetzA source documents
 │   ├── INDEX.md                    #    Source routing guide
@@ -336,7 +341,9 @@ maco_agent_workspace/
 │       ├── scripts/                #    Verifier + linter
 │       └── reference/              #    Output format and evidence contracts
 │
-├── 📁 docs-offline/                # 313 offline documentation files
+├── 📁 docs-offline/                # 3,447 Strom/shared versioned Markdown pages
+│
+├── 📁 docs-supplemental/           # 346 older Strom/shared Markdown pages
 │   └── prozessdiagramme-png/       # 55 process diagrams
 │
 ├── 📁 maco-api-documentation/      # API schemas & rules
@@ -352,8 +359,9 @@ maco_agent_workspace/
 │
 ├── 📁 scripts/                     # Setup & sync scripts
 │   ├── setup-workspace.sh          #    Initial setup
-│   ├── fetch-llm-index.sh          #    Refresh docs/llm.txt from doc.macoapp.de/llms.txt
-│   ├── download-docs.sh            #    Download docs listed in docs/llm.txt
+│   ├── fetch-llm-index.sh          #    Refresh docs-supplemental/llm.txt from doc.macoapp.de/llms.txt
+│   ├── download-dokumentation.sh   #    Refresh the new site mirror and its indexes
+│   ├── download-docs.sh            #    Download docs listed in docs-supplemental/llm.txt
 │   └── update-workspace.sh         #    Update documentation
 │
 └── 📁 message-downloader/          # Conuti message pipeline
@@ -401,8 +409,8 @@ maco_agent_workspace/
 
 1. Run `./scripts/setup-workspace.sh` to initialize everything
 2. Check that `docs-offline/` exists
-3. Run `./scripts/download-docs.sh` if docs are missing
-4. Set `SKIP_LLM_FETCH=1` before `download-docs.sh` if you need to use the committed `docs/llm.txt` without a network refresh
+3. Run `./scripts/download-dokumentation.sh` if new docs are missing
+4. Run `python3 scripts/rebuild-documentation-indexes.py` after either documentation source changes
 
 </details>
 
@@ -431,7 +439,7 @@ chmod +x scripts/*.sh scripts/sync/*.sh
 <details>
 <summary><strong>Example Files Not Found</strong></summary>
 
-Always use `v202510` directory (not `v202404`):
+The available `v202510` fixture directory contains examples for that version:
 - Outbound: `maco-edi-testfiles/outbound/v202510/` (JSON)
 - Inbound: `maco-edi-testfiles/inbound/v202510/` (EDI)
 
@@ -446,7 +454,7 @@ Always use `v202510` directory (not `v202404`):
 ./scripts/update-workspace.sh
 ```
 
-This syncs changes from external repositories (`maco-api-documentation`, `maco-edi-testfiles`) and rebuilds schemas. During documentation downloads, `docs/llm.txt` is refreshed from `https://doc.macoapp.de/llms.txt` by default; use `SKIP_LLM_FETCH=1` for offline or reproducible runs.
+This syncs changes from external repositories (`maco-api-documentation`, `maco-edi-testfiles`) and rebuilds schemas. During documentation downloads, `docs-supplemental/llm.txt` is refreshed from `https://doc.macoapp.de/llms.txt` by default; use `SKIP_LLM_FETCH=1` for offline or reproducible runs.
 
 > 📖 See [`scripts/sync/README.md`](scripts/sync/README.md) for detailed sync workflow.
 
@@ -483,7 +491,7 @@ This workspace aggregates documentation and schemas from official German energy 
 
 ## 💬 Support
 
-- **Documentation issues**: Check `docs/llm.txt` for the right file
+- **Documentation issues**: Check `docs-supplemental/llm.txt` for the right file
 - **Schema questions**: Reference `maco-api-documentation/_build/`
 - **AI agent issues**: See [`.cursor/README.md`](.cursor/README.md)
 

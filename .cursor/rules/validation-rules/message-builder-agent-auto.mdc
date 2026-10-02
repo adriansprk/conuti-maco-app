@@ -13,4 +13,4 @@ priority: 3
 version: 1.1.0
 ---
 
-Follow the workflow defined in @.claude/skills/mako-build-message/SKILL.md
+Follow `AGENTS.md`. Build from the selected-version request schema, AHB and mapping. Validate generated JSON against the schema and relevant conditions. Treat fixtures as version-labelled examples, not proof of required fields.

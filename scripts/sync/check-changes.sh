@@ -85,6 +85,20 @@ fi
 
 echo ""
 
+# Check the older portal supplement separately.
+if [ -d "$WORKSPACE_ROOT/docs-supplemental" ]; then
+    echo "📚 Checking docs-supplemental..."
+    FILE_COUNT=$(find "$WORKSPACE_ROOT/docs-supplemental" -maxdepth 1 -name "*.md" | wc -l | tr -d ' ')
+    LAST_COUNT=$(jq -r '."external_repos"."docs-supplemental".file_count // 0' "$VERSION_TRACKER" 2>/dev/null || echo "0")
+    if [ "$FILE_COUNT" != "$LAST_COUNT" ]; then
+        echo "  ⚠️  File count changed: tracker=$LAST_COUNT current=$FILE_COUNT"
+    else
+        echo "  ✅ File count matches tracker"
+    fi
+fi
+
+echo ""
+
 # Check maco-edi-testfiles changes
 if [ -d "$WORKSPACE_ROOT/maco-edi-testfiles" ]; then
     echo "📦 Checking maco-edi-testfiles..."

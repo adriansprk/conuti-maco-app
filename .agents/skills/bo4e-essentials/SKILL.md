@@ -1,13 +1,13 @@
 ---
 name: bo4e-essentials
-description: Produce a ticket-ready "BO4E Essentials" markdown doc for a specific BDEW Prüfidentifikator (e.g. 55007, 17133, 13016) or composite Conuti trigger flow (e.g. START_VERSAND_ANF_STORNO) in a MaCo workspace checkout, cross-validated against regulatory bdew-docs, docs-offline, PNG, EBD, PI_xxx.yml/yaml_output, trigger, AHB, bo4e-mapping, and maco-edi-testfiles v202510 layers. Use when the user asks "/bo4e-essentials NNNNN", "create an overview / essentials doc / BO4E payload doc for Prüfi NNNNN", "document the flow for NNNNN/START_* so I can create tickets", or "validate NNNNN against AHB and write it up". Output defaults to your-requests/NNNNN_BO4E_ESSENTIALS.md or your-requests/FLOW_NAME_BO4E_ESSENTIALS.md; the doc must pass this skill's bundled lint and verification scripts. Do NOT use for general BO4E questions, reading existing docs, or quick single-field answers.
+description: Produce a ticket-ready BO4E Essentials brief for a Strom Prüfidentifikator or composite trigger flow, cross-checked against version-matched process pages, AHB, EBD, schema, mapping and trigger evidence. Use for requests to create or validate a Prüfi/flow implementation brief. Run the bundled lint and strict evidence verifier. Do not use for quick lookups or general BO4E questions.
 ---
 
 # BO4E Essentials — skill
 
 Orchestrator. Produces `your-requests/<PI>_BO4E_ESSENTIALS.md` or `your-requests/<FLOW_NAME>_BO4E_ESSENTIALS.md` by walking a fixed source-layer gathering pass, emitting a verification checkpoint, then writing in the house format. Tool-agnostic: the same workflow applies whether invoked by Claude Code, Codex, or Cursor.
 
-Run from the workspace root: the directory containing source folders such as `ahb-tables/`, `bdew-docs/`, `bo4e-mapping/`, `docs-offline/`, `maco-api-documentation/`, and `maco-edi-testfiles/`. Do not assume an absolute local path. Resolve `SKILL_DIR` to this skill folder, for example:
+Run from the workspace root: the directory containing source folders such as `ahb-tables/`, `bdew-docs/`, `bo4e-mapping/`, `docs-offline/`, and `maco-api-documentation/`. Follow `AGENTS.md`: Strom only and one selected format version. Do not assume an absolute local path. Resolve `SKILL_DIR` to this skill folder, for example:
 
 ```bash
 SKILL_DIR="${SKILL_DIR:-.agents/skills/bo4e-essentials}"
@@ -35,7 +35,7 @@ The default output remains one doc per PI. If the user asks for a business proce
   - Use extra `your-requests/.runs/<PI>/` directories only when there are multiple independent primary outbound/request PIs with their own payload builders.
 - Verification:
   - Run `"$SKILL_DIR/scripts/lint-essentials.sh" --repo-root "$PWD" <path-to-composite-doc>`.
-  - Run `python3 "$SKILL_DIR/scripts/verify-bo4e-essentials.py" --repo-root "$PWD" --stage final <FLOW_NAME> --primary-pi <PI> --doc <path-to-composite-doc>` for the composite run directory.
+  - Run `python3 "$SKILL_DIR/scripts/verify-bo4e-essentials.py" --repo-root "$PWD" --stage final --strict-evidence <FLOW_NAME> --primary-pi <PI> --doc <path-to-composite-doc>` for the composite run directory.
   - For legacy compatibility, `python3 "$SKILL_DIR/scripts/verify-bo4e-essentials.py" --repo-root "$PWD" --stage final <PI> --doc <path-to-composite-doc> --run-dir your-requests/.runs/<FLOW_NAME>` is also acceptable.
 
 Do **not** force a composite flow into one arbitrary PI. Do **not** pretend a fixture-backed follow-up is the direct response to the primary PI. The doc must separate prerequisites, direct responses, follow-ups, and parallel inbound messages.
@@ -46,9 +46,9 @@ These workspace rule files govern the doc's content and style when the checkout 
 
 - `.cursor/rules/global-rules/anti-hallucination-mandatory-always.mdc` — cite source files, never guess.
 - `.cursor/rules/global-rules/maco-workspace-context-always.mdc` — source-file taxonomy (the six source layers this skill walks).
-- `.cursor/rules/global-rules/pm-ops-summary-mandatory-always.mdc` — mandatory PM Summary + Ops Runbook on output.
+- `.cursor/rules/global-rules/pm-ops-summary-mandatory-always.mdc` — PM and Ops coverage for full implementation briefs.
 - `.cursor/rules/validation-rules/pruefidentifikator-verification-mandatory-always.mdc` — find ALL request formats + ALL response PIs.
-- `.cursor/rules/visualization-rules/process-visualization-mandatory-always.mdc` — mandatory Mermaid sequence + flow + field table.
+- `.cursor/rules/visualization-rules/process-visualization-mandatory-always.mdc` — source-grounded diagrams and field tables when they clarify the full brief.
 
 ## Skill-local references
 
@@ -60,6 +60,8 @@ Load on demand during the workflow:
 - `reference/verification-artifacts.md` — structured handoff JSON files, event log, verifier contract, and source-citation rules.
 - `scripts/lint-essentials.sh` — bundled markdown shape linter; run from any workspace root with `--repo-root`.
 - `scripts/verify-bo4e-essentials.py` — bundled deterministic evidence verifier; run from any workspace root with `--repo-root`.
+
+For new runs, add a SHA-256 and exact source excerpt to each `layer_claims.json` claim. Add `relationship_evidence` for each response and follow-up Prüfi. The strict verifier checks those proofs and agreement between selected format version and versioned sources; see `reference/verification-artifacts.md` for the fields.
 
 ## Template exemplars
 
@@ -93,7 +95,7 @@ These artifacts are the deterministic "sensor" layer: Python verifies them befor
 Read `ahb-tables/INDEX.md`. Capture:
 - `description` (e.g. "Anmeldung verb. MaLo", "Abmeldung")
 - `direction` (`LF → NB`, `NB → LF`, etc.)
-- `versionsnummer` + `veroeffentlichungsdatum` + which FV directory to use (latest wins — prefer `FV2604`).
+- `versionsnummer` + `veroeffentlichungsdatum` + selected FV. Match the requested effective version across sources; the newest available version is not automatically applicable to an older process.
 
 Write the result to `your-requests/.runs/<PI>/classification.json` and append an `events.jsonl` entry with the index files read.
 
@@ -105,9 +107,9 @@ Write the result to `your-requests/.runs/<PI>/classification.json` and append an
 
 Apply `reference/pruefi-patterns.md`:
 1. For the whitelisted known patterns in `reference/pruefi-patterns.md`, compute paired response PIs and then **verify each exists** in `ahb-tables/INDEX.md`.
-2. For every other flow, especially ORDERS/ORDRSP/IFTSTA, derive relationships from `processinfo.json`, `docs-offline/*`, AHB, and fixtures. Do **not** use `PI+1` / `PI+2` as evidence.
+2. For every flow, derive relationships from the selected-version `docs-offline/` process and Prüfi pages, `processinfo.json` when applicable, and AHB. Use `docs-supplemental/` only for relevant missing detail. Do **not** use `PI+1` / `PI+2` or fixtures as relationship evidence.
 2. Check the trigger schema (`maco-api-documentation/macoapp-trigger/components/schemas/START_*.yml`) for `oneOf` / `allOf` — find sibling request PIs sharing the trigger (e.g. 55001 + 55077 both under `START_LIEFERBEGINN`).
-3. Cross-verify on the NB side: `grep -r "Übergabe der erzeugten Rückmeldung" docs-offline/` — explicit list of which PIs the NB generates.
+3. Cross-verify on the selected-version NB process page when it exists; identify which PIs the NB generates.
 4. List any follow-up PIs (e.g. 55037 after a successful 55005) — include them in Flow Summary; flag as follow-ups, not direct responses.
 5. **Response polarity check:** for every `success_responses` / `rejection_responses` entry, cross-check AHB `meta.description`, `PI_<N>.yml` description, and any process overview/tab labels. If process docs say "pos/neg", "Bestätigung", or "Ablehnung" in conflict with AHB/schema, keep AHB/schema as authority and add a "Documentation discrepancy" note with exact file paths and lines. Do not silently normalize swapped labels.
 
@@ -119,7 +121,7 @@ A near-namesake trigger does **not** imply the same Prüfi. Concretely: `START_A
 
 For every candidate trigger surfaced in Step 2, **prove the trigger → Prüfi mapping** before listing it as a trigger for this PI:
 
-1. Open `docs-offline/trigger-events-14016919e0.md` and grep for the trigger name. The OpenAPI block exposes the schema `[LF] START_X` / `[NB] START_X` arms with `allOf $ref: PI_NNNNN` — the referenced PI is what that trigger actually generates.
+1. Open the selected-version `docs-offline/schnittstellen/<FV>/trigger/events/` page and the local trigger schema. Verify the trigger-to-PI mapping from explicit references; use the supplemental trigger page only as a cross-check.
 2. Or open the trigger schema directly (`macoapp-trigger/components/schemas/START_*.yml`) and locate the `allOf $ref` to the `PI_NNNNN` schema.
 3. List in `your-requests/.runs/<PI>/related_pis.json` only triggers whose mapping you've proven points at this PI. Add a `trigger_proofs` array with `{trigger, role, generates_pi, source_path, line_or_excerpt}` per row.
 4. If a trigger looks topically related but generates a different PI, list it in the doc's `## Trigger scope` section as a *do-not-confuse* row, not as a trigger for this PI.
@@ -135,14 +137,14 @@ For PI `N`, collect at least one artifact from **each applicable layer**:
 | Layer | Path pattern | Read purpose | Mandatory? |
 |---|---|---|---|
 | **Regulation (WHY by law)** | `bdew-docs/bk620160_gpke.md` (Use-Case + SD + Vorlauffrist + counter-party SLA), `bdew-docs/BDEW_AWH_LFW24_V1_7_*.md` (LFW Fristen, time-gated codes, stilllegung), `bdew-docs/BDEW_AWH_Netzbetreiberwechselprozesse_*.md` (NBA↔NBN routing if MP-ID lookup is involved), `bdew-docs/UTILMD_MIG_Strom_S2_1_*.md` (MIG code catalogue confirmations) | Extract the **Regulation Anchors** for the doc: Vorlauffristen by scenario, counter-party response SLA, retroactive windows, NB-Wechsel routing rule, time-gated codes. **Quote, don't paraphrase**, with line numbers. | **Mandatory** for outbound LF→NB / LF→MSB Prüfis. Inbound-only docs may legitimately skip if no LF-side timing decisions exist. |
-| Process (WHY by design) | `docs-offline/<flow>-*.md` (match by flow name / role) | Mermaid flow, role narrative, "ref" references | Always read at least the LF-role and NB-role variants if they exist |
-| Architecture (HOW) | `docs-offline/prozessdiagramme-png/INDEX.md` → `<flow>.png` | Swimlanes, BO4E↔EDI transform points | If exists |
+| Process (WHY by design) | `docs-offline/prozessdoku/<FV>/` selected through `scripts/find-documentation.py` | Versioned role view, sequence, Prüfis | Read LF and NB views when relevant; supplemental Mermaid only for still-applicable extra branches |
+| Architecture (HOW) | `docs-supplemental/prozessdiagramme-png/INDEX.md` → `<flow>.png` | Swimlanes, BO4E↔EDI transform points | If exists |
 | Validation (WHAT) | `ebd-diagrams/FV<latest>/E_<code>.json` (find code via "Entscheidungsbaum E_" grep in process docs OR via the EBD's `metadata.section` linking back to the GPKE chapter) | Decision tree + antwortstatus codes; **also extract any time-gated result codes** (e.g. `A99` sunset dates) from the JSON `note` fields | If a paired response carries an EBD |
 | BO4E schema | `maco-api-documentation/macoapp-schreiben/components/requestBodies/PIs/PI_<N>.yml` + `pythons/createPiFromTemplater/templater/yaml_output/<N>.yaml` | Field schema (+ diff if they disagree) | **Mandatory** — gate |
 | **BO4E→EDIFACT mapping** | `bo4e-mapping/<FV>/UTILMD_Strom.csv` (or `UTILMD_Gas.csv` / message-specific CSV); the column header for this PI carries the directional + Muss/Kann marker | Concrete BO4E field path ↔ EDIFACT segment/qualifier bridge; pulls out facts schema can't show (e.g. `energierichtung` ↔ `Z06/Z07`). You must prove whether the PI has a dedicated column. If not, mark mapping support as `shared-only` or `missing` and fall back to AHB for requiredness. | **Mandatory** — gate |
-| Trigger | `macoapp-trigger/components/schemas/START_*.yml` + matching `examples/*.yml` + `docs-offline/trigger-events-14016919e0.md` (the trigger ↔ PI proof source) | Outbound envelope, variant examples, **trigger ↔ PI mapping** for Step 2.5 | Mandatory for outbound |
+| Trigger | `macoapp-trigger/components/schemas/START_*.yml` + matching `examples/*.yml` + `docs-supplemental/trigger-events-14016919e0.md` (the trigger ↔ PI proof source) | Outbound envelope, variant examples, **trigger ↔ PI mapping** for Step 2.5 | Mandatory for outbound |
 | EDIFACT | `ahb-tables/FV<latest>/AHB_FV<latest>_<N>.json` | `Muss`/`Kann`, value pools (DE9013 etc.), conditional rule IDs | **Mandatory** — gate |
-| Examples | `maco-edi-testfiles/outbound/v202510/<message>/<N>/*.json`, `inbound/v202510/<message>/<N>/*.edi` | Scenario fixtures. Use them to confirm shape and wire examples, never to infer requiredness or valid value pools. **At least one inbound `.edi` for a response PI must be quoted** when wire-level response shape matters. | Mandatory if wire-level snippet expected |
+| Examples | `maco-edi-testfiles/outbound/<fixture-version>/`, `inbound/<fixture-version>/` | Scenario fixtures for their own version. Never infer requiredness or current behavior. State when only older fixtures exist. | Use when a relevant version is available |
 | Conuti webhook JSON | `maco-api-documentation/macoapp-schreiben/components/examples/Strom/<N>_eingehend_Testfall*.yaml` | BO4E shape delivered to your webhook | If exists |
 
 **Missing sources are information.** If a layer has no artifact for this PI (e.g. no PNG for a niche PI, no EBD for a non-response PI), note it explicitly in the Validation Notes — don't fabricate paths. **A missing `bdew-docs/` regulation anchor for an outbound Prüfi is a red flag** — go look harder before declaring it absent.
@@ -164,14 +166,14 @@ Also write `your-requests/.runs/<PI>/sources_manifest.json` while gathering. Use
 Write `your-requests/.runs/<PI>/layer_claims.json` as you read each layer. Use one claim per important contribution:
 
 - `regulation`: deadlines, time-gates, legal framing from BDEW/GPKE/LFW/WiM docs.
-- `process`: sequence, role direction, `ref` processes, follow-ups from `docs-offline/*.md`.
+- `process`: sequence, role direction, `ref` processes, follow-ups from selected-version `docs-offline/` pages; supplemental details only when applicable.
 - `architecture`: swimlane/system handoff/format transformation facts from PNG diagrams.
 - `validation`: EBD decision paths, terminal `antwortstatus`, acceptance/rejection codes.
 - `bo4e_schema`: payload shape, required fields, types, enums, generated-field discrepancies.
 - `bo4e_mapping`: concrete BO4E path ↔ EDIFACT segment/qualifier mappings.
 - `bo4e_mapping`: concrete BO4E path ↔ EDIFACT segment/qualifier mappings, plus `mapping_column_checks` stating `{pi, csv_path, has_dedicated_column, evidence}`.
 - `edifact`: AHB `Muss`/`Kann`, condition IDs, value pools, segment rules.
-- `examples`: scenario fixtures and wire-level examples, always `v202510`.
+- `examples`: scenario fixtures and wire-level examples, labelled with their own fixture version; never use them to establish requirements for a newer FV.
 - `trigger` / `webhook`: outbound event shape or inbound response shape.
 
 Every claim must point to a path listed under the same layer in `sources_manifest.json`, include short evidence text, and list `doc_terms` that must appear in the final markdown.
@@ -199,13 +201,13 @@ Write `your-requests/.runs/<PI>/doc_coverage.json` from the gathered source fact
 Before writing the output file, make sure the run artifacts exist and run:
 
 ```bash
-python3 "$SKILL_DIR/scripts/verify-bo4e-essentials.py" --repo-root "$PWD" --stage sources <N>
+python3 "$SKILL_DIR/scripts/verify-bo4e-essentials.py" --repo-root "$PWD" --stage sources --strict-evidence <N>
 ```
 
 For composite trigger-flow docs, run the same gate with the flow id and primary request PI:
 
 ```bash
-python3 "$SKILL_DIR/scripts/verify-bo4e-essentials.py" --repo-root "$PWD" --stage sources <FLOW_NAME> --primary-pi <N>
+python3 "$SKILL_DIR/scripts/verify-bo4e-essentials.py" --repo-root "$PWD" --stage sources --strict-evidence <FLOW_NAME> --primary-pi <N>
 ```
 
 This is the deterministic source-evidence gate. It must pass before writing the final markdown.
@@ -267,7 +269,7 @@ Run both bundled commands from the workspace root:
 
 ```bash
 SKILL_DIR="${SKILL_DIR:-.agents/skills/bo4e-essentials}"
-python3 "$SKILL_DIR/scripts/verify-bo4e-essentials.py" --repo-root "$PWD" --stage final <N>
+python3 "$SKILL_DIR/scripts/verify-bo4e-essentials.py" --repo-root "$PWD" --stage final --strict-evidence <N>
 "$SKILL_DIR/scripts/lint-essentials.sh" --repo-root "$PWD" <N>
 ```
 
@@ -280,13 +282,13 @@ Warnings (non-failing) are expected for inbound-only PIs that legitimately omit 
 - **Don't cite `PROCESS_GRAPH.json` as a source.** It's a discovery index; cite the files it points to.
 - **Don't copy enriched outbound test files as if user-supplied.** Strip `datenaustauschreferenz`, `vorgangsnummer`, `pruefidentifikator`, `dokumentennummer`, `nachrichtendatum`, `nachrichtenreferenznummer` — Conuti generates these.
 - **Don't conflate direct responses with follow-ups.** E.g. 55037 (*Informationsmeldung zur Beendigung der Zuordnung*) follows a successful 55005; it is **not** the success response to 55004.
-- **Don't conflate near-namesake triggers.** `START_AUFHEBUNG_ZUK_ZUORDNUNG_LF` generates **PI_55038**, NOT 55004. Always verify trigger → PI via `docs-offline/trigger-events-14016919e0.md` (Step 2.5).
+- **Don't conflate near-namesake triggers.** `START_AUFHEBUNG_ZUK_ZUORDNUNG_LF` generates **PI_55038**, NOT 55004. Always verify trigger → PI via `docs-supplemental/trigger-events-14016919e0.md` (Step 2.5).
 - **Don't leave AHB condition IDs unexplained.** Every `[N]` / `[UBn]` encodes a real rule — translate it.
 - **Don't skip variants.** Every `transaktionsgrundergaenzung` / scenario branch in the AHB value pool needs coverage (full example or diff block). Time-gated codes (`ZZB`, `ZZD`) need their gate-date mentioned.
 - **Don't invent paths.** If a file doesn't exist for this PI, say so — don't link a dead path.
 - **Don't merge PIs.** One doc per PI. Paired responses are documented inside the parent request's doc; each can also have its own file if asked.
 - **Don't re-read files read earlier in the session.** Cache in conversation state.
-- **Don't use `v202404`.** Always `v202510` (outbound JSON, inbound EDI).
+- Select fixtures for the requested version when available. If only older fixtures exist, label their version and treat them as non-authoritative examples.
 - **Don't write PM Summary / Ops Runbook from imagination.** Ground every bullet in a verified source (schema requirement, EBD path, regulatory deadline).
 - **Don't skip the `bdew-docs/` regulation anchors for outbound Prüfis.** "I cited the file in Sources" is not enough — the doc must contain the extracted Vorlauffrist value and counter-party SLA. Wrong-by-default failure mode: assuming "1 Monat" when GPKE actually says "6 WT" for the LFW case.
 - **Don't trust the `PI_*.yml` schema enums alone.** They inherit generic enums (e.g. `kategorie` with 40+ values when only `E02` is valid). The AHB JSON is authoritative for value-pool restrictions.

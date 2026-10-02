@@ -1,0 +1,2205 @@
+{
+  "source": "https://doc.macoapp.de/llms.txt",
+  "industry": "strom",
+  "by_bdew_id": {
+    "13002": [
+      "docs-supplemental/gerätewechsel-rolle-nb-vnb-1946520m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md"
+    ],
+    "13006": [
+      "docs-supplemental/gerätewechsel-rolle-nb-vnb-1946520m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/stornierung-werte-vom-msb-der-marktlokation-rolle-lf-1820445m0.md",
+      "docs-supplemental/übermittlung-des-lieferscheins-zur-netznutzungsabrechnung-rolle-lf-2302951m0.md"
+    ],
+    "13007": [
+      "docs-supplemental/gerätewechsel-rolle-nb-vnb-1946520m0.md"
+    ],
+    "13008": [
+      "docs-supplemental/gerätewechsel-rolle-nb-vnb-1946520m0.md"
+    ],
+    "13009": [
+      "docs-supplemental/gerätewechsel-rolle-nb-vnb-1946520m0.md"
+    ],
+    "13015": [
+      "docs-supplemental/abrechnungsdaten-netznutzungsabrechnung-rolle-lf-3130129f0.md",
+      "docs-supplemental/abrechnungsdaten-netznutzungsabrechnung-rolle-nb-3130409f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/übermittlung-der-bisher-gemessenen-arbeits-und-leistungswerte-rolle-lf-1820160m0.md"
+    ],
+    "13016": [
+      "docs-supplemental/aufbereitung-und-übermittlung-von-werten-vom-msb-der-marktlokation-rolle-lf-1820159m0.md",
+      "docs-supplemental/aufbereitung-und-übermittlung-von-werten-vom-msb-der-marktlokation-rolle-nb-1929273m0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/reklamation-von-werten-2430261m0.md",
+      "docs-supplemental/übermittlung-der-bisher-gemessenen-arbeits-und-leistungswerte-rolle-lf-1820160m0.md",
+      "docs-supplemental/übermittlung-des-lieferscheins-zur-netznutzungsabrechnung-rolle-lf-2302951m0.md"
+    ],
+    "13017": [
+      "docs-supplemental/aufbereitung-und-übermittlung-von-werten-vom-msb-der-marktlokation-rolle-lf-1820159m0.md",
+      "docs-supplemental/aufbereitung-und-übermittlung-von-werten-vom-msb-der-marktlokation-rolle-nb-1929273m0.md",
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/reklamation-von-werten-2430261m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/übermittlung-von-zählerständen-vom-nb-rolle-nb-1982055m0.md",
+      "docs-supplemental/übermittlung-von-zählerständen-vom-nb-rolle-nb-2010446m0.md"
+    ],
+    "13018": [
+      "docs-supplemental/aufbereitung-und-übermittlung-von-werten-vom-msb-der-marktlokation-rolle-lf-1820159m0.md",
+      "docs-supplemental/aufbereitung-und-übermittlung-von-werten-vom-msb-der-marktlokation-rolle-nb-1929273m0.md",
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/reklamation-von-werten-2430261m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md"
+    ],
+    "13019": [
+      "docs-supplemental/anforderung-von-werten-2430120m0.md",
+      "docs-supplemental/aufbereitung-und-übermittlung-von-werten-vom-msb-der-marktlokation-rolle-lf-1820159m0.md",
+      "docs-supplemental/aufbereitung-und-übermittlung-von-werten-vom-msb-der-marktlokation-rolle-nb-1929273m0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/reklamation-von-werten-2430261m0.md",
+      "docs-supplemental/übermittlung-der-bisher-gemessenen-arbeits-und-leistungswerte-rolle-lf-1820160m0.md",
+      "docs-supplemental/übermittlung-des-lieferscheins-zur-netznutzungsabrechnung-rolle-lf-2302951m0.md"
+    ],
+    "13025": [
+      "docs-supplemental/anforderung-von-werten-2430120m0.md",
+      "docs-supplemental/aufbereitung-und-übermittlung-von-werten-vom-msb-der-marktlokation-rolle-lf-1820159m0.md",
+      "docs-supplemental/aufbereitung-und-übermittlung-von-werten-vom-msb-der-marktlokation-rolle-nb-1929273m0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/reklamation-von-werten-2430261m0.md"
+    ],
+    "13027": [
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/übermittlung-von-werten-nach-typ-2-vom-msb-an-nb-oder-lf-rolle-lf-1820441m0.md"
+    ],
+    "15004": [
+      "docs-supplemental/bestellung-einer-konfiguration-vom-lf-an-msb-lf-1677424m0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md"
+    ],
+    "17004": [
+      "docs-supplemental/anforderung-von-werten-2430120m0.md"
+    ],
+    "17102": [
+      "docs-supplemental/geschäftsdatenanfrage-42308588e0.md"
+    ],
+    "17120": [
+      "docs-supplemental/bestellung-einer-konfiguration-vom-lf-an-nb-lf-1885959m0.md"
+    ],
+    "17123": [
+      "docs-supplemental/bestellung-einer-konfiguration-vom-lf-an-nb-lf-1885959m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md"
+    ],
+    "17131": [
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md"
+    ],
+    "17132": [
+      "docs-supplemental/geschäftsdatenanfrage-42308588e0.md"
+    ],
+    "17133": [
+      "docs-supplemental/reklamation-von-werten-2430261m0.md"
+    ],
+    "17134": [
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md",
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md",
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-861937m0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-881450m0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-zu-einer-malo-oder-tranche-14994418e0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/prozessdaten-erstellen-14669391e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "17135": [
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-881450m0.md",
+      "docs-supplemental/prozessdaten-erstellen-14669391e0.md"
+    ],
+    "17201": [
+      "docs-supplemental/start-eines-abonnements-von-normierten-profilen-und-profilscharen-vom-lf-bzw-ünb-an-nb-2430570m0.md"
+    ],
+    "19007": [
+      "docs-supplemental/anforderung-von-werten-2430120m0.md"
+    ],
+    "19114": [
+      "docs-supplemental/reklamation-von-werten-2430261m0.md"
+    ],
+    "19121": [
+      "docs-supplemental/bestellung-einer-konfiguration-vom-lf-an-nb-lf-1885959m0.md"
+    ],
+    "19124": [
+      "docs-supplemental/bestellung-einer-konfiguration-vom-lf-an-msb-lf-1677424m0.md",
+      "docs-supplemental/bestellung-einer-konfiguration-vom-lf-an-nb-lf-1885959m0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md"
+    ],
+    "19132": [
+      "docs-supplemental/bestellung-einer-konfiguration-vom-lf-an-msb-lf-1677424m0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md"
+    ],
+    "21007": [
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md",
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
+    ],
+    "21009": [
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md",
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
+    ],
+    "21010": [
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md",
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
+    ],
+    "21011": [
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md",
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
+    ],
+    "21012": [
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md",
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
+    ],
+    "21013": [
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md",
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
+    ],
+    "21015": [
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
+    ],
+    "21033": [
+      "docs-supplemental/bestellung-einer-konfiguration-vom-lf-an-msb-lf-1677424m0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md"
+    ],
+    "21035": [
+      "docs-supplemental/übermittlung-des-lieferscheins-zur-netznutzungsabrechnung-rolle-lf-2302951m0.md",
+      "docs-supplemental/übermittlung-des-lieferscheins-zur-netznutzungsabrechnung-rolle-nb-1946224m0.md"
+    ],
+    "21039": [
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/wiederherstellung-anschlussnutzung-nach-lb-15090248e0.md",
+      "docs-supplemental/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-msb-3130714f0.md",
+      "docs-supplemental/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-msb-861961m0.md",
+      "docs-supplemental/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-nb-3130602f0.md",
+      "docs-supplemental/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-nb-861947m0.md",
+      "docs-supplemental/überprüfung-einer-eeg-marktlokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-nb-vnb-1678015m0.md"
+    ],
+    "21040": [
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-881450m0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/prozessdaten-erstellen-14669391e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/wiederherstellung-anschlussnutzung-nach-lb-15090248e0.md",
+      "docs-supplemental/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-msb-3130714f0.md",
+      "docs-supplemental/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-msb-861961m0.md",
+      "docs-supplemental/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-nb-3130602f0.md",
+      "docs-supplemental/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-nb-861947m0.md"
+    ],
+    "21043": [
+      "docs-supplemental/bestellung-einer-konfiguration-vom-lf-an-msb-lf-1677424m0.md",
+      "docs-supplemental/bestellung-einer-konfiguration-vom-lf-an-nb-lf-1885959m0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md"
+    ],
+    "21047": [
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-861885m0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-861922m0.md",
+      "docs-supplemental/abrechnungsdaten-netznutzungsabrechnung-rolle-lf-3130129f0.md",
+      "docs-supplemental/abrechnungsdaten-netznutzungsabrechnung-rolle-lf-861883m0.md",
+      "docs-supplemental/abrechnungsdaten-netznutzungsabrechnung-rolle-nb-3130409f0.md",
+      "docs-supplemental/abrechnungsdaten-netznutzungsabrechnung-rolle-nb-861920m0.md",
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-lieferant-verantwortlich-ausgehend-2265075m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-861900m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-861944m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-861950m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md"
+    ],
+    "25001": [
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md",
+      "docs-supplemental/berechnungsformel-rolle-lf-3130236f0.md",
+      "docs-supplemental/berechnungsformel-rolle-lf-861896m0.md",
+      "docs-supplemental/berechnungsformel-rolle-nb-3130464f0.md",
+      "docs-supplemental/berechnungsformel-rolle-nb-861955m0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/übermittlung-der-berechnungsformel-15090201e0.md"
+    ],
+    "25010": [
+      "docs-supplemental/berechnungsformel-rolle-lf-3130236f0.md",
+      "docs-supplemental/berechnungsformel-rolle-nb-3130464f0.md",
+      "docs-supplemental/berechnungsformel-rolle-nb-861955m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md"
+    ],
+    "29002": [
+      "docs-supplemental/übermittlung-des-lieferscheins-zur-netznutzungsabrechnung-rolle-lf-2302951m0.md"
+    ],
+    "35004": [
+      "docs-supplemental/bestellung-einer-konfiguration-vom-nb-oder-lf-an-msb-rolle-msb-1985804m0.md"
+    ],
+    "37000": [
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236630m0.md",
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236813m0.md",
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236816m0.md"
+    ],
+    "37001": [
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236630m0.md",
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236813m0.md",
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236816m0.md"
+    ],
+    "37002": [
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236630m0.md",
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236813m0.md",
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236816m0.md"
+    ],
+    "37003": [
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236630m0.md",
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236813m0.md",
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236816m0.md"
+    ],
+    "37004": [
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236630m0.md",
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236813m0.md",
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236816m0.md"
+    ],
+    "37005": [
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236630m0.md",
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236813m0.md",
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236816m0.md"
+    ],
+    "37006": [
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236630m0.md",
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236813m0.md",
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236816m0.md"
+    ],
+    "44001": [
+      "docs-supplemental/anmeldung-nn-1930553m0.md",
+      "docs-supplemental/anmeldung-nn-1973643m0.md"
+    ],
+    "44002": [
+      "docs-supplemental/anmeldung-nn-1930553m0.md",
+      "docs-supplemental/anmeldung-nn-1973643m0.md"
+    ],
+    "44003": [
+      "docs-supplemental/anmeldung-nn-1930553m0.md",
+      "docs-supplemental/anmeldung-nn-1973643m0.md"
+    ],
+    "44010": [
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-1982031m0.md"
+    ],
+    "44011": [
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-1982031m0.md"
+    ],
+    "44012": [
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-1982031m0.md"
+    ],
+    "44036": [
+      "docs-supplemental/anmeldung-nn-1930553m0.md",
+      "docs-supplemental/anmeldung-nn-1973643m0.md"
+    ],
+    "44037": [
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-1982031m0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-1982033m0.md"
+    ],
+    "44038": [
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-1982040m0.md"
+    ],
+    "44039": [
+      "docs-supplemental/-rolle-msba-kündigung-messstellenbetrieb-2271854m0.md",
+      "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271855m0.md"
+    ],
+    "44040": [
+      "docs-supplemental/-rolle-msba-kündigung-messstellenbetrieb-2271854m0.md",
+      "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271855m0.md"
+    ],
+    "44041": [
+      "docs-supplemental/-rolle-msba-kündigung-messstellenbetrieb-2271854m0.md",
+      "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271855m0.md"
+    ],
+    "44042": [
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
+    ],
+    "44043": [
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
+    ],
+    "44044": [
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
+    ],
+    "44112": [
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
+    ],
+    "55001": [
+      "docs-supplemental/abmeldeanfrage-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md",
+      "docs-supplemental/abmeldeanfrage-strom-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-3130103f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-lieferant-alt-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md",
+      "docs-supplemental/lieferbeginn-14992210e0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-860854m0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-erstellen-14666311e0.md",
+      "docs-supplemental/prozessübersicht-853953m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55002": [
+      "docs-supplemental/abmeldeanfrage-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md",
+      "docs-supplemental/abmeldeanfrage-strom-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-3130103f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-lieferant-alt-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-860854m0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md",
+      "docs-supplemental/prozessübersicht-853953m0.md"
+    ],
+    "55003": [
+      "docs-supplemental/abmeldeanfrage-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md",
+      "docs-supplemental/abmeldeanfrage-strom-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-3130103f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-lieferant-alt-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-860854m0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md",
+      "docs-supplemental/prozessdaten-erstellen-14666311e0.md",
+      "docs-supplemental/prozessübersicht-853953m0.md"
+    ],
+    "55004": [
+      "docs-supplemental/kündigung-lfa-3118804f0.md",
+      "docs-supplemental/kündigung-lfn-3118848f0.md",
+      "docs-supplemental/lieferende-lf-nb-rolle-lf-3119196f0.md",
+      "docs-supplemental/lieferende-lf-nb-rolle-lf-860905m0.md",
+      "docs-supplemental/lieferende-lf-nb-rolle-nb-3119240f0.md",
+      "docs-supplemental/lieferende-lf-nb-rolle-nb-860912m0.md",
+      "docs-supplemental/lieferende-von-lieferant-an-netzbetreiber-14992421e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-erstellen-14666311e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55005": [
+      "docs-supplemental/lieferende-lf-nb-rolle-lf-860905m0.md",
+      "docs-supplemental/lieferende-lf-nb-rolle-nb-860912m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md"
+    ],
+    "55006": [
+      "docs-supplemental/lieferende-lf-nb-rolle-lf-3119196f0.md",
+      "docs-supplemental/lieferende-lf-nb-rolle-lf-860905m0.md",
+      "docs-supplemental/lieferende-lf-nb-rolle-nb-3119240f0.md",
+      "docs-supplemental/lieferende-lf-nb-rolle-nb-860912m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md"
+    ],
+    "55007": [
+      "docs-supplemental/lieferende-lf-nb-rolle-lf-3119196f0.md",
+      "docs-supplemental/lieferende-lf-nb-rolle-nb-3119240f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-861871m0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-861909m0.md",
+      "docs-supplemental/lieferende-von-netzbetreiber-an-lieferant-15090292e0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55008": [
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-861871m0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-861909m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md"
+    ],
+    "55009": [
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-861871m0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-861909m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md"
+    ],
+    "55010": [
+      "docs-supplemental/abmeldeanfrage-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/abmeldeanfrage-nb-lf-rolle-lfa-860871m0.md",
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md",
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-860877m0.md",
+      "docs-supplemental/abmeldeanfrage-strom-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/anfrage-zur-beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-14992646e0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-3130103f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-lieferant-alt-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55011": [
+      "docs-supplemental/abmeldeanfrage-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/abmeldeanfrage-nb-lf-rolle-lfa-860871m0.md",
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md",
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-860877m0.md",
+      "docs-supplemental/abmeldeanfrage-strom-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-3130103f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-lieferant-alt-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md"
+    ],
+    "55012": [
+      "docs-supplemental/abmeldeanfrage-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/abmeldeanfrage-nb-lf-rolle-lfa-860871m0.md",
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md",
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-860877m0.md",
+      "docs-supplemental/abmeldeanfrage-strom-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-3130103f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-lieferant-alt-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md"
+    ],
+    "55013": [
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-lf-861880m0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-861924m0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-strom-861924m0.md",
+      "docs-supplemental/ersatz-grundversorgung-14984068e0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/lieferende-lf-nb-rolle-lf-3119196f0.md",
+      "docs-supplemental/lieferende-lf-nb-rolle-nb-3119240f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55014": [
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-lf-861880m0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-861924m0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-strom-861924m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md"
+    ],
+    "55015": [
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-lf-861880m0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-861924m0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-strom-861924m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md"
+    ],
+    "55016": [
+      "docs-supplemental/kündigung-lfa-3118804f0.md",
+      "docs-supplemental/kündigung-lfn-3118848f0.md",
+      "docs-supplemental/kündigungsprozess-zwischen-lieferanten-14987263e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/prozessübersicht-860885m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55017": [
+      "docs-supplemental/kündigung-lfa-3118804f0.md",
+      "docs-supplemental/kündigung-lfn-3118848f0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessübersicht-860885m0.md",
+      "docs-supplemental/prozessübersicht-860891m0.md"
+    ],
+    "55018": [
+      "docs-supplemental/kündigung-lfa-3118804f0.md",
+      "docs-supplemental/kündigung-lfn-3118848f0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessübersicht-860885m0.md",
+      "docs-supplemental/prozessübersicht-860891m0.md"
+    ],
+    "55022": [
+      "docs-supplemental/anfrage-nach-stornierung-21893877e0.md",
+      "docs-supplemental/anfrage-nach-stornierung-21894158e0.md",
+      "docs-supplemental/anfrage-nach-stornierung-21894185e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/prozessübersicht-1621227m0.md",
+      "docs-supplemental/prozessübersicht-1621257m0.md",
+      "docs-supplemental/prozessübersicht-1621259m0.md",
+      "docs-supplemental/reklamation-von-werten-27333474e0.md",
+      "docs-supplemental/stornierung-5000861f0.md",
+      "docs-supplemental/stornierung-5001051f0.md",
+      "docs-supplemental/stornierung-5001068f0.md",
+      "docs-supplemental/stornierung-lieferschein-27329360e0.md",
+      "docs-supplemental/widerspruch-gegen-ablehnung-27328472e0.md",
+      "docs-supplemental/übermittlung-des-lieferscheins-zur-netznutzungsabrechnung-27328140e0.md"
+    ],
+    "55023": [
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessübersicht-1621227m0.md",
+      "docs-supplemental/prozessübersicht-1621257m0.md",
+      "docs-supplemental/prozessübersicht-1621259m0.md",
+      "docs-supplemental/stornierung-5000861f0.md",
+      "docs-supplemental/stornierung-5001051f0.md",
+      "docs-supplemental/stornierung-5001068f0.md"
+    ],
+    "55024": [
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessübersicht-1621227m0.md",
+      "docs-supplemental/prozessübersicht-1621257m0.md",
+      "docs-supplemental/prozessübersicht-1621259m0.md",
+      "docs-supplemental/stornierung-5000861f0.md",
+      "docs-supplemental/stornierung-5001051f0.md",
+      "docs-supplemental/stornierung-5001068f0.md"
+    ],
+    "55035": [
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md"
+    ],
+    "55036": [
+      "docs-supplemental/abmeldeanfrage-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md",
+      "docs-supplemental/abmeldeanfrage-strom-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-3130103f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-lieferant-alt-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-860854m0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md",
+      "docs-supplemental/prozessübersicht-853953m0.md"
+    ],
+    "55037": [
+      "docs-supplemental/abmeldeanfrage-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md",
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-860877m0.md",
+      "docs-supplemental/abmeldeanfrage-strom-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-3130103f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marklokation-bzw-tranche-14994219e0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-lieferant-alt-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-861878m0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-861915m0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/lieferende-lf-nb-rolle-lf-3119196f0.md",
+      "docs-supplemental/lieferende-lf-nb-rolle-nb-3119240f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55038": [
+      "docs-supplemental/abmeldeanfrage-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md",
+      "docs-supplemental/abmeldeanfrage-strom-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marklokation-bzw-tranche-versenden-14333135e0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-3130103f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-861876m0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-861913m0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-lieferant-alt-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55039": [
+      "docs-supplemental/-rolle-msba-kündigung-messstellenbetrieb-2271852m0.md",
+      "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271853m0.md"
+    ],
+    "55040": [
+      "docs-supplemental/-rolle-msba-kündigung-messstellenbetrieb-2271852m0.md",
+      "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271853m0.md"
+    ],
+    "55041": [
+      "docs-supplemental/-rolle-msba-kündigung-messstellenbetrieb-2271852m0.md",
+      "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271853m0.md"
+    ],
+    "55042": [
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md"
+    ],
+    "55043": [
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md"
+    ],
+    "55044": [
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md"
+    ],
+    "55077": [
+      "docs-supplemental/abmeldeanfrage-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md",
+      "docs-supplemental/abmeldeanfrage-strom-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-3130103f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-lieferant-alt-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md",
+      "docs-supplemental/lieferbeginn-14992210e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-erstellen-14666311e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55078": [
+      "docs-supplemental/abmeldeanfrage-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md",
+      "docs-supplemental/abmeldeanfrage-strom-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-3130103f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-lieferant-alt-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md"
+    ],
+    "55080": [
+      "docs-supplemental/abmeldeanfrage-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md",
+      "docs-supplemental/abmeldeanfrage-strom-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-3130103f0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-lieferant-alt-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md",
+      "docs-supplemental/prozessdaten-erstellen-14666311e0.md"
+    ],
+    "55109": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-26910595e0.md",
+      "docs-supplemental/stammdatenänderung-vom-lieferant-verantwortlich-ausgehend-2265075m0.md",
+      "docs-supplemental/stammdatenänderung-vom-lieferanten-verantwortlich-15239974e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55110": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-26910595e0.md",
+      "docs-supplemental/stammdatenänderung-vom-lieferant-verantwortlich-ausgehend-2265075m0.md",
+      "docs-supplemental/stammdatenänderung-vom-lieferanten-verantwortlich-15239974e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55126": [
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-861885m0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-861922m0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-versenden-14994259e0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/lieferende-lf-nb-rolle-lf-3119196f0.md",
+      "docs-supplemental/lieferende-lf-nb-rolle-nb-3119240f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55136": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-26910595e0.md",
+      "docs-supplemental/stammdatenänderung-vom-lieferant-verantwortlich-ausgehend-2265075m0.md",
+      "docs-supplemental/stammdatenänderung-vom-lieferanten-verantwortlich-15239974e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55137": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-26910595e0.md",
+      "docs-supplemental/stammdatenänderung-vom-lieferant-verantwortlich-ausgehend-2265075m0.md",
+      "docs-supplemental/stammdatenänderung-vom-lieferanten-verantwortlich-15239974e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55156": [
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-861885m0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-861922m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md"
+    ],
+    "55173": [
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md",
+      "docs-supplemental/berechnungsformel-rolle-lf-3130236f0.md",
+      "docs-supplemental/berechnungsformel-rolle-nb-3130464f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14669391e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-861950m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55175": [
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md",
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55177": [
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-861950m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md"
+    ],
+    "55180": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md"
+    ],
+    "55218": [
+      "docs-supplemental/abrechnungsdaten-netznutzungsabrechnung-rolle-lf-3130129f0.md",
+      "docs-supplemental/abrechnungsdaten-netznutzungsabrechnung-rolle-lf-861883m0.md",
+      "docs-supplemental/abrechnungsdaten-netznutzungsabrechnung-rolle-nb-3130409f0.md",
+      "docs-supplemental/abrechnungsdaten-netznutzungsabrechnung-rolle-nb-861920m0.md",
+      "docs-supplemental/abrechnungsdaten-netznutzungsabrechnung-versenden-14333071e0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md",
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/lieferende-lf-nb-rolle-lf-3119196f0.md",
+      "docs-supplemental/lieferende-lf-nb-rolle-nb-3119240f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55220": [
+      "docs-supplemental/abrechnungsdaten-netznutzungsabrechnung-rolle-lf-3130129f0.md",
+      "docs-supplemental/abrechnungsdaten-netznutzungsabrechnung-rolle-lf-861883m0.md",
+      "docs-supplemental/abrechnungsdaten-netznutzungsabrechnung-rolle-nb-3130409f0.md",
+      "docs-supplemental/abrechnungsdaten-netznutzungsabrechnung-rolle-nb-861920m0.md",
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md"
+    ],
+    "55225": [
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md",
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55227": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md"
+    ],
+    "55230": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-26910595e0.md",
+      "docs-supplemental/stammdatenänderung-vom-lieferant-verantwortlich-ausgehend-2265075m0.md",
+      "docs-supplemental/stammdatenänderung-vom-lieferanten-verantwortlich-15239974e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55232": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-26910595e0.md",
+      "docs-supplemental/stammdatenänderung-vom-lieferant-verantwortlich-ausgehend-2265075m0.md",
+      "docs-supplemental/stammdatenänderung-vom-lieferanten-verantwortlich-15239974e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55553": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/prozessdaten-erstellen-14666311e0.md"
+    ],
+    "55555": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md"
+    ],
+    "55557": [
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14666311e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md"
+    ],
+    "55559": [
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md"
+    ],
+    "55600": [
+      "docs-supplemental/lieferbeginn-14992210e0.md",
+      "docs-supplemental/neuanlage-1923206m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55601": [
+      "docs-supplemental/lieferbeginn-14992210e0.md",
+      "docs-supplemental/neuanlage-1923206m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55602": [
+      "docs-supplemental/neuanlage-1923206m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md"
+    ],
+    "55603": [
+      "docs-supplemental/neuanlage-1923206m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md"
+    ],
+    "55604": [
+      "docs-supplemental/neuanlage-1923206m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md"
+    ],
+    "55605": [
+      "docs-supplemental/neuanlage-1923206m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md"
+    ],
+    "55607": [
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/lieferende-lf-nb-rolle-lf-3119196f0.md",
+      "docs-supplemental/lieferende-lf-nb-rolle-nb-3119240f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/überprüfung-einer-eeg-marktlokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-lf-1677940m0.md",
+      "docs-supplemental/überprüfung-einer-eeg-marktlokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-nb-vnb-1678015m0.md",
+      "docs-supplemental/überprüfung-einner-eeg-marklokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-nb-25151089e0.md"
+    ],
+    "55608": [
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/überprüfung-einer-eeg-marktlokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-lf-1677940m0.md"
+    ],
+    "55609": [
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/überprüfung-einer-eeg-marktlokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-lf-1677940m0.md"
+    ],
+    "55611": [
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marklokation-bzw-tranche-14994219e0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55613": [
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-versenden-14994259e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55614": [
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md"
+    ],
+    "55615": [
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md",
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55616": [
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md",
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55617": [
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md",
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55618": [
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md",
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55619": [
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md",
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-861944m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55620": [
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md",
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55621": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md"
+    ],
+    "55622": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md"
+    ],
+    "55623": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md"
+    ],
+    "55624": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md"
+    ],
+    "55625": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md"
+    ],
+    "55626": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-861893m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md"
+    ],
+    "55627": [
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md",
+      "docs-supplemental/berechnungsformel-rolle-lf-3130236f0.md",
+      "docs-supplemental/berechnungsformel-rolle-nb-3130464f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md",
+      "docs-supplemental/prozessdaten-erstellen-14669391e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-861950m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55628": [
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md",
+      "docs-supplemental/berechnungsformel-rolle-lf-3130236f0.md",
+      "docs-supplemental/berechnungsformel-rolle-nb-3130464f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14669391e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-861950m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55629": [
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md",
+      "docs-supplemental/berechnungsformel-rolle-lf-3130236f0.md",
+      "docs-supplemental/berechnungsformel-rolle-nb-3130464f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14669391e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-861950m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55630": [
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md",
+      "docs-supplemental/berechnungsformel-rolle-lf-3130236f0.md",
+      "docs-supplemental/berechnungsformel-rolle-nb-3130464f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14669391e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-861950m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55632": [
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md",
+      "docs-supplemental/berechnungsformel-rolle-lf-3130236f0.md",
+      "docs-supplemental/berechnungsformel-rolle-nb-3130464f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14669391e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-861950m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55633": [
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-861950m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md"
+    ],
+    "55634": [
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-861950m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md"
+    ],
+    "55635": [
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-861950m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md"
+    ],
+    "55636": [
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-861950m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md"
+    ],
+    "55638": [
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-861950m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md"
+    ],
+    "55639": [
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14666311e0.md",
+      "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-861944m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55640": [
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14666311e0.md",
+      "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-861944m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55641": [
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14666311e0.md",
+      "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-861944m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55642": [
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+      "docs-supplemental/prozessdaten-erstellen-14666311e0.md",
+      "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-861944m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55643": [
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+      "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-861944m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55644": [
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md"
+    ],
+    "55645": [
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-861944m0.md"
+    ],
+    "55646": [
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-861944m0.md"
+    ],
+    "55647": [
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-861944m0.md"
+    ],
+    "55648": [
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-861944m0.md"
+    ],
+    "55649": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-861900m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55650": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-861900m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55651": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-861900m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55652": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-861900m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55653": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+      "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-861900m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55654": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-861900m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md"
+    ],
+    "55655": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-861900m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md"
+    ],
+    "55656": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-861900m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md"
+    ],
+    "55657": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-861900m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md"
+    ],
+    "55658": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-861900m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md"
+    ],
+    "55659": [
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+      "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55660": [
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+      "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55661": [
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+      "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55662": [
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+      "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55663": [
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md",
+      "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55664": [
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md"
+    ],
+    "55665": [
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md"
+    ],
+    "55666": [
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md"
+    ],
+    "55667": [
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md"
+    ],
+    "55669": [
+      "docs-supplemental/prozessdaten-aktualiseren-14669402e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md"
+    ],
+    "55670": [
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md"
+    ],
+    "55672": [
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-versenden-14994259e0.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55673": [
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md"
+    ],
+    "55674": [
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-versenden-14994259e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55675": [
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md"
+    ],
+    "55684": [
+      "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55685": [
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md"
+    ],
+    "55686": [
+      "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55687": [
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md"
+    ],
+    "55688": [
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "55689": [
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md"
+    ],
+    "55691": [
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md",
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md",
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md",
+      "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
+      "docs-supplemental/prozessdaten-erstellen-14669391e0.md"
+    ],
+    "55692": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/prozessdaten-aktualiseren-14666382e0.md"
+    ],
+    "55693": [
+      "docs-supplemental/stammdatenänderung-vom-lieferant-verantwortlich-ausgehend-2265075m0.md"
+    ],
+    "55694": [
+      "docs-supplemental/stammdatenänderung-vom-lieferant-verantwortlich-ausgehend-2265075m0.md"
+    ],
+    "66666": [
+      "docs-supplemental/verarbeitung-eingehende-aperak-1920760m0.md"
+    ],
+    "77777": [
+      "docs-supplemental/verarbeitung-eingehende-contrl-1920761m0.md"
+    ],
+    "88888": [
+      "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
+      "docs-supplemental/verarbeitung-eingehende-contrl-1920761m0.md"
+    ],
+    "99999": [
+      "docs-supplemental/verarbeitung-eingehende-aperak-1920760m0.md"
+    ]
+  },
+  "by_trigger": {
+    "START_ABMELDEANFRAGE": [
+      "docs-supplemental/anfrage-zur-beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-14992646e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/übersicht-1819302m0.md"
+    ],
+    "START_ABO": [
+      "docs-supplemental/start-eines-abonnements-von-normierten-profilen-und-profilscharen-vom-lf-bzw-ünb-an-nb-2430570m0.md"
+    ],
+    "START_ABO_PROFILE": [
+      "docs-supplemental/start-eines-abonnements-von-normierten-profilen-und-profilscharen-vom-lf-bzw-ünb-an-nb-2430570m0.md"
+    ],
+    "START_ABR_BK": [
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-861922m0.md",
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-versenden-14994259e0.md",
+      "docs-supplemental/einzelansicht-nb-3110891f0.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/trigger-nb.md"
+    ],
+    "START_ABR_NN": [
+      "docs-supplemental/abrechnungsdaten-netznutzungsabrechnung-rolle-nb-861920m0.md",
+      "docs-supplemental/abrechnungsdaten-netznutzungsabrechnung-versenden-14333071e0.md",
+      "docs-supplemental/changelog.md",
+      "docs-supplemental/einzelansicht-nb-3110891f0.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/trigger-nb.md",
+      "docs-supplemental/änderungsprotokoll-schnittstellen-849828m0.md"
+    ],
+    "START_ANFORDERUNG_MESSWERTE": [
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_ANFORDERUNG_VON_WERTEN": [
+      "docs-supplemental/anforderung-von-werten-2430120m0.md"
+    ],
+    "START_ANFRAGE_KONFIGURATION": [
+      "docs-supplemental/bestellung-einer-konfiguration-vom-lf-an-msb-lf-1677424m0.md",
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_ANFRAGE_STAMMDATENAENDERUNG": [
+      "docs-supplemental/anfrage-zur-stammdatenänderung-vom-lf-an-msb-verantwortlich-rolle-nb-2043225m0.md",
+      "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-lf-2001021m0.md",
+      "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-lf-2001172m0.md"
+    ],
+    "START_ANGEBOT_GERAETEUEBERNAHME": [
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_AUFHEBUNG_ZUK_ZUORDNUNG_LF": [
+      "docs-supplemental/changelog.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/änderungsprotokoll-schnittstellen-849828m0.md"
+    ],
+    "START_AUFHEBUNG_ZUK_ZUORDNUNG_MSB": [
+      "docs-supplemental/changelog.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/änderungsprotokoll-schnittstellen-849828m0.md"
+    ],
+    "START_AUFH_ZUK_ZUORDNUNG": [
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marklokation-bzw-tranche-versenden-14333135e0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-1982040m0.md",
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-861913m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "START_BEENDIGUNG_DER_ZUORDNUNG_NB_AN_LF": [
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-1982033m0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-861915m0.md"
+    ],
+    "START_BEGINN_MSB": [
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_BERECHNUNGSFORMEL": [
+      "docs-supplemental/berechnungsformel-rolle-nb-861955m0.md",
+      "docs-supplemental/einzelansicht-nb-3110891f0.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/trigger-nb.md",
+      "docs-supplemental/übermittlung-der-berechnungsformel-15090201e0.md"
+    ],
+    "START_BESTELLUNG_ABRECHNUNGSDATEN": [
+      "docs-supplemental/bestellung-abrechnungsdaten-32958376e0.md",
+      "docs-supplemental/bestellung-einer-änderung-von-abrechnungsdaten-von-lf-an-nb-rolle-lf-1868358m0.md",
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_BESTELLUNG_AEND_PROGNOSEGRUNDLAGE": [
+      "docs-supplemental/bestellung-einer-konfiguration-vom-lf-an-nb-lf-1885959m0.md"
+    ],
+    "START_BESTELLUNG_ANGEBOT_KONFIGURATION": [
+      "docs-supplemental/bestellung-einer-konfiguration-vom-lf-an-msb-lf-1677424m0.md",
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_BESTELLUNG_GERAETEUEBERNAHME": [
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_BESTELLUNG_KONFIGURATION": [
+      "docs-supplemental/bestellung-einer-konfiguration-vom-lf-an-msb-lf-1677424m0.md",
+      "docs-supplemental/changelog.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md",
+      "docs-supplemental/änderungsprotokoll-schnittstellen-849828m0.md"
+    ],
+    "START_BESTELLUNG_SDAE": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-1923320m0.md",
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-26910595e0.md",
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_BESTELLUNG_ZAEHLZEITDEFINITION": [
+      "docs-supplemental/bestellung-einer-konfiguration-vom-lf-an-msb-lf-1677424m0.md",
+      "docs-supplemental/bestellung-einer-konfiguration-vom-lf-an-nb-lf-1885959m0.md",
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_EINRICHTUNG_KONFIG": [
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-861937m0.md",
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-zu-einer-malo-oder-tranche-14994418e0.md",
+      "docs-supplemental/einzelansicht-nb-3110891f0.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/trigger-nb.md"
+    ],
+    "START_ENDE_MSB": [
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_ENDE_MSB_STILLLEGUNG": [
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_ENDE_ZUORDNUNG": [
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marklokation-bzw-tranche-14994219e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "START_ENDE_ZUORDUNG": [
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marklokation-bzw-tranche-14994219e0.md",
+      "docs-supplemental/einzelansicht-nb-3110891f0.md",
+      "docs-supplemental/trigger-nb.md"
+    ],
+    "START_EOG": [
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-861924m0.md",
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-strom-861924m0.md",
+      "docs-supplemental/ersatz-grundversorgung-14984068e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md"
+    ],
+    "START_ERHEBUNG_MESSWERTE": [
+      "docs-supplemental/aufbereitung-und-übermittlung-von-werten-rolle-msb-1981808m0.md",
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md",
+      "docs-supplemental/übermittlung-von-zählerständen-vom-lf-26625651e0.md",
+      "docs-supplemental/übermittlung-von-zählerständen-vom-lf-rolle-lf-1915437m0.md",
+      "docs-supplemental/übermittlung-von-zählerständen-vom-nb-28679013e0.md",
+      "docs-supplemental/übermittlung-von-zählerständen-vom-nb-rolle-nb-1981792m0.md"
+    ],
+    "START_GERAETEUEBERNAHME": [
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_GERAETEWECHSEL": [
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_GESCHAEFTSDATENANFRAGE": [
+      "docs-supplemental/geschäftsdatenanfrage-42308588e0.md",
+      "docs-supplemental/geschäftsdatenanfrage-lf-an-nb-2319829m0.md",
+      "docs-supplemental/geschäftsdatenanfrage-von-messstellenbetreiber-an-netzbetreiber-rolle-nb-1998706m0.md",
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_KUENDIGUNG": [
+      "docs-supplemental/changelog.md",
+      "docs-supplemental/kündigungsprozess-zwischen-lieferanten-14987263e0.md",
+      "docs-supplemental/prozessübersicht-860891m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/änderungsprotokoll-schnittstellen-849828m0.md"
+    ],
+    "START_KUENDIGUNG_MSB": [
+      "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271853m0.md",
+      "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271855m0.md",
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_LIEFERBEGINN": [
+      "docs-supplemental/anmeldung-nn-1930553m0.md",
+      "docs-supplemental/changelog.md",
+      "docs-supplemental/lieferbeginn-14992210e0.md",
+      "docs-supplemental/neuanlage-1923206m0.md",
+      "docs-supplemental/prozessübersicht-853953m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/trigger-maco-app-3036543f0.md",
+      "docs-supplemental/änderungsprotokoll-schnittstellen-849828m0.md"
+    ],
+    "START_LIEFERENDE": [
+      "docs-supplemental/changelog.md",
+      "docs-supplemental/einzelansicht-nb-3110891f0.md",
+      "docs-supplemental/kommunikationsdatenblatt-partin-39080749e0.md",
+      "docs-supplemental/lieferende-lf-nb-rolle-lf-860905m0.md",
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-861909m0.md",
+      "docs-supplemental/lieferende-von-lieferant-an-netzbetreiber-14992421e0.md",
+      "docs-supplemental/lieferende-von-netzbetreiber-an-lieferant-15090292e0.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/trigger-nb.md",
+      "docs-supplemental/änderungsprotokoll-schnittstellen-849828m0.md"
+    ],
+    "START_MALOIDENT": [
+      "docs-supplemental/changelog.md",
+      "docs-supplemental/identifikation-einer-marktlokation-14987188e0.md",
+      "docs-supplemental/identifikation-einer-marktlokation-16024919e0.md",
+      "docs-supplemental/maloident-anfrage-auslösen-15144286e0.md",
+      "docs-supplemental/prozessübersicht-860918m0.md",
+      "docs-supplemental/prozessübersicht-892746m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/änderungsprotokoll-schnittstellen-849828m0.md"
+    ],
+    "START_MESSWERTUEBERMITTLUNG": [
+      "docs-supplemental/changelog.md",
+      "docs-supplemental/änderungsprotokoll-schnittstellen-849828m0.md"
+    ],
+    "START_N_BILA_REL_AEND_VON_LF": [
+      "docs-supplemental/changelog.md",
+      "docs-supplemental/änderungsprotokoll-schnittstellen-849828m0.md"
+    ],
+    "START_N_BILA_REL_AEND_VON_NB": [
+      "docs-supplemental/changelog.md",
+      "docs-supplemental/änderungsprotokoll-schnittstellen-849828m0.md"
+    ],
+    "START_PARTIN": [
+      "docs-supplemental/kommunikationsdatenblatt-partin-39080749e0.md",
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md",
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236630m0.md",
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236813m0.md",
+      "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236816m0.md"
+    ],
+    "START_REKLAMATION_DEFINITION": [
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_REKLAMATION_VON_WERTEN": [
+      "docs-supplemental/reklamation-von-werten-2430261m0.md"
+    ],
+    "START_STAMMDATENAENDERUNG_MALO_AN_LF": [
+      "docs-supplemental/changelog.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/änderungsprotokoll-schnittstellen-849828m0.md"
+    ],
+    "START_STAMMDATENAENDERUNG_MALO_AN_MSB": [
+      "docs-supplemental/changelog.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/änderungsprotokoll-schnittstellen-849828m0.md"
+    ],
+    "START_UEBERMITTLUNG_BERECHNUNGSFORMEL": [
+      "docs-supplemental/berechnungsformel-rolle-nb-861955m0.md"
+    ],
+    "START_UEBERMITTLUNG_ENFG": [
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_UEBERM_DEFINITION": [
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_UEBERSICHT_LEISTUNGSKURVENDEF": [
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_UEBERSICHT_SCHALTZEITDEF": [
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_UEBERSICHT_ZAEHLZEITDEF": [
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_VERSAND_ABR_BILA": [
+      "docs-supplemental/changelog.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/änderungsprotokoll-schnittstellen-849828m0.md"
+    ],
+    "START_VERSAND_ANF_STORNO": [
+      "docs-supplemental/anfrage-nach-stornierung-21893877e0.md",
+      "docs-supplemental/anfrage-nach-stornierung-21894158e0.md",
+      "docs-supplemental/anfrage-nach-stornierung-21894185e0.md",
+      "docs-supplemental/prozessübersicht-1621227m0.md",
+      "docs-supplemental/prozessübersicht-1621257m0.md",
+      "docs-supplemental/prozessübersicht-1621259m0.md",
+      "docs-supplemental/reklamation-von-werten-27333474e0.md",
+      "docs-supplemental/stornierung-lieferschein-27329360e0.md",
+      "docs-supplemental/widerspruch-gegen-ablehnung-27328472e0.md",
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md",
+      "docs-supplemental/übermittlung-des-lieferscheins-zur-netznutzungsabrechnung-27328140e0.md",
+      "docs-supplemental/überprüfung-einer-eeg-marktlokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-nb-vnb-1678015m0.md"
+    ],
+    "START_VERSAND_ANTWORT_NNA": [
+      "docs-supplemental/netznutzungsabrechnung-1981958m0.md",
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_VERSAND_BEARB_MELDUNG": [
+      "docs-supplemental/changelog.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/änderungsprotokoll-schnittstellen-849828m0.md"
+    ],
+    "START_VERSAND_BESTANDSLISTE": [
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_VERSAND_BEST_BEEND_KONFIG": [
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_VERSAND_LIEFERSCHEIN": [
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md",
+      "docs-supplemental/übermittlung-des-lieferscheins-zur-netznutzungsabrechnung-rolle-nb-1946224m0.md"
+    ],
+    "START_VERSAND_PREISBLATT_IMS": [
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_VERSAND_SDAE": [
+      "docs-supplemental/bestellung-zur-stammdatenänderung-an-nb-msb-lieferant-26910595e0.md",
+      "docs-supplemental/einzelansicht-lf-3110897f0.md",
+      "docs-supplemental/einzelansicht-nb-3110891f0.md",
+      "docs-supplemental/stammdatenänderung-vom-lieferant-verantwortlich-ausgehend-2265075m0.md",
+      "docs-supplemental/stammdatenänderung-vom-lieferanten-verantwortlich-15239974e0.md",
+      "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md",
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-861960m0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md",
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-861934m0.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/trigger-lf.md",
+      "docs-supplemental/trigger-nb.md"
+    ],
+    "START_VERSAND_STATUSMELDUNG": [
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
+    ],
+    "START_VERSAND_STORNO_MSCONS": [
+      "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md",
+      "docs-supplemental/übermittlung-des-lieferscheins-zur-netznutzungsabrechnung-rolle-nb-1946224m0.md"
+    ],
+    "START_WIEDERHERST_LB": [
+      "docs-supplemental/einzelansicht-nb-3110891f0.md",
+      "docs-supplemental/trigger-events-14016919e0.md",
+      "docs-supplemental/trigger-nb.md",
+      "docs-supplemental/wiederherstellung-anschlussnutzung-nach-lb-15090248e0.md",
+      "docs-supplemental/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-nb-861947m0.md",
+      "docs-supplemental/überprüfung-einner-eeg-marklokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-nb-25151089e0.md"
+    ],
+    "START_WIEDERSPRUCH_ABLEHNUNG": [
+      "docs-supplemental/übermittlung-des-lieferscheins-zur-netznutzungsabrechnung-rolle-nb-1946224m0.md"
+    ],
+    "START_ZUORDNUNG_ERZ_MALO_TRANCHE": [
+      "docs-supplemental/einzelansicht-nb-3110891f0.md",
+      "docs-supplemental/trigger-nb.md",
+      "docs-supplemental/überprüfung-einer-eeg-marktlokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-nb-vnb-1678015m0.md",
+      "docs-supplemental/überprüfung-einner-eeg-marklokation-mit-dv-pflicht-auf-100-lf-zuordnung-rolle-nb-25151089e0.md"
+    ]
+  },
+  "by_process_name": {
+    "abmeldeanfrage-nb-lf-rolle-lfa": [
+      "docs-supplemental/abmeldeanfrage-nb-lf-rolle-lfa-3118774f0.md",
+      "docs-supplemental/abmeldeanfrage-strom-nb-lf-rolle-lfa-3118774f0.md"
+    ],
+    "abmeldeanfrage-nb-lfa-rolle-nb": [
+      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md"
+    ],
+    "abrechnungsdaten-bilanzkreisabrechnung-rolle-lf": [
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-lf-3130133f0.md"
+    ],
+    "abrechnungsdaten-bilanzkreisabrechnung-rolle-nb": [
+      "docs-supplemental/abrechnungsdaten-bilanzkreisabrechnung-rolle-nb-3130418f0.md"
+    ],
+    "abrechnungsdaten-netznutzungsabrechnung-rolle-lf": [
+      "docs-supplemental/abrechnungsdaten-netznutzungsabrechnung-rolle-lf-3130129f0.md"
+    ],
+    "abrechnungsdaten-netznutzungsabrechnung-rolle-nb": [
+      "docs-supplemental/abrechnungsdaten-netznutzungsabrechnung-rolle-nb-3130409f0.md"
+    ],
+    "anfrage-nach-stornierung": [
+      "docs-supplemental/stornierung-5000861f0.md",
+      "docs-supplemental/stornierung-5001051f0.md",
+      "docs-supplemental/stornierung-5001068f0.md"
+    ],
+    "aperak-formatumstellung-01-10-2026": [
+      "docs-supplemental/aperak-formatumstellung-01-10-2026-2216242m0.md"
+    ],
+    "aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz": [
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-3130103f0.md"
+    ],
+    "aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb": [
+      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md"
+    ],
+    "authentifizierung": [
+      "docs-supplemental/authentifizierung-15828008e0.md"
+    ],
+    "beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa": [
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-lieferant-alt-3130117f0.md",
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-3130117f0.md"
+    ],
+    "beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb": [
+      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md"
+    ],
+    "beginn-der-ersatz-grundversorgung-rolle-lf": [
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-lf-3130121f0.md"
+    ],
+    "beginn-der-ersatz-grundversorgung-rolle-nb": [
+      "docs-supplemental/beginn-der-ersatz-grundversorgung-rolle-nb-3130402f0.md"
+    ],
+    "berechnungsformel-rolle-lf": [
+      "docs-supplemental/berechnungsformel-rolle-lf-3130236f0.md"
+    ],
+    "berechnungsformel-rolle-nb": [
+      "docs-supplemental/berechnungsformel-rolle-nb-3130464f0.md"
+    ],
+    "einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb": [
+      "docs-supplemental/einrichtung-der-konfiguration-aufgrund-einer-zuordnung-eines-lf-zu-einer-marktlokation-oder-tranche-rolle-nb-3130506f0.md"
+    ],
+    "einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb": [
+      "docs-supplemental/einrichtung-der-konfigurationen-aufgrund-einer-zuordnung-eines-lf-msb-3267870f0.md"
+    ],
+    "formatwechsel-10-2026-was-kommt-zum-01-10-2026": [
+      "docs-supplemental/formatwechsel-102026-was-kommt-zum-01-10-2026-2216227m0.md"
+    ],
+    "iftsta-formatumstellung-01-10-2026": [
+      "docs-supplemental/iftsta-formatumstellung-01-10-2026-2216236m0.md"
+    ],
+    "invoic-formatumstellung-01-10-2026": [
+      "docs-supplemental/invoic-formatumstellung-01-10-2026-2216239m0.md"
+    ],
+    "kuendigung-lfa": [
+      "docs-supplemental/kündigung-lfa-3118804f0.md"
+    ],
+    "kuendigung-lfn": [
+      "docs-supplemental/kündigung-lfn-3118848f0.md"
+    ],
+    "lieferant-formatumstellung-01-10-2026": [
+      "docs-supplemental/-lieferant-formatumstellung-01-10-2026-2216228m0.md"
+    ],
+    "lieferbeginn": [
+      "docs-supplemental/lieferbeginn-strom-rolle-lfn-3062389f0.md",
+      "docs-supplemental/lieferbeginn.md"
+    ],
+    "lieferbeginn-rolle-nb": [
+      "docs-supplemental/lieferbeginn-rolle-nb-3108594f0.md"
+    ],
+    "lieferende-lf-nb-rolle-lf": [
+      "docs-supplemental/lieferende-lf-nb-rolle-lf-3119196f0.md"
+    ],
+    "lieferende-lf-nb-rolle-nb": [
+      "docs-supplemental/lieferende-lf-nb-rolle-nb-3119240f0.md"
+    ],
+    "lieferende-nb-lf-rolle-lf": [
+      "docs-supplemental/lieferende-nb-lf-rolle-lf-3129676f0.md"
+    ],
+    "lieferende-nb-lf-rolle-nb": [
+      "docs-supplemental/lieferende-nb-lf-rolle-nb-3130313f0.md"
+    ],
+    "malo-ident-rolle-lf": [
+      "docs-supplemental/malo-ident-rolle-lf-3119288f0.md",
+      "docs-supplemental/malo-ident-rolle-lf-3312793f0.md"
+    ],
+    "malo-ident-rolle-nb": [
+      "docs-supplemental/malo-ident-rolle-nb-3119292f0.md",
+      "docs-supplemental/malo-ident-rolle-nb-3312796f0.md"
+    ],
+    "messstellenbetreiber-formatumstellung-01-10-2026": [
+      "docs-supplemental/-messstellenbetreiber-formatumstellung-01-10-2026-2216230m0.md"
+    ],
+    "mscons-formatumstellung-01-10-2026": [
+      "docs-supplemental/mscons-formatumstellung-01-10-2026-2216241m0.md"
+    ],
+    "netzbetreiber-formatumstellung-01-10-2026": [
+      "docs-supplemental/-netzbetreiber-formatumstellung-01-10-2026-2216229m0.md"
+    ],
+    "ordchg-formatumstellung-01-10-2026": [
+      "docs-supplemental/ordchg-formatumstellung-01-10-2026-2216243m0.md"
+    ],
+    "orders-formatumstellung-01-10-2026": [
+      "docs-supplemental/orders-formatumstellung-01-10-2026-2216240m0.md"
+    ],
+    "ordrsp-formatumstellung-01-10-2026": [
+      "docs-supplemental/ordrsp-formatumstellung-01-10-2026-2216244m0.md"
+    ],
+    "partin-formatumstellung-01-10-2026": [
+      "docs-supplemental/partin-formatumstellung-01-10-2026-2216237m0.md"
+    ],
+    "pricat-formatumstellung-01-10-2026": [
+      "docs-supplemental/pricat-formatumstellung-01-10-2026-2216238m0.md"
+    ],
+    "quotes-formatumstellung-01-10-2026": [
+      "docs-supplemental/quotes-formatumstellung-01-10-2026-2216235m0.md"
+    ],
+    "reqote-formatumstellung-01-10-2026": [
+      "docs-supplemental/reqote-formatumstellung-01-10-2026-2216233m0.md"
+    ],
+    "stammdatenaenderung-vom-msb-verantwortlich-rolle-lf": [
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md"
+    ],
+    "stammdatenaenderung-vom-msb-verantwortlich-rolle-msb": [
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-msb-3130697f0.md"
+    ],
+    "stammdatenaenderung-vom-msb-verantwortlich-rolle-nb": [
+      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-3130514f0.md"
+    ],
+    "stammdatenaenderung-vom-netzbetreiber-verantwortlich-rolle-lf": [
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md"
+    ],
+    "stammdatenaenderung-vom-netzbetreiber-verantwortlich-rolle-msb": [
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-msb-3130658f0.md"
+    ],
+    "stammdatenaenderung-vom-netzbetreiber-verantwortlich-rolle-nb": [
+      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-nb-3130420f0.md"
+    ],
+    "uebergreifend-formatumstellung-01-10-2026": [
+      "docs-supplemental/-übergreifend-formatumstellung-01-10-2026-2216231m0.md"
+    ],
+    "uebersicht": [
+      "docs-supplemental/übersicht-1819302m0.md",
+      "docs-supplemental/übersicht-2214863m0.md",
+      "docs-supplemental/übersicht-849494m0.md",
+      "docs-supplemental/übersicht-895124m0.md"
+    ],
+    "utilmd-strom-formatumstellung-01-10-2026": [
+      "docs-supplemental/utilmd-strom-formatumstellung-01-10-2026-2216245m0.md"
+    ],
+    "utilts-formatumstellung-01-10-2026": [
+      "docs-supplemental/utilts-formatumstellung-01-10-2026-2216234m0.md"
+    ],
+    "wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-msb": [
+      "docs-supplemental/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-msb-3130714f0.md"
+    ],
+    "wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-nb": [
+      "docs-supplemental/wiederherstellung-der-anschlussnutzung-bei-lieferbeginn-rolle-nb-3130602f0.md"
+    ]
+  }
+}
