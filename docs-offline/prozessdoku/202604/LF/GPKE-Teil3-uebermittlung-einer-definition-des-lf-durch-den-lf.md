@@ -43,7 +43,7 @@
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_UEBERM_DEFINITION`](/schnittstellen/202604/trigger/events/LF-START_UEBERM_DEFINITION) · [Im Playground ausprobieren](/api/202604/ausloeser-lf/start-ueberm-definition)
+**Prozessauslöser** [`START_UEBERM_DEFINITION`](/api/202604/ausloeser-lf/start-ueberm-definition) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"ZAEHLZEITDEFINITION\": [\n      {\n        \"beginndatum\": \"<beginndatum>\",\n        \"code\": \"<code>\",\n        \"version\": \"<version>\",\n        \"zaehlzeiten\": [\n          \"<zaehlzeiten>\"\n        ]\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"anfrageReferenz\": \"<anfrageReferenz>\",\n    \"empfaenger\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_UEBERM_DEFINITION\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 
@@ -95,7 +95,7 @@ Schreibt den bestehenden Vorgang im Backend fort, nachdem die Nachricht erstellt
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_UEBERM_DEFINITION`](/schnittstellen/202604/trigger/events/LF-START_UEBERM_DEFINITION) · [Im Playground ausprobieren](/api/202604/ausloeser-lf/start-ueberm-definition)
+**Prozessauslöser** [`START_UEBERM_DEFINITION`](/api/202604/ausloeser-lf/start-ueberm-definition) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"ZAEHLZEITDEFINITION\": [\n      {\n        \"beginndatum\": \"<beginndatum>\",\n        \"code\": \"<code>\",\n        \"version\": \"<version>\",\n        \"zaehlzeiten\": [\n          \"<zaehlzeiten>\"\n        ]\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"anfrageReferenz\": \"<anfrageReferenz>\",\n    \"empfaenger\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_UEBERM_DEFINITION\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

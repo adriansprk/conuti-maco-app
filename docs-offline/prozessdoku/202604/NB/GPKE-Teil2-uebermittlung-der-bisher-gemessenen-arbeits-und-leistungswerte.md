@@ -40,7 +40,7 @@ Der NB übermittelt nach Erreichen des unterjährigen Zuordnungsbeginns des LF z
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_VERSAND_GEMESSENE_ARB_LEIST_WERTE`](/schnittstellen/202604/trigger/events/NB-START_VERSAND_GEMESSENE_ARB_LEIST_WERTE) · [Im Playground ausprobieren](/api/202604/ausloeser-nb/start-versand-gemessene-arb-leist-werte)
+**Prozessauslöser** [`START_VERSAND_GEMESSENE_ARB_LEIST_WERTE`](/api/202604/ausloeser-nb/start-versand-gemessene-arb-leist-werte) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"ENERGIEMENGE\": [\n      {\n        \"energieverbrauch\": [\n          \"<energieverbrauch>\"\n        ],\n        \"lokationsId\": \"<lokationsId>\"\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"anfrageReferenz\": \"<anfrageReferenz>\",\n    \"empfaenger\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_VERSAND_GEMESSENE_ARB_LEIST_WERTE\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

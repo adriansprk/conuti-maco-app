@@ -62,8 +62,8 @@ paths:
               schema:
                 type: object
                 properties: {}
-                x-apidog-orders: []
-                x-apidog-ignore-properties: []
+                x--orders: []
+                x--ignore-properties: []
           headers: {}
           x-apidog-name: Bad Request
       security:
@@ -145,7 +145,15 @@ components:
                   - lokationsadresse
                   - katasterinformation
                   - geokoordinaten
-                x-apidog-ignore-properties: []
+                x--orders:
+                  - boTyp
+                  - versionStruktur
+                  - marktlokationsId
+                  - energierichtung
+                  - lokationsadresse
+                  - katasterinformation
+                  - geokoordinaten
+                x--ignore-properties: []
             TRANCHE:
               type: array
               items:
@@ -179,7 +187,11 @@ components:
                   - boTyp
                   - versionStruktur
                   - tranchenId
-                x-apidog-ignore-properties: []
+                x--orders:
+                  - boTyp
+                  - versionStruktur
+                  - tranchenId
+                x--ignore-properties: []
             MESSLOKATION:
               type: array
               items:
@@ -213,7 +225,11 @@ components:
                   - boTyp
                   - versionStruktur
                   - messlokationsId
-                x-apidog-ignore-properties: []
+                x--orders:
+                  - boTyp
+                  - versionStruktur
+                  - messlokationsId
+                x--ignore-properties: []
             ZAEHLER:
               type: array
               items:
@@ -246,7 +262,11 @@ components:
                   - boTyp
                   - versionStruktur
                   - zaehlernummer
-                x-apidog-ignore-properties: []
+                x--orders:
+                  - boTyp
+                  - versionStruktur
+                  - zaehlernummer
+                x--ignore-properties: []
             ENERGIELIEFERVERTRAG:
               type: array
               items:
@@ -352,7 +372,10 @@ components:
                             x-apidog-orders:
                               - exRefName
                               - exRefWert
-                            x-apidog-ignore-properties: []
+                            x--orders:
+                              - exRefName
+                              - exRefWert
+                            x--ignore-properties: []
                       x-apidog-orders:
                         - boTyp
                         - versionStruktur
@@ -362,7 +385,16 @@ components:
                         - gewerbekennzeichnung
                         - geschaeftspartnerrolle
                         - externeReferenzen
-                      x-apidog-ignore-properties: []
+                      x--orders:
+                        - boTyp
+                        - versionStruktur
+                        - anrede
+                        - name1
+                        - name2
+                        - gewerbekennzeichnung
+                        - geschaeftspartnerrolle
+                        - externeReferenzen
+                      x--ignore-properties: []
                 required:
                   - boTyp
                   - versionStruktur
@@ -371,7 +403,12 @@ components:
                   - versionStruktur
                   - vertragsart
                   - vertragspartner2
-                x-apidog-ignore-properties: []
+                x--orders:
+                  - boTyp
+                  - versionStruktur
+                  - vertragsart
+                  - vertragspartner2
+                x--ignore-properties: []
           required:
             - MARKTLOKATION
           x-apidog-orders:
@@ -380,7 +417,13 @@ components:
             - MESSLOKATION
             - ZAEHLER
             - ENERGIELIEFERVERTRAG
-          x-apidog-ignore-properties: []
+          x--orders:
+            - MARKTLOKATION
+            - TRANCHE
+            - MESSLOKATION
+            - ZAEHLER
+            - ENERGIELIEFERVERTRAG
+          x--ignore-properties: []
         transaktionsdaten:
           type: object
           description: >
@@ -441,7 +484,9 @@ components:
                 - rollencodenummer
               x-apidog-orders:
                 - rollencodenummer
-              x-apidog-ignore-properties: []
+              x--orders:
+                - rollencodenummer
+              x--ignore-properties: []
             empfaenger:
               type: object
               description: >-
@@ -459,7 +504,9 @@ components:
                 - rollencodenummer
               x-apidog-orders:
                 - rollencodenummer
-              x-apidog-ignore-properties: []
+              x--orders:
+                - rollencodenummer
+              x--ignore-properties: []
           required:
             - vorgangsnummer
             - ausfuehrungsdatum
@@ -472,14 +519,24 @@ components:
             - idempodenzschluessel
             - absender
             - empfaenger
-          x-apidog-ignore-properties: []
+          x--orders:
+            - vorgangsnummer
+            - nachrichtendatum
+            - ausfuehrungsdatum
+            - idempodenzschluessel
+            - absender
+            - empfaenger
+          x--ignore-properties: []
       required:
         - stammdaten
         - transaktionsdaten
       x-apidog-orders:
         - stammdaten
         - transaktionsdaten
-      x-apidog-ignore-properties: []
+      x--orders:
+        - stammdaten
+        - transaktionsdaten
+      x--ignore-properties: []
       x-apidog-folder: ''
     Geokoordinaten:
       title: Geokoordinaten
@@ -514,7 +571,15 @@ components:
         - zone
         - hochwert
         - rechtswert
-      x-apidog-ignore-properties: []
+      x--orders:
+        - breitengrad
+        - laengengrad
+        - ostwert
+        - nordwert
+        - zone
+        - hochwert
+        - rechtswert
+      x--ignore-properties: []
       x-apidog-folder: ''
     Zone:
       title: Zone
@@ -542,7 +607,11 @@ components:
         - gemarkung_flur
         - flurstueck
         - flurstueckNummer
-      x-apidog-ignore-properties: []
+      x--orders:
+        - gemarkung_flur
+        - flurstueck
+        - flurstueckNummer
+      x--ignore-properties: []
       x-apidog-folder: ''
     Adresse:
       title: Adresse
@@ -589,7 +658,18 @@ components:
         - landescode
         - ortsteil
         - zusatzInformation
-      x-apidog-ignore-properties: []
+      x--orders:
+        - postleitzahl
+        - ort
+        - strasse
+        - hausnummer
+        - postfach
+        - adresszusatz
+        - coErgaenzung
+        - landescode
+        - ortsteil
+        - zusatzInformation
+      x--ignore-properties: []
       x-apidog-folder: ''
     AdresszusatzInformation:
       title: AdresszusatzInformation
@@ -616,7 +696,13 @@ components:
         - zusatz3
         - zusatz4
         - zusatz5
-      x-apidog-ignore-properties: []
+      x--orders:
+        - zusatz1
+        - zusatz2
+        - zusatz3
+        - zusatz4
+        - zusatz5
+      x--ignore-properties: []
       x-apidog-folder: ''
     Landescode:
       title: Landescode
@@ -1073,7 +1159,21 @@ components:
               - trefferStillgelegt
               - trefferNetzgebiet
               - trefferNetzgebiet3KJ
-            x-apidog-ignore-properties: []
+            x--orders:
+              - lokationsId
+              - trefferMaloid
+              - trefferTrancheId
+              - trefferAdresse1
+              - trefferKundennummer
+              - trefferName
+              - trefferGeraetenummer
+              - trefferMeloid
+              - trefferAdresse2
+              - trefferMakorelevant
+              - trefferStillgelegt
+              - trefferNetzgebiet
+              - trefferNetzgebiet3KJ
+            x--ignore-properties: []
       required:
         - maloIdentDaten
       x-apidog-orders:
@@ -1093,7 +1193,9 @@ components:
               trefferStillgelegt: false
               trefferNetzgebiet: true
               trefferNetzgebiet3KJ: true
-      x-apidog-ignore-properties: []
+      x--orders:
+        - maloIdentDaten
+      x--ignore-properties: []
       x-apidog-folder: ''
   securitySchemes:
     bearer:

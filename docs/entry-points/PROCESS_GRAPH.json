@@ -1,10 +1,10 @@
 {
   "version": "4.0.0-strom-source-index",
-  "manifest_sha256": "5d20bbeb1b6cd8568dbbf7e18e4d7bc6bd4750b84e7405cc11e16175591e3186",
+  "manifest_sha256": "452909d1a307891188c7c87843f94a96a319a275165e3e428c69f2358592c1c0",
   "description": "Strom source discovery only. Read the linked pages; do not infer process branches from SVG order.",
   "source_files": {
-    "new": 3447,
-    "supplemental": 346
+    "new": 3445,
+    "supplemental": 316
   },
   "indexes": {
     "by_bdew_id": {
@@ -27,7 +27,6 @@
         "docs-offline/schnittstellen/202604/trigger/events/MSB-START_MESSWERTUEBERMITTLUNG.md",
         "docs-offline/schnittstellen/202604/trigger/events/NB-START_ANFRAGE_MESSWERTE_NB.md",
         "docs-offline/schnittstellen/202604/trigger/events/NB-START_ERHEBUNG_MESSWERTE.md",
-        "docs-supplemental/gerätewechsel-rolle-nb-vnb-1946520m0.md",
         "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
         "docs-offline/bo4e/202610/bo/Energiemenge.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
@@ -164,7 +163,6 @@
         "docs-offline/schnittstellen/202604/trigger/events/LF-START_VERSAND_STORNO_MSCONS.md",
         "docs-offline/schnittstellen/202604/trigger/events/MSB-START_VERSAND_STORNO_MSCONS.md",
         "docs-offline/schnittstellen/202604/trigger/events/NB-START_VERSAND_STORNO_MSCONS.md",
-        "docs-supplemental/gerätewechsel-rolle-nb-vnb-1946520m0.md",
         "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
         "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
         "docs-supplemental/stornierung-werte-vom-msb-der-marktlokation-rolle-lf-1820445m0.md",
@@ -183,7 +181,6 @@
         "docs-offline/schnittstellen/202610/trigger/events/MSB-START_MESSWERTUEBERMITTLUNG.md",
         "docs-offline/schnittstellen/202604/trigger/events/MSB-START_ERHEBUNG_MESSWERTE.md",
         "docs-offline/schnittstellen/202604/trigger/events/MSB-START_MESSWERTUEBERMITTLUNG.md",
-        "docs-supplemental/gerätewechsel-rolle-nb-vnb-1946520m0.md",
         "docs-offline/bo4e/202610/bo/Energiemenge.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/cdoc/Transaktionsdaten.md",
@@ -214,7 +211,6 @@
         "docs-offline/schnittstellen/202604/trigger/events/MSB-START_MESSWERTUEBERMITTLUNG.md",
         "docs-offline/schnittstellen/202604/trigger/events/NB-START_ANFRAGE_MESSWERTE_NB.md",
         "docs-offline/schnittstellen/202604/trigger/events/NB-START_ERHEBUNG_MESSWERTE.md",
-        "docs-supplemental/gerätewechsel-rolle-nb-vnb-1946520m0.md",
         "docs-offline/bo4e/202610/bo/Energiemenge.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/cdoc/Transaktionsdaten.md",
@@ -245,7 +241,6 @@
         "docs-offline/schnittstellen/202604/trigger/events/MSB-START_MESSWERTUEBERMITTLUNG.md",
         "docs-offline/schnittstellen/202604/trigger/events/NB-START_ANFRAGE_MESSWERTE_NB.md",
         "docs-offline/schnittstellen/202604/trigger/events/NB-START_ERHEBUNG_MESSWERTE.md",
-        "docs-supplemental/gerätewechsel-rolle-nb-vnb-1946520m0.md",
         "docs-offline/bo4e/202610/bo/Energiemenge.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/cdoc/Transaktionsdaten.md",
@@ -3783,7 +3778,6 @@
         "docs-offline/prozessdoku/202604/MSB--MSBN/WiM-Teil1-beginn-messstellenbetrieb.md",
         "docs-offline/prozessdoku/202604/NB/WiM-Teil1-beginn-messstellenbetrieb.md",
         "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md",
-        "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/cdoc/Transaktionsdaten.md",
         "docs-offline/bo4e/202610/com/StatusmitteilungPosition.md",
@@ -3810,7 +3804,6 @@
         "docs-offline/prozessdoku/202604/NB/WiM-Teil1-beginn-messstellenbetrieb.md",
         "docs-offline/referenz/202604/ebd/E_0232.md",
         "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md",
-        "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/cdoc/Transaktionsdaten.md",
         "docs-offline/bo4e/202610/com/StatusmitteilungPosition.md",
@@ -3846,7 +3839,6 @@
         "docs-offline/prozessdoku/202604/NB/WiM-Teil1-beginn-messstellenbetrieb.md",
         "docs-offline/prozessdoku/202604/NB/WiM-Teil1-verpflichtung-gmsb.md",
         "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md",
-        "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/cdoc/Transaktionsdaten.md",
         "docs-offline/bo4e/202610/com/StatusmitteilungPosition.md",
@@ -3875,7 +3867,6 @@
         "docs-offline/referenz/202610/ebd/E_2003.md",
         "docs-offline/referenz/202604/ebd/E_0232.md",
         "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md",
-        "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/cdoc/Transaktionsdaten.md",
         "docs-offline/bo4e/202610/com/StatusmitteilungPosition.md",
@@ -3903,7 +3894,6 @@
         "docs-offline/prozessdoku/202604/NB/WiM-Teil1-verpflichtung-gmsb.md",
         "docs-offline/referenz/202610/ebd/E_2003.md",
         "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md",
-        "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/cdoc/Transaktionsdaten.md",
         "docs-offline/bo4e/202610/com/StatusmitteilungPosition.md",
@@ -3927,7 +3917,6 @@
         "docs-offline/prozessdoku/202604/MSB--MSBN/WiM-Teil1-beginn-messstellenbetrieb.md",
         "docs-offline/prozessdoku/202604/NB/WiM-Teil1-beginn-messstellenbetrieb.md",
         "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md",
-        "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/cdoc/Transaktionsdaten.md",
         "docs-offline/bo4e/202610/com/StatusmitteilungPosition.md",
@@ -3941,7 +3930,6 @@
       ],
       "21015": [
         "docs-offline/schnittstellen/202604/pruefi/IFTSTA/PI_21015.md",
-        "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md",
         "docs-offline/bo4e/202604/bo/Ansprechpartner.md",
         "docs-offline/bo4e/202604/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202604/bo/Messlokation.md",
@@ -6465,8 +6453,6 @@
       "44001": [
         "docs-offline/schnittstellen/202610/trigger/events/LF-START_LIEFERBEGINN.md",
         "docs-offline/schnittstellen/202604/trigger/events/LF-START_LIEFERBEGINN.md",
-        "docs-supplemental/anmeldung-nn-1930553m0.md",
-        "docs-supplemental/anmeldung-nn-1973643m0.md",
         "docs-offline/bo4e/202610/bo/Bilanzierung.md",
         "docs-offline/bo4e/202610/bo/Bilanzkreis.md",
         "docs-offline/bo4e/202610/bo/Geschaeftspartner.md",
@@ -6505,8 +6491,6 @@
       "44002": [
         "docs-offline/referenz/202610/ebd/E_3007.md",
         "docs-offline/referenz/202604/ebd/E_3007.md",
-        "docs-supplemental/anmeldung-nn-1930553m0.md",
-        "docs-supplemental/anmeldung-nn-1973643m0.md",
         "docs-offline/bo4e/202610/bo/Bilanzierung.md",
         "docs-offline/bo4e/202610/bo/Bilanzkreis.md",
         "docs-offline/bo4e/202610/bo/Geschaeftspartner.md",
@@ -6557,8 +6541,6 @@
         "docs-offline/referenz/202610/ebd/E_3007.md",
         "docs-offline/referenz/202604/ebd/E_3005.md",
         "docs-offline/referenz/202604/ebd/E_3007.md",
-        "docs-supplemental/anmeldung-nn-1930553m0.md",
-        "docs-supplemental/anmeldung-nn-1973643m0.md",
         "docs-offline/bo4e/202610/bo/Marktlokation.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/cdoc/Transaktionsdaten.md",
@@ -6663,7 +6645,6 @@
         "docs-offline/bo4e/202604/com/Rufnummer.md"
       ],
       "44010": [
-        "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-1982031m0.md",
         "docs-offline/bo4e/202610/bo/Geschaeftspartner.md",
         "docs-offline/bo4e/202610/bo/Marktlokation.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
@@ -6680,7 +6661,6 @@
       "44011": [
         "docs-offline/referenz/202610/ebd/E_3020.md",
         "docs-offline/referenz/202604/ebd/E_3020.md",
-        "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-1982031m0.md",
         "docs-offline/bo4e/202610/bo/Marktlokation.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/bo/Vertrag.md",
@@ -6695,7 +6675,6 @@
       "44012": [
         "docs-offline/referenz/202610/ebd/E_3020.md",
         "docs-offline/referenz/202604/ebd/E_3020.md",
-        "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-1982031m0.md",
         "docs-offline/bo4e/202610/bo/Marktlokation.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/cdoc/Transaktionsdaten.md",
@@ -7050,8 +7029,6 @@
         "docs-offline/bo4e/202604/com/Zeitraum.md"
       ],
       "44036": [
-        "docs-supplemental/anmeldung-nn-1930553m0.md",
-        "docs-supplemental/anmeldung-nn-1973643m0.md",
         "docs-offline/bo4e/202610/bo/Marktlokation.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/cdoc/Transaktionsdaten.md",
@@ -7062,8 +7039,6 @@
         "docs-offline/bo4e/202604/com/Rufnummer.md"
       ],
       "44037": [
-        "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-1982031m0.md",
-        "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-1982033m0.md",
         "docs-offline/bo4e/202610/bo/Bilanzierung.md",
         "docs-offline/bo4e/202610/bo/Marktlokation.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
@@ -7080,7 +7055,6 @@
       "44038": [
         "docs-offline/schnittstellen/202610/trigger/events/NB-START_AUFH_ZUK_ZUORDNUNG.md",
         "docs-offline/schnittstellen/202604/trigger/events/NB-START_AUFH_ZUK_ZUORDNUNG.md",
-        "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-1982040m0.md",
         "docs-offline/bo4e/202610/bo/Bilanzierung.md",
         "docs-offline/bo4e/202610/bo/Marktlokation.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
@@ -7097,8 +7071,6 @@
       "44039": [
         "docs-offline/schnittstellen/202610/trigger/events/MSB-START_KUENDIGUNG_MSB.md",
         "docs-offline/schnittstellen/202604/trigger/events/MSB-START_KUENDIGUNG_MSB.md",
-        "docs-supplemental/-rolle-msba-kündigung-messstellenbetrieb-2271854m0.md",
-        "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271855m0.md",
         "docs-offline/bo4e/202610/bo/Geschaeftspartner.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/bo/Messlokation.md",
@@ -7122,8 +7094,6 @@
         "docs-offline/schnittstellen/202610/trigger/events/MSB-START_KUENDIGUNG_MSB.md",
         "docs-offline/schnittstellen/202604/trigger/events/MSB-START_KUENDIGUNG_MSB.md",
         "docs-offline/referenz/202610/ebd/E_2000.md",
-        "docs-supplemental/-rolle-msba-kündigung-messstellenbetrieb-2271854m0.md",
-        "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271855m0.md",
         "docs-offline/bo4e/202610/bo/Geschaeftspartner.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/bo/Messlokation.md",
@@ -7147,8 +7117,6 @@
         "docs-offline/schnittstellen/202610/trigger/events/MSB-START_KUENDIGUNG_MSB.md",
         "docs-offline/schnittstellen/202604/trigger/events/MSB-START_KUENDIGUNG_MSB.md",
         "docs-offline/referenz/202610/ebd/E_2000.md",
-        "docs-supplemental/-rolle-msba-kündigung-messstellenbetrieb-2271854m0.md",
-        "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271855m0.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/bo/Messlokation.md",
         "docs-offline/bo4e/202610/cdoc/Transaktionsdaten.md",
@@ -7165,7 +7133,6 @@
       "44042": [
         "docs-offline/schnittstellen/202610/trigger/events/MSB-START_BEGINN_MSB.md",
         "docs-offline/schnittstellen/202604/pruefi/nicht-gefuehrt.md",
-        "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md",
         "docs-offline/bo4e/202610/bo/Geschaeftspartner.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/bo/Messlokation.md",
@@ -7178,7 +7145,6 @@
       "44043": [
         "docs-offline/schnittstellen/202610/trigger/events/MSB-START_BEGINN_MSB.md",
         "docs-offline/referenz/202610/ebd/E_2002.md",
-        "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md",
         "docs-offline/bo4e/202610/bo/Geschaeftspartner.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/bo/Messlokation.md",
@@ -7209,7 +7175,6 @@
       "44044": [
         "docs-offline/schnittstellen/202610/trigger/events/MSB-START_BEGINN_MSB.md",
         "docs-offline/referenz/202610/ebd/E_2002.md",
-        "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/bo/Messlokation.md",
         "docs-offline/bo4e/202610/cdoc/Transaktionsdaten.md",
@@ -7384,7 +7349,6 @@
       "44112": [
         "docs-offline/schnittstellen/202610/trigger/events/NB-START_VERSAND_SDAE.md",
         "docs-offline/schnittstellen/202604/trigger/events/NB-START_VERSAND_SDAE.md",
-        "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md",
         "docs-offline/bo4e/202610/bo/Geschaeftspartner.md",
         "docs-offline/bo4e/202610/bo/Marktlokation.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
@@ -15662,16 +15626,22 @@
         "docs-offline/schnittstellen/202604/pruefi/ORDRSP/PI_19012.md",
         "docs-offline/schnittstellen/202604/pruefi/ORDRSP/PI_19301.md",
         "docs-offline/schnittstellen/202604/pruefi/ORDRSP/PI_19302.md",
+        "docs-offline/prozessdoku/202610/LF/MaBiS-beendigung-eines-abonnements-von-normierten-profilen-und-profilscharen-vom-lf-bzw-uenb-an-nb.md",
+        "docs-offline/prozessdoku/202610/LF/MaBiS-start-eines-abonnements-von-normierten-profilen-und-profilscharen-vom-lf-bzw-uenb-an-nb.md",
         "docs-offline/prozessdoku/202610/LF/WiM-Teil1-anfrage-zur-rechnungsabwicklung-des-messstellenbetriebes-ueber-den-lf-durch-den-lf.md",
         "docs-offline/prozessdoku/202610/LF/WiM-Teil1-angebot-zur-rechnungsabwicklung-des-messstellenbetriebes-ueber-den-lf-durch-den-msb.md",
+        "docs-offline/prozessdoku/202610/LF/WiM-Teil1-beendigung-rechnungsabwicklung-des-messstellenbetriebes-ueber-den-lf-durch-den-lf.md",
         "docs-offline/prozessdoku/202610/MSB/WiM-Teil1-anfrage-zur-rechnungsabwicklung-des-messstellenbetriebes-ueber-den-lf-durch-den-lf.md",
         "docs-offline/prozessdoku/202610/MSB/WiM-Teil1-angebot-zur-rechnungsabwicklung-des-messstellenbetriebes-ueber-den-lf-durch-den-msb.md",
+        "docs-offline/prozessdoku/202610/MSB/WiM-Teil1-beendigung-rechnungsabwicklung-des-messstellenbetriebes-ueber-den-lf-durch-den-msb.md",
         "docs-offline/prozessdoku/202610/MSB/WiM-Teil2-anfrage-und-bestellung-von-werten-durch-den-esa.md",
         "docs-offline/prozessdoku/202610/MSB/WiM-Teil2-beendigung-der-uebermittlung-von-werten-an-esa-durch-esa.md",
         "docs-offline/prozessdoku/202604/LF/WiM-Teil1-anfrage-zur-rechnungsabwicklung-des-messstellenbetriebes-ueber-den-lf-durch-den-lf.md",
         "docs-offline/prozessdoku/202604/LF/WiM-Teil1-angebot-zur-rechnungsabwicklung-des-messstellenbetriebes-ueber-den-lf-durch-den-msb.md",
+        "docs-offline/prozessdoku/202604/LF/WiM-Teil1-beendigung-rechnungsabwicklung-des-messstellenbetriebes-ueber-den-lf-durch-den-lf.md",
         "docs-offline/prozessdoku/202604/MSB/WiM-Teil1-anfrage-zur-rechnungsabwicklung-des-messstellenbetriebes-ueber-den-lf-durch-den-lf.md",
         "docs-offline/prozessdoku/202604/MSB/WiM-Teil1-angebot-zur-rechnungsabwicklung-des-messstellenbetriebes-ueber-den-lf-durch-den-msb.md",
+        "docs-offline/prozessdoku/202604/MSB/WiM-Teil1-beendigung-rechnungsabwicklung-des-messstellenbetriebes-ueber-den-lf-durch-den-msb.md",
         "docs-offline/prozessdoku/202604/MSB/WiM-Teil2-anfrage-und-bestellung-von-werten-durch-den-esa.md",
         "docs-offline/prozessdoku/202604/MSB/WiM-Teil2-beendigung-der-uebermittlung-von-werten-an-esa-durch-esa.md",
         "docs-offline/schnittstellen/202610/trigger/events/LF-START_ABO_PROFILE.md",
@@ -15878,9 +15848,6 @@
         "docs-offline/bo4e/202604/cdoc/Zusatzdaten.md"
       ],
       "START_ANFRAGE_STAMMDATENAENDERUNG": [
-        "docs-supplemental/anfrage-zur-stammdatenänderung-vom-lf-an-msb-verantwortlich-rolle-nb-2043225m0.md",
-        "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-lf-2001021m0.md",
-        "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-lf-2001172m0.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/cdoc/ProcessData.md",
         "docs-offline/bo4e/202610/cdoc/Transaktionsdaten.md",
@@ -15989,7 +15956,6 @@
         "docs-offline/schnittstellen/202610/trigger/events/NB-START_AUFH_ZUK_ZUORDNUNG.md",
         "docs-offline/schnittstellen/202604/trigger/events/NB-START_AUFH_ZUK_ZUORDNUNG.md",
         "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marklokation-bzw-tranche-versenden-14333135e0.md",
-        "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-1982040m0.md",
         "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-861913m0.md",
         "docs-supplemental/trigger-events-14016919e0.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
@@ -16022,7 +15988,6 @@
         "docs-offline/bo4e/202604/cdoc/Zusatzdaten.md"
       ],
       "START_BEENDIGUNG_DER_ZUORDNUNG_NB_AN_LF": [
-        "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-1982033m0.md",
         "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-861915m0.md"
       ],
       "START_BEENDIGUNG_RECHN": [
@@ -16517,7 +16482,6 @@
         "docs-offline/schnittstellen/202604/trigger/events/MSB-START_GESCHAEFTSDATENANFRAGE.md",
         "docs-supplemental/geschäftsdatenanfrage-42308588e0.md",
         "docs-supplemental/geschäftsdatenanfrage-lf-an-nb-2319829m0.md",
-        "docs-supplemental/geschäftsdatenanfrage-von-messstellenbetreiber-an-netzbetreiber-rolle-nb-1998706m0.md",
         "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md",
         "docs-offline/bo4e/202610/bo/Marktteilnehmer.md",
         "docs-offline/bo4e/202610/cdoc/EventName.md",
@@ -16557,7 +16521,6 @@
         "docs-offline/schnittstellen/202610/trigger/events/MSB-START_KUENDIGUNG_MSB.md",
         "docs-offline/schnittstellen/202604/trigger/events/MSB-START_KUENDIGUNG_MSB.md",
         "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271853m0.md",
-        "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271855m0.md",
         "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md",
         "docs-offline/bo4e/202610/cdoc/EventName.md",
         "docs-offline/bo4e/202610/cdoc/ProcessData.md",
@@ -16576,7 +16539,6 @@
         "docs-offline/prozessdoku/202604/LF/GPKE-Teil2-neuanlage.md",
         "docs-offline/schnittstellen/202610/trigger/events/LF-START_LIEFERBEGINN.md",
         "docs-offline/schnittstellen/202604/trigger/events/LF-START_LIEFERBEGINN.md",
-        "docs-supplemental/anmeldung-nn-1930553m0.md",
         "docs-supplemental/changelog.md",
         "docs-supplemental/lieferbeginn-14992210e0.md",
         "docs-supplemental/neuanlage-1923206m0.md",
@@ -63901,32 +63863,6 @@
         "has_mermaid": false,
         "has_svg": false
       },
-      "docs-offline/schnittstellen/backend-api/rollenneutral.md": {
-        "path": "docs-offline/schnittstellen/backend-api/rollenneutral.md",
-        "source": "new",
-        "url": "https://dokumentation.macoapp.de/schnittstellen/backend-api/rollenneutral.md",
-        "version": null,
-        "industry": "shared",
-        "role": null,
-        "perspective": null,
-        "kind": "interface",
-        "title": "Backend-API — für alle Rollen",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-offline/schnittstellen/backend-api/uebersicht.md": {
-        "path": "docs-offline/schnittstellen/backend-api/uebersicht.md",
-        "source": "new",
-        "url": "https://dokumentation.macoapp.de/schnittstellen/backend-api/uebersicht.md",
-        "version": null,
-        "industry": "shared",
-        "role": null,
-        "perspective": null,
-        "kind": "interface",
-        "title": "Backend-API",
-        "has_mermaid": false,
-        "has_svg": false
-      },
       "docs-offline/schnittstellen/schluessel.md": {
         "path": "docs-offline/schnittstellen/schluessel.md",
         "source": "new",
@@ -63992,36 +63928,10 @@
         "has_mermaid": false,
         "has_svg": false
       },
-      "docs-supplemental/-rolle-msba-kündigung-messstellenbetrieb-2271854m0.md": {
-        "path": "docs-supplemental/-rolle-msba-kündigung-messstellenbetrieb-2271854m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/-rolle-msba-k%C3%BCndigung-messstellenbetrieb-2271854m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "MSBA",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "( Rolle MSBA ) Kündigung Messstellenbetrieb",
-        "has_mermaid": false,
-        "has_svg": false
-      },
       "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271853m0.md": {
         "path": "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271853m0.md",
         "source": "supplemental",
         "url": "https://doc.macoapp.de/-rolle-msbn-k%C3%BCndigung-messstellenbetrieb-copy-2271853m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "MSBN",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "( Rolle MSBN ) Kündigung Messstellenbetrieb  Copy",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271855m0.md": {
-        "path": "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271855m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/-rolle-msbn-k%C3%BCndigung-messstellenbetrieb-copy-2271855m0.md",
         "version": null,
         "industry": "shared",
         "role": "MSBN",
@@ -64145,19 +64055,6 @@
         "perspective": null,
         "kind": "supplement",
         "title": "Abmeldeanfrage NB -> LF (Rolle LFA)",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-1982031m0.md": {
-        "path": "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-1982031m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/abmeldeanfrage-nb-lfa-rolle-nb-1982031m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "NB",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Abmeldeanfrage NB -> LFA (Rolle NB)",
         "has_mermaid": false,
         "has_svg": false
       },
@@ -64434,214 +64331,6 @@
         "has_mermaid": false,
         "has_svg": false
       },
-      "docs-supplemental/anfrage-zur-stammdatenänderung-vom-lf-an-msb-verantwortlich-rolle-nb-2043225m0.md": {
-        "path": "docs-supplemental/anfrage-zur-stammdatenänderung-vom-lf-an-msb-verantwortlich-rolle-nb-2043225m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-vom-lf-an-msb-verantwortlich-rolle-nb-2043225m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "NB",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Anfrage zur Stammdatenänderung vom LF an MSB (verantwortlich) (Rolle NB)",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/anfrage-zur-stammdatenänderung-vom-lf-an-nb-verantwortlich-rolle-msb-2000860m0.md": {
-        "path": "docs-supplemental/anfrage-zur-stammdatenänderung-vom-lf-an-nb-verantwortlich-rolle-msb-2000860m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-vom-lf-an-nb-verantwortlich-rolle-msb-2000860m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "MSB",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Anfrage zur Stammdatenänderung vom LF an NB (verantwortlich) (Rolle MSB)",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/anfrage-zur-stammdatenänderung-vom-msb-an-nb-verantwortlich-rolle-nb-2006901m0.md": {
-        "path": "docs-supplemental/anfrage-zur-stammdatenänderung-vom-msb-an-nb-verantwortlich-rolle-nb-2006901m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-vom-msb-an-nb-verantwortlich-rolle-nb-2006901m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "NB",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Anfrage zur Stammdatenänderung vom MSB an NB (verantwortlich) (Rolle NB)",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/anfrage-zur-stammdatenänderung-vom-nb-an-msb-verantwortlich-2022349m0.md": {
-        "path": "docs-supplemental/anfrage-zur-stammdatenänderung-vom-nb-an-msb-verantwortlich-2022349m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-vom-nb-an-msb-verantwortlich-2022349m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": null,
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Anfrage zur Stammdatenänderung vom NB an MSB (verantwortlich)",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-lf-2001021m0.md": {
-        "path": "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-lf-2001021m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-lf-2001021m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "LF",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Anfrage zur Stammdatenänderung von Lieferant an Messstellenbetreiber (verantwortlich) (Rolle LF)",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-lf-7020248f0.md": {
-        "path": "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-lf-7020248f0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-lf-7020248f0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "LF",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Anfrage zur Stammdatenänderung von Lieferant an Messstellenbetreiber (verantwortlich) (Rolle LF)",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-msb-2000787m0.md": {
-        "path": "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-msb-2000787m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-msb-2000787m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "MSB",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Anfrage zur Stammdatenänderung von Lieferant an Messstellenbetreiber (verantwortlich) ( Rolle MSB )",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-lf-2001172m0.md": {
-        "path": "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-lf-2001172m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-lf-2001172m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "LF",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Anfrage zur Stammdatenänderung von Lieferant an Netzbetreiber (verantwortlich) (Rolle LF)",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-lf-7025669f0.md": {
-        "path": "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-lf-7025669f0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-lf-7025669f0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "LF",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Anfrage zur Stammdatenänderung von Lieferant an Messstellenbetreiber (verantwortlich) (Rolle LF)",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-msb-2011145m0.md": {
-        "path": "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-msb-2011145m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-msb-2011145m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "MSB",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Anfrage zur Stammdatenänderung von Lieferant an Netzbetreiber (verantwortlich) ( Rolle MSB )",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/anfrage-zur-stammdatenänderung-von-messstellenbetreiber-an-den-lieferanten-verantwortlich-rolle-lf-2005971m0.md": {
-        "path": "docs-supplemental/anfrage-zur-stammdatenänderung-von-messstellenbetreiber-an-den-lieferanten-verantwortlich-rolle-lf-2005971m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-messstellenbetreiber-an-den-lieferanten-verantwortlich-rolle-lf-2005971m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "LF",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Anfrage zur Stammdatenänderung von Messstellenbetreiber an den Lieferanten (verantwortlich) (Rolle LF)",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/anfrage-zur-stammdatenänderung-von-messstellenbetreiber-an-den-lieferanten-verantwortlich-rolle-lf-7067017f0.md": {
-        "path": "docs-supplemental/anfrage-zur-stammdatenänderung-von-messstellenbetreiber-an-den-lieferanten-verantwortlich-rolle-lf-7067017f0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-messstellenbetreiber-an-den-lieferanten-verantwortlich-rolle-lf-7067017f0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "LF",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Anfrage zur Stammdatenänderung von Netzbetreiber an Lieferant (verantwortlich) (Rolle LF)",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/anfrage-zur-stammdatenänderung-von-messstellenbetreiber-an-netzbetreiber-verantwortlich-rolle-lf-2005956m0.md": {
-        "path": "docs-supplemental/anfrage-zur-stammdatenänderung-von-messstellenbetreiber-an-netzbetreiber-verantwortlich-rolle-lf-2005956m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-messstellenbetreiber-an-netzbetreiber-verantwortlich-rolle-lf-2005956m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "LF",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Anfrage zur Stammdatenänderung von Messstellenbetreiber an Netzbetreiber (verantwortlich) (Rolle LF)",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/anfrage-zur-stammdatenänderung-von-messstellenbetreiber-an-netzbetreiber-verantwortlich-rolle-lf-7066889f0.md": {
-        "path": "docs-supplemental/anfrage-zur-stammdatenänderung-von-messstellenbetreiber-an-netzbetreiber-verantwortlich-rolle-lf-7066889f0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-messstellenbetreiber-an-netzbetreiber-verantwortlich-rolle-lf-7066889f0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "LF",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Anfrage zur Stammdatenänderung von Netzbetreiber an Lieferant (verantwortlich) (Rolle LF)",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/anfrage-zur-stammdatenänderung-von-netzbetreiber-an-lieferant-verantwortlich-rolle-lf-2000973m0.md": {
-        "path": "docs-supplemental/anfrage-zur-stammdatenänderung-von-netzbetreiber-an-lieferant-verantwortlich-rolle-lf-2000973m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-netzbetreiber-an-lieferant-verantwortlich-rolle-lf-2000973m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "LF",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Anfrage zur Stammdatenänderung von Netzbetreiber an Lieferant (verantwortlich) (Rolle LF)",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/anfrage-zur-stammdatenänderung-von-netzbetreiber-an-lieferant-verantwortlich-rolle-lf-7017874f0.md": {
-        "path": "docs-supplemental/anfrage-zur-stammdatenänderung-von-netzbetreiber-an-lieferant-verantwortlich-rolle-lf-7017874f0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/anfrage-zur-stammdaten%C3%A4nderung-von-netzbetreiber-an-lieferant-verantwortlich-rolle-lf-7017874f0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "LF",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Anfrage zur Stammdatenänderung von Netzbetreiber an Lieferant (verantwortlich) (Rolle LF)",
-        "has_mermaid": false,
-        "has_svg": false
-      },
       "docs-supplemental/angebot-1300410m0.md": {
         "path": "docs-supplemental/angebot-1300410m0.md",
         "source": "supplemental",
@@ -64652,32 +64341,6 @@
         "perspective": null,
         "kind": "supplement",
         "title": "Angebot",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/anmeldung-nn-1930553m0.md": {
-        "path": "docs-supplemental/anmeldung-nn-1930553m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/anmeldung-nn-1930553m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": null,
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Anmeldung NN",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/anmeldung-nn-1973643m0.md": {
-        "path": "docs-supplemental/anmeldung-nn-1973643m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/anmeldung-nn-1973643m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": null,
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Anmeldung NN",
         "has_mermaid": false,
         "has_svg": false
       },
@@ -64782,19 +64445,6 @@
         "perspective": null,
         "kind": "supplement",
         "title": "Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle LFZ)",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-1982040m0.md": {
-        "path": "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-1982040m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-1982040m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "NB",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Aufhebung der Zuordnung des LFZ zur Marktlokation bzw. Tranche (Rolle NB)",
         "has_mermaid": false,
         "has_svg": false
       },
@@ -64928,19 +64578,6 @@
         "has_mermaid": false,
         "has_svg": false
       },
-      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-1982033m0.md": {
-        "path": "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-1982033m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-1982033m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "NB",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Beendigung der Zuordnung des LFA zur Marktlokation bzw. Tranche (Rolle NB)",
-        "has_mermaid": false,
-        "has_svg": false
-      },
       "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md": {
         "path": "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md",
         "source": "supplemental",
@@ -65036,19 +64673,6 @@
         "path": "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md",
         "source": "supplemental",
         "url": "https://doc.macoapp.de/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "NB",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Beginn Messstellenbetrieb ( Rolle NB VNB )",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md": {
-        "path": "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md",
         "version": null,
         "industry": "shared",
         "role": "NB",
@@ -65565,19 +65189,6 @@
         "has_mermaid": false,
         "has_svg": false
       },
-      "docs-supplemental/ecs-lieferbeginn-rolle-lf-1966290m0.md": {
-        "path": "docs-supplemental/ecs-lieferbeginn-rolle-lf-1966290m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/ecs-lieferbeginn-rolle-lf-1966290m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "LF",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "ECS_Lieferbeginn (Rolle LF)",
-        "has_mermaid": false,
-        "has_svg": false
-      },
       "docs-supplemental/ecs-lieferbeginn-rolle-lf-863431m0.md": {
         "path": "docs-supplemental/ecs-lieferbeginn-rolle-lf-863431m0.md",
         "source": "supplemental",
@@ -65812,19 +65423,6 @@
         "has_mermaid": false,
         "has_svg": false
       },
-      "docs-supplemental/gerätewechsel-rolle-nb-vnb-1946520m0.md": {
-        "path": "docs-supplemental/gerätewechsel-rolle-nb-vnb-1946520m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/ger%C3%A4tewechsel-rolle-nb-vnb-1946520m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "NB",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Gerätewechsel ( Rolle NB VNB )",
-        "has_mermaid": false,
-        "has_svg": false
-      },
       "docs-supplemental/geschaeftspartner-1300419m0.md": {
         "path": "docs-supplemental/geschaeftspartner-1300419m0.md",
         "source": "supplemental",
@@ -65861,32 +65459,6 @@
         "perspective": null,
         "kind": "supplement",
         "title": "Geschäftsdatenanfrage LF an NB",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/geschäftsdatenanfrage-von-messstellenbetreiber-an-netzbetreiber-1998507m0.md": {
-        "path": "docs-supplemental/geschäftsdatenanfrage-von-messstellenbetreiber-an-netzbetreiber-1998507m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/gesch%C3%A4ftsdatenanfrage-von-messstellenbetreiber-an-netzbetreiber-1998507m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": null,
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Geschäftsdatenanfrage von Messstellenbetreiber an Netzbetreiber",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/geschäftsdatenanfrage-von-messstellenbetreiber-an-netzbetreiber-rolle-nb-1998706m0.md": {
-        "path": "docs-supplemental/geschäftsdatenanfrage-von-messstellenbetreiber-an-netzbetreiber-rolle-nb-1998706m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/gesch%C3%A4ftsdatenanfrage-von-messstellenbetreiber-an-netzbetreiber-rolle-nb-1998706m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "NB",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Geschäftsdatenanfrage von Messstellenbetreiber an Netzbetreiber (Rolle NB)",
         "has_mermaid": false,
         "has_svg": false
       },
@@ -66056,6 +65628,19 @@
         "perspective": null,
         "kind": "supplement",
         "title": "Kommunikationsdatenblatt PARTIN",
+        "has_mermaid": false,
+        "has_svg": false
+      },
+      "docs-supplemental/konfigurationsid-lesen-44912327e0.md": {
+        "path": "docs-supplemental/konfigurationsid-lesen-44912327e0.md",
+        "source": "supplemental",
+        "url": "https://doc.macoapp.de/konfigurationsid-lesen-44912327e0.md",
+        "version": null,
+        "industry": "shared",
+        "role": null,
+        "perspective": null,
+        "kind": "supplement",
+        "title": "KonfigurationsId lesen",
         "has_mermaid": false,
         "has_svg": false
       },
@@ -67320,32 +66905,6 @@
         "has_mermaid": false,
         "has_svg": false
       },
-      "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-ausgehend-rolle-lf-2001140m0.md": {
-        "path": "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-ausgehend-rolle-lf-2001140m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-messstellenbetreiber-verantwortlich-ausgehend-rolle-lf-2001140m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "LF",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Stammdatenänderung vom Messstellenbetreiber (verantwortlich) ausgehend ( Rolle LF )",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-ausgehend-rolle-nb-2043222m0.md": {
-        "path": "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-ausgehend-rolle-nb-2043222m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-msb-verantwortlich-ausgehend-rolle-nb-2043222m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "NB",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Stammdatenänderung vom MSB (verantwortlich) ausgehend (Rolle NB)",
-        "has_mermaid": false,
-        "has_svg": false
-      },
       "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md": {
         "path": "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md",
         "source": "supplemental",
@@ -67424,19 +66983,6 @@
         "has_mermaid": false,
         "has_svg": false
       },
-      "docs-supplemental/stammdatenänderung-vom-nb-verantwortlich-ausgehend-1998842m0.md": {
-        "path": "docs-supplemental/stammdatenänderung-vom-nb-verantwortlich-ausgehend-1998842m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-nb-verantwortlich-ausgehend-1998842m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": null,
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Stammdatenänderung vom NB (verantwortlich) ausgehend",
-        "has_mermaid": false,
-        "has_svg": false
-      },
       "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md": {
         "path": "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md",
         "source": "supplemental",
@@ -67447,19 +66993,6 @@
         "perspective": null,
         "kind": "supplement",
         "title": "Stammdatenänderung vom Netzbetreiber (verantwortlich)",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-ausgehend-rolle-lf-2001332m0.md": {
-        "path": "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-ausgehend-rolle-lf-2001332m0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/stammdaten%C3%A4nderung-vom-netzbetreiber-verantwortlich-ausgehend-rolle-lf-2001332m0.md",
-        "version": null,
-        "industry": "shared",
-        "role": "LF",
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Stammdatenänderung vom Netzbetreiber (verantwortlich) ausgehend (Rolle LF)",
         "has_mermaid": false,
         "has_svg": false
       },
@@ -67603,19 +67136,6 @@
         "perspective": null,
         "kind": "supplement",
         "title": "SteuerbareRessource",
-        "has_mermaid": false,
-        "has_svg": false
-      },
-      "docs-supplemental/steuerprozesse-nach-kundenanforderung-3139945f0.md": {
-        "path": "docs-supplemental/steuerprozesse-nach-kundenanforderung-3139945f0.md",
-        "source": "supplemental",
-        "url": "https://doc.macoapp.de/steuerprozesse-nach-kundenanforderung-3139945f0.md",
-        "version": null,
-        "industry": "shared",
-        "role": null,
-        "perspective": null,
-        "kind": "supplement",
-        "title": "Steuerprozesse nach Kundenanforderung",
         "has_mermaid": false,
         "has_svg": false
       },
@@ -68087,6 +67607,32 @@
         "has_mermaid": false,
         "has_svg": false
       },
+      "docs-supplemental/zähler-lesen-basis-14017031e0.md": {
+        "path": "docs-supplemental/zähler-lesen-basis-14017031e0.md",
+        "source": "supplemental",
+        "url": "https://doc.macoapp.de/z%C3%A4hler-lesen-basis-14017031e0.md",
+        "version": null,
+        "industry": "shared",
+        "role": null,
+        "perspective": null,
+        "kind": "supplement",
+        "title": "Zähler lesen Basis",
+        "has_mermaid": false,
+        "has_svg": false
+      },
+      "docs-supplemental/zähler-lesen-konfig-45351133e0.md": {
+        "path": "docs-supplemental/zähler-lesen-konfig-45351133e0.md",
+        "source": "supplemental",
+        "url": "https://doc.macoapp.de/z%C3%A4hler-lesen-konfig-45351133e0.md",
+        "version": null,
+        "industry": "shared",
+        "role": null,
+        "perspective": null,
+        "kind": "supplement",
+        "title": "Zähler lesen Konfig",
+        "has_mermaid": false,
+        "has_svg": false
+      },
       "docs-supplemental/zählerstand-einer-lokation-lesen-14017017e0.md": {
         "path": "docs-supplemental/zählerstand-einer-lokation-lesen-14017017e0.md",
         "source": "supplemental",
@@ -68452,14 +67998,8 @@
       "-rolle-msba-kündigung-messstellenbetrieb-2271852m0.md": [
         "docs-supplemental/-rolle-msba-kündigung-messstellenbetrieb-2271852m0.md"
       ],
-      "-rolle-msba-kündigung-messstellenbetrieb-2271854m0.md": [
-        "docs-supplemental/-rolle-msba-kündigung-messstellenbetrieb-2271854m0.md"
-      ],
       "-rolle-msbn-kündigung-messstellenbetrieb-copy-2271853m0.md": [
         "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271853m0.md"
-      ],
-      "-rolle-msbn-kündigung-messstellenbetrieb-copy-2271855m0.md": [
-        "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271855m0.md"
       ],
       "-übergreifend-formatumstellung-01-10-2026-2216231m0.md": [
         "docs-supplemental/-übergreifend-formatumstellung-01-10-2026-2216231m0.md"
@@ -74599,9 +74139,6 @@
       "abmeldeanfrage-nb-lf-rolle-lfa-860871m0.md": [
         "docs-supplemental/abmeldeanfrage-nb-lf-rolle-lfa-860871m0.md"
       ],
-      "abmeldeanfrage-nb-lfa-rolle-nb-1982031m0.md": [
-        "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-1982031m0.md"
-      ],
       "abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md": [
         "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-3118790f0.md"
       ],
@@ -74665,62 +74202,8 @@
       "anfrage-zur-beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-14992646e0.md": [
         "docs-supplemental/anfrage-zur-beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-14992646e0.md"
       ],
-      "anfrage-zur-stammdatenänderung-vom-lf-an-msb-verantwortlich-rolle-nb-2043225m0.md": [
-        "docs-supplemental/anfrage-zur-stammdatenänderung-vom-lf-an-msb-verantwortlich-rolle-nb-2043225m0.md"
-      ],
-      "anfrage-zur-stammdatenänderung-vom-lf-an-nb-verantwortlich-rolle-msb-2000860m0.md": [
-        "docs-supplemental/anfrage-zur-stammdatenänderung-vom-lf-an-nb-verantwortlich-rolle-msb-2000860m0.md"
-      ],
-      "anfrage-zur-stammdatenänderung-vom-msb-an-nb-verantwortlich-rolle-nb-2006901m0.md": [
-        "docs-supplemental/anfrage-zur-stammdatenänderung-vom-msb-an-nb-verantwortlich-rolle-nb-2006901m0.md"
-      ],
-      "anfrage-zur-stammdatenänderung-vom-nb-an-msb-verantwortlich-2022349m0.md": [
-        "docs-supplemental/anfrage-zur-stammdatenänderung-vom-nb-an-msb-verantwortlich-2022349m0.md"
-      ],
-      "anfrage-zur-stammdatenänderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-lf-2001021m0.md": [
-        "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-lf-2001021m0.md"
-      ],
-      "anfrage-zur-stammdatenänderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-lf-7020248f0.md": [
-        "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-lf-7020248f0.md"
-      ],
-      "anfrage-zur-stammdatenänderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-msb-2000787m0.md": [
-        "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-msb-2000787m0.md"
-      ],
-      "anfrage-zur-stammdatenänderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-lf-2001172m0.md": [
-        "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-lf-2001172m0.md"
-      ],
-      "anfrage-zur-stammdatenänderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-lf-7025669f0.md": [
-        "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-lf-7025669f0.md"
-      ],
-      "anfrage-zur-stammdatenänderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-msb-2011145m0.md": [
-        "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-msb-2011145m0.md"
-      ],
-      "anfrage-zur-stammdatenänderung-von-messstellenbetreiber-an-den-lieferanten-verantwortlich-rolle-lf-2005971m0.md": [
-        "docs-supplemental/anfrage-zur-stammdatenänderung-von-messstellenbetreiber-an-den-lieferanten-verantwortlich-rolle-lf-2005971m0.md"
-      ],
-      "anfrage-zur-stammdatenänderung-von-messstellenbetreiber-an-den-lieferanten-verantwortlich-rolle-lf-7067017f0.md": [
-        "docs-supplemental/anfrage-zur-stammdatenänderung-von-messstellenbetreiber-an-den-lieferanten-verantwortlich-rolle-lf-7067017f0.md"
-      ],
-      "anfrage-zur-stammdatenänderung-von-messstellenbetreiber-an-netzbetreiber-verantwortlich-rolle-lf-2005956m0.md": [
-        "docs-supplemental/anfrage-zur-stammdatenänderung-von-messstellenbetreiber-an-netzbetreiber-verantwortlich-rolle-lf-2005956m0.md"
-      ],
-      "anfrage-zur-stammdatenänderung-von-messstellenbetreiber-an-netzbetreiber-verantwortlich-rolle-lf-7066889f0.md": [
-        "docs-supplemental/anfrage-zur-stammdatenänderung-von-messstellenbetreiber-an-netzbetreiber-verantwortlich-rolle-lf-7066889f0.md"
-      ],
-      "anfrage-zur-stammdatenänderung-von-netzbetreiber-an-lieferant-verantwortlich-rolle-lf-2000973m0.md": [
-        "docs-supplemental/anfrage-zur-stammdatenänderung-von-netzbetreiber-an-lieferant-verantwortlich-rolle-lf-2000973m0.md"
-      ],
-      "anfrage-zur-stammdatenänderung-von-netzbetreiber-an-lieferant-verantwortlich-rolle-lf-7017874f0.md": [
-        "docs-supplemental/anfrage-zur-stammdatenänderung-von-netzbetreiber-an-lieferant-verantwortlich-rolle-lf-7017874f0.md"
-      ],
       "angebot-1300410m0.md": [
         "docs-supplemental/angebot-1300410m0.md"
-      ],
-      "anmeldung-nn-1930553m0.md": [
-        "docs-supplemental/anmeldung-nn-1930553m0.md"
-      ],
-      "anmeldung-nn-1973643m0.md": [
-        "docs-supplemental/anmeldung-nn-1973643m0.md"
       ],
       "ansprechpartner-1300411m0.md": [
         "docs-supplemental/ansprechpartner-1300411m0.md"
@@ -74748,9 +74231,6 @@
       ],
       "aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-861876m0.md": [
         "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-lfz-861876m0.md"
-      ],
-      "aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-1982040m0.md": [
-        "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-1982040m0.md"
       ],
       "aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md": [
         "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-3130392f0.md"
@@ -74874,9 +74354,6 @@
       "beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-861878m0.md": [
         "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-lfa-861878m0.md"
       ],
-      "beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-1982033m0.md": [
-        "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-1982033m0.md"
-      ],
       "beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md": [
         "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-3130393f0.md"
       ],
@@ -74900,9 +74377,6 @@
       ],
       "beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md": [
         "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md"
-      ],
-      "beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md": [
-        "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
       ],
       "berechnungsformel-1300414m0.md": [
         "docs-supplemental/berechnungsformel-1300414m0.md"
@@ -75021,9 +74495,6 @@
       "ebd-e-0635-881449m0.md": [
         "docs-supplemental/ebd-e-0635-881449m0.md"
       ],
-      "ecs-lieferbeginn-rolle-lf-1966290m0.md": [
-        "docs-supplemental/ecs-lieferbeginn-rolle-lf-1966290m0.md"
-      ],
       "ecs-lieferbeginn-rolle-lf-863431m0.md": [
         "docs-supplemental/ecs-lieferbeginn-rolle-lf-863431m0.md"
       ],
@@ -75078,9 +74549,6 @@
       "fum-2026-10-2135788m0.md": [
         "docs-supplemental/fum-2026-10-2135788m0.md"
       ],
-      "gerätewechsel-rolle-nb-vnb-1946520m0.md": [
-        "docs-supplemental/gerätewechsel-rolle-nb-vnb-1946520m0.md"
-      ],
       "geschaeftspartner-1300419m0.md": [
         "docs-supplemental/geschaeftspartner-1300419m0.md"
       ],
@@ -75099,12 +74567,6 @@
       ],
       "geschäftsdatenanfrage-lf-an-nb-2319829m0.md": [
         "docs-supplemental/geschäftsdatenanfrage-lf-an-nb-2319829m0.md"
-      ],
-      "geschäftsdatenanfrage-von-messstellenbetreiber-an-netzbetreiber-1998507m0.md": [
-        "docs-supplemental/geschäftsdatenanfrage-von-messstellenbetreiber-an-netzbetreiber-1998507m0.md"
-      ],
-      "geschäftsdatenanfrage-von-messstellenbetreiber-an-netzbetreiber-rolle-nb-1998706m0.md": [
-        "docs-supplemental/geschäftsdatenanfrage-von-messstellenbetreiber-an-netzbetreiber-rolle-nb-1998706m0.md"
       ],
       "geschäftsobjekte-849934m0.md": [
         "docs-supplemental/geschäftsobjekte-849934m0.md"
@@ -75168,6 +74630,9 @@
         "docs-offline/prozessdoku/202610/NB--ANFNB/kommunikationsprozesse-redispatch-weiterleitung-von-meteorologischen-daten-ex-post-daten-vom-anb-an-den-anfnb.md",
         "docs-offline/prozessdoku/202604/NB--ANB/kommunikationsprozesse-redispatch-weiterleitung-von-meteorologischen-daten-ex-post-daten-vom-anb-an-den-anfnb.md",
         "docs-offline/prozessdoku/202604/NB--ANFNB/kommunikationsprozesse-redispatch-weiterleitung-von-meteorologischen-daten-ex-post-daten-vom-anb-an-den-anfnb.md"
+      ],
+      "konfigurationsid-lesen-44912327e0.md": [
+        "docs-supplemental/konfigurationsid-lesen-44912327e0.md"
       ],
       "konzeption-umsetzung-ermittlung-sap-896590m0.md": [
         "docs-supplemental/konzeption-umsetzung-ermittlung-sap-896590m0.md"
@@ -75446,9 +74911,6 @@
       "roadmap-1867368m0.md": [
         "docs-supplemental/roadmap-1867368m0.md"
       ],
-      "rollenneutral.md": [
-        "docs-offline/schnittstellen/backend-api/rollenneutral.md"
-      ],
       "schaltzeitdefinition-1300434m0.md": [
         "docs-supplemental/schaltzeitdefinition-1300434m0.md"
       ],
@@ -75479,12 +74941,6 @@
       "stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md": [
         "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-15235558e0.md"
       ],
-      "stammdatenänderung-vom-messstellenbetreiber-verantwortlich-ausgehend-rolle-lf-2001140m0.md": [
-        "docs-supplemental/stammdatenänderung-vom-messstellenbetreiber-verantwortlich-ausgehend-rolle-lf-2001140m0.md"
-      ],
-      "stammdatenänderung-vom-msb-verantwortlich-ausgehend-rolle-nb-2043222m0.md": [
-        "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-ausgehend-rolle-nb-2043222m0.md"
-      ],
       "stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md": [
         "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-lf-3130254f0.md"
       ],
@@ -75503,14 +74959,8 @@
       "stammdatenänderung-vom-msb-verantwortlich-rolle-nb-861944m0.md": [
         "docs-supplemental/stammdatenänderung-vom-msb-verantwortlich-rolle-nb-861944m0.md"
       ],
-      "stammdatenänderung-vom-nb-verantwortlich-ausgehend-1998842m0.md": [
-        "docs-supplemental/stammdatenänderung-vom-nb-verantwortlich-ausgehend-1998842m0.md"
-      ],
       "stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md": [
         "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-14994280e0.md"
-      ],
-      "stammdatenänderung-vom-netzbetreiber-verantwortlich-ausgehend-rolle-lf-2001332m0.md": [
-        "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-ausgehend-rolle-lf-2001332m0.md"
       ],
       "stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md": [
         "docs-supplemental/stammdatenänderung-vom-netzbetreiber-verantwortlich-rolle-lf-3130230f0.md"
@@ -75544,9 +74994,6 @@
       ],
       "steuerbareressource-1300439m0.md": [
         "docs-supplemental/steuerbareressource-1300439m0.md"
-      ],
-      "steuerprozesse-nach-kundenanforderung-3139945f0.md": [
-        "docs-supplemental/steuerprozesse-nach-kundenanforderung-3139945f0.md"
       ],
       "steuerprozesse-nach-kundenanforderung-6624435f0.md": [
         "docs-supplemental/steuerprozesse-nach-kundenanforderung-6624435f0.md"
@@ -75598,9 +75045,6 @@
       ],
       "trigger-nb.md": [
         "docs-supplemental/trigger-nb.md"
-      ],
-      "uebersicht.md": [
-        "docs-offline/schnittstellen/backend-api/uebersicht.md"
       ],
       "untitled-doc-2025079m0.md": [
         "docs-supplemental/untitled-doc-2025079m0.md"
@@ -75661,6 +75105,12 @@
       ],
       "zähler-lesen-14017031e0.md": [
         "docs-supplemental/zähler-lesen-14017031e0.md"
+      ],
+      "zähler-lesen-basis-14017031e0.md": [
+        "docs-supplemental/zähler-lesen-basis-14017031e0.md"
+      ],
+      "zähler-lesen-konfig-45351133e0.md": [
+        "docs-supplemental/zähler-lesen-konfig-45351133e0.md"
       ],
       "zählerstand-einer-lokation-lesen-14017017e0.md": [
         "docs-supplemental/zählerstand-einer-lokation-lesen-14017017e0.md"

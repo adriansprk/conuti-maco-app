@@ -45,7 +45,7 @@ Der MSBN kündigt im Auftrag des AN bzw. ANN den für die genannte Messlokation 
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_KUENDIGUNG_MSB`](/schnittstellen/202610/trigger/events/MSB-START_KUENDIGUNG_MSB) · [Im Playground ausprobieren](/api/202610/ausloeser-msb/start-kuendigung-msb)
+**Prozessauslöser** [`START_KUENDIGUNG_MSB`](/api/202610/ausloeser-msb/start-kuendigung-msb) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"MESSSTELLENBETRIEBSVERTRAG\": [\n      {\n        \"vertragspartner2\": [\n          \"<vertragspartner2>\"\n        ]\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"pruefidentifikator\": \"<pruefidentifikator: 44039 | 55039>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_KUENDIGUNG_MSB\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

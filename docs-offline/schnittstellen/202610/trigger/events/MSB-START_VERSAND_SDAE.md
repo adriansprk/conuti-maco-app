@@ -1544,8 +1544,6 @@ Der Umschlag der Nachricht. Pflichtfelder müssen beim Trigger-Aufruf gesetzt se
 | `errorCode` | string | nein | Error identifier — Beispiel der Quelle: `400` |
 | `message` | string | nein | Technische Meldung — Beispiel der Quelle: `Validation Failed` |
 
-Die Antwortschemata (`event_responses_success`, `event_response_fail`) stammen aus `macoapp-trigger.json`, Fassung 1.2.5 (20. Januar 2025), außerhalb der Zeitscheibe: die Datei wird nicht je Formatversion geführt, beide Fassungen lesen dieselbe.
-
 Welchen Rumpf die Callbacks `updateProcessData` und `createProcessData` senden, ist am NiFi-Fluss der MACO APP gemessen: `{stammdaten, transaktionsdaten, zusatzdaten}` ohne Umschlag, der `businessKey` innerhalb von `zusatzdaten`. Nicht gemessen ist das an einem mitgeschnittenen Aufruf, und nicht für MaloIdent (03002/03003).
 
 Was `businessKey`, `prozessId` und `targetBusinessKey` unterscheidet, steht auf [Schlüssel und Zuordnung](/schnittstellen/schluessel).

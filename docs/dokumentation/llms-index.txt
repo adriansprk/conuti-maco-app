@@ -2,6 +2,8 @@
 
 > Lokaler Strom-Ausschnitt der Conuti-Dokumentation; Gas-spezifische und gemischte Übersichtsseiten sind ausgeschlossen.
 
+> Alle 3891 Seiten der Auslieferung, eine Zeile je Seite, als Verweis auf den jeweiligen Markdown-Zwilling. Die Übersicht mit Einordnung steht in [llms.txt](https://dokumentation.macoapp.de/llms.txt).
+
 ## Prozesse 202604 — LF
 
 - [Abrechnung Leistungen des Preisblatts A des MSB zwischen MSB und LF — Sicht LF](https://dokumentation.macoapp.de/prozessdoku/202604/LF/GPKE-Teil3-abrechnung-leistungen-des-preisblatts-a-des-msb-zwischen-msb-und-lf.md): Der MSB ist informiert, dass der NB bzw. LF die Rechnung akzeptiert.
@@ -1138,11 +1140,9 @@
 
 ## Prüfidentifikatoren und Trigger-Ereignisse
 
-- [Backend-API](https://dokumentation.macoapp.de/schnittstellen/backend-api/uebersicht.md): Die Schnittstelle, über die die MACO APP Prozessdaten aus dem Backend des Kunden liest und in es zurückschreibt.
 - [Backend-API — LF](https://dokumentation.macoapp.de/schnittstellen/backend-api/lf.md): Was das Backend eines LF für die MACO APP bereitstellen muss: 4 rollengebundene und 32 rollenneutrale Operationen.
 - [Backend-API — MSB](https://dokumentation.macoapp.de/schnittstellen/backend-api/msb.md): Was das Backend eines MSB für die MACO APP bereitstellen muss: 2 rollengebundene und 32 rollenneutrale Operationen.
 - [Backend-API — NB](https://dokumentation.macoapp.de/schnittstellen/backend-api/nb.md): Was das Backend eines NB für die MACO APP bereitstellen muss: 4 rollengebundene und 32 rollenneutrale Operationen.
-- [Backend-API — für alle Rollen](https://dokumentation.macoapp.de/schnittstellen/backend-api/rollenneutral.md): 32 Backend-Operationen, die keine Quelle an eine Marktrolle bindet.
 - [Nicht geführte Prüfidentifikatoren (202604)](https://dokumentation.macoapp.de/schnittstellen/202604/pruefi/nicht-gefuehrt.md): Welche 122 Prüfidentifikatoren die Formatversion 202604 nicht führt und warum — gerechnet aus Anwendungshandbuch und Spezifikationsquelle.
 - [Nicht geführte Prüfidentifikatoren (202610)](https://dokumentation.macoapp.de/schnittstellen/202610/pruefi/nicht-gefuehrt.md): Welche 100 Prüfidentifikatoren die Formatversion 202610 nicht führt und warum — gerechnet aus Anwendungshandbuch und Spezifikationsquelle.
 - [Prüfidentifikator 13002 — Zählerstand (Gas)](https://dokumentation.macoapp.de/schnittstellen/202604/pruefi/MSCONS/PI_13002.md): Zählerstand (Gas)

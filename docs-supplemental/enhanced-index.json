@@ -3,24 +3,13 @@
   "industry": "strom",
   "by_bdew_id": {
     "13002": [
-      "docs-supplemental/gerätewechsel-rolle-nb-vnb-1946520m0.md",
       "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md"
     ],
     "13006": [
-      "docs-supplemental/gerätewechsel-rolle-nb-vnb-1946520m0.md",
       "docs-supplemental/prozessdaten-aktualiseren-14017182e0.md",
       "docs-supplemental/prozessdaten-erstellen-14017183e0.md",
       "docs-supplemental/stornierung-werte-vom-msb-der-marktlokation-rolle-lf-1820445m0.md",
       "docs-supplemental/übermittlung-des-lieferscheins-zur-netznutzungsabrechnung-rolle-lf-2302951m0.md"
-    ],
-    "13007": [
-      "docs-supplemental/gerätewechsel-rolle-nb-vnb-1946520m0.md"
-    ],
-    "13008": [
-      "docs-supplemental/gerätewechsel-rolle-nb-vnb-1946520m0.md"
-    ],
-    "13009": [
-      "docs-supplemental/gerätewechsel-rolle-nb-vnb-1946520m0.md"
     ],
     "13015": [
       "docs-supplemental/abrechnungsdaten-netznutzungsabrechnung-rolle-lf-3130129f0.md",
@@ -164,31 +153,22 @@
       "docs-supplemental/prozessdaten-erstellen-14017183e0.md"
     ],
     "21007": [
-      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md",
-      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md"
     ],
     "21009": [
-      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md",
-      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md"
     ],
     "21010": [
-      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md",
-      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md"
     ],
     "21011": [
-      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md",
-      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md"
     ],
     "21012": [
-      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md",
-      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md"
     ],
     "21013": [
-      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md",
-      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
-    ],
-    "21015": [
-      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
+      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202703m0.md"
     ],
     "21033": [
       "docs-supplemental/bestellung-einer-konfiguration-vom-lf-an-msb-lf-1677424m0.md",
@@ -317,62 +297,6 @@
       "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236630m0.md",
       "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236813m0.md",
       "docs-supplemental/übermittlung-von-informationen-kommunikationsdaten-2236816m0.md"
-    ],
-    "44001": [
-      "docs-supplemental/anmeldung-nn-1930553m0.md",
-      "docs-supplemental/anmeldung-nn-1973643m0.md"
-    ],
-    "44002": [
-      "docs-supplemental/anmeldung-nn-1930553m0.md",
-      "docs-supplemental/anmeldung-nn-1973643m0.md"
-    ],
-    "44003": [
-      "docs-supplemental/anmeldung-nn-1930553m0.md",
-      "docs-supplemental/anmeldung-nn-1973643m0.md"
-    ],
-    "44010": [
-      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-1982031m0.md"
-    ],
-    "44011": [
-      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-1982031m0.md"
-    ],
-    "44012": [
-      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-1982031m0.md"
-    ],
-    "44036": [
-      "docs-supplemental/anmeldung-nn-1930553m0.md",
-      "docs-supplemental/anmeldung-nn-1973643m0.md"
-    ],
-    "44037": [
-      "docs-supplemental/abmeldeanfrage-nb-lfa-rolle-nb-1982031m0.md",
-      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-1982033m0.md"
-    ],
-    "44038": [
-      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-1982040m0.md"
-    ],
-    "44039": [
-      "docs-supplemental/-rolle-msba-kündigung-messstellenbetrieb-2271854m0.md",
-      "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271855m0.md"
-    ],
-    "44040": [
-      "docs-supplemental/-rolle-msba-kündigung-messstellenbetrieb-2271854m0.md",
-      "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271855m0.md"
-    ],
-    "44041": [
-      "docs-supplemental/-rolle-msba-kündigung-messstellenbetrieb-2271854m0.md",
-      "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271855m0.md"
-    ],
-    "44042": [
-      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
-    ],
-    "44043": [
-      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
-    ],
-    "44044": [
-      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
-    ],
-    "44112": [
-      "docs-supplemental/beginn-messstellenbetrieb-rolle-nb-vnb-2202707m0.md"
     ],
     "55001": [
       "docs-supplemental/abmeldeanfrage-nb-lf-rolle-lfa-3118774f0.md",
@@ -1730,11 +1654,6 @@
       "docs-supplemental/bestellung-einer-konfiguration-vom-lf-an-msb-lf-1677424m0.md",
       "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
     ],
-    "START_ANFRAGE_STAMMDATENAENDERUNG": [
-      "docs-supplemental/anfrage-zur-stammdatenänderung-vom-lf-an-msb-verantwortlich-rolle-nb-2043225m0.md",
-      "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-messstellenbetreiber-verantwortlich-rolle-lf-2001021m0.md",
-      "docs-supplemental/anfrage-zur-stammdatenänderung-von-lieferant-an-netzbetreiber-verantwortlich-rolle-lf-2001172m0.md"
-    ],
     "START_ANGEBOT_GERAETEUEBERNAHME": [
       "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
     ],
@@ -1750,12 +1669,10 @@
     ],
     "START_AUFH_ZUK_ZUORDNUNG": [
       "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marklokation-bzw-tranche-versenden-14333135e0.md",
-      "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-1982040m0.md",
       "docs-supplemental/aufhebung-der-zuordnung-des-lfz-zur-marktlokation-bzw-tranche-rolle-nb-861913m0.md",
       "docs-supplemental/trigger-events-14016919e0.md"
     ],
     "START_BEENDIGUNG_DER_ZUORDNUNG_NB_AN_LF": [
-      "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-1982033m0.md",
       "docs-supplemental/beendigung-der-zuordnung-des-lfa-zur-marktlokation-bzw-tranche-rolle-nb-861915m0.md"
     ],
     "START_BEGINN_MSB": [
@@ -1845,7 +1762,6 @@
     "START_GESCHAEFTSDATENANFRAGE": [
       "docs-supplemental/geschäftsdatenanfrage-42308588e0.md",
       "docs-supplemental/geschäftsdatenanfrage-lf-an-nb-2319829m0.md",
-      "docs-supplemental/geschäftsdatenanfrage-von-messstellenbetreiber-an-netzbetreiber-rolle-nb-1998706m0.md",
       "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
     ],
     "START_KUENDIGUNG": [
@@ -1857,11 +1773,9 @@
     ],
     "START_KUENDIGUNG_MSB": [
       "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271853m0.md",
-      "docs-supplemental/-rolle-msbn-kündigung-messstellenbetrieb-copy-2271855m0.md",
       "docs-supplemental/änderungsprotokoll-bo4e-objekte-1259115m0.md"
     ],
     "START_LIEFERBEGINN": [
-      "docs-supplemental/anmeldung-nn-1930553m0.md",
       "docs-supplemental/changelog.md",
       "docs-supplemental/lieferbeginn-14992210e0.md",
       "docs-supplemental/neuanlage-1923206m0.md",

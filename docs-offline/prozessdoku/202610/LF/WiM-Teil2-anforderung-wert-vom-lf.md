@@ -40,7 +40,7 @@ Der NB oder LF fordert über einen Bestellprozess Zwischenablesungswerte beim MS
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_ANFORDERUNG_VON_WERTEN`](/schnittstellen/202610/trigger/events/LF-START_ANFORDERUNG_VON_WERTEN) · [Im Playground ausprobieren](/api/202610/ausloeser-lf/start-anforderung-von-werten)
+**Prozessauslöser** [`START_ANFORDERUNG_VON_WERTEN`](/api/202610/ausloeser-lf/start-anforderung-von-werten) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"ANFRAGE\": [\n      {\n        \"anfragetyp\": \"<anfragetyp: KAUF | NUTZUNGSUEBERLASSUNG | ABRECHNUNGSBRENNWERT_UND_ZUSTANDSZAHL | LASTGANGDATEN | ZAEHLERSTAENDE | WERTEERMITTLUNG | …>\",\n        \"lokationsId\": \"<lokationsId>\"\n      }\n    ],\n    \"AUFTRAG\": [\n      {\n        \"positionsdaten\": [\n          \"<positionsdaten>\"\n        ]\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_ANFORDERUNG_VON_WERTEN\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

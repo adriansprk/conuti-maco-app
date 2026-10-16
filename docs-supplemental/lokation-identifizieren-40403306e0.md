@@ -1820,6 +1820,9 @@ paths:
                           priorisierung: PRIORITAET1
                       datenDerBeteiligtenMarktrolle: null
                       paketId: null
+                '3':
+                  summary: keine Marktlokation
+                  value: []
           headers: {}
           x-apidog-name: OK
         '400':

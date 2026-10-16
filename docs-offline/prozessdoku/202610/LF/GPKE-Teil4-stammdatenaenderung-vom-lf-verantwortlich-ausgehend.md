@@ -42,7 +42,7 @@ Der Prozess beschreibt die Übermittlung von geänderten Werten von Stammdaten v
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_VERSAND_SDAE`](/schnittstellen/202610/trigger/events/LF-START_VERSAND_SDAE) · [Im Playground ausprobieren](/api/202610/ausloeser-lf/start-versand-sdae)
+**Prozessauslöser** [`START_VERSAND_SDAE`](/api/202610/ausloeser-lf/start-versand-sdae) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"MARKTLOKATION\": [\n      {\n        \"marktlokationsId\": \"<marktlokationsId>\"\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"marktrolle\": \"<marktrolle: NB | LF | MSB | MSBA | GMSB | MDL | …>\",\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"gueltigAb\": \"<gueltigAb>\",\n    \"kategorie\": \"<kategorie>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\",\n    \"transaktionsgrund\": \"<transaktionsgrund>\",\n    \"transaktionsgrundergaenzung\": \"<transaktionsgrundergaenzung>\",\n    \"vertragsbeginn\": \"<vertragsbeginn>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_VERSAND_SDAE\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 
@@ -258,7 +258,7 @@ Schreibt den bestehenden Vorgang im Backend fort, nachdem die Nachricht erstellt
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_VERSAND_SDAE`](/schnittstellen/202610/trigger/events/LF-START_VERSAND_SDAE) · [Im Playground ausprobieren](/api/202610/ausloeser-lf/start-versand-sdae)
+**Prozessauslöser** [`START_VERSAND_SDAE`](/api/202610/ausloeser-lf/start-versand-sdae) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"MARKTLOKATION\": [\n      {\n        \"marktlokationsId\": \"<marktlokationsId>\"\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"marktrolle\": \"<marktrolle: NB | LF | MSB | MSBA | GMSB | MDL | …>\",\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"gueltigAb\": \"<gueltigAb>\",\n    \"kategorie\": \"<kategorie>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\",\n    \"transaktionsgrund\": \"<transaktionsgrund>\",\n    \"transaktionsgrundergaenzung\": \"<transaktionsgrundergaenzung>\",\n    \"vertragsbeginn\": \"<vertragsbeginn>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_VERSAND_SDAE\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

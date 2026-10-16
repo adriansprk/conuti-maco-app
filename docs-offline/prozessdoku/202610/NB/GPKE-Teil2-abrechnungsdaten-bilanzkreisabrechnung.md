@@ -41,7 +41,7 @@ Der NB übermittelt dem LF und ggf. dem ÜNB die Abrechnungsdaten zur Bilanzkrei
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_ABR_BK`](/schnittstellen/202610/trigger/events/NB-START_ABR_BK) · [Im Playground ausprobieren](/api/202610/ausloeser-nb/start-abr-bk)
+**Prozessauslöser** [`START_ABR_BK`](/api/202610/ausloeser-nb/start-abr-bk) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"VERWENDUNGSZEITRAUM\": [\n      {\n        \"datenqualitaet\": \"<datenqualitaet: ERWARTETE_DATEN | IM_SYSTEM_VORHANDENE_DATEN | INFORMATIVE_DATEN | GUELTIGE_DATEN | KEINE_DATEN | IM_SYSTEM_KEINE_DATEN_VORHANDEN | …>\",\n        \"verwendungAb\": \"<verwendungAb>\",\n        \"zeitraumId\": null\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"marktrolle\": \"<marktrolle: NB | LF | MSB | MSBA | GMSB | MDL | …>\",\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\",\n    \"transaktionsgrund\": \"<transaktionsgrund>\",\n    \"transaktionsgrundergaenzung\": \"<transaktionsgrundergaenzung>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_ABR_BK\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 
@@ -194,8 +194,8 @@ Die MACO APP sendet diese Nachricht selbst, als Folgeprozess nach diesem Eingang
 <li data-teil="ausloeser">
 
 **Prozessauslöser**
-- [`START_VERSAND_BEARB_MELDUNG`](/schnittstellen/202610/trigger/events/NB-START_VERSAND_BEARB_MELDUNG) · [Im Playground ausprobieren](/api/202610/ausloeser-nb/start-versand-bearb-meldung)
-- [`START_VERSAND_STATUSMELDUNG`](/schnittstellen/202610/trigger/events/NB-START_VERSAND_STATUSMELDUNG) · [Im Playground ausprobieren](/api/202610/ausloeser-nb/start-versand-statusmeldung)
+- [`START_VERSAND_BEARB_MELDUNG`](/api/202610/ausloeser-nb/start-versand-bearb-meldung) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"STATUSMITTEILUNG\": [\n      {\n        \"positionsdaten\": [\n          \"<positionsdaten>\"\n        ]\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_VERSAND_BEARB_MELDUNG\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
+- [`START_VERSAND_STATUSMELDUNG`](/api/202610/ausloeser-nb/start-versand-statusmeldung) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"STATUSMITTEILUNG\": [\n      {\n        \"positionsdaten\": [\n          \"<positionsdaten>\"\n        ]\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_VERSAND_STATUSMELDUNG\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit einem dieser Ereignisse an.
 
@@ -253,7 +253,7 @@ Schreibt den bestehenden Vorgang im Backend fort, nachdem die Nachricht erstellt
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_ABR_BK`](/schnittstellen/202610/trigger/events/NB-START_ABR_BK) · [Im Playground ausprobieren](/api/202610/ausloeser-nb/start-abr-bk)
+**Prozessauslöser** [`START_ABR_BK`](/api/202610/ausloeser-nb/start-abr-bk) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"VERWENDUNGSZEITRAUM\": [\n      {\n        \"datenqualitaet\": \"<datenqualitaet: ERWARTETE_DATEN | IM_SYSTEM_VORHANDENE_DATEN | INFORMATIVE_DATEN | GUELTIGE_DATEN | KEINE_DATEN | IM_SYSTEM_KEINE_DATEN_VORHANDEN | …>\",\n        \"verwendungAb\": \"<verwendungAb>\",\n        \"zeitraumId\": null\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"marktrolle\": \"<marktrolle: NB | LF | MSB | MSBA | GMSB | MDL | …>\",\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\",\n    \"transaktionsgrund\": \"<transaktionsgrund>\",\n    \"transaktionsgrundergaenzung\": \"<transaktionsgrundergaenzung>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_ABR_BK\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 
@@ -406,8 +406,8 @@ Die MACO APP sendet diese Nachricht selbst, als Folgeprozess nach diesem Eingang
 <li data-teil="ausloeser">
 
 **Prozessauslöser**
-- [`START_VERSAND_BEARB_MELDUNG`](/schnittstellen/202610/trigger/events/NB-START_VERSAND_BEARB_MELDUNG) · [Im Playground ausprobieren](/api/202610/ausloeser-nb/start-versand-bearb-meldung)
-- [`START_VERSAND_STATUSMELDUNG`](/schnittstellen/202610/trigger/events/NB-START_VERSAND_STATUSMELDUNG) · [Im Playground ausprobieren](/api/202610/ausloeser-nb/start-versand-statusmeldung)
+- [`START_VERSAND_BEARB_MELDUNG`](/api/202610/ausloeser-nb/start-versand-bearb-meldung) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"STATUSMITTEILUNG\": [\n      {\n        \"positionsdaten\": [\n          \"<positionsdaten>\"\n        ]\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_VERSAND_BEARB_MELDUNG\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
+- [`START_VERSAND_STATUSMELDUNG`](/api/202610/ausloeser-nb/start-versand-statusmeldung) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"STATUSMITTEILUNG\": [\n      {\n        \"positionsdaten\": [\n          \"<positionsdaten>\"\n        ]\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_VERSAND_STATUSMELDUNG\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit einem dieser Ereignisse an.
 

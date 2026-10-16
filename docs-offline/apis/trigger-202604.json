@@ -55279,6 +55279,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_ANFORDERUNG_VON_WERTEN.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Anforderung Wert vom LF"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -55331,6 +55334,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_ANFRAGE_KONFIGURATION.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Bestellung einer Konfiguration vom LF an MSB"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -55383,6 +55389,10 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_ANFRAGE_MESSWERTE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Geschäftsdatenanfrage",
+          "Geschäftsdatenanfrage vom LF an NB"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -55435,6 +55445,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_ANFRAGE_SPERRUNG.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Unterbrechung der Anschlussnutzung (Sperren) auf Anweisung des LF"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -55487,6 +55500,10 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_ANFRAGE_STAMMDATENAENDERUNG.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Anfrage zur Stammdatenänderung vom LF an MSB (verantwortlich)",
+          "Anfrage zur Stammdatenänderung vom LF an NB (verantwortlich)"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -55539,6 +55556,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_ANFRAGE_STAMMDATEN_MALO.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Geschäftsdatenanfrage vom LF an NB"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -55641,6 +55661,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_ANF_BRENNW_ZUSTANDSZAHL.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Anforderung von Brennwert und Zustandszahl"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -55693,6 +55716,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_BEENDIGUNG_RECHNUNG_MSB.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Beendigung Rechnungsabwicklung des Messstellenbetriebes über den LF durch den LF"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -55745,6 +55771,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_BESTELLUNG_ABRECHNUNGSDATEN.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Bestellung einer Änderung von Abrechnungsdaten von LF an NB"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -55797,6 +55826,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_BESTELLUNG_AEND_PROGNOSEGRUNDLAGE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Bestellung einer Konfiguration vom LF an NB"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -55904,6 +55936,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_BESTELLUNG_KONFIGURATION.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Bestellung einer Konfiguration vom LF an MSB"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -55956,6 +55991,15 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_BESTELLUNG_SDAE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Abrechnungsdaten Bilanzkreisabrechnung",
+          "Abrechnungsdaten Netznutzungsabrechnung",
+          "Bestellung einer Änderung von Abrechnungsdaten von LF an NB",
+          "Bestellung zur Stammdatenänderung an MSB (verantwortlich)",
+          "Bestellung zur Stammdatenänderung an NB (verantwortlich)",
+          "Stammdatenänderung vom MSB (verantwortlich) ausgehend",
+          "Stammdatenänderung vom NB (verantwortlich) ausgehend"
+        ],
         "x-maco-rollensichten": 7
       }
     },
@@ -56008,6 +56052,10 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_BESTELLUNG_ZAEHLZEITDEFINITION.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Bestellung einer Konfiguration vom LF an MSB",
+          "Bestellung einer Konfiguration vom LF an NB"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -56162,6 +56210,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_ENTSPERRAUFTRAG.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Wiederherstellung der Anschlussnutzung (Entsperren) auf Anweisung des LF"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -56214,6 +56265,11 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_ERHEBUNG_MESSWERTE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "GeLi_Gas 2.0 Kap. 4.1.1.1 Erhebung von Messwerten",
+          "Übermittlung von Werten vom LF an NB",
+          "Übermittlung von Zählerständen vom LF"
+        ],
         "x-maco-rollensichten": 3
       }
     },
@@ -56266,6 +56322,10 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_GESCHAEFTSDATENANFRAGE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Geschäftsdatenanfrage",
+          "Geschäftsdatenanfrage vom LF an NB"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -56329,6 +56389,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_KUENDIGUNG.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Kündigung"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -56381,6 +56444,10 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_LIEFERBEGINN.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Lieferbeginn",
+          "Neuanlage"
+        ],
         "x-maco-rollensichten": 3
       }
     },
@@ -56444,6 +56511,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_LIEFERENDE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Lieferende von LF an NB"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -56551,6 +56621,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_PARTIN.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Übermittlung von Informationen"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -56603,6 +56676,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_REKLAMATION_VON_WERTEN.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Reklamation vom LF"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -56655,6 +56731,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_SPERRAUFTRAG.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Unterbrechung der Anschlussnutzung (Sperren) auf Anweisung des LF"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -56707,6 +56786,10 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_STORNO_AUFTRAG.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Stornieren der Unterbrechung und Wiederherstellung der Anschlussnutzung auf\nAnweisung des LF",
+          "Stornieren der Unterbrechung und Wiederherstellung der Anschlussnutzung auf Anweisung des LF"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -56759,6 +56842,10 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_STORNO_SE_AUFTRAG.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Stornieren der Unterbrechung und Wiederherstellung der Anschlussnutzung auf\nAnweisung des LF",
+          "Stornieren der Unterbrechung und Wiederherstellung der Anschlussnutzung auf Anweisung des LF"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -56811,6 +56898,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_UEBERMITTLUNG_ENFG.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Übermittlung von Informationen"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -56863,6 +56953,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_UEBERM_DEFINITION.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Übermittlung einer Definition des LF durch den LF"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -56915,6 +57008,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_UEBERSICHT_LEISTUNGSKURVENDEF.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Übermittlung der Übersicht der Definitionen des LF durch den LF"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -56967,6 +57063,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_UEBERSICHT_SCHALTZEITDEF.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Übermittlung der Übersicht der Definitionen des LF durch den LF"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -57019,6 +57118,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_UEBERSICHT_ZAEHLZEITDEF.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Übermittlung der Übersicht der Definitionen des LF durch den LF"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -57121,6 +57223,15 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_VERSAND_ANTWORT_NNA.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Abrechnung Leistungen des Preisblatts A des MSB zwischen MSB und LF",
+          "Abrechnung Leistungen des Preisblatts B des MSB zwischen MSB und LF",
+          "Abrechnung Messstellenbetrieb gegenüber dem LF",
+          "Abrechnung der Netznutzung",
+          "Abrechnung einer sonstigen Leistung",
+          "Mehr-/Mindermengenabrechnung zwischen NB und LF",
+          "Netznutzungsabrechnung"
+        ],
         "x-maco-rollensichten": 8
       }
     },
@@ -57173,6 +57284,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_VERSAND_BEST_BEEND_KONFIG.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Bestellung Beendigung einer Konfiguration vom LF an MSB"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -57225,6 +57339,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_VERSAND_SDAE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Stammdatenänderung vom LF (verantwortlich) ausgehend"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -57277,6 +57394,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[LF]_START_VERSAND_STOERUNGSMELDUNG.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Störungsbehebung in der Messlokation"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -57379,6 +57499,11 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[MSB]_START_ANFORDERUNG_MESSWERTE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Anforderung Wert vom LF",
+          "Anforderung Wert vom MSB der Marktlokation",
+          "Anforderung Wert vom NB"
+        ],
         "x-maco-rollensichten": 3
       }
     },
@@ -57431,6 +57556,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[MSB]_START_ANGEBOT_GERAETEUEBERNAHME.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Geräteübernahme"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -57483,6 +57611,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[MSB]_START_ANTWORT_GERAETEWECHSEL.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Gerätewechsel"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -57535,6 +57666,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[MSB]_START_BEEND_RE_MSB.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Beendigung Rechnungsabwicklung des Messstellenbetriebes über den LF durch den MSB"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -57587,6 +57721,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[MSB]_START_BEGINN_MSB.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Beginn Messstellenbetrieb"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -57639,6 +57776,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[MSB]_START_BESTELLUNG_GERAETEUEBERNAHME.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Geräteübernahme"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -57691,6 +57831,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[MSB]_START_BESTELLUNG_SDAE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Anfrage zur Stammdatenänderung vom MSB an NB (verantwortlich)"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -57743,6 +57886,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[MSB]_START_ENDE_MSB.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Ende Messstellenbetrieb"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -57795,6 +57941,19 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[MSB]_START_ERHEBUNG_MESSWERTE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Anforderung und Bereitstellung von Messwerten",
+          "Aufbereitung und Übermittlung von Werten vom MSB der Marktlokation",
+          "Aufbereitung und Übermittlung von Werten vom MSB der Messlokation",
+          "Außerturnusmäßige Messwertübermittlung",
+          "Gerätewechsel",
+          "Geräteübernahme",
+          "Geschäftsdatenanfrage",
+          "Turnusmäßige/Regelmäßige Messwertübermittlung",
+          "Übermittlung von Werten nach Typ 2 vom MSB an NB oder LF",
+          "Übermittlung von Werten vom MSB an ESA",
+          "Übermittlung von Werten vom MSB an NB"
+        ],
         "x-maco-rollensichten": 12
       }
     },
@@ -57847,6 +58006,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[MSB]_START_GERAETEUEBERNAHME.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Geräteübernahme"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -57899,6 +58061,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[MSB]_START_GERAETEWECHSEL.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Gerätewechsel"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -57951,6 +58116,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[MSB]_START_GESCHAEFTSDATENANFRAGE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Geschäftsdatenanfrage vom MSB an NB"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -58003,6 +58171,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[MSB]_START_KUENDIGUNG_MSB.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Kündigung Messstellenbetrieb"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -58055,6 +58226,13 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[MSB]_START_MESSWERTUEBERMITTLUNG.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Anforderung und Bereitstellung von Messwerten",
+          "Außerturnusmäßige Messwertübermittlung",
+          "Gerätewechsel",
+          "Turnusmäßige/Regelmäßige Messwertübermittlung",
+          "Übermittlung von Werten vom MSB an NB"
+        ],
         "x-maco-rollensichten": 5
       }
     },
@@ -58158,6 +58336,12 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[MSB]_START_REKLAMATION_DEFINITION.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Reklamation der Übersicht der Definitionen des LF vom MSB an LF",
+          "Reklamation der Übersicht der Definitionen des NB vom MSB an NB",
+          "Reklamation einer Definition des LF vom MSB an LF",
+          "Reklamation einer Definition des NB vom MSB an NB"
+        ],
         "x-maco-rollensichten": 4
       }
     },
@@ -58310,6 +58494,12 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[MSB]_START_VERSAND_PREISBLATT_IMS.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Übermittlung Preisblatt A des MSB vom MSB an NB und LF",
+          "Übermittlung Preisblatt B des MSB vom MSB an NB und LF",
+          "Übermittlung Preisblatt MSB an LF",
+          "Übermittlung Preisblatt „Messstellenbetrieb mit iMS gegenüber dem NB“ vom MSB an NB"
+        ],
         "x-maco-rollensichten": 4
       }
     },
@@ -58412,6 +58602,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[MSB]_START_VERSAND_SDAE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Stammdatenänderung vom MSB (verantwortlich) ausgehend"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -58514,6 +58707,10 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_ABR_BK.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Abrechnungsdaten Bilanzkreisabrechnung",
+          "Ergänzende Daten zum Lokationsbündel von NBA an NBN"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -58571,6 +58768,10 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_ABR_NN.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Abrechnungsdaten Netznutzungsabrechnung",
+          "Ergänzende Daten zum Lokationsbündel von NBA an NBN"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -58623,6 +58824,10 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_ANFORDERUNG_MESSWERTE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Anforderung Wert vom NB",
+          "Anforderung und Bereitstellung von Messwerten"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -58726,6 +58931,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_ANFRAGE_SPERRUNG.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Unterbrechung der Anschlussnutzung (Sperren) auf Anweisung des LF"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -58778,6 +58986,15 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_ANFRAGE_STAMMDATENAENDERUNG.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Anfrage zur Stammdatenänderung vom LF an MSB (verantwortlich)",
+          "Anfrage zur Stammdatenänderung vom LF an NB (verantwortlich)",
+          "Anfrage zur Stammdatenänderung vom MSB an NB (verantwortlich)",
+          "Anfrage zur Stammdatenänderung vom NB an LF (verantwortlich)",
+          "Anfrage zur Stammdatenänderung vom NB an MSB (verantwortlich)",
+          "Stammdatenänderung vom MSB (verantwortlich) ausgehend",
+          "Stammdatenänderung vom NB (verantwortlich) ausgehend"
+        ],
         "x-maco-rollensichten": 7
       }
     },
@@ -58830,6 +59047,10 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_AUFH_ZUK_ZUORDNUNG.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Lieferbeginn",
+          "Lieferende von NB an LF"
+        ],
         "x-maco-rollensichten": 3
       }
     },
@@ -58882,6 +59103,11 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_AUFTRAGSSTATUS.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Unterbrechung der Anschlussnutzung (Sperren) auf Anweisung des LF",
+          "Wiederherstellung der Anschlussnutzung (Entsperren) auf Anweisung des LF",
+          "Wiederherstellung der Anschlussnutzung bei Lieferbeginn"
+        ],
         "x-maco-rollensichten": 6
       }
     },
@@ -58934,6 +59160,10 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_BERECHNUNGSFORMEL.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Ergänzende Daten zum Lokationsbündel von NBA an NBN",
+          "Übermittlung der Berechnungsformel"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -58986,6 +59216,12 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_BESTELLUNG_SDAE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Bestellung zur Stammdatenänderung an LF (verantwortlich)",
+          "Bestellung zur Stammdatenänderung an MSB (verantwortlich)",
+          "Stammdatenänderung vom LF (verantwortlich) ausgehend",
+          "Stammdatenänderung vom MSB (verantwortlich) ausgehend"
+        ],
         "x-maco-rollensichten": 4
       }
     },
@@ -59089,6 +59325,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_EINRICHTUNG_KONFIG.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Einrichtung der Konfigurationen aufgrund einer Zuordnung eines LF zu einer Marktlokation bzw. Tranche"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -59141,6 +59380,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_EINRICHTUNG_KONFIGURATION_ZUORDNUNG_LF_VON_NB.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Einrichtung der Konfigurationen aufgrund einer Zuordnung eines LF zu einer Marktlokation bzw. Tranche"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -59243,6 +59485,13 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_ENDE_ZUORDNUNG.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Fall 2: LF-Zuordnung bei EEG-Marktlokation mit DV-Pflicht",
+          "Fall 3: LF-Zuordnung bei KWKG-Marktlokation mit DV-Pflicht bzw. Nicht-EEG-/Nicht-KWKG-Marktlokation und Marktlokation wird nicht-tranchiert abgebildet",
+          "Fall 4: LF-Zuordnung bei KWKG-Marktlokation mit DV-Pflicht bzw. Nicht-EEG-/Nicht-KWKG-Marktlokation und Marktlokation wird tranchiert abgebildet",
+          "Lieferbeginn",
+          "Lieferende von NB an LF"
+        ],
         "x-maco-rollensichten": 5
       }
     },
@@ -59295,6 +59544,10 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_EOG.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Beginn der Ersatz- / Grundversorgung",
+          "Beginn der Ersatz-/Grundversorgung"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -59347,6 +59600,21 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_ERHEBUNG_MESSWERTE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Abrechnung der Netznutzung",
+          "Anforderung und Bereitstellung von Messwerten",
+          "Anforderung von Brennwert und Zustandszahl",
+          "Geschäftsdatenanfrage vom LF an NB",
+          "UF MaBiS_006\nÜbermittlung Netzgangzeitreihe",
+          "Werteübermittlung Gas an NB",
+          "Übermittlung Netzgangzeitreihe",
+          "Übermittlung der bisher gemessenen Arbeits- und Leistungswerte",
+          "Übermittlung des Lieferscheins zur Netznutzungsabrechnung",
+          "Übermittlung von Werten (Lastgang) vom NB an den MGV",
+          "Übermittlung von Werten vom NB an LF",
+          "Übermittlung von Werten vom NB an MSB",
+          "Übermittlung von Zählerständen vom NB"
+        ],
         "x-maco-rollensichten": 13
       }
     },
@@ -59410,6 +59678,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_LIEFERENDE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Lieferende von NB an LF"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -59513,6 +59784,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_PREISBLATT.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Übermittlung Preisblatt NB an LF"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -59565,6 +59839,10 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_REKLAMATION_DEFINITION.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Reklamation der Übersicht der Definitionen des LF vom NB an LF",
+          "Reklamation einer Definition des LF vom NB an LF"
+        ],
         "x-maco-rollensichten": 2
       }
     },
@@ -59617,6 +59895,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_REKLAMATION_WERTE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Reklamation vom NB"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -59669,6 +59950,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_UEBERM_DEFINITION.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Übermittlung einer Definition des NB durch den NB"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -59721,6 +60005,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_UEBERSICHT_LEISTUNGSKURVENDEF.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Übermittlung der Übersicht der Definitionen des NB durch den NB"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -59773,6 +60060,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_UEBERSICHT_SCHALTZEITDEF.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Übermittlung der Übersicht der Definitionen des NB durch den NB"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -59825,6 +60115,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_UEBERSICHT_ZAEHLZEITDEF.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Übermittlung der Übersicht der Definitionen des NB durch den NB"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -59932,6 +60225,15 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_VERSAND_BEARB_MELDUNG.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Abrechnungsdaten Bilanzkreisabrechnung",
+          "Abrechnungsdaten Netznutzungsabrechnung",
+          "Bestellung einer Änderung von Abrechnungsdaten von LF an NB",
+          "Bestellung einer Änderung von Abrechnungsdaten zur Bilanzkreisabrechnung von ÜNB an NB",
+          "Bestellung zur Stammdatenänderung an NB (verantwortlich)",
+          "Stammdaten zur Bilanzkreistreue",
+          "Stammdatenänderung vom NB (verantwortlich) ausgehend"
+        ],
         "x-maco-rollensichten": 7
       }
     },
@@ -60034,6 +60336,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_VERSAND_BESTANDSLISTE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "GeLi_Gas 2.0 Kap. 1.6.1 Bestandslisten"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -60086,6 +60391,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_VERSAND_COMDIS.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Übermittlung des Lieferscheins zur Netznutzungsabrechnung"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -60138,6 +60446,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_VERSAND_GEMESSENE_ARB_LEIST_WERTE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Übermittlung der bisher gemessenen Arbeits- und Leistungswerte"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -60190,6 +60501,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_VERSAND_LIEFERSCHEIN.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Übermittlung des Lieferscheins zur Netznutzungsabrechnung"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -60242,6 +60556,12 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_VERSAND_SDAE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Anfrage zur Stammdatenänderung vom LF an NB (verantwortlich)",
+          "Ergänzende Daten zum Lokationsbündel von NBA an NBN",
+          "Stammdaten zur Bilanzkreistreue",
+          "Stammdatenänderung vom NB (verantwortlich) ausgehend"
+        ],
         "x-maco-rollensichten": 5
       }
     },
@@ -60294,6 +60614,15 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_VERSAND_STATUSMELDUNG.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Abrechnungsdaten Bilanzkreisabrechnung",
+          "Abrechnungsdaten Netznutzungsabrechnung",
+          "Bestellung einer Änderung von Abrechnungsdaten von LF an NB",
+          "Bestellung einer Änderung von Abrechnungsdaten zur Bilanzkreisabrechnung von ÜNB an NB",
+          "Bestellung zur Stammdatenänderung an NB (verantwortlich)",
+          "Stammdaten zur Bilanzkreistreue",
+          "Stammdatenänderung vom NB (verantwortlich) ausgehend"
+        ],
         "x-maco-rollensichten": 7
       }
     },
@@ -60346,6 +60675,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_VERSAND_STDA_BK_TREUE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Stammdaten zur Bilanzkreistreue"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -60499,6 +60831,11 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_WIEDERHERST_LB.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Unterbrechung der Anschlussnutzung (Sperren) auf Anweisung des LF",
+          "Wiederherstellung der Anschlussnutzung (Entsperren) auf Anweisung des LF",
+          "Wiederherstellung der Anschlussnutzung bei Lieferbeginn"
+        ],
         "x-maco-rollensichten": 6
       }
     },
@@ -60551,6 +60888,9 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_WIEDERSPRUCH_ABLEHNUNG.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Übermittlung des Lieferscheins zur Netznutzungsabrechnung"
+        ],
         "x-maco-rollensichten": 1
       }
     },
@@ -60603,6 +60943,12 @@
         "x-actual-endpoint": "POST /inbound",
         "x-event-source": "event/202604/[NB]_START_ZUORDNUNG_ERZ_MALO_TRANCHE.yaml",
         "x-handbuchsatz": true,
+        "x-maco-prozessnamen": [
+          "Fall 1: LF-Zuordnung bei EEG-Marktlokation ohne DV-Pflicht bzw. KWKG-Marktlokation ohne DV-Pflicht",
+          "Fall 2: LF-Zuordnung bei EEG-Marktlokation mit DV-Pflicht",
+          "Fall 3: LF-Zuordnung bei KWKG-Marktlokation mit DV-Pflicht bzw. Nicht-EEG-/Nicht-KWKG-Marktlokation und Marktlokation wird nicht-tranchiert abgebildet",
+          "Fall 4: LF-Zuordnung bei KWKG-Marktlokation mit DV-Pflicht bzw. Nicht-EEG-/Nicht-KWKG-Marktlokation und Marktlokation wird tranchiert abgebildet"
+        ],
         "x-maco-rollensichten": 4
       }
     }

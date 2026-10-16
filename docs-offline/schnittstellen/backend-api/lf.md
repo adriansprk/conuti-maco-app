@@ -1,6 +1,6 @@
 # Backend-API — LF
 
-Das Backend eines LF bedient zwei Gruppen von Aufrufen. Die erste gilt nur für diese Rolle; die zweite ist für LF, NB und MSB wortgleich dieselbe und steht vollständig unter [Für alle Rollen](/schnittstellen/backend-api/rollenneutral).
+Das Backend eines LF bedient zwei Gruppen von Aufrufen. Die erste gilt nur für diese Rolle; die zweite ist für LF, NB und MSB wortgleich dieselbe.
 
 ## Nur für LF
 

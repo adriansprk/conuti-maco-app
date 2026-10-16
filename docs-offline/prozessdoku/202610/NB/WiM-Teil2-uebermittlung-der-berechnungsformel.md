@@ -40,7 +40,7 @@ Die Berechnungsformel wird für alle Marktlokationen übermittelt, unabhängig d
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_BERECHNUNGSFORMEL`](/schnittstellen/202610/trigger/events/NB-START_BERECHNUNGSFORMEL) · [Im Playground ausprobieren](/api/202610/ausloeser-nb/start-berechnungsformel)
+**Prozessauslöser** [`START_BERECHNUNGSFORMEL`](/api/202610/ausloeser-nb/start-berechnungsformel) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"VERWENDUNGSZEITRAUM\": [\n      {\n        \"datenqualitaet\": \"<datenqualitaet: ERWARTETE_DATEN | IM_SYSTEM_VORHANDENE_DATEN | INFORMATIVE_DATEN | GUELTIGE_DATEN | KEINE_DATEN | IM_SYSTEM_KEINE_DATEN_VORHANDEN | …>\",\n        \"verwendungAb\": \"<verwendungAb>\",\n        \"zeitraumId\": null\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\",\n    \"lokationsId\": \"<lokationsId>\",\n    \"lokationsTyp\": \"<lokationsTyp: MALO | MELO | NELO | TECHNISCHE_RESSOURCE>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_BERECHNUNGSFORMEL\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 
@@ -146,7 +146,7 @@ Schreibt den bestehenden Vorgang im Backend mit den Daten der eingegangenen Nach
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_BERECHNUNGSFORMEL`](/schnittstellen/202610/trigger/events/NB-START_BERECHNUNGSFORMEL) · [Im Playground ausprobieren](/api/202610/ausloeser-nb/start-berechnungsformel)
+**Prozessauslöser** [`START_BERECHNUNGSFORMEL`](/api/202610/ausloeser-nb/start-berechnungsformel) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"VERWENDUNGSZEITRAUM\": [\n      {\n        \"datenqualitaet\": \"<datenqualitaet: ERWARTETE_DATEN | IM_SYSTEM_VORHANDENE_DATEN | INFORMATIVE_DATEN | GUELTIGE_DATEN | KEINE_DATEN | IM_SYSTEM_KEINE_DATEN_VORHANDEN | …>\",\n        \"verwendungAb\": \"<verwendungAb>\",\n        \"zeitraumId\": null\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\",\n    \"lokationsId\": \"<lokationsId>\",\n    \"lokationsTyp\": \"<lokationsTyp: MALO | MELO | NELO | TECHNISCHE_RESSOURCE>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_BERECHNUNGSFORMEL\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

@@ -96,7 +96,10 @@ def main():
         raise SystemExit(f"Missing {len(missing)} mirrored pages, first: {missing[0]}")
     write_json(NEW / "index.json", manifest)
 
-    legacy_index = json.loads((OLD / "index.json").read_text(encoding="utf-8"))
+    legacy_index = {
+        name: url for name, url in json.loads((OLD / "index.json").read_text(encoding="utf-8")).items()
+        if (OLD / name).is_file()
+    }
     for url in re.findall(r"\]\((https://doc\.macoapp\.de/[^)]+\.md)\)", (OLD / "llm.txt").read_text(encoding="utf-8")):
         filename = unquote(urlsplit(url).path.rsplit("/", 1)[-1])
         legacy_index[filename] = url

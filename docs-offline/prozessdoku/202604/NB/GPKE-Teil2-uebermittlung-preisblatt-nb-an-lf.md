@@ -40,7 +40,7 @@ Der NB übermittelt dem LF sein elektronisches Preisblatt, wenn dem LF das elekt
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_PREISBLATT`](/schnittstellen/202604/trigger/events/NB-START_PREISBLATT) · [Im Playground ausprobieren](/api/202604/ausloeser-nb/start-preisblatt)
+**Prozessauslöser** [`START_PREISBLATT`](/api/202604/ausloeser-nb/start-preisblatt) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"PREISBLATT\": [\n      {\n        \"gueltigkeit\": {\n          \"startdatum\": \"<startdatum>\"\n        }\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_PREISBLATT\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

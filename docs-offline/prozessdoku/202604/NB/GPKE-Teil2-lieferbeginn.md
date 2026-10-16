@@ -449,7 +449,7 @@ Die MACO APP sendet diese Nachricht selbst, als Folgeprozess nach einem dieser E
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_ENDE_ZUORDNUNG`](/schnittstellen/202604/trigger/events/NB-START_ENDE_ZUORDNUNG) · [Im Playground ausprobieren](/api/202604/ausloeser-nb/start-ende-zuordnung)
+**Prozessauslöser** [`START_ENDE_ZUORDNUNG`](/api/202604/ausloeser-nb/start-ende-zuordnung) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"MARKTLOKATION\": [\n      {\n        \"marktlokationsId\": \"<marktlokationsId>\"\n      }\n    ],\n    \"NETZNUTZUNGSVERTRAG\": [\n      {\n        \"vertragsende\": \"<vertragsende>\"\n      }\n    ],\n    \"TRANCHE\": [\n      {\n        \"tranchenId\": \"<tranchenId>\"\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"marktrolle\": \"<marktrolle: NB | LF | MSB | MSBA | GMSB | MDL | …>\",\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\",\n    \"transaktionsgrund\": \"<transaktionsgrund>\",\n    \"transaktionsgrundergaenzung\": \"<transaktionsgrundergaenzung>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_ENDE_ZUORDNUNG\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 
@@ -499,7 +499,7 @@ Schreibt den bestehenden Vorgang im Backend fort, nachdem die Nachricht erstellt
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_AUFH_ZUK_ZUORDNUNG`](/schnittstellen/202604/trigger/events/NB-START_AUFH_ZUK_ZUORDNUNG) · [Im Playground ausprobieren](/api/202604/ausloeser-nb/start-aufh-zuk-zuordnung)
+**Prozessauslöser** [`START_AUFH_ZUK_ZUORDNUNG`](/api/202604/ausloeser-nb/start-aufh-zuk-zuordnung) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"MARKTLOKATION\": [\n      {\n        \"marktlokationsId\": \"<marktlokationsId>\"\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\",\n    \"transaktionsgrund\": \"<transaktionsgrund>\",\n    \"transaktionsgrundergaenzung\": \"<transaktionsgrundergaenzung>\",\n    \"vertragsbeginn\": \"<vertragsbeginn>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_AUFH_ZUK_ZUORDNUNG\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

@@ -323,9 +323,7 @@ components:
                 - prozessId
               required:
                 - prozessId
-              x--orders:
-                - prozessId
-              x--ignore-properties: []
+              x-apidog-ignore-properties: []
             eventname:
               type: string
               description: Name des Events
@@ -335,20 +333,14 @@ components:
           required:
             - Zusatzdaten
             - eventname
-          x--orders:
-            - Zusatzdaten
-            - eventname
-          x--ignore-properties: []
+          x-apidog-ignore-properties: []
       x-apidog-orders:
         - '0'
         - '1'
       required:
         - '0'
         - '1'
-      x--orders:
-        - '0'
-        - '1'
-      x--ignore-properties: []
+      x-apidog-ignore-properties: []
       x-apidog-folder: ''
     EVENT_SUCCESS:
       type: object
@@ -376,10 +368,7 @@ components:
       x-apidog-orders:
         - businessKey
         - message
-      x--orders:
-        - businessKey
-        - message
-      x--ignore-properties: []
+      x-apidog-ignore-properties: []
       x-apidog-folder: ''
     EVENT_FAIL:
       type: object
@@ -398,10 +387,7 @@ components:
       x-apidog-orders:
         - errorCode
         - message
-      x--orders:
-        - errorCode
-        - message
-      x--ignore-properties: []
+      x-apidog-ignore-properties: []
       x-apidog-folder: ''
   securitySchemes:
     bearer:

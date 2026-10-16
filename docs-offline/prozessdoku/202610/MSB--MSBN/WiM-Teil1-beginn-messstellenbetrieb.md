@@ -43,7 +43,7 @@ Der Prozess beschreibt die Interaktionen zwischen den Marktteilnehmern für den 
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_BEGINN_MSB`](/schnittstellen/202610/trigger/events/MSB-START_BEGINN_MSB) · [Im Playground ausprobieren](/api/202610/ausloeser-msb/start-beginn-msb)
+**Prozessauslöser** [`START_BEGINN_MSB`](/api/202610/ausloeser-msb/start-beginn-msb) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"MESSLOKATION\": [\n      {\n        \"ablesekartenempfaenger\": {\n          \"name1\": \"<name1>\"\n        }\n      }\n    ],\n    \"MESSSTELLENBETRIEBSVERTRAG\": [\n      {\n        \"korrespondenzpartner\": {\n          \"name1\": \"<name1>\"\n        },\n        \"vertragspartner2\": [\n          \"<vertragspartner2>\"\n        ]\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"marktrolle\": \"<marktrolle: NB | LF | MSB | MSBA | GMSB | MDL | …>\",\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"datumleistungsbeginn\": \"<datumleistungsbeginn>\",\n    \"empfaenger\": {\n      \"marktrolle\": \"<marktrolle: NB | LF | MSB | MSBA | GMSB | MDL | …>\",\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\",\n    \"transaktionsgrund\": \"<transaktionsgrund>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_BEGINN_MSB\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

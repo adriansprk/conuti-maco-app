@@ -40,7 +40,7 @@ Der LFN sendet an den LFA eine Kündigung. Der LFA prüft die Kündigung und tei
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_KUENDIGUNG`](/schnittstellen/202610/trigger/events/LF-START_KUENDIGUNG) · [Im Playground ausprobieren](/api/202610/ausloeser-lf/start-kuendigung)
+**Prozessauslöser** [`START_KUENDIGUNG`](/api/202610/ausloeser-lf/start-kuendigung) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"MARKTLOKATION\": [\n      {\n        \"boTyp\": \"MARKTLOKATION\",\n        \"marktlokationsId\": \"50754496000\",\n        \"sparte\": \"STROM\",\n        \"versionStruktur\": \"1\"\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"boTyp\": \"MARKTTEILNEHMER\",\n      \"rollencodenummer\": \"9903526000002\",\n      \"rollencodetyp\": \"BDEW\",\n      \"versionStruktur\": \"1\"\n    },\n    \"empfaenger\": {\n      \"boTyp\": \"MARKTTEILNEHMER\",\n      \"rollencodenummer\": \"9979052000006\",\n      \"rollencodetyp\": \"BDEW\",\n      \"versionStruktur\": \"1\"\n    },\n    \"kategorie\": \"E35\",\n    \"sparte\": \"STROM\",\n    \"transaktionsgrund\": \"E03\",\n    \"transaktionsgrundergaenzung\": \"ZW4\",\n    \"vertragsende\": \"2025-10-31T23:00:00Z\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_KUENDIGUNG\",\n    \"prozessId\": \"00505688-E4A2-1EDF-A0C2-C81842E2515E\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

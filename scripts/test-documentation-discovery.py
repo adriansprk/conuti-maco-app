@@ -53,6 +53,8 @@ class DiscoveryTests(unittest.TestCase):
         self.assertEqual(len(manifest), self.graph["source_files"]["new"])
         self.assertTrue(all((ROOT / "docs-offline" / path).is_file() for path in manifest))
         self.assertTrue(all(not is_gas(path) for path in manifest))
+        supplement = json.loads((ROOT / "docs-supplemental/index.json").read_text(encoding="utf-8"))
+        self.assertTrue(all((ROOT / "docs-supplemental" / name).is_file() for name in supplement))
 
     def test_strom_filter_is_idempotent(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -94,6 +96,26 @@ class DiscoveryTests(unittest.TestCase):
                            check=True, capture_output=True, text=True)
             self.assertFalse(page.exists())
             self.assertNotIn("neutral.md", index.read_text(encoding="utf-8"))
+
+    def test_legacy_gas_category_is_filtered_in_check_and_refresh(self):
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory)
+            gas_page = base / "codeliste-g-0009.md"
+            gas_page.write_text("# Codeliste\n", encoding="utf-8")
+            index = base / "llm.txt"
+            listing = ("# Old\n"
+                       "- GAS > Lieferant [Codeliste](https://doc.macoapp.de/codeliste-g-0009.md)\n"
+                       "- Strom > Lieferant [Lieferbeginn](https://doc.macoapp.de/lieferbeginn.md)\n")
+            index.write_text(listing, encoding="utf-8")
+            command = [sys.executable, str(SCRIPTS / "documentation_scope.py"),
+                       "--legacy-index", str(index), "--legacy-dir", str(base)]
+            subprocess.run(command + ["--dry-run"], check=True, capture_output=True, text=True)
+            self.assertTrue(gas_page.exists())
+            self.assertIn("lieferbeginn.md", index.read_text(encoding="utf-8"))
+            index.write_text(listing, encoding="utf-8")
+            subprocess.run(command, check=True, capture_output=True, text=True)
+            self.assertFalse(gas_page.exists())
+            self.assertNotIn("codeliste-g-0009.md", index.read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":

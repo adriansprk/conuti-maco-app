@@ -57,7 +57,7 @@
               LESEN_MESSSTELLENBETRIEBSVERTRAG_BASIS
           </Card>
           <Card title="Zähler lesen"
-                href="https://doc.macoapp.de/z%C3%A4hler-lesen-14017031e0.md">
+                href="https://doc.macoapp.de/z%C3%A4hler-lesen-basis-14017031e0.md">
               LESEN_ZAEHLER_BASIS
           </Card>
         </CardGroup>

@@ -40,7 +40,7 @@ Der MSB übermittelt dem NB sein elektronisches Preisblatt, wenn dem NB das elek
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_VERSAND_PREISBLATT_IMS`](/schnittstellen/202604/trigger/events/MSB-START_VERSAND_PREISBLATT_IMS) · [Im Playground ausprobieren](/api/202604/ausloeser-msb/start-versand-preisblatt-ims)
+**Prozessauslöser** [`START_VERSAND_PREISBLATT_IMS`](/api/202604/ausloeser-msb/start-versand-preisblatt-ims) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"PREISBLATT\": [\n      {\n        \"gueltigkeit\": {\n          \"startdatum\": \"<startdatum>\"\n        }\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"marktrolle\": \"<marktrolle: NB | LF | MSB | MSBA | GMSB | MDL | …>\",\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"marktrolle\": \"<marktrolle: NB | LF | MSB | MSBA | GMSB | MDL | …>\",\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\",\n    \"pruefidentifikator\": \"<pruefidentifikator: 27002>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_VERSAND_PREISBLATT_IMS\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

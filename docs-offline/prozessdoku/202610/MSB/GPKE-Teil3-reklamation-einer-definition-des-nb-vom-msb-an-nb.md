@@ -43,7 +43,7 @@ Der LF bzw. MSB stellt fest, dass ihm eine
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_REKLAMATION_DEFINITION`](/schnittstellen/202610/trigger/events/MSB-START_REKLAMATION_DEFINITION) · [Im Playground ausprobieren](/api/202610/ausloeser-msb/start-reklamation-definition)
+**Prozessauslöser** [`START_REKLAMATION_DEFINITION`](/api/202610/ausloeser-msb/start-reklamation-definition) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"AUFTRAG\": [\n      {\n        \"positionsdaten\": [\n          \"<positionsdaten>\"\n        ]\n      }\n    ],\n    \"REKLAMATION\": [\n      {\n        \"reklamationsgrund\": \"<reklamationsgrund: WERTE_ZU_HOCH | WERTE_ZU_NIEDRIG | WERTE_FEHLEN | KONFIGURATION_WIRKT_NICHT | KONFIGURATION_WIRKT_TEILWEISE | WERTE_WERDEN_NICHT_NACH_VORGABEN_UEBERMITTELT | …>\"\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"pruefidentifikator\": \"<pruefidentifikator: 17122>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_REKLAMATION_DEFINITION\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

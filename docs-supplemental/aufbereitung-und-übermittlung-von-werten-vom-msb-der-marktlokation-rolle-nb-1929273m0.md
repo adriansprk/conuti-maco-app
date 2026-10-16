@@ -81,7 +81,7 @@
                 Lesen einer NeLo mittels LokationsId zu einem bestimmten Zeitpunkt
           </Card>  
           <Card title="Zähler lesen"
-                href="https://doc.macoapp.de/z%C3%A4hler-lesen-14017031e0.md">
+                href="https://doc.macoapp.de/z%C3%A4hler-lesen-basis-14017031e0.md">
                 Lesen eines Zählers mittels LokationsId zu einem bestimmten Zeitpunkt
           </Card>  
       </Tab>        

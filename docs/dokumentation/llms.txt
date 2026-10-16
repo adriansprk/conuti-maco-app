@@ -538,9 +538,9 @@ Die drei Referenzebenen sind hier nur gezählt, nicht aufgezählt: einzeln stehe
 
 ## Optional
 
-- [Vollständiger Index](https://dokumentation.macoapp.de/llms-index.txt): alle 3893 Seiten beider Formatversionen, eine Zeile je Seite.
+- [Vollständiger Index](https://dokumentation.macoapp.de/llms-index.txt): alle 3891 Seiten beider Formatversionen, eine Zeile je Seite.
 
 ### Kein `llms-full.txt`, und warum
 
-Der Volltext aller 3893 Zwillinge zusammen sind 116.1 MB. Das passt in kein Kontextfenster, und eine Datei, die niemand ganz liest, ist schlechter als der Verweis auf die eine Seite, die gebraucht wird. Wer den Volltext einer Seite will, holt ihren Zwilling; wer sucht, nimmt die Suche der Auslieferung.
+Der Volltext aller 3891 Zwillinge zusammen sind 116.7 MB. Das passt in kein Kontextfenster, und eine Datei, die niemand ganz liest, ist schlechter als der Verweis auf die eine Seite, die gebraucht wird. Wer den Volltext einer Seite will, holt ihren Zwilling; wer sucht, nimmt die Suche der Auslieferung.
 

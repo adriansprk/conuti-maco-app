@@ -40,7 +40,7 @@ Der NB oder LF fordert über einen Bestellprozess Zwischenablesungswerte beim MS
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_ANFORDERUNG_MESSWERTE`](/schnittstellen/202610/trigger/events/MSB-START_ANFORDERUNG_MESSWERTE) · [Im Playground ausprobieren](/api/202610/ausloeser-msb/start-anforderung-messwerte)
+**Prozessauslöser** [`START_ANFORDERUNG_MESSWERTE`](/api/202610/ausloeser-msb/start-anforderung-messwerte) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"ANFRAGE\": [\n      {\n        \"anfragetyp\": \"<anfragetyp: KAUF | NUTZUNGSUEBERLASSUNG | ABRECHNUNGSBRENNWERT_UND_ZUSTANDSZAHL | LASTGANGDATEN | ZAEHLERSTAENDE | WERTEERMITTLUNG | …>\",\n        \"lokationsId\": \"<lokationsId>\"\n      }\n    ],\n    \"AUFTRAG\": [\n      {\n        \"positionsdaten\": [\n          \"<positionsdaten>\"\n        ]\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"pruefidentifikator\": \"<pruefidentifikator: 17004>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_ANFORDERUNG_MESSWERTE\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

@@ -14,7 +14,7 @@ def is_gas(path: str, text: str = "") -> bool:
         return True  # Mixed-industry landing pages; use /prozesse/strom.md instead.
     if "gas" in path.lower():
         return True
-    return bool(re.search(r"(?:·|\|)\s*Gas\s*(?:·|\|)|\bsparte=[\"']Gas[\"']|(?:^|\n)\s*(?:#|>)?\s*GeLi Gas\b", text[:1200], re.I))
+    return bool(re.search(r"(?:·|\|)\s*Gas\s*(?:·|\|)|\bsparte=[\"']Gas[\"']|(?:^|\n)\s*(?:#|>)?\s*GeLi Gas\b|(?:^|\n)\s*-\s*GAS\s*>", text[:1200], re.I))
 
 
 def filter_index(path: Path, excluded: set[str] | None = None) -> set[str]:
@@ -39,17 +39,20 @@ def filter_index(path: Path, excluded: set[str] | None = None) -> set[str]:
     return paths
 
 
-def filter_legacy_index(path: Path, excluded: set[str] | None = None) -> None:
+def filter_legacy_index(path: Path, excluded: set[str] | None = None) -> set[str]:
     lines = path.read_text(encoding="utf-8").splitlines(keepends=True)
-    kept = []
+    kept, removed, kept_paths = [], set(), set()
     for line in lines:
         match = re.search(r"\]\((https://doc\.macoapp\.de/[^)]+\.md)\)", line)
         if match:
             relative = unquote(urlsplit(match.group(1)).path.rsplit("/", 1)[-1])
             if is_gas(relative, line) or relative in (excluded or set()):
+                removed.add(relative)
                 continue
+            kept_paths.add(relative)
         kept.append(line)
     path.write_text("".join(kept), encoding="utf-8")
+    return removed - kept_paths
 
 
 def main() -> None:
@@ -58,6 +61,7 @@ def main() -> None:
     parser.add_argument("--mirror-dir", type=Path)
     parser.add_argument("--legacy-index", type=Path)
     parser.add_argument("--legacy-dir", type=Path)
+    parser.add_argument("--dry-run", action="store_true", help="Keep files in --legacy-dir while filtering the index")
     parser.add_argument("--index-file", type=Path, help="Filter a single new-site index in place")
     parser.add_argument("--prune", action="store_true")
     args = parser.parse_args()
@@ -67,10 +71,12 @@ def main() -> None:
             for file in args.legacy_dir.glob("*.md"):
                 if is_gas(file.name, file.read_text(encoding="utf-8", errors="replace")):
                     excluded.add(file.name)
-                    file.unlink()
-        filter_legacy_index(args.legacy_index, excluded)
-        if excluded:
-            print(f"Removed {len(excluded)} Gas-specific legacy pages")
+        removed = filter_legacy_index(args.legacy_index, excluded)
+        if args.legacy_dir and not args.dry_run:
+            for name in excluded | removed:
+                (args.legacy_dir / name).unlink(missing_ok=True)
+            if excluded or removed:
+                print(f"Removed {len(excluded | removed)} Gas-specific legacy pages")
         return
     if args.index_file:
         filter_index(args.index_file)

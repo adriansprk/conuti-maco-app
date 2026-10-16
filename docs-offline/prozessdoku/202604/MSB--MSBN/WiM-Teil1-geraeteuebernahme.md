@@ -40,7 +40,7 @@ Der MSBN der Messlokation fordert beim MSBA der Messlokation ein Geräteübernah
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_GERAETEUEBERNAHME`](/schnittstellen/202604/trigger/events/MSB-START_GERAETEUEBERNAHME) · [Im Playground ausprobieren](/api/202604/ausloeser-msb/start-geraeteuebernahme)
+**Prozessauslöser** [`START_GERAETEUEBERNAHME`](/api/202604/ausloeser-msb/start-geraeteuebernahme) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"MESSLOKATION\": [\n      {\n        \"messlokationsId\": \"<messlokationsId>\"\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"marktrolle\": \"<marktrolle: NB | LF | MSB | MSBA | GMSB | MDL | …>\",\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"marktrolle\": \"<marktrolle: NB | LF | MSB | MSBA | GMSB | MDL | …>\",\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"gueltigAb\": \"<gueltigAb>\",\n    \"kategorie\": \"<kategorie>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_GERAETEUEBERNAHME\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 
@@ -162,7 +162,7 @@ Schreibt den bestehenden Vorgang im Backend mit den Daten der eingegangenen Nach
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_BESTELLUNG_GERAETEUEBERNAHME`](/schnittstellen/202604/trigger/events/MSB-START_BESTELLUNG_GERAETEUEBERNAHME) · [Im Playground ausprobieren](/api/202604/ausloeser-msb/start-bestellung-geraeteuebernahme)
+**Prozessauslöser** [`START_BESTELLUNG_GERAETEUEBERNAHME`](/api/202604/ausloeser-msb/start-bestellung-geraeteuebernahme) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"AUFTRAG\": [\n      {\n        \"ausfuehrungsdatum\": \"<ausfuehrungsdatum>\",\n        \"positionsdaten\": [\n          \"<positionsdaten>\"\n        ]\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"marktrolle\": \"<marktrolle: NB | LF | MSB | MSBA | GMSB | MDL | …>\",\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"marktrolle\": \"<marktrolle: NB | LF | MSB | MSBA | GMSB | MDL | …>\",\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_BESTELLUNG_GERAETEUEBERNAHME\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

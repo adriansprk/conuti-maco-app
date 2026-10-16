@@ -8,14 +8,14 @@ output_dir="$root/docs-offline"
 mkdir -p "$index_dir" "$output_dir"
 
 host="dokumentation.macoapp.de"
-resolve_args=()
+curl_args=(-fsSL --retry 3 --retry-all-errors --max-time 60)
 if [[ -n "${DOKUMENTATION_IP:-}" ]]; then
-  resolve_args=(--resolve "$host:443:$DOKUMENTATION_IP")
+  curl_args+=(--resolve "$host:443:$DOKUMENTATION_IP")
 fi
 
 for name in llms.txt llms-index.txt; do
   tmp="$index_dir/$name.tmp"
-  curl -fsSL --retry 3 --retry-all-errors --max-time 60 "${resolve_args[@]}" "https://$host/$name" -o "$tmp"
+  curl "${curl_args[@]}" "https://$host/$name" -o "$tmp"
   mv "$tmp" "$index_dir/$name"
 done
 
@@ -24,7 +24,7 @@ python3 "$root/scripts/documentation_scope.py" --index-dir "$index_dir" --mirror
 mkdir -p "$output_dir/apis"
 for version in 202604 202610; do
   tmp="$output_dir/apis/trigger-$version.json.tmp"
-  curl -fsSL --retry 3 --retry-all-errors --max-time 60 "${resolve_args[@]}" "https://$host/apis/trigger-$version.json" -o "$tmp"
+  curl "${curl_args[@]}" "https://$host/apis/trigger-$version.json" -o "$tmp"
   python3 -m json.tool "$tmp" >/dev/null
   mv "$tmp" "$output_dir/apis/trigger-$version.json"
 done
@@ -61,11 +61,11 @@ download_one() {
   target="$output_dir/$path"
   mkdir -p "$(dirname "$target")"
   tmp="$target.tmp.$$"
-  local args=()
+  local args=(-fsSL --retry 3 --retry-all-errors --retry-delay 1 --max-time 45)
   if [[ -n "${DOKUMENTATION_IP:-}" ]]; then
-    args=(--resolve "dokumentation.macoapp.de:443:$DOKUMENTATION_IP")
+    args+=(--resolve "dokumentation.macoapp.de:443:$DOKUMENTATION_IP")
   fi
-  if curl -fsSL --retry 3 --retry-all-errors --retry-delay 1 --max-time 45 "${args[@]}" "$url" -o "$tmp" 2>/dev/null && [[ -s "$tmp" ]] && ! head -c 20 "$tmp" | grep -q '<!DOCTYPE html'; then
+  if curl "${args[@]}" "$url" -o "$tmp" 2>/dev/null && [[ -s "$tmp" ]] && ! head -c 20 "$tmp" | grep -q '<!DOCTYPE html'; then
     if [[ -f "$target" ]] && cmp -s "$tmp" "$target"; then
       rm -f "$tmp"
     else

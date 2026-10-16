@@ -106,7 +106,7 @@ Legt im Backend einen neuen Vorgang mit den Daten der eingegangenen Nachricht an
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_VERSAND_ANTWORT_NNA`](/schnittstellen/202604/trigger/events/LF-START_VERSAND_ANTWORT_NNA) · [Im Playground ausprobieren](/api/202604/ausloeser-lf/start-versand-antwort-nna)
+**Prozessauslöser** [`START_VERSAND_ANTWORT_NNA`](/api/202604/ausloeser-lf/start-versand-antwort-nna) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"AVIS\": [\n      {\n        \"avisNummer\": \"<avisNummer>\",\n        \"avisTyp\": \"<avisTyp: ABGELEHNTE_FORDERUNG | ZAHLUNGSAVIS>\",\n        \"positionen\": [\n          \"<positionen>\"\n        ],\n        \"zuZahlen\": {\n          \"waehrung\": \"<waehrung>\",\n          \"wert\": \"<wert>\"\n        }\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"marktrolle\": \"<marktrolle: NB | LF | MSB | MSBA | GMSB | MDL | …>\",\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\",\n    \"nachrichtendatum\": \"<nachrichtendatum>\",\n    \"pruefidentifikator\": \"<pruefidentifikator: 33001 | 33002 | 33003 | 33004>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_VERSAND_ANTWORT_NNA\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 
@@ -221,7 +221,7 @@ Schreibt den bestehenden Vorgang im Backend mit den Daten der eingegangenen Nach
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_VERSAND_ANTWORT_NNA`](/schnittstellen/202604/trigger/events/LF-START_VERSAND_ANTWORT_NNA) · [Im Playground ausprobieren](/api/202604/ausloeser-lf/start-versand-antwort-nna)
+**Prozessauslöser** [`START_VERSAND_ANTWORT_NNA`](/api/202604/ausloeser-lf/start-versand-antwort-nna) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"AVIS\": [\n      {\n        \"avisNummer\": \"<avisNummer>\",\n        \"avisTyp\": \"<avisTyp: ABGELEHNTE_FORDERUNG | ZAHLUNGSAVIS>\",\n        \"positionen\": [\n          \"<positionen>\"\n        ],\n        \"zuZahlen\": {\n          \"waehrung\": \"<waehrung>\",\n          \"wert\": \"<wert>\"\n        }\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"marktrolle\": \"<marktrolle: NB | LF | MSB | MSBA | GMSB | MDL | …>\",\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\",\n    \"nachrichtendatum\": \"<nachrichtendatum>\",\n    \"pruefidentifikator\": \"<pruefidentifikator: 33001 | 33002 | 33003 | 33004>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_VERSAND_ANTWORT_NNA\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 
@@ -328,7 +328,7 @@ Schreibt den bestehenden Vorgang im Backend mit den Daten der eingegangenen Nach
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_VERSAND_ANTWORT_NNA`](/schnittstellen/202604/trigger/events/LF-START_VERSAND_ANTWORT_NNA) · [Im Playground ausprobieren](/api/202604/ausloeser-lf/start-versand-antwort-nna)
+**Prozessauslöser** [`START_VERSAND_ANTWORT_NNA`](/api/202604/ausloeser-lf/start-versand-antwort-nna) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"AVIS\": [\n      {\n        \"avisNummer\": \"<avisNummer>\",\n        \"avisTyp\": \"<avisTyp: ABGELEHNTE_FORDERUNG | ZAHLUNGSAVIS>\",\n        \"positionen\": [\n          \"<positionen>\"\n        ],\n        \"zuZahlen\": {\n          \"waehrung\": \"<waehrung>\",\n          \"wert\": \"<wert>\"\n        }\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"marktrolle\": \"<marktrolle: NB | LF | MSB | MSBA | GMSB | MDL | …>\",\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\",\n    \"nachrichtendatum\": \"<nachrichtendatum>\",\n    \"pruefidentifikator\": \"<pruefidentifikator: 33001 | 33002 | 33003 | 33004>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_VERSAND_ANTWORT_NNA\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

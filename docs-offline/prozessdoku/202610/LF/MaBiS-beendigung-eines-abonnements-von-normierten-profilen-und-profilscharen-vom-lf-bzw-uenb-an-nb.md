@@ -34,7 +34,7 @@
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_ABO_PROFILE`](/schnittstellen/202610/trigger/events/LF-START_ABO_PROFILE) · [Im Playground ausprobieren](/api/202610/ausloeser-lf/start-abo-profile)
+**Prozessauslöser** [`START_ABO_PROFILE`](/api/202610/ausloeser-lf/start-abo-profile) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"ANFRAGE\": [\n      {\n        \"abonnement\": \"<abonnement: START_ABO | ENDE_ABO | OHNE_ABO>\"\n      }\n    ],\n    \"AUFTRAG\": [\n      {\n        \"positionsdaten\": [\n          \"<positionsdaten>\"\n        ]\n      }\n    ],\n    \"BILANZIERUNG\": [\n      {\n        \"lastprofile\": [\n          \"<lastprofile>\"\n        ]\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\",\n    \"typ\": \"<typ>\",\n    \"vorgangsreferenznummer\": \"<vorgangsreferenznummer>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_ABO_PROFILE\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

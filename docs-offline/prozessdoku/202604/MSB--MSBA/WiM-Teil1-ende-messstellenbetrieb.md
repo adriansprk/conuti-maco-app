@@ -40,7 +40,7 @@ Der Use-Case beschreibt die Interaktionen zwischen den Marktteilnehmern anlässl
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_ENDE_MSB`](/schnittstellen/202604/trigger/events/MSB-START_ENDE_MSB) · [Im Playground ausprobieren](/api/202604/ausloeser-msb/start-ende-msb)
+**Prozessauslöser** [`START_ENDE_MSB`](/api/202604/ausloeser-msb/start-ende-msb) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"MESSLOKATION\": [\n      {\n        \"messlokationsId\": \"<messlokationsId>\"\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"pruefidentifikator\": \"<pruefidentifikator: 44051 | 55051>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_ENDE_MSB\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

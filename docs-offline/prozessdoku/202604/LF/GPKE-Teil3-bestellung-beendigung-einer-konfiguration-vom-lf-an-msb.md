@@ -40,7 +40,7 @@ Der NB bzw. LF bestellt beim MSB der direkt betroffenen Lokation eine Beendigung
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_VERSAND_BEST_BEEND_KONFIG`](/schnittstellen/202604/trigger/events/LF-START_VERSAND_BEST_BEEND_KONFIG) · [Im Playground ausprobieren](/api/202604/ausloeser-lf/start-versand-best-beend-konfig)
+**Prozessauslöser** [`START_VERSAND_BEST_BEEND_KONFIG`](/api/202604/ausloeser-lf/start-versand-best-beend-konfig) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"AUFTRAG\": [\n      {\n        \"ausfuehrungsdatum\": \"<ausfuehrungsdatum>\"\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\",\n    \"nachrichtenReferenzBestellbestaetigung\": \"<nachrichtenReferenzBestellbestaetigung>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\",\n    \"vorgangsReferenzBestellbestaetigung\": \"<vorgangsReferenzBestellbestaetigung>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_VERSAND_BEST_BEEND_KONFIG\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

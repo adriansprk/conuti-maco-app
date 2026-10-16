@@ -44,7 +44,7 @@ Der MSB der Messlokation übermittelt dem verantwortlichen MSB der Marktlokation
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_ERHEBUNG_MESSWERTE`](/schnittstellen/202610/trigger/events/MSB-START_ERHEBUNG_MESSWERTE) · [Im Playground ausprobieren](/api/202610/ausloeser-msb/start-erhebung-messwerte)
+**Prozessauslöser** [`START_ERHEBUNG_MESSWERTE`](/api/202610/ausloeser-msb/start-erhebung-messwerte) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"ENERGIEMENGE\": [\n      {\n        \"energieverbrauch\": [\n          \"<energieverbrauch>\"\n        ],\n        \"lokationsId\": \"<lokationsId>\"\n      }\n    ],\n    \"ZAEHLER\": [\n      {\n        \"zaehlernummer\": \"<zaehlernummer>\"\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"anfrageReferenz\": \"<anfrageReferenz>\",\n    \"empfaenger\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\",\n    \"lokationsTyp\": \"<lokationsTyp: MALO | MELO | NELO | TECHNISCHE_RESSOURCE>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\",\n    \"typ\": \"<typ>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_ERHEBUNG_MESSWERTE\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 
@@ -108,7 +108,7 @@ Schreibt den bestehenden Vorgang im Backend fort, nachdem die Nachricht erstellt
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_ERHEBUNG_MESSWERTE`](/schnittstellen/202610/trigger/events/MSB-START_ERHEBUNG_MESSWERTE) · [Im Playground ausprobieren](/api/202610/ausloeser-msb/start-erhebung-messwerte)
+**Prozessauslöser** [`START_ERHEBUNG_MESSWERTE`](/api/202610/ausloeser-msb/start-erhebung-messwerte) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"ENERGIEMENGE\": [\n      {\n        \"energieverbrauch\": [\n          \"<energieverbrauch>\"\n        ],\n        \"lokationsId\": \"<lokationsId>\"\n      }\n    ],\n    \"ZAEHLER\": [\n      {\n        \"zaehlernummer\": \"<zaehlernummer>\"\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"anfrageReferenz\": \"<anfrageReferenz>\",\n    \"empfaenger\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\",\n    \"lokationsTyp\": \"<lokationsTyp: MALO | MELO | NELO | TECHNISCHE_RESSOURCE>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\",\n    \"typ\": \"<typ>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_ERHEBUNG_MESSWERTE\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 
@@ -168,7 +168,7 @@ Schreibt den bestehenden Vorgang im Backend fort, nachdem die Nachricht erstellt
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_ERHEBUNG_MESSWERTE`](/schnittstellen/202610/trigger/events/MSB-START_ERHEBUNG_MESSWERTE) · [Im Playground ausprobieren](/api/202610/ausloeser-msb/start-erhebung-messwerte)
+**Prozessauslöser** [`START_ERHEBUNG_MESSWERTE`](/api/202610/ausloeser-msb/start-erhebung-messwerte) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"ENERGIEMENGE\": [\n      {\n        \"energieverbrauch\": [\n          \"<energieverbrauch>\"\n        ],\n        \"lokationsId\": \"<lokationsId>\"\n      }\n    ],\n    \"ZAEHLER\": [\n      {\n        \"zaehlernummer\": \"<zaehlernummer>\"\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"anfrageReferenz\": \"<anfrageReferenz>\",\n    \"empfaenger\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\",\n    \"lokationsTyp\": \"<lokationsTyp: MALO | MELO | NELO | TECHNISCHE_RESSOURCE>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\",\n    \"typ\": \"<typ>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_ERHEBUNG_MESSWERTE\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

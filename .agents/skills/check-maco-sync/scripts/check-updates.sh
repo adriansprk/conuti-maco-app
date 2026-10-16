@@ -155,7 +155,7 @@ check_llm_txt() {
     if [[ "$LLM_URL" == *"dokumentation.macoapp.de"* ]]; then
         python3 "$WORKSPACE_ROOT/scripts/documentation_scope.py" --index-file "$tmp"
     else
-        python3 "$WORKSPACE_ROOT/scripts/documentation_scope.py" --legacy-index "$tmp"
+        python3 "$WORKSPACE_ROOT/scripts/documentation_scope.py" --legacy-index "$tmp" --legacy-dir "$WORKSPACE_ROOT/docs-supplemental" --dry-run
     fi
 
     local local_lines remote_lines local_hash remote_hash

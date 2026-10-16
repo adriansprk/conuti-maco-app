@@ -38,9 +38,6 @@ bekommen die Kennung der MACO-Prozessinstanz zurück.
 
 ### Wann welcher Schlüssel Pflicht ist
 
-Formatversion 202604, über alle drei Rollen gleich; 202610 unterscheidet sich
-nicht.
-
 | Operation | `businessKey` | `targetBusinessKey` | `prozessId` (nicht zur Zuordnung verwenden) |
 |---|---|---|---|
 | `createProcessData` (LF, MSB, NB) | **Pflicht** | optional | optional |
@@ -69,15 +66,6 @@ erhalten haben.
 ohne Umschlag. Es gibt kein `Process`-Objekt um die Nutzdaten herum, keine
 Liste und kein `data`. Der `businessKey` steht in `zusatzdaten`, nicht am
 Rumpf.
-
-:::note{title="Erwarten Sie keinen Umschlag um die Nutzdaten"}
-
-Wo der `businessKey` in anderen Darstellungen am `Process` steht, ist das der
-interne Umschlag der MACO APP. Ihr Backend erhält ihn nicht. Für MaloIdent
-03002 und 03003 gilt diese Rumpfform nicht; behandeln Sie diese beiden
-Antworten gesondert.
-
-:::
 
 ## Die MaloIdent-Kette
 
@@ -109,20 +97,3 @@ Antwort über die `vorgangsreferenznummer` zu.
 Die Detailseite steht nicht im Menü; Sie erreichen sie über diese Adresse oder
 aus den Monitoren heraus. Sie brauchen eine Anmeldung, und was Sie sehen,
 hängt von Ihrer Rolle ab. Den Host Ihrer Installation kennt Ihr Betrieb.
-
-:::tip{title="Die Benutzerdokumentation des Backoffice"}
-
-Die Kapitel der Benutzerdokumentation liegen im internen Bereich, der eine
-Anmeldung verlangt. Fragen Sie Ihren Ansprechpartner bei CONUTI nach dem
-Zugang.
-
-:::
-
-## Vier Felder, die Sie nicht verwenden
-
-| Feld | Befund |
-|---|---|
-| `parentBusinessKey` | Im BO4E-Schema als Feld von `Zusatzdaten` definiert, ohne Beschreibung, und in keiner Schnittstelle der MACO APP verwendet. Außerhalb der Schnittstellen führen es der Konnektor-Fluss und die SAP-Empfangsstruktur `/CONUTI/S_MA_ZUSATZDATEN`, ohne dass eine Bedeutung beschrieben ist. Verwenden Sie `parentBusinessKey` nicht. |
-| `referenzProzessId` | Kein Feld eines Schemas. Es kommt nur als Beispielwert in zwei `updateProcessData`-Beispielen der Rolle LF vor. |
-| `contrlReferenz` | Im BO4E-Schema als Feld von `Zusatzdaten` definiert, ohne Beschreibung, und in keiner Schnittstelle der MACO APP verwendet. |
-| `prozessId` im Callback | Vorhanden, aber nicht Pflicht, außer bei MaloIdent 03002 / 03003. Ordnen Sie Callbacks über den `businessKey` zu. |

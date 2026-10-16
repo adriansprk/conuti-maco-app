@@ -9,7 +9,7 @@ info:
   description: ''
   version: 1.0.0
 paths:
-  /getMarketlocationBasic:
+  /getMarketLocationBasic:
     get:
       summary: Marktlokation lesen
       deprecated: false
@@ -25,7 +25,7 @@ paths:
           in: query
           description: LokationsId der Marklokation
           required: true
-          example: '{{marktlokationsId}}'
+          example: ''
           schema:
             type: string
             default: '74018657187'
@@ -52,7 +52,7 @@ paths:
           in: query
           description: Datum (Gültig ab) oder Stichtag, wenn parameter4 nicht gesetzt
           required: true
-          example: '{{gueltigVon}}'
+          example: ''
           schema:
             format: date-time
             pattern: ^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$
@@ -63,7 +63,7 @@ paths:
           in: query
           description: Datum (Gültig bis)
           required: false
-          example: '{{gueltigBis}}'
+          example: ''
           schema:
             format: date-time
             pattern: ^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$
@@ -92,578 +92,7 @@ paths:
               schema:
                 type: array
                 items:
-                  type: object
-                  properties:
-                    boTyp: &ref_12
-                      $ref: '#/components/schemas/BOTyp'
-                      default: MARKTLOKATION
-                    versionStruktur:
-                      type: string
-                      default: '1'
-                      description: versionStruktur
-                      x-apidog-mock: '1'
-                      title: Structure version
-                    marktlokationsId:
-                      type: string
-                      description: >-
-                        Angabe der ID der Marktlokation, für die die Stammdaten
-                        gelten.
-
-                        LOC Z16
-
-                        PI 55016 55001 55002 55077 55078 55600 55602 55604 55601
-                        55603 55605 55013 55607 55010 55004 55007 55036 55037
-                        55038 55611 55218 55220 55613 55614 55126 55156 55674
-                        55675 55672 55673 55688 55689 55616 55622 55628 55634
-                        55691 55692 55175 55180 55173 55177 55690 55109 55137
-                        55110 55136 55684 55685 55640 55645 55650 55655 55660
-                        55665 55557 55559 55670 55671 55035 55095 55060 55039
-                        55042 55043 55168 55169 55052 55238 55239 55240 55241
-                        55242 55243 55074 55075 55076 55065 55066 55195 55196
-                        55223 55224 55201 55202
-
-                        Ruhende Malo Zuordnung geringfügiger Verbräuche gem §
-                        10c EEG Anwendung findet Anwendung, nimmt nicht selbst
-                        an der Bilanzierung teil. 
-
-                        LOC Z22
-
-                        PI 55001 55002 55010 55004 55007 55175 55180 55173 55177
-                        55690 55035 55060 55043 55168 
-
-                        RFF Z18
-
-                        PI 55196 55043 55168 55169 
-
-                        LOC 172
-
-                        44037 44038
-
-                        ORDERS 
-
-                        RFF Z18 
-
-                        PI 17002 17003 17135
-
-                        RFF Z59 Marktlokation Kundenanlage
-
-                        PI 17134 17135 
-
-                        REQOTE LOC 172
-
-                        PI 35001 35002 35003 35004 
-
-                        IFTSTA LOC 172
-
-                        PI 21032 21033 21039 21040 21045
-
-                        QUOTES LOC 172
-
-                        PI 15002 15003 15004
-
-                        RFF Z18
-
-                        PI 15002
-
-                        INVOIC LOC 172 
-
-                        PI 31001 31002 31009 31004 31005 31006 31011
-                      x-apidog-mock: '{{$string.numeric(length=10)}}'
-                      title: >-
-                        ID of the market location to which the master data
-                        applies
-                    sparte:
-                      description: Strom oder Gas
-                      title: Utility division
-                      $ref: '#/components/schemas/Sparte'
-                    energierichtung: &ref_8
-                      $ref: '#/components/schemas/Energierichtung'
-                      description: >-
-                        Angabe, ob eine Malo Energie liefert, also erzeugt Z06
-                        oder ob eine Malo Energie entnimmt, also verbraucht Z09.
-
-                        CCI Z30
-
-                        PI 55043 55168 55169 55195 55196
-                    bilanzierungsmethode:
-                      $ref: '#/components/schemas/Bilanzierungsmethode'
-                      description: Bilanzierungsmethode
-                    verbrauchsart:
-                      type: array
-                      items: &ref_4
-                        $ref: '#/components/schemas/Verbrauchsart'
-                      description: Stromverbrauchsart/Verbrauchsart Marktlokation
-                    unterbrechbar:
-                      type: boolean
-                      description: >-
-                        Gibt an, ob es sich um eine unterbrechbare Belieferung
-                        handelt.
-                      x-apidog-mock: '{{$datatype.boolean}}'
-                      title: Indicates whether delivery is interruptible
-                    netzebene: &ref_0
-                      $ref: '#/components/schemas/Netzebene'
-                      description: >-
-                        Beschreibung der Spannungsebene oder Druckebene an
-                        welcher die Marktlokation angeschlossen ist
-
-                        CAV E06
-
-                        PI  55013 55613 55614 55674 55675 55616 55622 55628
-                        55634 55035 55095 55060 55043 55168 55169 Druckebene
-
-                        CAV Y03
-
-                        PI 44112 44139 44142 44002 44013 44014 44035 
-                    umspannung: *ref_0
-                    netzbetreiberCodeNr:
-                      type: string
-                      description: >-
-                        Angabe des NBs MP-ID, der das Konzessionsgebiet zur Malo
-                        verantwortet und dessen Preisblätter Anwendung finden. 
-                      x-apidog-mock: >-
-                        {{$helpers.rangeToNumber(min=9900000000000,max=9999999999999)}}
-                      title: >-
-                        MP-ID of the DSO responsible for the concession area of
-                        the market location
-                    gebietTyp:
-                      $ref: '#/components/schemas/Gebiettyp'
-                      description: Typ des Netzgebietes,z.B.Verteilnetz.
-                    netzgebietNr:
-                      type: string
-                      description: Die Nummer des Netzgebietes in der ene't-Datenbank.
-                      x-apidog-mock: '{{$string.numeric(length=5)}}'
-                      title: Grid area number in the ene't database
-                    bilanzierungsgebiet:
-                      type: string
-                      description: Bilanzierungsgebiet, dem das Netzgebiet zugeordnet ist.
-                      x-apidog-mock: >-
-                        {{$helpers.arrayElement(["37Z000000000003D",
-                        "10YDE-RWENET---I", "10YDE-ENBW-----N",
-                        "10YDE-50HZ-----U"])}}
-                      title: Balancing area to which the grid area is assigned
-                    grundversorgerCodeNr:
-                      type: string
-                      description: >-
-                        Code Nummer des Grundversorgers, der für diese
-                        Marktlokation zuständig ist.
-                      x-apidog-mock: >-
-                        {{$helpers.rangeToNumber(min=9900000000000,max=9999999999999)}}
-                      title: >-
-                        Code number of the default supplier responsible for this
-                        market location
-                    gasqualitaet:
-                      $ref: '#/components/schemas/Gasqualitaet'
-                      description: Gasqualitaet für EDIFACT mapping
-                    endkunde: &ref_1
-                      $ref: '#/components/schemas/Geschaeftspartner'
-                      description: >-
-                        Link zum Geschäftspartner, dem diese Marktlokation
-                        gehört.
-                    lokationsadresse: &ref_13
-                      $ref: '#/components/schemas/Adresse'
-                      description: >-
-                        Marktlokationsanschrift
-
-                        DP Lieferanschrift
-
-                        Z59 Erwartete Marktlokationsanschrift
-
-                        Z60 Im System vorhandene Marktlokationsanschrift
-
-                        Z63 Informative Marktlokationsanschrift
-
-                        NAD DP
-
-                        PI 55600 55601 55013 55616 55622 55035 55095 55074 55075
-                        55076
-
-                        NAD Z23 Marktlokationsadresse ORDERS
-
-                        PI 17101
-
-                        NAD DP Adresse der Leistungserbringung INVOIC
-
-                        PI 31001 31002 31003 31009 31004 31005 31006 31011
-                    katasterinformation:
-                      $ref: '#/components/schemas/Katasteradresse'
-                      description: >-
-                        Alternativ zu einer postalischen Adresse und
-                        Geokoordinaten kann hier eine Ortsangabe mittels
-                        Gemarkung und Flurstück erfolgen.
-
-                        Achtung: Es darf immer nur eine Art der Ortsangabe
-                        vorhanden sein (entweder eine Adresse oder eine
-                        GeoKoordinate oder eine Katasteradresse.
-                    regelzone:
-                      type: string
-                      description: Angabe einer der vier Regelzonen
-                      x-apidog-mock: '{{$helpers.arrayElement(["TEN","AMP","TNB","50H"])}}'
-                      title: Specification of one of the four control areas
-                    marktgebiet:
-                      type: string
-                      description: >-
-                        Angabe des Marktgebiets, in dem die Marktlokation liegt
-                        - EIC-Code
-                      x-apidog-mock: DE_LG
-                      title: >-
-                        Market area in which the market location resides (EIC
-                        code)
-                    zeitreihentyp:
-                      $ref: '#/components/schemas/Zeitreihentyp'
-                      description: Zeitreihentyp für EDIFACT mapping
-                    messtechnischeEinordnung:
-                      $ref: '#/components/schemas/MesstechnischeEinordnung'
-                      description: >-
-                        Messtechnische Einordnung der Marktlokation
-
-                        CAV Z52
-
-                        PI 55616 55622 55628 55634 55035 55095 55060 55043 55168
-                        55169
-                    sperrstatus:
-                      $ref: '#/components/schemas/Sperrstatus'
-                      description: |-
-                        Betriebszustand der Marktlokation
-                        CCI Z42
-                        PI 55013
-                    referenzMarktlokationsId:
-                      type: string
-                      description: Referenz auf Marktlokation
-                      x-apidog-mock: '{{$string.numeric(length=10)}}'
-                      title: Reference to market location
-                    versorgungsart:
-                      $ref: '#/components/schemas/Versorgungsart'
-                      description: >-
-                        Versorgungsart der Marktlokation. Hier wird mitgeteilt,
-                        ob der Kunde sich ab dem Zuordnungsdatum in
-                        Ersatzversorgung oder Grundversorgung befindet.
-
-                        CCI Z36
-
-                        PI 55014
-                    eigentuemer: *ref_1
-                    hausverwalter: *ref_1
-                    verguetungEmpfaenger:
-                      $ref: '#/components/schemas/VerguetungEmpfaenger'
-                      description: |-
-                        Empfänger der Vergütung zur Einspeisung
-                        CAV Z10
-                        PI 55616 55622 55619 55625 
-                    statusErzeugendeMalo:
-                      $ref: '#/components/schemas/StatusErzeugendeMarktlokation'
-                      description: |-
-                        Veräußerungsform der erzeugenden Marktlokation
-                        CCI Z22
-                        PI 55607 55074 55075 55076
-                    fernsteuerbarkeit:
-                      $ref: '#/components/schemas/Fernsteuerbarkeit'
-                      description: |-
-                        Status der Fernsteuerbarkeit
-                        CCI Z24
-                        PI 55616 55622 
-                    foerderungsLand:
-                      type: string
-                      description: Land der Förderung - Alpha-2-Code
-                      x-apidog-mock: DE
-                      title: Country of support – alpha-2 code
-                    redispatch:
-                      type: boolean
-                      description: >-
-                        Produktidentifikation beim Austausch von Daten zu
-                        Energiemengen in den Redispatch Prozessen.
-                      x-apidog-mock: '{{$datatype.boolean}}'
-                      title: >-
-                        Product identifier when exchanging energy quantity data
-                        in redispatch processes
-                    zukuenftigerMeldepunkt:
-                      type: boolean
-                      description: zukünftiger Meldepunkt
-                      x-apidog-mock: '{{$datatype.boolean}}'
-                      title: Future reporting point
-                    lokationszuordnung:
-                      $ref: '#/components/schemas/Lokationszuordnung'
-                      description: nicht in Benutzung
-                    konfigurationsprodukt:
-                      type: string
-                      description: >-
-                        Konfigurationsprodukt aus Produkt-Daten der
-                        Marktlokation, Produkte sind in der Codeliste der
-                        Produkte beschrieben.
-                      title: >-
-                        Configuration product from the market location’s product
-                        data
-                    leistungskurvendefinition:
-                      type: string
-                      description: >-
-                        Code der Zugeordnete Leistungskurvendefinition für das
-                        Objekt
-                      title: >-
-                        Code of the assigned load curve definition for the
-                        object
-                    produktdatenRelevanteRolle: &ref_3
-                      $ref: '#/components/schemas/Marktrolle'
-                      description: >-
-                        Produkt-Daten für Marktrolle relevant, dient zur
-                        Identifizierung der Marktrolle an der Marktlokation, der
-                        die Information zum im PIA genannten Produkt genannt
-                        werden müssen.
-
-                        CCI ZA7
-
-                        PI 55639 55644 55649 55654 55659 55664 55640 55645 55650
-                        55655 55660 55665 55043 55168 55169 
-                    beteiligterMarktpartner: &ref_2
-                      $ref: '#/components/schemas/Marktteilnehmer'
-                      description: >-
-                        Beteiligter Marktpartner MP-ID
-
-                        NAD VY 
-
-                        PI 55003 55080 55604 55605 55010 55036 55038 55691 55692
-                        55075 55076 55067 55071 55072
-                    modulNetzentgelte:
-                      $ref: '#/components/schemas/ModulNetzentgelte'
-                      description: nicht in Benutzung
-                    datenqualitaet:
-                      $ref: '#/components/schemas/Datenqualitaet'
-                      description: >-
-                        Leitet Segmentengruppen ein
-
-                        SEQ Z01 Daten der Marktlokation 
-
-                        PI 55017 55001 55077 55600 55601 55014 55218 55613 55126
-                        55674 55672 55688 55616 55628 55691 55109 55670 55043
-                        55168 55169 55238 55239 55074 55075 55076 55065 55066
-                        55195 55196 55201 55202 
-
-                        SEQ Z45 Netznutzungsabrechnungsdaten der Marktlokation
-
-                        PI 55218 
-
-                        SEQ Z76 Messstellenbetriebsabrechnungsdaten der
-                        Marktlokation
-
-                        PI 55557
-
-                        SEQ Z27 Erforderliches Messprodukt der Marktlokation
-
-                        PI 55043 55168 55169 
-
-                        SEQ Z02 OBIS-Daten der Marktlokation
-
-                        PI 55684 55640 55650 55660 55553 55043 55168 55169 55239
-                        55074 55075 55076 55195 55196 
-
-                        SEQ Z59 Produkt-Daten der Marktlokation
-
-                        PI 55640 55650 55660 55168 55169 
-                    gueltigkeitszeitraum:
-                      $ref: '#/components/schemas/Zeitraum'
-                      description: Referenz auf Zeitraum-ID
-                    marktrollen:
-                      type: array
-                      items: *ref_2
-                      description: >-
-                        Zugeordnete Marktpartner der Malo mit
-                        Zuordnungszeiträumen
-                      title: >-
-                        Assigned market partners of the market location
-                        including assignment periods
-                    zaehlwerke:
-                      type: array
-                      items:
-                        $ref: '#/components/schemas/Zaehlwerk'
-                      description: Die Zählwerke des Zählers.
-                      title: Registers of the meter
-                    zaehlwerkeBeteiligteMarktrolle:
-                      type: array
-                      items: *ref_3
-                      description: Liste der Zählwerke der beteiligten Martrolle
-                      title: List of registers for the involved market role
-                    verbrauchsmenge:
-                      type: array
-                      items:
-                        $ref: '#/components/schemas/Verbrauch'
-                      description: für EDIFACT mapping
-                      title: For EDIFACT mapping
-                    zugehoerigeMesslokationen:
-                      type: array
-                      items:
-                        $ref: '#/components/schemas/Messlokationszuordnung'
-                      description: >-
-                        Aufzählung der Messlokationen, die zu dieser
-                        Marktlokation gehören. Es können 3 verschiedene
-                        Konstrukte auftreten:
-
-
-                        Beziehung 1 : 0 : Hier handelt es sich um
-                        Pauschalanlagen ohne Messung. D.h. die Verbrauchsdaten
-                        sind direkt über die Marktlokation abgreifbar. Beziehung
-                        1 : 1 : Das ist die Standard-Beziehung für die meisten
-                        Fälle. In diesem Fall gibt es zu einer Marktlokation
-                        genau eine Messlokation. Beziehung 1 : N : Hier liegt
-                        beispielsweise eine Untermessung vor. Der Verbrauch
-                        einer Marklokation berechnet sich hier aus mehreren
-                        Messungen.
-
-
-                        Es gibt praktisch auch noch die Beziehung N : 1,
-                        beispielsweise bei einer Zweirichtungsmessung bei der
-                        durch eine Messeinrichtung die Messung sowohl für die
-                        Einspreiseseite als auch für die Aussspeiseseite
-                        erfolgt. Da Abrechnung und Bilanzierung jedoch für beide
-                        Marktlokationen getrennt erfolgt, werden nie beide
-                        Marktlokationen gemeinsam betrachtet. Daher lässt sich
-                        dieses Konstrukt auf zwei 1:1-Beziehung zurückführen,
-                        wobei die Messlokation in beiden Fällen die gleiche ist.
-
-
-                        In den Zuordnungen sind ist die arithmetische Operation
-                        mit der der Verbrauch einer Messlokation zum Verbrauch
-                        einer Marktlokation beitrögt mit aufgeführt. Der
-                        Standard ist hier die Addition.
-                      title: >-
-                        Enumeration of metering locations belonging to this
-                        market location
-                    netznutzungsabrechnungsdaten:
-                      type: array
-                      items:
-                        $ref: '#/components/schemas/Netznutzungsabrechnungsdaten'
-                      description: Daten für die Prüfung der Netznutzungsabrechnung
-                      title: Data for validating network usage billing
-                    messstellenbetriebsabrechnungsdaten:
-                      type: array
-                      items:
-                        $ref: >-
-                          #/components/schemas/Messstellenbetriebsabrechnungsdaten
-                      description: |-
-                        Messstellenbetriebsabrechnungsdaten der Marktlokation
-                        PI 55557
-                      title: >-
-                        Metering point operation billing data of the market
-                        location
-                    energieherkunft:
-                      type: array
-                      items:
-                        $ref: '#/components/schemas/Energieherkunft'
-                      description: >-
-                        Art der erzeugenden Marktlokation
-
-                        CCI Z34
-
-                        PI 55607 55616 55622 55628 55634 55095 55060 55043 55168
-                        55169 55074 55075 55076
-                      title: Type of the feed in market location
-                    erforderlichesProduktpaket:
-                      type: array
-                      items:
-                        $ref: '#/components/schemas/Produktpaket'
-                      description: |-
-                        Bestandteil eines Produktpakets,  Produktpaket-ID
-                        SEQ Z79
-                        PI 55001 55077 55600 55601 55014 55608 
-                      title: Component of a product package; product package ID
-                    geokoordinaten:
-                      $ref: '#/components/schemas/Geokoordinaten'
-                      description: Koordinaten - API Maloident
-                    paketId:
-                      type: string
-                      description: >-
-                        Paket-ID  identifiziert die von einem NB-Wechsel
-                        betroffenen Lokationen. Betroffene Malos vom NBA.
-                      examples:
-                        - P9705070235
-                      x-apidog-mock: >-
-                        PKT{{$date.now|format('yyyyMMdd')}}{{$string.alpha(min=3,max=3,casing='upper')}}
-                      title: >-
-                        Package ID identifying locations affected by a DSO
-                        change
-                    marktlokationsTyp:
-                      type: array
-                      items:
-                        $ref: '#/components/schemas/MarktlokationsTypisierung'
-                      description: >-
-                        Angabe der Typisierung der Marktlokation mit möglicher
-                        Angabe zeitlicher Gültigkeit
-                      title: >-
-                        Classification of the market location with optional
-                        validity period
-                    zugehoerigeMarktlokationen:
-                      type: array
-                      items:
-                        $ref: '#/components/schemas/MarktlokationsReferenz'
-                      description: Referenzen zugehöriger Marktlokationen
-                    technischeEinrichtungen:
-                      type: array
-                      items:
-                        $ref: '#/components/schemas/TechnischeEinrichtung'
-                      description: technischeEinrichtungen
-                  x-apidog-refs: {}
-                  x-apidog-orders:
-                    - boTyp
-                    - versionStruktur
-                    - marktlokationsId
-                    - sparte
-                    - energierichtung
-                    - bilanzierungsmethode
-                    - verbrauchsart
-                    - unterbrechbar
-                    - netzebene
-                    - umspannung
-                    - netzbetreiberCodeNr
-                    - gebietTyp
-                    - netzgebietNr
-                    - bilanzierungsgebiet
-                    - grundversorgerCodeNr
-                    - gasqualitaet
-                    - endkunde
-                    - lokationsadresse
-                    - katasterinformation
-                    - regelzone
-                    - marktgebiet
-                    - zeitreihentyp
-                    - messtechnischeEinordnung
-                    - sperrstatus
-                    - referenzMarktlokationsId
-                    - versorgungsart
-                    - eigentuemer
-                    - hausverwalter
-                    - verguetungEmpfaenger
-                    - statusErzeugendeMalo
-                    - fernsteuerbarkeit
-                    - foerderungsLand
-                    - redispatch
-                    - zukuenftigerMeldepunkt
-                    - lokationszuordnung
-                    - konfigurationsprodukt
-                    - leistungskurvendefinition
-                    - produktdatenRelevanteRolle
-                    - beteiligterMarktpartner
-                    - modulNetzentgelte
-                    - datenqualitaet
-                    - gueltigkeitszeitraum
-                    - marktrollen
-                    - zaehlwerke
-                    - zaehlwerkeBeteiligteMarktrolle
-                    - verbrauchsmenge
-                    - zugehoerigeMesslokationen
-                    - netznutzungsabrechnungsdaten
-                    - messstellenbetriebsabrechnungsdaten
-                    - energieherkunft
-                    - erforderlichesProduktpaket
-                    - geokoordinaten
-                    - paketId
-                    - marktlokationsTyp
-                    - zugehoerigeMarktlokationen
-                    - technischeEinrichtungen
-                  required:
-                    - boTyp
-                    - versionStruktur
-                    - marktlokationsId
-                    - sparte
-                    - energierichtung
-                    - marktrollen
-                  x-apidog-ignore-properties: []
+                  $ref: '#/components/schemas/Marktlokation'
                 description: Liste der Marklokationen
               example:
                 - boTyp: MARKTLOKATION
@@ -1022,6 +451,519 @@ paths:
       x-run-in-apidog: https://app.apidog.com/web/project/816353/apis/api-14017020-run
 components:
   schemas:
+    Marktlokation:
+      title: Marktlokation
+      type: object
+      properties:
+        boTyp: &ref_12
+          $ref: '#/components/schemas/BOTyp'
+          default: MARKTLOKATION
+        versionStruktur:
+          type: string
+          default: '1'
+          description: versionStruktur
+          x-apidog-mock: '1'
+          title: Structure version
+        marktlokationsId:
+          type: string
+          description: >-
+            Angabe der ID der Marktlokation, für die die Stammdaten gelten.
+
+            LOC Z16
+
+            PI 55016 55001 55002 55077 55078 55600 55602 55604 55601 55603 55605
+            55013 55607 55010 55004 55007 55036 55037 55038 55611 55218 55220
+            55613 55614 55126 55156 55674 55675 55672 55673 55688 55689 55616
+            55622 55628 55634 55691 55692 55175 55180 55173 55177 55690 55109
+            55137 55110 55136 55684 55685 55640 55645 55650 55655 55660 55665
+            55557 55559 55670 55671 55035 55095 55060 55039 55042 55043 55168
+            55169 55052 55238 55239 55240 55241 55242 55243 55074 55075 55076
+            55065 55066 55195 55196 55223 55224 55201 55202
+
+            Ruhende Malo Zuordnung geringfügiger Verbräuche gem § 10c EEG
+            Anwendung findet Anwendung, nimmt nicht selbst an der Bilanzierung
+            teil. 
+
+            LOC Z22
+
+            PI 55001 55002 55010 55004 55007 55175 55180 55173 55177 55690 55035
+            55060 55043 55168 
+
+            RFF Z18
+
+            PI 55196 55043 55168 55169 
+
+            LOC 172
+
+            44037 44038
+
+            ORDERS 
+
+            RFF Z18 
+
+            PI 17002 17003 17135
+
+            RFF Z59 Marktlokation Kundenanlage
+
+            PI 17134 17135 
+
+            REQOTE LOC 172
+
+            PI 35001 35002 35003 35004 
+
+            IFTSTA LOC 172
+
+            PI 21032 21033 21039 21040 21045
+
+            QUOTES LOC 172
+
+            PI 15002 15003 15004
+
+            RFF Z18
+
+            PI 15002
+
+            INVOIC LOC 172 
+
+            PI 31001 31002 31009 31004 31005 31006 31011
+          x-apidog-mock: '{{$string.numeric(length=10)}}'
+          title: ID of the market location to which the master data applies
+        sparte:
+          description: Strom oder Gas
+          title: Utility division
+          $ref: '#/components/schemas/Sparte'
+        energierichtung: &ref_8
+          $ref: '#/components/schemas/Energierichtung'
+          description: >-
+            Angabe, ob eine Malo Energie liefert, also erzeugt Z06 oder ob eine
+            Malo Energie entnimmt, also verbraucht Z09.
+
+            CCI Z30
+
+            PI 55043 55168 55169 55195 55196
+        bilanzierungsmethode:
+          $ref: '#/components/schemas/Bilanzierungsmethode'
+          description: Bilanzierungsmethode
+        verbrauchsart:
+          type: array
+          items: &ref_4
+            $ref: '#/components/schemas/Verbrauchsart'
+          description: Stromverbrauchsart/Verbrauchsart Marktlokation
+        unterbrechbar:
+          type: boolean
+          description: Gibt an, ob es sich um eine unterbrechbare Belieferung handelt.
+          x-apidog-mock: '{{$datatype.boolean}}'
+          title: Indicates whether delivery is interruptible
+        netzebene: &ref_0
+          $ref: '#/components/schemas/Netzebene'
+          description: >-
+            Beschreibung der Spannungsebene oder Druckebene an welcher die
+            Marktlokation angeschlossen ist
+
+            CAV E06
+
+            PI  55013 55613 55614 55674 55675 55616 55622 55628 55634 55035
+            55095 55060 55043 55168 55169 Druckebene
+
+            CAV Y03
+
+            PI 44112 44139 44142 44002 44013 44014 44035 
+        umspannung: *ref_0
+        netzbetreiberCodeNr:
+          type: string
+          description: >-
+            Angabe des NBs MP-ID, der das Konzessionsgebiet zur Malo
+            verantwortet und dessen Preisblätter Anwendung finden. 
+          x-apidog-mock: '{{$helpers.rangeToNumber(min=9900000000000,max=9999999999999)}}'
+          title: >-
+            MP-ID of the DSO responsible for the concession area of the market
+            location
+        gebietTyp:
+          $ref: '#/components/schemas/Gebiettyp'
+          description: Typ des Netzgebietes,z.B.Verteilnetz.
+        netzgebietNr:
+          type: string
+          description: Die Nummer des Netzgebietes in der ene't-Datenbank.
+          x-apidog-mock: '{{$string.numeric(length=5)}}'
+          title: Grid area number in the ene't database
+        bilanzierungsgebiet:
+          type: string
+          description: Bilanzierungsgebiet, dem das Netzgebiet zugeordnet ist.
+          x-apidog-mock: >-
+            {{$helpers.arrayElement(["37Z000000000003D", "10YDE-RWENET---I",
+            "10YDE-ENBW-----N", "10YDE-50HZ-----U"])}}
+          title: Balancing area to which the grid area is assigned
+        grundversorgerCodeNr:
+          type: string
+          description: >-
+            Code Nummer des Grundversorgers, der für diese Marktlokation
+            zuständig ist.
+          x-apidog-mock: '{{$helpers.rangeToNumber(min=9900000000000,max=9999999999999)}}'
+          title: >-
+            Code number of the default supplier responsible for this market
+            location
+        gasqualitaet:
+          $ref: '#/components/schemas/Gasqualitaet'
+          description: Gasqualitaet für EDIFACT mapping
+        endkunde: &ref_1
+          $ref: '#/components/schemas/Geschaeftspartner'
+          description: Link zum Geschäftspartner, dem diese Marktlokation gehört.
+        lokationsadresse: &ref_13
+          $ref: '#/components/schemas/Adresse'
+          description: |-
+            Marktlokationsanschrift
+            DP Lieferanschrift
+            Z59 Erwartete Marktlokationsanschrift
+            Z60 Im System vorhandene Marktlokationsanschrift
+            Z63 Informative Marktlokationsanschrift
+            NAD DP
+            PI 55600 55601 55013 55616 55622 55035 55095 55074 55075 55076
+            NAD Z23 Marktlokationsadresse ORDERS
+            PI 17101
+            NAD DP Adresse der Leistungserbringung INVOIC
+            PI 31001 31002 31003 31009 31004 31005 31006 31011
+        katasterinformation:
+          $ref: '#/components/schemas/Katasteradresse'
+          description: >-
+            Alternativ zu einer postalischen Adresse und Geokoordinaten kann
+            hier eine Ortsangabe mittels Gemarkung und Flurstück erfolgen.
+
+            Achtung: Es darf immer nur eine Art der Ortsangabe vorhanden sein
+            (entweder eine Adresse oder eine GeoKoordinate oder eine
+            Katasteradresse.
+        regelzone:
+          type: string
+          description: Angabe einer der vier Regelzonen
+          x-apidog-mock: '{{$helpers.arrayElement(["TEN","AMP","TNB","50H"])}}'
+          title: Specification of one of the four control areas
+        marktgebiet:
+          type: string
+          description: Angabe des Marktgebiets, in dem die Marktlokation liegt - EIC-Code
+          x-apidog-mock: DE_LG
+          title: Market area in which the market location resides (EIC code)
+        zeitreihentyp:
+          $ref: '#/components/schemas/Zeitreihentyp'
+          description: Zeitreihentyp für EDIFACT mapping
+        messtechnischeEinordnung:
+          $ref: '#/components/schemas/MesstechnischeEinordnung'
+          description: |-
+            Messtechnische Einordnung der Marktlokation
+            CAV Z52
+            PI 55616 55622 55628 55634 55035 55095 55060 55043 55168 55169
+        sperrstatus:
+          $ref: '#/components/schemas/Sperrstatus'
+          description: |-
+            Betriebszustand der Marktlokation
+            CCI Z42
+            PI 55013
+        referenzMarktlokationsId:
+          type: string
+          description: Referenz auf Marktlokation
+          x-apidog-mock: '{{$string.numeric(length=10)}}'
+          title: Reference to market location
+        versorgungsart:
+          $ref: '#/components/schemas/Versorgungsart'
+          description: >-
+            Versorgungsart der Marktlokation. Hier wird mitgeteilt, ob der Kunde
+            sich ab dem Zuordnungsdatum in Ersatzversorgung oder Grundversorgung
+            befindet.
+
+            CCI Z36
+
+            PI 55014
+        eigentuemer: *ref_1
+        hausverwalter: *ref_1
+        verguetungEmpfaenger:
+          $ref: '#/components/schemas/VerguetungEmpfaenger'
+          description: |-
+            Empfänger der Vergütung zur Einspeisung
+            CAV Z10
+            PI 55616 55622 55619 55625 
+        statusErzeugendeMalo:
+          $ref: '#/components/schemas/StatusErzeugendeMarktlokation'
+          description: |-
+            Veräußerungsform der erzeugenden Marktlokation
+            CCI Z22
+            PI 55607 55074 55075 55076
+        fernsteuerbarkeit:
+          $ref: '#/components/schemas/Fernsteuerbarkeit'
+          description: |-
+            Status der Fernsteuerbarkeit
+            CCI Z24
+            PI 55616 55622 
+        foerderungsLand:
+          type: string
+          description: Land der Förderung - Alpha-2-Code
+          x-apidog-mock: DE
+          title: Country of support – alpha-2 code
+        redispatch:
+          type: boolean
+          description: >-
+            Produktidentifikation beim Austausch von Daten zu Energiemengen in
+            den Redispatch Prozessen.
+          x-apidog-mock: '{{$datatype.boolean}}'
+          title: >-
+            Product identifier when exchanging energy quantity data in
+            redispatch processes
+        zukuenftigerMeldepunkt:
+          type: boolean
+          description: zukünftiger Meldepunkt
+          x-apidog-mock: '{{$datatype.boolean}}'
+          title: Future reporting point
+        lokationszuordnung:
+          $ref: '#/components/schemas/Lokationszuordnung'
+          description: nicht in Benutzung
+        konfigurationsprodukt:
+          type: string
+          description: >-
+            Konfigurationsprodukt aus Produkt-Daten der Marktlokation, Produkte
+            sind in der Codeliste der Produkte beschrieben.
+          title: Configuration product from the market location’s product data
+        leistungskurvendefinition:
+          type: string
+          description: Code der Zugeordnete Leistungskurvendefinition für das Objekt
+          title: Code of the assigned load curve definition for the object
+        produktdatenRelevanteRolle: &ref_3
+          $ref: '#/components/schemas/Marktrolle'
+          description: >-
+            Produkt-Daten für Marktrolle relevant, dient zur Identifizierung der
+            Marktrolle an der Marktlokation, der die Information zum im PIA
+            genannten Produkt genannt werden müssen.
+
+            CCI ZA7
+
+            PI 55639 55644 55649 55654 55659 55664 55640 55645 55650 55655 55660
+            55665 55043 55168 55169 
+        beteiligterMarktpartner: &ref_2
+          $ref: '#/components/schemas/Marktteilnehmer'
+          description: >-
+            Beteiligter Marktpartner MP-ID
+
+            NAD VY 
+
+            PI 55003 55080 55604 55605 55010 55036 55038 55691 55692 55075 55076
+            55067 55071 55072
+        modulNetzentgelte:
+          $ref: '#/components/schemas/ModulNetzentgelte'
+          description: nicht in Benutzung
+        datenqualitaet:
+          $ref: '#/components/schemas/Datenqualitaet'
+          description: >-
+            Leitet Segmentengruppen ein
+
+            SEQ Z01 Daten der Marktlokation 
+
+            PI 55017 55001 55077 55600 55601 55014 55218 55613 55126 55674 55672
+            55688 55616 55628 55691 55109 55670 55043 55168 55169 55238 55239
+            55074 55075 55076 55065 55066 55195 55196 55201 55202 
+
+            SEQ Z45 Netznutzungsabrechnungsdaten der Marktlokation
+
+            PI 55218 
+
+            SEQ Z76 Messstellenbetriebsabrechnungsdaten der Marktlokation
+
+            PI 55557
+
+            SEQ Z27 Erforderliches Messprodukt der Marktlokation
+
+            PI 55043 55168 55169 
+
+            SEQ Z02 OBIS-Daten der Marktlokation
+
+            PI 55684 55640 55650 55660 55553 55043 55168 55169 55239 55074 55075
+            55076 55195 55196 
+
+            SEQ Z59 Produkt-Daten der Marktlokation
+
+            PI 55640 55650 55660 55168 55169 
+        gueltigkeitszeitraum:
+          $ref: '#/components/schemas/Zeitraum'
+          description: Referenz auf Zeitraum-ID
+        marktrollen:
+          type: array
+          items: *ref_2
+          description: Zugeordnete Marktpartner der Malo mit Zuordnungszeiträumen
+          title: >-
+            Assigned market partners of the market location including assignment
+            periods
+        zaehlwerke:
+          type: array
+          items:
+            $ref: '#/components/schemas/Zaehlwerk'
+          description: Die Zählwerke des Zählers.
+          title: Registers of the meter
+        zaehlwerkeBeteiligteMarktrolle:
+          type: array
+          items: *ref_3
+          description: Liste der Zählwerke der beteiligten Martrolle
+          title: List of registers for the involved market role
+        verbrauchsmenge:
+          type: array
+          items:
+            $ref: '#/components/schemas/Verbrauch'
+          description: für EDIFACT mapping
+          title: For EDIFACT mapping
+        zugehoerigeMesslokationen:
+          type: array
+          items:
+            $ref: '#/components/schemas/Messlokationszuordnung'
+          description: >-
+            Aufzählung der Messlokationen, die zu dieser Marktlokation gehören.
+            Es können 3 verschiedene Konstrukte auftreten:
+
+
+            Beziehung 1 : 0 : Hier handelt es sich um Pauschalanlagen ohne
+            Messung. D.h. die Verbrauchsdaten sind direkt über die Marktlokation
+            abgreifbar. Beziehung 1 : 1 : Das ist die Standard-Beziehung für die
+            meisten Fälle. In diesem Fall gibt es zu einer Marktlokation genau
+            eine Messlokation. Beziehung 1 : N : Hier liegt beispielsweise eine
+            Untermessung vor. Der Verbrauch einer Marklokation berechnet sich
+            hier aus mehreren Messungen.
+
+
+            Es gibt praktisch auch noch die Beziehung N : 1, beispielsweise bei
+            einer Zweirichtungsmessung bei der durch eine Messeinrichtung die
+            Messung sowohl für die Einspreiseseite als auch für die
+            Aussspeiseseite erfolgt. Da Abrechnung und Bilanzierung jedoch für
+            beide Marktlokationen getrennt erfolgt, werden nie beide
+            Marktlokationen gemeinsam betrachtet. Daher lässt sich dieses
+            Konstrukt auf zwei 1:1-Beziehung zurückführen, wobei die
+            Messlokation in beiden Fällen die gleiche ist.
+
+
+            In den Zuordnungen sind ist die arithmetische Operation mit der der
+            Verbrauch einer Messlokation zum Verbrauch einer Marktlokation
+            beitrögt mit aufgeführt. Der Standard ist hier die Addition.
+          title: Enumeration of metering locations belonging to this market location
+        netznutzungsabrechnungsdaten:
+          type: array
+          items:
+            $ref: '#/components/schemas/Netznutzungsabrechnungsdaten'
+          description: Daten für die Prüfung der Netznutzungsabrechnung
+          title: Data for validating network usage billing
+        messstellenbetriebsabrechnungsdaten:
+          type: array
+          items:
+            $ref: '#/components/schemas/Messstellenbetriebsabrechnungsdaten'
+          description: |-
+            Messstellenbetriebsabrechnungsdaten der Marktlokation
+            PI 55557
+          title: Metering point operation billing data of the market location
+        energieherkunft:
+          type: array
+          items:
+            $ref: '#/components/schemas/Energieherkunft'
+          description: >-
+            Art der erzeugenden Marktlokation
+
+            CCI Z34
+
+            PI 55607 55616 55622 55628 55634 55095 55060 55043 55168 55169 55074
+            55075 55076
+          title: Type of the feed in market location
+        erforderlichesProduktpaket:
+          type: array
+          items:
+            $ref: '#/components/schemas/Produktpaket'
+          description: |-
+            Bestandteil eines Produktpakets,  Produktpaket-ID
+            SEQ Z79
+            PI 55001 55077 55600 55601 55014 55608 
+          title: Component of a product package; product package ID
+        geokoordinaten:
+          $ref: '#/components/schemas/Geokoordinaten'
+          description: Koordinaten - API Maloident
+        paketId:
+          type: string
+          description: >-
+            Paket-ID  identifiziert die von einem NB-Wechsel betroffenen
+            Lokationen. Betroffene Malos vom NBA.
+          examples:
+            - P9705070235
+          x-apidog-mock: >-
+            PKT{{$date.now|format('yyyyMMdd')}}{{$string.alpha(min=3,max=3,casing='upper')}}
+          title: Package ID identifying locations affected by a DSO change
+        marktlokationsTyp:
+          type: array
+          items:
+            $ref: '#/components/schemas/MarktlokationsTypisierung'
+          description: >-
+            Angabe der Typisierung der Marktlokation mit möglicher Angabe
+            zeitlicher Gültigkeit
+          title: Classification of the market location with optional validity period
+        zugehoerigeMarktlokationen:
+          type: array
+          items:
+            $ref: '#/components/schemas/MarktlokationsReferenz'
+          description: Referenzen zugehöriger Marktlokationen
+        technischeEinrichtungen:
+          type: array
+          items:
+            $ref: '#/components/schemas/TechnischeEinrichtung'
+          description: technischeEinrichtungen
+      required:
+        - boTyp
+        - versionStruktur
+      x-apidog-orders:
+        - boTyp
+        - versionStruktur
+        - marktlokationsId
+        - sparte
+        - energierichtung
+        - bilanzierungsmethode
+        - verbrauchsart
+        - unterbrechbar
+        - netzebene
+        - umspannung
+        - netzbetreiberCodeNr
+        - gebietTyp
+        - netzgebietNr
+        - bilanzierungsgebiet
+        - grundversorgerCodeNr
+        - gasqualitaet
+        - endkunde
+        - lokationsadresse
+        - katasterinformation
+        - regelzone
+        - marktgebiet
+        - zeitreihentyp
+        - messtechnischeEinordnung
+        - sperrstatus
+        - referenzMarktlokationsId
+        - versorgungsart
+        - eigentuemer
+        - hausverwalter
+        - verguetungEmpfaenger
+        - statusErzeugendeMalo
+        - fernsteuerbarkeit
+        - foerderungsLand
+        - redispatch
+        - zukuenftigerMeldepunkt
+        - lokationszuordnung
+        - konfigurationsprodukt
+        - leistungskurvendefinition
+        - produktdatenRelevanteRolle
+        - beteiligterMarktpartner
+        - modulNetzentgelte
+        - datenqualitaet
+        - gueltigkeitszeitraum
+        - marktrollen
+        - zaehlwerke
+        - zaehlwerkeBeteiligteMarktrolle
+        - verbrauchsmenge
+        - zugehoerigeMesslokationen
+        - netznutzungsabrechnungsdaten
+        - messstellenbetriebsabrechnungsdaten
+        - energieherkunft
+        - erforderlichesProduktpaket
+        - geokoordinaten
+        - paketId
+        - marktlokationsTyp
+        - zugehoerigeMarktlokationen
+        - technischeEinrichtungen
+      x-apidog-ignore-properties: []
+      x-apidog-folder: ''
     TechnischeEinrichtung:
       type: object
       title: TechnischeEinrichtung

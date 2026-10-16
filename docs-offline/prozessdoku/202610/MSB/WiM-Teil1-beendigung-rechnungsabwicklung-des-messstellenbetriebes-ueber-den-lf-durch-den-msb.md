@@ -40,7 +40,7 @@ Der MSB der Marktlokation stellt eine Beendigungsanfrage und erhält nach Prüfu
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_BEEND_RE_MSB`](/schnittstellen/202610/trigger/events/MSB-START_BEEND_RE_MSB) · [Im Playground ausprobieren](/api/202610/ausloeser-msb/start-beend-re-msb)
+**Prozessauslöser** [`START_BEEND_RE_MSB`](/api/202610/ausloeser-msb/start-beend-re-msb) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"ANFRAGE\": [\n      {\n        \"abonnement\": \"<abonnement: START_ABO | ENDE_ABO | OHNE_ABO>\",\n        \"lokationsId\": \"<lokationsId>\"\n      }\n    ],\n    \"AUFTRAG\": [\n      {\n        \"ausfuehrungsdatum\": \"<ausfuehrungsdatum>\"\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"pruefidentifikator\": \"<pruefidentifikator: 17006>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_BEEND_RE_MSB\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

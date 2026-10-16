@@ -41,8 +41,8 @@ Der LF beauftragt den NB nach Maßgabe des zwischen LF und NB geschlossen Netznu
 <li data-teil="ausloeser">
 
 **Prozessauslöser**
-- [`START_ANFRAGE_SPERRUNG`](/schnittstellen/202610/trigger/events/LF-START_ANFRAGE_SPERRUNG) · [Im Playground ausprobieren](/api/202610/ausloeser-lf/start-anfrage-sperrung)
-- [`START_SPERRAUFTRAG`](/schnittstellen/202610/trigger/events/LF-START_SPERRAUFTRAG) · [Im Playground ausprobieren](/api/202610/ausloeser-lf/start-sperrauftrag)
+- [`START_ANFRAGE_SPERRUNG`](/api/202610/ausloeser-lf/start-anfrage-sperrung) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"ANFRAGE\": [\n      {\n        \"lokationsId\": \"<lokationsId>\"\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_ANFRAGE_SPERRUNG\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
+- [`START_SPERRAUFTRAG`](/api/202610/ausloeser-lf/start-sperrauftrag) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"ANFRAGE\": [\n      {\n        \"lokationsId\": \"<lokationsId>\"\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"marktrolle\": \"<marktrolle: NB | LF | MSB | MSBA | GMSB | MDL | …>\",\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_SPERRAUFTRAG\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit einem dieser Ereignisse an.
 

@@ -43,7 +43,7 @@ Der LF bzw. MSB stellt fest, dass ihm die
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_REKLAMATION_DEFINITIONEN`](/schnittstellen/202610/trigger/events/LF-START_REKLAMATION_DEFINITIONEN) · [Im Playground ausprobieren](/api/202610/ausloeser-lf/start-reklamation-definitionen)
+**Prozessauslöser** [`START_REKLAMATION_DEFINITIONEN`](/api/202610/ausloeser-lf/start-reklamation-definitionen) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"AUFTRAG\": [\n      {\n        \"positionsdaten\": [\n          \"<positionsdaten>\"\n        ]\n      }\n    ],\n    \"REKLAMATION\": [\n      {\n        \"reklamationsgrund\": \"<reklamationsgrund: WERTE_ZU_HOCH | WERTE_ZU_NIEDRIG | WERTE_FEHLEN | KONFIGURATION_WIRKT_NICHT | KONFIGURATION_WIRKT_TEILWEISE | WERTE_WERDEN_NICHT_NACH_VORGABEN_UEBERMITTELT | …>\"\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_REKLAMATION_DEFINITIONEN\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

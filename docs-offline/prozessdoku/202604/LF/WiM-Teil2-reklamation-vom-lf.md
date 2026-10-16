@@ -40,7 +40,7 @@ Der NB, LF oder ÜNB reklamiert bei dem MSB der Marktlokation unplausible oder f
 
 <li data-teil="ausloeser">
 
-**Prozessauslöser** [`START_REKLAMATION_VON_WERTEN`](/schnittstellen/202604/trigger/events/LF-START_REKLAMATION_VON_WERTEN) · [Im Playground ausprobieren](/api/202604/ausloeser-lf/start-reklamation-von-werten)
+**Prozessauslöser** [`START_REKLAMATION_VON_WERTEN`](/api/202604/ausloeser-lf/start-reklamation-von-werten) <OpenPlaygroundButton server={"https://api.macoapp.de"} url={"/inbound"} method={"post"} defaultBody={"{\n  \"stammdaten\": {\n    \"ANFRAGE\": [\n      {\n        \"anfragetyp\": \"<anfragetyp: KAUF | NUTZUNGSUEBERLASSUNG | ABRECHNUNGSBRENNWERT_UND_ZUSTANDSZAHL | LASTGANGDATEN | ZAEHLERSTAENDE | WERTEERMITTLUNG | …>\"\n      }\n    ],\n    \"AUFTRAG\": [\n      {\n        \"positionsdaten\": [\n          \"<positionsdaten>\"\n        ]\n      }\n    ],\n    \"REKLAMATION\": [\n      {\n        \"obiskennzahl\": \"<obiskennzahl>\",\n        \"reklamationsgrund\": \"<reklamationsgrund: WERTE_ZU_HOCH | WERTE_ZU_NIEDRIG | WERTE_FEHLEN | KONFIGURATION_WIRKT_NICHT | KONFIGURATION_WIRKT_TEILWEISE | WERTE_WERDEN_NICHT_NACH_VORGABEN_UEBERMITTELT | …>\"\n      }\n    ]\n  },\n  \"transaktionsdaten\": {\n    \"absender\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"empfaenger\": {\n      \"rollencodenummer\": \"<rollencodenummer>\"\n    },\n    \"kategorie\": \"<kategorie>\",\n    \"sparte\": \"<sparte: STROM | GAS | FERNWAERME | NAHWAERME | WASSER | ABWASSER>\"\n  },\n  \"zusatzdaten\": {\n    \"eventname\": \"START_REKLAMATION_VON_WERTEN\",\n    \"prozessId\": \"<prozessId>\"\n  }\n}"} security={[{"bearer": []}]}>Ausprobieren</OpenPlaygroundButton>
 
 Das Backend stößt diesen Schritt mit diesem Ereignis an.
 

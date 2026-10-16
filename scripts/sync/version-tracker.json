@@ -6,8 +6,8 @@
     "maco-api-documentation": {
       "source": "git submodule or external repo",
       "path": "maco-api-documentation",
-      "last_synced": "2026-10-01T07:09:23Z",
-      "last_commit_hash": "247189b9d457c202dfed10a6c13a0d9c75f1f4c5",
+      "last_synced": "2026-10-16T08:06:15Z",
+      "last_commit_hash": "15b0c9ecc86d847aaab7ef8fff765a424f6b79b6",
       "tracked_files": {
         "build_script": {
           "path": "scripts/build-openapi-json.sh",
@@ -104,7 +104,7 @@
     "maco-edi-testfiles": {
       "source": "git submodule or external repo",
       "path": "maco-edi-testfiles",
-      "last_synced": "2026-10-01T07:09:23Z",
+      "last_synced": "2026-10-16T08:06:15Z",
       "last_commit_hash": "097af7c191883dcf26b6655dfba5cb744e139a81",
       "tracked_files": {
         "edi_test_files": {
@@ -155,7 +155,7 @@
     "ebd-diagrams": {
       "source": "git submodule (Hochfrequenz/machine-readable_entscheidungsbaumdiagramme)",
       "path": "ebd-diagrams",
-      "last_synced": "2026-10-01T07:09:23Z",
+      "last_synced": "2026-10-16T08:06:15Z",
       "last_commit_hash": "6ddb13834ce061c2b3b2548751e7d0e907b9d67a",
       "latest_format_version": "FV2610",
       "format_versions": [
@@ -180,8 +180,8 @@
     "bo4e-schema": {
       "source": "git submodule (conuti-gmbh/bo4e-schema)",
       "path": "bo4e-schema",
-      "last_synced": "2026-10-01T07:09:23Z",
-      "last_commit_hash": "92af9e616a6ba3a61ad645f097dc3e6f86699289",
+      "last_synced": "2026-10-16T08:06:15Z",
+      "last_commit_hash": "8679ea42a259768a78f32702d518f47bfee2050d",
       "sync_actions": {
         "on_schema_change": [
           "Pull submodule: ./scripts/sync/update-submodules.sh",
@@ -192,7 +192,7 @@
     "cdoc-schema": {
       "source": "git submodule (conuti-gmbh/cdoc-schema)",
       "path": "cdoc-schema",
-      "last_synced": "2026-10-01T07:09:23Z",
+      "last_synced": "2026-10-16T08:06:15Z",
       "last_commit_hash": "2874c38bc067ab7ef9a94e9e9c094e88123339a1",
       "sync_actions": {
         "on_schema_change": [
@@ -204,7 +204,7 @@
     "ahb-tables": {
       "source": "Downloaded from ahb-tabellen.hochfrequenz.de (public API)",
       "path": "ahb-tables",
-      "last_synced": "2026-10-01T07:09:23Z",
+      "last_synced": "2026-10-16T08:06:15Z",
       "versions": [
         "FV2510",
         "FV2604",
@@ -226,7 +226,7 @@
     "docs-supplemental": {
       "source": "Preserved offline snapshot of doc.macoapp.de",
       "path": "docs-supplemental",
-      "last_synced": "2026-10-01T07:09:23Z",
+      "last_synced": "2026-10-16T08:06:15Z",
       "last_download_date": null,
       "tracked_files": {
         "prozessuebersicht": {
@@ -253,15 +253,15 @@
           "Update llm.txt index if new processes added"
         ]
       },
-      "file_count": 346,
+      "file_count": 316,
       "index": "docs-supplemental/llm.txt"
     },
     "docs-offline": {
       "source": "https://dokumentation.macoapp.de/llms-index.txt",
       "path": "docs-offline",
-      "last_synced": "2026-10-01T21:22:46+00:00",
+      "last_synced": "2026-10-16T08:06:15Z",
       "page_count": 3447,
-      "file_count": 3448,
+      "file_count": 3446,
       "indexes": [
         "docs/dokumentation/llms.txt",
         "docs/dokumentation/llms-index.txt",
