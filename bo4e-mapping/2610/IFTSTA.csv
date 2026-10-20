@@ -1,0 +1,712 @@
+﻿Nummer,Nr.,Typ,Status,,Max. Wdh,,,,,,stamm- oder transaktionsdaten,BO Objekt,BO4E - Feld,Mapping EDI <-> BO4E,powercloud - Variable,Schnittstelle,21000,21001,21002,21003,21004,21005,21007,21009,21010,21011,21012,21013,21015,21018,21024,21025,21026,21027,21036,21028,21029,21030,21031,21032,21033,21042,21034,21035,21039,21040,21041,21037,21038
+,,UNB,,,,,,,,,,,,,,,MaBiS,MaBiS,MaBiS,MaBiS,MaBiS,MaBiS,,,,,,,,,,,,,,NV,,,,,,,,,,,,redispatch,redispatch
+0010,1,UNH,M,M,1,1,0,Nachrichten-Kopfsegment,UNH+324j234poi+IFTSTA:D:18A:UN:2.1,,,,,,,,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+0020,2,BGM,M,M,1,1,0,Beginn der Nachricht,BGM+Z03+8531,"Z03 MaBiS Meldung(en)
+Z09 WiM Meldung(en)
+Z33 GPKE Meldung(en)
+Z49 Redispatch Meldung(en)
+Z72 - Beendigung einer Konfiguration
+Z73 - Bestellung einer Konfiguration
+Z86 - EnFG Informationen",T,,"kategorie 1:1
+dokumentennummer",,,,Z03,Z03,Z03,Z03,Z03,Z03,Z09,Z09,Z09,Z09,Z09,Z09,Z09,Z09,Z09,Z09,Z09,Z09,Z09,Z09,Z09,Z09,Z09,Z09,Z09,Z09,Z33,Z33,Z33,Z33,Z33,Z49,Z49
+0030,3,DTM,C,R,9,1,1,Dokumentendatum,DTM+137:CCYYMMDDHHMMZZZ:303,Dokumenten-/Nachrichtendatum/-zeit,T,,nachrichtendatum,,,,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+0050,,SG1,C,R,9,1,1,MP-ID Empfänger,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0060,4,NAD,M,M,1,1,1,MP-ID Empfänger,"NAD+MR+9900259000002::9
+NAD+MR+9900259000002::293
+NAD+MR+9900259000002::332","GS1
+DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)
+DE, DVGW Service & Consult GmbH",T,empfaenger,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+0050,,SG1,C,R,9,1,1,MP-ID Absender,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0060,5,NAD,M,M,1,1,1,MP-ID Absender,"NAD+MS+9900259000002::9
+NAD+MS+9900259000002::293
+NAD+MS+9900259000002::332","GS1
+DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)
+DE, DVGW Service & Consult GmbH",T,absender,"rollencodenummer
+rollencodetyp","9 = GLN
+293 = BDEW
+332 = DVGW",,,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+0160,,SG4,C,D,99999,99999,1,EQD-RFF-SG6-SG7,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0170,6,EQD,M,M,1,1,1,Einzelheiten zu Equipment,EQD+Z01+1',Z01 Laufende Nummer,S,statusmitteilung.positionsdaten,laufendeNummer,,,,x,x,x,x,x,x,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0240,7,RFF,C,R,999,1,2,Prüfidentifikator,RFF+Z13:21000',"Z13 Prüfidentifikator
+
+21000 MaBiS / Statusmeldung vom LF an NB/ÜNB
+21001 MaBiS / Statusmeldung vom NB an NB
+21002 MaBiS / Abweisung vom BIKO an NB/ÜNB
+21003 MaBiS / Statusmeldung vom BIKO an NB/ÜNB
+21004 MaBiS / Statusmeldung vom BIKO an BKV/NB
+21005 MaBiS / Statusmeldung vom BKV/NB an BIKO",T,,pruefidentifikator,,,,21000,21001,21002,21003,21004,21005,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0240,8,RFF,C,R,999,1,2,Versionsangabe der betrachteten Summenzeitreihe,RFF+AUU:20110503121544?+00',AUU Referenz auf eine Zeitreihe,S,statusmitteilung.positionsdaten,versionZeitreihe,,,,x,x,x,x,x,x,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0300,,SG6,C,R,9,1,2,LOC-DTM,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0310,9,LOC,M,M,1,1,2,Meldepunkt,LOC+172+DE0065239988901000000000008560083',172 Meldepunkt,S,statusmitteilung.positionsdaten,"lokationsId
+lokationsTyp","lokationsTyp (ENUM):
+
+MALO (11-stellig) (PID 21032, 21033, 21039, 21040, 21045)
+
+MELO (33-stellig)(PID 21007, 21009, 21010, 21011, 21012, 21013, 21018, 21025, 21027, 21028, 21029, 21030, 21031, 21033, 21036)
+
+NELO (PID 21025, 21027, 21033)
+
+MABIS_ZAEHLPUNKT  (33-stellig) (PID 21000, 21001, 21002, 21003, 21004, 21005)
+
+STEUERBARE_RESSOURCE (PID 21025, 21027, 21033)
+",,,x,x,x,x,x,x,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0320,10,DTM,C,R,9,1,3,Betrachtungszeitintervall,DTM+492:201104:610',"492 Bilanzierungsdatum, -zeit, -periode",S,statusmitteilung.positionsdaten,bilanzierungsbeginn,,,,x,x,x,x,x,x,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0320,11,DTM,C,R,9,1,3,Zeitpunkt der Statusvergabe,DTM+334:20110603151755?+00:304',"334 Statusveränderung, Datum/Zeit",S,statusmitteilung.positionsdaten,statusVeraenderungsZeitpunkt,,,,x,x,x,x,x,x,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0330,,SG7,C,D,99,1,2,Prüfstatus Antwort auf Summenzeitreihen,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0340,12,STS,M,M,1,1,2,Prüfstatus Antwort auf Summenzeitreihen,STS+Z01+Z08+A01:E_0007',"Z01 Prüfstatus Antwort auf Summenzeitreihen
++
+Z07 Zeitreihe akzeptiert
+Z08 Zeitreihe nicht akzeptiert
++
+E_0007 EBD Nr. E_0007
+E_0040 EBD Nr. E_0040
+E_0041 EBD Nr. E_0041
+E_0093 EBD Nr. E_0093",S,statusmitteilung.positionsdaten,"statusObjekt = PRUEFSTATUS_ANTWORT_SUMMENZEITREIHEN
+auftragsstatus (ENUM)
+
+antwortstatus
+antwortstatusCodeliste","auftragsstatus (ENUM):
+
+Z07 = ZEITREIHE_AKZEPTIERT
+Z08 = ZEITREIHE_NICHT_ AKZEPTIERT",,,x,x,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0330,,SG7,C,D,99,1,2,Abweisung der Summenzeitreihe,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0340,13,STS,M,M,1,1,2,Abweisung der Summenzeitreihe,STS+Z02++A01:E_0008',"Z02 Abweisung der Summenzeitreihe
++
+E_0007 EBD Nr. E_0007
+E_0008 EBD Nr. E_0008
+E_0023 EBD Nr. E_0023
+E_0029 EBD Nr. E_0029
+E_0036 EBD Nr. E_0036
+E_0038 EBD Nr. E_0038
+E_0040 EBD Nr. E_0040
+E_0041 EBD Nr. E_0041
+E_0062 EBD Nr. E_0062
+E_0063 EBD Nr. E_0063
+E_0064 EBD Nr. E_0064
+E_0065 EBD Nr. E_0065
+E_0073 EBD Nr. E_0073
+E_0080 EBD Nr. E_0080
+E_0093 EBD Nr. E_0093
+E_0098 EBD Nr. E_0098
+E_0099 EBD Nr. E_0099",S,statusmitteilung.positionsdaten,"statusObjekt = ABWEISUNG_SUMMENZEITREIHE
+
+antwortstatus
+antwortstatusCodeliste",,,,x,x,x,,,x,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0330,,SG7,C,D,99,1,2,Prüfstatus zur Summenzeitreihe,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0340,14,STS,M,M,1,1,2,Prüfstatus zur Summenzeitreihe,STS+Z03+Z08+7:E_0062',"Z03 Prüfstatus zur Summenzeitreihe
++
+Z07 Zeitreihe akzeptiert
+Z08 Zeitreihe nicht akzeptiert
++
+E_0062 EBD Nr. E_0062
+E_0063 EBD Nr. E_0063
+E_0064 EBD Nr. E_0064
+E_0065 EBD Nr. E_0065
+E_0098 EBD Nr. E_0098
+E_0099 EBD Nr. E_0099",S,statusmitteilung.positionsdaten,"statusObjekt = PRUEFSTATUS_SUMMENZEITREIHE
+auftragsstatus (ENUM)
+
+antwortstatus
+antwortstatusCodeliste","auftragsstatus (ENUM):
+
+Z07 = ZEITREIHE_AKZEPTIERT
+Z08 = ZEITREIHE_NICHT_ AKZEPTIERT",,,,,,x,,x,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0330,,SG7,C,D,99,1,2,Datenstatus zur Summenzeitreihe,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0340,15,STS,M,M,1,1,2,Datenstatus zur Summenzeitreihe,STS+Z04+A03:E_0026',"Z04 Datenstatus zur Summenzeitreihe
++
+E_0026 EBD Nr. E_0026
+E_0042 EBD Nr. E_0042
+E_0043 EBD Nr. E_0043
+E_0053 EBD Nr. E_0053
+E_0054 EBD Nr. E_0054
+E_0055 EBD Nr. E_0055
+E_0056 EBD Nr. E_0056
+E_0057 EBD Nr. E_0057
+E_0058 EBD Nr. E_0058
+E_0059 EBD Nr. E_0059
+E_0060 EBD Nr. E_0060
+E_0061 EBD Nr. E_0061
+E_0066 EBD Nr. E_0066
+E_0067 EBD Nr. E_0067
+E_0075 EBD Nr. E_0075
+E_0076 EBD Nr. E_0076
+E_0077 EBD Nr. E_0077
+E_0082 EBD Nr. E_0082
+E_0083 EBD Nr. E_0083
+E_0084 EBD Nr. E_0084",S,statusmitteilung.positionsdaten,"statusObjekt = DATENSTATUS_SUMMENZEITREIHE
+
+antwortstatus
+antwortstatusCodeliste",,,,,,,x,x,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0330,,SG7,C,D,99,1,2,Abweisung Statusmeldung/-änderung,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0340,16,STS,M,M,1,1,2,Abweisung Statusmeldung/-änderung,STS+Z13++A01:E_0021',"Z13 Abweisung Statusmeldung/-änderung
++
+E_0019 EBD Nr. E_0019
+E_0021 EBD Nr. E_0021
+E_0025 EBD Nr. E_0025
+E_0030 EBD Nr. E_0030
+E_0074 EBD Nr. E_0074
+E_0081 EBD Nr. E_0081",S,statusmitteilung.positionsdaten,"statusObjekt = ABWEISUNG_STATUSMELDUNG_AENDERUNG
+
+antwortstatus
+antwortstatusCodeliste",,,,,,,,Soll,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0560,,SG14,C,D,99999,99999,1,CNI-LOC-SG15,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0570,17,CNI,M,M,1,1,1,Sendungsdaten,CNI+1,Vorgangsnummer,S,statusmitteilung.positionsdaten,positionsnummer,,,,,,,,,,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x
+0580,18,LOC,C,D,9,1,2,Meldepunkt,LOC+172+DE0065239988901000000000008560083,Meldepunkt,S,statusmitteilung.positionsdaten,"lokationsId
+lokationsTyp","lokationsTyp (ENUM):
+
+MALO (11-stellig) (PID 21032, 21033, 21039, 21040, 21045)
+
+MELO (33-stellig)(PID 21007, 21009, 21010, 21011, 21012, 21013, 21018, 21025, 21027, 21028, 21029, 21030, 21031, 21033, 21036)
+
+NELO (PID 21025, 21027, 21033)
+
+MABIS_ZAEHLPUNKT  (33-stellig) (PID 21000, 21001, 21002, 21003, 21004, 21005)
+
+STEUERBARE_RESSOURCE (PID 21025, 21027, 21033)
+",,,,,,,,,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,,,,x,x,,,
+0600,,SG15,M,D,99,1,2,MSB-Wechselstatus,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0610,19,STS,M,M,1,1,2,MSB-Wechselstatus,STS+Z10+Z13+E17:S_0057,"Z10 MSB-Wechsel nach MsbG 
++
+Z13 gescheitert
+Z14 erfolgreich
+209 Lieferung, geplant 
++
+E17 Ablehnung wg. Fristüberschreitung
+ZI1 Wechsel auf iMS
+ZI2 Beibehaltung der bisherigen Messtechnik
+:
+G_0055 Codeliste Gas Nr. G_0055
+S_0057 Codeliste Strom Nr. S_0057",S,statusmitteilung.positionsdaten,"statusObjekt = MSBWECHSEL
+auftragsstatus (ENUM)
+
+antwortstatus
+antwortstatusCodeliste","Z13 -> GESCHEITERT
+Z14 -> ERFOLGREICH
+209 -> LIEFERUNG_GEPLANT",,,,,,,,,x,x,x,x,x,x,x,x,,,,,,,,,,,,,,,,,,,
+0620,20,RFF,C,R,999,1,3,Prüfidentifikator,"RFF+Z13:21007
+RFF+Z13:21009
+RFF+Z13:21010
+RFF+Z13:21011
+RFF+Z13:21012
+RFF+Z13:21013
+RFF+Z13:21015
+RFF+Z13:21018","21007 WiM / Statusmeldung (Planungszeitpunkt) vom NB an MSBA
+21009 WiM / Statusmeldung (gescheitert) vom MSBN an NB
+21010 WiM / Statusmeldung (erfolgreich) vom MSBN an NB
+21011 WiM / Statusmeldung (MSB/Scheitermeldung) vom NB an MSBN / MSBA / LF
+21012 WiM / Statusmeldung (erfolgreich) vom NB an MSBN
+21013 WiM / Statusmeldung (gescheitert) vom NB an MSBN / MSBA / LF
+21015 WiM / Informationsmeldung (erfolgreich) vom NB an MSBA
+21018 WiM / Statusmeldung vom NB an MSBA",T,,pruefidentifikator,,,,,,,,,,21007,21009,21010,21011,21012,21013,21015,21018,,,,,,,,,,,,,,,,,,,
+0620,21,RFF,C,D,999,1,3,Referenz Nachrichtennummer,RFF+ACW:8901308942,Referenznummer einer vorangegangenen Nachricht,S,statusmitteilung.positionsdaten,vorgangsreferenznummer,,,,,,,,,,,,,x,x,,,,,,,,,,,,,,,,,,,,,,
+0620,22,RFF,C,D,999,1,3,Referenz Vorgangsnummer,RFF+ADY:3,Mitteilungsnummer,S,statusmitteilung.positionsdaten,mitteilungsnummer,,,,,,,,,,,,,x,x,,,,,,,,,,,,,,,,,,,,,,
+620,23,RFF,C,D,999,1,3,Referenz Vorgangsnummer (aus Anfragenachricht),RFF+TN:NNV1234,Referenz Vorgangsnummer (aus Anfragenachricht),S,statusmitteilung.positionsdaten,anfragereferenznummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0630,24,DTM,C,D,9,1,3,Datum/Uhrzeit/Zeitspanne,"DTM+293:CCYYMMDDHHMMZZZ:303
+DTM+76:CCYYMMDDHHMMZZZ:303 ","293 Fertigstellungsdatum/-zeit
+76 Lieferdatum/-zeit, geplant",S,statusmitteilung.positionsdaten,"fertigstellungsdatum
+lieferdatum",UTC -> 303,,,,,,,,,76,,293,,293,,x,x,,,,,,,,,,,,,,,,,,,
+0730,,SG17,C,D,9,1,3,Messstellenbetreiber an der Messlokation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0740,25,NAD,M,M,1,1,3,Messstellenbetreiber an der Messlokation,NAD+DEB+1234567890128::9,"DEB Messstellenbetreiber
++
+9 GS1
+293 DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)
+332 DE, DVGW Service & Consult GmbH",S,messlokation(messlokationsId = statusmitteilung.positionsdaten.lokationsId).marktrollen[marktrolle=MSB],"rollencodenummer
+rollencodetyp",,,,,,,,,,x,,,,,,x,x,,,,,,,,,,,,,,,,,,,
+0600,,SG15,M,D,99,1,2,Status des Umbaus der Messlokation,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0610,26,STS,M,M,1,1,2,Status des Umbaus der Messlokation,STS+Z15+Z13+A01:E_0286,"Z15 Messstellenumbau
++
+Z13 gescheitert
+Z14 erfolgreich
++
+Z74 kein Zugang
+Z75 Kommunikationsstörung",S,statusmitteilung.positionsdaten,"statusObjekt = UMBAUMELO
+auftragsstatus (ENUM)
+
+antwortstatus
+antwortstatusCodeliste","Z13 -> GESCHEITERT
+Z14 -> ERFOLGREICH",,,,,,,,,,,,,,,,,x,x,x,x,,,,,,,,,,,,,,,
+0620,27,RFF,C,R,999,1,3,Prüfidentifikator,RFF+Z13:21024,"21024 WiM / Statusmeldung (erfolgreich) vom MSB an LF
+21025 WiM / Statusmeldung (gescheitert) vom MSB an LF
+21026 WiM / Statusmeldung (erfolgreich) vom MSB an NB
+21027 WiM / Statusmeldung (gescheitert) vom MSB an NB / MSB",T,,pruefidentifikator,,,,,,,,,,,,,,,,,,21024,21025,21026,21027,,,,,,,,,,,,,,,
+0630,28,DTM,C,D,9,1,3,Datum/Uhrzeit/Zeitspanne,DTM+293:CCYYMMDDHHMMZZZ:303,Fertigstellungsdatum/-zeit,S,statusmitteilung.positionsdaten,fertigstellungsdatum,UTC -> 303,,,,,,,,,,,,,,,,,x,x,x,x,,,,,,,,,,,,,,,
+1040,,SG25,C,D,9999,1,3,Sendungspositionseinzelheiten,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1050,29,GID,M,M,1,1,3,Sendungspositionseinzelheiten,GID+1,Sendungsposition,S,statusmitteilung.positionsdaten,sendungsposition,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,,,,,,
+1090,30,FTX,C,R,9,1,4,Freier Text,FTX+ACB+++Info1:Info2:Info3:Info4:Info5,Zusätzliche Informationen (für allgemeine Hinweise),S,statusmitteilung.positionsdaten,allgemeineInformationenText,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0600,,SG15,M,D,99,1,2,Turnusauslesungsstatus,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0610,31,STS,M,M,1,1,2,Turnusauslesungsstatus,STS+Z12+Z13+ZD8:G_0077,"Z12 Ab-/Auslesung
++
+Z13 gescheitert
++
+G_0077 Codeliste Gas Nr. G_0077",S,statusmitteilung.positionsdaten,"statusObjekt = TURNUSAUSLESUNG
+auftragsstatus (ENUM)
+
+antwortstatus
+antwortstatusCodeliste",Z13 -> GESCHEITERT,,,,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,
+0620,32,RFF,C,R,999,1,3,Prüfidentifikator,RFF+Z13:21028,21028 WiM / Informationsmeldung vom MSB an NB,T,,pruefidentifikator,,,,,,,,,,,,,,,,,,,,,,,21028,,,,,,,,,,,,,
+0630,33,DTM,C,D,9,1,3,Datum/Uhrzeit/Zeitspanne,DTM+7:CCYYMMDDHHMMZZZ:303,Gültigkeitsdatum/-zeit,S,statusmitteilung.positionsdaten,gueltigAb,,,,,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,
+0600,,SG15,M,D,99,1,2,Ersteinbau iMS Planungsstatus,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0610,34,STS,M,M,1,1,2,Ersteinbau iMS Planungsstatus,STS+Z19+Z31+A01:E_0233,"Z19 Ersteinbau iMS
++
+Z17 geplannt
+Z30 zugestimmt
+Z31 widersprochen
++
+E_0233 EBD Nr. E_0233",S,statusmitteilung.positionsdaten,"statusObjekt = ERSTEINBAUIMS
+auftragsstatus (ENUM) 
+
+antwortstatus
+antwortstatusCodeliste","Z17 -> GEPLANT
+Z30 -> ZUGESTIMMT
+Z31 -> WIDERSPROCHEN",,,,,,,,,,,,,,,,,,,,,,,x,x,x,,,,,,,,,,
+0620,35,RFF,C,R,999,1,3,Prüfidentifikator,RFF+Z13:21029,"21029 WiM / Vorabinformation
+21030 WiM / Zustimmung iMS-Ersteinbau
+21031 WiM / Bestandsschutz / Eigenausbau iMS",T,,pruefidentifikator,,,,,,,,,,,,,,,,,,,,,,,,21029,21030,21031,,,,,,,,,,
+0620,36,RFF,C,D,999,1,3,Referenz auf die Marktlokation,RFF+AVE:48058342826,Meldepunkt,S,statusmitteilung.positionsdaten,referenzMalo,,,,,,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,
+0620,37,RFF,C,D,999,1,3,Referenz Nachrichtennummer,RFF+ACW:8904578942,ACW Referenznummer einer vorangegangenen Nachricht,S,statusmitteilung.positionsdaten,vorgangsreferenznummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0620,38,RFF,C,D,999,1,3,Referenz Vorgangsnummer,RFF+ADY:15,ADY Mitteilungsnummer,S,statusmitteilung.positionsdaten,mitteilungsnummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0620,39,RFF,C,D,999,1,3,Referenz auf den Preisschlüsselstamm,RFF+Z17:FX12,Preisschlüsselstamm,S,statusmitteilung.positionsdaten,referenzPreisschluesselstamm,,,,,,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,
+0620,40,RFF,C,D,999,1,3,Referenz auf die Artikel-ID,RFF+Z45:4-02-0-004,Referenz auf die Artikel-ID,S,statusmitteilung.positionsdaten,referenzArtikelID,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0630,41,DTM,C,D,9,1,3,Datum/Uhrzeit/Zeitspanne,DTM+76:CCYYMMDD:102,"Lieferdatum/-zeit, geplant",S,statusmitteilung.positionsdaten,lieferdatum,,,,,,,,,,,,,,,,,,,,,,,,x,x,,,,,,,,,,,
+0600,,SG15,M,D,99,1,2,Ersteinbau mME Planungsstatus,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0610,42,STS,M,M,1,1,2,Ersteinbau mME Planungsstatus,STS+Z24+Z17,"Z24 Ersteinbau mME
+Z17 geplant",S,statusmitteilung.positionsdaten,"statusObjekt = ERSTEINBAUMME
+auftragsstatus (ENUM)",Z17 -> GEPLANT,,,,,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,
+0620,43,RFF,C,R,999,1,3,Prüfidentifikator,RFF+Z13:21029,21029 WiM / Vorabinformation,T,,pruefidentifikator,,,,,,,,,,,,,,,,,,,,,,,,21029,,,,,,,,,,,,
+0620,44,RFF,C,R,999,1,3,Referenz auf die Marktlokation,RFF+AVE:48058342826,Meldepunkt,S,statusmitteilung.positionsdaten,referenzMalo,,,,,,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,
+0630,45,DTM,C,D,9,1,3,Beginn des Zeitintervalls,DTM+469:CCYYMMDDHHMMZZZ:303,"Startdatum oder -zeitpunkt, frühestes/r",S,statusmitteilung.positionsdaten,startdatum,,,,,,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,
+0630,46,DTM,C,D,9,1,3,Ende des Zeitintervalls,DTM+472:CCYYMMDDHHMMZZZ:303,"Endedatum oder -zeitpunkt, spätestes/r",S,statusmitteilung.positionsdaten,enddatum,,,,,,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,
+0600,,SG15,M,D,99,1,2,Gerätestatus,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0610,47,STS,M,M,1,1,2,Gerätestatus,STS+Z26+Z35,"Z26 Gerätestatus
+Z35 ausgebaut",S,statusmitteilung.positionsdaten,"statusObjekt = GERAET
+statusanlass (ENUM)",Z35 -> AUSGEBAUT,,,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,
+0620,48,RFF,C,R,999,1,3,Prüfidentifikator,RFF+Z13:21036,21036 WiM / Gerätestatus,T,,pruefidentifikator,,,,,,,,,,,,,,,,,,,,,,21036,,,,,,,,,,,,,,
+0630,49,DTM,C,R,9,1,3,Datum/Uhrzeit/Zeitspanne,DTM+293:CCYYMMDDHHMMZZZ:303,Fertigstellungsdatum/-zeit,S,statusmitteilung.positionsdaten,fertigstellungsdatum,UTC -> 303,,,,,,,,,,,,,,,,,,,,,x,,,,,,,,,,,,,,
+0600,,SG15,M,D,99,1,2,Status zum Angebot oder Anfrage,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0610,50,STS,M,M,1,1,2,Status zum Angebot oder Anfrage,STS+Z20+Z32+A01:E_0205,"Z20 Status des referenzierten Dokuments
++
+Z32 abgelehnt
++
+E_0205 EBD Nr. E_0205
+E_0207 EBD Nr. E_0207
+E_0208 EBD Nr. E_0208
+E_0252 EBD Nr. E_0252
+E_0524 EBD Nr. E_0524
+E_0531 EBD Nr. E_0531
+E_0278 EBD Nr. E_0278
+E_0281 EBD Nr. E_0281",S,statusmitteilung.positionsdaten,"statusObjekt = ANGEBOTANFRAGE
+auftragsstatus
+
+antwortstatus
+antwortstatusCodeliste",Z32 -> ABGELEHNT,,,,,,,,,,,,,,,,,,,,,,,,,,x,x,,,,,,,,
+0620,51,RFF,C,R,999,1,3,Prüfidentifikator,RFF+Z13:21032,"21032 WiM / Angebotsablehnung (LF an MSB)
+21033 - WiM, GPKE / Anfrageablehnung (MSB an ESA / LF / NB)",T,,pruefidentifikator,,,,,,,,,,,,,,,,,,,,,,,,,,,21032,21033,,,,,,,,
+0620,52,RFF,C,R,999,1,3,Referenziertes Angebot / Anfrage,"RFF+AAG:12GHD3425
+RFF+AAV:12GHD3425","AAG Angebotsnummer
+AAV Nummer der Anfrage",S,statusmitteilung.positionsdaten,"angebotsnummer
+anfragereferenznummer",,,,,,,,,,,,,,,,,,,,,,,,,,,AAG,AAV,,,,,,,,
+0630,53,DTM,C,D,9,1,3,Frühester Zeitpunkt,DTM+469:CCYYMMDDHHMMZZZ:303,"Startdatum oder -zeitpunkt, frühestes/r",T,statusmitteilung.positionsdaten,startdatum,,,,,,,,,,,,,,,,,,,,,,,,,,,x,x,,,,,,,,
+1040,,SG25,C,D,9999,1,3,Sendungspositionseinzelheiten,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1050,54,GID,M,M,1,1,3,Sendungspositionseinzelheiten,GID+1,Sendungsposition,S,statusmitteilung.positionsdaten,sendungsposition,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,,,,,,
+1090,55,FTX,C,R,9,1,4,Freier Text,FTX+ACB+++Info1:Info2:Info3:Info4:Info5,Zusätzliche Informationen (für allgemeine Hinweise),S,statusmitteilung.positionsdaten,allgemeineInformationenText,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0600,,SG15,M,D,99,1,2,Bestellung,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0610,56,STS,M,M,1,1,2,Bestellung,STS+Z21+Z13+A01:E_0490,"Z21 Bestellung
++
+105 beendet
+Z13 gescheitert
+Z42 Antwort des Dritten
++
+E_0526 EBD Nr. E_0526
+E_0528 EBD Nr. E_0528
+E_0529 EBD Nr. E_0529
+E_0535 EBD Nr. E_0535
+E_0536 EBD Nr. E_0536",S,statusmitteilung.positionsdaten,"statusObjekt = STATUSBESTELLUNG
+auftragsstatus (ENUM)
+
+antwortstatus
+antwortstatusCodeliste","105 -> BEENDET
+Z13 -> GESCHEITERT
+Z14 - ERFOLGREICH
+Z17 - GEPLANT
+Z30 - ZUGESTIMMT
+Z32 - ABGELEHNT
+Z42 -> ANTWORT_DRITTER
+Z43 - BESTAETIGT
+Z44 - UMGESETZT",,,,,,,,,,,,,,,,,,,,,,,,,,,,x,x,,,,x,,
+0620,57,RFF,C,R,999,1,3,Prüfidentifikator,RFF+Z13:21034,"21042 WiM / Umsetzungsstatus der Bestellung
+21043 - GPKE / Bestellungsantwort / -mitteilung
+21044 - GPKE / Bestellungsbeendigung",T,,pruefidentifikator,,,,,,,,,,,,,,,,,,,,,,,,,,,,,21042,21034,,,,21041,,
+0620,58,RFF,C,R,999,1,3,Referenz auf die Bestellung,RFF+AGI:HUI67Ji67,Beantragungsnummer,S,statusmitteilung.positionsdaten,anfrageReferenz,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,x,,,,x,,
+0630,59,DTM,C,D,9,1,3,Datum/Uhrzeit/Zeitspanne,DTM+93:CCYYMMDDHHMMZZZ:303,Datum Vertragsende,S,statusmitteilung.positionsdaten,vertragsende,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,,,,,
+0630,60,DTM,C,D,9,1,3,Statusveränderungszeitpunkt,DTM+334:202503312300?+00:303',"Statusveränderung, Datum/Zeit",S,statusmitteilung.positionsdaten,statusVeraenderungsZeitpunkt,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1040,,SG25,C,D,9999,1,3,Sendungspositionseinzelheiten,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1050,61,GID,M,M,1,1,3,Sendungspositionseinzelheiten,GID+1,Sendungsposition,S,statusmitteilung.positionsdaten,sendungsposition,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,,x,,
+1090,62,FTX,C,R,9,1,4,Freier Text,FTX+ACB+++Info1:Info2:Info3:Info4:Info5,Zusätzliche Informationen (für allgemeine Hinweise),S,statusmitteilung.positionsdaten,allgemeineInformationenText,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,,x,,
+0600,,SG15,M,D,99,1,2,Status des Lieferscheins,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0610,63,STS,M,M,1,1,2,Status des Lieferscheins,STS+Z25+Z31+A01:E_0456,"Z25 Status des Lieferscheins
++
+Z30 zugestimmt
+Z31 widersprochen
++
+E_0456 EBD Nr. E_0456",S,statusmitteilung.positionsdaten,"statusObjekt = LIEFERSCHEIN
+auftragsstatus (ENUM)
+
+antwortstatus
+antwortstatusCodeliste","Z30 -> ZUGESTIMMT
+Z31 -> WIDERSPROCHEN",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,,,
+0620,64,RFF,C,R,999,1,3,Prüfidentifikator,RFF+Z13:21035,21035 GPKE / Rückmeldung auf Lieferschein,T,,pruefidentifikator,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,21035,,,,,
+0620,65,RFF,C,R,999,1,3,Lieferschein,RFF+ACW:576ZUT56TZ,Referenznummer einer vorangegangenen Nachricht,S,statusmitteilung.positionsdaten,vorgangsreferenznummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,,,
+0660,,SG16,C,D,99,99,3,Weitere Information,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0670,66,EFI,M,M,1,1,3,Ansicht des Senders,EFI+:Z01,Ansicht des Senders,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,,,
+0710,67,DTM,C,D,9,1,4,Beginn Messperiode,DTM+163:CCYYMMDDHHMMZZZ:303,"Verarbeitung, Beginndatum/-zeit",S,statusmitteilung.positionsdaten.ansichtSender[],verwendungAb,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,,,
+0710,68,DTM,C,D,9,1,4,Ende Messperiode,DTM+164:CCYYMMDDHHMMZZZ:303,"Verarbeitung, Endedatum/-zeit",S,statusmitteilung.positionsdaten.ansichtSender[],verwendungBis,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,,,
+0710,69,DTM,C,D,9,1,4,Leistungsperiode,DTM+306:CCYYMM:610,Leistungsperiode,S,statusmitteilung.positionsdaten.ansichtSender[],leistungsperiode,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,,,
+0720,70,QTY,C,R,9,1,4,Menge,QTY+Z20:10:KWH,"Z20 Tarifstufe 0
+Z21 Tarifstufe 1
+Z22 Tarifstufe 2
+Z23 Tarifstufe 3
+Z24 Tarifstufe 4
+Z25 Tarifstufe 5
+Z26 Tarifstufe 6
+Z27 Tarifstufe 7
+Z28 Tarifstufe 8
+Z29 Tarifstufe 9
+:
+Menge
+:
+KWH kilowatt hour
+KWT kilowatt
+K3 kilovolt ampere reactive hour
+K5 kilovolt ampere (reactive)",S,statusmitteilung.positionsdaten.ansichtSender[],"menge.wert
+menge.einheit
+tarifstufe","tarifstufe:
+Z20 -> TARIFSTUFE_0
+Z21 -> TARIFSTUFE_1
+Z22 -> TARIFSTUFE_2
+Z23 -> TARIFSTUFE_3
+Z24 -> TARIFSTUFE_4
+Z25 -> TARIFSTUFE_5
+Z26 -> TARIFSTUFE_6
+Z27 -> TARIFSTUFE_7
+Z28 -> TARIFSTUFE_8
+Z29 -> TARIFSTUFE_9
+
+einheit:
+KWT = KW
+KWH = KWH
+K3 = KVARH
+K5 = KVAR",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,,,
+0600,,SG15,M,D,99,1,2,Status der Ausfallarbeit,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0610,71,STS,M,M,1,1,2,Status der Ausfallarbeit,STS+Z27+Z30+A01:E_0900',"Z27 Status der Ausfallarbeit
++
+Z30 zugestimmt
+Z32 abgelehnt
++
+E_0900 EBD Nr. E_0900
+E_0902 EBD Nr. E_0902",S,statusmitteilung.positionsdaten,"statusObjekt = AUSFALLARBEIT
+auftragsstatus (ENUM)
+
+antwortstatus
+antwortstatusCodeliste","auftragsstatus (ENUM):
+
+Z30 -> ZUGESTIMMT
+Z32 -> ABGELEHNT",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,x
+0620,72,RFF,C,R,999,1,3,Prüfidentifikator,RFF+Z13:21037',"21037 RD / NB-Bewertung
+21038 RD / BTR-Bewertung",T,,pruefidentifikator,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,21037,21038
+0620,73,RFF,C,R,999,1,3,Referenzangaben,RFF+ACW:gkkgui089n908ß98',ACW Referenznummer einer vorangegangenen Nachricht,S,statusmitteilung.positionsdaten,vorgangsreferenznummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,x
+0620,74,RFF,C,D,999,1,3,Gegenvorschlag,RFF+ACE:hlhasdf80998',ACE Nummer des zugehörigen Dokuments,S,statusmitteilung.positionsdaten,dokumentenreferenznummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Soll,
+0730,,SG17,C,D,9,1,3,Ansprechpartner zum Gegenvorschlag bzw. zur Korrekturanforderung,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0740,75,NAD,M,M,1,1,3,Ansprechpartner zum Gegenvorschlag bzw. zur Korrekturanforderung,NAD+PK',PK Ansprechpartner,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,
+0750,,SG18,C,R,9,1,4,Ansprechpartner,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0760,76,CTA,M,M,1,1,4,Ansprechpartner,CTA+IC+:R. P. Feynman',IC Informationskontakt,S,statusmitteilung.positionsdaten.ansprechpartner,nachname,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,
+0770,77,COM,C,R,9,4,5,Kommunikationsverbindung,COM+05638472092:AJ',"EM Elektronische Post
+TE Telefon
+AJ weiteres Telefon
+AL Handy",S,statusmitteilung.positionsdaten.ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummern.rufnummertyp =""Mappingwert"" und rufnummern.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,
+1040,,SG25,C,D,9999,1,3,Sendungspositionseinzelheiten,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1050,78,GID,M,M,1,1,3,Sendungspositionseinzelheiten,GID+1',Positionsnummer,S,statusmitteilung.positionsdaten,sendungsposition,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,
+1090 ,79,FTX,C,R,9,1,4,Freier Text,FTX+ACB+++X:X:X:X:X',ACB Zusätzliche Informationen (für allgemeine Hinweise),S,statusmitteilung.positionsdaten,allgemeineInformationenText,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,
+0600,,SG15,M,D,99,1,2,Status des Fahrplananteils,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0610,80,STS,M,M,1,1,2,Status des Fahrplananteils,STS+Z28+Z30+A01:E_0902',"Z28 Status des Fahrplananteils
++
+Z30 zugestimmt
+Z32 abgelehnt
++
+E_0902 EBD Nr. E_0902",S,statusmitteilung.positionsdaten,"statusObjekt = FAHRPLANANTEIL
+auftragsstatus (ENUM)
+
+antwortstatus
+antwortstatusCodeliste","auftragsstatus (ENUM):
+
+Z30 -> ZUGESTIMMT
+Z32 -> ABGELEHNT",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,
+0620,81,RFF,C,R,999,1,3,Prüfidentifikator,RFF+Z13:21037',21037 RD / NB-Bewertung,T,,pruefidentifikator,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,21037,
+0620,82,RFF,C,R,999,1,3,Referenzangaben,RFF+ACW:göjlfas7üümlß9mß9',ACW Referenznummer einer vorangegangenen Nachricht,S,statusmitteilung.positionsdaten,vorgangsreferenznummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,
+0620,83,RFF,C,D,999,1,3,Gegenvorschlag,RFF+ACE:hasfgkmlß9mß9',ACE Nummer des zugehörigen Dokuments,S,statusmitteilung.positionsdaten,dokumentenreferenznummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Soll,
+0730,,SG17,C,D,9,1,3,Ansprechpartner zum Gegenvorschlag bzw. zur Korrekturanforderung,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0740,84,NAD,M,M,1,1,3,Ansprechpartner zum Gegenvorschlag bzw. zur Korrekturanforderung,NAD+PK',PK Ansprechpartner,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,
+0750,,SG18,C,R,9,1,4,Ansprechpartner,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0760,85,CTA,M,M,1,1,4,Ansprechpartner,CTA+IC+:R. L. Mößbauer',IC Informationskontakt,S,statusmitteilung.positionsdaten.ansprechpartner,nachname,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,
+0770,86,COM,C,R,9,4,5,Kommunikationsverbindung,COM+07393834834:AJ',"EM Elektronische Post
+TE Telefon
+AJ weiteres Telefon
+AL Handy",S,statusmitteilung.positionsdaten.ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummern.rufnummertyp =""Mappingwert"" und rufnummern.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,
+1040,,SG25,C,D,9999,1,3,Sendungspositionseinzelheiten,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1050,87,GID,M,M,1,1,3,Sendungspositionseinzelheiten,GID+1',Positionsnummer,S,statusmitteilung.positionsdaten,sendungsposition,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,
+1090,88,FTX,C,R,9,1,4,Freier Text,FTX+ACB+++Der Begründungstext steht hier:X:X:X:X',ACB Zusätzliche Informationen (für allgemeine Hinweise),S,statusmitteilung.positionsdaten,allgemeineInformationenText,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,
+0600,,SG15,M,D,99,1,2,Status des Gegenvorschlags der Ausfallarbeit,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0610,89,STS,M,M,1,1,2,Status des Gegenvorschlags der Ausfallarbeit,STS+Z29+Z32+A02:E_0901',"Z29 Status des Gegenvorschlags der Ausfallarbeit
++
+Z30 zugestimmt
+Z32 abgelehnt
++
+E_0901 EBD Nr. E_0901
+E_0903 EBD Nr. E_0903",S,statusmitteilung.positionsdaten,"statusObjekt = GEGENVORSCHLAG_AUSFALLARBEIT
+auftragsstatus (ENUM)
+
+antwortstatus
+antwortstatusCodeliste","auftragsstatus (ENUM):
+
+Z30 -> ZUGESTIMMT
+Z32 -> ABGELEHNT",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,x
+0620,90,RFF,C,R,999,1,3,Prüfidentifikator,RFF+Z13:21037',"21037 RD / NB-Bewertung
+21038 RD / BTR-Bewertung",T,,pruefidentifikator,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,21037,21038
+0620,91,RFF,C,R,999,1,3,Referenzangaben,RFF+ACW:678767902835392',ACW Referenznummer einer vorangegangenen Nachricht,S,statusmitteilung.positionsdaten,vorgangsreferenznummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,x
+0730,,SG17,C,D,9,1,3,"Ansprechpartner, der den Gegenvorschlag ablehnt",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0740,92,NAD,M,M,1,1,3,"Ansprechpartner, der den Gegenvorschlag ablehnt",NAD+PK',PK Ansprechpartner,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,x
+0750,,SG18,C,R,9,1,4,Ansprechpartner,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0760,93,CTA,M,M,1,1,4,Ansprechpartner,CTA+IC+:B. Pascal',IC Informationskontakt,S,statusmitteilung.positionsdaten.ansprechpartner,nachname,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,x
+0770,94,COM,C,R,9,4,5,Kommunikationsverbindung,COM+078936289:TE',"EM Elektronische Post
+TE Telefon
+AJ weiteres Telefon
+AL Handy",S,statusmitteilung.positionsdaten.ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummern.rufnummertyp =""Mappingwert"" und rufnummern.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,x
+1040,,SG25,C,D,9999,1,3,Sendungspositionseinzelheiten,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1050,95,GID,M,M,1,1,3,Sendungspositionseinzelheiten,GID+1',Positionsnummer,S,statusmitteilung.positionsdaten,sendungsposition,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,x
+1090,96,FTX,C,R,9,1,4,Freier Text,"FTX+ACB+++Hier steht der Text, der erklärt, warum abgelehnt wurde.:X:X:X:X'",ACB Zusätzliche Informationen (für allgemeine Hinweise),S,statusmitteilung.positionsdaten,allgemeineInformationenText,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,x
+0600,,SG15,M,D,99,1,2,Status des Gegenvorschlags des Fahrplananteils,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0610,97,STS,M,M,1,1,2,Status des Gegenvorschlags des Fahrplananteils,STS+Z30+Z30+A02:E_0903',"Z30 Status des Gegenvorschlags des Fahrplananteils
++
+Z30 zugestimmt
+Z32 abgelehnt
++
+E_0903 EBD Nr. E_0903",S,statusmitteilung.positionsdaten,"statusObjekt = GEGENVORSCHLAG_FAHRPLANANTEIL
+auftragsstatus (ENUM)
+
+antwortstatus
+antwortstatusCodeliste","auftragsstatus (ENUM):
+
+Z30 -> ZUGESTIMMT
+Z32 -> ABGELEHNT",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x
+0620,98,RFF,C,R,999,1,3,Prüfidentifikator,RFF+Z13:21038',21038 RD / BTR-Bewertung,T,,pruefidentifikator,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,21038
+0620,99,RFF,C,R,999,1,3,Referenzangaben,RFF+ACW:6789235123656256649612871246055354',ACW Referenznummer einer vorangegangenen Nachricht,S,statusmitteilung.positionsdaten,vorgangsreferenznummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x
+0730,,SG17,C,D,9,1,3,"Ansprechpartner, der den Gegenvorschlag ablehnt",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0740,100,NAD,M,M,1,1,3,"Ansprechpartner, der den Gegenvorschlag ablehnt",NAD+PK',PK Ansprechpartner,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x
+0750,,SG18,C,R,9,1,4,Ansprechpartner,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0760,101,CTA,M,M,1,1,4,Ansprechpartner,CTA+IC+:L. Boltzmann',IC Informationskontakt,S,statusmitteilung.positionsdaten.ansprechpartner,nachname,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x
+0770,102,COM,C,R,9,4,5,Kommunikationsverbindung,COM+0537235820:TE',"EM Elektronische Post
+TE Telefon
+AJ weiteres Telefon
+AL Handy",S,statusmitteilung.positionsdaten.ansprechpartner,"bei EM = eMailAdresse
+bei other = rufnummern.rufnummertyp =""Mappingwert"" und rufnummern.rufnummer = value","FX = FAX_DURCHWAHL
+TE = RUF_DURCHWAHL
+AJ = RUF_ZENTRALE
+AL = MOBIL_NUMMER",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x
+1040,,SG25,C,D,9999,1,3,Sendungspositionseinzelheiten,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1050,103,GID,M,M,1,1,3,Sendungspositionseinzelheiten,GID+1',Positionsnummer,S,statusmitteilung.positionsdaten,sendungsposition,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x
+1090,104,FTX,C,R,9,1,4,Freier Text,FTX+ACB+++Bergründungstext:X:X:X:X',ACB Zusätzliche Informationen (für allgemeine Hinweise),S,statusmitteilung.positionsdaten,allgemeineInformationenText,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x
+0600,,SG15,M,D,99,1,2,Auftragstatus Sperren,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0610,105,STS,M,M,1,1,2,Auftragstatus Sperren,STS+Z37+Z32+A01:E_0501,"Z37 Auftragsstatus Sperren
++
+Z13 gescheitert
+Z14 erfolgreich
+Z32 abgelehnt
++
+E_0472 EBD Nr. E_0472
+E_0501 EBD Nr. E_0501
+E_1002 - EBD Nr. E_1002
+E_1003 - EBD Nr. E_1003",S,statusmitteilung.positionsdaten,"statusObjekt = LIEFERSCHEIN
+auftragsstatus (ENUM)
+
+antwortstatus
+antwortstatusCodeliste","auftragsstatus:
+Z13 -> GESCHEITERT
+Z14 -> ERFOLGREICH
+Z32 -> ABGELEHNT",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,,
+0620,106,RFF,C,R,999,1,3,Prüfidentifikator,RFF+Z13:21039,"21039 GPKE, Awh Sperrp. Gas / Auftragsstatus (Sperren)",T,,pruefidentifikator,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,21039,,,,
+0630,107,DTM,C,D,9,1,3,Datum/Uhrzeit/Zeitspanne,DTM+293:CCYYMMDDHHMMZZZ:303,Fertigstellungsdatum/-zeit,S,statusmitteilung.positionsdaten,fertigstellungsdatum,UTC -> 303,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,,
+1040,,SG25,C,D,9999,1,3,Sendungspositionseinzelheiten,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1050,108,GID,M,M,1,1,3,Sendungspositionseinzelheiten,GID+1,Sendungsposition,S,statusmitteilung.positionsdaten,sendungsposition,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,,
+1090,109,FTX,C,R,9,1,4,Freier Text,FTX+ACB+++Info1:Info2:Info3:Info4:Info5,Zusätzliche Informationen (für allgemeine Hinweise),S,statusmitteilung.positionsdaten,allgemeineInformationenText,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,,
+0600,,SG15,M,D,99,1,2,Auftragstatus Entsperren,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0610,110,STS,M,M,1,1,2,Auftragstatus Entsperren,STS+Z38+Z14+A01:E_0499,"Z38 Auftragsstatus Entsperren
++
+Z13 gescheitert
+Z14 erfolgreich
++
+E_0487 EBD Nr. E_0487
+E_0499 EBD Nr. E_0499
+E_1005 - EBD Nr. E_1005
+E_1020 - EBD Nr. E_1020",S,statusmitteilung.positionsdaten,"statusObjekt = ENTSPERREN
+auftragsstatus (ENUM)
+
+antwortstatus
+antwortstatusCodeliste","auftragsstatus:
+Z13 -> GESCHEITERT
+Z14 -> ERFOLGREICH",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,,
+0620,111,RFF,C,R,999,1,3,Prüfidentifikator,RFF+Z13:21039,"21039 GPKE, Awh Sperrp. Gas / Auftragsstatus (Sperren)",T,,pruefidentifikator,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,21039,,,,
+0630,112,DTM,C,D,9,1,3,Datum/Uhrzeit/Zeitspanne,DTM+293:CCYYMMDDHHMMZZZ:303,Fertigstellungsdatum/-zeit,S,statusmitteilung.positionsdaten,fertigstellungsdatum,UTC -> 303,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,,
+1040,,SG25,C,D,9999,1,3,Sendungspositionseinzelheiten,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1050,113,GID,M,M,1,1,3,Sendungspositionseinzelheiten,GID+1,Sendungsposition,S,statusmitteilung.positionsdaten,sendungsposition,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,,
+1090,114,FTX,C,R,1,1,3,Freier Text,FTX+ACB+++Info1:Info2:Info3:Info4:Info5,Zusätzliche Informationen (für allgemeine Hinweise),S,statusmitteilung.positionsdaten,allgemeineInformationenText,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,,
+0600,,SG15,M,D,99,1,2,Information über Entsperrauftrag,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0610,115,STS,M,M,1,1,2,Information über Entsperrauftrag,STS+Z39+Z17,"Z39 Information über Entsperrauftrag 
+Z17 geplant",S,statusmitteilung,"statusObjekt = ENTSPERREN
+auftragsstatus",Z17 -> GEPLANT,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,
+0620,116,RFF,C,R,999,1,3,Prüfidentifikator,RFF+Z13:21040,"21040 GPKE, Awh Sperrp. Gas / Information über Entsperrauftrag",T,,pruefidentifikator,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,21040,,,
+0630,117,DTM,C,D,9,1,3,Datum/Uhrzeit/Zeitspanne,DTM+293:CCYYMMDDHHMMZZZ:303,Fertigstellungsdatum/-zeit,S,statusmitteilung.positionsdaten,fertigstellungsdatum,UTC -> 303,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,
+0600,,SG15,M,D,99,1,2,Grund der Privilegierung nach EnFG,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0610,118,STS,M,M,1,1,2,Grund der Privilegierung nach EnFG,STS+Z41++ZU5+ZU6+ZU7+ZU8+ZU9',"Z41 Grund der Privilegierung nach EnFG
++
++
+ZU5 § 21 EnFG Stromspeicher und Verlustenergie
+ZU6 § 22 EnFG elektrisch angetriebene Wärmepumpen
+ZU7 § 23 EnFG Umlageerhebung bei Anlagen zur Verstromung von Kuppelgasen
+ZU8 §§ 25 - 27 EnFG Herstellung von Grünen Wasserstoff
+ZU9 §§ 30 - 35 EnFG stromkostenintensive Unternehmen
+ZV0 § 36 EnFG Herstellung von Wasserstoff in stromkostenintensiven Unternehmen
+ZV1 § 37 EnFG Schienenbahnen
+ZV2 § 38 EnFG elektrische betriebene Bussen im Linienverkehr
+ZV3 § 39 EnFG Landstromanlagen
++
+ZU5 § 21 EnFG Stromspeicher und Verlustenergie
+ZU6 § 22 EnFG elektrisch angetriebene Wärmepumpen
+ZU7 § 23 EnFG Umlageerhebung bei Anlagen zur Verstromung von Kuppelgasen
+ZU8 §§ 25 - 27 EnFG Herstellung von Grünen Wasserstoff
+ZU9 §§ 30 - 35 EnFG stromkostenintensive Unternehmen
+ZV0 § 36 EnFG Herstellung von Wasserstoff in stromkostenintensiven Unternehmen
+ZV1 § 37 EnFG Schienenbahnen
+ZV2 § 38 EnFG elektrische betriebene Bussen im Linienverkehr
+ZV3 § 39 EnFG Landstromanlagen
++
+ZU5 § 21 EnFG Stromspeicher und Verlustenergie
+ZU6 § 22 EnFG elektrisch angetriebene Wärmepumpen
+ZU7 § 23 EnFG Umlageerhebung bei Anlagen zur Verstromung von Kuppelgasen
+ZU8 §§ 25 - 27 EnFG Herstellung von Grünen Wasserstoff
+ZU9 §§ 30 - 35 EnFG stromkostenintensive Unternehmen
+ZV0 § 36 EnFG Herstellung von Wasserstoff in stromkostenintensiven Unternehmen
+ZV1 § 37 EnFG Schienenbahnen
+ZV2 § 38 EnFG elektrische betriebene Bussen im Linienverkehr
+ZV3 § 39 EnFG Landstromanlagen
++
+ZU5 § 21 EnFG Stromspeicher und Verlustenergie
+ZU6 § 22 EnFG elektrisch angetriebene Wärmepumpen
+ZU7 § 23 EnFG Umlageerhebung bei Anlagen zur Verstromung von Kuppelgasen
+ZU8 §§ 25 - 27 EnFG Herstellung von Grünen Wasserstoff
+ZU9 §§ 30 - 35 EnFG stromkostenintensive Unternehmen
+ZV0 § 36 EnFG Herstellung von Wasserstoff in stromkostenintensiven Unternehmen
+ZV1 § 37 EnFG Schienenbahnen
+ZV2 § 38 EnFG elektrische betriebene Bussen im Linienverkehr
+ZV3 § 39 EnFG Landstromanlagen
++
+ZU5 § 21 EnFG Stromspeicher und Verlustenergie
+ZU6 § 22 EnFG elektrisch angetriebene Wärmepumpen
+ZU7 § 23 EnFG Umlageerhebung bei Anlagen zur Verstromung von Kuppelgasen
+ZU8 §§ 25 - 27 EnFG Herstellung von Grünen Wasserstoff
+ZU9 §§ 30 - 35 EnFG stromkostenintensive Unternehmen
+ZV0 § 36 EnFG Herstellung von Wasserstoff in stromkostenintensiven Unternehmen
+ZV1 § 37 EnFG Schienenbahnen
+ZV2 § 38 EnFG elektrische betriebene Bussen im Linienverkehr
+ZV3 § 39 EnFG Landstromanlagen",S,statusmitteilung.positionsdaten,"statusObjekt = PRIVILEGIERUNG_NACH_ENFG
+
+auftragsStatusListe (ENUM)
+
+
+
+","ZU5  -> ENFG_STROMSPEICHER_UND_VERLUSTENERGIE
+ZU6  -> ENFG_ELEKTRISCH_ANGETRIEBENE_WAERMEPUMPEN
+ZU7  -> ENFG_UMLAGEERHEBUNG_BEI_ANLAGEN_ZUR_VERSTROMUNG_VON_KUPPELGASEN
+ZU8  -> ENFG_HERSTELLUNG_VON_GRUENEN_WASSERSTOFF
+ZU9  -> ENFG_STROMKOSTENINTENSIVE_UNTERNEHMEN
+ZV0  -> ENFG_HERSTELLUNG_VON_WASSERSTOFF_IN_STROMKOSTENINTENSIVEN_UNTERNEHMEN
+ZV1  -> ENFG_SCHIENENBAHNEN
+ZV2  -> ENFG_ELEKTRISCHE_BETRIEBENE_BUSSEN_IM_LINIENVERKEHR
+ZV3  -> ENFG_LANDSTROMANLAGEN",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0620,119,RFF,C,R,999,1,3,Prüfidentifikator,RFF+Z13:21045,21045 GPKE / Privilegierungsinformation nach EnFG,T,,pruefidentifikator,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0630,120,DTM,C,R,9,1,3,Datum/Uhrzeit/Zeitspanne,DTM+273:2024:602,273 Gültigkeitszeitspanne,S,statusmitteilung.positionsdaten,gueltigkeitsZeitspanne,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0660,,SG16,C,R,99,1,3,Privilegierte Energiemenge,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0670,121,EFI,M,M,1,1,3,Privilegierte Energiemenge,EFI+:Z02,Z02 Privilegierte Energiemenge,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0710,122,DTM,C,R,9,1,4,Beginn des Zeitraums,DTM+163:202212312300?+00:303,"163 Verarbeitung, Beginndatum/-zeit",S,statusmitteilung.positionsdaten.privilegierteEnergiemenge,verwendungAb,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0710,123,DTM,C,R,9,1,4,Ende des Zeitraums,DTM+164:202312312300?+00:303,"164 Verarbeitung, Endedatum/-zeit",S,statusmitteilung.positionsdaten.privilegierteEnergiemenge,verwendungBis,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0720,124,QTY,C,R,9,1,4,Menge,QTY+136:1234:KWH,136 Erreichte Menge in dem Zeitintervall,S,statusmitteilung.positionsdaten.privilegierteEnergiemenge,"menge.wert
+menge.einheit","einheit:
+KWH = KWH",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0730,,SG17,C,R,99,1,3,Letztverbraucher,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0740,125,NAD,M,M,1,1,3,Name und Anschrift,"NAD+Z09+++Max:Mustermann::::Z01
+NAD+Z09+++Firma AG:Musterfirma::::Z02","Struktur von Personennamen
+Struktur der Firmenbezeichnung",S,"vertrag.energieliefervertrag(lokationsId=statusmitteilung.positionsdaten.lokationsId).vertragspartner2.GESCHAEFTPARTNER (GP-Rolle=""KUNDE"")","anrede
+name1
+name2
+name3
+name4
+gewerbekennzeichnung",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1040,,SG25,C,D,9999,1,3,Sendungspositionseinzelheiten,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1050,126,GID,M,M,1,1,3,Sendungspositionseinzelheiten,GID+1,Sendungspositionseinzelheiten,S,statusmitteilung.positionsdaten,sendungsposition,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1090,127,FTX,C,R,9,1,4,Freier Text,FTX+ACB+++Hier:kann:Text:angegebenen:werden.,ACB Zusätzliche Informationen (für allgemeine Hinweise),S,statusmitteilung.positionsdaten,allgemeineInformationenText,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0600,,SG15,M,D,99,1,2,Bearbeitungsstatus,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0610,128,STS,M,M,1,1,2,Bearbeitungsstatus,STS+Z43+Z47+A01:E_0573,"Z43 Veränderungsstatus der Daten
++
+Z47 Änderung der Daten 
+Z48 keine Änderung der Daten
++
+E_0573 EBD Nr. E_0573
+ E_0576 EBD Nr. E_0576 
+E_0577 EBD Nr. E_0577 
+E_0584 EBD Nr. E_0584 
+E_0585 EBD Nr. E_0585 
+E_0586 EBD Nr. E_0586 
+E_0587 EBD Nr. E_0587 
+E_0588 EBD Nr. E_0588 
+E_0589 EBD Nr. E_0589 
+E_0595 EBD Nr. E_0595 
+E_0613 EBD Nr. E_0613 
+E_0616 EBD Nr. E_0616 
+E_0618 EBD Nr. E_0618 
+E_0619 EBD Nr. E_0619 
+E_0620 EBD Nr. E_0620 
+E_0626 EBD Nr. E_0626 
+E_0627 EBD Nr. E_0627 
+E_0628 EBD Nr. E_0628 
+E_0629 EBD Nr. E_0629 
+E_0630 EBD Nr. E_0630 
+E_0632 EBD Nr. E_0632 
+E_0633 EBD Nr. E_0633 
+E_0634 EBD Nr. E_0634 
+E_0635 EBD Nr. E_0635",S,statusmitteilung.positionsdaten,"statusObjekt = VERAENDERUNGSSTATUS_DER_DATEN
+auftragsstatus (ENUM)
+
+antwortstatus
+antwortstatusCodeliste","Z47 -> AENDERUNG_DER_DATEN 
+Z48 -> KEINE_AENDERUNG_DER_DATEN",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,x,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0620,129,RFF,C,R,999,1,3,Prüfidentifikator,RFF+Z13:21047,21047 GPKE / Bearbeitungsstandsmeldung,T,,pruefidentifikator,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+0620,130,RFF,C,R,999,1,3,Referenzangaben,RFF+ACW:X,ACW Referenznummer einer vorangegangenen Nachricht,S,statusmitteilung.positionsdaten,vorgangsreferenznummer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1040,,SG25,C,D,9999,1,3,Sendungspositionseinzelheiten,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1050,131,GID,M,M,1,1,3,Sendungspositionseinzelheiten,GID+1,Positionsnummer,S,statusmitteilung.positionsdaten,sendungsposition,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1090,132,FTX,C,R,9,1,4,Freier Text,FTX+ACB+++Hier:kann:Text:angegebenen:werden,ACB Zusätzliche Informationen (für allgemeine Hinweise),S,statusmitteilung.positionsdaten,allgemeineInformationenText,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1250,133,UNT,M,M,1,1,0,Nachrichten-Endesegment,UNT+47+1,,,,,,,,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x,x

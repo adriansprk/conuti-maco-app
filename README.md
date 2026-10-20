@@ -77,7 +77,7 @@ ls maco-edi-testfiles/outbound/v202610/          # Example messages for FV 20261
 python3 scripts/find-documentation.py --pi 55077 --version 202610 --role LF
 bash scripts/validate-workspace.sh               # Check indexes and discovery
 ls bdew-docs/INDEX.md                            # Parsed BDEW source guide
-ls bo4e-mapping/2510/UTILMD_Strom.csv            # EDIFACT ↔ BO4E mapping
+ls bo4e-mapping/2610/UTILMD_Strom.csv            # EDIFACT ↔ BO4E mapping for FV 202610
 ls .agents/skills/bo4e-essentials/SKILL.md       # Deterministic BO4E doc agent
 ```
 
@@ -234,7 +234,7 @@ sequenceDiagram
 |-----------|--------|--------------|
 | **Outbound fixture** | BO4E JSON | `maco-edi-testfiles/outbound/v202610/<message>/<PI>/*.json` |
 | **Inbound fixture** | EDIFACT | `maco-edi-testfiles/inbound/v202610/<message>/<PI>/*.edi` |
-| **Mapping** | CSV | `bo4e-mapping/2510/*.csv`, `bo4e-mapping/2604/*.csv` |
+| **Mapping** | CSV | `bo4e-mapping/2610/*.csv` (default FV 202610); older versions remain available when explicitly selected |
 
 > Fixtures are examples for their own version. Select a version matching the process when available; label older fixtures when used for illustration.
 
@@ -252,7 +252,7 @@ sequenceDiagram
 | **PNG diagrams** | Technical flow (HOW) | `docs-supplemental/prozessdiagramme-png/` |
 | **EBD files** | Validation logic (WHAT to validate) | `ebd-diagrams/FV{YYMM}/` |
 | **YAML schemas** | Request shape and generated business rules; cross-check requiredness with AHB | `maco-api-documentation/.../yaml_output/` |
-| **BO4E mappings** | EDIFACT segment/field ↔ BO4E field mapping | `bo4e-mapping/{2510,2604}/*.csv` |
+| **BO4E mappings** | EDIFACT segment/field ↔ BO4E field mapping | `bo4e-mapping/2610/*.csv` for default FV 202610; use another folder only when a different version is explicitly selected |
 | **Test files** | Versioned message examples | `maco-edi-testfiles/{outbound,inbound}/vYYYYMM/` |
 
 ### Finding Documentation
@@ -261,7 +261,7 @@ sequenceDiagram
 2. **Read the returned page** in `docs-offline/`. Use `--perspective LFN` or `LFA` for a particular supplier view and `--include-supplemental` when older branch or architecture details are relevant.
 3. **Treat `PROCESS_GRAPH.json` as a source index**; it does not establish process order or decision logic.
 4. **For BDEW source context**: `bdew-docs/INDEX.md`
-5. **For EDIFACT ↔ BO4E fields**: `bo4e-mapping/{2510,2604}/{message-type}.csv`
+5. **For EDIFACT ↔ BO4E fields**: use `bo4e-mapping/2610/{message-type}.csv` for default FV 202610. If the task explicitly selects another format version, use its matching version folder when available.
 
 ---
 
@@ -287,8 +287,8 @@ sequenceDiagram
 
 | Format version | Location | Coverage |
 |----------------|----------|----------|
-| `2510` | `bo4e-mapping/2510/` | 22 CSV files including UTILMD Strom/Gas, MSCONS, ORDERS, INVOIC, APERAK, CONTRL, MaLoIdent, and more |
-| `2604` | `bo4e-mapping/2604/` | 15 CSV files for the next format cycle |
+| `2610` | `bo4e-mapping/2610/` | Current/default FV 202610 mappings; CSVs for the available message types |
+| `2510`, `2604` | Corresponding version folders | Historical mappings; use only when the task explicitly targets that format version and the source exists |
 
 Use these CSVs after identifying the message type and Prüfidentifikator. The columns combine EDIFACT segment positions, BO4E object/field names, mapping notes, and per-Prüfidentifikator applicability.
 
@@ -378,7 +378,7 @@ conuti-maco-app/
 | Register a new customer | `BUSINESS_PROCESS_MAP.md` → Scenario 1 |
 | Find process and Prüfi sources | `python3 scripts/find-documentation.py --pi 55078 --version 202610 --role LF` |
 | Find required fields for Prüfi 55078 | Match the versioned AHB with `PI_55078.yml`, `yaml_output/55078.yaml`, and mapping |
-| Map an EDIFACT field to BO4E | Use the CSV for the selected version in `bo4e-mapping/` |
+| Map an EDIFACT field to BO4E | Default to FV 202610: use `bo4e-mapping/2610/`; use another version only when explicitly selected |
 | Check original BDEW process or EDIFACT source | `bdew-docs/INDEX.md` → matching source document |
 | Create a ticket-ready BO4E Essentials doc | `.agents/skills/bo4e-essentials/` + bundled verifier/linter |
 | Implement Kündigung workflow | `BUSINESS_PROCESS_MAP.md` → Kündigung scenario |
