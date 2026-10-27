@@ -4,7 +4,7 @@
   "description": "Strom source discovery only. Read the linked pages; do not infer process branches from SVG order.",
   "source_files": {
     "new": 3445,
-    "supplemental": 316
+    "supplemental": 319
   },
   "indexes": {
     "by_bdew_id": {
@@ -64344,6 +64344,19 @@
         "has_mermaid": false,
         "has_svg": false
       },
+      "docs-supplemental/angebot-lesen-46138982e0.md": {
+        "path": "docs-supplemental/angebot-lesen-46138982e0.md",
+        "source": "supplemental",
+        "url": "https://doc.macoapp.de/angebot-lesen-46138982e0.md",
+        "version": null,
+        "industry": "shared",
+        "role": null,
+        "perspective": null,
+        "kind": "supplement",
+        "title": "Angebot lesen",
+        "has_mermaid": false,
+        "has_svg": false
+      },
       "docs-supplemental/ansprechpartner-1300411m0.md": {
         "path": "docs-supplemental/ansprechpartner-1300411m0.md",
         "source": "supplemental",
@@ -64484,6 +64497,19 @@
         "perspective": null,
         "kind": "supplement",
         "title": "Auftrag",
+        "has_mermaid": false,
+        "has_svg": false
+      },
+      "docs-supplemental/auftrag-lesen-46139005e0.md": {
+        "path": "docs-supplemental/auftrag-lesen-46139005e0.md",
+        "source": "supplemental",
+        "url": "https://doc.macoapp.de/auftrag-lesen-46139005e0.md",
+        "version": null,
+        "industry": "shared",
+        "role": null,
+        "perspective": null,
+        "kind": "supplement",
+        "title": "Auftrag lesen",
         "has_mermaid": false,
         "has_svg": false
       },
@@ -66109,6 +66135,19 @@
         "perspective": null,
         "kind": "supplement",
         "title": "Marktlokation",
+        "has_mermaid": false,
+        "has_svg": false
+      },
+      "docs-supplemental/marktlokation-identifizieren-40403306e0.md": {
+        "path": "docs-supplemental/marktlokation-identifizieren-40403306e0.md",
+        "source": "supplemental",
+        "url": "https://doc.macoapp.de/marktlokation-identifizieren-40403306e0.md",
+        "version": null,
+        "industry": "shared",
+        "role": null,
+        "perspective": null,
+        "kind": "supplement",
+        "title": "Marktlokation identifizieren",
         "has_mermaid": false,
         "has_svg": false
       },
@@ -74205,6 +74244,9 @@
       "angebot-1300410m0.md": [
         "docs-supplemental/angebot-1300410m0.md"
       ],
+      "angebot-lesen-46138982e0.md": [
+        "docs-supplemental/angebot-lesen-46138982e0.md"
+      ],
       "ansprechpartner-1300411m0.md": [
         "docs-supplemental/ansprechpartner-1300411m0.md"
       ],
@@ -74240,6 +74282,9 @@
       ],
       "auftrag-1300412m0.md": [
         "docs-supplemental/auftrag-1300412m0.md"
+      ],
+      "auftrag-lesen-46139005e0.md": [
+        "docs-supplemental/auftrag-lesen-46139005e0.md"
       ],
       "authentifizierung-15828008e0.md": [
         "docs-supplemental/authentifizierung-15828008e0.md"
@@ -74744,6 +74789,9 @@
       ],
       "marktlokation-1300425m0.md": [
         "docs-supplemental/marktlokation-1300425m0.md"
+      ],
+      "marktlokation-identifizieren-40403306e0.md": [
+        "docs-supplemental/marktlokation-identifizieren-40403306e0.md"
       ],
       "marktlokation-lesen-14017020e0.md": [
         "docs-supplemental/marktlokation-lesen-14017020e0.md"
